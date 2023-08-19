@@ -1,3 +1,4 @@
+http://example.com/2023/07/23/Scrapy%E7%88%AC%E8%99%AB/
 http://example.com/search/index.html
 http://example.com/tags/index.html
 http://example.com/categories/index.html

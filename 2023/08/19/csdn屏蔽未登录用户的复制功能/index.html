@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>csdn屏蔽未登录用户的复制功能 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none &amp;#123;
+  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将n,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="csdn屏蔽未登录用户的复制功能 - Hexo"/>
+    <meta name="twitter:description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none &amp;#123;
+  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将n,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="csdn屏蔽未登录用户的复制功能 - Hexo"/>
+    <meta property="og:description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none &amp;#123;
+  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将n,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">csdn屏蔽未登录用户的复制功能</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <!-- 帖子视图 -->
+
+    <div class="post_cover" >
+        
+            <img src="/img/img1.jpg,/img/welcome-cover.jpg" />
+        
+        <div class="post_cover_mask"></div>
+        <div class="post_text">
+            <h1>csdn屏蔽未登录用户的复制功能</h1>
+            <div>
+                <span>八月 19, 2023</span>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="article">
+    <div class='main'>
+        <!-- 帖子视图 -->
+        
+
+        <!-- 更新时间 -->
+        <div class="updated">
+            <div></div>
+            <span>该文章更新于 2023.08.19</span>
+        </div>
+
+        <h1 class="title">csdn屏蔽未登录用户的复制功能</h1>
+        <div class="stuff">
+            <span>八月 19, 2023</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="文本复制"><a href="#文本复制" class="headerlink" title="文本复制"></a>文本复制</h1><h2 id="一-屏蔽复制原理"><a href="#一-屏蔽复制原理" class="headerlink" title="一.屏蔽复制原理"></a>一.屏蔽复制原理</h2><h3 id="1-1-CSS-user-select"><a href="#1-1-CSS-user-select" class="headerlink" title="1.1 CSS user-select"></a>1.1 <code>CSS</code> user-select</h3><pre class="line-numbers code-pre" data-title="user-select可屏蔽复制哦！" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-css">.user-select-none &#123;
+  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将none改为text即可恢复复制 */
+&#125;
+</code></pre>
+<h2 id="二、断点调试"><a href="#二、断点调试" class="headerlink" title="二、断点调试"></a>二、断点调试</h2><h3 id="2-1-整理资源"><a href="#2-1-整理资源" class="headerlink" title="2.1 整理资源"></a>2.1 整理资源</h3>   <p>在开始前，我们需要先整理一下这个复制功能会涉及到哪些因素。</p>
+    <p>既然是复制，那就离不开快捷键<code>Ctrl+C</code>。既然有<code>Ctrl</code>键，那就可能会有<code>ctrlKey</code>事件，还有可能会有键盘码<code>keyCode</code>。除此之外，复制的话需要先选中内容，那就需要<code>document.selection</code>和<code>window.getSelection()</code>事件。还有那个一复制就出现的登录框。</p>
+    <p>事实上，他还用了<code>jquery</code>中的<code>copy</code>事件。好尴尬呀，我竟然忘记了这个。</p>
+    <p>有了上述提到的这些资源后，我便开始了一个个定位分析。这个分析过程是非常复杂的，也走了不少弯路。</p>
+
+<h3 id="2-2为什么一复制就出现登录框？"><a href="#2-2为什么一复制就出现登录框？" class="headerlink" title="2.2为什么一复制就出现登录框？"></a>2.2为什么一复制就出现登录框？</h3>   <p>我原以为他是把<code>document.selection</code>事件改写了，所以上来我就把目标定位到了关键字<code>document.selection</code>上。</p>
+    <p>一堆断点下来，发现这个没什么用处。看来我的常识经验在这次判断中误导了我。</p>
+    <p>后面又挨个把上面提到的资源都测试了下，结果发现<strong>原来复制跟登录框有关</strong>！相关代码见下方↓↓↓</p>
+    <pre class="line-numbers code-pre" data-title="n函数" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">var n = function() &#123;
+  window.csdn.loginBox.show(&#123;
+    spm: "1001.2101.3001.9440"
+  &#125;)
+&#125;;
+$("#content_views").unbind("keydown").bind("keydown", function(e) &#123;
+  if (e.ctrlKey &amp;&amp; 67 == e.keyCode)
+    return n(),
+    !1
+&#125;),
+$("#content_views").unbind("copy").bind("copy", function(e) &#123;
+  return n(),
+  !1
+&#125;)
+</code></pre>
+
+<p>执行copy事件时会触发登录框.png ↓↓↓<img data-original="https://img.alicdn.com/imgextra/i4/759415648/O1CN01JhttG11rappRGkEBf_!!759415648.png" data-src="/img/2023-06-13/执行copy事件时会触发登录框.png" class="img-bg lazy" alt="执行copy事件时会触发登录框" title="执行copy事件时会触发登录框" /></p>
+    <p>注意这里有一个<code>copy</code>复制事件。他先用<code>unbind</code>来解绑<code>copy</code>复制事件，紧接着又重新绑定了<code>copy</code>复制事件。重点是下面的一行代码。</p>
+    <pre class="line-numbers code-pre" data-title="关键函数n↓↓↓" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">return n(),
+!1
+</code></pre>
+    <p>这行代码乍看起来可能有些不太习惯，我们用<code>if</code>进行改写下吧。</p>
+    <pre class="line-numbers code-pre" data-title="用if来改写↓↓↓" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">if (n()) &#123;
+  return true
+&#125; else &#123;
+  return false
+&#125;
+</code></pre>
+    <p>由于函数<code>n()</code>调用了登录弹窗显示方法且没有直接的返回值，所以默认返回<code>undefined</code>。由于<code>undefined</code>条件不成立，所以会直接进入<code>else</code>条件中。也就相当于在执行<code>copy</code>复制事件时，直接返回了<code>return false</code>。这就是为什么在复制后粘贴时无任何内容的根本原因！</p>
+
+<h2 id="三、破解之道"><a href="#三、破解之道" class="headerlink" title="三、破解之道"></a>三、破解之道</h2><h3 id="3-1、法一：解绑copy事件"><a href="#3-1、法一：解绑copy事件" class="headerlink" title="3.1、法一：解绑copy事件"></a>3.1、法一：解绑copy事件</h3>   <p>打开控制台，粘贴解绑<code>copy</code>复制事件的代码即可复制文件内容。</p>
+    <pre class="line-numbers code-pre" data-title="解绑copy事件↓↓↓" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">$("#content_views").unbind("copy")
+</code></pre>
+    <p>然后我们就能轻松复制文章内的内容了。</p>
+    <p>需要注意的是，如果是代码区块，还需要使用1.1中的方法解除<code>CSS</code>后才能复制哦~</p>
+
+<h1 id="代码块复制"><a href="#代码块复制" class="headerlink" title="代码块复制"></a>代码块复制</h1><h2 id="一、分析“登录后复制”按钮是如何工作的"><a href="#一、分析“登录后复制”按钮是如何工作的" class="headerlink" title="一、分析“登录后复制”按钮是如何工作的"></a>一、分析“登录后复制”按钮是如何工作的</h2> <h2 class="article-title">一、分析“登录后复制”按钮是如何工作的</h2>
+    <p>先上一张图，我们在未登录时，鼠标移入代码块时，在右上角会显示一个“登录后复制”的按钮。点击按钮，就会弹出登录框。配图：弹出登录框.png↓↓↓ <img data-original="https://img.alicdn.com/imgextra/i3/759415648/O1CN01Vj2hcL1rappUOtaFe_!!759415648.png" data-src="/img/2023-06-24/弹出登录框.png" class="img-bg lazy" alt="弹出登录框" title="弹出登录框" /></p>
+    <p>细心的看官会发现“登录后复制”对应的是一个类名为<code>.hljs-button</code>的<code>div</code>，而这个<code>dom</code>元素上并未绑定点击事件。配图：登录后复制按钮上未绑定事件.png↓↓↓ <img data-original="https://img.alicdn.com/imgextra/i2/759415648/O1CN01m0IYTg1rapphuavqt_!!759415648.png" data-src="/img/2023-06-24/登录后复制按钮上未绑定事件.png" class="img-bg lazy" alt="登录后复制按钮上未绑定事件" title="登录后复制按钮上未绑定事件" /></p>
+    <p>这里补充一句，当我在测试此插件的时候，发现有的文章里面的代码块会跟本案例有些出入。但看官不用担心，因为逻辑是相通的，稍做修改即可破解复制权限的。如果实在搞不定，可以使用文末的插件哈。</p>
+    <p>那他是怎么实现一点击就出现登录框的呢？</p>
+    <h3 class="article-title article-title__sub">1.1、事件委托</h3>
+    <p>实际上此处用的是<strong>事件委托</strong>来实现，昨天的那个<code>copy</code>也是一样的哈。即：把子元素的事件绑定到父元素上。</p>
+    <p>核心代码就是<code>onclick</code>点击事件。</p>
+    <pre class="line-numbers code-pre" data-title="click事件" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">onclick="mdcp.signin(event)"
+</code></pre>
+    <h3 class="article-title article-title__sub">1.2、登录后的变化</h3>
+    <p>如果登录过后，此处就会变成“复制”两个字。</p>
+    <p>此时<code>onclick</code>事件会发生变化。</p>
+    <pre class="line-numbers code-pre" data-title="登录后的click事件↓↓↓" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">onclick="mdcp.copyCode(event)"
+</code></pre>
+    <p>所以说，我们只需要在未登录时让点击事件变成<code>copyCode</code>即可。</p>
+    
+<p><a target="_blank" rel="noopener" href="https://www.yilingsj.com/xwzj/2023-06-13/copy-prohibited.html">文本复制-参考文章</a><br><a target="_blank" rel="noopener" href="https://www.yilingsj.com/xwzj/2023-06-24/copy-csdn-code.html">代码块复制-参考文章</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="true"
+        data-ae="false"
+        data-ci="bf8247f1f66a43abd91f"
+        data-cs="8151e71fe008a0f849031b72d321c20af8e897af"
+        data-r="h1s97x.github.io"
+        data-o="h1s97x"
+        data-a="h1s97x"
+        data-d="true"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -169,25 +169,48 @@
 |   ├── _drafts
 |   └── _posts
 └── themes
-            <div class="hljs-button &#123;2&#125;" data-title="复制"></div>
-        </code>
-        <ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li>
-        </ul>
-    </pre>
-    <h3>修改主题设置</h3>
-    <p>总体设置：修改Blog/themes/diaspora/_config.yml<br>
-修改背景音乐：将 Blog/source/_posts 中对应文件的文件头mp3指向 Blog/themes/diaspora/audio/xxx.mp3 。<br>
-修改封面：将 Blog/source/_posts 中对应文件的文件头cover指向 Blog/themes/diaspora/img/xxx.png 。<br></p>
+</code></pre></body>
 
+<h3 id="Hexo博客新建-amp-发布文章"><a href="#Hexo博客新建-amp-发布文章" class="headerlink" title="Hexo博客新建&amp;发布文章"></a>Hexo博客新建&amp;发布文章</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing.html">写作</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1662733">Hexo博客教程（二）| 如何写作新文章并发布</a></p>
+<h4 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h4><p>在网站根目录下打开命令行Git Bash Here，使用如下命令创建新文章：</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>执行该命令，Hexo会在&#x2F;source&#x2F;_posts目录下创建一篇新的文章。</p>
+<h4 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h4><p>打开 Hexo 创建的文章可以看到，文章开头有这样一段：</p>
+<img src="https://ask.qcloudimg.com/http-save/yehe-1088047/rpunttrv54.png" alt="">
 
+<p>这个使用—包括起来的内容称之为Front-matter，即前置信息，用于给 Hexo 渲染该 md 文档，除了这三项，还有很多的配置项可以自己添加：</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left;"><div><div class="table-header"><p>配置项</p></div></div></th><th style="text-align: left;"><div><div class="table-header"><p>意义</p></div></div></th></tr></thead><tbody><tr><td style="text-align: left;"><div><div class="table-cell"><p>title</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>网页文章标题</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>date</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章创建如期</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>comments</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章评论功能是否启动</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>tags</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章标签</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>categories</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章分类</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>keywords</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章关键字</p></div></div></td></tr></tbody></table></div>
 
+<p>生成文章</p>
+<p>文章写好之后，首先清除掉旧的数据：</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 
+<p>这个命令会清除掉之前生成的网页，即站点根目录下的<code>public</code>文件夹</p>
+<p>然后使用如下命令生成新的页面：</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>这个命令会将<code>source</code>文件夹下所有的md文件进行渲染，生成HTML页面，存放在<code>public</code>文件夹下</p>
+<h3 id="Hexo博客-部署"><a href="#Hexo博客-部署" class="headerlink" title="Hexo博客 部署"></a>Hexo博客 部署</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/one-command-deployment.html">部署</a><br>Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">简写 hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="Hexo博客-文章分类"><a href="#Hexo博客-文章分类" class="headerlink" title="Hexo博客 文章分类"></a>Hexo博客 文章分类</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/50787870">Hexo+Github博客教程：03添加分类</a><br>打开命令行，进入博客所在文件夹。执行命令</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
 
-
-
-
+<h3 id="Hexo博客删除文章"><a href="#Hexo博客删除文章" class="headerlink" title="Hexo博客删除文章"></a>Hexo博客删除文章</h3><h4 id="普通删除方式"><a href="#普通删除方式" class="headerlink" title="普通删除方式"></a>普通删除方式</h4><p>Hexo正常删除文章的流程是先删除本地文件。</p>
+<p>以原始文件：helloworld.md为例：</p>
+<p>首先进入到source &#x2F; _post 文件夹中，找到helloworld.md文件，在本地直接执行删除。</p>
+<p>然后依次执行命令：</p>
+<figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这样就删除成功了</p>
+<h4 id="已发布文章删除"><a href="#已发布文章删除" class="headerlink" title="已发布文章删除"></a>已发布文章删除</h4><p>如果你已经将文章git发布了，此时会在本地创建一个名为 .deploy_git的文件夹，并将生成的文件复制到该文件夹。</p>
+<p>你需要删除本地的文章后，再删除 .deploy_git文件夹。</p>
+<p>最后依次执行正常删除的命令。</p>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2140491">hexo删除文章</a></p>
-
+<h3>修改主题设置</h3>
+<p>总体设置：修改Blog/themes/diaspora/_config.yml<br>
+修改背景音乐：将 Blog/source/_posts 中对应文件的文件头mp3指向 Blog/themes/diaspora/audio/xxx.mp3 。<br>
+修改封面：将 Blog/source/_posts 中对应文件的文件头cover指向 Blog/themes/diaspora/img/xxx.png 。<br>
+</p>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">

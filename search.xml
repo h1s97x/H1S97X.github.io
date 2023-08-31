@@ -5,12 +5,13 @@
     <url>/2023/08/28/CDN%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p><a href="https://www.jsdelivr.com/">在线CDN工具</a></p>
 <h2 id="CDN介绍"><a href="#CDN介绍" class="headerlink" title="CDN介绍"></a>CDN介绍</h2><p>More Info：<a href="https://zhuanlan.zhihu.com/p/28940451">详解</a></p>
-<p>全称:Content Delivery Network或Content Ddistribute Network，即内容分发网络</p>
 <h3 id="内容导引"><a href="#内容导引" class="headerlink" title="内容导引"></a>内容导引</h3><p>某视频APP实现1千万用户同时在线观看。</p>
 <p>如果大家观看的是1080p清晰度的视频（理论上需要4Mbps带宽），那么，累计需要的流量带宽是10,000,000×4Mbps&#x3D;40,000,000Mbps&#x3D;40Tbps。</p>
 <p>对于优酷、爱奇艺这样的互联网视频内容提供商来说，这无疑是非常巨大的流量压力。<br>我们普通计算机的网卡，是1Gbps的带宽。如果优酷有一台超级服务器，那么，这台超级服务器就需要4万块网卡，而且必须百分之百跑满速度，才能够实现这1千万用户的流畅观看。<br>对于一些实力不够的服务商，或者突发流量陡增的情况，就会造成拥塞，从而导致卡顿和延时。<br>有这么一个说法：当用户打开一个页面，等待超过4秒，他就会关闭这个页面。也就是说，这个用户就会流失。</p>
 <p><strong>控制时延</strong></p>
 <p>无疑是现代信息科技的重要指标，CDN的意图就是尽可能的减少资源在转发、传输、链路抖动等情况下顺利保障信息的连贯性</p>
+<p>因为这项技术是把内容进行了分发，所以，它的名字就叫做:Content Delivery Network或Content Ddistribute Network，即<strong>内容分发网络</strong></p>
+<p><strong>CDN&#x3D;更智能的镜像+缓存+流量导流。</strong></p>
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>CDN这个技术其实说起来并不复杂，最初的核心理念，就是将内容缓存在终端用户附近。<br>内容源不是远么？那么，我们就在靠近用户的地方，建一个缓存服务器，把远端的内容，复制一份，放在这里，不就OK了？</p>
 <img class="ztext-gif" width="640" role="presentation" src="https://pic1.zhimg.com/v2-aa9f483b52208241bcbbe6ce95028344_b.webp" data-thumbnail="https://pic1.zhimg.com/v2-aa9f483b52208241bcbbe6ce95028344_b.jpg" data-size="normal" alt="动图" style="display: block;">
 
@@ -30,29 +31,71 @@
 <li data-pid="H9lyFGfp">用户向缓存服务器发起请求，缓存服务器响应用户请求，将用户所需内容传送到用户终端。如果这台缓存服务器上并没有用户想要的内容，而区域均衡设备依然将它分配给了用户，那么这台服务器就要向它的上一级缓存服务器请求内容，直至追溯到网站的源服务器将内容拉到本地。</li>
 </ol>
 </blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/52362950">通俗介绍——非常推荐</a><br><a href="https://www.zhihu.com/question/491891705">简要介绍</a><br><a href="https://zhuanlan.zhihu.com/p/28940451">较全面介绍——不太好懂</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>RSS订阅</title>
+    <url>/2023/08/29/RSS%E8%AE%A2%E9%98%85/</url>
+    <content><![CDATA[<p><a href="https://www.moerats.com/archives/567/">使用RSS订阅B站UP主的方法</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>SDU自动评教 JS脚本编写</title>
+    <url>/2023/08/29/SDU%E8%87%AA%E5%8A%A8%E8%AF%84%E6%95%99-JS%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/</url>
+    <content><![CDATA[<p><a href="https://gitee.com/kumatea/SYSU-Student-Evaluation/blob/master/AutoEval.js">中大自动评教JS脚本</a></p>
+<p>之前用的是学长发布的版本，已经失效无法使用，暑假期间试着自己重写了一个，写成JS脚本发布到油猴里了，之后搬运一下~<br><a href="https://zhuanlan.zhihu.com/p/154040670">如何从无到有 打造一只油猴自动评教姬</a><br><a href="https://github.com/CodingDogzxg/QAUAutoEvaluator/blob/master/QAUAutoEvaluator.js">青岛农业大学自动评教脚本</a><br><a href="https://cloud.tencent.com/developer/article/1538030">javaScript和jQuery获取、设置textarea标签的内容（取值和赋值）</a><br><a href="https://github.com/yqylh/sduContentionCourse/blob/c8333d162ea27d6310de55cd97456fd8defc4f30/1.js">sduContentionCourse</a></p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">// ==UserScript==</span><br><span class="line">// @name         SDU自动评教脚本</span><br><span class="line">// @namespace</span><br><span class="line">// @version      0.1</span><br><span class="line">// @description  SDU 期末评教 自动评教</span><br><span class="line">// @author       QAUCodingDog_zxg</span><br><span class="line">// @match        https://bkzhjx.wh.sdu.edu.cn/jsxsd/xspj/xspj_list.do?*</span><br><span class="line">// @match        https://bkzhjx.wh.sdu.edu.cn/jsxsd/xspj/xspj_edit.do?*</span><br><span class="line">// @grant        none</span><br><span class="line">// ==/UserScript==</span><br><span class="line"></span><br><span class="line">// 首先我们声明一个变量 用来记录选课网址的第一页的网址</span><br><span class="line">// 由于每个学期都会有不同 我们只截取网址的一部分进行判断</span><br><span class="line">var mainPage = &quot;https://bkzhjx.wh.sdu.edu.cn/jsxsd/xspj/xspj_list.do?&quot;;</span><br><span class="line">var evaluationMainPage = &quot;https://bkzhjx.wh.sdu.edu.cn/jsxsd/xspj/xspj_edit.do?&quot;;</span><br><span class="line">// 然后我们获取当前页的网址 判断是否和第一页的网址匹配</span><br><span class="line">var url = location.pathname;</span><br><span class="line"></span><br><span class="line">// 绘制窗口</span><br><span class="line">if (mainPage.indexOf(url) != -1) &#123;</span><br><span class="line">    // 主题</span><br><span class="line">    var style_btn = &#x27;float:right;background:rgba(228,228,228,0.4); cursor:pointer; margin:0px 1px 0px 0px; padding:0px 3px;color:black; border:2px ridge black;border:2px groove black;&#x27;;</span><br><span class="line">    var style_win_top = &#x27;z-index:998; padding:6px 10px 8px 15px;background-color:lightGrey;position:fixed;left:5px;top:5px;border:1px solid grey; &#x27;;</span><br><span class="line">    var style_win_buttom = &#x27;z-index:998; padding:6px 10px 8px 15px;background-color:lightGrey;position:fixed;right:5px;bottom:5px;border:1px solid grey;  &#x27;;</span><br><span class="line"></span><br><span class="line">    // 开始绘制</span><br><span class="line">    var newDiv = document.createElement(&quot;div&quot;);</span><br><span class="line">    newDiv.id = &quot;controlWindow&quot;;</span><br><span class="line">    newDiv.align = &quot;left&quot;;</span><br><span class="line">    document.body.appendChild(newDiv);</span><br><span class="line">    GM_addStyle(&quot;#controlWindow&#123;&quot; + style_win_top + &quot; &#125;&quot;);</span><br><span class="line">    var table = document.createElement(&quot;table&quot;);</span><br><span class="line">    newDiv.appendChild(table);</span><br><span class="line">    var th = document.createElement(&quot;th&quot;);</span><br><span class="line">    th.id = &quot;headTd&quot;;</span><br><span class="line">    var thDiv = document.createElement(&quot;span&quot;);</span><br><span class="line">    thDiv.id = &quot;thDiv&quot;;</span><br><span class="line">    thDiv.innerHTML = &quot;SDU Evaluator&quot;;</span><br><span class="line">    GM_addStyle(&quot;#thDiv&#123;color:red;font-size: 12pt;&#125;&quot;);</span><br><span class="line">    th.appendChild(thDiv);</span><br><span class="line">    table.appendChild(th);</span><br><span class="line">    var tr = document.createElement(&quot;tr&quot;);</span><br><span class="line">    table.appendChild(tr);</span><br><span class="line">    var tr2= document.createElement(&quot;tr&quot;);</span><br><span class="line">    table.appendChild(tr2);</span><br><span class="line">    var td = document.createElement(&quot;td&quot;);</span><br><span class="line">    td.id = &quot;footTd&quot;;</span><br><span class="line">    var td2 = document.createElement(&quot;td&quot;);</span><br><span class="line">    td2.id = &quot;footTd2&quot;;</span><br><span class="line">    tr.appendChild(td);</span><br><span class="line">    tr2.appendChild(td2);</span><br><span class="line">    var close = document.createElement(&quot;span&quot;);</span><br><span class="line">    close.id = &quot;close&quot;;</span><br><span class="line">    close.innerHTML = &quot;关闭弹窗&quot;;</span><br><span class="line">    close.addEventListener(&quot;click&quot;, function () &#123;document.body.removeChild(document.getElementById(&quot;controlWindow&quot;));&#125;, false);</span><br><span class="line">    td.appendChild(close);</span><br><span class="line">    GM_addStyle(&quot;#close&#123;&quot; + style_btn + &quot;&#125;&quot;);</span><br><span class="line"></span><br><span class="line">    var score = document.createElement(&quot;span&quot;);</span><br><span class="line">    score.id = &quot;score&quot;;</span><br><span class="line">    score.innerHTML = &quot;开始评教&quot;;</span><br><span class="line">    score.addEventListener(&quot;click&quot;, StartEvaluate);</span><br><span class="line">    td.appendChild(score);</span><br><span class="line">    GM_addStyle(&quot;#score&#123;&quot; + style_btn + &quot;&#125;&quot;);</span><br><span class="line">    var star = document.createElement(&quot;span&quot;);</span><br><span class="line">    star.id = &quot;star&quot;;</span><br><span class="line">    star.innerHTML = &quot;联系作者&quot;;</span><br><span class="line">    star.addEventListener(&quot;click&quot;, function () &#123;window.open(&quot;mailto:codingdogzxg@gmail.com&quot;, &quot;_blank&quot;);&#125;);</span><br><span class="line">    td2.appendChild(star);</span><br><span class="line">    GM_addStyle(&quot;#star&#123;&quot; + style_btn + &quot;&#125;&quot;);</span><br><span class="line">    var open = document.createElement(&quot;span&quot;);</span><br><span class="line">    open.id = &quot;open&quot;;</span><br><span class="line">    open.innerHTML = &quot;项目地址&quot;;</span><br><span class="line">    open.addEventListener(&quot;click&quot;, function () &#123;window.open(&quot;https://github.com/CodingDogzxg/QAUAutoEvaluater&quot;, &quot;_blank&quot;);&#125;);</span><br><span class="line">    td2.appendChild(open);</span><br><span class="line">    GM_addStyle(&quot;#open&#123;&quot; + style_btn + &quot;&#125;&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function StartEvaluate()&#123;</span><br><span class="line">// 进行判断 如果mainpage是url的一部分</span><br><span class="line">// 也就是说 如果当前页是第一页 就执行代码</span><br><span class="line">if(url.indexOf(mainPage) != -1) &#123;</span><br><span class="line">    var tableBox = document.getElementsById(&quot;dataList&quot;);</span><br><span class="line">    var tableList = tableBox.getElementsByTagName(&quot;a&quot;);</span><br><span class="line"></span><br><span class="line">    var pageList = [];</span><br><span class="line">    // 需要循环b列表的长度次 然后把取出的a标签放入pagelist列表</span><br><span class="line">    for(var i=0;i&lt;tableList.length;i++)&#123;</span><br><span class="line">        pageList.push(tableList[i].getAttribute(&quot;href&quot;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 循环pagelist列表的长度次 然后依次访问网址</span><br><span class="line">    for(var j = 0; j &lt; pageList.length; j++) &#123;</span><br><span class="line">        window.open(pageList[j], &quot;_blank&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 评教页面第三页 等级判断 保存按钮</span><br><span class="line">if (evaluationMainPage.indexOf(url) != -1) &#123;</span><br><span class="line">    var allTable = document.getElementById(&quot;table1&quot;).getElementsByTagName(&quot;tr&quot;);</span><br><span class="line">    var allTableLen = allTable.length;</span><br><span class="line">    for(var k = 1; k &lt; allTableLen; k++)&#123;</span><br><span class="line">        if(k = 21)&#123;</span><br><span class="line">            allTable[k].getElementsByTagName(&quot;td&quot;)[1].getElementsByTagName(&quot;input&quot;)[2].setAttribute(&quot;checked&quot;, &quot;checked&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else if(k=23)&#123;</span><br><span class="line">            allTable[k].getElementsByTagName(&quot;td&quot;)[1].getElementsByTagName(&quot;textarea&quot;)[0].innerHTML= &quot;课程内容生动有趣&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            allTable[k].getElementsByTagName(&quot;td&quot;)[1].getElementsByTagName(&quot;input&quot;)[0].setAttribute(&quot;checked&quot;, &quot;checked&quot;);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    var saveButton = document.getElementById(&quot;bc&quot;);</span><br><span class="line">    saveButton.click();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>Scrapy爬虫</title>
     <url>/2023/07/23/Scrapy%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<h1 id="Scrapy-爬取静态HTML页面"><a href="#Scrapy-爬取静态HTML页面" class="headerlink" title="Scrapy 爬取静态HTML页面"></a>Scrapy 爬取静态HTML页面</h1><h3 id="第一次写个人Blog-作为学习生涯的一点小小记录，也是不断摸索前进的一点慰藉。"><a href="#第一次写个人Blog-作为学习生涯的一点小小记录，也是不断摸索前进的一点慰藉。" class="headerlink" title="第一次写个人Blog,作为学习生涯的一点小小记录，也是不断摸索前进的一点慰藉。"></a>第一次写个人Blog,作为学习生涯的一点小小记录，也是不断摸索前进的一点慰藉。</h3><!-- 注意在符号与内容之间的空格，不加空格会认为都是文本内容 -->
 
-<!DOCTYPE html>
-<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
+    <style type ="text/css">
+    .prettyprint {
+    margin: 0 0 24px;
+    padding: 8px 16px 6px 56px;
+    background-color: #f6f8fa;
+    border: none;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+    pre {
+    position: relative;
+    font-family: Consolas,Inconsolata,Courier,monospace;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000;
+}	
+.prettyprint .pre-numbering {
+    position: absolute;
+    width: 48px;
+    background-color: #eef0f4;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+    text-align: center;
+}
+    </style>
 </head>
-<body>
 
-</body>
-</html>]]></content>
-  </entry>
-  <entry>
-    <title>F12 开发者工具的使用</title>
-    <url>/2023/08/22/F12-%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/138922503">F12功能简单介绍</a></p>
+
+<p>Upadate 8.29<br><a href="https://blog.csdn.net/dangsh_/article/details/78617178">css选择器(Selectors) 用法</a></p>
+<ol><li>#container 选择id为container的元素</li><li>.container 选择所有class包含container的元素</li><li>* 选择所有元素</li><li>div a 选取所有div下所有a元素</li><li>ul + p 选取ul后面的第一个p元素</li><li>ul ~p 选取与ul相邻的所有p元素</li><li>a:nth-child(2) 选取下面第二个标签，如果是a的话则选取，不是则不取</li><li>a:nth-child(2n) 选取第偶数个a元素</li><li>a:nth-child(2n+1) 选取第奇数个a元素</li><li>li.multi-chosen &gt; a 选取class为multi-chosen的li的所有a元素</li><li>a[title] 选取所有拥有title属性的a元素</li><li>a[href=”https://www.lagou.com/jobs/3537439.html”] 选取所有href属性为<a href="https://www.lagou.com/jobs/3537439.html" target="_blank" rel="noopener noreferrer">https://www.lagou.com/jobs/3537439.html</a>的a元素</li><li>a[href*=”www.lagou.com”] 选取所有href属性值中包含www.lagou.com的a元素</li><li>a[href^=”http”] 选取所有href属性值中以http开头的a元素</li><li>div:not(#content-container) 选取所有id为非content-container 的div</li></ol>
+
+
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">import scrapy</span><br><span class="line">from First.items import FirstItem</span><br><span class="line"></span><br><span class="line">class Lagou(scrapy.Spider):</span><br><span class="line">    name = &quot;forth&quot;</span><br><span class="line">    start_urls = [</span><br><span class="line">        &quot;https://www.lagou.com/zhaopin/Java/&quot;</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def parse(self , response):</span><br><span class="line">        pass</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">def parse(self , response):</span><br><span class="line">    for item in response.css(&#x27;#lg_tnav h1&#x27;):</span><br><span class="line">        jobMessage = item.css(&#x27;::text&#x27;).extract()</span><br><span class="line">        print(jobMessage)</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考-笔记暂未写"><a href="#参考-笔记暂未写" class="headerlink" title="参考 笔记暂未写"></a>参考 笔记暂未写</h3><p><a href="https://blog.csdn.net/printf123scanf/article/details/105911511?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=">scrapy爬取script标签中某个var变量的值</a><br><a href="https://www.cnblogs.com/syq816/p/12612263.html">Python中使用正则表达式获取两个字符中间部分</a><br><a href="https://github.com/airingursb/bilibili-user">Bilibili用户爬虫</a><br><a href="https://zhuanlan.zhihu.com/p/357392015">这才是B站爬虫的正确姿势，视频、评论、弹幕全部拿下</a><br><a href="https://blog.csdn.net/Java_ZZZZZ/article/details/131630415">【python爬虫实战】：不同验证码的自动识别</a><br><a href="https://blog.csdn.net/gets_s/article/details/115839687">爬虫之模拟登录、自动获取cookie值、验证码识别</a><br><a href="https://www.cnblogs.com/angelyan/p/12207835.html#:~:text=1.%E6%89%93%E5%BC%80tasker%E7%95%8C%E9%9D%A2%EF%BC%8C%E7%82%B9%E5%87%BB%E5%8F%B3%E4%B8%8B%E5%8A%A0%E5%8F%B7%202.%E7%82%B9%E5%87%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%EF%BC%8C%E9%80%89%E6%8B%A9%E4%BA%8B%E4%BB%B6,3.%E9%80%89%E6%8B%A9%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%9E%8B%EF%BC%8C%E7%82%B9%E5%87%BB%E7%94%B5%E8%AF%9D%204.%E7%82%B9%E5%87%BB%E6%94%B6%E5%88%B0%E7%9F%AD%E4%BF%A1%205.%E5%9C%A8%E5%8F%91%E4%BB%B6%E4%BA%BA%E5%92%8C%E5%86%85%E5%AE%B9%E4%B8%AD%E5%A1%AB%E5%86%99%E8%BF%87%E6%BB%A4%E6%9D%A1%E4%BB%B6%EF%BC%8C%E6%AF%94%E5%A6%82%EF%BC%9A10086%E5%8F%91%E6%9D%A5%E7%9A%84%EF%BC%8C%E5%86%85%E5%AE%B9%E6%98%AF%E9%AA%8C%E8%AF%81%E7%A0%81%EF%BC%8C%E7%84%B6%E5%90%8E%E7%9B%B4%E6%8E%A5%E7%82%B9%E5%87%BB%E5%B7%A6%E4%B8%8A%E8%A7%92%E7%9A%84%E8%BF%94%E5%9B%9E%E6%8C%89%E9%92%AE%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98">python爬虫解决手机验证码问题 </a><br><a href="https://zhuanlan.zhihu.com/p/154055263">网络爬虫|网页中嵌套iframe框架内容爬取的两种思路</a><br><a href="https://blog.csdn.net/lihaian/article/details/126104447">爬虫—scrapy爬虫框架（详细+实战）</a><br><a href="https://cloud.tencent.com/developer/article/1826626">浅谈Python两大爬虫库——urllib库和requests库区别</a><br><a href="https://blog.csdn.net/qq_43546676/article/details/88777227">urllib.request详细介绍</a><br><a href="https://www.cnblogs.com/litufu/articles/8721207.html">pandas read_html使用详解（一）</a><br><a href="https://cloud.tencent.com/developer/article/1559913?from=15425">js爬虫，正则</a><br><a href="https://blog.csdn.net/yang731227/article/details/83900422">go语言模拟网站登录并爬虫</a><br><a href="https://cloud.tencent.com/developer/article/1406499?from=15425">python爬虫的重定向问题</a><br><a href="https://www.cnblogs.com/LXP-Never/p/11382216.html">爬虫——控制台抓包和requests.post()发送请求</a><br><a href="https://blog.csdn.net/qq_28072715/article/details/79387422">python ：codecs模块简介</a><br><a href="https://juejin.cn/post/6991828558096105485">嵌入的iframe</a><br><a href="https://www.cnblogs.com/taolusi/p/9282565.html">Python爬取javascript(js)动态网页</a><br><a href="https://blog.csdn.net/qq_32623363/article/details/78768636">python3（urlopen）获取网页的坑</a><br><a href="https://juejin.cn/post/7135036717966786573">正则表达式-如何简单匹配HTML中a标签的href</a><br><a href="https://blog.csdn.net/weixin_43452467/article/details/113884408">正则表达式匹配指定字符串中间内容</a><br><a href="https://www.cnblogs.com/zhongyehai/p/9170366.html">python+selenium四：iframe查看、定位、切换</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -127,27 +170,10 @@ $("#content_views").unbind("copy").bind("copy", function(e) &#123;
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/06/04/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>diary</title>
     <url>/2023/08/28/diary/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h5 id="2023-08-28"><a href="#2023-08-28" class="headerlink" title="2023.08.28"></a>2023.08.28</h5><p>今天做了很多工作，一刷3周以来的颓废状态，总算开始一些创作<br>早上写了游戏攻略，本来以为1个小时就差不多，结果一直从八点20到11点多，花了2个多小时，下午又花了点时间加了点新内容<br>下午看了稚晖君的开源项目，准备过几天花时间研究研究，这两天把板子和需要的电子材料买一下。<br>然后是主要工作，昨晚已经开始写hexo博客了，今天写了很多，准备把收藏夹的一些内容清一清，太多了平时根本不花时间看~</p>
+]]></content>
   </entry>
   <entry>
     <title>hexo搭建</title>
@@ -170,24 +196,65 @@ $("#content_views").unbind("copy").bind("copy", function(e) &#123;
 |   ├── _drafts
 |   └── _posts
 └── themes
-            <div class="hljs-button &#123;2&#125;" data-title="复制"></div>
-        </code>
-        <ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li>
-        </ul>
-    </pre>
-    <h3>修改主题设置</h3>
-    <p>总体设置：修改Blog/themes/diaspora/_config.yml<br>
-修改背景音乐：将 Blog/source/_posts 中对应文件的文件头mp3指向 Blog/themes/diaspora/audio/xxx.mp3 。<br>
-修改封面：将 Blog/source/_posts 中对应文件的文件头cover指向 Blog/themes/diaspora/img/xxx.png 。<br></p>
+</code></pre></body>
 
+<h3 id="Hexo博客新建-amp-发布文章"><a href="#Hexo博客新建-amp-发布文章" class="headerlink" title="Hexo博客新建&amp;发布文章"></a>Hexo博客新建&amp;发布文章</h3><p><a href="https://hexo.io/zh-cn/docs/writing.html">写作</a><br><a href="https://cloud.tencent.com/developer/article/1662733">Hexo博客教程（二）| 如何写作新文章并发布</a></p>
+<h4 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h4><p>在网站根目录下打开命令行Git Bash Here，使用如下命令创建新文章：</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>执行该命令，Hexo会在&#x2F;source&#x2F;_posts目录下创建一篇新的文章。</p>
+<h4 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h4><p>打开 Hexo 创建的文章可以看到，文章开头有这样一段：</p>
+<img src="https://ask.qcloudimg.com/http-save/yehe-1088047/rpunttrv54.png" alt="">
 
+<p>这个使用—包括起来的内容称之为Front-matter，即前置信息，用于给 Hexo 渲染该 md 文档，除了这三项，还有很多的配置项可以自己添加：</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left;"><div><div class="table-header"><p>配置项</p></div></div></th><th style="text-align: left;"><div><div class="table-header"><p>意义</p></div></div></th></tr></thead><tbody><tr><td style="text-align: left;"><div><div class="table-cell"><p>title</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>网页文章标题</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>date</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章创建如期</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>comments</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章评论功能是否启动</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>tags</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章标签</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>categories</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章分类</p></div></div></td></tr><tr><td style="text-align: left;"><div><div class="table-cell"><p>keywords</p></div></div></td><td style="text-align: left;"><div><div class="table-cell"><p>文章关键字</p></div></div></td></tr></tbody></table></div>
 
+<p>生成文章</p>
+<p>文章写好之后，首先清除掉旧的数据：</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 
+<p>这个命令会清除掉之前生成的网页，即站点根目录下的<code>public</code>文件夹</p>
+<p>然后使用如下命令生成新的页面：</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>这个命令会将<code>source</code>文件夹下所有的md文件进行渲染，生成HTML页面，存放在<code>public</code>文件夹下</p>
+<h3 id="Hexo博客-部署"><a href="#Hexo博客-部署" class="headerlink" title="Hexo博客 部署"></a>Hexo博客 部署</h3><p><a href="https://hexo.io/zh-cn/docs/one-command-deployment.html">部署</a><br>Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">简写 hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="Hexo博客-文章分类"><a href="#Hexo博客-文章分类" class="headerlink" title="Hexo博客 文章分类"></a>Hexo博客 文章分类</h3><p><a href="https://zhuanlan.zhihu.com/p/50787870">Hexo+Github博客教程：03添加分类</a><br>打开命令行，进入博客所在文件夹。执行命令</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
 
-
-
-
+<h3 id="Hexo博客删除文章"><a href="#Hexo博客删除文章" class="headerlink" title="Hexo博客删除文章"></a>Hexo博客删除文章</h3><h4 id="普通删除方式"><a href="#普通删除方式" class="headerlink" title="普通删除方式"></a>普通删除方式</h4><p>Hexo正常删除文章的流程是先删除本地文件。</p>
+<p>以原始文件：helloworld.md为例：</p>
+<p>首先进入到source &#x2F; _post 文件夹中，找到helloworld.md文件，在本地直接执行删除。</p>
+<p>然后依次执行命令：</p>
+<figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这样就删除成功了</p>
+<h4 id="已发布文章删除"><a href="#已发布文章删除" class="headerlink" title="已发布文章删除"></a>已发布文章删除</h4><p>如果你已经将文章git发布了，此时会在本地创建一个名为 .deploy_git的文件夹，并将生成的文件复制到该文件夹。</p>
+<p>你需要删除本地的文章后，再删除 .deploy_git文件夹。</p>
+<p>最后依次执行正常删除的命令。</p>
 <p><a href="https://cloud.tencent.com/developer/article/2140491">hexo删除文章</a></p>
+<h3>修改主题设置</h3>
+<p>总体设置：修改Blog/themes/diaspora/_config.yml<br>
+修改背景音乐：将 Blog/source/_posts 中对应文件的文件头mp3指向 Blog/themes/diaspora/audio/xxx.mp3 。<br>
+修改封面：将 Blog/source/_posts 中对应文件的文件头cover指向 Blog/themes/diaspora/img/xxx.png 。<br>
+</p>]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/06/04/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -204,7 +271,7 @@ $("#content_views").unbind("copy").bind("copy", function(e) &#123;
     color: white;
 }
 </style>
-<h1 id="jack-hfv2-21-游戏攻略"><a href="#jack-hfv2-21-游戏攻略" class="headerlink" title="jack-hfv2.21 游戏攻略"></a>jack-hfv2.21 游戏攻略</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href="#介绍">介绍</a><br><a href="#属性篇">属性篇</a><br><a href="#技能篇">技能篇</a><br><a href="#法术篇">法术篇</a><br><a href="#任务篇">任务篇</a><br><a href="#等级篇">等级篇</a><br><a href="#训练篇">训练篇</a><br><a href="#预兆篇">预兆篇</a><br><a href="#战斗篇">战斗篇</a><br><a href="#新手攻略">新手攻略</a><br><a href="#参考链接">参考链接</a></p>
+<h1 id="jack-hfv2-21-游戏攻略"><a href="#jack-hfv2-21-游戏攻略" class="headerlink" title="jack-hfv2.21 游戏攻略"></a>jack-hfv2.21 游戏攻略</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href="#介绍">介绍</a><br><a href="#属性篇">属性篇</a><br><a href="#装备篇">装备篇</a><br><a href="#技能篇">技能篇</a><br><a href="#法术篇">法术篇</a><br><a href="#任务篇">任务篇</a><br><a href="#等级篇">等级篇</a><br><a href="#训练篇">训练篇</a><br><a href="#预兆篇">预兆篇</a><br><a href="#战斗篇">战斗篇</a><br><a href="#新手攻略">新手攻略</a><br><a href="#作弊代码">作弊代码</a><br><a href="#ce修改">ce修改</a><br><a href="#参考链接">参考链接</a></p>
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>本篇大部分基于网络上已知攻略整合而来，少部分经过个人测试得出，本人自己测试过的会标记出来，用到的攻略会在末尾贴出</p>
 <p>本人游玩时长大约在50h左右 （目前暂未通关 8.28）<br>为了记录也是第一次尝试写攻略，做的不好请见谅</p>
 <h2 id="属性篇"><a href="#属性篇" class="headerlink" title="属性篇"></a>属性篇</h2><h3 id="男主属性"><a href="#男主属性" class="headerlink" title="男主属性"></a>男主属性</h3><img src="https://easylink.cc/wfgxho" title="男主属性">
@@ -241,6 +308,7 @@ $("#content_views").unbind("copy").bind("copy", function(e) &#123;
 
 <h4 id="恶魔培养"><a href="#恶魔培养" class="headerlink" title="恶魔培养"></a>恶魔培养</h4><figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">1.先在贸易广场——地厂商办公室买房</span><br><span class="line">2.拓展服务：租一个恶魔围栏（10$ 10days）</span><br><span class="line">3.到迷雾边境——走私犯老巢处购买迷雾恶魔（100$)</span><br><span class="line">4.刷一个特殊助理，练性技能——恶魔X到S级</span><br><span class="line">5.点击助理头像——进入助理面板后选择恶魔榨精</span><br><span class="line">6.每天只要助理精力不为负即可（最好空精力）</span><br></pre></td></tr></table></figure>
 <h4 id="特殊助理"><a href="#特殊助理" class="headerlink" title="特殊助理"></a>特殊助理</h4><figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">1.有奴隶情况下，迷雾边境处进出场景可刷</span><br><span class="line">2.同上（具体条件未知）</span><br></pre></td></tr></table></figure>
+
 <h3 id="精灵装备"><a href="#精灵装备" class="headerlink" title="精灵装备"></a>精灵装备</h3><p>家政：女仆套装 +2、橡胶手套 +1、穆斯林头巾 +1<br>厨艺：花边围裙 +2，穆斯林头巾 +1<br>秘书：女生校服 +2，时尚眼镜 +1<br>演讲：和服浴袍 +2<br>护理：护士套装 +2，橡胶手套 +1<br>炼金：法师长袍 +3<br>魔法：法师长袍 +3<br>体能：锁甲比基尼 +2，长筒皮靴 +2（运动服装运动鞋大失败）<br>角斗：锁甲比基尼 +3，纤维手套 +2，塔比短袜 +2，尖刺项圈 +1<br>舞蹈：异国服装 +3，芭蕾舞鞋 +2<br>音乐：无<br>艺术：无<br>宠物：宠物套装 +3&#x2F;gang塞马尾 +2，牵宠皮具 +1，毛绒爪套 +1，猫耳 +1<br>（宠物套装对其他训练的debuff太重，一旦忘了脱下来血亏）<br>马术：gang塞马尾 +2，小马笼头 +3，马蹄靴 +3，马具胸衣 +4<br>奶牛：奶牛设备 +2<br>.<br>xing训练：皮革胸衣 +4，长筒皮靴 +2，乳链 +1<br>.<br>降低傲慢：钢圈 -2，gang塞马尾 -1，小马笼头 -3，马蹄靴 -1，马具胸衣 -2<br>项圈+马术四件套在服装方面又提供了降低slave傲慢的途径，只需要第一天释放一次心灵操控，然后穿上即可，配合规则来降低傲慢，效率可以说已经很高了</p>
 <p>时装影响魅力：一般穿异国服装就能到蓝</p>
 <h2 id="法术篇"><a href="#法术篇" class="headerlink" title="法术篇"></a>法术篇</h2><img src="https://easylink.cc/ewyktk" title="法术">
@@ -322,11 +390,438 @@ $("#content_views").unbind("copy").bind("copy", function(e) &#123;
 <blockquote>
 <p>一种思路<br>默认男主初期有2600火花，一副铠甲，一把重剑，经济充裕。游戏开始直接在家点女主位，去拍卖行，20起拍，不是傲慢的随便来一个，最终价尽量不要超过50，然后放逐区打品牌纹身，怀特区精灵沙龙给双方洗澡，武器店买屠夫的砍肉刀，服装店买一件巫师长袍，地产商租金牛区房子，回家魔法挨个打上，解释处境，训练（最初训练就是家务和烹饪，其他容易反抗）。第二天继续，女主没体力了就去怀特区给双方洗澡，顺道买点食物。前期男主体力消耗肯定多于女主，体力为负也没关系，只要不晕就行。因为角斗场开始比赛的日子，从家里直接点角斗场再进怀特区是不耗体力的，而且女主打角斗场男主不耗体力，负的体力可以利用这个日子回复。但是女主体力不要负数，服从低的情况下体力负数会降情绪和服从。忠诚等级3，评价D+之后变成助手，然后再去拍卖行随便找个20的，这个是专门打竞技场做公牛之戒任务的，只要忠诚提到3级以上，其他可以无视（我最后一个档服从-7带去都要了）。得到公牛之戒后，限制男主行动的障碍没有了，再去拍卖行弄个20的，不要傲慢（出货慢），再把所有区客户跑一遍，记住要D+的都是什么，然后根据属性进行最优方向培训，到D+交货。这期间可以租个恶魔栏，买只恶魔培养到利维坦去交任务换渡鸦之冠。等到火花快花完时，女主应该在B+甚至A+，去拍卖行可得2600+到3800+（最高），如果火花快没了，差一点到A+，可以去雾的边缘找债主借500,20天内还600即可。有4000+火花时（算上可借的），去拍卖行（去前存档，或者有底气去雾的边缘狩猎也行），刷个样貌精致的（其他属性好美丽也行，最后再整容，依靠名誉提升的话，需要打完挑战冠军，团队战，挑战恶魔，总共需要参加7场，用时49天以上，而一旦出bug少打一场就彻底凉了，马术比赛不加荣誉），一直培训到评价S+，拍卖行最低5850，最高8125，去之前存档，拍到7750即可，然后继续，拍出1个A+，2个S+之后，品牌等级就应该到传奇了，这时候随便送去一个都能拍到5000+，相当于每10天进账最低5000，再破产就去医院看脑科吧。</p>
 </blockquote>
+<blockquote>
+<p>个人想法<br>这游戏时间比较长了，又是国外的游戏，国内没什么讨论环境，一开始什么都不懂玩起来很折磨，我也试了n次开局才勉强懂了些，加上save&#x2F;load很慢<span title="你知道的太多了" class="heimu">这点真的很想吐槽！</span><br>新人上手最好是能够玩一下游戏的新手模式，要是大神的话直接就能上手了（笑）<br>沙盒模式可以自己测试，游戏有内置的作弊系统，<strong>注意</strong>记得把钱搞满，不然用两下会显示钱不够不让用了（每次使用都会扣钱）<br>剧情模式就选第一个简单的上手，前期先去白金区买房：金牛区-地牢，恶魔围栏，实验室（别怕钱不够，都有用） 买装备：一把火焰刀（200$）, 或者自己用就再买屠夫刀（20$）<span title="你知道的太多了" class="heimu">记得存档S&#x2F;L！</span>给自己买服装：巫师长袍，制服。回家换上衣服（简单剧情开场好像送神器渡鸦之冠,记得装上，之后就不用占卜了）之后是slave公会选D-的培养项目,前期推荐养个耐力满的，神智低下也没关系，不建议要傲慢满的这样会容易些。D-只需要常用技能累积到5级就行了，很容易练，一次500块。累积到一定钱数，自己也有经验了就可以做任务了，推荐先做广场军需官任务,拿公牛之戒，这样就可以锁一点精力随便想去哪个城就去。<br>精灵服从低（小于0）的时候就在说服界面选解释处境和威胁（威胁少用，会加绝望，绝望到3点就难救了），服从差不多到0（&gt;-3就差不多）就可以选择鼓励，其他两个就别点了，每次奖励或者惩罚时要根据具体点数选择，（选项左下角会有数值提醒）不然会加溺爱，溺爱如果上来了，就选主仆贵贱，会减溺爱。<br>训练最好先练耐力，耐力一次加3点，竞技一次加的非常多，一定要去！其他在别的篇章都有说，懒得敲字了~</p>
+</blockquote>
+<h3 id="作弊代码"><a href="#作弊代码" class="headerlink" title="作弊代码"></a>作弊代码</h3><p>打开游戏的核心文件，然后去搜索那些作弊码，就可以找到作弊码所在的文本。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">在沙盒或自定义模式里取自己名字的时候输入就行了</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>JeanGrey（低作弊）：<br>包括CrushBoss，Thor，Hulk，Isabella，Rogue</p>
+</blockquote>
+<blockquote>
+<p>BlackWidow（中等作弊）（好像和上面一样的。Enchantress没用）：<br>包括CrushBoss，Thor，Hulk，Isabella，Rogue，Enchantress</p>
+</blockquote>
+<blockquote>
+<p>ScarletWitch（高作弊）：<br>包括CrushBoss，Thor，Hulk，Elektra，Isabella，Rogue</p>
+</blockquote>
+<blockquote>
+<p>BlackCat（最大作弊）：<br>包括CrushBoss，Thor，Hulk，Isabella，Deathstrike，<br>无视派系争斗，奖杯全开，贵族，名声+，魔法印记价值+</p>
+</blockquote>
+<blockquote>
+<p>CrushBoss：<br>所有能力最大</p>
+</blockquote>
+<blockquote>
+<p>Thor：<br>开始时住宅位置&#x3D;怀特镇（所有房间）<br>在怀特镇的名誉（印记状态）&#x3D;4<br>+25000星火<br>有你魔法印记的奴隶价格+</p>
+</blockquote>
+<blockquote>
+<p>Hulk：<br>开始时住宅位置&#x3D;怀特镇<br>力量&#x3D; 5，性欲&#x3D; 5，支配&#x3D; 5<br>所有物品（武器，盔甲，衣服，食品，药品，特殊训练用品）<br>特殊宝物（渡鸦之冠、奇美拉宝石等等）</p>
+</blockquote>
+<blockquote>
+<p>loli：<br>所有奴隶都是萝莉</p>
+</blockquote>
+<blockquote>
+<p>young：<br>所有奴隶都是少女</p>
+</blockquote>
+<blockquote>
+<p>mature（或者milf）：<br>所有的奴隶都是熟女</p>
+</blockquote>
+<blockquote>
+<p>Elektra：<br>奴隶有武器，盔甲，衣服<br>奴隶：体型&#x3D; 4或5; 名誉&#x3D;1-3，口技+，群jiao+，抚慰+，暴露+，属性+，技能+，光环属性+，完整穿孔，如果不是萝莉就纹身，衣服齐全</p>
+</blockquote>
+<blockquote>
+<p>Isabella：<br>Isabella有：完整的穿孔，纹身，所有的衣服，武器和盔甲，珠宝，一些名誉，魔法印记，无法生育<br>如果你有恶魔栏的话，在得到Isabella的同时会得到一个恶魔</p>
+</blockquote>
+<blockquote>
+<p>Deathstrike：<br>奴隶有武器，盔甲，衣服<br>覆盖Elektra<br>获得完全训练好的奴隶</p>
+</blockquote>
+<blockquote>
+<p>Rogue：<br>奴隶有武器，盔甲，衣服<br>奴隶有完整的穿孔，纹身，衣服，盔甲，武器和配件</p>
+</blockquote>
+<h3 id="CE修改"><a href="#CE修改" class="headerlink" title="CE修改"></a>CE修改</h3><blockquote>
+<p>有具体数值的很简单：如星火、耐力、智力<br>女仆等技能在S+传授情况下，搜未知初始，再次扫描数值加5<br>选择精准搜索，4字节 —&gt; 输入数值然后首次搜索，数值变化再次搜索 -&gt; 一直到只剩一个或者几个数值 —&gt; 双击选中后会加入到下面地址栏里，改名并修改数值<br>想锁定就直接在左边的框里选中为X的状态即可</p>
+</blockquote>
+<blockquote>
+<p>没有具体数值：<br>女仆等技能在S+传授情况下，搜未知初始，再次扫描数值加5<br>对于单独的一个角色而言，每个技能的地址在升级技能后不变，但基础值归0.<br>也就是说，到b+以后搜加5可快速修改到S+.<br>升级后是从0开始的。如果不知道初始只能搜未知初始再一次次升级搜增加的值<br>学院服去上课满状态一次技能值+7.<br>150左右从A升到S</p>
+</blockquote>
+<p><a href="https://tieba.baidu.com/p/7390138859?pid=139683092790&cid=0#139683092790">CE修改贴参考——不具体</a></p>
 <h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="https://tieba.baidu.com/p/8512426825?pn=1">攻略图</a><br><a href="https://tieba.baidu.com/p/5703877808">特殊任务</a><br><a href="https://tieba.baidu.com/p/6050078854?pn=1#135461895181l">任务攻略</a><br><a href="https://www.andlaou.com/archives/152525">详细攻略</a><br><a href="https://www.vgc.cn/news/92923.html">新手攻略</a><br><a href="https://tieba.baidu.com/p/6692746556">脾气、智力如何提升</a></p>
 ]]></content>
       <categories>
         <category>游戏攻略</category>
       </categories>
+  </entry>
+  <entry>
+    <title>markdown语法</title>
+    <url>/2023/08/27/markdown%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>元素</th> 
+            <th>Markdown 语法</th>
+        </tr>
+    </thead> 
+    <tbody>
+        <tr>
+            <td><a href="">标题（Heading）</a></td> 
+            <td><code># H1<br>## H2<br>### H3</code></td>
+        </tr> 
+        <tr>
+            <td><a href="">粗体（Bold）</a></td> <td><code>**bold text**</code></td></tr> 
+        <tr>
+            <td><a href="">斜体（Italic）</a></td> 
+            <td><code>*italicized text*</code></td>
+        </tr> 
+        <tr>
+            <td><a href="">引用块（Blockquote）</a></td> 
+            <td><code>&gt; blockquote</code></td>
+        </tr> 
+        <tr>
+            <td><a href="">有序列表（Ordered List）</a></td>
+            <td><code>1. First item</code><br> <code>2. Second item</code><br> <code>3. Third item</code><br></td>
+        </tr>
+        <tr>
+            <td><a href="">无序列表（Unordered List）</a></td> 
+            <td><code>
+          - First item<br>
+          - Second item<br>
+          - Third item<br></code></td>
+        </tr> 
+        <tr>
+            <td><a href="">代码（Code）</a></td> <td><code>`code`</code></td>
+            </tr>
+        <tr>
+            <td><a href="">分隔线（Horizontal Rule）</a></td>
+            <td><code>---</code></td>
+        </tr> 
+        <tr>
+            <td><a href="">链接（Link）</a></td> <td><code>[title](https://www.example.com)</code></td>
+        </tr> 
+        <tr>
+            <td><a href="">图片（Image）</a></td> <td><code>![alt text](image.jpg)</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<blockquote>
+<p>Markdown语法</p>
+</blockquote>
+<ul>
+<li><p>添加图片<br><code>![图片alt](图片链接 &quot;图片title&quot;)</code></p>
+</li>
+<li><p>超链接<br><code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
+</li>
+<li><p>完成标记<br><code>- [x] content</code></p>
+</li>
+<li><p>改变字体颜色<br><code>$\color&#123;设置颜色&#125; &#123;文本内容&#125; $</code></p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">设置颜色：有三种表现形式</span><br><span class="line">1.直接用对应颜色的英文表示，如Blue（纯蓝）、Red（纯红）、Pink（粉红）等（首字母大小写都行）。</span><br><span class="line">2.rgb三原色(红绿蓝)：rgb(0,0,0)（黑色） 每一项0-255变化，全0为黑，全255为白。</span><br><span class="line">3.十六进制表示法：如#000000(黑色)、#ffffff(白色)、#008000（绿色）</span><br></pre></td></tr></table></figure>
+<p>一句话多个颜色，则用\隔开，其中，颜色代码可以随意更换</p>
+</li>
+<li><p>注意：在 HTML 块级标签内不能使用 Markdown 语法。例如 <code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 将不起作用。</p>
+</li>
+<li><p>italic and **bold**</p></li>
+</ul>
+<hr>
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="https://markdown.com.cn/">Markdown语法</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>‘种子’下载与相关内容</title>
+    <url>/2023/08/29/%E2%80%98%E7%A7%8D%E5%AD%90%E2%80%99%E4%B8%8B%E8%BD%BD%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/</url>
+    <content><![CDATA[<style type="text/css">
+rb[data-id="template-ruby"]::before,.template-ruby-hidden  {
+    content: "";
+    display: inline-block;
+    width: 0;
+    font-size: 0;
+}
+</style>
+<h3 id="图种"><a href="#图种" class="headerlink" title="图种"></a>图种</h3><div class="mw-parser-output">
+<table border="1" class="moe-infobox infoboxSpecial" style="float: right; width: 260px; font-size: 90%; margin: 1em 0 1em 1em; background: #f9f9f9; border: 1px #999999 solid; border-collapse: collapse; clear: right;" cellpadding="2" cellspacing="0">
+
+<tbody><tr class="infobox-image-container">
+<td colspan="2" align="center"><a href="/File:31056785.jpg" class="image"><img alt="31056785.jpg" width="280" height="452" class="infobox-image lazyload multimediaViewerScrollSet" data-file-width="808" data-file-height="1305" data-lazy-src="https://img.moegirl.org.cn/common/thumb/d/d2/31056785.jpg/280px-31056785.jpg" data-lazy-srcset="https://img.moegirl.org.cn/common/thumb/d/d2/31056785.jpg/420px-31056785.jpg 1.5x, https://img.moegirl.org.cn/common/thumb/d/d2/31056785.jpg/560px-31056785.jpg 2x" data-lazy-state="done" style="" src="https://img.moegirl.org.cn/common/thumb/d/d2/31056785.jpg/280px-31056785.jpg" srcset="https://img.moegirl.org.cn/common/thumb/d/d2/31056785.jpg/420px-31056785.jpg 1.5x, https://img.moegirl.org.cn/common/thumb/d/d2/31056785.jpg/560px-31056785.jpg 2x"></a>
+</td></tr>
+<tr class="infobox-title">
+<td colspan="2" align="center" bgcolor="#E0FFFF"><b>基本资料</b>
+</td></tr>
+<tr>
+<th width="80px">用语名称
+</th>
+<td align="center">图种
+</td></tr>
+<tr>
+<th>其他表述
+</th>
+<td align="center"><s>铃木社大合集720P.torrent</s>
+</td></tr>
+
+<tr>
+<th>相关条目
+</th>
+<td align="center"><a href="" class="mw-redirect" title="绅士">绅士</a>、<a href="" title="Oo.avi">oo.avi</a>、<a href="" title="神秘代码">神秘代码</a>
+</td></tr></tbody></table>
+
+<p><b>图种</b>是一种采用特殊方式将jpg图片文件和rar压缩文件合并起来，一般打开来看只是正常的图片，修改扩展名为rar后解压，得到隐藏的文件。经常被用来<ruby><rb data-id="template-ruby">绅士<span class="template-ruby-hidden">（</span></rb><rt style="font-size:0.75em">hentai</rt><span class="template-ruby-hidden">）</span></ruby>之间的一种隐蔽的传播文件种子的途径之一。
+</p>
+
+
+<h2>Windows系统下图种的制作方法</h3>
+
+<h4 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h4><ol data-last-margin-left-max-length="3" style="margin-left: 1.7em;">
+<li>把下载链接写在txt里或者保存为一个种子</li>
+<li>用winrar创建你选择的图片和种子的压缩文件，【压缩方式】处选择【储存】（先图片，再种子，顺序不能错）
+<ul class="margin-left-set" style="margin-left: 1.2em;"><li>一些同学由于理解力或者技术上有困难无法排序，可以先“压缩”图片，然后再把种子文件拖入</li></ul></li>
+<li>把生成的文件后缀从rar改为先前图片对应的后缀名（jpg,gif,png…………）</li></ol>
+
+<h4 id="方法1-5"><a href="#方法1-5" class="headerlink" title="方法1.5"></a>方法1.5</h4><p>直接将磁链放入用记事本打开的图片末尾然后保存(大小只会增加60字节)
+</p>
+<h4><span id=".E6.96.B9.E6.B3.952"></span><span class="mw-headline" id="方法2">方法2</span></h4>
+<ol data-last-margin-left-max-length="4" class="margin-left-set" style="margin-left: 1.7em;"><li>把一个“种子”或其他任何<span title="你知道的太多了" class="heimu">.avi或类型文件</span>压缩成压缩包（取名为a.rar）放在D盘</li>
+<li>把压缩包和一张你想显示的图片(取名为a.jpg)放到一起</li>
+<li>新建一个文本文档(txt)在文档中输入“<code>copy /b D:\a.jpg + D:\a.rar D:\b.jpg</code>”<span title="你知道的太多了" class="heimu">当然你可以直接用cmd</span>（此处是放在D盘所以地址写的是D）保存（这里注意一定要把图片放在前面，压缩文件放后面）</li>
+<li>把新建的文本文档的扩展名改为.bat。双击新建的文本文档.bat。产生的b.jpg文件就是图种。
+<ul class="margin-left-set" style="margin-left: 1.2em;"><li>【或者可以直接进入cmd，在命令行上输入“<code>copy/b D:\a.jpg + D:\a.rar D:\b.jpg</code>”。然后回车执行】</li></ul></li></ol>
+<h4><span id=".E6.96.B9.E6.B3.953"></span><span class="mw-headline" id="方法3">方法3</span></h4>
+<ul class="margin-left-set" style="margin-left: 1.2em;"><li>使用“渗透”软件。</li>
+<li>原理：利用FLASH SWF、24bit BMP、JPG文件的冗余空间，把一批文件插入到这类文件中去，而不破坏原文件的结构和显示效果，以达到隐藏用户重要文件的目的。</li>
+<li>优点：因为是利用冗余空间，所以生成文件的体积比上两种方法要小的多，更方便。</li></ul>
+
+<h2><span id=".E6.89.93.E5.BC.80.E5.9B.BE.E7.A7.8D.E7.9A.84.E6.96.B9.E5.BC.8F"></span><span class="mw-headline" id="打开图种的方式">打开图种的方式</span></h2>
+<p>打开方式直接用压缩软件打开, 或将图种的文件的扩展名改为“.rar”然后双击解压。
+</p>
+<h2><span id=".E5.8E.9F.E7.90.86"></span><span class="mw-headline" id="原理">原理</span></h2>
+<p>简单的说就是把图片与压缩文件用二进制字节流的方式合并起来。
+</p>
+<ul class="margin-left-set" style="margin-left: 1.2em;"><li>大部分图片格式都是元数据格式文件，数据是按照特定格式的字节流（即：区块）来分区保存，图片解释程序只会处理符合格式的区块字节流读取和处理图像数据，不符合的会被视为损坏的区块处理。</li>
+<li>Rar压缩文件以rar特有的魔术字节流（ASCII码为Rar!）/(ZIP压缩文件为PK)作为其文件格式的读取开头，<b>这个魔术字并不需要一定在文件字节流的起始。</b></li></ul>
+<p>所以：
+</p>
+<ul class="margin-left-set" style="margin-left: 1.2em;"><li>如果以图片查看程序打开的话，只会处理和读取合并后整个文件前面图片部分，后面rar文件的字节流会被作为损坏的图片文件区块丢弃不处理。</li>
+<li>如果以rar处理程序打开的话，会忽略处理前面的图像文件格式的字节流，直到读取到其文件格式读取头魔术字才开始作为rar文件格式的处理，识别为rar压缩文件。</li></ul>
+<p>由于缩图会重新生成图片格式文件的数据流，包括后面“隐藏”的rar文件字节流，所以缩图文件的图种会没有了，因为rar的数据被破坏掉了。
+</p><p>同样，只能rar字节流放后面，否则图片解析程序会认为该图像损坏了。
+</p>
+</div>
+
+
+<h3 id="qBittorrent"><a href="#qBittorrent" class="headerlink" title="qBittorrent"></a>qBittorrent</h3><p><a href="https://zhuanlan.zhihu.com/p/64254201">专业磁力种子下载工具 qBittorrent 使用教程</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>F12 开发者工具的使用</title>
+    <url>/2023/08/22/F12-%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/138922503">F12功能简单介绍</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>一些困难和解决方案</title>
+    <url>/2023/08/28/%E4%B8%80%E4%BA%9B%E5%9B%B0%E9%9A%BE%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<h3 id="Cannot-push-on-github-suddently"><a href="#Cannot-push-on-github-suddently" class="headerlink" title="Cannot push on github suddently"></a>Cannot push on github suddently</h3><figure class="highlight plaintext"><figcaption><div></div><div class="r2"></div><div class="r3"></div><span>d 提交失败 error</span></figcaption><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">Writing objects: 100% (178/178), 3.08 MiB | 576.00 KiB/s, done.</span><br><span class="line">Total 178 (delta 49), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Resolving deltas: 100% (49/49), done.</span><br><span class="line">remote: error: GH006: Protected branch update failed for refs/heads/master.</span><br><span class="line">remote: error: Cannot force-push to this branch</span><br><span class="line">To github.com:h1s97x/H1S97X.github.io.git</span><br><span class="line"> ! [remote rejected] HEAD -&gt; master (protected branch hook declined)</span><br><span class="line">error: failed to push some refs to &#x27;github.com:h1s97x/H1S97X.github.io.git&#x27;</span><br><span class="line">FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (D:\hexo\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">    at ChildProcess.emit (node:events:513:28)</span><br><span class="line">    at cp.emit (D:\hexo\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">    at ChildProcess._handle.onexit (node:internal/child_process:291:12)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>solution<br>修改github项目仓库分支的rule<br>Because I’m admin&#x2F;owner I was able to go and do the following and that helped me to resolve the problem.<br>Steps : –&gt; Settings –&gt;Branches –&gt; Branch protection rules select your branch(such as master)<br>then edit it -&gt; push Allow force pushes - Everyone<br>Permit force pushes for all users with push access.</p>
+</blockquote>
+<p><a href="https://stackoverflow.com/questions/52589285/cannot-push-on-github-suddently">stackoverflow——Cannot push on github suddently</a></p>
+<h3 id="组策略编辑器"><a href="#组策略编辑器" class="headerlink" title="组策略编辑器"></a>组策略编辑器</h3><p>打开记事本输入下面的代码</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line"></span><br><span class="line">pushd &quot;%~dp0&quot;</span><br><span class="line"></span><br><span class="line">dir /b %systemroot%\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &gt;gp.txt</span><br><span class="line"></span><br><span class="line">dir /b %systemroot%\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &gt;&gt;gp.txt</span><br><span class="line"></span><br><span class="line">for /f %%i in (&#x27;findstr /i . gp.txt 2^&gt;nul&#x27;) do dism /online /norestart /add-package:&quot;%systemroot%\servicing\Packages\%%i&quot;</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p>选择另存为-&gt;文件名为gpedit.bat,保存类型为所有文件，编码格式换成ANSI<br>完成后找到保存的bat文件，以管理员身份打开<br>成功<br>按WIN R键打开运行输入gpedit.msc，按回车或是确定按键就可以打开组策略<br><a href="https://zhuanlan.zhihu.com/p/381084692">找不到gpedit.msc文件怎么办？组策略编辑器添加方法</a></p>
+<h3 id="360浏览器无法安装，双击-exe安装包文件无反应"><a href="#360浏览器无法安装，双击-exe安装包文件无反应" class="headerlink" title="360浏览器无法安装，双击.exe安装包文件无反应"></a>360浏览器无法安装，双击.exe安装包文件无反应</h3><p>删除本地保存配置文件后，在安全模式下删除360相关的注册表文件即可</p>
+<p>已解决</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">先检查是否WindowsIntaller服务被禁用，导致安装程序无法运行。</span><br><span class="line">如果没有没禁用，点击其他任意 .exe扩展名的程序看是否可以运行。</span><br><span class="line"></span><br><span class="line">如果也无法运行，</span><br><span class="line">进入 C:\Windows\System32</span><br><span class="line">找到 cmd.exe这个程序，扩展名.exe 改为 .com</span><br><span class="line">然后右键点击，以管理员身份运行。</span><br><span class="line">弹出窗口中输入以下命令,回车键执行。</span><br><span class="line"></span><br><span class="line">assoc .exe=exefile</span><br><span class="line">复制代码</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">执行命令后再尝试看是否能打开了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/qk215796129/article/details/81909532">win10下解决谷歌浏览器点击安装包无反应</a></p>
+<h3 id="如何在Github上只下载一个文件或文件夹"><a href="#如何在Github上只下载一个文件或文件夹" class="headerlink" title="如何在Github上只下载一个文件或文件夹"></a>如何在Github上只下载一个文件或文件夹</h3><p><a href="https://zhuanlan.zhihu.com/p/578116206">如何在Github上只下载一个文件或文件夹</a></p>
+<h3 id="Excel有几行固定不动，不会跟着窗口滑动如何处理"><a href="#Excel有几行固定不动，不会跟着窗口滑动如何处理" class="headerlink" title="Excel有几行固定不动，不会跟着窗口滑动如何处理"></a>Excel有几行固定不动，不会跟着窗口滑动如何处理</h3><p><a href="https://zhidao.baidu.com/question/591423170.html#:~:text=%E5%9C%A8A6%E5%8D%95%E5%85%83%E6%A0%BC%E4%B8%AD%E7%82%B9%E7%AA%97%E5%8F%A3%E2%80%94%E2%80%94%E5%86%BB%E7%BB%93%E7%AA%97%E6%A0%BC%EF%BC%8C%E5%B0%B1%E4%BC%9A%E5%B0%86%E5%89%8D5%E8%A1%8C%E5%86%BB%E7%BB%93%E5%9B%BA%E5%AE%9A%E3%80%82,%E5%A6%82%E6%9E%9C%E8%BF%98%E6%83%B3%E6%8A%8A%E7%AC%AC%E4%B8%80%E5%88%97%E4%B9%9F%E5%86%BB%E7%BB%93%EF%BC%8C%E5%B0%B1%E5%9C%A8B6%E4%B8%AD%E7%82%B9%E5%86%BB%E7%BB%93%E7%AA%97%E6%A0%BC%E3%80%82">excel表格怎么固定上面几行</a></p>
+<h3 id="CMD对文件操作，文件名中带空格怎么办"><a href="#CMD对文件操作，文件名中带空格怎么办" class="headerlink" title="CMD对文件操作，文件名中带空格怎么办"></a>CMD对文件操作，文件名中带空格怎么办</h3><p>把文件名用”” 引号引起来就可以了，例如”c:\Program Files”。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>一些可供学习的个人博客或网站</title>
+    <url>/2023/08/22/%E4%B8%80%E4%BA%9B%E5%8F%AF%E4%BE%9B%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p><a href="https://tuncle.blog/">三叔的博客</a><br><a href="http://justin955.top/">居士亭</a><br><a href="https://www.liaoxuefeng.com/">廖雪峰</a><br><a href="https://www.cnblogs.com/xianyuIC">咸鱼IC</a><br><a href="https://www.cnblogs.com/fangzhiyou/">方知有</a><br><a href="https://www.monsteryu.top/">郁明敏</a><br><a href="http://sort.wxyww.top/#/login/index">同学做的网站</a></p>
+<hr>
+<h3 id="工具类网站"><a href="#工具类网站" class="headerlink" title="工具类网站"></a>工具类网站</h3><p><a href="https://www.aspose.app/">跨平台文件格式应用PDF，Word，Excel，PowerPoint，Visio，Project，OneNote，OpenOffice，CAD，3D格式的在线文件处理</a><br><a href="https://time.is/zh/China">中国时间</a><br>&#x2F;* 可供学习 *&#x2F;</p>
+<h3 id="意义不明"><a href="#意义不明" class="headerlink" title="意义不明"></a>意义不明</h3><p><a href="https://zhuanlan.zhihu.com/p/269523443">聊聊 Python 调用 JS 的几种方式</a><br><a href="https://blog.csdn.net/qq_44721831/article/details/102597469?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=">Jupyter Notebook 中如何运行JavaScript，安装配置（详解）</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>一些想法和解决方案</title>
+    <url>/2023/08/28/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<h3 id="VSCode-html预览"><a href="#VSCode-html预览" class="headerlink" title="VSCode html预览"></a>VSCode html预览</h3><figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">open in browers</span><br><span class="line"></span><br><span class="line">使用：htm文件中右键，点击右键菜单的view in browser，即可打开浏览器运行；</span><br><span class="line"></span><br><span class="line">alt+b，运行；</span><br><span class="line"></span><br><span class="line">alt+shift+b，切换不同浏览器运行；</span><br><span class="line"></span><br><span class="line">优点：可以运行多个界面</span><br><span class="line"></span><br><span class="line">Live Server Preview</span><br><span class="line">这个插件不用另外打开浏览器；它是直接在Vscode里面预览html的，并且是自动实时更新的，不用不停地Ctrl+S保存查看</span><br><span class="line">使用：F1 -&gt; 弹出一个窗口输入live，然后右边出现预览窗口</span><br></pre></td></tr></table></figure>
+<p>More Info:<a href="https://blog.csdn.net/baidu_38607919/article/details/102506792?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=">VS html预览</a><br><a href="https://www.cnblogs.com/cuianbing/p/13730793.html">插件介绍</a><br><a href="https://blog.csdn.net/L7810_mq/article/details/103472576">live server error</a></p>
+<p>已解决</p>
+<h3 id="高效查找之布隆过滤算法"><a href="#高效查找之布隆过滤算法" class="headerlink" title="高效查找之布隆过滤算法"></a>高效查找之布隆过滤算法</h3><figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">problem：1.哈希函数的具体算法（如何保证不同输入的值不同）</span><br><span class="line">2.删除：</span><br><span class="line">相同值碰撞——假如选择加1存储（其他也行），下面是一种场景：</span><br><span class="line">如果两本书的哈希值都是2，那么根据算法一个存到哈希表中2的位置，一个存放到3的位置，这时有人借走了位置2的那本书（可以查找成功），此时有人想借位置3的那本书，如果只将2的位置关闭，那么就查不到这本书了。</span><br></pre></td></tr></table></figure>
+<p>More Info:<a href="https://www.bilibili.com/video/BV1uN411a7f6/?spm_id_from=333.788.top_right_bar_window_history.content.click&vd_source=206a091077ff783d662b49e64cc9589d">B站视频介绍</a></p>
+<p>未解决</p>
+<h3 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h3><p><a href="https://zhuanlan.zhihu.com/p/385452484">图片压缩</a></p>
+<p>已解决</p>
+<h3 id="HTML点击按钮button跳转页面"><a href="#HTML点击按钮button跳转页面" class="headerlink" title="HTML点击按钮button跳转页面"></a>HTML点击按钮button跳转页面</h3><p><a href="https://blog.csdn.net/weixin_45844049/article/details/103165560">HTML点击按钮button跳转页面的几种实现方法</a></p>
+<p>未使用</p>
+<h3 id="页面设置标签栏（叠放设计，点击后在本页面内切换，左侧设计标签栏）"><a href="#页面设置标签栏（叠放设计，点击后在本页面内切换，左侧设计标签栏）" class="headerlink" title="页面设置标签栏（叠放设计，点击后在本页面内切换，左侧设计标签栏）"></a>页面设置标签栏（叠放设计，点击后在本页面内切换，左侧设计标签栏）</h3><p>有想法，未实现<br>（以前有见过，魔兽&#x2F;DND的网站似乎，用在攻略设计里）</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>内存 双通道</title>
+    <url>/2023/08/27/%E5%86%85%E5%AD%98-%E5%8F%8C%E9%80%9A%E9%81%93/</url>
+    <content><![CDATA[<style type="text/css">
+    .img_desc {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    color: #999;
+    }    
+</style>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>不同品牌，但容量、频率、时序均完全相同的内存，可以放心组建双通道。</p>
+<p>而不同容量的内存组建双通道，则会有一些性能损失，不过仍然在兼容的范围内。除非囊中羞涩或板载内存，否则还是推荐选择容量及颗粒布局一致的内存组建双通道。</p>
+<p>不同频率的内存组建双通道，则所有内存都会工作与最低频内存相同的频率下。</p>
+<p>任何时候，都不推荐使用不同时序的内存组建双通道。这往往会对稳定性和兼容性带来挑战。</p>
+<p><a href="https://post.smzdm.com/p/awz7w20g/">不同内存组建双通道，会对性能有何影响？</a></p>
+<h2 id="内存选购指南"><a href="#内存选购指南" class="headerlink" title="内存选购指南"></a>内存选购指南</h2><p><a href="https://post.smzdm.com/p/akkezvw9/">笔记本内存的选购与分析</a></p>
+<blockquote>
+<p>考量因素：质量与兼容性、保修与价格。</p>
+</blockquote>
+<h3 id="质量"><a href="#质量" class="headerlink" title="质量"></a>质量</h3><p>根据内存条颗粒来源的不同，内存条厂商可以分为三个等级：原片厂、白片厂与黑片厂。</p>
+<p>原片厂：指能自行生产内存晶圆的厂商，即三星、海力士、美光。</p>
+<p>白片厂：泛指不生产内存晶圆，但使用达到行业标准的晶圆生产内存的厂商。如芝奇、金士顿、威刚、科赋、光威等厂家。质量可能略逊原厂，但价格更为低廉，性价比较高。<strong>适合追求性价比与性能的用户选择</strong>。</p>
+<p>黑片厂：主要指使用不符合行业标准的晶圆（“边角料”），甚至来源不明的颗粒来制造内存的厂商。如枭鲸、酷兽。<strong>任何时候都不推荐购买。</strong><img alt="" src="https://res.smzdm.com/images/emotions/56.png" class="face"></p>
+<h3 id="保修"><a href="#保修" class="headerlink" title="保修"></a>保修</h3><p>原片厂的内存，其内存质保不如白片厂靠谱：</p>
+<p>海力士没有京东自营销售渠道，第三方销售的海力士产品往往生产日期久远，还存在遇到假货的风险。</p>
+<p>而三星自营店则仅提供三年质保，逊于白片厂中的行业大牌所普遍提供的终身质保。</p>
+<p>美光&#x2F;英睿达的国内质保主要由代理（供应商）负责，其效率人尽皆知：售后逻辑存在问题，因而换货速度令人发指。</p>
+<h3 id="兼容"><a href="#兼容" class="headerlink" title="兼容"></a>兼容</h3><p><a href="#总结">见上文</a></p>
+<h2 id="疑问0：如何读懂内存条标签？"><a href="#疑问0：如何读懂内存条标签？" class="headerlink" title="疑问0：如何读懂内存条标签？"></a>疑问0：如何读懂内存条标签？</h2><p>内存标签上往往有“nR x M”的标识，其中“nR”即表示内存有n个Rank，而M则表明每个颗粒所占有的位宽，其中M&#x3D;8一般代表4BG，而M&#x3D;16代表2BG。</p>
+<blockquote>
+<p>重要参数“Rank”。<br>在消费级DDR4中，内存条可能有1-2个Rank。Rank之间单独工作。2Rank内存可以一定程度上理解为2个64bit的1Rank内存合并在一起，且共享64bit的位宽。因此其容量等参数是同规格1Rank内存的两倍。（我们此前说的“4BG”，其实指的是1个Rank中有4个BankGroup）。<br>笔记本2Rank内存标志性的特征，就是一面上有8个颗粒。对DDR4内存而言，2Rank更容易制造大容量内存，且内存带宽也会有一定提升。<br>但是，在Rank间切换会增加内存延迟，更多颗粒也意味着更大的功耗与发热，可能会在一定程度上影响待机时间，且由于电路更复杂不利于超频，极限性能因此受到影响。<br>目前，CPU带宽为64bit（即64位CPU），从而可以从标签上推知颗粒与BankGroup的数量。公式为：Rank数*CPU带宽&#x2F;颗粒位宽。</p>
+</blockquote>
+<p>举个例子，若标签上写着”1R X 8”，则表明该内存条有1个Rank、每个颗粒占有8bit位宽，为4BG内存，共有1X64&#x2F;8 &#x3D;8个内存颗粒。“2R X 16”则表明有2个Rank，每个颗粒占16bit位宽，为2BG内存，共有2X64&#x2F;16&#x3D; 8个颗粒。</p>
+<blockquote>
+<p>BG是BankGroup的缩写。DDR4中引入了这个概念，每4个Bank组成一个BankGroup。它和数据预存取有关，BankGroup之间可以同时存取数据，而每个BankGroup内部的Bank之间则需要按顺序存取。如果一份数据分散在4个BG中，则可以一次同时从4个BG中存取数据。<br>因此，一般来说，<strong>内存上的BG越多，内存的带宽利用效率就越高。</strong>这对缓存较弱的AMD锐龙平台而言尤为重要。</p>
+</blockquote>
+<p><span class="img_desc"><a href="https://post.smzdm.com/p/akkezvw9/pic_6/" target="_blank"><img src="https://qnam.smzdm.com/202207/14/62cef52075a403259.jpg_e1080.jpg" alt="如图，这是一条2Rank X 8bit，共16颗粒的内存"></a>如图，这是一条2Rank X 8bit，共16颗粒的内存</span></p>
+<p>三星、海力士的内存，还可从标签上的特定字母获知其所使用的颗粒型号和生产日期。例如，“M471A4G42AB1-CWE 2102”表明该内存使用的是三星A-Die颗粒，生产于2021年第2周。</p>
+<p>而“HMA851S6CJR6N-XN 2124”，则表明该内存使用大名鼎鼎的海力士CJR颗粒，生产于2021年第24周。</p>
+<p><span class="img_desc"><a href="https://post.smzdm.com/p/akkezvw9/pic_7/" target="_blank"><img src="https://qnam.smzdm.com/202207/14/62cef44e240442035.jpg_e1080.jpg" alt="实战时间：这是使用什么颗粒的内存？何时生产？"></a>实战时间：这是使用什么颗粒的内存？何时生产？</span></p>
+<h2 id="疑问1：内存条上的颗粒数量与排布与内存性能之间的关系？"><a href="#疑问1：内存条上的颗粒数量与排布与内存性能之间的关系？" class="headerlink" title="疑问1：内存条上的颗粒数量与排布与内存性能之间的关系？"></a>疑问1：内存条上的颗粒数量与排布与内存性能之间的关系？</h2><p>常规情况下，内存性能的排名是 2R X8（双面共16颗粒）＞1R X8（双面共8颗粒）&gt;2R X16(单面共8颗粒）&gt;1R  X16（单面共4颗粒）。</p>
+<p>但超频下的极限性能，一般是 1R X8（双面共8颗粒）＞2R X8（双面共16颗粒）。</p>
+]]></content>
+      <categories>
+        <category>电脑硬件</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>web前端开发学习</title>
+    <url>/2023/08/29/web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p><a href="https://blog.csdn.net/TNANDXYF/article/details/113183923?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=">html中table标签、tr标签、th标签、td标签的基础知识</a></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>在基本表格结构中，<strong>表格标题</strong>、<strong>项目表头</strong>和<strong>数据资料</strong>构成了表格基本结构三个要素。</p>
+<p>表格标题用<em>caption</em>标签<br>表格第一行单元格中的内容基本不变，称作项目表头<br>表格第二行后单元格的内容通常会动态改变，称作数据资料</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>通讯录</title>
+</head>
+
+<body>
+    <table border="2">
+        <caption align="center">通讯录</caption>
+        <tr>
+            <th>姓名</th>
+            <th>QQ</th>
+            <th>联系电话</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>123456789</td>
+            <td>123456789</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+<p>表格的基本标签<br>HTML表格由table标签以及一个或多个tr、th或td标签组成：</p>
+<p>table标签：定义一个表格<br>caption标签：定义表格标题，嵌套在<code>&lt;table&gt;&lt;/table&gt;</code>中<br>tr标签：定义表格中的一行，嵌套在<code>&lt;table&gt;&lt;/table&gt;</code>中<br>th标签：定义表格中的表头单元格，嵌套在<code>&lt;tr&gt;&lt;/tr&gt;</code>中<br>td标签：定义表格中的数据单元格，嵌套在<code>&lt;tr&gt;&lt;/tr&gt;</code>中<br>————————————————</p>
+<h4 id="table-标签的基本属性"><a href="#table-标签的基本属性" class="headerlink" title="table 标签的基本属性"></a>table 标签的基本属性</h4><div class="table-box">
+  <table><thead><tr><th>属性名</th><th>含义</th><th>常用属性值</th></tr></thead><tbody><tr><td>border</td><td>设置表格的边框（默认border=“0”）</td><td>像素值</td></tr><tr><td>cellspacing</td><td>设置单元格与单元格边框之间的空白间距</td><td>像素值（默认为2像素）</td></tr><tr><td>cellpadding</td><td>设置单元格内容与单元格边框之间的空白间距</td><td>像素值（默认为1像素）</td></tr><tr><td>width</td><td>设置表格的宽度</td><td>像素值</td></tr><tr><td>height</td><td>设置表格的宽度</td><td>像素值</td></tr><tr><td>align</td><td>设置表格在网页中的水平对齐方式</td><td>left、center、right</td></tr><tr><td>bgcolor</td><td>设置表格的背景颜色</td><td>预定义的颜色值、十六进制#RGB、rgb(r,g,b)</td></tr><tr><td>background</td><td>设置表格的背景图像</td><td>url地址</td></tr></tbody>
+  </table>
+</div>
+<img src="https://img-blog.csdnimg.cn/20210127162920180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ROQU5EWFlG,size_16,color_FFFFFF,t_70#pic_center" alt="">
+
+<h4 id="tr标签的基本属性"><a href="#tr标签的基本属性" class="headerlink" title="tr标签的基本属性"></a>tr标签的基本属性</h4><div class="table-box"><table><thead><tr><th>属性名</th><th>含义</th><th>常用属性值</th></tr></thead><tbody><tr><td>height</td><td>设置行高度</td><td>像素值</td></tr><tr><td>align</td><td>设置一行内容的水平对齐方式</td><td>left、center、right</td></tr><tr><td>valign</td><td>设置一行内容的垂直对齐方式</td><td>top、middle、bottom</td></tr><tr><td>bgcolor</td><td>设置行背景颜色</td><td>预定义的颜色值、十六进制#RGB、rgb(r,g,b)</td></tr><tr><td>background</td><td>设置行背景图像</td><td>url地址</td></tr></tbody></table></div>
+
+<h4 id="th和td标签的基本属性"><a href="#th和td标签的基本属性" class="headerlink" title="th和td标签的基本属性"></a>th和td标签的基本属性</h4><div class="table-box"><table><thead><tr><th>属性名</th><th>含义</th><th>常用属性值</th></tr></thead><tbody><tr><td>width</td><td>设置单元格的宽度</td><td>像素值</td></tr><tr><td>height</td><td>设置单元格的高度</td><td>像素值</td></tr><tr><td>align</td><td>设置单元格内容的水平对齐方式</td><td>left、center、right</td></tr><tr><td>valign</td><td>设置单元格内容的垂直对齐方式</td><td>top、middle、bottom</td></tr><tr><td>bgcolor</td><td>设置单元格的背景颜色</td><td>预定义的颜色值、十六进制#RGB、rgb(r,g,b)</td></tr><tr><td>background</td><td>设置单元格的背景图像</td><td>url地址</td></tr></tbody></table></div>
+
+<h4 id="单元格合并"><a href="#单元格合并" class="headerlink" title="单元格合并"></a>单元格合并</h4><p>在制作稍复杂的表格时，需要对表格中的行或列进行合并。</p>
+<blockquote>
+<p>水平方向单元格的合并<br>需要将水平方向的单元格合并时，可在或标记中添加<em>colspan</em>属性，属性的取值即为合并的单元格数目。</p>
+</blockquote>
+<blockquote>
+<p>垂直方向单元格的合并<br>需要将垂直方向的单元格合并时，可在或标记中添加<em>rowspan</em>属性，属性的取值即为合并的单元格数目。</p>
+</blockquote>
+<h3 id="参考学习网站"><a href="#参考学习网站" class="headerlink" title="参考学习网站"></a>参考学习网站</h3><blockquote>
+<p>工具网站<br><a href="https://blog.csdn.net/zyxhangiian123456789/article/details/100901970#:~:text=layui%E6%98%AF%E4%B8%80%E5%A5%97%E5%9F%BA%E4%BA%8E%20HTML%20%E3%80%81CSS%E3%80%81JavaScript%E7%9A%84%20%E5%89%8D%E7%AB%AF%20UI%E6%A1%86%E6%9E%B6%EF%BC%8C%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%B0%E5%AF%8C%E7%9A%84UI%E7%BB%84%E4%BB%B6%E5%92%8C,%E5%B7%A5%E5%85%B7%20%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA%E7%BE%8E%E8%A7%82%E3%80%81%E4%BA%A4%E4%BA%92%E6%80%A7%E5%BC%BA%E7%9A%84%E7%BD%91%E9%A1%B5%E7%95%8C%E9%9D%A2%E3%80%82%20Flask%E6%98%AFPython%E7%9A%84%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84Web%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6%EF%BC%8C%E9%9D%9E%E5%B8%B8%E9%80%82%E5%90%88%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E7%AE%80%E5%8D%95%E7%9A%84%E7%BD%91%E7%AB%99%E6%88%96%E5%BA%94%E7%94%A8%E3%80%82%20%E5%9C%A8%E4%BD%BF%E7%94%A8Flask%E5%BC%80%E5%8F%91%20%E5%89%8D%E7%AB%AF%E5%8F%AF%E8%A7%86%E5%8C%96%20%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%BB%93%E5%90%88layui%E6%A1%86%E6%9E%B6%E6%9D%A5%E5%AE%9E%E7%8E%B0%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BA%A4%E4%BA%92%E5%92%8C%E8%A7%86%E8%A7%89%E6%95%88%E6%9E%9C%E3%80%82">【html】前端页面可视化设计工具总结</a><br><a href="https://www.zhihu.com/question/448912322">优秀的可视化开发工具</a><br><a href="https://www.w3cschool.cn/html5/html5-tool.html#:~:text=%E6%8E%A8%E8%8D%9011%E6%AC%BE%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%E7%9A%84HTML5%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%201%201.%20Adobe%20Dreamweaver%20Dreamweaver%20%E6%98%AF%E4%B8%96%E7%95%8C%E9%A1%B6%E7%BA%A7%E8%BD%AF%E4%BB%B6%E5%8E%82%E5%95%86%20Adobe,8%208.%20HTML5%20visual%20cheat%20sheet%20...%20%E6%9B%B4%E5%A4%9A%E9%A1%B9%E7%9B%AE">推荐11款程序员必备的HTML5开发工具</a><br><a href="https://zhuanlan.zhihu.com/p/553965453">10款前端开发必备工具推荐！</a></p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>实用工具 网站</title>
+    <url>/2023/08/29/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p><a href="https://www.kuaidaili.com/free/inha/1/">代理IP网站</a><br><a href="https://www.croxy.network/_zh/">免费网络代理</a><br><a href="https://www.tinytask.net/">连点器</a><br><a href="https://convertio.co/zh/document-converter/">文档转换工具</a><br><a href="https://easylink.cc/">本地文件转url——云链</a><br><a href="https://zhuanlan.zhihu.com/p/385452484">图片压缩</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站</a><br><a href="https://tympanus.net/codrops/">Web设计——codrops</a><br><a href="https://tasker.joaoapps.com/">Tasker-安卓</a><br>&#x2F;* 可以用来验证码自动发送——web爬虫用 *&#x2F;<br><a href="https://goregex.cn/regex-intro.html">正则表达式在线测试</a><br><a href="https://c.runoob.com/front-end/854/">正则表达式在线测试——菜鸟网站</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>我的第一篇文章</title>
+    <url>/2023/06/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>数据库课设——共享单车管理系统</title>
+    <url>/2023/08/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E8%AE%BE%E2%80%94%E2%80%94%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><a href="https://github.com/zzhuncle/TJCS-Courses/blob/b1ef65d8891e879c81c81c75bcd738644e75b66c/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86-%E6%9D%8E%E6%96%87%E6%A0%B9/%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A/1853790_%E5%BA%84%E9%95%87%E5%8D%8E_%E4%B8%AA%E4%BA%BA%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A.pdf">同济——GitHub项目</a><br><a href="https://blog.csdn.net/GP12088/article/details/132345959?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=">计算机毕业设计springboot校园共享单车系统的设计与实现0v1439[附源码]</a></p>
+<h3 id="实战开始"><a href="#实战开始" class="headerlink" title="实战开始"></a>实战开始</h3><h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>第一步就遇到困难，完全不知道如何下手，<br>选择GitHub上公开的项目进行补充修改，操作系统采用Windows 11，数据库采用MySQL，后端框架采用Flask，编程语言是python</p>
+<h4 id="Flask框架学习"><a href="#Flask框架学习" class="headerlink" title="Flask框架学习"></a>Flask框架学习</h4><h5 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h5><p><a href="https://blog.csdn.net/woshisangsang/article/details/120450353">Python Flask 简明教程(7)–路由使用方法详解</a></p>
+<p>路由就是URL和Python函数的映射关系，说的再明白点，就是客户端请求哪个路径交给哪个函数处理的问题。<br>通过给函数添加装饰器@app.route，即可定义路由，装饰器的参数即为对应的URL。</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL">URL介绍</a></p>
+<p>也就是说装饰器的参数设置成什么就会匹配什么资源路径（Path to resource)<br>@app.route(‘&#x2F;hello’)<br>访问<a href="http://127.0.0.1:5000/hello,%E7%94%B1%E4%BA%8E%E8%AF%A5%E8%AE%BF%E9%97%AE%E5%9C%B0%E5%9D%80URL%E5%8C%B9%E9%85%8D'/hello'%EF%BC%8C%E6%89%80%E4%BB%A5%E5%B0%86%E8%A2%AB%E5%A4%84%E7%90%86%E3%80%82">http://127.0.0.1:5000/hello,由于该访问地址URL匹配&#39;/hello&#39;，所以将被处理。</a></p>
+<blockquote>
+<p>动态控制路由（重定向）<br>通过redirect()函数即可动态控制路由。<br>return redirect(url_for(‘login’))</p>
+</blockquote>
+<blockquote>
+<p>URL参数<br>有时候，我们希望接受URL上附带的参数，此时可以通过在装饰器上添加<xxx>格式的内容，来对应URL传递的参数</p>
+</blockquote>
+<h4 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h4><p><a href="https://www.runoob.com/w3cnote/python-func-decorators.html">Python 函数装饰器</a><br><a href="https://zhuanlan.zhihu.com/p/87353829">python 装饰器详解</a></p>
+<p>装饰器就是在一个函数里嵌套一个或者多个函数，在这些函数里使用了顶层函数的参数（不管是参数是值还是函数），然后构造出来一个装饰器，在调用时对其他值或者函数用装饰器，最终输出时参数的值被装载了装饰器的函数或值替换（赋值）。</p>
+<p>python装饰器总结一句话：采用了闭包的思路(内外函数嵌套，内函数引用外函数作用域下的非全局变量，外函数返回内函数的引用)，在不改变原函数代码的前提下为函数增添新的功能</p>
+<p>@wraps(func)  # 继承原函数，调用时不改变函数原含义</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">def a_new_decorator(a_func):</span><br><span class="line"> </span><br><span class="line">    def wrapTheFunction():</span><br><span class="line">        print(&quot;I am doing some boring work before executing a_func()&quot;)</span><br><span class="line"> </span><br><span class="line">        a_func()</span><br><span class="line"> </span><br><span class="line">        print(&quot;I am doing some boring work after executing a_func()&quot;)</span><br><span class="line"> </span><br><span class="line">    return wrapTheFunction</span><br><span class="line"> </span><br><span class="line">def a_function_requiring_decoration():</span><br><span class="line">    print(&quot;I am the function which needs some decoration to remove my foul smell&quot;)</span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration()</span><br><span class="line">#outputs: &quot;I am the function which needs some decoration to remove my foul smell&quot;</span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)</span><br><span class="line">#now a_function_requiring_decoration is wrapped by wrapTheFunction()</span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration()</span><br><span class="line">#outputs:I am doing some boring work before executing a_func()</span><br><span class="line">#        I am the function which needs some decoration to remove my foul smell</span><br><span class="line">#        I am doing some boring work after executing a_func()</span><br></pre></td></tr></table></figure>
+<p>print(a_function_requiring_decoration.<strong>name</strong>)</p>
+<h1 id="Output-wrapTheFunction"><a href="#Output-wrapTheFunction" class="headerlink" title="Output: wrapTheFunction"></a>Output: wrapTheFunction</h1><p>使用装饰器会导致调用函数的名称被覆盖成装饰器的内层函数,这里用functools.wraps装饰内层函数就可以解决这个问题</p>
+<h4 id="flash函数-闪现信息"><a href="#flash函数-闪现信息" class="headerlink" title="flash函数 - 闪现信息"></a>flash函数 - 闪现信息</h4><p><a href="https://blog.csdn.net/he93007/article/details/78760091?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=">flask-flash函数</a><br>闪现信息就是 只展示一次的数据&#x2F;参数.</p>
+<p>应用:</p>
+<p>比如进入首页只刷一次的广告.</p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">def __init__(self, host, user, password, db, charset):</span><br><span class="line">    self.host = host</span><br><span class="line">    self.user = user</span><br><span class="line">    self.password = password</span><br><span class="line">    self.db = db</span><br><span class="line">    self.charset = charset</span><br><span class="line">    self.conn = pymysql.connect(host = host, user = user, password = password, db = db, charset = charset) //连接MySQL数据库</span><br><span class="line">    self.cur = self.conn.cursor() //游标</span><br></pre></td></tr></table></figure>
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>tools.py</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">def create_all(self):</span><br><span class="line">    with open(&#x27;bike.sql&#x27;, &#x27;r&#x27;, encoding = &#x27;utf-8&#x27;) as init_file:</span><br><span class="line">          text = init_file.read()</span><br><span class="line">          lines = text.split(&#x27;----&#x27;)</span><br><span class="line">          for line in lines:</span><br><span class="line">              self.cur.execute(line)</span><br><span class="line">              if &#x27;insert&#x27; in line or &#x27;update&#x27; in line or &#x27;delete&#x27; in line:</span><br><span class="line">                  self.conn.commit()</span><br></pre></td></tr></table></figure>
+<p>bike.sql<br>– 为了自动读取本文件并初始化, 需要在每条语句后加 —-<br>– 但注意最后一句不要加 —-</p>
+<h4 id="error"><a href="#error" class="headerlink" title="error"></a>error</h4><p>ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。<br>猜测原因：MySQL未连接成功<br>尝试解决方法：重新下载并配置环境<br><a href="https://blog.csdn.net/weixin_41955953/article/details/81272849">MySQL8.0的安装、配置、启动服务和登录及配置环境变量</a></p>
+<p>下载并配置好后，错误代码发生变化，证明思路正确<br>New error：<br>pymysql.err.OperationalError: (1045, “Access denied for user ‘root‘@’localhost’ (using password: YES)”)</p>
+<p>原因：数据库user：root的连接密钥错误<br>更换所有__init__的初始化数据库函数的参数<br>util &#x3D; MySQLTools(‘localhost’, ‘root’, ‘Qq13239349089’, ‘sharebike’, ‘utf8’) &#x2F;&#x2F;Qq13239349089是我的数据库密钥<br>New error：<br>AttributeError: ‘Flask’ object has no attribute ‘before_first_request’. Did you mean: ‘_got_first_request’?<br>原因：flask2.3.0已经弃用钩子函数’before_first_request’<br>solution：</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>皇帝成长计划2h5 攻略</title>
+    <url>/2023/08/29/%E7%9A%87%E5%B8%9D%E6%88%90%E9%95%BF%E8%AE%A1%E5%88%922h5-%E6%94%BB%E7%95%A5/</url>
+    <content><![CDATA[<h3 id="CE修改"><a href="#CE修改" class="headerlink" title="CE修改"></a>CE修改</h3><p>4:4 4:56 4:2 进存档后 群组搜索（代表八股取士这张卡，冒号前的4是4字节，第二个是卡的代号，第三个数字是属性或者数量等）</p>
+<p>2代表名臣人数（➗2即真正数量）</p>
+<p>注意：<br>1.游戏内所有数字搜索都要*2<br>2.修改策卡前要先把影响回合数的变量搜索出来、不然效果只有一回合</p>
+<p>重要的卡代码：<br>18 修改税率<br>778 修改军团攻击力<br>1836 丹药数——   紫宸殿——浩荡寻游<br>624 珍宝数量——   郊外——围猎场——自动狩猎<br>58 三千佳丽<br>1394 修改招募随从名臣率</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://www.bilibili.com/read/cv16660275">联合搜索常用代码</a></p>
+]]></content>
   </entry>
   <entry>
     <title>latex公式</title>
@@ -415,197 +910,33 @@ $("#content_views").unbind("copy").bind("copy", function(e) &#123;
 ]]></content>
   </entry>
   <entry>
-    <title>markdown语法</title>
-    <url>/2023/08/27/markdown%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<table class="table table-bordered">
-    <thead class="thead-light">
-        <tr>
-            <th>元素</th> 
-            <th>Markdown 语法</th>
-        </tr>
-    </thead> 
-    <tbody>
-        <tr>
-            <td><a href="">标题（Heading）</a></td> 
-            <td><code># H1<br>## H2<br>### H3</code></td>
-        </tr> 
-        <tr>
-            <td><a href="">粗体（Bold）</a></td> <td><code>**bold text**</code></td></tr> 
-        <tr>
-            <td><a href="">斜体（Italic）</a></td> 
-            <td><code>*italicized text*</code></td>
-        </tr> 
-        <tr>
-            <td><a href="">引用块（Blockquote）</a></td> 
-            <td><code>&gt; blockquote</code></td>
-        </tr> 
-        <tr>
-            <td><a href="">有序列表（Ordered List）</a></td>
-            <td><code>1. First item</code><br> <code>2. Second item</code><br> <code>3. Third item</code><br></td>
-        </tr>
-        <tr>
-            <td><a href="">无序列表（Unordered List）</a></td> 
-            <td><code>
-          - First item<br>
-          - Second item<br>
-          - Third item<br></code></td>
-        </tr> 
-        <tr>
-            <td><a href="">代码（Code）</a></td> <td><code>`code`</code></td>
-            </tr>
-        <tr>
-            <td><a href="">分隔线（Horizontal Rule）</a></td>
-            <td><code>---</code></td>
-        </tr> 
-        <tr>
-            <td><a href="">链接（Link）</a></td> <td><code>[title](https://www.example.com)</code></td>
-        </tr> 
-        <tr>
-            <td><a href="">图片（Image）</a></td> <td><code>![alt text](image.jpg)</code></td>
-        </tr>
-    </tbody>
-</table>
-
-<blockquote>
-<p>Markdown语法</p>
-</blockquote>
-<ul>
-<li><p>添加图片<br><code>![图片alt](图片链接 &quot;图片title&quot;)</code></p>
-</li>
-<li><p>超链接<br><code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
-</li>
-<li><p>改变字体颜色<br><code>$\color&#123;设置颜色&#125; &#123;文本内容&#125; $</code></p>
-<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">设置颜色：有三种表现形式</span><br><span class="line">1.直接用对应颜色的英文表示，如Blue（纯蓝）、Red（纯红）、Pink（粉红）等（首字母大小写都行）。</span><br><span class="line">2.rgb三原色(红绿蓝)：rgb(0,0,0)（黑色） 每一项0-255变化，全0为黑，全255为白。</span><br><span class="line">3.十六进制表示法：如#000000(黑色)、#ffffff(白色)、#008000（绿色）</span><br></pre></td></tr></table></figure>
-<p>一句话多个颜色，则用\隔开，其中，颜色代码可以随意更换</p>
-</li>
-<li><p>注意：在 HTML 块级标签内不能使用 Markdown 语法。例如 <code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 将不起作用。</p>
-</li>
-<li><p>italic and **bold**</p></li>
-</ul>
-<hr>
-<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="https://markdown.com.cn/">Markdown语法</a></p>
+    <title>破解相关</title>
+    <url>/2023/08/28/%E7%A0%B4%E8%A7%A3%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h3 id="破解论坛"><a href="#破解论坛" class="headerlink" title="破解论坛"></a>破解论坛</h3><p><a href="https://www.52pojie.cn/">吾爱破解论坛</a><br><a href="https://www.52pojie.cn/thread-582852-1-1.html">零基础新手破解学习导航帖</a><br><a href="https://down.52pojie.cn/Tools/">破解工具包</a></p>
+<h3 id="免费用MathType"><a href="#免费用MathType" class="headerlink" title="免费用MathType"></a>免费用MathType</h3><figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">​</span><br><span class="line">[-HKEY_CURRENT_USER\Software\JavaSoft\Prefs\com\wiris\editor\license\]</span><br><span class="line">[HKEY_CURRENT_USER\Software\JavaSoft\Prefs\com\wiris\editor\license\]</span><br><span class="line">&quot;/Cv/E/C81+j/Rw/U/E6ws/Znt/Os/K/Q==&quot;=&quot;11/M/P/Ir/Y/B/S/P/Pr/Q/L/Ny/T9s4/Iw==&quot;</span><br><span class="line">&quot;/Mz/Bhef/D/Q/Hs30/U6/F/Pdl/R/Xsg==&quot;=&quot;/S/Zd8c/Ai/Z/A83028s6/Kn/Gf/M/Q==&quot;</span><br><span class="line">&quot;vi/L/M7/K/Hb/C/O/A/K/X9uuis/O1/J/A==&quot;=&quot;/S/Zd8c/Ai/Z/A80\\/O/S/C/Vgp\\0/P/Q==&quot;</span><br><span class="line">&quot;wm/U/C/Y/T/Nz5/Tw=&quot;=&quot;/Wna/F/W3q/I/Yp/V\\lj/Dedai56/Ur/Wpf/P/Kpl/Soh/A/Z/Qe\\6hit3ym\\6m5sp/B/B/Q==&quot;</span><br><span class="line">&quot;x/W/Yrj/M/Db/Bds=&quot;=&quot;104z/W8rbqpw5\\/Qz0/C/Q/Opu/Dj/B5b/Dwsy77&quot;</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.cnblogs.com/yangpengcheng/p/13525939.html">MathType 破解</a><br>成功破解</p>
+<h3 id="苹果越狱"><a href="#苹果越狱" class="headerlink" title="苹果越狱"></a>苹果越狱</h3><p><a href="https://www.bilibili.com/read/cv9948721">苹果iPhone&#x2F;iPad&#x2F;iPod touch越狱全指南</a></p>
+<p>未尝试</p>
+<h3 id="B站地区限制破解"><a href="#B站地区限制破解" class="headerlink" title="B站地区限制破解"></a>B站地区限制破解</h3><p><a href="https://www.cnblogs.com/shaoziqi/p/17032698.html">B站地区限制破解方法</a><br><a href="https://greasyfork.org/zh-CN/scripts/25718-%E8%A7%A3%E9%99%A4b%E7%AB%99%E5%8C%BA%E5%9F%9F%E9%99%90%E5%88%B6">解除B站区域限制——脚本</a></p>
+<h3 id="破解无法复制"><a href="#破解无法复制" class="headerlink" title="破解无法复制"></a>破解无法复制</h3><p><a href="https://zhuanlan.zhihu.com/p/344419634">解除网页禁止复制</a></p>
 ]]></content>
   </entry>
   <entry>
-    <title>一些可供学习的个人博客或网站</title>
-    <url>/2023/08/22/%E4%B8%80%E4%BA%9B%E5%8F%AF%E4%BE%9B%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p><a href="https://tuncle.blog/">三叔的博客</a><br><a href="http://justin955.top/">居士亭</a><br><a href="https://www.liaoxuefeng.com/">廖雪峰</a><br><a href="https://www.cnblogs.com/xianyuIC">咸鱼IC</a><br><a href="https://www.cnblogs.com/fangzhiyou/">方知有</a><br><a href="https://www.monsteryu.top/">郁明敏</a></p>
-<hr>
-<h2 id="工具类网站"><a href="#工具类网站" class="headerlink" title="工具类网站"></a>工具类网站</h2><p><a href="https://www.aspose.app/">跨平台文件格式应用PDF，Word，Excel，PowerPoint，Visio，Project，OneNote，OpenOffice，CAD，3D格式的在线文件处理</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>一些想法和解决方案</title>
-    <url>/2023/08/28/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<h3 id="VSCode-html预览"><a href="#VSCode-html预览" class="headerlink" title="VSCode html预览"></a>VSCode html预览</h3><figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">open in browers</span><br><span class="line"></span><br><span class="line">使用：htm文件中右键，点击右键菜单的view in browser，即可打开浏览器运行；</span><br><span class="line"></span><br><span class="line">alt+b，运行；</span><br><span class="line"></span><br><span class="line">alt+shift+b，切换不同浏览器运行；</span><br><span class="line"></span><br><span class="line">优点：可以运行多个界面</span><br><span class="line"></span><br><span class="line">Live Server Preview</span><br><span class="line">这个插件不用另外打开浏览器；它是直接在Vscode里面预览html的，并且是自动实时更新的，不用不停地Ctrl+S保存查看</span><br><span class="line">使用：F1 -&gt; 弹出一个窗口输入live，然后右边出现预览窗口</span><br></pre></td></tr></table></figure>
-<p>More Info:<a href="https://blog.csdn.net/baidu_38607919/article/details/102506792?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8=">VS html预览</a><br><a href="https://www.cnblogs.com/cuianbing/p/13730793.html">插件介绍</a><br><a href="https://blog.csdn.net/L7810_mq/article/details/103472576">live server error</a></p>
-<p>已解决</p>
-<h3 id="高效查找之布隆过滤算法"><a href="#高效查找之布隆过滤算法" class="headerlink" title="高效查找之布隆过滤算法"></a>高效查找之布隆过滤算法</h3><figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">problem：1.哈希函数的具体算法（如何保证不同输入的值不同）</span><br><span class="line">2.删除：</span><br><span class="line">相同值碰撞——假如选择加1存储（其他也行），下面是一种场景：</span><br><span class="line">如果两本书的哈希值都是2，那么根据算法一个存到哈希表中2的位置，一个存放到3的位置，这时有人借走了位置2的那本书（可以查找成功），此时有人想借位置3的那本书，如果只将2的位置关闭，那么就查不到这本书了。</span><br></pre></td></tr></table></figure>
-<p>More Info:<a href="https://www.bilibili.com/video/BV1uN411a7f6/?spm_id_from=333.788.top_right_bar_window_history.content.click&vd_source=206a091077ff783d662b49e64cc9589d">B站视频介绍</a></p>
-<p>未解决</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>内存 双通道</title>
-    <url>/2023/08/27/%E5%86%85%E5%AD%98-%E5%8F%8C%E9%80%9A%E9%81%93/</url>
-    <content><![CDATA[<style type="text/css">
-    .img_desc {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 20px;
-    font-size: 14px;
-    font-weight: 400;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.21;
-    color: #999;
-    }    
-</style>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>不同品牌，但容量、频率、时序均完全相同的内存，可以放心组建双通道。</p>
-<p>而不同容量的内存组建双通道，则会有一些性能损失，不过仍然在兼容的范围内。除非囊中羞涩或板载内存，否则还是推荐选择容量及颗粒布局一致的内存组建双通道。</p>
-<p>不同频率的内存组建双通道，则所有内存都会工作与最低频内存相同的频率下。</p>
-<p>任何时候，都不推荐使用不同时序的内存组建双通道。这往往会对稳定性和兼容性带来挑战。</p>
-<p><a href="https://post.smzdm.com/p/awz7w20g/">不同内存组建双通道，会对性能有何影响？</a></p>
-<h2 id="内存选购指南"><a href="#内存选购指南" class="headerlink" title="内存选购指南"></a>内存选购指南</h2><p><a href="https://post.smzdm.com/p/akkezvw9/">笔记本内存的选购与分析</a></p>
-<blockquote>
-<p>考量因素：质量与兼容性、保修与价格。</p>
-</blockquote>
-<h3 id="质量"><a href="#质量" class="headerlink" title="质量"></a>质量</h3><p>根据内存条颗粒来源的不同，内存条厂商可以分为三个等级：原片厂、白片厂与黑片厂。</p>
-<p>原片厂：指能自行生产内存晶圆的厂商，即三星、海力士、美光。</p>
-<p>白片厂：泛指不生产内存晶圆，但使用达到行业标准的晶圆生产内存的厂商。如芝奇、金士顿、威刚、科赋、光威等厂家。质量可能略逊原厂，但价格更为低廉，性价比较高。<strong>适合追求性价比与性能的用户选择</strong>。</p>
-<p>黑片厂：主要指使用不符合行业标准的晶圆（“边角料”），甚至来源不明的颗粒来制造内存的厂商。如枭鲸、酷兽。<strong>任何时候都不推荐购买。</strong><img alt="" src="https://res.smzdm.com/images/emotions/56.png" class="face"></p>
-<h3 id="保修"><a href="#保修" class="headerlink" title="保修"></a>保修</h3><p>原片厂的内存，其内存质保不如白片厂靠谱：</p>
-<p>海力士没有京东自营销售渠道，第三方销售的海力士产品往往生产日期久远，还存在遇到假货的风险。</p>
-<p>而三星自营店则仅提供三年质保，逊于白片厂中的行业大牌所普遍提供的终身质保。</p>
-<p>美光&#x2F;英睿达的国内质保主要由代理（供应商）负责，其效率人尽皆知：售后逻辑存在问题，因而换货速度令人发指。</p>
-<h3 id="兼容"><a href="#兼容" class="headerlink" title="兼容"></a>兼容</h3><p><a href="#总结">见上文</a></p>
-<h2 id="疑问0：如何读懂内存条标签？"><a href="#疑问0：如何读懂内存条标签？" class="headerlink" title="疑问0：如何读懂内存条标签？"></a>疑问0：如何读懂内存条标签？</h2><p>内存标签上往往有“nR x M”的标识，其中“nR”即表示内存有n个Rank，而M则表明每个颗粒所占有的位宽，其中M&#x3D;8一般代表4BG，而M&#x3D;16代表2BG。</p>
-<blockquote>
-<p>重要参数“Rank”。<br>在消费级DDR4中，内存条可能有1-2个Rank。Rank之间单独工作。2Rank内存可以一定程度上理解为2个64bit的1Rank内存合并在一起，且共享64bit的位宽。因此其容量等参数是同规格1Rank内存的两倍。（我们此前说的“4BG”，其实指的是1个Rank中有4个BankGroup）。<br>笔记本2Rank内存标志性的特征，就是一面上有8个颗粒。对DDR4内存而言，2Rank更容易制造大容量内存，且内存带宽也会有一定提升。<br>但是，在Rank间切换会增加内存延迟，更多颗粒也意味着更大的功耗与发热，可能会在一定程度上影响待机时间，且由于电路更复杂不利于超频，极限性能因此受到影响。<br>目前，CPU带宽为64bit（即64位CPU），从而可以从标签上推知颗粒与BankGroup的数量。公式为：Rank数*CPU带宽&#x2F;颗粒位宽。</p>
-</blockquote>
-<p>举个例子，若标签上写着”1R X 8”，则表明该内存条有1个Rank、每个颗粒占有8bit位宽，为4BG内存，共有1X64&#x2F;8 &#x3D;8个内存颗粒。“2R X 16”则表明有2个Rank，每个颗粒占16bit位宽，为2BG内存，共有2X64&#x2F;16&#x3D; 8个颗粒。</p>
-<blockquote>
-<p>BG是BankGroup的缩写。DDR4中引入了这个概念，每4个Bank组成一个BankGroup。它和数据预存取有关，BankGroup之间可以同时存取数据，而每个BankGroup内部的Bank之间则需要按顺序存取。如果一份数据分散在4个BG中，则可以一次同时从4个BG中存取数据。<br>因此，一般来说，<strong>内存上的BG越多，内存的带宽利用效率就越高。</strong>这对缓存较弱的AMD锐龙平台而言尤为重要。</p>
-</blockquote>
-<p><span class="img_desc"><a href="https://post.smzdm.com/p/akkezvw9/pic_6/" target="_blank"><img src="https://qnam.smzdm.com/202207/14/62cef52075a403259.jpg_e1080.jpg" alt="如图，这是一条2Rank X 8bit，共16颗粒的内存"></a>如图，这是一条2Rank X 8bit，共16颗粒的内存</span></p>
-<p>三星、海力士的内存，还可从标签上的特定字母获知其所使用的颗粒型号和生产日期。例如，“M471A4G42AB1-CWE 2102”表明该内存使用的是三星A-Die颗粒，生产于2021年第2周。</p>
-<p>而“HMA851S6CJR6N-XN 2124”，则表明该内存使用大名鼎鼎的海力士CJR颗粒，生产于2021年第24周。</p>
-<p><span class="img_desc"><a href="https://post.smzdm.com/p/akkezvw9/pic_7/" target="_blank"><img src="https://qnam.smzdm.com/202207/14/62cef44e240442035.jpg_e1080.jpg" alt="实战时间：这是使用什么颗粒的内存？何时生产？"></a>实战时间：这是使用什么颗粒的内存？何时生产？</span></p>
-<h2 id="疑问1：内存条上的颗粒数量与排布与内存性能之间的关系？"><a href="#疑问1：内存条上的颗粒数量与排布与内存性能之间的关系？" class="headerlink" title="疑问1：内存条上的颗粒数量与排布与内存性能之间的关系？"></a>疑问1：内存条上的颗粒数量与排布与内存性能之间的关系？</h2><p>常规情况下，内存性能的排名是 2R X8（双面共16颗粒）＞1R X8（双面共8颗粒）&gt;2R X16(单面共8颗粒）&gt;1R  X16（单面共4颗粒）。</p>
-<p>但超频下的极限性能，一般是 1R X8（双面共8颗粒）＞2R X8（双面共16颗粒）。</p>
-]]></content>
-      <categories>
-        <category>电脑硬件</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>吹奏吧，上低音号！ 吹学研究</title>
-    <url>/2023/08/21/%E5%90%B9%E5%A5%8F%E5%90%A7%EF%BC%8C%E4%B8%8A%E4%BD%8E%E9%9F%B3%E5%8F%B7%EF%BC%81-%E5%90%B9%E5%AD%A6%E7%A0%94%E7%A9%B6/</url>
-    <content><![CDATA[<head>
-<style type="text/css">
-h2:before {
-    content: "";
-    width: .25em;
-    height: 70%;
-    background-color: rgb(142, 212, 149);
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    border-radius: 1em;
-}
-h2 {
-    border: 0;
-    font: inherit;
-    font-size: 1.6em;
-    font-weight: 700;
-    margin: 1rem 0;
-    padding: .2rem;
-    padding-left: 1rem;
-    position: relative;/* 重要元素 */
-    vertical-align: baseline;
-}
-</style>
-</head>
-
-<h2>起源与发展</h2>
-经过考证，吹学出现的具体时间，一般被认定为由stage1论坛用户老仓唯所著《<a href="https://hibikilogy.github.io/2019/01/27/beiyuzhichuizoubuquanliboyikaocha/">北宇治吹奏部权力博弈考察</a>》发布的2019年1月27日。该文首创了“黄前×年”这一叙事时间概念，并围绕北宇治吹奏部大赛与几代吹奏部核心成员展开探讨分析，对《吹响！上低音号》中的剧情与人际关系做出了五学式的过度（阴谋论）解读，也奠定了后续各学派吹学论文的发展基调。
-
-<p>2020年1月7日，《<a href="https://hibikilogy.github.io/2020/01/07/weishenmelishixuanzelekanade/">为什么历史选择了久石奏</a>》一文如一声惊雷巨响般横空出世，在京吹爱好者之间引起了极为热烈的反响。</p>
-<p>2020年3月8日，《<a href="https://hibikilogy.github.io/">京吹学报</a>》由inchei创立。作为吹学界影响力较大的一份学术期刊，《京吹学报》收录了一定数量的吹学著作。</p>
-<hr>
-<p><a href="https://zh.moegirl.org.cn/">萌娘百科-吹学</a><br><a href="https://space.bilibili.com/37460327/article">梓川枫-京吹群像志</a></p>
-<hr>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before">伪属性before</a></p>
+    <title>稚晖君开源——ElectronBot:Mini Desktop Robot</title>
+    <url>/2023/08/28/%E7%A8%9A%E6%99%96%E5%90%9B%E5%BC%80%E6%BA%90%E2%80%94%E2%80%94ElectronBot-Mini-Desktop-Robot/</url>
+    <content><![CDATA[<p><a href="https://github.com/peng-zhihui/ElectronBot">GitHub 项目详细说明</a><br><a href="https://www.bilibili.com/video/BV1CM411K7bL/?spm_id_from=333.880.my_history.page.click&vd_source=206a091077ff783d662b49e64cc9589d">B站 复刻项目教程</a></p>
+<h3 id="当前情况"><a href="#当前情况" class="headerlink" title="当前情况"></a>当前情况</h3><p>购买电子元件花了120￥ ：头部主控和传感器版的元件<br>打板一共9块，已经白嫖4块，如果下个月还能免费打板就能只用20块打一个板</p>
+<p>3D打印支出：<br>损坏支出：<br>练习支出：<br>合计：140</p>
+<p>预计项目总花费在600往上</p>
 ]]></content>
   </entry>
   <entry>
     <title>网站设计 效果实现与代码</title>
     <url>/2023/08/21/%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1-%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0%E4%B8%8E%E4%BB%A3%E7%A0%81/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">root 是颜色变量</span><br><span class="line">:root &#123;</span><br><span class="line">    --theme-accent-color: rgb(142, 212, 149);</span><br><span class="line">    --theme-accent-color--rgb: 142, 212, 149;</span><br><span class="line">    --theme-secondary-color: rgb(24, 127, 245);</span><br><span class="line">    --theme-secondary-color--rgb: 24, 127, 245;</span><br><span class="line">    --theme-text-color: rgb(44, 62, 80);</span><br><span class="line">    --theme-text-color--rgb: 44, 62, 80;</span><br><span class="line">    --theme-success-color: rgb(35, 165, 94);</span><br><span class="line">    --theme-info-color: rgb(122, 157, 255);</span><br><span class="line">    --theme-warn-color: rgb(255, 180, 4);</span><br><span class="line">    --theme-danger-color: rgb(255, 114, 114);</span><br><span class="line">    --theme-empty-color: rgb(185, 185, 185);</span><br><span class="line">    --theme-link-color: rgb(63, 81, 181);</span><br><span class="line">    --theme-accent-link-color: rgb(255, 255, 255);</span><br><span class="line">    --theme-background-color: rgb(248, 248, 248);</span><br><span class="line">    --theme-border-color: rgb(218, 218, 218);</span><br><span class="line">    --theme-button-color: rgb(37, 180, 73);</span><br><span class="line">    --theme-button-color--hover: #2bd155;</span><br><span class="line">    --theme-button-color--active: #219e40;</span><br><span class="line">    --theme-card-background-color: rgba(255, 255, 255);</span><br><span class="line">    --theme-card-background-color--rgb: 255, 255, 255;</span><br><span class="line">    --theme-card-box-shadow: 0 0 .5rem rgba(0, 0, 0, .1);</span><br><span class="line">    --theme-card-box-shadow--hover: 0 0 .85rem rgba(0, 0, 0, .2);</span><br><span class="line">    --theme-card-border-color: rgb(230, 230, 238);</span><br><span class="line">    --theme-header-background-color: rgb(255, 255, 255);</span><br><span class="line">    --theme-header-box-shadow-color: rgb(238, 239, 241);</span><br><span class="line">    --theme-footer-top-color: rgb(251, 251, 252);</span><br><span class="line">    --theme-footer-bottom-color: #e7e7ed;</span><br><span class="line">    --theme-input-background-color: rgb(245, 245, 245);</span><br><span class="line">    --theme-input-border-color: rgb(222, 222, 222);</span><br><span class="line">    --theme-input-border-color--hover: #e1e1e1</span><br><span class="line">&#125;</span><br><span class="line">h2:before &#123;</span><br><span class="line">    width: .25em;</span><br><span class="line">    height: 70%;</span><br><span class="line">    background-color: rgb(142, 212, 149);</span><br><span class="line">&#125;</span><br><span class="line">h3:before &#123;</span><br><span class="line">    width: .2em;</span><br><span class="line">    height: 60%;</span><br><span class="line">    background-color: rgba(var(--theme-accent-color--rgb),.85);</span><br><span class="line">&#125;</span><br><span class="line">h1:before,h2:before,h3:before,h4:before,h5:before,h6:before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: block;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 0;</span><br><span class="line">    transform: translateY(-50%);</span><br><span class="line">    border-radius: 1em;</span><br><span class="line">&#125;</span><br><span class="line">h2 &#123;</span><br><span class="line">    border: 0;</span><br><span class="line">    font: inherit;</span><br><span class="line">    font-size: 1.6em;</span><br><span class="line">    margin: 1rem 0;</span><br><span class="line">    padding-left: 1rem;</span><br><span class="line">    vertical-align: baseline;</span><br><span class="line">&#125;</span><br><span class="line">h3 &#123;</span><br><span class="line">    font-size: 1.3rem;</span><br><span class="line">    margin: .5em 0;</span><br><span class="line">    padding-left: .8rem;</span><br><span class="line">&#125;</span><br><span class="line">h2,h3&#123;</span><br><span class="line">    font-weight: 700;</span><br><span class="line">    padding: .2rem;</span><br><span class="line">    color: var(--theme-text-color);</span><br><span class="line">    position: relative;/* 重要元素 */</span><br><span class="line">&#125;</span><br><span class="line">&lt;h2&gt;标题&lt;/h2&gt;</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<figure class="highlight plaintext"><figcaption><div></div><div class="r2"></div><div class="r3"></div><span>[使用伪元素]</span></figcaption><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">root 是颜色变量</span><br><span class="line">:root &#123;</span><br><span class="line">    --theme-accent-color: rgb(142, 212, 149);</span><br><span class="line">    --theme-accent-color--rgb: 142, 212, 149;</span><br><span class="line">    --theme-secondary-color: rgb(24, 127, 245);</span><br><span class="line">    --theme-secondary-color--rgb: 24, 127, 245;</span><br><span class="line">    --theme-text-color: rgb(44, 62, 80);</span><br><span class="line">    --theme-text-color--rgb: 44, 62, 80;</span><br><span class="line">    --theme-success-color: rgb(35, 165, 94);</span><br><span class="line">    --theme-info-color: rgb(122, 157, 255);</span><br><span class="line">    --theme-warn-color: rgb(255, 180, 4);</span><br><span class="line">    --theme-danger-color: rgb(255, 114, 114);</span><br><span class="line">    --theme-empty-color: rgb(185, 185, 185);</span><br><span class="line">    --theme-link-color: rgb(63, 81, 181);</span><br><span class="line">    --theme-accent-link-color: rgb(255, 255, 255);</span><br><span class="line">    --theme-background-color: rgb(248, 248, 248);</span><br><span class="line">    --theme-border-color: rgb(218, 218, 218);</span><br><span class="line">    --theme-button-color: rgb(37, 180, 73);</span><br><span class="line">    --theme-button-color--hover: #2bd155;</span><br><span class="line">    --theme-button-color--active: #219e40;</span><br><span class="line">    --theme-card-background-color: rgba(255, 255, 255);</span><br><span class="line">    --theme-card-background-color--rgb: 255, 255, 255;</span><br><span class="line">    --theme-card-box-shadow: 0 0 .5rem rgba(0, 0, 0, .1);</span><br><span class="line">    --theme-card-box-shadow--hover: 0 0 .85rem rgba(0, 0, 0, .2);</span><br><span class="line">    --theme-card-border-color: rgb(230, 230, 238);</span><br><span class="line">    --theme-header-background-color: rgb(255, 255, 255);</span><br><span class="line">    --theme-header-box-shadow-color: rgb(238, 239, 241);</span><br><span class="line">    --theme-footer-top-color: rgb(251, 251, 252);</span><br><span class="line">    --theme-footer-bottom-color: #e7e7ed;</span><br><span class="line">    --theme-input-background-color: rgb(245, 245, 245);</span><br><span class="line">    --theme-input-border-color: rgb(222, 222, 222);</span><br><span class="line">    --theme-input-border-color--hover: #e1e1e1</span><br><span class="line">&#125;</span><br><span class="line">h2:before &#123;</span><br><span class="line">    width: .25em;</span><br><span class="line">    height: 70%;</span><br><span class="line">    background-color: rgb(142, 212, 149);</span><br><span class="line">&#125;</span><br><span class="line">h3:before &#123;</span><br><span class="line">    width: .2em;</span><br><span class="line">    height: 60%;</span><br><span class="line">    background-color: rgba(var(--theme-accent-color--rgb),.85);</span><br><span class="line">&#125;</span><br><span class="line">h1:before,h2:before,h3:before,h4:before,h5:before,h6:before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: block;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 0;</span><br><span class="line">    transform: translateY(-50%);</span><br><span class="line">    border-radius: 1em;</span><br><span class="line">&#125;</span><br><span class="line">h2 &#123;</span><br><span class="line">    border: 0;</span><br><span class="line">    font: inherit;</span><br><span class="line">    font-size: 1.6em;</span><br><span class="line">    margin: 1rem 0;</span><br><span class="line">    padding-left: 1rem;</span><br><span class="line">    vertical-align: baseline;</span><br><span class="line">&#125;</span><br><span class="line">h3 &#123;</span><br><span class="line">    font-size: 1.3rem;</span><br><span class="line">    margin: .5em 0;</span><br><span class="line">    padding-left: .8rem;</span><br><span class="line">&#125;</span><br><span class="line">h2,h3&#123;</span><br><span class="line">    font-weight: 700;</span><br><span class="line">    padding: .2rem;</span><br><span class="line">    color: var(--theme-text-color);</span><br><span class="line">    position: relative;/* 重要元素 */</span><br><span class="line">&#125;</span><br><span class="line">&lt;h2&gt;标题&lt;/h2&gt;</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">一：文字前面用一个标签，将标签设置成小方块</span><br><span class="line">二、使用边框属性</span><br><span class="line">三、使用伪元素:before</span><br><span class="line">四、border-left: 2px solid red;</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.zhihu.com/question/395120933">CSS如何在文字面前设置一个小方块？</a></p>
 <figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">  .heimu &#123;</span><br><span class="line">    transition: color 0.13s linear;</span><br><span class="line">    color: #252525;</span><br><span class="line">    text-shadow: none;</span><br><span class="line">    background-color: #252525;</span><br><span class="line">  &#125;</span><br><span class="line">  span.heimu:hover, span.heimu:active &#123;</span><br><span class="line">    color: white;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;span title=&quot;你知道的太多了&quot; class=&quot;heimu&quot;&gt;黑幕&lt;/span&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -619,11 +950,21 @@ h2 {
 <p>More info: <a href="https://www.w3schools.cn/html/html_links_bookmarks.asp">页面书签</a></p>
 <figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://www.zhihu.com/question/432499743">HTML+CSS制作如图所示的网页导航栏</a></p>
-<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">什么是图片懒加载</span><br><span class="line">当访问一个页面的时候，先把img元素或是其他元素的背景图片路径替换成一张大小为1*1px图片的路径（这样就只需请求一次），当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。</span><br><span class="line"></span><br><span class="line">通俗一点：</span><br><span class="line">1、就是创建一个自定义属性data-src存放真正需要显示的图片路径，而img自带的src放一张大小为1 * 1px的图片路径。</span><br><span class="line">2、当页面滚动直至此图片出现在可视区域时，用js取到该图片的data-src的值赋给src。</span><br><span class="line">ps：自定义属性可以取任何名字</span><br><span class="line"></span><br><span class="line">需要了解的问题</span><br><span class="line">1、如何加载图片？</span><br><span class="line">2、如何判断一个元素出现在视野中？</span><br><span class="line"></span><br><span class="line">solution1: 如何加载图片</span><br><span class="line">**只需要把data-src中的地址放到src的里面就好了**</span><br><span class="line">code:</span><br><span class="line"></span><br><span class="line">function loadImg($img)&#123;</span><br><span class="line">//.attr(值)</span><br><span class="line">//.attr(属性名称,值)</span><br><span class="line">$img.attr(&#x27;src&#x27;, $img.attr(&#x27;data-src&#x27;)) //把data-src的值 赋值给src</span><br><span class="line">$img.attr(&#x27;data-isLoaded&#x27;, 1) //已加载过的图片做标记</span><br><span class="line">&#125;</span><br><span class="line">solution2:如何判断一个元素出现在视野中？</span><br><span class="line">**元素相对顶点的距离(文字) &lt;= 窗口高度 + 滚动的距离**</span><br><span class="line">代码：</span><br><span class="line"></span><br><span class="line">function isShow($node)&#123;</span><br><span class="line">return $node.offset().top &lt;= $(window).height() + $(window).scrollTop()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<img src="https://easylink.cc/iso5pz" >
+
 <p><a href="https://www.cnblogs.com/moxiaowohuwei/p/7908877.html">参考文章</a></p>
-<figure class="highlight css"><figcaption><div></div><div class="r2"></div><div class="r3"></div><span>data-*属性</span></figcaption><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><figcaption><div></div><div class="r2"></div><div class="r3"></div><span>data-*属性</span></figcaption><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">data-*</span><br><span class="line">data-* 全局属性 是一类被称为自定义数据属性的属性，它赋予我们在所有 <span class="selector-tag">HTML</span> 元素上嵌入自定义数据属性的能力，并可以通过脚本在 <span class="selector-tag">HTML</span> 与 DOM 表现之间进行专有数据的交换。</span><br></pre></td></tr></table></figure>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/data-*">mdn data-*</a></p>
-]]></content>
+<figure class="highlight plaintext"><figcaption><div></div><div class="r2"></div><div class="r3"></div><span>copy button</span></figcaption><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">.developer-code-block &#123;</span><br><span class="line">    position: relative; /* 重要 */</span><br><span class="line">    &#125;</span><br><span class="line">.developer-code-block .copy &#123;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background-color: #697191;</span><br><span class="line">    font-size: .8em;</span><br><span class="line">    padding: 0 0.5em;</span><br><span class="line">    border-radius: 0.5em;</span><br><span class="line">    z-index: 10;</span><br><span class="line">    top: 0.3em;</span><br><span class="line">    right: 0.2em;</span><br><span class="line">    transition: opacity 0.3s ease-in-out;</span><br><span class="line">    opacity: 0;</span><br><span class="line">    position: absolute;/*重要*/</span><br><span class="line">&#125;</span><br><span class="line">button &#123;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">    border: none;</span><br><span class="line">    outline: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;developer-code-block&quot;&gt;&lt;pre class=&quot;prism-token token line-numbers language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot; style=&quot;margin-left: 0px;&quot;&gt;hexo clean</span><br><span class="line">&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;button class=&quot;copy&quot;&gt;复制&lt;/button&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">	&lt;style type =&quot;text/css&quot;&gt;</span><br><span class="line">	.prettyprint &#123;</span><br><span class="line">    margin: 0 0 24px;</span><br><span class="line">    padding: 8px 16px 6px 56px;</span><br><span class="line">    background-color: #f6f8fa;</span><br><span class="line">    border: none;</span><br><span class="line">	position: relative;</span><br><span class="line">    overflow-y: hidden;</span><br><span class="line">    overflow-x: auto;</span><br><span class="line">&#125;</span><br><span class="line">	pre &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">	font-family: Consolas,Inconsolata,Courier,monospace;</span><br><span class="line">    font-size: 14px;</span><br><span class="line">    line-height: 22px;</span><br><span class="line">    color: #000;</span><br><span class="line">&#125;	</span><br><span class="line">.prettyprint .pre-numbering &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 48px;</span><br><span class="line">    background-color: #eef0f4;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 8px 0;</span><br><span class="line">    list-style: none;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;pre class=&quot;prettyprint&quot; data-index=&quot;1&quot; name=&quot;code&quot;&gt;&lt;code class=&quot;hljs python has-numbering&quot; onclick=&quot;mdcp.copyCode(event)&quot; style=&quot;position: unset;&quot;&gt;    &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(self , response)&lt;/span&gt;:&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; item &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; response.css(&lt;span class=&quot;hljs-string&quot;&gt;&#x27;.con_list_item *&#x27;&lt;/span&gt;):</span><br><span class="line">            jobMessage = item.css(&lt;span class=&quot;hljs-string&quot;&gt;&#x27;::text&#x27;&lt;/span&gt;).extract()</span><br><span class="line">            print(jobMessage)&lt;div class=&quot;hljs-button &#123;2&#125;&quot; data-title=&quot;复制&quot;&gt;&lt;/div&gt;&lt;/code&gt;&lt;ul class=&quot;pre-numbering&quot; style=&quot;&quot;&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;1&lt;/li&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;2&lt;/li&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;3&lt;/li&gt;&lt;li style=&quot;color: rgb(153, 153, 153);&quot;&gt;4&lt;/li&gt;&lt;/ul&gt;</span><br><span class="line">&lt;/pre&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><div></div><div class="r2"></div><div class="r3"></div><span>字体上方标注</span></figcaption><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">rb[data-id=&quot;template-ruby&quot;]::before,.template-ruby-hidden  &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    width: 0;</span><br><span class="line">    font-size: 0;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;p&gt;&lt;ruby&gt;&lt;rb data-id=&quot;template-ruby&quot;&gt;绅士&lt;span class=&quot;template-ruby-hidden&quot;&gt;（&lt;/span&gt;&lt;/rb&gt;&lt;rt style=&quot;font-size:0.75em&quot;&gt;hentai&lt;/rt&gt;&lt;span class=&quot;template-ruby-hidden&quot;&gt;）&lt;/span&gt;&lt;/ruby&gt;</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    font-family: &quot;Courier New&quot;,sans-serif;</span><br><span class="line">    font-size: 12px;</span><br><span class="line">    padding: 0 5px;</span><br><span class="line">    line-height: 1.8;</span><br><span class="line">    margin: 0 3px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    overflow-x: auto;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    border-radius: 3px;</span><br><span class="line">    background-color: #f6f6f6;</span><br><span class="line">    color: #e83e8c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><div></div><div class="r2"></div><div class="r3"></div><span>未知作用的JS脚本</span></figcaption><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">&quot;use strict&quot;;</span><br><span class="line">window.RLQ = window.RLQ || [];</span><br><span class="line">window.RLQ.push(() =&gt; &#123;</span><br><span class="line">    $(() =&gt; &#123;</span><br><span class="line">        $(&quot;.navbox.largeNavbox:not(.largeNavboxExeced)&quot;).each((_, ele) =&gt; &#123;</span><br><span class="line">            const self = $(ele);</span><br><span class="line">            self.addClass(&quot;largeNavboxExeced&quot;).find(&quot;.navbox-title&quot;).first().prepend(`&lt;$&#123;&#x27;span&#x27;&#125; class=&quot;largeNavbox-toggle&quot;&gt;&lt;/$&#123;&#x27;span&#x27;&#125;&gt;`);</span><br><span class="line">            const button = self.find(&quot;.largeNavbox-toggle&quot;);</span><br><span class="line">            button.append(`[&lt;$&#123;&#x27;a&#x27;&#125;&gt;全隐/全显&lt;/$&#123;&#x27;a&#x27;&#125;&gt;]`);</span><br><span class="line">            button.find(&quot;a&quot;).on(&quot;click&quot;, () =&gt; &#123;</span><br><span class="line">                const buttons = self.find(&quot;.navbox-list .mw-collapsible-toggle&quot;);</span><br><span class="line">                if (buttons.filter(&quot;.mw-collapsible-toggle-collapsed&quot;).length * 2 &gt; buttons.length) &#123;</span><br><span class="line">                    buttons.filter(&quot;.mw-collapsible-toggle-collapsed&quot;).click();</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    buttons.filter(&quot;:not(.mw-collapsible-toggle-collapsed)&quot;).click();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">        $(&quot;.largeNavbox-toggle&quot;).css(&#123;</span><br><span class="line">            position: &quot;absolute&quot;,</span><br><span class="line">            &quot;user-select&quot;: &quot;none&quot;,</span><br><span class="line">        &#125;).find(&quot;a&quot;).css(&quot;cursor&quot;, &quot;pointer&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;&lt;style&gt;</span><br><span class="line">.largeNavbox-toggle &#123;</span><br><span class="line">    right: 6em</span><br><span class="line">&#125;</span><br><span class="line">.skin-moeskin .largeNavbox-toggle &#123;</span><br><span class="line">    right: 4.5em</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>系统总线</title>
@@ -732,9 +1073,16 @@ h2 {
 ]]></content>
   </entry>
   <entry>
-    <title>我的第一篇文章</title>
-    <url>/2023/06/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[]]></content>
+    <title>访问外网 梯子</title>
+    <url>/2023/08/28/%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91-%E6%A2%AF%E5%AD%90/</url>
+    <content><![CDATA[<p>自用梯子：<br><a href="https://www.mojie.me/?ref=www.mjjloc.com#/dashboard">魔戒</a><br><a href="https://www.heidongvpn.com/">黑洞</a>——安卓手机，一天免费3小时<br>梯子直接全局代理，配置什么的基本不用自己管，很方便</p>
+<h3 id="如何访问外网"><a href="#如何访问外网" class="headerlink" title="如何访问外网"></a>如何访问外网</h3><blockquote>
+<p><strong>简介</strong><br>SSTap 全称 SOCKSTap, 是一款利用虚拟网卡技术在网络层实现的代理工具。SSTap 能在网络层拦截所有连接并转发给 HTTP, SOCKS4&#x2F;5, SHADOWSOCKS(R) 代理，而无需对被代理的应用程序做任何修改或设置。它能同时转发 TCP, UDP 数据包，非常适合于游戏玩家使用。<br>这是一个免费的工具，仅有应用内常驻非弹出式广告，并不会影响使用体验。（也有第三方去广告版本）<br><a href="https://wiki.kache.moe/2019/11/19/Windows-SSTap/">SSTap教程</a></p>
+</blockquote>
+<blockquote>
+<p>VPN使用<br><a href="https://zh.wikihow.com/%E4%BD%BF%E7%94%A8VPN">使用VPN</a><br><a href="https://www.vsneko.com/article/24/">如何访问外网|向日葵</a>——链接已失效</p>
+</blockquote>
+]]></content>
   </entry>
   <entry>
     <title>青年在选择职业时的考虑</title>
@@ -868,6 +1216,108 @@ Dem Tiere hat die Natur selber den Wirkungskreis bestimmt, in welchem es sich be
 <ul>
 <li>打开IIS管理器 -&gt; 选择个人主机 -&gt;在IIS目录下找到目录浏览功能 -&gt; 选择，在右侧操作栏内启用</li>
 </ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>黑暗之魂3攻略</title>
+    <url>/2023/08/28/%E9%BB%91%E6%9A%97%E4%B9%8B%E9%AD%823%E6%94%BB%E7%95%A5/</url>
+    <content><![CDATA[<h3 id="全成就"><a href="#全成就" class="headerlink" title="全成就"></a>全成就</h3><p><a href="https://www.bilibili.com/video/BV1E54y1i77f/?spm_id_from=333.999.0.0&vd_source=206a091077ff783d662b49e64cc9589d">【黑暗之魂3】全npc支线任务剧情攻略索引</a><br><a href="https://www.bilibili.com/video/BV1tJ411y7SD/?spm_id_from=333.999.0.0&vd_source=206a091077ff783d662b49e64cc9589d">黑暗之魂3-全誓约道具の离线刷法</a><br><a href="https://www.bilibili.com/video/BV19Q4y1N7Re/?spm_id_from=333.999.0.0">【黑暗之魂3】楔形石原盘全收集</a></p>
+<h3 id="质变系统"><a href="#质变系统" class="headerlink" title="质变系统"></a>质变系统</h3><p><a href="https://www.zhihu.com/question/486525599">黑魂3武器质变推荐</a><br>所有的质变种类是厚重、锋利、熟练、粗制、结晶、愚人、火焰、混沌、雷电、祝福、幽邃、暗、血、毒、游魂</p>
+<p>游魂宝石吃运气加成，运气越高加成越高，祝福好像吃的是信仰加成，祝福质变会每秒回血，游魂质变等级上去的话有些武器是要比熟练质变和锋利质变还要高的<br>一周目等级低的情况下，粗制、火焰、幽邃质变都是固定加成，只看武器的等级，所以可以用<br>到之后等级比较高就可以考虑换其他质变了，不过一般推荐熟练质变，加点力量66，敏捷80，一周目可以点30，30，30力量可以拿起绝大部分武器<br>双刀的锋利质变要比熟练质变面板更高一些，不用属性质变是因为可以擦纸或者法术上buff</p>
+<blockquote>
+<p>我推荐的质变与相关武器：<br>锋利质变：佣兵对刀，守墓人对刀，丛云；<br>熟练质变：阔剑，洛直，小镰刀等绝大多武器；匕首可以每种属性做一个质变，因为主要打背刺，上buff浪费时间，而且换成其他质变加成并不高。<br>结晶&#x2F;雷电质变：两种加成在相同加点的情况下是相同的，结晶质变吃智力补正，雷电质变吃信仰补正。但是魂3 没有特别弱魔力的boss，所以不推荐质变结晶，雷电可以雷电洛特大，非常强；洛特大还得是祝福质变，雷质变会固定洛特大的雷伤，祝福会让洛特大的雷伤有信仰补正，所以祝福洛特大神中神<br>愚人&#x2F;祝福：愚人吃智力补正，祝福吃信仰补正。愚人可以缓慢回蓝，祝福可以缓慢回血，推荐可以质变一些盾牌。祝福推荐：护手带，洛特大也可以，面板同样很高。<br>混沌&#x2F;暗：同时吃智力和信仰两种补正，不爱擦纸或者玩法爷，亦或者高周目水桶可以包里多搞几把爱用的武器质变成混沌或者暗，伤害都不错，由于很多敌人弱火或者暗，所以这两种质变非常推荐。武器就不推荐了，自己喜欢的都可以质变一下<br>血&#x2F;毒：魂3机制里毒比较拉跨，所以一般都不怎么用毒，PVP能玩的也就一把咕噜腐败短刀，出血的话还能用用，打一些boss都很舒服。血质变适合给盗贼短刀，毒质变适合给咕噜腐败短刀。<br>游魂：游魂质变吃幸运补正，叠加到物理面板。<br>最后厚重质变没说，是因为确实不怎么用，厚重会减敏捷补正加力量补正，一般等级高了都会点，不如熟练质变，如果只是高力量可以玩玩厚重质变，同理锋利质变就是高敏捷号</p>
+</blockquote>
+<h3 id="太阳战士"><a href="#太阳战士" class="headerlink" title="太阳战士"></a>太阳战士</h3><p><a href="https://tieba.baidu.com/p/7416825187">太阳战士经验贴</a></p>
+<h5 id="加点1"><a href="#加点1" class="headerlink" title="加点1"></a>加点1</h5><img class="BDE_Image" pic_type="0" width="389" height="532" src="http://tiebapic.baidu.com/forum/w%3D580/sign=7647270e4cdfa9ecfd2e561f52d1f754/ec6175adcbef7609cfa2dc8d73dda3cc7dd99e89.jpg?tbpicau=2023-08-30-05_3a3443a75c75fe23342938ad92ce4baf" size="259855">
+
+<p>不加智力、体力、运气，14集中力和15信仰恰好可以使用惜别</p>
+<p>39生命力、40持久力是软上限，40力量和敏捷是第一个软上限。元素瓶配置推荐带两瓶蓝（因为灵体元素瓶减半），保证能够补充一次惜别</p>
+<h5 id="加点2"><a href="#加点2" class="headerlink" title="加点2"></a>加点2</h5><img class="BDE_Image" pic_type="0" width="362" height="499" src="http://tiebapic.baidu.com/forum/w%3D580/sign=02724e9c06a98226b8c12b2fba80b97a/16b12f600c338744024ee395140fd9f9d52aa0e3.jpg?tbpicau=2023-08-30-05_016ce63cce935168501effd2e8c58b6c" size="219139">
+
+<p>集中力升到28，信仰升到30。25信仰可以使用黑剑和大恢复，28信仰可以使用金石之誓，但是要占两个记忆格子，30信仰可以使用雷电剑和暗月光剑。此时我们可以携带的奇迹配置为惜别+大恢复+一个属性附魔，28的集中力刚好可以放这三个奇迹一次。元素瓶建议带4瓶蓝。至此低配版太阳战士完成，打低周目是没问题的了。</p>
+<h5 id="加点3"><a href="#加点3" class="headerlink" title="加点3"></a>加点3</h5><img class="BDE_Image" pic_type="0" width="367" height="498" src="http://tiebapic.baidu.com/forum/w%3D580/sign=b76fdd6b61c6a7efb926a82ecdfbafe9/ee615fd5ad6eddc401a4cc4f2edbb6fd5366335c.jpg?tbpicau=2023-08-30-05_194e0f00264910d66025413dfe06b25f" size="224747">
+
+<p>60力量、敏捷是第二个软上限，但是双持武器可以吃到1.5倍的力量补正，故力量升到66。45信仰可以使用阳光疗愈30集中力恰好可以使用一次惜别+附魔+阳光疗愈。至于先升力量敏捷还是集中力和信仰，可以自行选择。</p>
+<p>达成这个加点之后我们就需要注意升体力，因为高周目的boss需要我们有足够的体力穿重甲。</p>
+<h5 id="加点4"><a href="#加点4" class="headerlink" title="加点4"></a>加点4</h5><img class="BDE_Image" pic_type="0" width="362" height="491" src="http://tiebapic.baidu.com/forum/w%3D580/sign=489c43700cd5ad6eaaf964e2b1ca39a3/ac9d2a061d950a7b988f36701dd162d9f3d3c966.jpg?tbpicau=2023-08-30-05_63d27e19a436080a35d3110059de6216" size="219440">
+
+<p>集中力升到35，信仰升到60。元素瓶建议多带点蓝瓶，大概8瓶。集中力升到35之后对蓝条的增益迅速下降，如果记忆格子够的话不建议再往上升</p>
+<h5 id="加点5"><a href="#加点5" class="headerlink" title="加点5"></a>加点5</h5><img class="BDE_Image" pic_type="0" width="358" height="493" src="http://tiebapic.baidu.com/forum/w%3D580/sign=285afac154a98226b8c12b2fba83b97a/16b12f600c338744286657c8460fd9f9d62aa07d.jpg?tbpicau=2023-08-30-05_934cd7550cd6c87a2aff4ff00eee3165" size="216917">
+
+<p>其实体力不用升到99，够用就行，敏捷可以考虑继续升到80</p>
+<h5 id="配装1"><a href="#配装1" class="headerlink" title="配装1"></a>配装1</h5><p>通用武器和戒指配置<br>锋利佣兵对刀+狼曲<br><img class="BDE_Image" pic_type="0" width="185" height="136" src="http://tiebapic.baidu.com/forum/w%3D580/sign=de0fd106c658ccbf1bbcb53229d9bcd4/449a0ffbfbedab646e9e3574e036afc378311e2f.jpg?tbpicau=2023-08-30-05_62361164b7af4f41339af7df1b9555ed" size="42047"><br><img class="BDE_Image" pic_type="0" width="259" height="71" src="http://tiebapic.baidu.com/forum/w%3D580/sign=32834237182442a7ae0efdade142ad95/e86f153d269759ee91bf187fa5fb43166c22df29.jpg?tbpicau=2023-08-30-05_8b870c7d3f25243c8528c74367c5dcd4" size="35189"></p>
+<p>大部分情况下都适用，佣兵对刀攻速快，狼曲当你连续攻击时增加攻击力并回血，再搭配教宗右眼（也是连续攻击增加攻击力），输出很不错，一定要记得给佣兵对刀附魔或者抹上松脂，并且双持右键攻击</p>
+<h5 id="配装2"><a href="#配装2" class="headerlink" title="配装2"></a>配装2</h5><p>熟练阔剑+盾<br><img class="BDE_Image" pic_type="0" width="192" height="145" src="http://tiebapic.baidu.com/forum/w%3D580/sign=42b0a16c8cea15ce41eee00186013a25/a9c14d23dd54564ed3d32bd0f6de9c82d0584f3f.jpg?tbpicau=2023-08-30-05_751e38b1778a296af675e89710308731" size="48719"><br><img class="BDE_Image" pic_type="0" width="260" height="65" src="http://tiebapic.baidu.com/forum/w%3D580/sign=f4bfa35bf7b7d0a27bc90495fbee760d/755f95c8a786c91726b59dd08c3d70cf3ac7573f.jpg?tbpicau=2023-08-30-05_4de790b1aef0b8f33524dcf1a0c8ef11" size="31967"></p>
+<p>也许很多人都抛弃了最初的剑盾流，但是你不得不承认，直剑的输出效率非常优秀，而盾牌能够大大提高容错，因此剑盾非常适合新手太阳熟悉业务，老手不带盾可以换成老狼曲剑，伤害一样很高。阔剑作为面板最高的直剑，是当仍不让的首选。盾牌则需要根据不同的boss选择不同的盾牌，如果你等级够，也可以直接选择哈维尔盾。</p>
+<h5 id="戒指选择"><a href="#戒指选择" class="headerlink" title="戒指选择"></a>戒指选择</h5><img class="BDE_Image" pic_type="0" width="56" height="68" src="http://tiebapic.baidu.com/forum/w%3D580/sign=eeca89b7df95d143da76e42b43f18296/b97b796d55fbb2fbef7b3da6584a20a44723dc4c.jpg?tbpicau=2023-08-30-05_b29bb4a76a354e5eb445994bf73bcfb1" size="2251">
+
+<p>宠爱+3，带上就摘不下来</p>
+<img class="BDE_Image" pic_type="0" width="50" height="63" src="http://tiebapic.baidu.com/forum/w%3D580/sign=91491dc8d5ef76c6d0d2fb23ad17fdf6/328e4af41bd5ad6ea950ab03c4cb39dbb4fd3cc0.jpg?tbpicau=2023-08-30-05_f6de91497e53853c7d0833fe35115a44" size="2203">
+
+<p>绿花+3，可以常带，增加10&#x2F;s的精力恢复。40持久力时，精力条总量为179</p>
+<img class="BDE_Image" pic_type="0" width="64" height="70" src="http://tiebapic.baidu.com/forum/w%3D580/sign=d35b60fdf4ec8a13141a57e8c7029157/d1388fef76094b3628d85ffffecc7cd98c109df4.jpg?tbpicau=2023-08-30-05_3d11bc6b9e87ad38244ca7a4153fb114" size="2302">
+
+<p>钢铁庇护+3，可以常带，非常优秀的减伤戒指，即使身穿哈维尔一套也能增加10%左右的物理减伤率，如果你穿轻甲，则可以增加14%左右，不穿衣服加17%盾徽，同样非常优秀的减伤戒指，不穿衣服加20%全部减伤，穿哈维尔的话跟钢铁庇护效果差不多，最适合用在高周目和灵车防止被一刀秒杀（点名盖尔），或者你想穿轻甲，那么配合钢铁庇护+3可以达到40%左右的物理减伤，这已经比不戴戒指穿哈维尔高了。缺点是在受到伤害后效果会消失，需要有一定技术（至少不能被boss抓滚吧），尽量配合阳光疗愈（受法术伤害加成影响，最好能一下奶满）使用</p>
+<p><img class="BDE_Image" pic_type="0" width="60" height="65" src="http://tiebapic.baidu.com/forum/w%3D580/sign=60806df2910735fa91f04eb1ae500f9f/6a86272762d0f7035a175a354dfa513d2497c5cd.jpg?tbpicau=2023-08-30-05_d4d5382945ca3e119d7049bd9b5a1f04" size="2291"><br><img class="BDE_Image" pic_type="0" width="64" height="62" src="http://tiebapic.baidu.com/forum/w%3D580/sign=d76c1c00124a20a4311e3ccfa0539847/cfbbfd389b504fc24118f417b8dde71191ef6df7.jpg?tbpicau=2023-08-30-05_2ec210f17b99d4071ff704bac62a824f" size="2299"><br><img class="BDE_Image" pic_type="0" width="65" height="63" src="http://tiebapic.baidu.com/forum/w%3D580/sign=746df00827d9f2d3201124e799ed8a53/b917f6b7d0a20cf43e34313633094b36aeaf99cd.jpg?tbpicau=2023-08-30-05_ef7003aacccd8dafd1f5a070a888c5cf" size="2307"><br><img class="BDE_Image" pic_type="0" width="65" height="64" src="http://tiebapic.baidu.com/forum/w%3D580/sign=41b22b0d89510fb37819779fe932c893/711ae4ec08fa513d81e8096a2a6d55fbb3fbd95e.jpg?tbpicau=2023-08-30-05_69dfcf5588763f1d353f65a7c7c74bdf" size="2320"><br><img class="BDE_Image" pic_type="0" width="66" height="67" src="http://tiebapic.baidu.com/forum/w%3D580/sign=b1dd11215f4c510faec4e21250582528/108a7e292df5e0feafbc46e8196034a85cdf72cd.jpg?tbpicau=2023-08-30-05_740038d934ba7d72161a00bd1b1b52d3" size="2382"><br><br></p>
+<p>各种方石戒指+2（最高加20%单属性减伤率）以及斑方石戒指+1，可以选择带。我有时会把绿花戒指换下来带这个，或者当你觉得很难保持满血，就用这个代替盾徽戒指。觉得扛得住可以不带</p>
+<img class="BDE_Image" pic_type="0" width="65" height="73" src="http://tiebapic.baidu.com/forum/w%3D580/sign=91471dc8d5ef76c6d0d2fb23ad17fdf6/328e4af41bd5ad6ea95eab03c4cb39dbb4fd3cce.jpg?tbpicau=2023-08-30-05_bc69f8c62d418e3c4c40562147091673" size="2727">
+
+<p>伫立龙徽戒指+2，增加法术（奇迹）持续时间，好像是35%，我用来增加附魔的时间（比较懒），大概加了21秒，原本是60秒，个人感觉还行</p>
+<img class="BDE_Image" pic_type="0" width="70" height="68" src="http://tiebapic.baidu.com/forum/w%3D580/sign=719159a0bc18972ba33a00c2d6cc7b9d/f14aedec8a136327c357a787868fa0ec09fac766.jpg?tbpicau=2023-08-30-05_f3b14f5d8b59d14852645cb0cf302b72" size="2110">
+
+<p>红泪石戒指，残血时提高攻击力20%（攻击力用乘法计算，相当于原来的攻击力乘1.2），用的最多的场景是打黑龙灵车</p>
+<img class="BDE_Image" pic_type="0" width="63" height="64" src="http://tiebapic.baidu.com/forum/w%3D580/sign=fd55f9689d13632715edc23ba18ea056/2b7a32094b36acafc257f3486bd98d1000e99c61.jpg?tbpicau=2023-08-30-05_9b94303c8c743f211e3e1270640e91a1" size="1896">
+
+<p>教宗右眼，可带，跟老狼曲剑效果差不多，这两个具体加多少攻击力忘了好像是分三层，攻击次数越多加的越多。但是毕竟占了一个戒指位，我的话更喜欢带减伤戒指</p>
+<div id="post_content_139956522595" class="d_post_content j_d_post_content " style="display:;">                    奇迹的选择<img class="BDE_Smiley" pic_type="1" width="30" height="30" src="https://tb2.bdstatic.com/tb/editor/images/face/i_f24.png?t=20140803"><br><img class="BDE_Image" pic_type="0" width="65" height="70" src="http://tiebapic.baidu.com/forum/w%3D580/sign=d3362a4f1d46f21fc9345e5bc6256b31/477a8a1b9d16fdfaabada25aa38f8c5496ee7bd2.jpg?tbpicau=2023-08-30-05_809e420038b21e1dac43f9343489fe92" size="2653"><br>惜别，受到致命伤害会保留1生命值，苟命神器<br><img class="BDE_Image" pic_type="0" width="64" height="66" src="http://tiebapic.baidu.com/forum/w%3D580/sign=97f8e609890735fa91f04eb1ae500f9f/6a86272762d0f703ad6fd1ce55fa513d2797c55d.jpg?tbpicau=2023-08-30-05_b01755710d1d88c12a6f9f7bcb21068a" size="2426"><br><img class="BDE_Image" pic_type="0" width="66" height="72" src="http://tiebapic.baidu.com/forum/w%3D580/sign=44d3568c3f381f309e198da199004c67/b3d6bff2b21193136a829b0472380cd793238dd3.jpg?tbpicau=2023-08-30-05_839828b260a4f197906ee4192a472b05" size="2393"><br><img class="BDE_Image" pic_type="0" width="61" height="61" src="http://tiebapic.baidu.com/forum/w%3D580/sign=5cf2c239ed51f819f1250342eab54a76/c8a1709b033b5bb5ac0a64ec6bd3d539b700bc5d.jpg?tbpicau=2023-08-30-05_0b922830cf46d612798f1b3054132292" size="2253"><br>属性附魔，大幅度提升输出，持续时间60s。因为附魔的存在，不推荐去给武器属性质变，信仰不低于40的话，武器属性质变的伤害比附魔差很多<br><img class="BDE_Image" pic_type="0" width="68" height="71" src="http://tiebapic.baidu.com/forum/w%3D580/sign=19e9f3fdee18972ba33a00c2d6cf7b9d/f14aedec8a136327ab2f0ddad48fa0ec0afac7b4.jpg?tbpicau=2023-08-30-05_96ec3ab95e6b0abc0be4a3ad814189ab" size="2399"><br>阳光疗愈，恢复量受圣铃的法术威力加成影响，60信仰龙铃能从1滴血直接奶满<br><img class="BDE_Image" pic_type="0" width="62" height="62" src="http://tiebapic.baidu.com/forum/w%3D580/sign=dd2dac9b5634970a47731027a5cbd1c0/57d007a98226cffc6be9db06ae014a90f403eadd.jpg?tbpicau=2023-08-30-05_ef83a1e90e9e85596185c4083f2e5346" size="2150"><br>金石之誓，可以考虑带，增加攻击力和减伤率，攻击力加10%，减伤不穿衣服加10%，可以加给队友，但是占了两个格子<br>如果不打灵车，带4瓶蓝应该就够用了，灵车建议带8瓶，另外尽量不要被打破惜别，惜别耗蓝100，而阳光疗愈耗蓝80</div>
+
+
+<h3 id="跑图"><a href="#跑图" class="headerlink" title="跑图"></a>跑图</h3><p><a href="https://www.bilibili.com/video/BV1XK411V7Bv/?spm_id_from=333.999.0.0&vd_source=206a091077ff783d662b49e64cc9589d">【黑暗之魂3】黑暗之魂3新手跑图流程导航向(本体+dlc1+dlc2)</a></p>
+<h3 id="黑桐谷歌"><a href="#黑桐谷歌" class="headerlink" title="黑桐谷歌"></a>黑桐谷歌</h3><p><a href="https://www.bilibili.com/video/BV1XK411V7Bv/?spm_id_from=333.999.0.0&vd_source=206a091077ff783d662b49e64cc9589d">【黑暗之魂3】黑桐谷歌视频攻略解说 01</a></p>
+<h3 id="Mod推荐"><a href="#Mod推荐" class="headerlink" title="Mod推荐"></a>Mod推荐</h3><p><a href="https://www.bilibili.com/video/BV185411J79M/?spm_id_from=333.999.0.0&vd_source=206a091077ff783d662b49e64cc9589d">【黑暗之魂3】黑桐谷歌视频攻略解说 01</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="https://www.bilibili.com/video/BV1Jp411R71k/?spm_id_from=333.999.0.0&vd_source=206a091077ff783d662b49e64cc9589d">黑暗之魂重制版 (Dark Souls Remastered) 流程解说攻略</a><br><strong>神攻略，中间有对黑魂系统的讲解，不枯燥、冷幽默、最详细的并且最硬核的，有隐藏机制、数值说明</strong><br><a href="https://tieba.baidu.com/p/7434431701">太阳战士联机贴</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>吹奏吧，上低音号！ 吹学研究</title>
+    <url>/2023/08/21/%E5%90%B9%E5%A5%8F%E5%90%A7%EF%BC%8C%E4%B8%8A%E4%BD%8E%E9%9F%B3%E5%8F%B7%EF%BC%81-%E5%90%B9%E5%AD%A6%E7%A0%94%E7%A9%B6/</url>
+    <content><![CDATA[<head>
+<style type="text/css">
+h2:before {
+    content: "";
+    width: .25em;
+    height: 70%;
+    background-color: rgb(142, 212, 149);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 1em;
+}
+h2 {
+    border: 0;
+    font: inherit;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin: 1rem 0;
+    padding: .2rem;
+    padding-left: 1rem;
+    position: relative;/* 重要元素 */
+    vertical-align: baseline;
+}
+</style>
+</head>
+
+<h2>起源与发展</h2>
+经过考证，吹学出现的具体时间，一般被认定为由stage1论坛用户老仓唯所著《<a href="https://hibikilogy.github.io/2019/01/27/beiyuzhichuizoubuquanliboyikaocha/">北宇治吹奏部权力博弈考察</a>》发布的2019年1月27日。该文首创了“黄前×年”这一叙事时间概念，并围绕北宇治吹奏部大赛与几代吹奏部核心成员展开探讨分析，对《吹响！上低音号》中的剧情与人际关系做出了五学式的过度（阴谋论）解读，也奠定了后续各学派吹学论文的发展基调。
+
+<p>2020年1月7日，《<a href="https://hibikilogy.github.io/2020/01/07/weishenmelishixuanzelekanade/">为什么历史选择了久石奏</a>》一文如一声惊雷巨响般横空出世，在京吹爱好者之间引起了极为热烈的反响。</p>
+<p>2020年3月8日，《<a href="https://hibikilogy.github.io/">京吹学报</a>》由inchei创立。作为吹学界影响力较大的一份学术期刊，《京吹学报》收录了一定数量的吹学著作。</p>
+<hr>
+<p><a href="https://zh.moegirl.org.cn/">萌娘百科-吹学</a><br><a href="https://space.bilibili.com/37460327/article">梓川枫-京吹群像志</a></p>
+<hr>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before">伪属性before</a></p>
 ]]></content>
   </entry>
 </search>

@@ -147,7 +147,24 @@
 <p>bike.sql<br>– 为了自动读取本文件并初始化, 需要在每条语句后加 —-<br>– 但注意最后一句不要加 —-</p>
 <h4 id="error"><a href="#error" class="headerlink" title="error"></a>error</h4><p>ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。<br>猜测原因：MySQL未连接成功<br>尝试解决方法：重新下载并配置环境<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41955953/article/details/81272849">MySQL8.0的安装、配置、启动服务和登录及配置环境变量</a></p>
 <p>下载并配置好后，错误代码发生变化，证明思路正确<br>New error：<br>pymysql.err.OperationalError: (1045, “Access denied for user ‘root‘@’localhost’ (using password: YES)”)</p>
-<p>原因：数据库user：root的连接密钥错误<br>更换所有__init__的初始化数据库函数的参数<br>util &#x3D; MySQLTools(‘localhost’, ‘root’, ‘Qq13239349089’, ‘sharebike’, ‘utf8’) &#x2F;&#x2F;Qq13239349089是我的数据库密钥<br>New error：<br>AttributeError: ‘Flask’ object has no attribute ‘before_first_request’. Did you mean: ‘_got_first_request’?<br>原因：flask2.3.0已经弃用钩子函数’before_first_request’<br>solution：</p>
+<p>原因：数据库user：root的连接密钥错误<br>更换所有__init__的初始化数据库函数的参数<br>util &#x3D; MySQLTools(‘localhost’, ‘root’, ‘Qq13239349089’, ‘sharebike’, ‘utf8’) &#x2F;&#x2F;Qq13239349089是我的数据库密钥<br>New error：<br>AttributeError: ‘Flask’ object has no attribute ‘before_first_request’. Did you mean: ‘_got_first_request’?<br>原因：flask2.3.0已经弃用钩子函数’before_first_request’</p>
+<p>solution：pip install Flask&#x3D;&#x3D;2.2.5<br>用搜索引擎查找相关问题，答案比较少，有一篇说明是2.3.0版本删除了钩子函数，但没有对更新后如何修改进行说明的贴子，因此选择退回版本</p>
+<h4 id="项目跑成功了！"><a href="#项目跑成功了！" class="headerlink" title="项目跑成功了！"></a>项目跑成功了！</h4><p>经过一番折腾，这该死的项目终于能跑起来了，之后就是看懂再增删改了，明天把文档写一写</p>
+<p>要做的内容：<br>单车管理<br>骑行者管理<br>押金管理<br>骑行管理<br>其他功能：查询统计、用户权限管理、异常处理（单车故障、押金不足、骑行者黑名单等）等</p>
+<h4 id="从网页开始读代码"><a href="#从网页开始读代码" class="headerlink" title="从网页开始读代码"></a>从网页开始读代码</h4><p>开发环境：</p>
+<p>Windows系统<br>Pycharm 软件</p>
+<p>前端框架 Bootstrap<br>后端框架 Flask</p>
+<p>数据库 MySQL</p>
+ <!-- Bootstrap Core CSS -->
+<pre><code>&lt;link href = &quot;/static/bootstrap/dist/css/bootstrap.min.css&quot; rel = &quot;stylesheet&quot;&gt;
+采用了bootstrap框架，但版本较低，之后可以考虑更新版本
+</code></pre>
+<h3 id="尝试增加功能：用户界面，点击右上角的图像可以转到"><a href="#尝试增加功能：用户界面，点击右上角的图像可以转到" class="headerlink" title="尝试增加功能：用户界面，点击右上角的图像可以转到"></a>尝试增加功能：用户界面，点击右上角的图像可以转到</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/cxzlp12345/article/details/82857022">鼠标悬停页面头部用户图像出现下拉菜单的实现</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41589917/article/details/106925480">点击头像选择图片更换头像</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_31580493/article/details/90609811?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Rate-1-90609811-blog-106925480.235%5Ev38%5Epc_relevant_sort_base2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Rate-1-90609811-blog-106925480.235%5Ev38%5Epc_relevant_sort_base2">点击头像更换头像</a></p>
+<h3 id="修改内容-删去同济相关文字"><a href="#修改内容-删去同济相关文字" class="headerlink" title="修改内容-删去同济相关文字"></a>修改内容-删去同济相关文字</h3><p>抠图好tm麻烦</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><p><a target="_blank" rel="noopener" href="https://lbs.amap.com/tools/picker">高德地图 查询地理经纬度</a></p>
+<h3 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h3><p>1.自动登录 session与cookie<br>2.数据库加密 python cryptography</p>
+<h4 id="3-动态生成导航栏-JS改写"><a href="#3-动态生成导航栏-JS改写" class="headerlink" title="3.动态生成导航栏 JS改写"></a>3.动态生成导航栏 JS改写</h4><p>使用最小代价去更新，利用Web Components技术</p>
+<p>4.解决一下网页打开慢的问题<br>5.并发量大的时候，数据库会崩溃，需要解决   测试<br><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/743780">解决高并发的系统设计</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sunshineliulu/p/7509810.html">网站性能测试指标及网站压力测试</a><br>6.重新设计页面 优秀的交互设计（比如说单车点击可借）<br>7.无障碍功能设计<br>8.小功能 （更换语言，更换主题，更换背景，更换字体）</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

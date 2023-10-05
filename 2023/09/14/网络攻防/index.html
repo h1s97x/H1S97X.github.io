@@ -121,6 +121,133 @@
             <p><a target="_blank" rel="noopener" href="https://www.freebuf.com/geek/241398.html">手把手教你DIY一个硬件键盘记录器</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42282189/article/details/121556685">工具开发｜键盘记录工具原理及代码实现</a></p>
 <h4 id="绕过密码"><a href="#绕过密码" class="headerlink" title="绕过密码"></a>绕过密码</h4><p>利用内存覆盖<br>使用栈存储变量，小字节序，低地址存储低字节，高地址存储高字节<br>进行输入时，将输入的密码存储在栈中，溢出输入覆盖，然后进行比较，如果相等则登录成功，如果不相等则登录失败</p>
 <figure class="highlight c"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> password[<span class="number">8</span>] = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="type">char</span> yourpassword= <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">again:</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;please input your password:\n&quot;</span>);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,yourpassword);</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strcmp</span>(password,yourpassword) == <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;login success!\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;login failed!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">goto</span> again;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="安装虚拟机-WinXP"><a href="#安装虚拟机-WinXP" class="headerlink" title="安装虚拟机 WinXP"></a>安装虚拟机 WinXP</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/489743140">Windows挂载虚拟磁盘VHD&#x2F;VHDX文件的4大方法</a></p>
+<ol>
+<li>磁盘管理 vhdx文件</li>
+</ol>
+<h5 id="关于VHD和VHDX"><a href="#关于VHD和VHDX" class="headerlink" title="关于VHD和VHDX"></a>关于VHD和VHDX</h5><p>VHD是Virtual Hard Disk的简称，是一种代表虚拟磁盘的文件格式。如果您使用Windows内置工具-备份和还原创建系统映像备份，您现在将Windows备份到VHD，在目标中将获得一个Window镜像备份文件夹，路径就像：\WindowsImageBackup\computer name\Backup YYYY-MM-DD HHMMSS。可以有多个.VHD文件和多个.xml文件。有多少VHD文件意味着您有多少个磁盘或分区。<br>VHDX（虚拟硬盘V2）是VHD的另一种格式。现在的磁盘映像大多都使用VHDX格式而不是VHD，因为VHD和VHDX之间容量限制：VHD上限为2TB，而VHDX的上限为64TB。并且您可以像安装VHD一样安装VHDX。<br>有时，您需要挂载VHD或VHDX文件才能从备份中访问文件，您应该怎么做？本文为您提供了Windows挂载虚拟磁盘的4种方法。</p>
+<h4 id="GNU-x2F-Linux"><a href="#GNU-x2F-Linux" class="headerlink" title="GNU&#x2F;Linux"></a>GNU&#x2F;Linux</h4><p><a target="_blank" rel="noopener" href="https://www.gnu.org/gnu/manifesto.zh-cn.html">GNU宣言</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.kali.org/">Kali Linux |渗透测试和道德黑客Linux发行版</a></p>
+<h3 id="CTF"><a href="#CTF" class="headerlink" title="CTF"></a>CTF</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/631613398">2023最全CTF入门指南（建议收藏） - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cve.org/">Home | CVE</a></p>
+<h4 id="游戏外挂解密–植物大战僵尸修改器"><a href="#游戏外挂解密–植物大战僵尸修改器" class="headerlink" title="游戏外挂解密–植物大战僵尸修改器"></a>游戏外挂解密–植物大战僵尸修改器</h4><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cE411f7sE/?p=6&spm_id_from=pageDriver&vd_source=206a091077ff783d662b49e64cc9589d">06.常用断点之硬件断点原理解析_哔哩哔哩_bilibili</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xueyoo/articles/4938538.html">OllyDBG完美教程(超强入门级) - xueyoo - 博客园 (cnblogs.com)</a></p>
+<h5 id="OnlyDbg使用"><a href="#OnlyDbg使用" class="headerlink" title="OnlyDbg使用"></a>OnlyDbg使用</h5><p><strong>OllyDBG界面认识</strong><br><img src="/img/Network-attack/OB-desktop.png"></p>
+<ul>
+<li><p>反汇编窗口：显示被调试程序的反汇编代码。用鼠标左键点击注释标签可以切换注释显示的方式。如果需要修改代码，直接在这里在修改，比如“使用NOP填充”。</p>
+</li>
+<li><p>寄存器窗口：显示当前所选线程的CPU寄存器内容。点击标签寄存器(FPU)可以切换显示寄存器的方式。</p>
+</li>
+<li><p>信息窗口：显示反汇编窗口中当前选中的第一条命令的参数及一些跳转目标地址、字串等（一般动态加密解密字串等会在此出现）。</p>
+</li>
+<li><p>数据窗口：显示内存或文件的内容。直接点击ASCII数据可以切换编码显示方式。</p>
+</li>
+<li><p>堆栈窗口：显示当前线程的堆栈数据。比如程序初始化的一些常量、变量之类的数据。</p>
+</li>
+<li><p>菜单窗口：一些常用调试命令以及操作。一般把鼠标移到菜单窗口的某按钮后，界面最左下角会出现一些命令提示，比如单步步入（F7），单步步过F8，运行程序（F9）等。</p>
+</li>
+<li><p>命令行窗口：用来下断点等相关命令。</p>
+</li>
+</ul>
+<p><strong>调试方法</strong><br>F2：设置断点。只要在光标定位的位置（上图中灰色条）按F2键即可，再按一次F2键则会删除断点。（相当于 SoftICE 中的 F9）<br>F8：单步跳过。每按一次这个键执行一条反汇编窗口中的一条指令，遇到 CALL 等子程序不进入其代码。（相当于 SoftICE 中的 F10）<br>F7：单步步入。功能同单步步过(F8)类似，区别是遇到 CALL 等子程序时会进入其中，进入后首先会停留在子程序的第一条指令上。（相当于 SoftICE 中的 F8）<br>F4：运行到选定位置。作用就是直接运行到光标所在位置处暂停。（相当于 SoftICE 中的 F7）<br>F9：运行。按下这个键如果没有设置相应断点的话，被调试的程序将直接开始运行。（相当于 SoftICE 中的 F5）<br>CTR + F9：执行到返回。此命令在执行到一个 ret (返回指令)指令时暂停，常用于从系统领空返回到我们调试的程序领空。（相当于 SoftICE 中的 F12）<br>ALT + F9：执行到用户代码。可用于从系统领空快速返回到我们调试的程序领空。（相当于 SoftICE 中的 F11） </p>
+<p><strong>汇编指令</strong><br>cmp a,b 比较a与b</p>
+<p>mov a,b 把b的值送给a</p>
+<p>ret 返回主程序</p>
+<p>nop 无作用,英文“no operation”的简写，意思是“do nothing”(机器码90)<br>(解释:ultraedit打开编辑exe文件时你看到90,等同于汇编语句nop)</p>
+<p>call 调用子程序</p>
+<p>je 或jz 若相等则跳(机器码74 或0F84)</p>
+<p>jne或jnz 若不相等则跳(机器码75或0F85)</p>
+<p>jmp 无条件跳(机器码EB)</p>
+<p>jb 若小于则跳</p>
+<p>ja 无符-若大于则跳</p>
+<p>jg 有符-若大于则跳</p>
+<p>jge 若大于等于则跳</p>
+<p>jl 若小于则跳</p>
+<p>jle 若小于等于则跳</p>
+<p>pop 出栈</p>
+<p>push 压栈</p>
+<p>1.E语言在OD里面的入口特征（OEP）<br>E语言的入口其实和VC++基本差不多，所以 在OD里面Ctrl+B 输入 FF 25<br>​2.E语言的按钮事件<br>FF 55 FC 5F 5E，这个就是E语言的按钮在OD中的特征码，搜索它就直接可以找到按钮事件在OD的Call的位置<br>3.E语言常用断点</p>
+<ul>
+<li>MessageBoxA  消息框断点</li>
+<li>ShellExecuteA&#x2F;W   WinExec    弹网页</li>
+<li>CreateProcessA&#x2F;W  创建进程</li>
+<li>ExitProcess          退出进程</li>
+</ul>
+<h5 id="脱壳"><a href="#脱壳" class="headerlink" title="脱壳"></a>脱壳</h5><p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1646466-1-1.html">练习笔记之手撕常见压缩壳 - 『脱壳破解区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1641368-1-1.html">关于压缩壳脱壳步骤详解！看这一篇足够。 - 『脱壳破解区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn</a></p>
+<p>[ESP定律脱壳——NsPack3.x脱壳 - 红刃 - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.c/">https://www.cnblogs.c</a> om&#x2F;hongren&#x2F;p&#x2F;12633232.html)<br><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-941671-1-1.html">手脱NsPack 壳，新手看看</a><br>什么是壳：<br>壳是一种概念上的东西，人们为了保护软件不会被轻易的修改或者反编译，希望软件能够获得一种保护，能如同乌龟壳保护乌龟一般，能有一个东西保护自己，于是壳就出现了。<br>关于壳的作用：<br>壳的初始作用是保护软件，但后来发展的方向不一就出现了各种各样的壳，大致有压缩壳、加密壳、VM 壳的分类。压缩壳故名思意，主要作用是用于压缩方面，可以有效的减小软件的大小；加密壳，其主要作用是保护软件；VM 壳是一种很特殊的壳，它利用了虚拟机技术，可以很有效的保护指定地址代码，但很大的牺牲了效率，所以一般只在关键代码处使用。</p>
+<p><strong>ESP定律法 （80%的压缩壳可脱）</strong><br>ESP 定律法是脱壳的利器，是应用频率最高的脱壳方法之一。ESP 定律的原理在于程序中堆栈平衡的合理利用。由于在程序自解密或者自解压过程中，不少壳会先将当前寄存器内容压栈，如使用 pushad，在解压结束后，会将之前的寄存器值出栈，如使用 popad。因此在寄存器出栈时，往往程序代码被自动恢复，此时硬件断点触发。然后在程序当前位置，只需要少许单步跟踪，就很容易到达正确的 OEP 位置。</p>
+<p>具体操作步骤：pushad开头，F8一次以后，8个寄存器只有ESP是红色时候，就可以使用该定律。<br>右键ESP 选择数据窗口跟随，数据窗口下硬件访问断点，F9运行，此时已经接近OEP。<br><img src="/img/Network-attack/pvz-shell.png"></p>
+<h3 id="平时作业"><a href="#平时作业" class="headerlink" title="平时作业"></a>平时作业</h3><p>1.植物大战僵尸辅助破解<br>2.Tor浏览器使用报告<br>3.windows23H2更新，装虚拟机<br>4.百度磁盘破解12k限制<br>5.kali linux安装</p>
+<h4 id="Tor浏览器配置与使用"><a href="#Tor浏览器配置与使用" class="headerlink" title="Tor浏览器配置与使用"></a>Tor浏览器配置与使用</h4><p><a target="_blank" rel="noopener" href="https://zh.safetydetectives.com/blog/%e5%a6%82%e4%bd%95%e5%ae%89%e5%85%a8%e4%bd%bf%e7%94%a8tor%e6%b5%8f%e8%a7%88%e5%99%a8/">如何安全使用tor浏览器</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yasheng396/article/details/86307983">Tor使用手册</a><br><a target="_blank" rel="noopener" href="https://uzzz.org/article/4661/">暗网网址导航大全</a></p>
+<p><img src="/img%5CNetwork-attack%5Ctor%E4%BD%BF%E7%94%A8abc.png" alt="tor使用abc"></p>
+<h3 id="文件检索工具使用"><a href="#文件检索工具使用" class="headerlink" title="文件检索工具使用"></a>文件检索工具使用</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/250657267">超越 Everything 的 4 款神器！ - 知乎 (zhihu.com)</a></p>
+<ul>
+<li>Everything</li>
+<li>DocFetcher</li>
+<li>Listary</li>
+<li>Wox</li>
+<li>BBdoc</li>
+<li>FileLocator Pro</li>
+<li>Anytxt Search</li>
+<li>searchmyfiles</li>
+</ul>
+<h4 id="everything"><a href="#everything" class="headerlink" title="everything"></a>everything</h4><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/zm/art/409783518?source_id=1005#Everything%E6%98%AF%E4%B8%80%E6%AC%BE%E5%9F%BA%E4%BA%8E%E5%90%8D%E7%A7%B0%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7">高效搜索神器Everything最全使用技巧(一篇看全)及详细功能帮助教程(更新第10次) (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/409431144">文件搜索神器 | Everything - 知乎 (zhihu.com)</a></p>
+<p>[windows本地文件搜索神器 Everything 为什么速度这么快？ - zqifa - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zqifa/p/12769116.html#:~:text=windows%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E7%A5%9E%E5%99%A8">https://www.cnblogs.com/zqifa/p/12769116.html#:~:text=windows本地文件搜索神器</a> Everything 为什么速度这么快？ 1 1.Everything只是读取磁盘上的USN日志 Everything并没有全部逐一扫描我们硬盘上的文件，而是通过读取NTFS文件系统中的USN日志来完成的，只能检索文件名。 Everything并不扫描整个磁盘，只是读取磁盘上的USN日志，所以速度飞快 但因此缺点也明显：,3、由于Everything只读取USN日志，所以也无法搜索网络邻居及映射的网络文件夹。 USN日志 … 2 2.HTTP 和 FTP 文件共享功能)</p>
+<p>Everything是一款免费的文件搜索工具，它有着轻量的软件体积，能够快速的定位到你想要的文件，而且它的搜索速度非常的快，几乎是瞬间就能够找到你想要的文件，而且它的搜索范围也非常的广，几乎能够搜索到你电脑中的所有文件，而且它还支持正则表达式搜索，能够帮助你快速的找到你想要的文件，非常的方便。<br><strong>优点</strong>：</p>
+<ul>
+<li>轻量级，体积小（portable版只有1.5M）</li>
+<li>支持中文</li>
+<li>快速启动，占用资源少</li>
+<li>搜索速度快，几乎是瞬间</li>
+<li>支持正则表达式搜索</li>
+<li>自动更新索引，全盘搜索</li>
+<li>免费软件，无广告</li>
+<li>界面简洁</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>仅支持文件名搜索，不支持文件内容搜索（最大的弊病）</li>
+<li>文件预览支持的文件类型有限，图片、文本可预览</li>
+</ul>
+<h5 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h5><p><strong>启动方式</strong><br>启动Everything的方式有三种，软件快捷方式、右键菜单与快捷键。</p>
+<ol>
+<li><p>快捷方式也就是软件的图标了，双击软件图标即可启动Everything。</p>
+</li>
+<li><p>Everything可以集成到资源管理器的右键菜单中：</p>
+<ol>
+<li><p>点击 工具-&gt;选项 打开Everything的设置并转到右键菜单页：</p>
+<p><img src="/img%5CNetwork-attack%5Ceverything-settings.png"></p>
+</li>
+<li><p>勾选上“在资源管理器中显示”选项，然后点击“应用”按钮即可。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>在文件夹背景或文件夹图标上右键启动Everything，<strong>会将搜索范围限定在该文件夹内</strong>。</p>
+<ol start="3">
+<li>Everything默认没有设置启动快捷键，需要我们自己设置。点击 工具-&gt;选项-&gt;快捷键页可以自行设置。<br><strong>搜索功能</strong><br>当你使用Everything搜索到想要的文件后，你可以直接双击用默认关联程序打开该文件，右键点击进行更多操作，或者，将它拖动到其他软件的窗口或快捷方式上打开。</li>
+</ol>
+<p>你也可以在视图菜单中打开Everything的预览窗口，直接在Everything中预览文件。everything视图支持的文件类型有限，如果需要预览其他文件类型，可以使用插件。<br><img src="/img%5CNetwork-attack%5Ceverything-preview.png"></p>
+<p><strong>搜索语法</strong><br>Everything支持使用通配符、布尔运算符、正则表达式等搜索语法，可以帮助你快速的找到你想要的文件。<br>点击 帮助-&gt;搜索语法 可以查看Everything支持的搜索语法。<br><img src="/img%5CNetwork-attack%5Ceverything-grammar.png"></p>
+<h5 id="DocFetcher"><a href="#DocFetcher" class="headerlink" title="DocFetcher"></a>DocFetcher</h5><p><a target="_blank" rel="noopener" href="https://docfetcher.sourceforge.io/zh/index.html">DocFetcher-文件快速搜索 (sourceforge.io)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/563210012">Docfetcher 与 Anytxt searcher 内容搜索比较与补救方法 - 知乎 (zhihu.com)</a></p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>免费开源</li>
+<li>支持中文</li>
+<li>支持文件名和文件内容搜索</li>
+<li>支持正则表达式搜索</li>
+<li>支持多种文件格式，包括PDF、Office、HTML、文本、压缩包等</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>体积较大，安装包有70M</li>
+<li>搜索速度慢，需要先建立索引，建立索引非常耗费电脑资源，而且时间也很长</li>
+<li>有付费版pro，功能更全但收费，目前原版作者已不再更新</li>
+</ul>
+<p><img src="/img%5CNetwork-attack%5CDocFetcher-1.png"><br><img src="/img%5CNetwork-attack%5CDocFetcher-2.png"></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

@@ -122,6 +122,30 @@ SVM （Support Vector Machine）SVM简介支持向量机（support vector mach,"
 <h3 id="SVM-（Support-Vector-Machine）"><a href="#SVM-（Support-Vector-Machine）" class="headerlink" title="SVM （Support Vector Machine）"></a>SVM （Support Vector Machine）</h3><p>SVM简介<br>支持向量机（support vector machines, SVM）是一种二分类模型，它的基本模型是定义在特征空间上的间隔最大的线性分类器，间隔最大使它有别于感知机；SVM还包括核技巧，这使它成为实质上的非线性分类器。SVM的的学习策略就是间隔最大化，可形式化为一个求解凸二次规划的问题，也等价于正则化的合页损失函数的最小化问题。SVM的的学习算法就是求解凸二次规划的最优化算法。</p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/zm/art/31886934?source_id=1005">支持向量机（SVM）——原理篇</a></p>
 <h3 id="凸优化"><a href="#凸优化" class="headerlink" title="凸优化"></a>凸优化</h3><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24641575">凸优化</a></p>
+<h3 id="贝叶斯算法"><a href="#贝叶斯算法" class="headerlink" title="贝叶斯算法"></a>贝叶斯算法</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/158771382">机器学习——贝叶斯算法</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/401258319">走进贝叶斯统计（一）—— 先验分布与后验分布 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/155827279">数理统计第16讲（贝叶斯点估计：先验信息，先验分布，后验分布） - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Tinky2013/article/details/88680045?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-88680045-blog-82380135.235%5Ev38%5Epc_relevant_sort_base2&spm=1001.2101.3001.4242.2&utm_relevant_index=4">机器学习理论 | 周志华西瓜书 第七章：贝叶斯分类器_分类器的预期风险-CSDN博客</a></p>
+<h4 id="主要概念"><a href="#主要概念" class="headerlink" title="主要概念"></a>主要概念</h4><p>1）条件概率（后验概率）就是事件A在另一个事件B已经发生的条件下发生概率，公式表示为P(A|B)，读作“在B条件下A的概率”。</p>
+<p>2）联合概率表示两件事情共同发生的概率。A与B的联合概率表示为p(A,B).</p>
+<p>3）边缘概率（又称先验概率）是某个事件发生的概率。边缘概率是这样得到的：在联合概率中，把最终结果中那些不需要的事件通过合并成它们的全概率，而消去它们（对离散随机变量用求和得全概率，对连续随机变量用积分得全概率），这称为边缘化（marginalization），比如A的边缘概率表示为P(A)，B的边缘概率表示为P(B)。</p>
+<h4 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yzcjwddbdgg/article/details/88063677">概率论中PDF、PMF和CDF的区别与联系</a><br>PDF：概率密度函数（probability density function）, 在数学中，连续型随机变量的概率密度函数（在不至于混淆时可以简称为密度函数）是一个描述这个随机变量的输出值，在某个确定的取值点附近的可能性的函数。</p>
+<p>PMF : 概率质量函数（probability mass function), 在概率论中，概率质量函数是离散随机变量在各特定取值上的概率。</p>
+<p>CDF : 累积分布函数 (cumulative distribution function)，又叫分布函数，是概率密度函数的积分，能完整描述一个实随机变量X的概率分布。<br>上面三者的横轴都是随机变量x的取值，PDF的纵轴表示连续型随机变量x出现的可能性(非概率)，PMF的纵轴表示离散型随机变量x出现的概率，CDF的纵轴表示连续型随机变量x的概率。</p>
+<h5 id="高斯分布"><a href="#高斯分布" class="headerlink" title="高斯分布"></a>高斯分布</h5><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/481760712">正态分布（高斯分布）学习笔记 - 知乎 (zhihu.com)</a></p>
+<h4 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h4><p>贝叶斯分类器依据类条件概率密度 和先验概率 来判别样本工的类别属性，因此在构建分类器时需要估计出每个类别的先验概率，并且确定类条件概率密度。作为类条件概率密度的“概率模型”可以有很多种形式，这需要根据解决的具体问题来确定。高斯分布由于其形式简单、易于分析，并且在很多实际应用中能够取得较好的识别效果，因此常常被用来作为贝叶斯分类器的概率模型。<br>若已知总共有M类物体，以及各类在这n维特征空间的统计分布，具体来说是已知各类别 ，i&#x3D;1，2，…，M的先验概率 及类条件概率密度函数 。对于待测样品，贝叶斯公式可以计算出该样品分属各类别的概率，叫做后验概率；看X属于那个类的可能性最大，就把X归于可能性最大的那个类，后验概率作为识别对象归属的依据。贝叶斯公式为</p>
+<h5 id="核心问题之一：如何求得先验概率"><a href="#核心问题之一：如何求得先验概率" class="headerlink" title="核心问题之一：如何求得先验概率"></a>核心问题之一：如何求得先验概率</h5><p>贝叶斯统计的重要特点在于，我们在建模前需要给出模型参数的先验分布（prior distribution）p($\theta$)。也就是说，在得到任何数据，或者将任何数据对模型进行拟合之前，我们需要先给定模型参数服从的分布。<br>给出参数的先验分布，是贝叶斯统计的核心部分之一，也是对于长期接触频率学派思想的贝叶斯初学者来说最容易困惑的部分：没有数据的支持，在贝叶斯统计中的先验分布到底如何设定？<br>理论上，我们可以使用任何的分布作为先验分布。但一个好的先验分布需要囊括我们对参数的经验判断信息。</p>
+<h5 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h5><p>假设某个人有癌症的概率是1%，并且有一种医疗检测可以检测出癌症的存在。检测结果的准确性如下：当一个人患有癌症时，有90%的概率检测出来；而当一个人不患有癌症时，有95%的概率检测结果为阴性。现在，如果一个人接受了检测并得到了阳性结果，那么他患癌症的概率是多少？</p>
+<p>解答： 首先，根据题意，这个人有癌症的先验概率是1%，也就是P(Cancer)&#x3D;0.01。那么他没有癌症的先验概率就是1-P(Cancer)&#x3D;0.99。</p>
+<p>其次，根据题意，当一个人患有癌症时，有90%的概率检测出来，也就是条件概率P(Positive|Cancer)&#x3D;0.9。而当一个人不患有癌症时，有95%的概率检测结果为阴性，也就是条件概率P(Negative|Not Cancer)&#x3D;0.95。因此，当一个人患癌症时，检测结果为阴性的概率就是P(Negative|Cancer)&#x3D;1-0.9&#x3D;0.1。</p>
+<p>接下来，根据贝叶斯公式，我们可以计算出这个人在检测结果为阳性的情况下患癌症的后验概率：</p>
+<p>P(Cancer|Positive) &#x3D; P(Positive|Cancer) * P(Cancer) &#x2F; P(Positive) 其中，分母P(Positive)是检测结果为阳性的概率，可以用全概率公式计算：</p>
+<p>P(Positive) &#x3D; P(Positive|Cancer) * P(Cancer) + P(Positive|Not Cancer) * P(Not Cancer) 其中，P(Positive|Not Cancer)是当一个人不患有癌症时，检测结果为阳性的概率，可以根据P(Negative|Not Cancer)计算得到：</p>
+<p>P(Positive|Not Cancer) &#x3D; 1 - P(Negative|Not Cancer) &#x3D; 1 - 0.95 &#x3D; 0.05</p>
+<p>因此，</p>
+<p>P(Positive) &#x3D; P(Positive|Cancer) * P(Cancer) + P(Positive|Not Cancer) * P(Not Cancer) &#x3D; 0.9 * 0.01 + 0.05 * 0.99 &#x3D; 0.0585</p>
+<p>将P(Positive)和其他已知条件代入贝叶斯公式，得到：</p>
+<p>P(Cancer|Positive) &#x3D; P(Positive|Cancer) * P(Cancer) &#x2F; P(Positive) &#x3D; 0.9 * 0.01 &#x2F; 0.0585 ≈ 0.154</p>
+<p>因此，当一个人接受了检测并得到了阳性结果时，他患癌症的后验概率约为15.4%。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

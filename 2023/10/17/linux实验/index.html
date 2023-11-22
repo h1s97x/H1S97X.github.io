@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>linux实验 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="实验一：Linux的基本操作和常见命令的使用实验内容：
+一. 基本命令
+
+__ 1. 显示系统当前时间.__ 2. 显示2003年的日历.__ 3. 分别显示1999年1月份和99年1月份的日历. ,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="linux实验 - Hexo"/>
+    <meta name="twitter:description" content="实验一：Linux的基本操作和常见命令的使用实验内容：
+一. 基本命令
+
+__ 1. 显示系统当前时间.__ 2. 显示2003年的日历.__ 3. 分别显示1999年1月份和99年1月份的日历. ,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="linux实验 - Hexo"/>
+    <meta property="og:description" content="实验一：Linux的基本操作和常见命令的使用实验内容：
+一. 基本命令
+
+__ 1. 显示系统当前时间.__ 2. 显示2003年的日历.__ 3. 分别显示1999年1月份和99年1月份的日历. ,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">linux实验</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <!-- 帖子视图 -->
+
+    <div class="post_cover" >
+        
+            <img src="/img/img1.jpg,/img/welcome-cover.jpg" />
+        
+        <div class="post_cover_mask"></div>
+        <div class="post_text">
+            <h1>linux实验</h1>
+            <div>
+                <span>十月 17, 2023</span>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="article">
+    <div class='main'>
+        <!-- 帖子视图 -->
+        
+
+        <!-- 更新时间 -->
+        <div class="updated">
+            <div></div>
+            <span>该文章更新于 2023.10.17</span>
+        </div>
+
+        <h1 class="title">linux实验</h1>
+        <div class="stuff">
+            <span>十月 17, 2023</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h3 id="实验一：Linux的基本操作和常见命令的使用"><a href="#实验一：Linux的基本操作和常见命令的使用" class="headerlink" title="实验一：Linux的基本操作和常见命令的使用"></a>实验一：Linux的基本操作和常见命令的使用</h3><p><strong>实验内容</strong>：</p>
+<p>一. 基本命令</p>
+<blockquote>
+<p>__ 1. 显示系统当前时间.<br>__ 2. 显示2003年的日历.<br>__ 3. 分别显示1999年1月份和99年1月份的日历. 1999年的和99年的是否是一个?<br>__ 4. 列出系统中所有登陆用户.<br>__ 5. 显示你的登陆名.<br>__ 6. 显示你的用户信息.<br>__ 7. 清屏.<br>__ 8. 显示字符串’Out to lunch’.<br>__ 9. 使用wall命令进行系统广播:Good Evening everyone!<br>__ 10.使用一个命令屏蔽所有消息.这个命令对所有用户都起作用吗?</p>
+</blockquote>
+<p>二.  Man 手册</p>
+<blockquote>
+<p>__ 11. 使用man手册察看ls命令如何使用.<br>__ 12. 试着解释一下ls命令的man手册有几部分组成?每一部分是用来说明什么的?<br>__ 13. 在man手册中试着移动光标:<br>       到下一页<br>       到前一页<br>       向下移动一行<br>__ 14.退出man手册.</p>
+</blockquote>
+<p>__ 1. 显示系统当前时间：使用date命令。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ date</span><br><span class="line">Tue Oct 17 12:55:18 AM EDT 2023</span><br></pre></td></tr></table></figure>
+
+<p>__ 2. 显示2003年的日历：使用cal命令。</p>
+<p><strong>cal</strong> <strong>和 ncal</strong></p>
+<p>你可以使用 cal 命令显示整个月份。没有参数时，cal 显示当前月份，默认情况下，通过反转前景色和背景颜色来突出显示当天。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$ cal 2003</span><br><span class="line"></span><br><span class="line">       April                  May                   June          </span><br><span class="line">Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  </span><br><span class="line">       1  2  3  4  5               1  2  3   1  2  3  4  5  6  7  </span><br><span class="line"> 6  7  8  9 10 11 12   4  5  6  7  8  9 10   8  9 10 11 12 13 14  </span><br><span class="line">13 14 15 16 17 18 19  11 12 13 14 15 16 17  15 16 17 18 19 20 21  </span><br><span class="line">20 21 22 23 24 25 26  18 19 20 21 22 23 24  22 23 24 25 26 27 28  </span><br><span class="line">27 28 29 30           25 26 27 28 29 30 31  29 30                 </span><br><span class="line">                                                                  </span><br><span class="line"></span><br><span class="line">        July                 August              September        </span><br><span class="line">Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  </span><br><span class="line">       1  2  3  4  5                  1  2      1  2  3  4  5  6  </span><br><span class="line"> 6  7  8  9 10 11 12   3  4  5  6  7  8  9   7  8  9 10 11 12 13  </span><br><span class="line">13 14 15 16 17 18 19  10 11 12 13 14 15 16  14 15 16 17 18 19 20  </span><br><span class="line">20 21 22 23 24 25 26  17 18 19 20 21 22 23  21 22 23 24 25 26 27  </span><br><span class="line">27 28 29 30 31        24 25 26 27 28 29 30  28 29 30              </span><br><span class="line">                      31                                          </span><br><span class="line"></span><br><span class="line">      October               November              December        </span><br><span class="line">Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  </span><br><span class="line">          1  2  3  4                     1      1  2  3  4  5  6  </span><br><span class="line"> 5  6  7  8  9 10 11   2  3  4  5  6  7  8   7  8  9 10 11 12 13  </span><br><span class="line">12 13 14 15 16 17 18   9 10 11 12 13 14 15  14 15 16 17 18 19 20  </span><br><span class="line">19 20 21 22 23 24 25  16 17 18 19 20 21 22  21 22 23 24 25 26 27  </span><br><span class="line">26 27 28 29 30 31     23 24 25 26 27 28 29  28 29 30 31           </span><br><span class="line">                      30                                          </span><br><span class="line">                                                      </span><br></pre></td></tr></table></figure>
+
+
+
+<p>__ 3. 分别显示1999年1月份和99年1月份的日历，并判断它们是否相同。</p>
+<p>你也可以使用 <code>cal</code> 命令显示一整年。请记住，你需要输入年份的四位数字。如果你输入 <code>cal 18</code>，你将获得公元 18 年的历年，而不是 2018 年。</p>
+<p>要指定年份和月份，使用 <code>-d</code> 选项，如下所示：</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cal -d 1949-03</span><br></pre></td></tr></table></figure>
+
+<p>__ 4. 列出系统中所有登录用户：使用who命令。</p>
+<p>Linux who命令用于显示系统中有哪些使用者正在上面，显示的资料包含了使用者 ID、使用的终端机、从哪边连上来的、上线时间、呆滞时间、CPU 使用量、动作等等。</p>
+<p>使用权限：所有使用者都可使用。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//显示当前登录系统的用户</span><br><span class="line">$ who</span><br><span class="line">kali     tty7         2023-10-13 02:24 (:0)</span><br></pre></td></tr></table></figure>
+
+<p>__ 5.显示你的登录名：使用finger命令。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">finger [options] user[@address]</span><br></pre></td></tr></table></figure>
+
+<p>Linux finger命令可以让使用者查询一些其他使用者的资料。会列出来的资料有：</p>
+<p>· Login Name</p>
+<p>· User Name</p>
+<p>· Home directory</p>
+<p>· Shell</p>
+<p>· Login status</p>
+<p>· mail status</p>
+<p>· .plan</p>
+<p>· .project</p>
+<p>· .forward</p>
+ <figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ finger </span><br><span class="line">Login     Name       Tty      Idle  Login Time   Office     Office Phone</span><br><span class="line">kali                 tty7       3d  Oct 13 02:24 (:0)</span><br><span class="line">                                                            </span><br></pre></td></tr></table></figure>
+
+
+
+<p>__ 6.显示你用户信息：使用finger命令。</p>
+<p>参数： -l 　多行显示。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//显示用户信息</span><br><span class="line">$ finger -l</span><br><span class="line">Login: kali                             Name: </span><br><span class="line">Directory: /home/kali                   Shell: /usr/bin/zsh</span><br><span class="line">On since Fri Oct 13 02:24 (EDT) on tty7 from :0</span><br><span class="line">   3 days 22 hours idle</span><br><span class="line">No mail.</span><br><span class="line">No Plan.           </span><br></pre></td></tr></table></figure>
+
+
+
+<p>__ 7.清屏：使用clear命令</p>
+<p>__ 8.显示字符串’Out to lunch’：使用echo命令。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;Out to lunch&quot;</span><br><span class="line">Out to lunch</span><br></pre></td></tr></table></figure>
+
+<p>__ 9.使用wall命令进行系统广播：发送消息’Good Evening!’。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wall &#x27;Good Evening!&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>__ 10.使用一个命令屏蔽所有消息：使用mesg命令。这个命令对所有用户都起作用。</p>
+<p>Linux mesg命令用于设置终端机的写入权限。</p>
+<p>将mesg设置y时，其他用户可利用write指令将信息直接显示在您的屏幕上。</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mesg [ny]</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong>：</p>
+<ul>
+<li>n 不允许其他用户将信息直接显示在你的屏幕上。</li>
+<li>y 允许其他用户将信息直接显示在你的屏幕上。</li>
+</ul>
+<p>二. Man 手册</p>
+<p>__ 11.使用man手册查看ls命令的使用方法。</p>
+<p>__ 12.解释ls命令的man手册组成部分以及每部分的说明内容。</p>
+<p>__ 13.在man手册中移动光标：翻页、上一页、向下滚动一行。</p>
+<p>__ 14.退出man手册：使用q键退出。</p>
+<p><img src="/img/experiment/linux-man.png"></p>
+<h3 id="实验二：文件系统"><a href="#实验二：文件系统" class="headerlink" title="实验二：文件系统"></a>实验二：文件系统</h3><p>实验内容：</p>
+<p>一.  对目录的操作</p>
+<blockquote>
+<p>__ 1. 检查你当前所在的目录，该目录是 __________.<br>    <code>pwd</code><br>__ 2. 改变当前目录到根目录(&#x2F;).<br>      <code>cd /</code><br>__ 3. 验证是否在根目录，分别用简单列表和长列表的方式列出目录中的文件.<br>    <code>ls</code><br>__ 4. 列出当前目录中的所有文件，列出当前目录及其子目录中的所有文件.<br>      注意: 该命令会有大量的输出. 要停止的话,可以用 <Ctrl> +c来中止.<br>      <code>ls -R</code><br>__ 5. 返回到你的主目录，列出该目录的内容包括隐藏文件.<br>    <code>cd ~</code><br>    <code>ls -a</code><br>__ 6. 在你的主目录里创建一个名为mydir的目录. 然后, 发出命令分别显示你的主目录<br>      和~&#x2F;mydir目录的长列表. (不显示目录下的内容.) 每一个目录的大小是多少?<br>      mkdir mydir<br>      ls -l ~<br>      ls -l mydir<br>__ 7. 分别用绝对路径和相对路径两种方式转到mydir目录. 创建两个名为myfile1和myfile2的文件.<br>    cd ~&#x2F;mydir<br>    touch myfile1 myfile2<br>__ 8. 用长列表形式显示mydir目录的内容. 长列表列出的各栏分别显示了什么信息?文件myfile1和myfile2的大小是多少?<br>    ls -l<br>   长列表的各栏显示的信息分别是文件的权限、硬链接数、所有者、所属组、文件大小、最后修改时间、文件名。<br>   文件的大小显示在第5列。<br>__ 9. 返回到你的主目录然后使用 ls -R 命令来显示你的目录树. 解释显示出来的信息。<br>__ 10. 试着用rmdir删除mydir目录. 能行吗?为什么?<br>    rmdir mydir<br>不可以，因为mydir目录不为空，rmdir只能删除空目录。<br>__ 12. 进入mydir目录删除该目录中的2个文件. 然后返回到你的主目录并且删除掉mydir目录.<br>    cd mydir<br>    rm myfile1 myfile2<br>    cd ..<br>    rmdir mydir<br>__ 13. 用一条rm命令可否实现12题中的要求？如何实现？解释rm命令的作用。<br>是可以的，可以使用以下命令实现：<br>    rm -r mydir<br>rm命令是用来删除文件和目录的，-r选项表示递归删除目录及其下的所有文件和子目录。</p>
+</blockquote>
+<p>二.  对文件的操作</p>
+<blockquote>
+<p>__ 14. 分别用cat,more和less命令查看 &#x2F;etc&#x2F;passwd 文件的内容。&#x2F;etc&#x2F;passwd 文件包含了能使用该系统的所有授权的用户的一个列表.<br>       这三个命令显示的方式有什么不同？用more命令查看时，验证以下按键的功能：<br>       f键或<Space>: 进入下一屏。<br>       b键: 在文本中前移<br>       <Enter>: 向下移动一行<br>       q键或&lt;Ctrl+C&gt;:退出。<br>__ 15. 复制&#x2F;etc&#x2F;passwd 文件到你的主目录, 并将其重命名为usersfile.用一条命令实现。如果用两条命令实现呢？<br>__ 16. 用wc命令统计文件userfile的字符数、行数和单词数. 解释显示出的各栏对应的内容。如果只统计行数呢？<br>__ 17. 分别创建userfile的一个硬链接文件userfile-hard和一个字符链接文件userfile-soft。考虑userfile-hard和userfile-soft的异同点。<br>       之后删除userfile文件，查看一下userfile-hard和userfile-soft的内容并解释结果的不同之处。<br>__ 18. 用whereis搜索命令passwd所在的路径。用locate命令搜索文件名中带有aa字段的文件。 whereis和locate命令的区别是什么？</p>
+</blockquote>
+<p>三.  对文件和目录的递归操作</p>
+<blockquote>
+<p>__ 19. 创建一个sub1目录, 在sub1中再创建一个 sub2 目录. 用一条命令来实现.<br>__ 20. 转到 sub2 目录, 创建一个文件 myfile.<br>__ 21. 返回到你的主目录. 复制整个 sub1目录树到tree1. 分别递归显示目录sub1和tree1里的所有文件.<br>__ 22. 现在你有了2个目录树, sub1和tree1. 把目录树tree1 移到sub1子目录中.<br>__ 23. 列出你的主目录的内容. 递归显示sub1目录中的所有文件和目录.</p>
+<ol>
+<li>创建一个sub1目录，在sub1中再创建一个sub2目录，用一条命令来实现：<br>mkdir -p sub1&#x2F;sub2</li>
+<li>转到sub2目录，创建一个文件myfile：<br>cd sub1&#x2F;sub2<br>touch myfile</li>
+<li>返回到你的主目录复制整个sub1目录树到tree1，分别递归显示目录sub和tree1里的所有文件：<br>cd ~<br>cp -R sub1 tree1<br>ls -R sub1<br>ls -R tree</li>
+<li>现在你有了个目录树，sub1和tree1。把目录树tree1移动到sub1子目录中：<br>mv tree1 sub1</li>
+<li>列出你的主目录的内容，递归显示sub1目录中的所有文件和目录：<br>ls -R ~<br>ls -R sub1</li>
+</ol>
+<p>请注意，上述命令假设当前目录是主目录（~）。如果不是，请先切换到主目录再执行命令。</p>
+</blockquote>
+<p>四.  创建用户帐号</p>
+<blockquote>
+<p>为了完整地演示权限, 我们需要创建一些附加的用户, tux1和tux2, 它们都是penguins 组的成员.<br>__ 1. 切换到tty3(按Ctrl+Alt+F3键),用 root帐号登录.<br>__ 2. 执行下列一系列命令:</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># groupadd penguins</span><br><span class="line"></span><br><span class="line"># useradd -m -g penguins -c &quot;Tux the Penguin (1)&quot; tux1</span><br><span class="line"></span><br><span class="line"># useradd -m -g penguins -c &quot;Tux the Penguin (2)&quot; tux2</span><br><span class="line"></span><br><span class="line"># passwd tux1</span><br><span class="line"></span><br><span class="line">New password: penguin1</span><br><span class="line">Retype new password: penguin1</span><br><span class="line"></span><br><span class="line"># passwd tux2</span><br><span class="line"></span><br><span class="line">New password: penguin2</span><br><span class="line">Retype new password: penguin2</span><br></pre></td></tr></table></figure>
+<p>__ 3. 切换到tty1(按Ctrl+Alt+F1键), 用tux1帐号登录, 密码是penguin1, 然后再切换到 tty2(按Ctrl+Alt+F2键),<br>        用tux2帐号登录, 密码是penguin2.</p>
+</blockquote>
+<p> 五.  文件和目录的权限</p>
+<blockquote>
+<p>__ 24. 切换到tty1(按Ctrl+Alt+F1键), 你是以 tux1帐号登录的, 查看你的主目录的权限.<br>__ 25. 切换到tty2, 你是以 tux2帐号登录的. 试着改变到tux1的主目录, 或者显示tux1主<br>           目录的内容. 能行吗?为什么?<br>__ 26. 切换到tty1. 改变tux1主目录的权限以使其他用户能够有读(read)和执行(execute)的权限.<br>           然后再以tux2帐号试着进入tux1的主目录. 现在能行吗?<br>__ 27. 作为用户tux2, 试着创建和删除tux1的主目录里的文件. 能否成功?<br>__ 28. 再次切换到tty1. 创建一个bin目录,复制文件&#x2F;bin&#x2F;ls 到此目录,并且重命名为my_ls.<br>__ 29. 设置my_ls的权限为rw-r—–, 然后分别以tux1和tux2登录试着运行它. 能否运行? 为什么?<br>__ 30. 重新设置my_ls的权限为rwxr-xr-x, 然后再次分别以tux1和tux2登录试着运行它. 现在能否运行?<br>__ 31. 试着运行 my_ls , 分别以tux1 , tux2, 和你自己的帐号 , 权限分别为 rw——-, rw-rw—-,<br>           rwx——, rwx–x— 和 rwx–x–x . 对于tux1, 运行my_ls所需要的最小权限是什么?<br>           对于tux2呢? 对于你自己的帐号呢?</p>
+</blockquote>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="true"
+        data-ae="false"
+        data-ci="bf8247f1f66a43abd91f"
+        data-cs="8151e71fe008a0f849031b72d321c20af8e897af"
+        data-r="h1s97x.github.io"
+        data-o="h1s97x"
+        data-a="h1s97x"
+        data-d="true"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

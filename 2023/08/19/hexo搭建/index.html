@@ -203,6 +203,14 @@ Hexo阶段一 – 安装&amp;amp;部署到本地
 修改背景音乐：将 Blog/source/_posts 中对应文件的文件头mp3指向 Blog/themes/diaspora/audio/xxx.mp3 。<br>
 修改封面：将 Blog/source/_posts 中对应文件的文件头cover指向 Blog/themes/diaspora/img/xxx.png 。<br>
 </p>
+
+<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103813944">个人博客第6篇——解析域名 - 知乎 (zhihu.com)</a></p>
+<h3 id="报错信息排查"><a href="#报错信息排查" class="headerlink" title="报错信息排查"></a>报错信息排查</h3><h5 id="Nunjucks-Error"><a href="#Nunjucks-Error" class="headerlink" title="Nunjucks Error"></a>Nunjucks Error</h5><p>泄露（Escape）内容</p>
+<p>Hexo 使用 <a target="_blank" rel="noopener" href="https://mozilla.github.io/nunjucks/">Nunjucks</a> 来解析文章（旧版本使用 <a target="_blank" rel="noopener" href="http://paularmstrong.github.io/swig/">Swig</a>，两者语法类似），内容若包含 <code>&#123;&#123; &#125;&#125;</code> 或 <code>&#123;% %&#125;</code> 可能导致解析错误，您可以用 <a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins#Raw"><code>raw</code></a> 标签包裹，single backtick <code>&#123;&#123; &#125;&#125;</code> 或 triple backtick 来避免潜在问题发生。</p>
+<p><a target="_blank" rel="noopener" href="https://mycpen.gitee.io/blog/posts/5162">02_Hexo-出错排查-Nunjucks Error | 陈鹏的个人主页 (gitee.io)</a></p>
+<h4 id="H1S96-博客园-cnblogs-com"><a href="#H1S96-博客园-cnblogs-com" class="headerlink" title="H1S96 - 博客园 (cnblogs.com)"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/h1s97x/">H1S96 - 博客园 (cnblogs.com)</a></h4><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/clouddre/p/15747527.html">博客园 SimpleMemory 超好看博客皮肤设置 - CloudDre - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://bndong.github.io/Cnblogs-Theme-SimpleMemory/v2.1/dist/reference/configs.html">配置项 | SMemory (bndong.github.io)</a></p>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">

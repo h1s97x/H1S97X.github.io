@@ -128,9 +128,13 @@
 <p><img src="/img%5CInternship%5Ctime.png" alt="image-20230928151628052"></p>
 <h3 id="mqtt"><a href="#mqtt" class="headerlink" title="mqtt"></a>mqtt</h3><p><strong>重点参考</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45173404/article/details/121687489">RabbitMQ超详细学习笔记</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/769883">超详细的RabbitMQ入门，看这篇就够了！</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/lzx1991610/article/details/102970854">RabbitMQ使用教程(超详细)</a></p>
-<h3 id="自定义图"><a href="#自定义图" class="headerlink" title="自定义图"></a>自定义图</h3><p><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/index.html">echarts自定义图表</a></p>
-<p><a target="_blank" rel="noopener" href="https://demo.ivx.cn/%E4%BB%BFEcharts%E5%9B%BE%E8%A1%A8%E7%BD%91%E9%A1%B5">仿Echarts图表网页 |iVX教学Demo</a></p>
-<h3 id="API使用"><a href="#API使用" class="headerlink" title="API使用"></a>API使用</h3><h2 id="什么是-API"><a href="#什么是-API" class="headerlink" title="什么是 API?"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Introduction#%E4%BB%80%E4%B9%88%E6%98%AF_api">什么是 API?</a></h2><p>应用程序接口（API，Application Programming Interface）是基于编程语言构建的结构，使开发人员更容易地创建复杂的功能。它们抽象了复杂的代码，并提供一些简单的接口规则直接使用。</p>
+<h3 id="自定义图表-Echats"><a href="#自定义图表-Echats" class="headerlink" title="自定义图表 Echats"></a>自定义图表 Echats</h3><p><a target="_blank" rel="noopener" href="https://demo.ivx.cn/%E4%BB%BFEcharts%E5%9B%BE%E8%A1%A8%E7%BD%91%E9%A1%B5">仿Echarts图表网页 |iVX教学Demo</a></p>
+<p>Echats官网：<br><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/index.html">echarts自定义图表</a></p>
+<h5 id="自定义图表组件"><a href="#自定义图表组件" class="headerlink" title="自定义图表组件"></a>自定义图表组件</h5><p>进入官网后，选择需要的图表示例</p>
+<p><img src="/img%5CInternship%5C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E8%A1%A8%E6%95%99%E7%A8%8B-1.png"></p>
+<p><img src="/img%5CInternship%5C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E8%A1%A8%E6%95%99%E7%A8%8B-2.png"></p>
+<p>在IVX中选择通用变量将json串导入进去，然后让自定义图表的数据选择到刚才设置的变量对象。</p>
+<h5 id="函数法引入echats图表"><a href="#函数法引入echats图表" class="headerlink" title="函数法引入echats图表"></a>函数法引入echats图表</h5><h3 id="API使用"><a href="#API使用" class="headerlink" title="API使用"></a>API使用</h3><h2 id="什么是-API"><a href="#什么是-API" class="headerlink" title="什么是 API?"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Introduction#%E4%BB%80%E4%B9%88%E6%98%AF_api">什么是 API?</a></h2><p>应用程序接口（API，Application Programming Interface）是基于编程语言构建的结构，使开发人员更容易地创建复杂的功能。它们抽象了复杂的代码，并提供一些简单的接口规则直接使用。</p>
 <p>客户端 JavaScript 中有很多可用的 API — 他们本身并不是 JavaScript 语言的一部分，却建立在 JavaScript 语言核心的顶部，为使用 JavaScript 代码提供额外的超强能力。他们通常分为两类：</p>
 <ul>
 <li><strong>浏览器 API</strong>内置于 Web 浏览器中，能从浏览器和电脑周边环境中提取数据，并用来做有用的复杂的事情。例如<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Geolocation_API">Geolocation API</a>提供了一些简单的 JavaScript 结构以获得位置数据，因此你可以在 Google 地图上标示你的位置。在后台，浏览器确实使用一些复杂的低级代码（例如 C++）与设备的 GPS 硬件（或可以决定位置数据的任何设施）通信来获取位置数据并把这些数据返回给你的代码中使用浏览器环境；但是，这种复杂性通过 API 抽象出来，因而与你无关。</li>
@@ -163,6 +167,7 @@
 
 <p>注意，使用API时，你需要遵守API的规则和限制，如请求频率限制、访问权限限制等。你也应该对API的响应进行<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:2819227535%7D">错误处理</a>，避免程序因为API的问题而崩溃。</p>
 <h3 id="学习任务"><a href="#学习任务" class="headerlink" title="学习任务"></a>学习任务</h3><p>1.先做书上的示例，理解组件及其属性</p>
+<h3 id="任务一：换肤功能实现"><a href="#任务一：换肤功能实现" class="headerlink" title="任务一：换肤功能实现"></a>任务一：换肤功能实现</h3><p>1.IVX（已完成）<br>2.vue+bootstrap</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

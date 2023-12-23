@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Machine-Learing SVM - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="机器学习的一般框架：训练集 &amp;#x3D;&amp;gt; 提取特征向量 &amp;#x3D;&amp;gt; 结合一定的算法（分类器：比如决策树、KNN）&amp;#x3D;&amp;gt;得到结果
+Chapter 9 Support V,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Machine-Learing SVM - Hexo"/>
+    <meta name="twitter:description" content="机器学习的一般框架：训练集 &amp;#x3D;&amp;gt; 提取特征向量 &amp;#x3D;&amp;gt; 结合一定的算法（分类器：比如决策树、KNN）&amp;#x3D;&amp;gt;得到结果
+Chapter 9 Support V,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Machine-Learing SVM - Hexo"/>
+    <meta property="og:description" content="机器学习的一般框架：训练集 &amp;#x3D;&amp;gt; 提取特征向量 &amp;#x3D;&amp;gt; 结合一定的算法（分类器：比如决策树、KNN）&amp;#x3D;&amp;gt;得到结果
+Chapter 9 Support V,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Machine-Learing SVM</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <!-- 帖子视图 -->
+
+    <div class="post_cover" >
+        
+            <img src="/img/img1.jpg,/img/welcome-cover.jpg" />
+        
+        <div class="post_cover_mask"></div>
+        <div class="post_text">
+            <h1>Machine-Learing SVM</h1>
+            <div>
+                <span>十二月 19, 2023</span>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="article">
+    <div class='main'>
+        <!-- 帖子视图 -->
+        
+
+        <!-- 更新时间 -->
+        <div class="updated">
+            <div></div>
+            <span>该文章更新于 2023.12.19</span>
+        </div>
+
+        <h1 class="title">Machine-Learing SVM</h1>
+        <div class="stuff">
+            <span>十二月 19, 2023</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>机器学习的一般框架：<br>训练集 &#x3D;&gt; 提取特征向量 &#x3D;&gt; 结合一定的算法（分类器：比如决策树、KNN）&#x3D;&gt;得到结果</p>
+<h2 id="Chapter-9-Support-Vector-Machines（SVM）"><a href="#Chapter-9-Support-Vector-Machines（SVM）" class="headerlink" title="Chapter 9 Support Vector Machines（SVM）"></a>Chapter 9 Support Vector Machines（SVM）</h2><p>支持向量机（support vector machines，SVM）是一种二分类模型，它将实例的特征向量映射为空间中的一些点，SVM 的目的就是想要画出一条线，以 “最好地” 区分这两类点，以至如果以后有了新的点，这条线也能做出很好的分类。SVM 适合中小型数据样本、非线性、高维的分类问题。</p>
+<p>SVM 最早是由 Vladimir N. Vapnik 和 Alexey Ya. Chervonenkis 在1963年提出，目前的版本（soft margin）是由 Corinna Cortes 和 Vapnik 在1993年提出，并在1995年发表。深度学习（2012）出现之前，SVM 被认为机器学习中近十几年来最成功，表现最好的算法。</p>
+<h3 id="SVM-基本概念"><a href="#SVM-基本概念" class="headerlink" title="SVM 基本概念"></a>SVM 基本概念</h3><p>将实例的特征向量（以二维为例）映射为空间中的一些点，如下图的实心点和空心点，它们属于不同的两类。SVM 的目的就是想要画出一条线，以“最好地”区分这两类点，以至如果以后有了新的点，这条线也能做出很好的分类。</p>
+<p>Q1：能够画出多少条线对样本点进行区分？<br>答：线是有无数条可以画的，区别就在于效果好不好，每条线都可以叫做一个划分超平面。比如上面的绿线就不好，蓝线还凑合，红线看起来就比较好。我们所希望找到的这条效果最好的线就是具有 “最大间隔的划分超平面”。</p>
+<p>Q2：为什么要叫作“超平面”呢？<br>答：因为样本的特征很可能是高维的，此时样本空间的划分就不是一条线了。</p>
+<p>Q3：画线的标准是什么？&#x2F; 什么才叫这条线的效果好？&#x2F; 哪里好？<br>答：SVM 将会寻找可以区分两个类别并且能使间隔（margin）最大的划分超平面。比较好的划分超平面，样本局部扰动时对它的影响最小、产生的分类结果最鲁棒、对未见示例的泛化能力最强。</p>
+<p>Q4：间隔（margin）是什么？<br>答：对于任意一个超平面，其两侧数据点都距离它有一个最小距离（垂直距离），这两个最小距离的和就是间隔。比如下图中两条虚线构成的带状区域就是 margin，虚线是由距离中央实线最近的两个点所确定出来的（也就是由支持向量决定）。但此时 margin 比较小，如果用第二种方式画，margin 明显变大也更接近我们的目标。</p>
+<p>Q5：为什么要让 margin 尽量大？<br>答：因为大 margin 犯错的几率比较小，也就是更鲁棒啦。</p>
+<p>Q6：支持向量是什么？<br>答：从上图可以看出，虚线上的点到划分超平面的距离都是一样的，实际上只有这几个点共同确定了超平面的位置，因此被称作 “支持向量（support vectors）”，“支持向量机” 也是由此来的。</p>
+<h2 id="拉格朗日乘子法："><a href="#拉格朗日乘子法：" class="headerlink" title="拉格朗日乘子法："></a>拉格朗日乘子法：</h2><ul>
+<li>拉格朗日乘子法（Lagrange multipliers）是一种寻找多元函数<strong>在一组约束下</strong>的<strong>极值</strong>的方法。</li>
+<li>通过引入拉格朗日乘子，可将有 <code>d</code> 个变量与 <code>k</code> 个约束条件的最优化问题转化为具有 �+� 个变量的无约束优化问题求解。</li>
+</ul>
+<p>举个例子：</p>
+<ul>
+<li>这是一个等式约束，即约束条件是等式。当然约束条件也可以是不等式。</li>
+<li>像这种需要<strong>在约束条件下求极值</strong>的问题，我们就可以用拉格朗日乘子法来做。</li>
+</ul>
+<h3 id="线性可分的SVM"><a href="#线性可分的SVM" class="headerlink" title="线性可分的SVM"></a>线性可分的SVM</h3><p>SVM的终极目标还是要解决数据线性不可分的情况。解决这种线性不可分的情况基本的思路有两种：</p>
+<ul>
+<li>加入松弛变量和惩罚因子，找到相对“最好”超平面，这里的“最好”可以理解为尽可能地将数据正确分类；</li>
+<li>使用核函数，将低维的数据映射到更高维的空间，使得在高维空间中数据是线性可分的，那么在高维空间使用线性分类模型即可；</li>
+</ul>
+<ol>
+<li>松弛变量和惩罚因子<br>1.1 定义<br>所谓线性不可分，说得形象一些，就是“你中有我，或者我中有你”，我们找不到一个超平面，恰好能把两类数据严格地分开。举个例子，Fig.1(a)中，白色数据元组中有一个点比较“另类”（我用文字标了出来），它跑到人家黑色元组的区域中去了，显然，如果这个点直接被忽略掉，那么分类效果是很好的（比如Fig.1(a)中的蓝色虚线），但是现在的情况就让人很难受，因为我们找不到一个超平面，恰好能把黑白两类数据分开。</li>
+</ol>
+<p>还有一种情况也比较有意思，就是现在数据还是线性可分的，比如Fig.1(b)，但是存在一个“异常点”（SVM中称之为outlier），如果忽略它，最佳分离超平面的效果非常好，但是如果按正常的套路训练的话，我们只能得到一个“差强人意”的结果。如Fig.1(b)所示，有它或没它，超平面的训练效果是有很鲜明对比的。</p>
+<p>针对上面这两种情况，最直接的解决思路就是能不能适当的放宽数据点和边缘侧面之间的关系？还记得之前线性可分情况下的约束条件是这样的：</p>
+<h3 id="总体线性可分，存在噪点使得线性不可分-x2F-局部采样线性不可分"><a href="#总体线性可分，存在噪点使得线性不可分-x2F-局部采样线性不可分" class="headerlink" title="总体线性可分，存在噪点使得线性不可分&#x2F;局部采样线性不可分"></a>总体线性可分，存在噪点使得线性不可分&#x2F;局部采样线性不可分</h3><h3 id="线性不可分的SVM"><a href="#线性不可分的SVM" class="headerlink" title="线性不可分的SVM"></a>线性不可分的SVM</h3><p>非线性 SVM： 特征空间 </p>
+<p>总体思路：原始输入空间可以映射到某个高维特征空间，其中训练集是可分离的</p>
+<p><img src="/../img/Machine-Learning/Non-linear-svm.png"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="true"
+        data-ae="false"
+        data-ci="bf8247f1f66a43abd91f"
+        data-cs="8151e71fe008a0f849031b72d321c20af8e897af"
+        data-r="h1s97x.github.io"
+        data-o="h1s97x"
+        data-a="h1s97x"
+        data-d="true"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

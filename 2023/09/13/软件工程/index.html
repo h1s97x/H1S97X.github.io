@@ -16,9 +16,8 @@
      }
  
 
-目录软件工程概述
-Chapter 1 软件工程概述软件危机（software crisis）
-Projects ,"> 
+目录软件工程概述建模过程和生命周期
+Chapter 1 软件工程概述软件危机（software crisis）软,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -40,9 +39,8 @@ Projects ,">
      }
  
 
-目录软件工程概述
-Chapter 1 软件工程概述软件危机（software crisis）
-Projects ,"/>
+目录软件工程概述建模过程和生命周期
+Chapter 1 软件工程概述软件危机（software crisis）软,"/>
     
     
     
@@ -56,9 +54,8 @@ Projects ,"/>
      }
  
 
-目录软件工程概述
-Chapter 1 软件工程概述软件危机（software crisis）
-Projects ,"/>
+目录软件工程概述建模过程和生命周期
+Chapter 1 软件工程概述软件危机（software crisis）软,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -145,71 +142,65 @@ Projects ,"/>
      }
  </style>
 
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p><a href="#chapter-1-软件工程概述">软件工程概述</a><br><a href="#chapter-2-modeling-the-process-and-life-cirle-建模过程和生命周期"></a><br><a href="#chapter-3-planning-and-managing-the-project"></a></p>
-<h2 id="Chapter-1-软件工程概述"><a href="#Chapter-1-软件工程概述" class="headerlink" title="Chapter 1 软件工程概述"></a>Chapter 1 软件工程概述</h2><h3 id="软件危机（software-crisis）"><a href="#软件危机（software-crisis）" class="headerlink" title="软件危机（software crisis）"></a>软件危机（software crisis）</h3><ul>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p><a href="#chapter-1-软件工程概述">软件工程概述</a><br><a href="#chapter-2-modeling-the-process-and-life-cirle-建模过程和生命周期">建模过程和生命周期</a><br><a href="#"></a></p>
+<h2 id="Chapter-1-软件工程概述"><a href="#Chapter-1-软件工程概述" class="headerlink" title="Chapter 1 软件工程概述"></a>Chapter 1 软件工程概述</h2><h3 id="软件危机（software-crisis）"><a href="#软件危机（software-crisis）" class="headerlink" title="软件危机（software crisis）"></a>软件危机（software crisis）</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1450118">软件危机：定义、起因、历史、机遇-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p>软件危机的定义：落后的软件生产方式无法满足迅速增长的计算机软件需求，从而导致软件开发与维护过程中出现一系列严重问题的现象。</p>
+<p>1968年，北大西洋公约组织（NATO）在联邦德国的国际学术会议创造软件危机（Software crisis）一词。而1960年代中期开始爆发众所周知的软件危机，为了解决问题，在1968、1969年连续召开两次著名的NATO会议，并同时提出软件工程的概念。</p>
+<p>1972年，艾兹赫尔·戴克斯特拉于计算机协会图灵奖的演讲：</p>
+<blockquote>
+<p>软件危机的主要原因，把它很不客气地说：在没有机器的时候，编程根本不是问题；当我们有了计算机，编程开始变成问题；而现在我们有巨大的计算机，编程就成为了一个同样巨大的问题。 艾兹赫尔·戴克斯特拉，《Communications of the ACM》</p>
+</blockquote>
+<p>软件危机使人们认识到中大型软件系统与小型软件有着本质性差异： 大型软件系统开发周期长、费用昂贵、软件质量难以保证、生产率低，它们的复杂性已远超出人脑能直接控制的程度 ，大型软件系统不能沿袭工作室的开发方式，就像制造小木船的方法不能生产航空母舰一样。 它的存在已经有数十年的历史了，一直到了1980年代的面向对象技术才解决了一部分在软件危机上的窘境。</p>
+<h4 id="软件危机的表现"><a href="#软件危机的表现" class="headerlink" title="软件危机的表现"></a>软件危机的表现</h4><ul>
 <li>Projects running over-budget （超出预算）</li>
 <li>Projects running over-time（超时间）</li>
 <li>Software was very inefficient（软件效率低）</li>
 <li>Software was of low quality（软件质量低）</li>
 <li>Software often did not meet requirements（软件不符合需求）</li>
-<li>Projects were unmanageable and code difficult to maintain（软<br>件无法管理，代码难以维护）</li>
+<li>Projects were unmanageable and code difficult to maintain（软件无法管理，代码难以维护）</li>
 <li>Software was never delivered（软件无法交付）</li>
 </ul>
-<h4 id="软件危机的原因"><a href="#软件危机的原因" class="headerlink" title="软件危机的原因"></a>软件危机的原因</h4><p>1.Time to market 软件交付市场的紧迫性<br>2.计算成本的下降<br>3.桌面计算机性能的提高<br>4.网络<br>5.面向对象技术<br>6.用户图形界面的出现<br>7.瀑布模型的问题<br><img src="/img/software-engineering/reason.png"></p>
-<h4 id="软件危机的解决方案（wasserman范式）"><a href="#软件危机的解决方案（wasserman范式）" class="headerlink" title="软件危机的解决方案（wasserman范式）"></a>软件危机的解决方案（wasserman范式）</h4><p>Abstractions (抽象)</p>
-<ul>
-<li>A description of the problem at some level of generalization.</li>
-<li>隐藏细节</li>
-</ul>
-<p>Analysis and design methods and notations (分析和设计方法以及表示法)</p>
-<ul>
-<li>A way to describe the problem and its solution at some level of abstraction.</li>
-</ul>
-<p>User interface prototyping (用户界面原型化)</p>
-<ul>
-<li>prototyping：building a small version of a system.</li>
-</ul>
-<p>Software architecture (软件架构)</p>
-<ul>
-<li>A way to describe the structure of a system in terms of separately specified components and their interrelationships.</li>
-</ul>
-<p>Software process (软件过程)</p>
-<ul>
-<li>A process: a series of steps involving activities,constrains, and resources that produce an intended output of some kind 一组有序的任务称为过程，它涉及活动、约束和资源使用，用于产生某种想要的输出<br>To form a common understanding 形成对软件开发中的活动、资源和约束的共同理解<br>To find inconsistencies, redundancies,omissions 有助于开发团队发现过程及其组成部分中存在的不一致、冗余和遗漏。修改后，过程会变得更加有效<br>To find and evaluate appropriate activities for reaching process goals 发现并评价达到过程目标的合适的活动，根据模型评估候选活动是否合适<br>To tailor a general process for a particularsituation in which it will be used 根据具体情况对每一个过程进行修改</li>
-</ul>
-<p>Reuse (软件复用)</p>
-<ul>
-<li>A way to reuse software components from a library of components.</li>
-</ul>
-<p>Measurement (软件测度)</p>
-<ul>
-<li>A way to assess the quality of software and to assess the effectiveness of the software process.</li>
-</ul>
-<p>Tools and integrated environments (工具和集成环境)</p>
-<ul>
-<li>A way to support the software process and to provide automated support for some activities.</li>
-</ul>
-<blockquote>
-<p>picadilty 广告投放的规则</p>
-</blockquote>
-<h4 id="The-1968-x2F-69-NATO-Software-Engineering-Reports"><a href="#The-1968-x2F-69-NATO-Software-Engineering-Reports" class="headerlink" title="The 1968&#x2F;69 NATO Software Engineering Reports"></a>The 1968&#x2F;69 NATO Software Engineering Reports</h4><p>科学方法解决问题：<br>研究如何以系统性的、规范化的、可定量的过程化方法去开发和维护软件，以及如何把经过时间考验而证明正确的管理技术和当前能够得到的最好的技术方法结合起来</p>
-<h3 id="I-、What-is-software-！！"><a href="#I-、What-is-software-！！" class="headerlink" title="I 、What is software?！！"></a>I 、What is software?！！</h3><p>软件（software） &#x3D; 程序（program） + 文档（document）</p>
+<h4 id="软件危机的原因（2023-12-04更新，修正错误）"><a href="#软件危机的原因（2023-12-04更新，修正错误）" class="headerlink" title="软件危机的原因（2023.12.04更新，修正错误）"></a>软件危机的原因（2023.12.04更新，修正错误）</h4><p>出现的原因：一方面与软件本身的特点有关，另一方面也和软件开发与维护的方法不正<br>确有关。<br>（1）软件缺乏“可见性”，管理和控制软件开发过程相当困难。<br>（2）软件规模庞大，而且程序复杂性将随着程序规模的增加而呈指数上升。<br>（3） 开发时期引入错误，导致软件维护通常意味着改正或修改原来的设计，客观上使<br>得软件较难维护。<br>（4）软件专业人员对软件开发和维护中或多或少地采用了错误的方法和技术。</p>
+<p><img src="/img/software-engineering/homework/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%87%BA%E7%8E%B0%E7%9A%84%E5%8E%9F%E5%9B%A0.png"></p>
+<h3 id="软件工程概念的提出"><a href="#软件工程概念的提出" class="headerlink" title="软件工程概念的提出"></a>软件工程概念的提出</h3><p>为了解决问题，在1968、1969年连续召开两次著名的NATO会议，并同时提出软件工程的概念。</p>
+<p>The 1968&#x2F;69 NATO Software Engineering Reports</p>
+<p>科学方法解决问题：<br>研究如何以系统性的、规范化的、可定量的过程化方法去开发和维护软件，以及如何把经过时间考验而证明正确的管理技术和当前能够得到的最好的技术方法结合起来</p>
+<h3 id="I-、What-is-software"><a href="#I-、What-is-software" class="headerlink" title="I 、What is software?!!"></a>I 、What is software?!!</h3><p>软件（software） &#x3D; 程序（program） + 文档（document）</p>
 <p><strong>The notion of software</strong></p>
 <blockquote>
 <p>程序+文档（张效祥，计算机科学技术百科全书）<br>程序是计算任务的处理对象和处理规则的描述<br>文档是为了便于了解程序所需的阐明性资料<br>Computer programs and associated documentation (Ian Sommerville)<br>Software products may be developed for a particular customer or may be developed for a general market </p>
 </blockquote>
-<h3 id="II-、What-is-software-engineering-！！"><a href="#II-、What-is-software-engineering-！！" class="headerlink" title="II 、What is software engineering?！！"></a>II 、What is software engineering?！！</h3><p><strong>Software engineering</strong></p>
-<p>所谓软件工程，是指运用计算机科学、数学管理科学等相关原理，以工程化的思想和方法，来解决软件问题的工程。<br><img src="/img/software-engineering/software.png" alt="软件工程"></p>
+<h3 id="II-、What-is-software-engineering"><a href="#II-、What-is-software-engineering" class="headerlink" title="II 、What is software engineering?!!"></a>II 、What is software engineering?!!</h3><p><strong>Software engineering</strong></p>
+<p>所谓软件工程，是指运用计算机科学、数学管理科学等相关原理，以工程化的思想和方法，来解决软件问题的工程。</p>
+<p>定义：两个关键词</p>
+<p>理解问题的<strong>本质（nature）</strong>，并给出<strong>解决方案（solution）</strong>。</p>
+<p>也就是说，用系统科学的方法解决问题（problem-solution）。</p>
+<p>目标：设计和开发高质量的软件。（付出较低开发成本；达到要求的功能；取得较好的性能；开发的软件易于移植；只需较低的维护费用；能按时完成开发任务，及时交付使用）</p>
+<p>方法：面向对象模式，结构化模式，基于过程的模式等。</p>
+<p><img src="/img/software-engineering/software.png" alt="软件工程"></p>
 <blockquote>
 <p>软件工程包含什么<br>1、Method（技术，产生结果的形式化过程） 某一个环节里获取环节结果的方法<br>2、Tool（工具，用更好的方式完成某件事情的设备或自动化系统） 在某一个环节中可以更好的完成环节的工具，帮助提高生产效率或提高产品质量<br>3、Procedure（过程，什么情况下用什么工具做什么，以保证生产产品） 技术与工具结合完成一个个过程。<br>4、Paradigm（范式，产品搭建的方法论或者哲学思想） 过程与过程之间的关系，在方法方面定义一个产品搭建的模式。</p>
 </blockquote>
-<h3 id="III-、What-is-good-software"><a href="#III-、What-is-good-software" class="headerlink" title="III 、What is good software?!!"></a>III 、What is good software?!!</h3><h4 id="描述”BUG”的术语"><a href="#描述”BUG”的术语" class="headerlink" title="描述”BUG”的术语"></a>描述”BUG”的术语</h4><p>错误（error）：设计人员误解需求。（错误可能会导致故障）<br>故障（fault）：开发人员写入到软件制品（程序或文档中）的错误信息。 创建出与需求分析人员和用户的实际意图不相符的设计。<br>失效（failure）：系统违背了它应有的行为。软件行为偏离预期（写到文档里的但与实现有差别）<br>A fault: occurs when a human makes a mistake, called an error, in performing some software activities （误解需求&gt;与意图不符&gt;其他故障）<br>A failure: is a departure from the system’s required behavior（交付前&#x2F;交付后&#x2F;测试&#x2F;维护）<br><img src="/img/software-engineering/bug.png" alt="bug"></p>
+<h3 id="III-、What-is-good-software"><a href="#III-、What-is-good-software" class="headerlink" title="III 、What is good software?!!"></a>III 、What is good software?!!</h3><h4 id="描述”BUG”的术语"><a href="#描述”BUG”的术语" class="headerlink" title="描述”BUG”的术语"></a>描述”BUG”的术语</h4><p>错误（error）：设计人员误解需求。（错误可能会导致故障）<br>故障（fault）：开发人员写入到软件制品（程序或文档中）的错误信息。 创建出与需求分析人员和用户的实际意图不相符的设计（一个错误可能产生多个故障，静态存在）。<br>失效（failure）：系统违背了它应有的行为。软件行为偏离预期（在系统交付前或交付后被发现，动态存在）。<br>A fault: occurs when a human makes a mistake, called an error, in performing some software activities （误解需求&gt;与意图不符&gt;其他故障）<br>A failure: is a departure from the system’s required behavior（交付前&#x2F;交付后&#x2F;测试&#x2F;维护）</p>
+<p>联系：人为原因导致程序错误；该错误编译到系统中导致系统故障；用户使用该系统时，因故障导致失效。故障是系统内部视图，从开发者的角度看待问题；失效是系统外部视图，从用户角度看到的问题。而且并不是所有的故障会导致失效，只要不执行故障代码，或者不进入某个特定状态，那么故障就不会使代码失效。</p>
+<p><img src="/img/software-engineering/bug.png" alt="bug"></p>
+<h5 id="零缺陷软件"><a href="#零缺陷软件" class="headerlink" title="零缺陷软件"></a>零缺陷软件</h5><p>由于市场压力促使软件开发人员快速交付产品，零故障无法实现。</p>
+<h5 id="关于-bug"><a href="#关于-bug" class="headerlink" title="关于 bug"></a>关于 bug</h5><p>改正(fixing)有时比重写(rewriting)整个系统要困难。<br>错误修正的越晚，付出的代价越大。<br>复审(review)十分重要，是正式团队的行为规范；自己检查能只能找出开发阶段故障的 1&#x2F;5，同行评审能够揭示其余 4&#x2F;5 的故障。</p>
 <h4 id="软件质量（quality-of-software）"><a href="#软件质量（quality-of-software）" class="headerlink" title="软件质量（quality of software）"></a>软件质量（quality of software）</h4><ul>
 <li>The quality of the product 软件产品的质量</li>
 <li>The quality of the process 过程的质量(CMM和ISO9000)</li>
 <li>The quality of the product in the context of the business environment 商业环境下的质量</li>
 </ul>
-<h3 id="IV-、Who-does-software-engineering-谁参与了软件开发？"><a href="#IV-、Who-does-software-engineering-谁参与了软件开发？" class="headerlink" title="IV 、Who does software engineering?!! 谁参与了软件开发？"></a>IV 、Who does software engineering?!! 谁参与了软件开发？</h3><p>Customer: the company, organization, or person who pays for the software system<br>为软件开发付钱的人<br>Developer: the company, organization, or person who is building the software system<br>编程人员<br>User: the person or people who will actually use the system<br>持续使用软件的人</p>
+<p>从三个方面考虑软件的质量：产品的质量、生产该产品的过程的质量以及在产品将使用的商业环境背景下的质量。<br>3.1 产品(product)的质量</p>
+<p>用户：从失效的数目和类型等外部特性进行评价，如果软件具有足够的功能，并且易于学习和使用；或者虽然难以学习和使用，但是由于功能值得这些付出，用户就断定软件是高质量的。<br>开发者：从故障的数目和类型等内部特征来作为产品质量的依据。</p>
+<p>3.2 过程(process)的质量</p>
+<p>有很多过程都会影响到最终的产品质量，只要有活动出了差错，产品的质量就会受到影响；开发和维护过程的质量与产品的质量是同等重要的。<br>几个量化模型：CMM、ISO 9000、SPICE（了解）</p>
+<p>3.3 商业(business)环境背景下的质量</p>
+<p>(1) 技术价值与商业价值的联系与区别：<br>技术价值：技术指标（速度，正确的运行时间，维护成本等）。<br>商业价值：机构对软件是否与其战略利益相吻合的一种价值评估。误区：技术质量不会自动转化为商业价值。<br>(2) 目标<br>将技术价值和商业价值统一起来，改进过程所带来的商业价值。</p>
+<h3 id="IV-、Who-does-software-engineering-软件工程涉及的人员"><a href="#IV-、Who-does-software-engineering-软件工程涉及的人员" class="headerlink" title="IV 、Who does software engineering?!! 软件工程涉及的人员"></a>IV 、Who does software engineering?!! 软件工程涉及的人员</h3><p>客户(customer)：为将要开发的软件系统支付费用的公司、组织或个人。</p>
+<p>开发者(developer)：为客户构建软件系统的公司、组织或个人。</p>
+<p>用户(user)：实际使用系统的人。</p>
+<p>有时，他们可能是同一个人或同一组人。</p>
 <blockquote>
 <p>Notes: 随着软件工程的发展，三者之间的界限越来越模糊了。客户介入研发，不断变更需求。 软件外包，开发人员也可以作为客户。</p>
 <ol>
@@ -219,10 +210,16 @@ Projects ,"/>
 </blockquote>
 <p><img src="/img/software-engineering/participant.png" alt="参与者"></p>
 <h3 id="V-、A-system-approach-系统方法"><a href="#V-、A-system-approach-系统方法" class="headerlink" title="V 、A system approach 系统方法"></a>V 、A system approach 系统方法</h3><h4 id="What-is-a-system"><a href="#What-is-a-system" class="headerlink" title="What is a system?"></a>What is a system?</h4><p>Hardware, software, interaction with people<br>装配在一起的硬件和软件，必须与用户、其他软件任务、其他部分的硬件、现有数据库、甚至其他计算机系统进行交互</p>
-<h4 id="The-elements-of-a-system"><a href="#The-elements-of-a-system" class="headerlink" title="The elements of a system"></a>The elements of a system</h4><ul>
-<li>activities and objects<br>活动是发生在系统中的某些事情，实体是活动中涉及的要素</li>
-<li>关系 (relationships) 关系定义了实体与活动之间的交互</li>
-<li>系统边界（the system boundary） 系统边界定义了输入的来源以及输出什么</li>
+<h4 id="软件系统的系统要素（组成）（对象（实体）-活动-关系-系统边界）"><a href="#软件系统的系统要素（组成）（对象（实体）-活动-关系-系统边界）" class="headerlink" title="软件系统的系统要素（组成）（对象（实体）+ 活动 + 关系 + 系统边界）"></a>软件系统的系统要素（组成）（对象（实体）+ 活动 + 关系 + 系统边界）</h4><p>(1) 活动和对象</p>
+<ul>
+<li>活动(activity)：活动是发生在系统中的某些事情，通常描述为由某个触发器引发的事件，活动通过改变某一特性把一个事物转变成另一个事物。</li>
+<li>对象(object)或实体(entity)：活动中涉及的元素称为对象或实体（如记录数据的对象）。</li>
+<li>活动是发生在系统中的某些事情，实体是活动中涉及的要素</li>
+</ul>
+<p>(2) 关系和系统边界</p>
+<ul>
+<li>关系(relationship)：对实体和活动间数据项及动作相互关系的描述。</li>
+<li>系统边界(system boundary)：用于描述系统中包含什么，不包含什么。</li>
 </ul>
 <h3 id="VI-、An-engineering-approach"><a href="#VI-、An-engineering-approach" class="headerlink" title="VI 、An engineering approach"></a>VI 、An engineering approach</h3><p><strong>构建一个系统 (buliding a system)</strong></p>
 <blockquote>
@@ -230,8 +227,28 @@ Projects ,"/>
 </blockquote>
 <p><strong>What we learned from building a house</strong></p>
 <p>Remain flexible and allow changes in the original specifications at various points during construction<br>（保持灵活、允许更改）<sup>材料无法买到、看到雏形时新想法、最初的设计不可行</sup><br>The house is built within the context of social, economic, and governmental structure（受社会经济影响、符合政府体系&#x2F;政策要求）<br>Leave room for decisions based on experience, to deal with unexpected or nonstandard situations（为决策留有余地）<sup>建造部件的自然变形导致墙和地面不是正方形</sup></p>
+<h4 id="现代软件工程包含的阶段："><a href="#现代软件工程包含的阶段：" class="headerlink" title="现代软件工程包含的阶段："></a>现代软件工程包含的阶段：</h4><p><em><strong>*现代软件工程大致包含的几个阶段及各个阶段文档。*</strong></em></p>
+<p>1、需求分析</p>
+<p>完成需求规格说明书（SRS Software Requirement Specification）。</p>
+<p>2、系统设计</p>
+<p>完成系统结构图（SAD software architecture diagrams and reports）。</p>
+<p>3、程序设计</p>
+<p>完成模块功能与数据描述文档。</p>
+<p>4、软件开发</p>
+<p>完成开发记录文档。</p>
+<p>5、单元测试</p>
+<p>按照程序设计中的要求进行测试，完成单元测试文档。</p>
+<p>6、集成测试</p>
+<p>按照SAD测试，完成集成测试文档。</p>
+<p>7、系统测试</p>
+<p>按照SRS进行测试，完成系统测试文档。</p>
+<p>8、系统交付</p>
+<p>提交系统说明文档。 user manual and operator manual用户手册、操作者手册</p>
+<p>9、维护</p>
+<p>提交维护记录文档。</p>
 <p><a href="#">软件系统开发</a></p>
-<h3 id="VII-、Members-of-the-development-team"><a href="#VII-、Members-of-the-development-team" class="headerlink" title="VII 、Members of the development team"></a>VII 、Members of the development team</h3><ul>
+<h3 id="VII-、Members-of-the-development-team"><a href="#VII-、Members-of-the-development-team" class="headerlink" title="VII 、Members of the development team"></a>VII 、Members of the development team</h3><p>需求分析人员、设计人员、程序员、测试人员、培训人员、维护人员、资料管理人员、配置管理人员。</p>
+<ul>
 <li>Requirement analysts 需求分析人员</li>
 <li>Designers 设计人员，软件架构师。<br>  从需求分析中抽取出具体实现，设计出满足用户需求的架构。是经验与实际规则相结合的一部分，为最困难的一部分。</li>
 <li>Programmers 程序开发者。</li>
@@ -241,7 +258,53 @@ Projects ,"/>
 <li>Librarians 文档管理人员。<br>使开发更加规范，说明当时是怎么想的。</li>
 <li>Configuration management team 配置管理人员。<br>不变的固化为程序，可变的抽象为配置项。</li>
 </ul>
-<h2 id="Chapter-2-Modeling-the-Process-and-Life-Cirle-建模过程和生命周期"><a href="#Chapter-2-Modeling-the-Process-and-Life-Cirle-建模过程和生命周期" class="headerlink" title="Chapter 2 Modeling the Process and Life Cirle (建模过程和生命周期)"></a>Chapter 2 Modeling the Process and Life Cirle (建模过程和生命周期)</h2><h3 id="I-The-meaning-of-process"><a href="#I-The-meaning-of-process" class="headerlink" title="I. The meaning of process !!"></a>I. The meaning of process !!</h3><h4 id="软件过程模型（software-process-models）"><a href="#软件过程模型（software-process-models）" class="headerlink" title="软件过程模型（software process models）"></a>软件过程模型（software process models）</h4><ul>
+<p>软件工程各阶段各自的工作：（了解）<br>需求设计（分析员、客户）：将客户想要的分解为离散需求。<br>系统设计（分析员、设计员）：生成系统层描述（系统要做什么）。<br>程序设计（设计员、程序员）：实现指定需求的代码。<br>程序实现（程序员）：编代码。<br>单元测试（程序员、测试员）：发现各种错误。<br>集成测试（测试团队）：检查系统功能。<br>系统测试（测试员、客户、培训员）：根据《SRS》检查要求。<br>系统交付（培训员）：培训用户。<br>系统维修（维修团队）：寻找故障，根据客户需求变化，对系统作出修改。<br>资料管理（资料管理员）：维持一个软件的不同版本之间各种文档的对应关系，包括需求规格说明、设计描述、程序文档、培训手册、测试数据进度等。<br>配置管理（配置管理员）：维护需求、设计、实现和测试之间的对应关系。<br>软件架构师：属于高级程序员，侧重开发过程和模式的选择和论证（在国内和分析员差不多,其工作重点与分析员有所不同，但就开发来说，其工作似乎更重要些，而分析员的工作更偏重于市场与用户需求）。</p>
+<h3 id="VIII-软件工程发生了多大的变化"><a href="#VIII-软件工程发生了多大的变化" class="headerlink" title="VIII. 软件工程发生了多大的变化"></a>VIII. 软件工程发生了多大的变化</h3><h4 id="使现代软件工程实践发生变化的七个关键因素-by-Wasserman"><a href="#使现代软件工程实践发生变化的七个关键因素-by-Wasserman" class="headerlink" title="使现代软件工程实践发生变化的七个关键因素(by Wasserman)"></a>使现代软件工程实践发生变化的七个关键因素(by Wasserman)</h4><p>1.Time to market 软件交付市场的紧迫性<br>2.计算成本的下降<br>3.桌面计算机性能的提高<br>4.网络技术的发展<br>5.面向对象技术的发展<br>6.用户图形界面系统的普及<br>7.瀑布模型存在的问题</p>
+<p>软件开发瀑布模型的不可预测性<br>说明（了解）：瀑布模型沿袭了传统系统工程的大规模批发制造的理念，假定生产活动为线性，这与现代软件的生产方式相矛盾。不再是有足够的灵活性和适应性来满足并行开发或并行运行这样的商业软件需求，因此不可预测。<br>结论（了解）：对一个系统进行划分，以便并行地开发其子系统，需要一个与瀑布模型有很大不同的开发模型。</p>
+<p><img src="/img/software-engineering/reason.png"></p>
+<h4 id="软件工程的-Wasserman-规范"><a href="#软件工程的-Wasserman-规范" class="headerlink" title="软件工程的 Wasserman 规范"></a>软件工程的 Wasserman 规范</h4><p>Abstractions (抽象)</p>
+<ul>
+<li>A description of the problem at some level of generalization.基于某种概念层次上对问题的描述</li>
+<li>隐藏细节</li>
+</ul>
+<p>Analysis and design methods and notations (分析、设计方法和符号描述系统)</p>
+<ul>
+<li>A way to describe the problem and its solution at some level of abstraction.使用标准表示来对程序进行描述。利于交流，利于建模并检查其完整性和一致性，利于对需求和设计部件进行重用。</li>
+</ul>
+<p>User interface prototyping (用户界面原型化)</p>
+<ul>
+<li>prototyping：building a small version of a system.建立系统的小型版, 通常具有有限的关键功能,以利于用户评价和选择，证明设计或方法的可行性。</li>
+</ul>
+<p>Software architecture (软件架构)</p>
+<ul>
+<li>A way to describe the structure of a system in terms of separately specified components and their interrelationships.定义一组体系结构单元及其相互关系集来描述软件系统。</li>
+</ul>
+<p>Software process (软件过程)</p>
+<ul>
+<li>A process: a series of steps involving activities,constrains, and resources that produce an intended output of some kind 一组有序的任务称为过程，它涉及活动、约束和资源使用，用于产生某种想要的输出<br>To form a common understanding 形成对软件开发中的活动、资源和约束的共同理解<br>To find inconsistencies, redundancies,omissions 有助于开发团队发现过程及其组成部分中存在的不一致、冗余和遗漏。修改后，过程会变得更加有效<br>To find and evaluate appropriate activities for reaching process goals 发现并评价达到过程目标的合适的活动，根据模型评估候选活动是否合适<br>To tailor a general process for a particularsituation in which it will be used 根据具体情况对每一个过程进行修改</li>
+</ul>
+<p>Reuse (软件复用)</p>
+<ul>
+<li>A way to reuse software components from a library of components.重复采用以前开发的软件系统中具有共性的部件, 用到新的开发项目中去（不仅仅是源代码的重用）</li>
+</ul>
+<p>Measurement (软件测度)</p>
+<ul>
+<li>A way to assess the quality of software and to assess the effectiveness of the software process.通用的评价方法和体系，有助于使过程和产品的特定特性更加可见，包括量化描述系统、量化审核系统。</li>
+</ul>
+<p>Tools and integrated environments (工具和集成环境)</p>
+<ul>
+<li>A way to support the software process and to provide automated support for some activities.通过框架比较软件工程环境提供的服务，以决定其好坏。工具：由于厂商很少针对整个开发生命周期，因此对于工具的比较集中于小的活动集，例如测试或设计。</li>
+</ul>
+<blockquote>
+<p>picadilty 广告投放的规则</p>
+</blockquote>
+<h2 id="Chapter-2-Modeling-the-Process-and-Life-Cirle-建模过程和生命周期"><a href="#Chapter-2-Modeling-the-Process-and-Life-Cirle-建模过程和生命周期" class="headerlink" title="Chapter 2 Modeling the Process and Life Cirle (建模过程和生命周期)"></a>Chapter 2 Modeling the Process and Life Cirle (建模过程和生命周期)</h2><h3 id="I-The-meaning-of-process"><a href="#I-The-meaning-of-process" class="headerlink" title="I. The meaning of process !!"></a>I. The meaning of process !!</h3><p><strong>定义：</strong></p>
+<p>过程(process)：软件开发过程中产生某种期望结果的一系列有序任务，涉及活动、约束和资源。</p>
+<p><strong>重要性：</strong></p>
+<p>1、通用性：软件过程可以让一系列开发活动保持一致性和结构性，因而具有了通用性。</p>
+<p>2、指导性：软件过程使我们可以分析、检查、理解、控制和改善软件开发活动。</p>
+<p>3、可以把获得的经验传递给其他人。</p>
+<h4 id="软件过程模型（software-process-models）"><a href="#软件过程模型（software-process-models）" class="headerlink" title="软件过程模型（software process models）"></a>软件过程模型（software process models）</h4><ul>
 <li>形成对软件开发中的活动、资源和约束的共同理解</li>
 <li>有助于开发团队发现过程中部分中存在的不一致、</li>
 </ul>
@@ -293,7 +356,8 @@ Projects ,"/>
 <!-- - RAD Model (Rapid Application Development)</li>
 <li>喷泉模型（fountain model） –&gt;</li>
 </ul>
-<h5 id="Waterfall-Model"><a href="#Waterfall-Model" class="headerlink" title="Waterfall Model"></a>Waterfall Model</h5><p>描述：<br>从一个阶段瀑布般的转换到另一个阶段。<br>一个开发阶段必须在另一个阶段开始前完成。<br>是比较悠久的模型。<br>每个过程活动都有与其相关的里程碑（中间产出）和可交付产品，以便判断距离最后完成还有多远。（借助该思想设计的瀑布模型）<br>可以说是软件开发过程中的第一个基础模型。</p>
+<h5 id="Waterfall-Model"><a href="#Waterfall-Model" class="headerlink" title="Waterfall Model"></a>Waterfall Model</h5><p><img src="/img/software-engineering/waterfall-model.png"></p>
+<p>描述：<br>从一个阶段瀑布般的转换到另一个阶段。<br>一个开发阶段必须在另一个阶段开始前完成。<br>是比较悠久的模型。<br>每个过程活动都有与其相关的里程碑（中间产出）和可交付产品，以便判断距离最后完成还有多远。（借助该思想设计的瀑布模型）<br>可以说是软件开发过程中的第一个基础模型。</p>
 <p>瀑布模型的工作原理如下：</p>
 <ul>
 <li>从小到大收集用户需求;正确记录所有要求，以了解用户的产品要求。</li>
@@ -312,16 +376,20 @@ Projects ,"/>
 <li>Uses acceptance testing to validate the requirements 需求不完善</li>
 <li>If problems are found during verification and validation, the left side of the V can be re-executed before testing on the right side is re-enacted<br>获得完善的需求规约是非常困难的；<br>难以适应快速变化需求；<br>系统太大时,难以一次做完；<br>反馈信息慢；<br>极可能引起开发后期的大量返工，如返工到需求、设计等早期活动；<br>！<a href="img/software-engineering/waterfall-model.png"></a></li>
 </ul>
+<p>2.2.3 瀑布模型的优化——原型化的瀑布模型<br>我们注意到瀑布模型将过程抽象为线性发展的，这种抽象给它带来了简单、明确和直观的优点，但同时也招致了许多问题。可是实际的开发中每个步骤并不是理想中的线性发展的的状态，比如在设计阶段了解到客户更新了需求，或者在设计阶段的疏漏直到测试时才被发现，以上的情况都需要返回之前的步骤进行修正才能解决。我们需要对瀑布模型进行优化，引入原型化以有助于控制活动之间的往返。</p>
 <h5 id="V-Model"><a href="#V-Model" class="headerlink" title="V Model"></a>V Model</h5><p>V模型是瀑布模型的一种变体，它使用单元测试来验证过程设计，使用集成测试来验证体系结构（系统）设计，使用验收测试来验证需求。如果在验证和验证过程中发现问题，则可以在重新执行右侧测试之前重新执行V的左侧。</p>
 <p>描述：<br>明确的标注了测试过程中存在不同测试类型，明确的表示了开发阶段与测试各阶段的对应关系。<br>单元测试是否满足详细设计的要求。<br>集成测试验证之前已测试过的部分是否可以很好的结合在一起 。<br>系统测试检测系统功能，安全性等。<br>验收测试是由客户进行的，确定软件的实现是否满足用户需求。</p>
 <p>优点： 使得隐藏在瀑布模型中的迭代和重做活动更加明确 </p>
-<p>缺点： 仅把测试作为编码的最后一个阶段，未在需求阶段就进行测试<img src="/img/v-model.png"></p>
+<p>缺点： 仅把测试作为编码的最后一个阶段，未在需求阶段就进行测试</p>
+<p><img src="/img/software-engineering/v-model.png"></p>
 <h5 id="原型化模型（prototyping-model）"><a href="#原型化模型（prototyping-model）" class="headerlink" title="原型化模型（prototyping model）"></a>原型化模型（prototyping model）</h5><p>原型化模型是一种软件开发模型，它将软件开发过程分为四个阶段：需求收集、原型设计、原型开发和原型评估。在原型设计阶段，软件工程师和客户一起确定软件的基本要求。在原型开发阶段，软件工程师根据客户的要求开发原型。在原型评估阶段，客户评估原型并提出更改建议。</p>
 <p>优点：<br>减少开发中的风险和不确定性 。<br>避免太晚开始迭代 。</p>
-<p>缺点：<br>快速建立起来的系统结构加上连续的修改可能会导致产品质量低下。<img src="/img/prototype-model.png" alt="原型化模型"></p>
+<p>缺点：<br>快速建立起来的系统结构加上连续的修改可能会导致产品质量低下。</p>
+<p><img src="/img/software-engineering/prototype-model.png" alt="原型化模型"></p>
 <h5 id="Operational-specification（可操作规格模型）"><a href="#Operational-specification（可操作规格模型）" class="headerlink" title="Operational specification（可操作规格模型）"></a>Operational specification（可操作规格模型）</h5><p>略 专业领域使用较多</p>
 <h5 id="阶段化开发：增量和迭代-（Phased-development-increments-and-iteration）"><a href="#阶段化开发：增量和迭代-（Phased-development-increments-and-iteration）" class="headerlink" title="阶段化开发：增量和迭代 （Phased development: increments and iteration）"></a>阶段化开发：增量和迭代 （Phased development: increments and iteration）</h5><p> Incremental development: starts with small functionalsubsystem and adds functionality with each new release 小的子系统-&gt;不断增加功能<br> Iterative development: starts with full system, then changes functionality of each subsystem with each new release 全系统-&gt;不断完善功能</p>
-<p>优点：<br>从需求到系统交付的时间短 快速抢占市场 早些获得反馈，可以对产品进行修改。<br>缺点：<br>不断进行新老版本时，会有一些不稳定性。<img src="/img/increments-and-iteration.png"></p>
+<p>优点：<br>从需求到系统交付的时间短 快速抢占市场 早些获得反馈，可以对产品进行修改。<br>缺点：<br>不断进行新老版本时，会有一些不稳定性。</p>
+<p><img src="/img/software-engineering/increments-and-iteration.png"></p>
 <h5 id="螺旋模型（spiral-model）"><a href="#螺旋模型（spiral-model）" class="headerlink" title="螺旋模型（spiral model）"></a>螺旋模型（spiral model）</h5><p>描述：<br>以需求和初始化开发计划（预算、约束、人员安排方案、设计和开发环境）为起点。<br>在产生操作概念（要做哪些事情，有什么资源等）文档之前，插入评估风险以及可选原型的步骤，以评估需求是否完整和一致。<br>第一轮迭代产生操作概念，第二轮是需求，后面依次是设计和测试。<br>每轮都进行风险分析，评估不同选择，通过原型验证可行性，并决定如何消除或降低风险。<br>一圈代表一次迭代 。</p>
 <p>优点：<br>灵活性，可以在项目的各个阶段进行变更。<br>减少了过多测试或测试不足所带来的风险。<br>缺点：<br>对风险评估经验和专门知识的要求较高，在风险较大的项目开发中，如果未能够及时标注风险，势必造成重大损失 会增加开发成本，延迟提交时间。</p>
 <p><img src="/img/software-engineering/spiral-model.png"></p>
@@ -341,7 +409,9 @@ Projects ,"/>
 <p>(7) 组织：过程代理的层次化结构，使物理的分组与逻辑分组及相关角色相对应。从物理分组到逻辑分组的映射必须足够灵活以便反映物理环境的变化。</p>
 <h4 id="动态建模：系统动力学"><a href="#动态建模：系统动力学" class="headerlink" title="动态建模：系统动力学"></a>动态建模：系统动力学</h4><p>过程模型的一个良好特性就是演示过程的能力，这样，随着活动的发生，我们就可以观察资源和产品发生了什么情况。换言之，我们想要描述这个过程的模型，并且在软件向我们展示资源流是如何通过活动成为输出的时候可以进行观察。这种动态过程的视图使我们能够模拟过程，并在实际消耗资源之前能够进行修改。</p>
 <p>使用系统动力学方法的第一步是将实证性证据、研究报告和直觉这三者结合在一起来标识这些关系。下一步是量化这些关系，量化可以包含直接的关系。</p>
-<h2 id="Chapter-3-Planning-and-Managing-The-Project-计划和管理项目"><a href="#Chapter-3-Planning-and-Managing-The-Project-计划和管理项目" class="headerlink" title="Chapter 3 Planning and Managing The Project (计划和管理项目)"></a>Chapter 3 Planning and Managing The Project (计划和管理项目)</h2><h3 id="I-Tracking-progress-项目跟踪"><a href="#I-Tracking-progress-项目跟踪" class="headerlink" title="I. Tracking progress 项目跟踪"></a>I. Tracking progress 项目跟踪</h3><p><strong>活动</strong><br>是项目的一部分，在一段时间内发生<br><strong>里程碑</strong><br>是活动的完成，就是每一个特定的时刻，向开发人员和客户指明项目已经进展到了可测量的级别</p>
+<h2 id="Chapter-3-Planning-and-Managing-The-Project-计划和管理项目"><a href="#Chapter-3-Planning-and-Managing-The-Project-计划和管理项目" class="headerlink" title="Chapter 3 Planning and Managing The Project (计划和管理项目)"></a>Chapter 3 Planning and Managing The Project (计划和管理项目)</h2><h3 id="I-Tracking-progress-项目跟踪"><a href="#I-Tracking-progress-项目跟踪" class="headerlink" title="I. Tracking progress 项目跟踪"></a>I. Tracking progress 项目跟踪</h3><p><strong>项目进度（Project Schedule）</strong><br>项目进度是对特定项目的软件开发周期的刻画。包括对项目阶段、步骤、活动的分解，对各个离散活动的交互关系的描述，以及对各个活动完成时间及整个项目完成时间的初步估算。</p>
+<p><strong>活动</strong><br>是项目的一部分，在一段时间内发生</p>
+<p><strong>里程碑</strong><br>是活动的完成，就是每一个特定的时刻，向开发人员和客户指明项目已经进展到了可测量的级别</p>
 <p>按照活动和里程碑的概念，可以把开发分为阶段，阶段包含步骤，步骤包含活动。<br>每个活动都是一个可测量事件，这样我们可以确定活动完成的客观标准。<br>任何一个活动的终止都可以是一个里程碑。</p>
 <h4 id="Work-breakdown-and-activity-graphs-工作分解和活动图"><a href="#Work-breakdown-and-activity-graphs-工作分解和活动图" class="headerlink" title="Work breakdown and activity graphs 工作分解和活动图"></a>Work breakdown and activity graphs 工作分解和活动图</h4><p>工作分解图（work breakdown structure）是一种层次化的任务清单，它将项目分解为若干个可管理的活动和任务。<br>可以用四个参数对每个活动进行定义：</p>
 <ul>
@@ -378,7 +448,7 @@ Projects ,"/>
 <li>团队成员的数目</li>
 <li>客户和开发人员的管理风格</li>
 </ul>
-<p>两种组织结构：<br><strong>主程序员负责制小组（Chief programmer team</strong>）：一个人负则系统的设计和开发，其它的小组成员向该主程序员汇报，主程序员对每一个决定有最终决策权。<br><img src="/img/software-engineering/Chief-Programmer-Team.png"><br><strong>忘我方法（Egoless approach)</strong>: 每个人平等的承担责任</p>
+<p>两种组织结构：<br><strong>主程序员负责制小组（Chief programmer team</strong>）：一个人负则系统的设计和开发，其它的小组成员向该主程序员汇报，主程序员对每一个决定有最终决策权。<br><img src="/img/software-engineering/Chief-Programmer-Team.png"><br><strong>忘我方法（Egoless approach)</strong>: 每个成员平等的承担责任，而且过程与个人是分开的；批评是针对产品和结果的，不针对个人的。</p>
 <h3 id="III-Effort-estimation（估算工作量）"><a href="#III-Effort-estimation（估算工作量）" class="headerlink" title="III. Effort estimation（估算工作量）"></a>III. Effort estimation（估算工作量）</h3><h4 id="专家判断-expert-judgement"><a href="#专家判断-expert-judgement" class="headerlink" title="专家判断 expert judgement"></a>专家判断 expert judgement</h4><p><strong>(x+4y+z)&#x2F;6</strong><br>一个悲观的预测(x),一个乐观的预测(y),一个最有可能的预测(z)</p>
 <h4 id="算法方法-Algorithmic-methods"><a href="#算法方法-Algorithmic-methods" class="headerlink" title="算法方法 Algorithmic methods"></a>算法方法 Algorithmic methods</h4><p>用方程的方式，工作量是因变量，其它因素是自变量，通常认为项目规模是影响最大的因素<br><strong>E&#x3D;（ a + bSc ) m(X)</strong><br>S是规模，abc是常量，X是影响成本因素的向量，m是因素的调整因子；可以看出主要是规模，其它是调整。<br>（反馈控制，对系统进行优化）</p>
 <p>Walston and Felix model: <code>E = 5.25 S 0.91</code><br>Bailey and Basili model: <code>E = 5.5 + 0.73 S^1.16</code></p>
@@ -390,7 +460,21 @@ Projects ,"/>
 </code></pre>
 <h4 id="机器学习方法-machine-learning-methods"><a href="#机器学习方法-machine-learning-methods" class="headerlink" title="机器学习方法 machine-learning methods"></a>机器学习方法 machine-learning methods</h4><p>ML-based估算</p>
 <p>分析过去项目数据，并用他们生产方程式以预测未来项目 这个过程可以采用机器学习的方法进行<br>采用过去项目的数据进行训练。为网络提供相关数据，识别数据的模式，使用正向和反向传播算法进行学习。</p>
+<p>专家估算法的大致含义？算式估算法的大致含义？</p>
+<p>专家估算法：</p>
+<p>使用专家的知识和经验，对软件项目的工作量进行评估，是一种经验性的猜测。</p>
+<p>一般使用三种方法：</p>
+<p>1、类推法：</p>
+<p>做出三种估计，乐观的、悲观的、最可能的估计，加权平均。</p>
+<p>2、Delphi法：</p>
+<p>几组专家预测，取平均值。</p>
+<p>3、Wolverton法：</p>
+<p>通过计算老问题（O），新问题（N）和容易的（E），适中的（M），困难的（H）这2x3的组合，形成矩阵进行估计。</p>
+<p>算式估算法：</p>
+<p>E &#x3D; ( a + bSc ) m (X)</p>
+<p>E为工作量，a，b，c都为常数，S是估算的系统规模，X 是一个从X1到Xn的n维度成本因素向量，m是基于该因素的调整因子。</p>
 <h3 id="IV-Risk-management-activities（风险管理）"><a href="#IV-Risk-management-activities（风险管理）" class="headerlink" title="IV. Risk management activities（风险管理）"></a>IV. Risk management activities（风险管理）</h3><h4 id="什么是风险"><a href="#什么是风险" class="headerlink" title="什么是风险"></a>什么是风险</h4><p>风险是指在项目开发过程中，可能会发生的一些不期望发生的事件，这些事件可能会对项目的进度、成本、质量、资源等产生影响，甚至会导致项目失败。Risk is an unwanted event that has negative consequences.</p>
+<p>概念：软件生产过程中不希望看到的，有负面结果的事件<br>方面：风险损失，风险概率（相乘为风险暴露（Risk Exposure），即数学期望）</p>
 <p>与事件有关的损失<br>事件发生的可能性<br>能够改变结果的程度</p>
 <h5 id="风险量化"><a href="#风险量化" class="headerlink" title="风险量化"></a>风险量化</h5><p>Quantify the effect of risks(量化风险的影响)<br><strong>Risk exposure &#x3D; (risk probability) x (risk impact)</strong></p>
 <p><img src="/img%5Csoftware-engineering%5Crisk-exposure.png"></p>
@@ -400,9 +484,15 @@ Projects ,"/>
 <li>特定项目风险</li>
 </ul>
 <p>Personnel shortfalls<br>Unrealistic schedules and budgets<br>Developing the wrong functions<br>Developing the wrong user interfaces<br>Gold-plating<br>Continuing stream of requirements changes<br>Shortfalls in externally-performed tasks<br>Shortfalls in externally-furnished components<br>Real-time performance shortfalls<br>Straining computer science capabilities</p>
-<h4 id="Steps-in-risk-management-风险管理"><a href="#Steps-in-risk-management-风险管理" class="headerlink" title="Steps in risk management 风险管理"></a>Steps in risk management 风险管理</h4><p>评价项目的风险，以便了解在开发或维护的过程中可能发生什么。<br>评价由三个部分组成：识别风险、分析风险、为每个风险分配优先级。再进行风险控制，控制的理念认为，我们不可能去除所有风险，而是可以通过采取行动以一种可接受的方式处理有害的结果，从而将风险降到最低。</p>
-<p>风险控制包括风险降低、风险计划和风险化解。</p>
-<p><strong>如何管理：评估+控制</strong></p>
+<h4 id="Steps-in-risk-management-风险管理"><a href="#Steps-in-risk-management-风险管理" class="headerlink" title="Steps in risk management 风险管理"></a>Steps in risk management 风险管理</h4><p><strong>如何管理：评估+控制</strong></p>
+<p>评价项目的风险，以便了解在开发或维护的过程中可能发生什么。</p>
+<p>风险评估：风险识别（checklist），风险分析，风险优先级分配</p>
+<p>再进行风险控制，控制的理念认为，我们不可能去除所有风险，而是可以通过采取行动以一种可接受的方式处理有害的结果，从而将风险降到最低。</p>
+<p>风险控制：风险降低，风险管理计划，风险化解</p>
+<p>降低风险的策略：</p>
+<p>1、避免风险：改变功能和性能需求，使风险没机会发生。</p>
+<p>2、转移风险：通过把风险分配到其他系统中，或者购买保险以便在风险成为事实时弥补经济上的损失。</p>
+<p>3、假设风险：用项目资源，接受并控制风险。比如在开发时主动有意识地进行测试。</p>
 <h3 id="项目计划"><a href="#项目计划" class="headerlink" title="项目计划"></a>项目计划</h3><p>目标<br>进度<br>标准<br>资源<br>质量保证</p>
 <h3 id="过程模型和项目管理"><a href="#过程模型和项目管理" class="headerlink" title="过程模型和项目管理"></a>过程模型和项目管理</h3><p>Enrollment Management Model: Digital Alpha AXP<br><strong>注册管理模型：</strong></p>
 <ul>
@@ -467,7 +557,7 @@ Projects ,"/>
 <blockquote>
 <p>过程约束是对用于构建系统的技术和资源的限制。例如，客户可能坚持使用敏捷方法，以便在继续增加新特征时能够使用早期版本。</p>
 </blockquote>
-<p><img src="/img/%E5%BC%95%E5%87%BA%E4%B8%8D%E5%90%8C%E9%9C%80%E6%B1%82%E7%9A%84%E9%97%AE%E9%A2%98-1.jpg"></p>
+<p><img src="/img/software-engineering/%E5%BC%95%E5%87%BA%E4%B8%8D%E5%90%8C%E9%9C%80%E6%B1%82%E7%9A%84%E9%97%AE%E9%A2%98-1.jpg"></p>
 <p><img src="/img/software-engineering/%E5%BC%95%E5%87%BA%E4%B8%8D%E5%90%8C%E9%9C%80%E6%B1%82%E7%9A%84%E9%97%AE%E9%A2%98-2.jpg"></p>
 <h3 id="IV-Characteristics-of-Requirements"><a href="#IV-Characteristics-of-Requirements" class="headerlink" title="IV. Characteristics of Requirements"></a>IV. Characteristics of Requirements</h3><p>Correct 正确性<br>Consistent 一致性<br>Unambigious 无二义性<br>Complete 完备性<br>Feasible 可行性<br>Relevant 相关性<br>Testable 可测试性<br>Traceable 可跟踪性</p>
 <h3 id="V-建模表示-Modeling-Notations"><a href="#V-建模表示-Modeling-Notations" class="headerlink" title="V. 建模表示 Modeling Notations"></a>V. 建模表示 Modeling Notations</h3><p>软件工程原理的一个显著特性是，它具有用于开发安全的、成功的产品的可重复过程。</p>
@@ -584,6 +674,11 @@ Projects ,"/>
 </blockquote>
 <h4 id="用于理解决策以及评估选择的体系结构的工具"><a href="#用于理解决策以及评估选择的体系结构的工具" class="headerlink" title="用于理解决策以及评估选择的体系结构的工具"></a>用于理解决策以及评估选择的体系结构的工具</h4><p>Design patterns（设计模式）:设计模式是一种针对单个软件模块或少量模块而给出的一般性解决方案，它提供相对较低层次的设计决策。<br>Design convention or idiom（设计公约）: 设计公约是一系列设计决策和建议的集合，采用这些设计决策和建议，能够提高系统某方面的设计质量。<br>Innovative design（创新性设计）:创新设计过程是被我们头脑中闪现的灵感所推进的，这种无规律的突发式进展正是创新设计过程的特征。<br>Design principles（设计原则）: 设计原则描述的是一些良好设计的特征，而不是如何进行设计的说明性建议。</p>
 <h4 id="设计过程模型"><a href="#设计过程模型" class="headerlink" title="设计过程模型"></a>设计过程模型</h4><p><img src="/img/software-engineering/SAD.png"></p>
+<p>1、建模：尝试可能的分解，根据需求描述的系统的关键特性等确定软件体系结构。</p>
+<p>2、分析：分析初步的体系结构，主要关注系统级别的决策，如软件的质量、性能等。</p>
+<p>3、文档化：确定各个不同的模型视图。</p>
+<p>4、复审：检查文档是否满足了所有需求。</p>
+<p>5、最终产出：软件体系结构文档，即SAD。用来和开发团队中其他人员交流系统级别设计决策的有力工具。</p>
 <h3 id="II-Modeling-Architectures"><a href="#II-Modeling-Architectures" class="headerlink" title="II.Modeling Architectures"></a>II.Modeling Architectures</h3><h3 id="III-Decomposition-and-Views"><a href="#III-Decomposition-and-Views" class="headerlink" title="III. Decomposition and Views"></a>III. Decomposition and Views</h3><h4 id="Some-popular-design-methods-体系结构分解树"><a href="#Some-popular-design-methods-体系结构分解树" class="headerlink" title="Some popular design methods 体系结构分解树"></a>Some popular design methods 体系结构分解树</h4><p>功能&#x2F;特征&#x2F;数据&#x2F;过程&#x2F;事件&#x2F;面向对象</p>
 <p>High level - Low level自顶向下!<br>1、Modular decomposition&#x2F;Functional decomposition</p>
 <p>这种方法是把功能或需求分解为模块。设计人员首先从需求规格说明书中所列出的功能开始，这些功能是系统级别的，它会随着系统环境改变输入和输出。更低层次的设计将这些功能分解成子功能，随后被指派给更小的模块，该级别的设计也会描述模块（子功能）间互相调用的情形。</p>
@@ -652,7 +747,7 @@ Projects ,"/>
 <h2 id="Chapter-6-Designing-the-Modules"><a href="#Chapter-6-Designing-the-Modules" class="headerlink" title="Chapter 6 Designing the Modules"></a>Chapter 6 Designing the Modules</h2><h3 id="I-Design-Methodology"><a href="#I-Design-Methodology" class="headerlink" title="I. Design Methodology"></a>I. Design Methodology</h3><p>We will learn how to design the details of each software unit 在掌握了需求、设计了体系结构、对结构&#x2F;功能进行分解之后，我们需要对每个软件单元进行具体设计</p>
 <p>方法：自顶向下、自底向上、由外到内</p>
 <p>Refactoring 重构：周期性地重审和修改设计决策</p>
-<h3 id="II-Design-Principles"><a href="#II-Design-Principles" class="headerlink" title="II. Design Principles"></a>II. Design Principles</h3><p>six dominant principles:<br> Modularity 模块化<br> Interfaces 接口<br> Information hiding 信息隐藏<br> Incremental development 增量式开发<br> Abstraction 抽象<br> Generality 通用性</p>
+<h3 id="II-Design-Principles"><a href="#II-Design-Principles" class="headerlink" title="II. Design Principles"></a>II. Design Principles</h3><p>面向对象设计的六个基本原则 six dominant principles:<br> Modularity 模块化<br> Interfaces 接口<br> Information hiding 信息隐藏<br> Incremental development 增量式开发<br> Abstraction 抽象<br> Generality 通用性</p>
 <h4 id="1、Modularity-模块化"><a href="#1、Modularity-模块化" class="headerlink" title="1、Modularity 模块化"></a>1、Modularity 模块化</h4><p>模块化，也称关注点分离，是一种把系统中各不相关的部分进行分离的原则，以便于各部分能够独立研究。<br>关注点可以是功能、数据、特征、任务、性质或想要定义或详细理解的需求以及设计的任何部分。<br>如果该原则应用得当。每个模块都有自己唯一的目的，并且相对独立于其它模块。每个模块的理解和开发将会更简单。模块独立也使得故障的定位和系统的修改更加简单。</p>
 <p>易理解和开发 易定位缺陷 易更改&#x2F;维护</p>
 <p>To determine how well a design separates concerns, we use two concepts that measure module independence (模块独立程度): coupling<br>and cohesion 耦合度和内聚度<br>高内聚与低耦合是每个软件开发者追求的目标</p>
@@ -662,7 +757,7 @@ Projects ,"/>
 <p>4、stamp coupling 标记耦合<br>如果使用一个复杂的数据结构来从一个模块到另一个模块传递信息，并且传递的是该数据结构本身，那么两个模块之间就是标记耦合。（数据格式和组织方式必须匹配）</p>
 <p>5、data coupling 数据耦合<br>如果传送的只是数据值，不是结构数据，那么模块之间就是通过数据耦合。</p>
 <p>6、非直接耦合<br>最理想的耦合</p>
-<p><img src="/img/coupling.png"></p>
+<p><img src="/img/software-engineering/coupling.png"></p>
 <h5 id="Cohesion-内聚"><a href="#Cohesion-内聚" class="headerlink" title="Cohesion 内聚"></a>Cohesion 内聚</h5><p>内聚度指的是模块的内部元素，如数据、功能、内部模块等的“粘合”程度</p>
 <p>1、coincidental 巧合内聚<br>内聚度最低的是巧合内聚，只是由于方便或偶然的原因，不相关的功能、进程或数据处于同一个模块中。</p>
 <p>2、 logical 逻辑内聚<br>当一个模块中的各个部分只通过代码的逻辑结构相关联时，称这个模块具有逻辑内聚。<br>根据接收的不同参数执行不同的操作。尽管这些不同的操作体现了一定的内聚他们之间会共享一些程序状态和代码结构，但这种代码结构的内聚相对于数据、功能或目标的内聚是比较弱的。引入新操作时，就比较难以理解和维护。</p>
@@ -709,21 +804,86 @@ Projects ,"/>
 <h3 id="III-文档化（Documentation）"><a href="#III-文档化（Documentation）" class="headerlink" title="III. 文档化（Documentation）"></a>III. 文档化（Documentation）</h3><h4 id="7-3-1-内部文档"><a href="#7-3-1-内部文档" class="headerlink" title="7.3.1 内部文档"></a>7.3.1 内部文档</h4><p>内部文档包含的信息是面向阅读程序源码的那些人的，因此它提供概要信息以识别程序，描述数据结构，算法和控制流。包含：<br>（1） 头注释块（header comment block，HCB）<br>将一组注释信息放在每个构件的开始部分，包含构件名，作者，配置在整个系统设计的哪个部分上，何时编写和修改的，为什么要有该构件，构件是如何使用数据结构，算法和控制的。<br>（2） 其他程序注释包含：<br>a. 可以对程序正在做什么提供逐行的解释。<br>b. 将代码分解成表示主要活动的段，每个活动再分解成更小的步骤。<br>c. 随着时间进行修改的记录。<br>（3） 有意义的变量名和语句标记<br>命名时尽量用有意义的变量名进行命名<br>（4） 排版格式以增强理解<br>注意缩进和间隔来反映基本的控制结构。</p>
 <h4 id="7-3-2-外部文档"><a href="#7-3-2-外部文档" class="headerlink" title="7.3.2 外部文档"></a>7.3.2 外部文档</h4><p>外部文档的内容面向不看实际代码的人，如设计人员考虑修改或改进时；它在系统层面回答问题。</p>
 <h3 id="IV-编程过程"><a href="#IV-编程过程" class="headerlink" title="IV. 编程过程"></a>IV. 编程过程</h3><h4 id="7-4-1-编程作为求解过程"><a href="#7-4-1-编程作为求解过程" class="headerlink" title="7.4.1 编程作为求解过程"></a>7.4.1 编程作为求解过程</h4><p>分为四步：理解问题，制定计划，执行计划，回顾</p>
-<h4 id="7-4-2-极限编程（Extreme-Programming，XP）（第二章具体介绍）"><a href="#7-4-2-极限编程（Extreme-Programming，XP）（第二章具体介绍）" class="headerlink" title="7.4.2 极限编程（Extreme Programming，XP）（第二章具体介绍）"></a>7.4.2 极限编程（Extreme Programming，XP）（第二章具体介绍）</h4><p>什么是极限编程<br>极限编程是敏捷过程的一种具体形式，提供敏捷方法最一般原则的指导方针。XP 的支持者强调敏捷方法的 4 个特性：交流、简单性、勇气以及反馈。<br>交流是指客户与开发人员之间持续地交换看法；简单性激励开发人员选择最简单的设计或实现来处理客户的需要；勇气体现在尽早地和经常交付功能的承诺；在软件开发过程中的各种活动中，都包含反馈循环。例如，程序员一起工作，针对实现设计的最佳方式，相互提供反馈；客户和程序员一起工作时，以完成计划的任务。<br>极限编程的两类参与者：客户：<br>（1）定义程序员将要实现的系统特征，使用故事的形式描述系统工作的方式<br>（2）描述测试计划，验证是否实现了所描述的故事<br>（3）为故事及其测试分配优先级程序员：<br>将客户需求予以编程实现</p>
-<h4 id="7-4-3-派（结）对编程（Pair-Programming）"><a href="#7-4-3-派（结）对编程（Pair-Programming）" class="headerlink" title="7.4.3 派（结）对编程（Pair Programming）"></a>7.4.3 派（结）对编程（Pair Programming）</h4><p>结对编程属于主要的敏捷开发方法，开发方式是两个程序员共同开发程序，且角色分工明确：一个负责编写程序，另一个负责复审和测试，两个人定期交换角色。<br>优点：提高生产率和质量，但证据不充分，模棱两可<br>缺点：会抑制问题求解的基本步骤，扰乱对问题的关注</p>
+<h4 id="7-4-2-极限编程（Extreme-Programming，XP）（第二章具体介绍）"><a href="#7-4-2-极限编程（Extreme-Programming，XP）（第二章具体介绍）" class="headerlink" title="7.4.2 极限编程（Extreme Programming，XP）（第二章具体介绍）"></a>7.4.2 极限编程（Extreme Programming，XP）（第二章具体介绍）</h4><p>极限编程是敏捷过程的一种具体形式，提供敏捷方法最一般原则的指导方针。</p>
+<p>XP 的支持者强调敏捷方法的 4 个特性：交流、简单性、勇气以及反馈。</p>
+<blockquote>
+<p>交流是指客户与开发人员之间持续地交换看法；</p>
+<p>简单性激励开发人员选择最简单的设计或实现来处理客户的需要；</p>
+<p>勇气体现在尽早地和经常交付功能的承诺；</p>
+<p>在软件开发过程中的各种活动中，都包含反馈循环。例如，程序员一起工作，针对实现设计的最佳方式，相互提供反馈；客户和程序员一起工作时，以完成计划的任务。</p>
+</blockquote>
+<p>极限编程的两类参与者：</p>
+<p>客户：<br>（1）定义程序员将要实现的系统特征，使用故事的形式描述系统工作的方式<br>（2）描述测试计划，验证是否实现了所描述的故事<br>（3）为故事及其测试分配优先级程序员：</p>
+<p>开发人员：将客户需求予以编程实现</p>
+<h4 id="7-4-3-派（结）对编程（Pair-Programming）"><a href="#7-4-3-派（结）对编程（Pair-Programming）" class="headerlink" title="7.4.3 派（结）对编程（Pair Programming）"></a>7.4.3 派（结）对编程（Pair Programming）</h4><p>结对编程属于主要的敏捷开发方法，开发方式是两个程序员共同开发程序，且角色分工明确：一个负责编写程序，另一个负责复审和测试，两个人定期交换角色。</p>
+<p>优点：提高生产率和质量，但证据不充分，模棱两可</p>
+<p>缺点：会抑制问题求解的基本步骤，扰乱对问题的关注</p>
 <p>四、典型例题</p>
 <ol>
-<li>简述编程应考虑的三方面原则<br>（1）控制结构：当设计转变成代码时，我们希望保留组件的控制结构，在隐含调用的面向对象设计中，控制是基于系统状态和变量而变化的。<br>（2）算法：在编写代码时，程序设计通常会制定一类算法，用于编写组件。<br>（3）数据结构：编写程序时，应该安排数据的格式并进行存储，这样的数据管理和操作才能简明易懂。</li>
-<li>名词解释：<br>派对编程<br>极限编程</li>
+<li>简述编程应考虑的三方面原则<br> （1）控制结构：当设计转变成代码时，我们希望保留组件的控制结构，在隐含调用的面向对象设计中，控制是基于系统状态和变量而变化的。<br> （2）算法：在编写代码时，程序设计通常会制定一类算法，用于编写组件。<br> （3）数据结构：编写程序时，应该安排数据的格式并进行存储，这样的数据管理和操作才能简明易懂。</li>
+<li>名词解释：<br> 派对编程<br> 极限编程</li>
 </ol>
-<h4 id="计算关键路径"><a href="#计算关键路径" class="headerlink" title="计算关键路径"></a><a href="#关键路径法cpm">计算关键路径</a></h4><p><img src="/img%5Csoftware-engineering%5Chomework%5C%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84-2.jpg"></p>
+<h2 id="Chapter-8-Testing-the-Programs-测试程序"><a href="#Chapter-8-Testing-the-Programs-测试程序" class="headerlink" title="Chapter 8 Testing the Programs 测试程序"></a>Chapter 8 Testing the Programs 测试程序</h2><blockquote>
+<p><strong>章节概述</strong><br>对于任何一个系统，测试的过程都是必不可少的。测试并不想我们想象的一样单纯，它也有自己的一套体系流程。本章介绍的就是有关测试的前半部分——单元测试和集成测试。将重新深入地认识故障和失效，了解测试的目的、流程和方法。如何从单元测试到将单元集成一个系统也是本章学习的内容。</p>
+</blockquote>
+<h3 id="I-Software-Faults-and-Failures-故障和失效"><a href="#I-Software-Faults-and-Failures-故障和失效" class="headerlink" title="I. Software Faults and Failures 故障和失效"></a>I. Software Faults and Failures 故障和失效</h3><h4 id="8-1-1-故障"><a href="#8-1-1-故障" class="headerlink" title="8.1.1 故障"></a>8.1.1 故障</h4><p>故障的定义：由错误（error）引起的系统内在问题。</p>
+<p>故障出现的原因：</p>
+<p>(1)软件本身，系统处理大量的状态，复杂的公式，活动，算法等；</p>
+<p>(2)客户不清晰的需求；</p>
+<p>(3)其他原因，如项目的规模，众多的参与者导致的复杂性。</p>
+<h4 id="8-1-2-失效"><a href="#8-1-2-失效" class="headerlink" title="8.1.2 失效"></a>8.1.2 失效</h4><p>失效的定义：软件的动作与需求描述的不相符。</p>
+<p>造成失效的原因：</p>
+<p>(1)错误的规格说明，或者遗漏了一些需求；</p>
+<p>(2)对于指定的硬件和软件，说明中存在一些无法完成的实现；</p>
+<p>(3)错误的系统设计；</p>
+<p>(4)错误的程序设计，错误的实现。</p>
+<p>故障的识别(fault identification)：是确定由哪一个或者哪些故障引起失效的过程。</p>
+<p>故障改正(fault correction)或故障去除(fault removal)：修改系统使得故障得以全部去除的过程。</p>
+<h4 id="8-1-3-故障的分类"><a href="#8-1-3-故障的分类" class="headerlink" title="8.1.3 故障的分类"></a>8.1.3 故障的分类</h4><p>分类的原因：知道正在处理的是什么类别的故障对于我们具体的测试，以及之后的故障改正都是有很大帮助的。</p>
+<p>(1)算法故障(algorithmic fault)：由于处理步骤中的某些错误，使得对于给定的输入，构件的算法或逻辑没有产生适当的输出。<br>(2)计算故障(computation fault)或精读故障(precision fault)：一个公式的实现是错误的，或者计算结果没有达到要求的精度。<br>(3)文档故障(documentation fault)：文档与程序实际做的事情不一致。<br>(4)压力故障(stress fault)或过载故障(overload fault)：对队列长度、缓冲区大小、表的维度等的使用超出了规定的能力。<br>(5)能力故障(capacity fault)或边界故障(boundary fault)：系统活动到达指定的极限时，系统性能会变得不可接受。<br>(6)计时故障(timing fault)或协调故障(coordination fault)：几个同时执行或仔细定义顺序执行的进程之间协调不适当。<br>(7)吞吐量故障(throughput fault)或性能故障(performance fault)：系统不能以需求规定的速度执行。<br>(8)恢复故障(recovery fault)：当系统失效时，不能表现得像设计人员希望的或客户要求的那样。<br>(9)硬件和系统软件故障(hardware and system software fault)：当提供的硬件或者系统软件实际上并没有按照文档中的操作条件或步骤运作时。<br>(10)标准和过程故障(standards and procesure fault)：代码没有遵循组织机构的标准和过程。</p>
+<h4 id="8-1-4-正交缺陷分类"><a href="#8-1-4-正交缺陷分类" class="headerlink" title="8.1.4 正交缺陷分类"></a>8.1.4 正交缺陷分类</h4><p>定义：被分类的任何一项故障都只属于一个类别，则分类方案是正交的。如果一个故障 属于不止一个类，则失去了度量的意义。</p>
+<h3 id="II-Testing-Issues"><a href="#II-Testing-Issues" class="headerlink" title="II. Testing Issues"></a>II. Testing Issues</h3><h4 id="8-2-1-测试的组织"><a href="#8-2-1-测试的组织" class="headerlink" title="8.2.1 测试的组织"></a>8.2.1 测试的组织</h4><p>1 测试的阶段：<br>(1)模块测试(module testing)、构件测试(component testing)或单元测试(unittesting)：将每个程序构件与系统中的其他构件隔离，对其本身进行测试。<br>(2)集成测试(integration testing)：验证系统构件是否能够按照系统和程序设计规格说明中描述的那样共同工作的过程。<br>(3)功能测试(function test)：对系统进行评估，以确定集成的系统是否确实执行了需求规格说明中描述的功能，其结果是一个可运转的系统。<br>(4)性能测试(performance test)：测试系统的软硬件性能是否符合需求规格说明文档。其结果是一个确认的系统。<br>(5)验收测试(acceptance test)：确定系统是按照用户的期望运转的。<br>(6)安装测试(installation test)：确保系统在实际环境中按照应有的方式运转。<br>(7)系统测试(system test)：功能测试、性能测试、验收测试和安装测试统称为系统测试。</p>
+<p><img src="/img/software-engineering/Testing-step.png"></p>
+<h4 id="8-2-4-测试的方法"><a href="#8-2-4-测试的方法" class="headerlink" title="8.2.4 测试的方法"></a>8.2.4 测试的方法</h4><p>1.黑盒：将测试的对象看作是一个不了解其内容的闭盒，我们的测试就是向闭盒提供输入的数据，并记录产生的输出。测试的目标是确保针对每一种输入，观察到的输出与预期的输出相匹配。黑盒测试参考的文档是系统设计和程序设计阶段的文档。<br>优点：黑盒测试免于受强加给测试对象内部结构和逻辑的约束。更偏向于功能性的测试。<br>缺点：黑盒法以 SRS 为依据，有一定的盲目性和不确定性，不可能揭示所有的错误。没办法总是使用这种方式进行完备的测试。不容易找到具有代表性的测试用例证明所有情况下功能都正确。</p>
+<p>2.白盒：将测试对象看作一个白盒，然后根据测试对象的结构用不同的方式进行测试。<br>优点：可以测试一个模块的细节。<br>缺点：该法以模块内部逻辑为依据，当内部逻辑过于复杂时，则不能给出好的或合适的测试用例。有时候，对于大量递归、循环和分支的构件，想要测试完所有的分支也是不现实的。</p>
+<ol start="3">
+<li>实际测试中，没有必要把黑盒测试和白盒测试严格的区分开来。具体的测试方法的选择受到很多因素的影响。</li>
+</ol>
+<p><img src="/img/software-engineering/Testing-method.png"></p>
+<h3 id="Chapter-9-Testing-the-System-系统测试"><a href="#Chapter-9-Testing-the-System-系统测试" class="headerlink" title="Chapter 9 Testing the System 系统测试"></a>Chapter 9 Testing the System 系统测试</h3><h4 id="1-系统测试的主要步骤及各自含义？"><a href="#1-系统测试的主要步骤及各自含义？" class="headerlink" title="1. 系统测试的主要步骤及各自含义？"></a>1. 系统测试的主要步骤及各自含义？</h4><p>1、功能测试：根据SRS测试系统功能。</p>
+<p>2、性能测试：根据SRS测试系统性能。</p>
+<p>3、验收测试：根据客户的需求定义，由客户和用户一起测试。</p>
+<p>4、安装测试：在用户环境下进行测试。</p>
+<h4 id="2-什么是回归测试？"><a href="#2-什么是回归测试？" class="headerlink" title="2. 什么是回归测试？"></a>2. 什么是回归测试？</h4><p>回归测试是用于新的版本或者改进版本的一种测试，以验证与旧版本相比，软件是否仍然以同样的方式执行同样的功能。</p>
+<h4 id="3-确认测试概念，确认测试分类？（基准测试、引导测试、并行测试）"><a href="#3-确认测试概念，确认测试分类？（基准测试、引导测试、并行测试）" class="headerlink" title="3.确认测试概念，确认测试分类？（基准测试、引导测试、并行测试）"></a>3.确认测试概念，确认测试分类？（基准测试、引导测试、并行测试）</h4><p>确认测试：由用户检查软件系统是否满足了他们的需求的测试。</p>
+<p>Pilot test: install on experimental basis<br>Alpha test: in-house test<br>Beta test: customer pilot<br>Parallel testing: new system operates in parallel with old system</p>
+<p>1、基准测试：</p>
+<p>由用户准备典型测试用例，在实际安装后的系统运作并由用户对系统执行情况进行评估。</p>
+<p>2、引导测试：</p>
+<p>在假设系统已经永久安装的前提下执行系统。它依赖系统的日常工作进行测试，相对基准测试不是非常的正式与结构化。</p>
+<h4 id="4-什么是alpha测试？β测试？"><a href="#4-什么是alpha测试？β测试？" class="headerlink" title="4. 什么是alpha测试？β测试？"></a>4. 什么是alpha测试？β测试？</h4><p>α测试：内部测试。客户进行实际的测试前，先自己组织团队（或者委托其他团队）测试这个系统。</p>
+<p>β测试：公测。客户实际进行的测试。</p>
+<p><img src="/img/software-engineering/alpha-beta-test.png"></p>
+<ol>
+<li>α测试</li>
+</ol>
+<p>就是把用户请到公司内部进行测试使用。</p>
+<p>α测试是由一个用户在开发环境下进行的测试，也可以是公司内部的用户在模拟实际操作环境下进行的测试；</p>
+<p>目的：是评价软件产品的FLURPS(即功能、局域化、可使用性、可靠性、性能和支持)。</p>
+<p>注意！α测试不能由程序员或测试员完成。</p>
+<ol start="2">
+<li>β测试</li>
+</ol>
+<p>用户在不同场所进行测试。</p>
+<p>β测试是一种验收测试。β测试由软件的终用户们在一个或多个场所进行。</p>
+<p>​	</p>
+<h2 id="重点内容与习题"><a href="#重点内容与习题" class="headerlink" title="重点内容与习题"></a>重点内容与习题</h2><h4 id="计算关键路径"><a href="#计算关键路径" class="headerlink" title="计算关键路径"></a><a href="#关键路径法cpm">计算关键路径</a></h4><p><img src="/img%5Csoftware-engineering%5Chomework%5C%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84-2.jpg"></p>
 <p><img src="/img%5Csoftware-engineering%5Chomework%5C%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84-1.jpg" alt="IMG_20231011_075656"></p>
 <h4 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h4><h5 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h5><h5 id="消息时序图"><a href="#消息时序图" class="headerlink" title="消息时序图"></a>消息时序图</h5><p><img src="/img/software-engineering/UML-sequence-diagram.png"></p>
 <h5 id="数据流图"><a href="#数据流图" class="headerlink" title="数据流图"></a>数据流图</h5><p><img src="/img/software-engineering/UML-dataflow-diagram.png"></p>
 <h5 id="状态机图"><a href="#状态机图" class="headerlink" title="状态机图"></a>状态机图</h5><p><img src="/img/software-engineering/UML-state-diagram-1.png"></p>
 <p><img src="/img/software-engineering/UML-state-diagram-2.png"></p>
 <h3 id="参考书"><a href="#参考书" class="headerlink" title="参考书"></a>参考书</h3><p> Pfleeger L, Atlee J M. Software Engineering: Theory and Practice, Pearson, 2009.</p>
-<p><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B&t=blog&u=weixin_45781228">软件工程- CSDN搜索</a></p>
 <h5 id="附件下载"><a href="#附件下载" class="headerlink" title="附件下载"></a>附件下载</h5>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

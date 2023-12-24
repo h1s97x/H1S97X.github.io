@@ -1,3 +1,6 @@
+http://example.com/2023/12/24/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/
+http://example.com/2023/12/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BC%95%E8%AE%BA/
+http://example.com/2023/12/24/Linux%E5%9F%BA%E7%A1%80/
 http://example.com/2023/12/19/Machine-Learing/Regression/
 http://example.com/2023/12/19/Machine-Learing/Lagrange-multiplier/
 http://example.com/2023/12/19/Machine-Learing/Machine-Learing-SVM/

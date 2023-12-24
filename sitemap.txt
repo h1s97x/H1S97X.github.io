@@ -16,7 +16,6 @@ http://example.com/2023/10/19/%E5%A4%96%E6%8C%82%E5%88%86%E6%9E%90%E4%B8%8E%E5%A
 http://example.com/2023/10/19/net-attack&defence-doc/%E5%A4%96%E6%8C%82%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E7%8E%B0/
 http://example.com/2023/10/18/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2%E5%AE%9E%E9%AA%8C/
 http://example.com/2023/10/18/CTF-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%A4%BA%E6%97%97%E8%B5%9B/
-http://example.com/2023/10/17/linux%E5%AE%9E%E9%AA%8C/
 http://example.com/2023/10/17/python%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C/
 http://example.com/2023/10/16/%E7%BD%91%E7%BB%9C%E7%97%85%E6%AF%92%E6%B5%8B%E8%AF%95/
 http://example.com/2023/10/16/net-attack&defence-doc/%E7%BD%91%E7%BB%9C%E7%97%85%E6%AF%92%E6%B5%8B%E8%AF%95/

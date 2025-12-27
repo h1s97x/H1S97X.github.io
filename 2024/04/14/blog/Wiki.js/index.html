@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="使用 Docker 部署 Wiki.js
+本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 M,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content=" - Hexo"/>
+    <meta name="twitter:description" content="使用 Docker 部署 Wiki.js
+本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 M,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content=" - Hexo"/>
+    <meta property="og:description" content="使用 Docker 部署 Wiki.js
+本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 M,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <!-- 帖子视图 -->
+
+    <div class="post_cover" >
+        
+            <img src="/img/img1.jpg,/img/welcome-cover.jpg" />
+        
+        <div class="post_cover_mask"></div>
+        <div class="post_text">
+            <h1></h1>
+            <div>
+                <span>四月 14, 2024</span>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="article">
+    <div class='main'>
+        <!-- 帖子视图 -->
+        
+
+        <!-- 更新时间 -->
+        <div class="updated">
+            <div></div>
+            <span>该文章更新于 2024.04.19</span>
+        </div>
+
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>四月 14, 2024</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h2 id="使用-Docker-部署-Wiki-js"><a href="#使用-Docker-部署-Wiki-js" class="headerlink" title="使用 Docker 部署 Wiki.js"></a>使用 Docker 部署 Wiki.js</h2><blockquote>
+<p>本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 Markdown 以及 HTML 文档。Docker 容器技术可帮助我们简化部署过程，提高应用程序的可移植性和可扩展性。</p>
+</blockquote>
+<h3 id="安装-Docker-端"><a href="#安装-Docker-端" class="headerlink" title="安装 Docker 端"></a>安装 Docker 端</h3><p>开始部署之前，我们需要确保已经安装了 Docker。Docker 是一个开源应用容器引擎，可以轻松地为任何应用程序创建一个轻量级的、可移植的、自给自足容器。要安装 Docker，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker</span><br></pre></td></tr></table></figure>
+
+<p>其他安装方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 设置Docker的镜像仓库</span><br><span class="line">yum install -y yum-utils</span><br><span class="line"></span><br><span class="line">yum-config-manager \</span><br><span class="line">    --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line"></span><br><span class="line"># 安装Docker</span><br><span class="line">yum install docker-ce docker-ce-cli containerd.io -y</span><br><span class="line"></span><br><span class="line"># 启动Docker</span><br><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line"># 设为开机自启</span><br><span class="line">systemctl enalbe docker</span><br></pre></td></tr></table></figure>
+
+<p>可以运行一个hello-world镜像来验证Docker是否正确安装，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<p>这个命令会下载一个测试镜像并运行，在命令行里输出hello world信息后自动退出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 安装Docker Compose</span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"># 添加权限</span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"># 查看docker compose版本，测试安装是否成功</span><br><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><p>在 Docker 中镜像是一个只读模板，可创建 Docker 容器。Wiki.js 官方提供了预构建 Docker 镜像，我们可直接从 Docker Hub 中拉取。</p>
+<p>为了简化部署过程，我们先创建 <code>docker-compose.yml</code> 文件，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<p>复制以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line"></span><br><span class="line">  db:</span><br><span class="line">    image: postgres:15-alpine</span><br><span class="line">    environment:</span><br><span class="line">      POSTGRES_DB: wiki</span><br><span class="line">      POSTGRES_PASSWORD: wikijsrocks</span><br><span class="line">      POSTGRES_USER: wikijs</span><br><span class="line">    logging:</span><br><span class="line">      driver: &quot;none&quot;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    volumes:</span><br><span class="line">      - db-data:/var/lib/postgresql/data</span><br><span class="line"></span><br><span class="line">  wiki:</span><br><span class="line">    image: linuxserver/wikijs</span><br><span class="line">    depends_on:</span><br><span class="line">      - db</span><br><span class="line">    environment:</span><br><span class="line">      DB_TYPE: postgres</span><br><span class="line">      DB_HOST: db</span><br><span class="line">      DB_PORT: 5432</span><br><span class="line">      DB_USER: wikijs</span><br><span class="line">      DB_PASS: wikijsrocks</span><br><span class="line">      DB_NAME: wiki</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;80:3000&quot;</span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line">  db-data:</span><br></pre></td></tr></table></figure>
+
+<p>编辑好上面内容后，执行下面的命令即可部署 Wiki.js：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<h3 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h3><p>通过浏览器打开 Wiki.js 所在的服务器，进行初始配置。需要依次输入管理员的邮箱、密码，访问地址，设置是否匿名反馈使用情况：<br><img src="https://cdn.dusays.com/2023/12/656-1.jpg" alt="img"></p>
+<p>管理员用户创建完成后，会自动跳转到登录页面，输入刚刚创建好的管理员账号后，可以看到如下页面，这时我们先点击 ADMINISTRATION 进入后台：</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.dusays.com/2023/12/656-2.jpg"><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/656-2.jpg" alt="img"></a></p>
+<p>在后台面板中，我们首先汉化一下全站界面。点击左侧的 Locale，进入语言包设置页：</p>
+<p><img src="https://cdn.dusays.com/2023/12/656-3.jpg" alt="img"></p>
+<p>在右侧下载语言包，这里我们以 Chinese Simplified 为例，下载后在中间的 Site Localo 处选择 Chinese Simplified，最后点击右上角 APPLY 即可：</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/656-4.jpg" alt="img"></p>
+<p>切换至首页后，即可创建主页内容。这里可以选择使用何种编辑器来创建，这里我们以 Markdown 为例：</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/656-5.jpg" alt="img"></p>
+<p>写在最后</p>
+<p>通过 <code>docker-compose.yml</code> 可以看出来，服务已经做了 <code>80</code> 端口的映射，如果服务器中有其它的网站环境，建议修改 <code>docker-compose.yml</code> 中种 <code>80</code> 为其它端口。</p>
+<p>另外如无 Nginx 等引擎，但需要 SSL 加密访问，推荐安装 Nginx Proxy Manager 来进行加密反代。</p>
+<p>强烈建议先配置好访问环境「即配置好 Nginx Proxy Manager 后」再做 Wiki.js 初始化操作。</p>
+<p><a target="_blank" rel="noopener" href="https://dusays.com/656/">https://dusays.com/656/</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085158792-661022329.png" alt="img"></p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085226468-943909471.png" alt="img"></p>
+<h3 id="1-效果展示"><a href="#1-效果展示" class="headerlink" title="1 效果展示"></a><strong>1 效果展示</strong></h3><p>　　Wiki.js 默认的前台页面布局和功能如下图所示，用户可根据自己需要来调整、启用或关闭。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085250986-296282782.png" alt="img"></p>
+<p>　　后台管理页面功能如下图所示。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085330649-370392906.png" alt="img"></p>
+<h3 id="2-版本比对"><a href="#2-版本比对" class="headerlink" title="2 版本比对"></a><strong>2 版本比对</strong></h3><p>　　Wiki.js 支持一个简单的版本比对工具。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085313066-1529105748.png" alt="img"></p>
+<h3 id="3-修改语言"><a href="#3-修改语言" class="headerlink" title="3 修改语言"></a><strong>3 修改语言</strong></h3><p>　　Wiki.js 默认为英文，可下载对应语言包，切换语言设置。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085353539-1674712978.png" alt="img"></p>
+<h3 id="4-全文检索"><a href="#4-全文检索" class="headerlink" title="4 全文检索"></a><strong>4 全文检索</strong></h3><p>　　本例我使用的是 PostgreSql 的搜索引擎，因为搭建起来比较方便。</p>
+<p>　　在搜索引擎菜单中，选中“Database-PostgreSQL”，并在引擎配置中，选择我们在数据库中的配置名称。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085434425-269210813.png" alt="img"></p>
+<p>　　配置好后，我们就可以验证中文搜索了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906090717031-1656380835.png" alt="img"></p>
+<h3 id="5-修饰站点"><a href="#5-修饰站点" class="headerlink" title="**5 修饰站点 **"></a>**5 修饰站点 **</h3><p>　　在“常规”菜单中，我们可以配置 Wiki 的基本信息，比如公司名称、Logo 等。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085535398-926066763.png" alt="img"></p>
+<h3 id="6-权限控制"><a href="#6-权限控制" class="headerlink" title="6 权限控制"></a><strong>6 权限控制</strong></h3><p>　　Wiki.js 支持多种身份验证方式，可以按需要选择。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085558313-698544516.png" alt="img"></p>
+<p>　　可以通过建立组来统一管理用户。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085615709-201045966.png" alt="img"></p>
+<p>　　 基于 Permissions 和 Page Rules 灵活定义组权限。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085631811-1180650891.png" alt="img"></p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085639109-704909312.png" alt="img"></p>
+<h2 id="定制和扩展"><a href="#定制和扩展" class="headerlink" title="定制和扩展"></a>定制和扩展</h2><p>　　在创建页面时，可以通过编写脚本和样式来定制和扩展页面功能。</p>
+<p>　　Wiki.js 附带了一个默认主题，它支持明暗模式，对大多数用户来说应该足够了，用户也可以自行定制主题。</p>
+<p>　　Wiki.js 是完全模块化的，所有模块都位于 server&#x2F;modules 下，允许任何开发人员编写自己的模块。</p>
+<p>　　Wiki.js 公开了一个 GraphQL API，您可以从中访问和修改 Wiki 的所有资源。</p>
+<h3 id="主題"><a href="#主題" class="headerlink" title="主題"></a>主題</h3><h2 id="Wiki-js-通过-Generic-OAuth2-进行身份验证"><a href="#Wiki-js-通过-Generic-OAuth2-进行身份验证" class="headerlink" title="Wiki.js 通过 Generic OAuth2 进行身份验证"></a>Wiki.js 通过 Generic OAuth2 进行身份验证</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JiuLing-zhang/p/16899492.html">少走点弯路：Wiki.js 通过 Generic OAuth2 进行身份验证</a></p>
+<p>基本的配置包含2个部分，分别是<strong>授权配置</strong>、<strong>注册配置</strong>。</p>
+<h2 id="1-授权配置"><a href="#1-授权配置" class="headerlink" title="1. 授权配置"></a>1. 授权配置</h2><h3 id="1-1-Client-ID"><a href="#1-1-Client-ID" class="headerlink" title="1.1 Client ID"></a>1.1 Client ID</h3><p>获取 <code>Token</code> 时会作为参数传递给接口。</p>
+<h3 id="1-2-Client-Secret"><a href="#1-2-Client-Secret" class="headerlink" title="1.2 Client Secret"></a>1.2 Client Secret</h3><p>获取 <code>Token</code> 时会作为参数传递给接口。</p>
+<h3 id="1-3-Authorization-Endpoint-URL"><a href="#1-3-Authorization-Endpoint-URL" class="headerlink" title="1.3 Authorization Endpoint URL"></a>1.3 Authorization Endpoint URL</h3><p>授权页面的地址。<br>当进入 <code>Wiki</code> 的登录页后，选择 <code>Generic OAuth2</code> 授权登录时跳转的地址。<br>如果同意授权，则需要跳转到 <code>Wiki</code> 指定的回调页面（跳转时可以加入自定义参数）。<br>每个项目的回调地址都不相同，最简单的办法就是在页面的最下面找到配置参考。<br><code>http://xxx:3000/login/bf4439-a770-fedee4be57df/callback?MyValue=test</code><br>如果回调地址配置的不对，可能会出现<code>Invalid authentication provider.</code>错误页。</p>
+<h3 id="1-4-Token-Endpoint-URL"><a href="#1-4-Token-Endpoint-URL" class="headerlink" title="1.4 Token Endpoint URL"></a>1.4 Token Endpoint URL</h3><p>获取<code>Token</code>的接口地址。</p>
+<p>在调用该地址时，<code>Wiki</code>会自动附带下面这些参数：</p>
+<ol>
+<li><code>grant_type=authorization_code</code></li>
+<li><code>client_id=1.1中配置的值</code></li>
+<li><code>client_secret=1.2中配置的值</code></li>
+<li><code>自定义参数（1.3中配置的值）</code></li>
+</ol>
+<p>服务端验证逻辑完成后，接口必须返回包含以下字段的返回值（<strong>注意区分大小写</strong>）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;access_token&quot;</span><span class="punctuation">:</span><span class="string">&quot;xxx&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果返回值不合法，会出现错误页<code>Failed to obtain access token</code>。</p>
+<h3 id="1-5-User-Info-Endpoint-URL"><a href="#1-5-User-Info-Endpoint-URL" class="headerlink" title="1.5 User Info Endpoint URL"></a>1.5 User Info Endpoint URL</h3><p>成功拿到<code>Token</code>后，获取用户信息的接口地址。</p>
+<blockquote>
+<p>可以设置 <code>Wiki</code> 获取用户信息时 <code>Token</code> 的传递方式：<code>Query string</code> 或 <code>Authorization header</code><br><img src="https://s2.loli.net/2022/11/17/qRtYNFA4ODhfeLU.png" alt="SetToken.png"></p>
+</blockquote>
+<p>服务器根据 <code>Token</code> 获取用户信息，最终返回包含以下字段的返回值（<strong>注意区分大小写</strong>）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;UserId&quot;</span><span class="punctuation">:</span><span class="number">10086</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Name&quot;</span><span class="punctuation">:</span><span class="string">&quot;张三&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Email&quot;</span><span class="punctuation">:</span><span class="string">&quot;zs@test.com&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果返回值不合法，会出现错误页<code>Missing or invalid email address from profile.</code></p>
+<blockquote>
+<p><strong><code>Wiki</code> 系统中是通过 <code>Email</code> 来标识唯一用户，因此不同用户的 <code>Email</code> 不能重复。</strong></p>
+</blockquote>
+<h3 id="1-6-ID-Claim"><a href="#1-6-ID-Claim" class="headerlink" title="1.6 ID Claim"></a>1.6 ID Claim</h3><p>用户信息接口中返回的<code>用户 ID</code> 字段名。</p>
+<h3 id="1-7-Display-Name-Claim"><a href="#1-7-Display-Name-Claim" class="headerlink" title="1.7 Display Name Claim"></a>1.7 Display Name Claim</h3><p>用户信息接口中返回的<code>用户名称</code>字段名。</p>
+<h3 id="1-8-Email-Claim"><a href="#1-8-Email-Claim" class="headerlink" title="1.8 Email Claim"></a>1.8 Email Claim</h3><p>用户信息接口中返回的<code>邮箱</code>字段名，该字段值必须保证唯一。</p>
+<h2 id="2-注册配置"><a href="#2-注册配置" class="headerlink" title="2. 注册配置"></a>2. 注册配置</h2><h3 id="2-1-启用开放注册"><a href="#2-1-启用开放注册" class="headerlink" title="2.1 启用开放注册"></a>2.1 启用开放注册</h3><p>授权登录完成后，当用户信息在 <code>Wiki</code> 中不存在时，则会新建用户信息并完成登录。</p>
+<h3 id="2-1-禁用开放注册"><a href="#2-1-禁用开放注册" class="headerlink" title="2.1 禁用开放注册"></a>2.1 禁用开放注册</h3><p>授权用户的 <code>Email</code> 必须已经在 <code>Wiki</code> 中注册，否则无法登录，出现错误页<code>You are not authorized to login.</code></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="true"
+        data-ae="false"
+        data-ci="bf8247f1f66a43abd91f"
+        data-cs="8151e71fe008a0f849031b72d321c20af8e897af"
+        data-r="h1s97x.github.io"
+        data-o="h1s97x"
+        data-a="h1s97x"
+        data-d="true"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

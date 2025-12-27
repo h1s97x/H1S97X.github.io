@@ -130,7 +130,7 @@ Python密码学编程
 
     <!-- live2d -->
     <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body class="loading">
     <span id="config-title" style="display:none">Hexo</span>
@@ -234,7 +234,7 @@ Python密码学编程
 <h2 id="Chapter-0-密码学"><a href="#Chapter-0-密码学" class="headerlink" title="Chapter 0 密码学"></a>Chapter 0 密码学</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/344101417">密码学概述 - 知乎 (zhihu.com)</a></p>
 <p>密码，最初的目的是用于对信息加密，计算机领域的密码技术种类繁多。但随着密码学的运用，密码还被用于身份认证、防止否认等功能上。密码是通信双方按约定的法则进行信息特殊变换的一种重要保密手段。依照这些法则，变明文为密文，称为加密变换；变密文为明文，称为脱密变换。密码在早期仅对文字或数码进行加、脱密变换，随着通信技术的发展，对语音、图像、数据等都可实施加、脱密变换。</p>
 <p>密码学是一门古老而深奥的学科，只在很小的范围内使用，如军事、外交、情报等部门。计算机密码学是研究计算机信息加密、解密及其变换 的科学，是数学和计算机的交叉学科 ，也是一门新兴的学科。密码学是网络空间安全主要研究方向之一，也是许多安全机制的基础。</p>
-<p>密码学有两个分支：1）<strong>密码编码学</strong>：主要研究对信息进行变换，以保护信息在信道的过程中不被敌手窃取、解读和利用的方法。2）<strong>密码分析学：</strong>主要研究如何分析和破译密码，也称为 密码攻击。</p>
+<p>密码学有两个分支：1）<strong>密码编码学</strong>：主要研究对信息进行变换，以保护信息在信道的过程中不被敌手窃取、解读和利用的方法。2）**密码分析学：**主要研究如何分析和破译密码，也称为 密码攻击。</p>
 <p>密码学与数学关系密切。数论中许多基本内容，如同余理论、中国剩余定理（CRT ）、高次剩余理论等，在新型密码体制、密钥分配与管理、数字签名、身份认证等方面有直接的应用。近代数学在现代密码研究中的应用包括群论，有限域上椭圆曲线理论，多项式理论与迹函数理论陷门单向函数等。</p>
 <p><img src="https://pic1.zhimg.com/80/v2-ee128f10578845e041de2fff8276fab4_720w.webp" alt="img"></p>
 <p>术语：</p>
@@ -351,11 +351,11 @@ Python密码学编程
 <h3 id="使用hashlib自由哈希"><a href="#使用hashlib自由哈希" class="headerlink" title="使用hashlib自由哈希"></a>使用hashlib自由哈希</h3><p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.7/library/hashlib.html">hashlib — 安全哈希与消息摘要 — Python 3.7.13 文档</a></p>
 <p>hashlib模块是python内置的hash算法模块，提供了常见的哈希算法，如MD5、SHA1、SHA256等。</p>
 <p>使用hashlib模块可以方便地计算字符串或文件的哈希值，常用于密码加密、数据完整性校验等场景。</p>
-<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># hashlib</span><br><span class="line">import hashlib</span><br><span class="line">md5hasher= hashlib.md5()   # 构造一个hashlib的对象</span><br><span class="line">md5hasher.update(b&quot;message&quot;)  # update文档内容，生成新摘要</span><br><span class="line">md5hasher.hexdigest() # 获取摘要哈希值（16进制）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># hashlib</span><br><span class="line">import hashlib</span><br><span class="line">md5hasher= hashlib.md5()   # 构造一个hashlib的对象</span><br><span class="line">md5hasher.update(b&quot;message&quot;)  # update文档内容，生成新摘要</span><br><span class="line">md5hasher.hexdigest() # 获取摘要哈希值（16进制）</span><br></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import hashlib</span><br><span class="line"></span><br><span class="line"># 创建一个md5对象</span><br><span class="line">m = hashlib.md5()</span><br><span class="line"># 创建一个sha1对象</span><br><span class="line">s = hashlib.sha1()</span><br><span class="line"># 创建一个sha256对象</span><br><span class="line">s256 = hashlib.sha256()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import hashlib</span><br><span class="line"></span><br><span class="line"># 创建一个md5对象</span><br><span class="line">m = hashlib.md5()</span><br><span class="line"># 创建一个sha1对象</span><br><span class="line">s = hashlib.sha1()</span><br><span class="line"># 创建一个sha256对象</span><br><span class="line">s256 = hashlib.sha256()</span><br></pre></td></tr></table></figure>
 
 <p><strong>代码解释</strong>：</p>
 <p>字符串前加 b</p>
@@ -371,7 +371,7 @@ Python密码学编程
 <h3 id="哈希-雪崩效应"><a href="#哈希-雪崩效应" class="headerlink" title="哈希-雪崩效应"></a>哈希-雪崩效应</h3><p><a target="_blank" rel="noopener" href="https://www.wolfram.com/language/12/cryptography/demonstrate-the-avalanche-effect-of-a-hash-function.html.zh">展示散列函数的雪崩效应: Wolfram 语言 12 的新功能</a></p>
 <p>散列函数在现代密码学中有重要作用。好的散列函数的一个重要且理想的特征是输入和输出没有相关性，或称为“雪崩效应”，这意味着输入的微小变化会导致输出发生显著变化，使其统计上看起来与随机变化没有差别。</p>
 <p>雪崩效应有助于防止碰撞：输入的小的更改会导致摘要中不可预测的大更改。</p>
-<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; hexstring = hashlib.md5(b&#x27;bob&#x27;).hexdigest()</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; hexstring</span><br><span class="line"></span><br><span class="line">&#x27;9f9d51bc70ef21ca5c14f307980a29d8&#x27;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; binstring = bin(int(hexstring, 16))</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; print(&quot;&#123;&#125;\n&#123;&#125;&quot;.format(binstring[2:66], binstring[66:]))</span><br><span class="line"></span><br><span class="line">1001111110011101010100011011110001110000111011110010000111001010</span><br><span class="line"></span><br><span class="line">0101110000010100111100110000011110011000000010100010100111011000</span><br><span class="line"></span><br><span class="line">bob: 9f9d51bc70ef21ca5c14f307980a29d8</span><br><span class="line"></span><br><span class="line">cob: 386685f06beecb9f35db2e22da429ec9</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; hexstring = hashlib.md5(b&#x27;bob&#x27;).hexdigest()</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; hexstring</span><br><span class="line"></span><br><span class="line">&#x27;9f9d51bc70ef21ca5c14f307980a29d8&#x27;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; binstring = bin(int(hexstring, 16))</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; print(&quot;&#123;&#125;\n&#123;&#125;&quot;.format(binstring[2:66], binstring[66:]))</span><br><span class="line"></span><br><span class="line">1001111110011101010100011011110001110000111011110010000111001010</span><br><span class="line"></span><br><span class="line">0101110000010100111100110000011110011000000010100010100111011000</span><br><span class="line"></span><br><span class="line">bob: 9f9d51bc70ef21ca5c14f307980a29d8</span><br><span class="line"></span><br><span class="line">cob: 386685f06beecb9f35db2e22da429ec9</span><br></pre></td></tr></table></figure>
 
 <p>展示哈希雪崩效应：</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_63016521/article/details/133610815">哈希函数的雪崩效应-CSDN博客</a></p>
@@ -388,14 +388,28 @@ Python密码学编程
 <h4 id="口令加盐"><a href="#口令加盐" class="headerlink" title="口令加盐"></a>口令加盐</h4><h3 id="区块链-工作量证明"><a href="#区块链-工作量证明" class="headerlink" title="区块链-工作量证明"></a>区块链-工作量证明</h3><p><a target="_blank" rel="noopener" href="https://github.com/xiaobing94/pysimpleblockchain">xiaobing94&#x2F;pysimpleblockchain: 区块链的简单实现 (github.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/submarineas/article/details/128647550">动手学区块链学习笔记（二）：区块链以及工作量证明算法-CSDN博客</a></p>
 <p>难题： 找到一个特殊的SHA-256哈希值，小于某个阈值的值  （2016个区块调整一次，约14天）</p>
+<h3 id="延申阅读——彩虹表"><a href="#延申阅读——彩虹表" class="headerlink" title="延申阅读——彩虹表"></a>延申阅读——彩虹表</h3><p>什么是彩虹表？<br>    一言以蔽之，彩虹表是一种破解用户密码的辅助工具。彩虹表以时空折中理论为基础，但并不是简单地“以空间换时间”，而是一种“双向交易”，在二者之间达到平衡。1980年，公钥密码学的提出者之一Hellman针对DES算法（一种对称加密算法）提出了一种时空折中算法，即彩虹表的前身：预先计算的散列链集。2003年瑞典的Philippe Oechslin在其论文Making a Faster Cryptanalytic Time-Memory Trade-Off（参考博客2）中对Hellman的算法进行了改进，并命名为彩虹表。当时是针对Windows Xp开机认证的LM散列算法。当然，目前除了破解开机密码，彩虹表目前还能用于SHA、MD4、MD5等散列算法的破译，速度快、破解率高，正如Philippe在论文中提到的：“1.4G的彩虹表可以在13.6s内破解99.9%的数字字母混合型的Windows密码“。实际上，Philippe所做的改进本质上是减少了散列链集中可能存在的重复链，从而使空间的有效利用率更高。<br>    以MD5作为明文的散列算法H，加密后的密文为q，明文为p。彩虹表的作用就是在已知散列算法H和散列后的密文q的情况下，快速地得到明文p。<br>    针对LM、NTLM和SHA1等算法对应的彩虹表。整个破解过程为：根据密文q所使用的散列算法H，生成或者下载针对该算法的彩虹表，然后再基于彩虹表对密文进行破解，最终得到明文p。<br>不可逆的散列算法（HASH）<br>    本质上，MD5是将明文对应的二进制值与四个特定的32位的二进制值进行多轮的与、或、非、异或等运算，最终将明文对应的二进制转换成新的二进制。由于运算过程中存在进位丢失，导致人们无法根据MD5的计算过程和最终结果逆向计算出对应的明文。</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1903492">深入浅出彩虹表原理</a></p>
 <h3 id="本章考点-2"><a href="#本章考点-2" class="headerlink" title="本章考点"></a>本章考点</h3><p>1.哈希函数的性质</p>
 <p>2.hashlib的使用</p>
 <p>2023真题：</p>
 <p>第三题，</p>
-<h2 id="Chapter-3-对称加密"><a href="#Chapter-3-对称加密" class="headerlink" title="Chapter 3 对称加密"></a>Chapter 3 对称加密</h2><h3 id="TOC-1"><a href="#TOC-1" class="headerlink" title="TOC"></a>TOC</h3><p>保密通信模型<br>对称加密基本知识：什么是对称加密体制，分类：分组和流密码<br>分组密码定义和设计思想<br>常用分组密码算法：DES、AES、SM4<br>分组密码工作模式<br>分组密码编程实现</p>
+<h2 id="Chapter-3-对称加密"><a href="#Chapter-3-对称加密" class="headerlink" title="Chapter 3 对称加密"></a>Chapter 3 对称加密</h2><h3 id="TOC-1"><a href="#TOC-1" class="headerlink" title="TOC"></a>TOC</h3><p>1.对称加密基础知识：</p>
+<ul>
+<li>保密通信模型</li>
+<li>对称加密基本知识：什么是对称加密体制，分类：分组和流密码</li>
+<li>分组密码定义和设计思想</li>
+<li>常用分组密码算法：DES、AES、SM4</li>
+<li>分组密码工作模式：ECB、CBC、CRT</li>
+</ul>
+<p>2.对称加密编程实现：</p>
+<ul>
+<li>cryptography.hazmat.primitives.ciphers模块中的Cipher类生成密码对象，algorithms指定加密算法，modes指定加密模式；</li>
+<li>利用padding对长度不是16字节的整数倍的明文进行数据填充，同时解密后进行填充数据删除</li>
+</ul>
 <h3 id="保密通信模型"><a href="#保密通信模型" class="headerlink" title="保密通信模型"></a>保密通信模型</h3><p><img src="/img/cryptography/Shannon-%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B.png"></p>
 <h3 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h3><p><strong>对称加密：加密和解密使用相同的密钥的密码体制</strong></p>
-<p><strong>1.</strong> <strong>分组密码：将明文消息编码表示后的二进制序列，划分成固定大小的块，每块分别在密钥的控制下变换成等长的二进制序列。</strong></p>
+<p>1.分组密码：将明文消息编码表示后的二进制序列，划分成固定大小的块，每块分别在密钥的控制下变换成等长的二进制序列。</p>
 <ul>
 <li>AES</li>
 <li>DES</li>
@@ -403,21 +417,18 @@ Python密码学编程
 <li>RC6</li>
 <li>SM1、SM4、SM7、ZUC对称密码，SM1、SM7算法不公开，调用该算法时，需要通过加密芯片的接口进行调用；</li>
 </ul>
-<p><strong>2.</strong> <strong>流密码：将明文消息按比特进行加密</strong></p>
+<p>2.流密码：将明文消息按比特进行加密</p>
 <h3 id="分组密码"><a href="#分组密码" class="headerlink" title="分组密码"></a>分组密码</h3><p><img src="/img/cryptography/%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81.png"></p>
-<h3 id="本章考点-3"><a href="#本章考点-3" class="headerlink" title="本章考点"></a>本章考点</h3><p>1.哈希函数的性质</p>
-<p>2.hashlib的使用</p>
+<p>将明文消息编码表示后的二进制序列，划分成固定大小的块，每块分别在密钥的控制下变换成等长的二进制序列。</p>
+<p>1.分组足够长: 防止明文攻击<br>2.密钥长度要足够长：防止密钥穷举攻击。密钥不能过长<br>3.由密钥确定的置换算法要足够复杂，足以抗击各种已知的攻击，除了穷举，没有更好的攻击方法<br>4.加密和解密运算简单，易于软件和硬件的快速实现<br>5.一般无数据扩展，即：明文和密文的长度相同</p>
+<h4 id="分组密码的工作模式"><a href="#分组密码的工作模式" class="headerlink" title="分组密码的工作模式"></a>分组密码的工作模式</h4><p>1.扩散：使每1比特明文的变化尽可能多地影响到输出密文序列的比特，以便隐藏明文的统计特性。另一层意思使每1位密钥也尽可能影响到较多的输出密文比特。扩散的目的使希望密文中的任一比特都要尽可能与明文和密钥的每一比特相关联。<br>P1：00000000  c1：xxxxxx01<br>P2:   00000001  c2:   xxxxxx11<br>P1：00000000  c1：01011010<br>P2:   00000001  c2:   11101011<br>2.混乱: 在加密变换过程中明文、密钥以及密文之间的关系尽可能地复杂，以防止破译这采用统计分析法进行破译攻击<br>3.乘积密码体制：S^n称为迭代密码体制，其中S的明文空间和密文空间相等k&#x3D;(k1,k2)  Ek(x)&#x3D;Ek2(Ek1(x))  Dk(x)&#x3D;Dk1(Dk2(y))。若S^2&#x3D;S，则称S是等幂的密码体制， 置换密码、仿射密码、Vigenere密码及Hill密码都是等幂的密码体制，如果S是一个幂等体制，没有必要使用迭代体制，因为S^2需要更多的密钥，但安全强度与S一样。S不是幂等密码体制，迭代密码体制S^n的安全强度会比S高，通过对一个密码体制进行迭代来提高其安全强度的思想被广泛应用于对称密码体制的设计中。通常称为密码体制的迭代结构。具体地，就是在密钥的控制下扩散和混乱两种基本密码操作的多次迭代，每次迭代中的各种基本操作总体，称之为轮函数。</p>
+<h3 id="流密码"><a href="#流密码" class="headerlink" title="流密码"></a>流密码</h3><p>将明文看作字符串或比特串，并逐字符或者逐位进行加密<br>为了防止密钥穷举，使用和明文信息一样长的密钥（无限）流 进行加密这种密码体制称为流密码（或序列密码）</p>
+<h3 id="本章考点-3"><a href="#本章考点-3" class="headerlink" title="本章考点"></a>本章考点</h3><ol>
+<li></li>
+</ol>
 <p>2023真题：</p>
 <p>第四题，</p>
-<h2 id="Chapter-4-公钥加密"><a href="#Chapter-4-公钥加密" class="headerlink" title="Chapter 4 公钥加密"></a>Chapter 4 公钥加密</h2><h4 id="彩虹表"><a href="#彩虹表" class="headerlink" title="彩虹表"></a>彩虹表</h4><p>什么是彩虹表？<br>    一言以蔽之，彩虹表是一种破解用户密码的辅助工具。彩虹表以时空折中理论为基础，但并不是简单地“以空间换时间”，而是一种“双向交易”，在二者之间达到平衡。1980年，公钥密码学的提出者之一Hellman针对DES算法（一种对称加密算法）提出了一种时空折中算法，即彩虹表的前身：预先计算的散列链集。2003年瑞典的Philippe Oechslin在其论文Making a Faster Cryptanalytic Time-Memory Trade-Off（参考博客2）中对Hellman的算法进行了改进，并命名为彩虹表。当时是针对Windows Xp开机认证的LM散列算法。当然，目前除了破解开机密码，彩虹表目前还能用于SHA、MD4、MD5等散列算法的破译，速度快、破解率高，正如Philippe在论文中提到的：“1.4G的彩虹表可以在13.6s内破解99.9%的数字字母混合型的Windows密码“。实际上，Philippe所做的改进本质上是减少了散列链集中可能存在的重复链，从而使空间的有效利用率更高。<br>    以MD5作为明文的散列算法H，加密后的密文为q，明文为p。彩虹表的作用就是在已知散列算法H和散列后的密文q的情况下，快速地得到明文p。<br>    针对LM、NTLM和SHA1等算法对应的彩虹表。整个破解过程为：根据密文q所使用的散列算法H，生成或者下载针对该算法的彩虹表，然后再基于彩虹表对密文进行破解，最终得到明文p。<br>不可逆的散列算法（HASH）<br>    本质上，MD5是将明文对应的二进制值与四个特定的32位的二进制值进行多轮的与、或、非、异或等运算，最终将明文对应的二进制转换成新的二进制。由于运算过程中存在进位丢失，导致人们无法根据MD5的计算过程和最终结果逆向计算出对应的明文。</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1903492">深入浅出彩虹表原理</a></p>
-<h4 id="保密通信模型-1"><a href="#保密通信模型-1" class="headerlink" title="保密通信模型"></a>保密通信模型</h4><h4 id="流密码"><a href="#流密码" class="headerlink" title="流密码"></a>流密码</h4><p>将明文看作字符串或比特串，并逐字符或者逐位进行加密<br>为了防止密钥穷举，使用和明文信息一样长的密钥（无限）流 进行加密这种密码体制称为流密码（或序列密码）</p>
-<h4 id="分组密码-1"><a href="#分组密码-1" class="headerlink" title="分组密码"></a>分组密码</h4><p>将明文消息编码表示后的二进制序列，划分成固定大小的块，每块分别在密钥的控制下变换成等长的二进制序列。</p>
-<ol>
-<li>分组足够长: 防止明文攻击<br>2.密钥长度要足够长：防止密钥穷举攻击。密钥不能过长<br>3.由密钥确定的置换算法要足够复杂，足以抗击各种已知的攻击，除了穷举，没有更好的攻击方法<br>4.加密和解密运算简单，易于软件和硬件的快速实现<br>5.一般无数据扩展，即：明文和密文的长度相同</li>
-</ol>
-<h4 id="分组密码的工作模式"><a href="#分组密码的工作模式" class="headerlink" title="分组密码的工作模式"></a>分组密码的工作模式</h4><p>1.扩散：使每1比特明文的变化尽可能多地影响到输出密文序列的比特，以便隐藏明文的统计特性。另一层意思使每1位密钥也尽可能影响到较多的输出密文比特。扩散的目的使希望密文中的任一比特都要尽可能与明文和密钥的每一比特相关联。<br>P1：00000000  c1：xxxxxx01<br>P2:   00000001  c2:   xxxxxx11<br>P1：00000000  c1：01011010<br>P2:   00000001  c2:   11101011<br>2.混乱: 在加密变换过程中明文、密钥以及密文之间的关系尽可能地复杂，以防止破译这采用统计分析法进行破译攻击<br>3.乘积密码体制：S^n称为迭代密码体制，其中S的明文空间和密文空间相等k&#x3D;(k1,k2)  Ek(x)&#x3D;Ek2(Ek1(x))  Dk(x)&#x3D;Dk1(Dk2(y))。若S^2&#x3D;S，则称S是等幂的密码体制， 置换密码、仿射密码、Vigenere密码及Hill密码都是等幂的密码体制，如果S是一个幂等体制，没有必要使用迭代体制，因为S^2需要更多的密钥，但安全强度与S一样。S不是幂等密码体制，迭代密码体制S^n的安全强度会比S高，通过对一个密码体制进行迭代来提高其安全强度的思想被广泛应用于对称密码体制的设计中。通常称为密码体制的迭代结构。具体地，就是在密钥的控制下扩散和混乱两种基本密码操作的多次迭代，每次迭代中的各种基本操作总体，称之为轮函数。</p>
-<h5 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h5><h3 id="隐私计算"><a href="#隐私计算" class="headerlink" title="隐私计算"></a>隐私计算</h3><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1433891764852158464">隐私计算 - 知乎 (zhihu.com)</a></p>
+<h2 id="Chapter-4-公钥加密"><a href="#Chapter-4-公钥加密" class="headerlink" title="Chapter 4 公钥加密"></a>Chapter 4 公钥加密</h2><h2 id="Chapter-5-消息和实体认证"><a href="#Chapter-5-消息和实体认证" class="headerlink" title="Chapter 5 消息和实体认证"></a>Chapter 5 消息和实体认证</h2><h2 id="Chapter-6-非对称和对称结合"><a href="#Chapter-6-非对称和对称结合" class="headerlink" title="Chapter 6 非对称和对称结合"></a>Chapter 6 非对称和对称结合</h2><h2 id="Chapter-7-认证加密和Kerberos"><a href="#Chapter-7-认证加密和Kerberos" class="headerlink" title="Chapter 7 认证加密和Kerberos"></a>Chapter 7 认证加密和Kerberos</h2><h2 id="Chapter-8-TLS通信"><a href="#Chapter-8-TLS通信" class="headerlink" title="Chapter 8 TLS通信"></a>Chapter 8 TLS通信</h2><h2 id="Java密码学编程"><a href="#Java密码学编程" class="headerlink" title="Java密码学编程"></a>Java密码学编程</h2><h2 id="隐私计算"><a href="#隐私计算" class="headerlink" title="隐私计算"></a>隐私计算</h2><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1433891764852158464">隐私计算 - 知乎 (zhihu.com)</a></p>
 <h4 id="数据隐私问题处罚案例"><a href="#数据隐私问题处罚案例" class="headerlink" title="数据隐私问题处罚案例"></a>数据隐私问题处罚案例</h4><p>据外媒消息,2023年5月24日——爱尔兰数据保护委员会（DPC）对社交媒体巨头Meta（前身为Facebook）开出了创纪录的12亿欧元（10亿英镑）罚款，原因是Meta在欧洲和美国之间的数据传输中存在处理不当的行为。这笔罚款是根据欧盟通用数据保护条例（GDPR）隐私法而开出的最大一笔罚单，为欧洲数据保护领域树立了重要的先例。</p>
 <p>根据上面的案例可以观察到当下社会对隐私的重视程度，以及对大公司泄露数据的不信任，因此也就引出下面的内容。</p>
 <h3 id="联邦学习"><a href="#联邦学习" class="headerlink" title="联邦学习"></a>联邦学习</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/416264898">隐私计算（联邦学习、差分隐私） - 知乎 (zhihu.com)</a></p>
@@ -429,7 +440,7 @@ Python密码学编程
 <blockquote>
 <p>我的想法<br>每个设备作为一个终端，每个终端都有自己的数据，这些数据都是不同的，但是都有一个共同的目标，就是训练一个模型，这个模型可以用来预测，可以用来分类，可以用来识别等等。但是这些数据都是不同的，所以不能直接合并，但是可以通过联邦学习的方式，将这些数据进行训练，最后得到一个模型，这个模型可以用来预测，可以用来分类，可以用来识别等等。<br>具体的方式就是算法，譬如说最初的算法就是不断的将各个终端的数据data进行加权平均，然后不断重复训练一个模型，最后将这个模型发送给每个终端使用。</p>
 </blockquote>
-<h4 id="MPC-（安全多方计算）"><a href="#MPC-（安全多方计算）" class="headerlink" title="MPC （安全多方计算）"></a>MPC （安全多方计算）</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/apr15/article/details/133965768">安全多方计算框架最全合集（持续更新）_多方安全计算框架-CSDN博客</a></p>
+<h3 id="MPC-（安全多方计算）"><a href="#MPC-（安全多方计算）" class="headerlink" title="MPC （安全多方计算）"></a>MPC （安全多方计算）</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/apr15/article/details/133965768">安全多方计算框架最全合集（持续更新）_多方安全计算框架-CSDN博客</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/384759946">隐私计算技术之安全多方计算(MPC) - 知乎 (zhihu.com)</a></p>
 <p>安全多方计算是指在无可信第三方的情况下，多个参与方协同计算一个约定的函数，并且保证每一方仅获取自己的计算结果，无法通过计算过程中的交互数据推测出其他任意一方的输入和输出数据（除非函数本身可以由自己的输入推测出其他参与方的输入和输出）。</p>
 <p>安全多方计算可抽象概括为数学模型，其公式如下：</p>
@@ -440,9 +451,9 @@ Python密码学编程
 <h4 id="百万富翁问题是姚期智先生在1982年提出的第一个安全双方计算问题"><a href="#百万富翁问题是姚期智先生在1982年提出的第一个安全双方计算问题" class="headerlink" title="百万富翁问题是姚期智先生在1982年提出的第一个安全双方计算问题"></a><strong>百万富翁问题是姚期智先生在1982年提出的第一个安全双方计算问题</strong></h4><p><strong>问题可以描述为</strong>：两个百万富翁街头邂逅，他们都想炫一下富，比比谁更有钱，但是出于隐私，都不想让对方知道自己到底拥有多少财富，如何在不借助第三方的情况下，让他们知道他们之间谁更有钱。</p>
 <p><img src="/img/cryptography/%E9%9A%90%E7%A7%81%E8%AE%A1%E7%AE%97-MPC.png"></p>
 <p><img src="/img/cryptography/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86%E5%92%8C%E7%A7%98%E5%AF%86%E5%88%86%E4%BA%AB.png"></p>
-<h4 id="同态加密"><a href="#同态加密" class="headerlink" title="同态加密"></a>同态加密</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/557034854">应用密码学 | Paillier同态加密算法简介 - 知乎 (zhihu.com)</a></p>
+<h3 id="同态加密"><a href="#同态加密" class="headerlink" title="同态加密"></a>同态加密</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/557034854">应用密码学 | Paillier同态加密算法简介 - 知乎 (zhihu.com)</a></p>
 <p>同态加密（HE，Homomorphic Encryption）是指对密文计算后的结果再解密和直接对明文计算的结果一致，同态加密按照其满足的运算类型可分为加法同态（Paillier同态加密），乘法同态（RSA同态加密），以及加法乘法都满足的全同态加密（Gentry同态加密）。</p>
-<h4 id="秘密分享Seret-Sharing"><a href="#秘密分享Seret-Sharing" class="headerlink" title="秘密分享Seret Sharing"></a><strong>秘密分享Seret Sharing</strong></h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/578967596">安全多方计算 | 基于Shamir秘密共享的MPC协议 - 知乎 (zhihu.com)</a></p>
+<h3 id="秘密分享Seret-Sharing"><a href="#秘密分享Seret-Sharing" class="headerlink" title="秘密分享Seret Sharing"></a>秘密分享Seret Sharing</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/578967596">安全多方计算 | 基于Shamir秘密共享的MPC协议 - 知乎 (zhihu.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/95362628">趣说密码学（五）秘密共享方案——shamir,中国剩余定理,Brickell和Blakley - 知乎 (zhihu.com)</a></p>
 <p>秘密分享的一种经典方案，1979年Shamir提出了阈值秘密分享方案，该方案支持n个参与方中的任意t个可以联合解开秘密数据，具体方案如下：</p>
 <p><img src="https://pic2.zhimg.com/80/v2-a516b6eee3834087e32f60092935f279_720w.webp" alt="img"></p>
@@ -450,15 +461,15 @@ Python密码学编程
 <p><strong>第一种情况：交给一个人保管</strong></p>
 <p>原来住你隔壁的老王接下这个任务。他看起来似乎值得信任。</p>
 <p><img src="https://pic3.zhimg.com/80/v2-d3a30f17fad004c2baca116454a6b76e_720w.webp" alt="img"></p>
-<p><strong>第二天新闻头条：</strong>已确认某探险队成员全部遇难！原因据查是保管食物的队员老王扔下大家不管，带着所有食物跑路了！</p>
+<p>**第二天新闻头条：**已确认某探险队成员全部遇难！原因据查是保管食物的队员老王扔下大家不管，带着所有食物跑路了！</p>
 <p><strong>第二种情况：交给一些人保管，全部到齐才能打开保险箱</strong></p>
 <p>只交给一个人保管钥匙非常不安全。不如交给一些人不同的钥匙，必须要所有的人到齐才能打开。于是你把钥匙分成三份，隔壁老王，对面楼小南和你分别拿到了一份钥匙。这下，隔壁老王不能再自己一个人打开保险箱了。你感到很满意。</p>
 <p><img src="https://pic4.zhimg.com/80/v2-c4940b835afc59e1badd743e0c4d2ed7_720w.webp" alt="img"></p>
-<p><strong>第二天新闻头条：</strong>已确认某探险队成员全部遇难！现场遇难的探险队员全围着一个锁上的食物箱子，原因据查是保管钥匙的队员之一隔壁老王误将钥匙扔掉，致使全体队员无法打开食物保险箱！</p>
+<p>**第二天新闻头条：**已确认某探险队成员全部遇难！现场遇难的探险队员全围着一个锁上的食物箱子，原因据查是保管钥匙的队员之一隔壁老王误将钥匙扔掉，致使全体队员无法打开食物保险箱！</p>
 <p><strong>第三种情况：交给一些人保管，其中一部分到齐才能打开保险箱</strong></p>
 <p>好吧，隔壁老王一直盯着食物想要占为己有。这不行。而且如果要保管钥匙的全部成员到齐才能打开，那么其中某人拿不出钥匙将是非常绝望的情形。</p>
 <p>于是你想出了一种新的方法，把钥匙分成不同五份，路人甲，街口二愣子，对面楼小南，娄县令以及你分别拿了一份。但现在只需要三个人拿着他们的钥匙就能打开食物保险箱。就算其中一个人将钥匙弄丢，例如二愣子把钥匙吃了，剩下三个人也能打开保险箱。但少于三个人就不能打开保险箱。但具体改怎么做呢？你的思维开始跳脱起来。</p>
-<h4 id="零知识证明"><a href="#零知识证明" class="headerlink" title="零知识证明"></a>零知识证明</h4><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/techpedia/1801">什么是零知识证明_零知识证明简介_零知识证明的优势以及应用场景-腾讯云开发者社区 (tencent.com)</a></p>
+<h3 id="零知识证明"><a href="#零知识证明" class="headerlink" title="零知识证明"></a>零知识证明</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/techpedia/1801">什么是零知识证明_零知识证明简介_零知识证明的优势以及应用场景-腾讯云开发者社区 (tencent.com)</a></p>
 <p>零知识证明过程有两个参与方，一方叫证明者，一方叫验证者。证明者掌握着某个秘密，他想让验证者相信他掌握着秘密，但是又不想泄漏这个秘密给验证者。双方按照一个协议，通过一系列交互，最终验证者会得出一个明确的结论，证明者是或不掌握这个秘密。</p>
 <p><strong>①阿里巴巴与四十大盗</strong></p>
 <p>有一天，阿里巴巴被强盗抓住了，强盗向他索要开启山洞大门的咒语。</p>

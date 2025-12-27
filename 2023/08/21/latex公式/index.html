@@ -64,7 +64,7 @@ Introduction
 
     <!-- live2d -->
     <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body class="loading">
     <span id="config-title" style="display:none">Hexo</span>
@@ -135,7 +135,7 @@ Introduction
 <li>行内公式：嵌入在行内，适用于简单短小的公式<br> <code>$ f(x) = a+b $</code><br>  $ f(x) &#x3D; a+b $</li>
 <li>块级公式：居中独占一行，适用于比较长或重要的公式</li>
 </ul>
-<p> <code>$$ f(x) = a+b $$</code><br> $$ f(x) &#x3D; a+b $$<br> <code>$$ f(x) = a - b \tag&#123;1.1&#125; $$</code><br>$$ f(x) &#x3D; a - b \tag{1.1} $$</p>
+<p> <code>$$ f(x) = a+b $$</code><br> $$ f(x) &#x3D; a+b $$<br> <code>$$ f(x) = a - b \tag{1.1} $$</code><br>$$ f(x) &#x3D; a - b \tag{1.1} $$</p>
 <ul>
 <li>公式中的空格均会被忽略，可以使用命令\quad或\qquad实现</li>
 <li>在行间公式中，命令\tag{n}可以进行手动编号</li>
@@ -154,13 +154,13 @@ Introduction
 <ul>
 <li>\sqrt 表示平方根</li>
 <li>\sqrt[n] 表示n次方根</li>
-<li>\frac 表示分式<br><code>$$\sqrt&#123;x&#125; + \sqrt&#123;x^&#123;2&#125;+\sqrt&#123;y&#125;&#125; = \sqrt[3]&#123;k_&#123;i&#125;&#125; - \frac&#123;x&#125;&#123;m&#125;$$</code><br>$$\sqrt{x} + \sqrt{x^{2}+\sqrt{y}} &#x3D; \sqrt[3]{k_{i}} - \frac{x}{m}$$</li>
+<li>\frac 表示分式<br><code>$$\sqrt{x} + \sqrt{x^{2}+\sqrt{y}} = \sqrt[3]{k_{i}} - \frac{x}{m}$$</code><br>$$\sqrt{x} + \sqrt{x^{2}+\sqrt{y}} &#x3D; \sqrt[3]{k_{i}} - \frac{x}{m}$$</li>
 </ul>
 <h3 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h3><p>命令：</p>
 <ul>
 <li>\vec表示向量</li>
 <li>\overrightarrow 表示箭头向右的向量</li>
-<li>\overleftarrow 表示箭头向左的向量<br><code>$$\vec&#123;a&#125; + \overrightarrow&#123;AB&#125; + \overleftarrow&#123;DE&#125;$$</code><br>$$\vec{a} + \overrightarrow{AB} + \overleftarrow{DE}$$</li>
+<li>\overleftarrow 表示箭头向左的向量<br><code>$$\vec{a} + \overrightarrow{AB} + \overleftarrow{DE}$$</code><br>$$\vec{a} + \overrightarrow{AB} + \overleftarrow{DE}$$</li>
 </ul>
 <h3 id="积分、极限、求和、乘积"><a href="#积分、极限、求和、乘积" class="headerlink" title="积分、极限、求和、乘积"></a>积分、极限、求和、乘积</h3><p>命令：</p>
 <ul>
@@ -168,7 +168,7 @@ Introduction
 <li>\lim 表示极限</li>
 <li>\sum 表示求和</li>
 <li>\prod 表示乘积</li>
-<li>^与_ 表示上、下限<br><code>$$  \lim_&#123;x \to \infty&#125; x^2_&#123;22&#125; - \int_&#123;1&#125;^&#123;5&#125;x\mathrm&#123;d&#125;x + \sum_&#123;n=1&#125;^&#123;20&#125; n^&#123;2&#125; = \prod_&#123;j=1&#125;^&#123;3&#125; y_&#123;j&#125;  + \lim_&#123;x \to -2&#125; \frac&#123;x-2&#125;&#123;x&#125; $$</code><br>$$  \lim_{x \to \infty} x^2_{22} - \int_{1}^{5}x\mathrm{d}x + \sum_{n&#x3D;1}^{20} n^{2} &#x3D; \prod_{j&#x3D;1}^{3} y_{j}  + \lim_{x \to -2} \frac{x-2}{x} $$</li>
+<li>^与_ 表示上、下限<br><code>$$  \lim_{x \to \infty} x^2_{22} - \int_{1}^{5}x\mathrm{d}x + \sum_{n=1}^{20} n^{2} = \prod_{j=1}^{3} y_{j}  + \lim_{x \to -2} \frac{x-2}{x} $$</code><br>$$  \lim_{x \to \infty} x^2_{22} - \int_{1}^{5}x\mathrm{d}x + \sum_{n&#x3D;1}^{20} n^{2} &#x3D; \prod_{j&#x3D;1}^{3} y_{j}  + \lim_{x \to -2} \frac{x-2}{x} $$</li>
 </ul>
 <h3 id="间隔符号"><a href="#间隔符号" class="headerlink" title="间隔符号"></a>间隔符号</h3><p>命令：</p>
 <ul>
@@ -180,27 +180,27 @@ Introduction
 <ul>
 <li>_ 表示下标</li>
 <li>^ 表示上标</li>
-<li>‘ 表示求导<br>上下标内容不止一个字符时，需用大括号括起来。<br><code>$$ a_&#123;ij&#125;^&#123;2&#125; + b^3_&#123;2&#125;=x^&#123;t&#125; + y&#39; + x&#39;&#39;_&#123;12&#125; $$</code><br>$$ a_{ij}^{2} + b^3_{2}&#x3D;x^{t} + y’ + x’’_{12} $$</li>
+<li>‘ 表示求导<br>上下标内容不止一个字符时，需用大括号括起来。<br><code>$$ a_{ij}^{2} + b^3_{2}=x^{t} + y&#39; + x&#39;&#39;_{12} $$</code><br>$$ a_{ij}^{2} + b^3_{2}&#x3D;x^{t} + y’ + x’’_{12} $$</li>
 </ul>
 <h3 id="上下标记"><a href="#上下标记" class="headerlink" title="上下标记"></a>上下标记</h3><p>命令：</p>
 <ul>
 <li>\overline 在表达式上方画出水平线</li>
 <li>\underline 在表达式下方画出水平线</li>
 <li>\overbrace 在表达式上方给出一个水平的大括号</li>
-<li>\underbrace 在表达式下方给出一个水平的大括号<br><code>$$\overline&#123;x+y&#125; \qquad \underline&#123;a+b&#125;$$</code><br>$$\overline{x+y} \qquad \underline{a+b}$$<br><code>$$\overbrace&#123;1+2+\cdots+n&#125;^&#123;n个&#125; \qquad \underbrace&#123;a+b+\cdots+z&#125;_&#123;26&#125;$$</code><br>$$\overbrace{1+2+\cdots+n}^{n个} \qquad \underbrace{a+b+\cdots+z}_{26}$$</li>
+<li>\underbrace 在表达式下方给出一个水平的大括号<br><code>$$\overline{x+y} \qquad \underline{a+b}$$</code><br>$$\overline{x+y} \qquad \underline{a+b}$$<br><code>$$\overbrace{1+2+\cdots+n}^{n个} \qquad \underbrace{a+b+\cdots+z}_{26}$$</code><br>$$\overbrace{1+2+\cdots+n}^{n个} \qquad \underbrace{a+b+\cdots+z}_{26}$$</li>
 </ul>
 <h3 id="三圆点"><a href="#三圆点" class="headerlink" title="三圆点"></a>三圆点</h3><p>命令：</p>
 <ul>
 <li>\ldots 点位于基线上</li>
 <li>\cdots 点设置为居中</li>
 <li>\vdots 使其垂直</li>
-<li>\ddots 对角线排列<br><code>$$ x_&#123;1&#125;,x_&#123;2&#125;,\ldots,x_&#123;5&#125;  \quad x_&#123;1&#125; + x_&#123;2&#125; + \cdots + x_&#123;n&#125; $$</code><br>$$ x_{1},x_{2},\ldots,x_{5}  \quad x_{1} + x_{2} + \cdots + x_{n} $$</li>
+<li>\ddots 对角线排列<br><code>$$ x_{1},x_{2},\ldots,x_{5}  \quad x_{1} + x_{2} + \cdots + x_{n} $$</code><br>$$ x_{1},x_{2},\ldots,x_{5}  \quad x_{1} + x_{2} + \cdots + x_{n} $$</li>
 </ul>
 <h3 id="重音符号"><a href="#重音符号" class="headerlink" title="重音符号"></a>重音符号</h3><p>命令：</p>
 <ul>
 <li>\hat</li>
 <li>\bar</li>
-<li>\tilde<br><code>$ \hat&#123;x&#125; $</code><br>$ \hat{x} $<br><code>$ \bar&#123;x&#125; $</code><br>$ \bar{x} $<br><code>$ \tilde&#123;x&#125; $</code><br>$ \tilde{x} $</li>
+<li>\tilde<br><code>$ \hat{x} $</code><br>$ \hat{x} $<br><code>$ \bar{x} $</code><br>$ \bar{x} $<br><code>$ \tilde{x} $</code><br>$ \tilde{x} $</li>
 </ul>
 <h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p><img src="https://pic1.zhimg.com/80/v2-da3e717cf670582fbfbdddee33073524_720w.webp" title="希腊字母"></p>
 <h3 id="在Markdown里插入希腊字母"><a href="#在Markdown里插入希腊字母" class="headerlink" title="在Markdown里插入希腊字母"></a>在Markdown里插入希腊字母</h3><p>如果直接在公式块中是可以直接显示的。$$<br>\phi<br>$$</p>

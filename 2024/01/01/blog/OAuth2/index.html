@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="OAuth2.0 详解 - 知乎 (zhihu.com)
+理解OAuth 2.0 - 阮一峰的网络日志 (ruanyifeng.com)
+OAuth 2 简化版 • Aaron Parecki
+角色,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content=" - Hexo"/>
+    <meta name="twitter:description" content="OAuth2.0 详解 - 知乎 (zhihu.com)
+理解OAuth 2.0 - 阮一峰的网络日志 (ruanyifeng.com)
+OAuth 2 简化版 • Aaron Parecki
+角色,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content=" - Hexo"/>
+    <meta property="og:description" content="OAuth2.0 详解 - 知乎 (zhihu.com)
+理解OAuth 2.0 - 阮一峰的网络日志 (ruanyifeng.com)
+OAuth 2 简化版 • Aaron Parecki
+角色,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <!-- 帖子视图 -->
+
+    <div class="post_cover" >
+        
+            <img src="/img/img1.jpg,/img/welcome-cover.jpg" />
+        
+        <div class="post_cover_mask"></div>
+        <div class="post_text">
+            <h1></h1>
+            <div>
+                <span>一月 01, 2024</span>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="article">
+    <div class='main'>
+        <!-- 帖子视图 -->
+        
+
+        <!-- 更新时间 -->
+        <div class="updated">
+            <div></div>
+            <span>该文章更新于 2024.04.14</span>
+        </div>
+
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>一月 01, 2024</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/89020647">OAuth2.0 详解 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html">理解OAuth 2.0 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://aaronparecki.com/oauth-2-simplified/#roles">OAuth 2 简化版 • Aaron Parecki</a></p>
+<h2 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h2><h3 id="第三方应用程序：“客户端”"><a href="#第三方应用程序：“客户端”" class="headerlink" title="第三方应用程序：“客户端”"></a>第三方应用程序：“客户端”</h3><p>客户端是尝试访问用户帐户的应用程序。它需要先获得用户的许可，然后才能执行此操作。</p>
+<h3 id="API：“资源服务器”"><a href="#API：“资源服务器”" class="headerlink" title="API：“资源服务器”"></a>API：“资源服务器”</h3><p>资源服务器是用于访问用户信息的 API 服务器。</p>
+<h3 id="授权服务器"><a href="#授权服务器" class="headerlink" title="授权服务器"></a>授权服务器</h3><p>这是提供用户批准或拒绝请求的接口的服务器。在较小的实现中，这可能与 API 服务器是同一台服务器，但更大规模的部署通常会将其构建为单独的组件。</p>
+<h3 id="用户：“资源所有者”"><a href="#用户：“资源所有者”" class="headerlink" title="用户：“资源所有者”"></a>用户：“资源所有者”</h3><p>资源所有者是授予访问其帐户某些部分的权限的人员。</p>
+<h2 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h2><p>OAuth 2 的第一步是从用户那里获得授权。对于基于浏览器或移动的应用程序，这通常是通过向用户显示服务提供的界面来实现的。</p>
+<p>OAuth 2 为不同的用例提供了几种“授权类型”。定义的授权类型包括：</p>
+<ul>
+<li>在 Web 服务器、基于浏览器的应用程序和移动应用程序上运行的应用程序的<strong>授权代码</strong></li>
+<li>使用用户名和密码登录的<strong>密码</strong>（仅适用于第一方应用）</li>
+<li>在没有用户在场的情况下进行应用程序访问<strong>的客户端凭据</strong></li>
+<li><strong>隐式</strong>以前被推荐给没有秘密的客户端，但已被使用授权代码授予与PKCE取代。</li>
+</ul>
+<p>下面将详细介绍每个用例。</p>
+<h2 id="Web-服务器应用程序"><a href="#Web-服务器应用程序" class="headerlink" title="Web 服务器应用程序"></a>Web 服务器应用程序</h2><p>Web 服务器应用程序是您在处理 OAuth 服务器时遇到的最常见的应用程序类型。Web 应用程序是用服务器端语言编写的，并在应用程序源代码不向公众开放的服务器上运行。这意味着应用程序在与授权服务器通信时能够使用其客户端密钥，这有助于避免许多攻击媒介。</p>
+<h3 id="授权-1"><a href="#授权-1" class="headerlink" title="授权"></a>授权</h3><p>创建一个“登录”链接，将用户发送到：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://authorization-server.com/auth?response_type=code&amp;</span><br><span class="line">  client_id=CLIENT_ID&amp;redirect_uri=REDIRECT_URI&amp;scope=photos&amp;state=1234zyx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>response_type&#x3D;code</strong> - 指示您的服务器希望收到授权代码</li>
+<li><strong>client_id</strong> - 首次创建应用程序时收到的客户端 ID</li>
+<li><strong>redirect_uri</strong> - 指示授权完成后要将用户返回到的 URI</li>
+<li><strong>scope</strong> - 一个或多个范围值，指示您希望访问用户帐户的哪些部分</li>
+<li><strong>state</strong> - 应用程序生成的随机字符串，稍后将对其进行验证</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="true"
+        data-ae="false"
+        data-ci="bf8247f1f66a43abd91f"
+        data-cs="8151e71fe008a0f849031b72d321c20af8e897af"
+        data-r="h1s97x.github.io"
+        data-o="h1s97x"
+        data-a="h1s97x"
+        data-d="true"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

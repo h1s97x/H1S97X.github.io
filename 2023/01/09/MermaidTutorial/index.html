@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Markdown 画图：Mermaid 指北 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="Tutorials on Mermaid
+  基于 Mermaid 的官方文档。
+  只挑了典型的。
+
+What is Mermaid?Mermaid 允许您使用文本和代码创建图表和可视化。
+它是一,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Markdown 画图：Mermaid 指北 - Hexo"/>
+    <meta name="twitter:description" content="Tutorials on Mermaid
+  基于 Mermaid 的官方文档。
+  只挑了典型的。
+
+What is Mermaid?Mermaid 允许您使用文本和代码创建图表和可视化。
+它是一,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Markdown 画图：Mermaid 指北 - Hexo"/>
+    <meta property="og:description" content="Tutorials on Mermaid
+  基于 Mermaid 的官方文档。
+  只挑了典型的。
+
+What is Mermaid?Mermaid 允许您使用文本和代码创建图表和可视化。
+它是一,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Markdown 画图：Mermaid 指北</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <!-- 帖子视图 -->
+
+    <div class="post_cover" >
+        
+            <img src="/img/img1.jpg,/img/welcome-cover.jpg" />
+        
+        <div class="post_cover_mask"></div>
+        <div class="post_text">
+            <h1>Markdown 画图：Mermaid 指北</h1>
+            <div>
+                <span>一月 09, 2023</span>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="article">
+    <div class='main'>
+        <!-- 帖子视图 -->
+        
+
+        <!-- 更新时间 -->
+        <div class="updated">
+            <div></div>
+            <span>该文章更新于 2024.01.25</span>
+        </div>
+
+        <h1 class="title">Markdown 画图：Mermaid 指北</h1>
+        <div class="stuff">
+            <span>一月 09, 2023</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Tutorials-on-Mermaid"><a href="#Tutorials-on-Mermaid" class="headerlink" title="Tutorials on Mermaid"></a>Tutorials on Mermaid</h1><blockquote>
+<p>  基于 Mermaid 的<a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/">官方文档</a>。</p>
+<p>  只挑了典型的。</p>
+</blockquote>
+<h2 id="What-is-Mermaid"><a href="#What-is-Mermaid" class="headerlink" title="What is Mermaid?"></a>What is Mermaid?</h2><p><em>Mermaid 允许您使用文本和代码创建图表和可视化。</em></p>
+<p><em>它是一个基于 JavaScript 的图表和图表工具，可以呈现受 Markdown 启发的文本定义，以动态创建和修改图表。</em></p>
+<p>简而言之就是在 Markdown 中插入图表的。</p>
+<h2 id="いきますよ！"><a href="#いきますよ！" class="headerlink" title="いきますよ！"></a>いきますよ！</h2><h3 id="Flowchart"><a href="#Flowchart" class="headerlink" title="Flowchart"></a>Flowchart</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line"><span class="code">    A--&gt;B;</span></span><br><span class="line"><span class="code">    A--&gt;C;</span></span><br><span class="line"><span class="code">    B--&gt;D;</span></span><br><span class="line"><span class="code">    C--&gt;D;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    A--&gt;B;</span><br><span class="line">    A--&gt;C;</span><br><span class="line">    B--&gt;D; </span><br><span class="line">    C--&gt;D;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line"><span class="code">	A --&gt; B;</span></span><br><span class="line"><span class="code">	A --&gt; C;</span></span><br><span class="line"><span class="code">	B --&gt; D;</span></span><br><span class="line"><span class="code">	C --&gt; D;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">	A --&gt; B;</span><br><span class="line">	A --&gt; C;</span><br><span class="line">	B --&gt; D;</span><br><span class="line">	C --&gt; D;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>Flowchart 最常用，多来点 syntax。</p>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id</span><br></pre></td></tr></table></figure>
+
+<h5 id="A-node-with-text"><a href="#A-node-with-text" class="headerlink" title="A node with text"></a>A node with text</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id[This is the text in the box]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id[This is the text in the box]</span><br></pre></td></tr></table></figure>
+
+<h5 id="A-node-with-round-edges"><a href="#A-node-with-round-edges" class="headerlink" title="A node with round edges"></a>A node with round edges</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id1(This is the text in the box)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id1(This is the text in the box)</span><br></pre></td></tr></table></figure>
+
+<h5 id="A-stadium-shaped-node"><a href="#A-stadium-shaped-node" class="headerlink" title="A stadium-shaped node"></a>A stadium-shaped node</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id1([This is the text in the box])</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id1([This is the text in the box])</span><br></pre></td></tr></table></figure>
+
+<h5 id="A-node-in-a-subroutine-shape"><a href="#A-node-in-a-subroutine-shape" class="headerlink" title="A node in a subroutine shape"></a>A node in a subroutine shape</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id1[[This is the text in the box]]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id1[[This is the text in the box]]</span><br></pre></td></tr></table></figure>
+
+<h5 id="A-node-in-a-cylindrical-shape"><a href="#A-node-in-a-cylindrical-shape" class="headerlink" title="A node in a cylindrical shape"></a>A node in a cylindrical shape</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id1[(Database)]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id1[(Database)]</span><br></pre></td></tr></table></figure>
+
+<h5 id="A-node-in-the-form-of-a-circle"><a href="#A-node-in-the-form-of-a-circle" class="headerlink" title="A node in the form of a circle"></a>A node in the form of a circle</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id1((This is the text in the circle))</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id1((This is the text in the circle))</span><br></pre></td></tr></table></figure>
+
+<h5 id="A-hexagon-node"><a href="#A-hexagon-node" class="headerlink" title="A hexagon node"></a>A hexagon node</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id1&#123;&#123;This is the text in the box&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id1&#123;&#123;This is the text in the box&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Special-characters"><a href="#Special-characters" class="headerlink" title="Special characters"></a>Special characters</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    id1[&quot;This is the (text) in the box&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    id1[&quot;This is the (text) in the box&quot;]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A[&quot;A double quote:#quot;&quot;] --&gt;B[&quot;A dec char:#9829;&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A[&quot;A double quote:#quot;&quot;] --&gt;B[&quot;A dec char:#9829;&quot;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h4><h5 id="Arrow-head"><a href="#Arrow-head" class="headerlink" title="Arrow head"></a>Arrow head</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A--&gt;B</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A--&gt;B</span><br></pre></td></tr></table></figure>
+
+<h5 id="Open-link"><a href="#Open-link" class="headerlink" title="Open link"></a>Open link</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A --- B</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A --- B</span><br></pre></td></tr></table></figure>
+
+<h5 id="Text-on-links"><a href="#Text-on-links" class="headerlink" title="Text on links"></a>Text on links</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A-- This is the text! ---B</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A---|This is the text|B</span></span><br></pre></td></tr></table></figure>
+
+<p>Both okay.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A-- This is the text! ---B</span><br></pre></td></tr></table></figure>
+
+<h5 id="A-link-with-arrow-head-and-text"><a href="#A-link-with-arrow-head-and-text" class="headerlink" title="A link with arrow head and text"></a>A link with arrow head and text</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A--&gt;|text|B</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A-- text --&gt;B</span></span><br></pre></td></tr></table></figure>
+
+<p>Both okay.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A--&gt;|text|B</span><br></pre></td></tr></table></figure>
+
+<h5 id="Dotted-link"><a href="#Dotted-link" class="headerlink" title="Dotted link"></a>Dotted link</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR;</span><br><span class="line">   A-.-&gt;B;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR;</span><br><span class="line">   A-.-&gt;B;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Dotted-link-with-text"><a href="#Dotted-link-with-text" class="headerlink" title="Dotted link with text"></a>Dotted link with text</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">   A-. text .-&gt; B</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">   A-. text .-&gt; B</span><br></pre></td></tr></table></figure>
+
+<h5 id="Chaining-of-links"><a href="#Chaining-of-links" class="headerlink" title="Chaining of links"></a>Chaining of links</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">   A -- text --&gt; B -- text2 --&gt; C</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">   A -- text --&gt; B -- text2 --&gt; C</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">   a --&gt; b &amp; c--&gt; d</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">   a --&gt; b &amp; c--&gt; d</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line"><span class="code">    A &amp; B--&gt; C &amp; D</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line">    A &amp; B--&gt; C &amp; D</span><br></pre></td></tr></table></figure>
+
+<p>我的评价是：语法糖差不多得了，老老实实拆开了写就行了。</p>
+<blockquote>
+<p>  If you describe the same diagram using the the basic syntax, it will take four lines. A word of warning, one could go overboard with this making the flowchart harder to read in markdown form. The Swedish word <code>lagom</code> comes to mind. It means, not too much and not too little. This goes for expressive syntaxes as well.</p>
+</blockquote>
+<h5 id="New-types-of-arrow"><a href="#New-types-of-arrow" class="headerlink" title="New types of arrow"></a>New types of arrow</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A --o B</span></span><br><span class="line"><span class="code">    B --x C</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A --o B</span><br><span class="line">    B --x C</span><br></pre></td></tr></table></figure>
+
+<p>See also:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A o--o B</span></span><br><span class="line"><span class="code">    B &lt;--&gt; C</span></span><br><span class="line"><span class="code">    C x--x D</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A o--o B</span><br><span class="line">    B &lt;--&gt; C</span><br><span class="line">    C x--x D</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Flowchart-orientation"><a href="#Flowchart-orientation" class="headerlink" title="Flowchart orientation"></a>Flowchart orientation</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart BT</span><br><span class="line"><span class="code">	A --&gt; B;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart BT</span><br><span class="line">	A --&gt; B;</span><br></pre></td></tr></table></figure>
+
+<p>等等。支持：</p>
+<ul>
+<li>TB - top to bottom</li>
+<li>TD - top-down&#x2F; same as top to bottom</li>
+<li>BT - bottom to top</li>
+<li>RL - right to left</li>
+<li>LR - left to right</li>
+</ul>
+<h4 id="Subgraphs"><a href="#Subgraphs" class="headerlink" title="Subgraphs"></a>Subgraphs</h4><p>Generally like:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">subgraph title</span><br><span class="line"><span class="code">    graph definition</span></span><br><span class="line"><span class="code">end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line"><span class="code">    c1--&gt;a2</span></span><br><span class="line"><span class="code">    subgraph one</span></span><br><span class="line"><span class="code">    a1--&gt;a2</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    subgraph two</span></span><br><span class="line"><span class="code">    b1--&gt;b2</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    subgraph three</span></span><br><span class="line"><span class="code">    c1--&gt;c2</span></span><br><span class="line"><span class="code">    end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line">    c1--&gt;a2</span><br><span class="line">    subgraph one</span><br><span class="line">    a1--&gt;a2</span><br><span class="line">    end</span><br><span class="line">    subgraph two</span><br><span class="line">    b1--&gt;b2</span><br><span class="line">    end</span><br><span class="line">    subgraph three</span><br><span class="line">    c1--&gt;c2</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line"><span class="code">    c1--&gt;a2</span></span><br><span class="line"><span class="code">    subgraph one</span></span><br><span class="line"><span class="code">    a1--&gt;a2</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    subgraph two</span></span><br><span class="line"><span class="code">    b1--&gt;b2</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    subgraph three</span></span><br><span class="line"><span class="code">    c1--&gt;c2</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    one --&gt; two</span></span><br><span class="line"><span class="code">    three --&gt; two</span></span><br><span class="line"><span class="code">    two --&gt; c2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line">    c1--&gt;a2</span><br><span class="line">    subgraph one</span><br><span class="line">    a1--&gt;a2</span><br><span class="line">    end</span><br><span class="line">    subgraph two</span><br><span class="line">    b1--&gt;b2</span><br><span class="line">    end</span><br><span class="line">    subgraph three</span><br><span class="line">    c1--&gt;c2</span><br><span class="line">    end</span><br><span class="line">    one --&gt; two</span><br><span class="line">    three --&gt; two</span><br><span class="line">    two --&gt; c2</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gantt-diagram"><a href="#Gantt-diagram" class="headerlink" title="Gantt diagram"></a>Gantt diagram</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">dateFormat  YYYY-MM-DD</span><br><span class="line">title Adding GANTT diagram to mermaid</span><br><span class="line">excludes weekdays 2014-01-10</span><br><span class="line"></span><br><span class="line">section A section</span><br><span class="line">Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">Future task               :         des3, after des2, 5d</span><br><span class="line">Future task2              :         des4, after des3, 5d</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">dateFormat  YYYY-MM-DD</span><br><span class="line">title Adding GANTT diagram to mermaid</span><br><span class="line">excludes weekdays 2014-01-10</span><br><span class="line"></span><br><span class="line">section A section</span><br><span class="line">Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">Future task               :         des3, after des2, 5d</span><br><span class="line">Future task2               :         des4, after des3, 5d</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="true"
+        data-ae="false"
+        data-ci="bf8247f1f66a43abd91f"
+        data-cs="8151e71fe008a0f849031b72d321c20af8e897af"
+        data-r="h1s97x.github.io"
+        data-o="h1s97x"
+        data-a="h1s97x"
+        data-d="true"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

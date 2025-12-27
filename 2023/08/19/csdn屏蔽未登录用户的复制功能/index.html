@@ -10,8 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none &amp;#123;
-  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将n,"> 
+    <meta name="description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none {
+  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将none改为,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -27,8 +27,8 @@
     
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="csdn屏蔽未登录用户的复制功能 - Hexo"/>
-    <meta name="twitter:description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none &amp;#123;
-  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将n,"/>
+    <meta name="twitter:description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none {
+  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将none改为,"/>
     
     
     
@@ -36,8 +36,8 @@
     <meta property="og:site_name" content="Hexo"/>
     <meta property="og:type" content="object"/>
     <meta property="og:title" content="csdn屏蔽未登录用户的复制功能 - Hexo"/>
-    <meta property="og:description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none &amp;#123;
-  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将n,"/>
+    <meta property="og:description" content="文本复制一.屏蔽复制原理1.1 CSS user-select.user-select-none {
+  user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将none改为,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -58,7 +58,7 @@
 
     <!-- live2d -->
     <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body class="loading">
     <span id="config-title" style="display:none">Hexo</span>
@@ -118,9 +118,9 @@
 
         </div>
         <div class="content markdown">
-            <h1 id="文本复制"><a href="#文本复制" class="headerlink" title="文本复制"></a>文本复制</h1><h2 id="一-屏蔽复制原理"><a href="#一-屏蔽复制原理" class="headerlink" title="一.屏蔽复制原理"></a>一.屏蔽复制原理</h2><h3 id="1-1-CSS-user-select"><a href="#1-1-CSS-user-select" class="headerlink" title="1.1 CSS user-select"></a>1.1 <code>CSS</code> user-select</h3><pre class="line-numbers code-pre" data-title="user-select可屏蔽复制哦！" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-css">.user-select-none &#123;
+            <h1 id="文本复制"><a href="#文本复制" class="headerlink" title="文本复制"></a>文本复制</h1><h2 id="一-屏蔽复制原理"><a href="#一-屏蔽复制原理" class="headerlink" title="一.屏蔽复制原理"></a>一.屏蔽复制原理</h2><h3 id="1-1-CSS-user-select"><a href="#1-1-CSS-user-select" class="headerlink" title="1.1 CSS user-select"></a>1.1 <code>CSS</code> user-select</h3><pre class="line-numbers code-pre" data-title="user-select可屏蔽复制哦！" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-css">.user-select-none {
   user-select: none; /* 别看了，就是我屏蔽了你的复制功能。将none改为text即可恢复复制 */
-&#125;
+}
 </code></pre>
 <h2 id="二、断点调试"><a href="#二、断点调试" class="headerlink" title="二、断点调试"></a>二、断点调试</h2><h3 id="2-1-整理资源"><a href="#2-1-整理资源" class="headerlink" title="2.1 整理资源"></a>2.1 整理资源</h3>   <p>在开始前，我们需要先整理一下这个复制功能会涉及到哪些因素。</p>
     <p>既然是复制，那就离不开快捷键<code>Ctrl+C</code>。既然有<code>Ctrl</code>键，那就可能会有<code>ctrlKey</code>事件，还有可能会有键盘码<code>keyCode</code>。除此之外，复制的话需要先选中内容，那就需要<code>document.selection</code>和<code>window.getSelection()</code>事件。还有那个一复制就出现的登录框。</p>
@@ -130,20 +130,20 @@
 <h3 id="2-2为什么一复制就出现登录框？"><a href="#2-2为什么一复制就出现登录框？" class="headerlink" title="2.2为什么一复制就出现登录框？"></a>2.2为什么一复制就出现登录框？</h3>   <p>我原以为他是把<code>document.selection</code>事件改写了，所以上来我就把目标定位到了关键字<code>document.selection</code>上。</p>
     <p>一堆断点下来，发现这个没什么用处。看来我的常识经验在这次判断中误导了我。</p>
     <p>后面又挨个把上面提到的资源都测试了下，结果发现<strong>原来复制跟登录框有关</strong>！相关代码见下方↓↓↓</p>
-    <pre class="line-numbers code-pre" data-title="n函数" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">var n = function() &#123;
-  window.csdn.loginBox.show(&#123;
+    <pre class="line-numbers code-pre" data-title="n函数" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">var n = function() {
+  window.csdn.loginBox.show({
     spm: "1001.2101.3001.9440"
-  &#125;)
-&#125;;
-$("#content_views").unbind("keydown").bind("keydown", function(e) &#123;
+  })
+};
+$("#content_views").unbind("keydown").bind("keydown", function(e) {
   if (e.ctrlKey &amp;&amp; 67 == e.keyCode)
     return n(),
     !1
-&#125;),
-$("#content_views").unbind("copy").bind("copy", function(e) &#123;
+}),
+$("#content_views").unbind("copy").bind("copy", function(e) {
   return n(),
   !1
-&#125;)
+})
 </code></pre>
 
 <p>执行copy事件时会触发登录框.png ↓↓↓<img data-original="https://img.alicdn.com/imgextra/i4/759415648/O1CN01JhttG11rappRGkEBf_!!759415648.png" data-src="/img/2023-06-13/执行copy事件时会触发登录框.png" class="img-bg lazy" alt="执行copy事件时会触发登录框" title="执行copy事件时会触发登录框" /></p>
@@ -152,11 +152,11 @@ $("#content_views").unbind("copy").bind("copy", function(e) &#123;
 !1
 </code></pre>
     <p>这行代码乍看起来可能有些不太习惯，我们用<code>if</code>进行改写下吧。</p>
-    <pre class="line-numbers code-pre" data-title="用if来改写↓↓↓" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">if (n()) &#123;
+    <pre class="line-numbers code-pre" data-title="用if来改写↓↓↓" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">if (n()) {
   return true
-&#125; else &#123;
+} else {
   return false
-&#125;
+}
 </code></pre>
     <p>由于函数<code>n()</code>调用了登录弹窗显示方法且没有直接的返回值，所以默认返回<code>undefined</code>。由于<code>undefined</code>条件不成立，所以会直接进入<code>else</code>条件中。也就相当于在执行<code>copy</code>复制事件时，直接返回了<code>return false</code>。这就是为什么在复制后粘贴时无任何内容的根本原因！</p>
 

@@ -58,7 +58,7 @@ WannaCry 通过使用名为“EternalBlue”的漏洞利用进行传播。Eterna
 
     <!-- live2d -->
     <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body class="loading">
     <span id="config-title" style="display:none">Hexo</span>
@@ -150,7 +150,7 @@ WannaCry 通过使用名为“EternalBlue”的漏洞利用进行传播。Eterna
 <p><strong>linux：</strong></p>
 <p>打开linux虚拟机，在VMware菜单栏里点击虚拟机选项，找到安装VMware tools选项。</p>
 <p>对linux系统的tool安装需要控制台执行，下面附上代码：</p>
-<figure class="highlight bash"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 解压下载的安装包</span><br><span class="line">tar -zxvf [文件名]</span><br><span class="line">//进入解压完成的文件夹</span><br><span class="line"><span class="built_in">cd</span> [wen<span class="string">&#x27;jian&#x27;</span>ji]</span><br><span class="line">//查看文件夹下的文件</span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line">//执行文件夹下的可执行文件。</span><br><span class="line">sudo ./vmware-install.pl</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 解压下载的安装包</span><br><span class="line">tar -zxvf [文件名]</span><br><span class="line">//进入解压完成的文件夹</span><br><span class="line"><span class="built_in">cd</span> [wen<span class="string">&#x27;jian&#x27;</span>ji]</span><br><span class="line">//查看文件夹下的文件</span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line">//执行文件夹下的可执行文件。</span><br><span class="line"><span class="built_in">sudo</span> ./vmware-install.pl</span><br></pre></td></tr></table></figure>
 
 <p>完成以上步骤后重启系统。</p>
 <h5 id="方法二：（以下内容只是对该博客的简略，并非原创）"><a href="#方法二：（以下内容只是对该博客的简略，并非原创）" class="headerlink" title="方法二：（以下内容只是对该博客的简略，并非原创）"></a>方法二：（以下内容只是对该博客的简略，并非原创）</h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41486333/article/details/115259771?ops_request_misc=%7B%22request_id%22:%22169733009516800222810780%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=169733009516800222810780&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-1-115259771-null-null.142%5Ev96%5Epc_search_result_base1&utm_term=vmware%E6%80%8E%E4%B9%88%E5%B0%86%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%88%B0%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%99%A4%E4%BA%86vmwaretool&spm=1018.2226.3001.4187">将本机文件复制到安装的虚拟机系统中的两种方法_vmware怎么将本地文件下载到虚拟机除了vmwaretool_灼_灼的博客-CSDN博客</a></p>
@@ -179,10 +179,10 @@ WannaCry 通过使用名为“EternalBlue”的漏洞利用进行传播。Eterna
 <p><img src="/img/Network-attack/virus-analysis-3.jpg" alt="如何安全地做电脑病毒实验？"></p>
 <p><strong>拍摄快照</strong>。为了防止病毒发作导致虚拟机系统崩溃后恢复麻烦，建议在运行病毒程序前拍摄快照，如图所示。该步骤需要几分钟时间，注意观察虚拟机软件的左下角。</p>
 <p><img src="/img/Network-attack/virus-analysis-1.jpg" alt="如何安全地做电脑病毒实验？"></p>
-<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><p><strong>针对病毒特性，设好模型。</strong>比如：如果要运行勒索病毒，则需在虚拟机桌面上象征新地放置几个文本文件，观察中毒前后文件内容变化。</p>
+<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><p>**针对病毒特性，设好模型。**比如：如果要运行勒索病毒，则需在虚拟机桌面上象征新地放置几个文本文件，观察中毒前后文件内容变化。</p>
 <p><img src="/img/Network-attack/virus-analysis-5.jpg"></p>
 <p><strong>在确认做好隔离措施后（特别是检查是否已经断网），在虚拟机上把病毒样本压缩包解压缩并小心运行病毒程序。</strong></p>
-<p><strong>观察实验效果。</strong>如：我们刚刚放置的文件已经被加密而乱码；桌面变了；弹出勒索对话框。如图。</p>
+<p>**观察实验效果。**如：我们刚刚放置的文件已经被加密而乱码；桌面变了；弹出勒索对话框。如图。</p>
 <p><img src="/img/Network-attack/virus-analysis-6.jpg"></p>
 <p><img src="/img/Network-attack/virus-analysis-7.jpg"></p>
 <blockquote>
@@ -195,7 +195,7 @@ WannaCry 通过使用名为“EternalBlue”的漏洞利用进行传播。Eterna
 <p>多核系统使用wannakey_omp.exe</p>
 <p>运行后会跳出cmd窗口（窗口可能会一闪而过，注意观察），如果显示秘钥已经成功生成(key has been generated)，那么秘钥已经获取成功，此时前往恶意软件窗口，单击解密(decrypt)按钮，在后续的窗口里选择自己要解密的对象点击start，即可进行解密。</p>
 <p>此时下方的目录表中会显示所有被解密了的文件的路径，可以根据路径进行核实和查看。</p>
-<p><strong>恢复。</strong>实验完后，恢复中毒前的状态。依次单击VMware Workstation Pro软件上方的虚拟机菜单-快照-恢复到快照，在弹出的对话框中选择”是“，如图所示。大约半分钟后就虚拟机就恢复到了中毒前的状态。</p>
+<p>**恢复。**实验完后，恢复中毒前的状态。依次单击VMware Workstation Pro软件上方的虚拟机菜单-快照-恢复到快照，在弹出的对话框中选择”是“，如图所示。大约半分钟后就虚拟机就恢复到了中毒前的状态。</p>
 <h3 id="病毒逆向"><a href="#病毒逆向" class="headerlink" title="病毒逆向"></a>病毒逆向</h3><p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1573058-1-1.html">病毒分析之WannaCry勒索病毒 - 『病毒分析区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn</a></p>
 <p>[<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1910271">系统安全] 三十.WannaCry勒索病毒分析 (4)全网“最”详细的蠕虫传播机制解读-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
 <p>[<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1910268">系统安全] 二十七.WannaCry勒索病毒分析 (3)蠕虫传播机制分析及IDA和OD逆向-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>

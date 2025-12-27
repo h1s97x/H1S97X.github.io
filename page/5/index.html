@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Hexo"/>
+    
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Hexo"/>
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="//" title="首页" target="_blank" rel="noopener">首页</a>
+        </li>
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
+        </li>
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="标签" target="_blank" rel="noopener">标签</a>
+        </li>
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
+        </li>
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/about/" title="关于" target="_blank" rel="noopener">关于</a>
+        </li>
+        
+    </ul>
+	<span class="target"></span>
+	<center>
+	<div class="hitokoto">
+		<span class="typed" id="hitokoto" data-st="true"></span>
+	</div>
+	</center>
+	
+	<p class="footerlinks">
+		<a href="#" class="iconfont icon-null"></a>
+		
+            <a href="/" title="facebook" class="iconfont icon-facebook" target="_blank" rel="noopener"> </a>
+        
+            <a href="/" title="twitter" class="iconfont icon-twitter" target="_blank" rel="noopener"> </a>
+        
+            <a href="/" title="github" class="iconfont icon-github" target="_blank" rel="noopener"> </a>
+        
+            <a href="/img/logo.png" title="wechat" class="iconfont icon-wechat" target="_blank" rel="noopener"> </a>
+        
+            <a href="mailto:xxxx@gmail.com" title="email" class="iconfont icon-email" target="_blank" rel="noopener"> </a>
+        
+		<a href="#" class="iconfont icon-null"></a>
+	</p>
+	
+    <p id="copyright">
+        &copy; 2023 John Doe.
+        <span> | </span>Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        <span> | </span>Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a> by Fechin
+		
+		<span> | </span><a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">冀ICP备xxxxxxx号</a>
+		
+    </p>
+</div>
+
+<div id="container">
+    
+<div id="screen">
+    <div id="mark">
+        <div class="layer" data-depth="0.4">
+            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
+        </div>
+    </div>
+    <div id="vibrant">
+        <svg viewbox="0 0 2880 1620" height="100%" preserveaspectratio="xMaxYMax slice">
+            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
+        </svg>
+        <div></div>
+    </div>
+    <div id="header">
+        <div>
+            <a class="image-logo" href="/"></a>
+			
+			<div class="iconfont icon-search switchsearch" href="/search/" title="搜索"></div>
+			
+            <div class="iconfont icon-menu switchmenu"></div>
+        </div>
+    </div>
+    
+    <div id="post0">
+        <p>九月 16, 2023</p>
+        <h2><a href="/2023/09/16/2023%E7%A7%8B%E5%AD%A3%E5%AD%A6%E6%9C%9F%E8%AF%BE%E7%A8%8B%E4%B8%8E%E5%AE%9E%E9%AA%8C%E5%AE%89%E6%8E%92/" title="2023秋季学期课程与实验安排" class="posttitle">2023秋季学期课程与实验安排</a></h2>
+        <p class="summary">学期理论课表
+
+
+课程名称
+课程代码
+上课时间
+上课地点
+上课教师
+
+
+
+Web技术
+sd03030090
+第1-...</p>
+    </div>
+    
+</div>
+
+    <div id="primary">
+        
+<div class="post">
+    <a href="/2023/09/16/2023%E7%A7%8B%E5%AD%A3%E5%AD%A6%E6%9C%9F%E8%AF%BE%E7%A8%8B%E4%B8%8E%E5%AE%9E%E9%AA%8C%E5%AE%89%E6%8E%92/" title="2023秋季学期课程与实验安排">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 16, 2023</p>
+        <h3><a href="/2023/09/16/2023%E7%A7%8B%E5%AD%A3%E5%AD%A6%E6%9C%9F%E8%AF%BE%E7%A8%8B%E4%B8%8E%E5%AE%9E%E9%AA%8C%E5%AE%89%E6%8E%92/" title="2023秋季学期课程与实验安排" class="posttitle">2023秋季学期课程与实验安排</a></h3>
+        <p>学期理论课表
+
+
+课程名称
+课程代码
+上课时间
+上课地点
+上课教师
+
+
+
+Web技术
+sd03030090
+第1-8周 周一 1-2节 周三 7-8节
+软...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/16/%E7%BD%91%E7%AE%A1%E4%BC%9A-%E7%BB%B4%E4%BF%AE/" title="网管会-维修">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 16, 2023</p>
+        <h3><a href="/2023/09/16/%E7%BD%91%E7%AE%A1%E4%BC%9A-%E7%BB%B4%E4%BF%AE/" title="网管会-维修" class="posttitle">网管会-维修</a></h3>
+        <p>网管会官网SDU Student Network Association网管会线上报修单
+
+校园网使用流程还在为一入校不知道如何上网而苦恼么，本章将从开户...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" title="计算机网络相关知识">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 15, 2023</p>
+        <h3><a href="/2023/09/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" title="计算机网络相关知识" class="posttitle">计算机网络相关知识</a></h3>
+        <p>最近的困惑这几天整理了一下电脑和手机里的资料，发现有很多重复的文件，想要把它们整理到一起，但是发现电脑和手机之间的传输速度很慢，而且手机和电脑之间的传输速...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/15/DIY%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86/" title="DIY设计知识">
+        <img src="/img/img1.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 15, 2023</p>
+        <h3><a href="/2023/09/15/DIY%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86/" title="DIY设计知识" class="posttitle">DIY设计知识</a></h3>
+        <p>钢网所谓smt钢网：钢网（stencils），也就是SMT模板（SMT Stencil），是一种SMT专用模具。就是SMT贴片焊接前，给PCB印刷锡膏或者...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/15/steam%E4%B8%AD%E7%97%85%E6%AF%92%EF%BC%8C%E8%B4%A6%E5%8F%B7%E7%89%A9%E5%93%81%E8%A2%AB%E8%B4%B1%E5%8D%96%E4%B8%80%E7%A9%BA/" title="steam中病毒，账号物品被贱卖一空">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 15, 2023</p>
+        <h3><a href="/2023/09/15/steam%E4%B8%AD%E7%97%85%E6%AF%92%EF%BC%8C%E8%B4%A6%E5%8F%B7%E7%89%A9%E5%93%81%E8%A2%AB%E8%B4%B1%E5%8D%96%E4%B8%80%E7%A9%BA/" title="steam中病毒，账号物品被贱卖一空" class="posttitle">steam中病毒，账号物品被贱卖一空</a></h3>
+        <p>概要写这一篇文章的原因主要是为了记录下目前的心情，以及对于此次事件的一些思考，以及对于未来的一些防范措施。
+事件经过14日早上八点醒来，打开手机60+消息...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/14/%E6%B8%B8%E6%88%8F%E7%9F%A5%E8%AF%86%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="游戏知识与相关内容">
+        <img src="/img/img1.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 14, 2023</p>
+        <h3><a href="/2023/09/14/%E6%B8%B8%E6%88%8F%E7%9F%A5%E8%AF%86%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" title="游戏知识与相关内容" class="posttitle">游戏知识与相关内容</a></h3>
+        <p>游戏下载时会有两个进度条，一个是下载进度，一个是安装进度，为什么要分开呢？</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/14/%E4%B8%80%E4%BA%9B%E6%B8%B8%E6%88%8F%E6%8A%80%E6%9C%AF/" title="一些游戏技术">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 14, 2023</p>
+        <h3><a href="/2023/09/14/%E4%B8%80%E4%BA%9B%E6%B8%B8%E6%88%8F%E6%8A%80%E6%9C%AF/" title="一些游戏技术" class="posttitle">一些游戏技术</a></h3>
+        <p>九宫格拼图中心思想：将33看作是4个22的拼图块具体步骤：1.给每个图块编号，如下图所示2.将一号拼图块移动到左上角，位置（1，1）3.将三号拼图块移动到...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/14/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="网络攻防">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 14, 2023</p>
+        <h3><a href="/2023/09/14/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="网络攻防" class="posttitle">网络攻防</a></h3>
+        <p>Security services （安全服务）Authentication （认证）什么是单点登录（SSO） - 知乎 (zhihu.com)
+Kerb...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/14/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/" title="网络攻防">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 14, 2023</p>
+        <h3><a href="/2023/09/14/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/" title="网络攻防" class="posttitle">网络攻防</a></h3>
+        <p>
+网络攻防相关生动的解释各种概念(持续更新)|meiのblog (mmeiblog.cn)
+密钥交换（密钥协商）算法及其原理 - Yungyu - 博客园...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/09/13/terms-%E6%96%B0%E5%90%8D%E8%AF%8D/" title="terms-新名词">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>九月 13, 2023</p>
+        <h3><a href="/2023/09/13/terms-%E6%96%B0%E5%90%8D%E8%AF%8D/" title="terms-新名词" class="posttitle">terms-新名词</a></h3>
+        <p>联邦学习联邦机器学习(Federated machine learning&#x2F;Federated Learning)，又名联邦学习，联合学习，联盟...</p>
+    </div>
+</div>
+
+
+    </div>
+    
+    <div id="pager"><a href="/page/6/" class="more">加载更多</a></div>
+    
+</div>
+<div id="preview"></div>
+
+
+
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,206 @@
+/* 主题改进样式 */
+
+/* 1. 现代化卡片设计 */
+.post {
+    margin: 60px auto 0;
+    width: 1200px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.post:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.post > a {
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+}
+
+.else {
+    border: none;
+    border-radius: 0 12px 12px 0;
+    box-shadow: none;
+    background: #fff;
+}
+
+/* 2. 改进的导航栏 */
+.nav {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.menu a {
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.menu a:hover {
+    background: rgba(158, 25, 0, 0.1);
+    color: #9e1900;
+    transform: translateY(-2px);
+}
+
+/* 3. 现代化按钮样式 */
+#pager a {
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+#pager a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* 4. 改进的代码块样式 */
+.highlight {
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.highlight pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    font-family: 'Source Code Pro', 'Consolas', monospace;
+    line-height: 1.6;
+}
+
+/* 5. 响应式改进 */
+@media screen and (max-width: 1200px) {
+    .post {
+        width: 95%;
+        margin: 40px auto 0;
+    }
+    
+    .post > a {
+        width: 100%;
+        height: 300px;
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .else {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-radius: 0 0 12px 12px;
+        top: 0;
+        left: 0 !important;
+        right: 0 !important;
+        padding: 30px;
+    }
+    
+    .post:nth-child(odd) .else,
+    .post:nth-child(even) .else {
+        left: 0;
+        right: 0;
+    }
+}
+
+/* 6. 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .post {
+        background: #2d2d2d;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    .else {
+        background: #2d2d2d;
+        color: #e0e0e0;
+    }
+    
+    .nav {
+        background: rgba(45, 45, 45, 0.95);
+    }
+    
+    .menu a {
+        color: #e0e0e0;
+    }
+    
+    .menu a:hover {
+        background: rgba(158, 25, 0, 0.2);
+    }
+}
+
+/* 7. 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* 8. 改进的标签样式 */
+.post-tags-list-item {
+    display: inline-block;
+    margin: 5px 8px 5px 0;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.post-tags-list-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* 9. 改进的时间显示 */
+.post-meta {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.post-meta .icon {
+    margin-right: 5px;
+    color: #667eea;
+}
+
+/* 10. 滚动条美化 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}

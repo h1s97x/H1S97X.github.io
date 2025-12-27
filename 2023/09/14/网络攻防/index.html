@@ -1,0 +1,348 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>网络攻防 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+网络攻防相关生动的解释各种概念(持续更新)|meiのblog (mmeiblog.cn)
+密钥交换（密钥协商）算法及其原理 - Yungyu - 博客园 (cnblogs.com)
+会话技术——C,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">`n<link rel="stylesheet" href="/css/theme-improvements.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="网络攻防 - Hexo"/>
+    <meta name="twitter:description" content="
+网络攻防相关生动的解释各种概念(持续更新)|meiのblog (mmeiblog.cn)
+密钥交换（密钥协商）算法及其原理 - Yungyu - 博客园 (cnblogs.com)
+会话技术——C,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="网络攻防 - Hexo"/>
+    <meta property="og:description" content="
+网络攻防相关生动的解释各种概念(持续更新)|meiのblog (mmeiblog.cn)
+密钥交换（密钥协商）算法及其原理 - Yungyu - 博客园 (cnblogs.com)
+会话技术——C,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">网络攻防</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <!-- 帖子视图 -->
+
+    <div class="post_cover" >
+        
+            <img src="/img/img1.jpg,/img/welcome-cover.jpg" />
+        
+        <div class="post_cover_mask"></div>
+        <div class="post_text">
+            <h1>网络攻防</h1>
+            <div>
+                <span>九月 14, 2023</span>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="article">
+    <div class='main'>
+        <!-- 帖子视图 -->
+        
+
+        <!-- 更新时间 -->
+        <div class="updated">
+            <div></div>
+            <span>该文章更新于 2023.09.14</span>
+        </div>
+
+        <h1 class="title">网络攻防</h1>
+        <div class="stuff">
+            <span>九月 14, 2023</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p><img src="/img/Network-attack/network-attack.png"></p>
+<h3 id="网络攻防相关"><a href="#网络攻防相关" class="headerlink" title="网络攻防相关"></a>网络攻防相关</h3><p><a target="_blank" rel="noopener" href="https://mmeiblog.cn/archives/sheng-dong-de-jie-shi-ge-zhong-gai-nian-chi-xu-geng-xin">生动的解释各种概念(持续更新)|meiのblog (mmeiblog.cn)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yungyu16/p/13332882.html">密钥交换（密钥协商）算法及其原理 - Yungyu - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80832251">会话技术——Cookies和Session详解 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2036081">红蓝对抗|常用攻防工具大全-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p><a href="CTF-网络安全夺旗赛">CTF</a></p>
+<p>翻墙：export http_proxy&#x3D;<a target="_blank" rel="noopener" href="http://211.87.227.219:16116/">http://211.87.227.219:16116</a></p>
+<h3 id="作业提交"><a href="#作业提交" class="headerlink" title="作业提交"></a>作业提交</h3><p>•cd p</p>
+<p>•git add .</p>
+<p>•git commit -am “li-si zuoye3 commit”</p>
+<p>•git push</p>
+<p>git地址：ssh:&#x2F;&#x2F;<a href="mailto:&#110;&#101;&#116;&#x61;&#116;&#x74;&#64;&#x32;&#x31;&#49;&#46;&#x38;&#55;&#46;&#50;&#x32;&#55;&#x2e;&#x32;&#50;&#57;">&#110;&#101;&#116;&#x61;&#116;&#x74;&#64;&#x32;&#x31;&#49;&#46;&#x38;&#55;&#46;&#50;&#x32;&#55;&#x2e;&#x32;&#50;&#57;</a>:22023&#x2F;~netatt&#x2F;p</p>
+<p><strong>git push 推送无法输入密码</strong></p>
+<p>并非bug，其实系统已经接受密码了，主要错觉是由于人们经常使用的系统的密码在输入时都是回显“ **** ”或者“ ····· ”，而linux登陆的时候，输入密码没有任何回显，这么做的目的是防范有人在旁边能猜测到输入密码的长度，最大限度保证系统安全。</p>
+<p>password：4102</p>
+<h3 id="平时作业"><a href="#平时作业" class="headerlink" title="平时作业"></a>平时作业</h3><p>1.<a href="#游戏外挂解密--植物大战僵尸修改器">初试ollydbg分析外挂(辅助工具)</a></p>
+<p>  . 需要一个vmware虚拟机中的xp（<a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/%EF%BC%89">https://msdn.itellyou.cn/）</a><br>  . 植物大战僵尸游戏以及辅助工具<br>  . 用od调试辅助工具，设断点WriteProcessMemory<br>  . 观察堆栈中比如“阳光值”变量地址，并尝试手动修改</p>
+<p>2.<a href="#tor浏览器配置与使用">Tor浏览器使用报告</a><br>3.windows23H2更新，装虚拟机<br>4.百度磁盘破解12k限制<br>5.kali linux安装<br>  一个能运行nmap的真linux环境，<br>    至少练习nmap的三个参数<br>    . IP地址<br>    . 给定端口范围，用-p选项<br>    . 测试端口服务类型和后台软件，用-sV选项</p>
+<p>延申关键词: cve、exploit-db、msfconsole<br>6.假冒网站、wifi<br>7.新漏洞 (旧：MS08-067)<br>8.<a href="#逃避密码验证-内存覆盖">逃避密码验证-内存覆盖</a><br>  安装visual studio c开发环境<br>  . 底层代码很多是c的，比如bof几乎全是c的<br>  os，以及jvm都是用c写的吧，<br>  . 然后分析bof&#x2F;passwd那个程序的原理和机制</p>
+<p>9.<a href="#文件检索工具使用">文件检索工具使用</a><br>10.<a href="网络病毒测试.md">勒索病毒wanncry和wannkey实验</a></p>
+<p>  . 在虚拟机(XP)中安装wanncry<br>  . 等一会，注意别重启计算机<br>  . 然后用wannkey找回内存中的key并解密恢复文件</p>
+<ul>
+<li>这个实验有什么意义呢？<br>  就是单纯中一次毒然后解毒，希望以后就不中了。</li>
+</ul>
+<p>11.网络钓鱼</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2185416">浅谈网络钓鱼技术-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p>12.破解注册机</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/AdamChin/article/details/6213265">学会软件破解，让注册机制形同虚设_怎么绕过注册码进入软件-CSDN博客</a></p>
+<p>13.x-windows linux的图形化界面</p>
+<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/geek/241398.html">手把手教你DIY一个硬件键盘记录器</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42282189/article/details/121556685">工具开发｜键盘记录工具原理及代码实现</a></p>
+<h3 id="安装虚拟机"><a href="#安装虚拟机" class="headerlink" title="安装虚拟机"></a>安装虚拟机</h3><h4 id="WinXP"><a href="#WinXP" class="headerlink" title="WinXP"></a>WinXP</h4><p>系统：Windows XP<br>安装教程：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/IronmanJay/article/details/129965817">VMware虚拟机之WindowsXP系统超详细下载安装与使用教程</a><br><a target="_blank" rel="noopener" href="https://next.itellyou.cn/Original/">itellyou官网 - 系统镜像下载</a></p>
+<p>这个教程非常详细，而且每一步都有图片，即使小白也能轻松使用。、</p>
+<h4 id="GNU-x2F-Linux"><a href="#GNU-x2F-Linux" class="headerlink" title="GNU&#x2F;Linux"></a>GNU&#x2F;Linux</h4><p><a target="_blank" rel="noopener" href="https://www.gnu.org/gnu/manifesto.zh-cn.html">GNU宣言</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.kali.org/">Kali Linux |渗透测试和道德黑客Linux发行版</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.kali.org/docs/virtualization/import-premade-vmware/">kali 虚拟机安装</a></p>
+<h4 id="关于VHD和VHDX"><a href="#关于VHD和VHDX" class="headerlink" title="关于VHD和VHDX"></a>关于VHD和VHDX</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/489743140">Windows挂载虚拟磁盘VHD&#x2F;VHDX文件的4大方法</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/szdenny/article/details/129553534?spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-3-129553534-blog-114486547.235%5Ev38%5Epc_relevant_sort_base2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-3-129553534-blog-114486547.235%5Ev38%5Epc_relevant_sort_base2&utm_relevant_index=6">VMware导入vmdk文件（亲测有效）_vmdk导入vmware-CSDN博客</a></p>
+<p>VHD是Virtual Hard Disk的简称，是一种代表虚拟磁盘的文件格式。如果您使用Windows内置工具-备份和还原创建系统映像备份，您现在将Windows备份到VHD，在目标中将获得一个Window镜像备份文件夹，路径就像：\WindowsImageBackup\computer name\Backup YYYY-MM-DD HHMMSS。可以有多个.VHD文件和多个.xml文件。有多少VHD文件意味着您有多少个磁盘或分区。<br>VHDX（虚拟硬盘V2）是VHD的另一种格式。现在的磁盘映像大多都使用VHDX格式而不是VHD，因为VHD和VHDX之间容量限制：VHD上限为2TB，而VHDX的上限为64TB。并且您可以像安装VHD一样安装VHDX。<br>有时，您需要挂载VHD或VHDX文件才能从备份中访问文件，您应该怎么做？本文为您提供了Windows挂载虚拟磁盘的4种方法。</p>
+<h3 id="逃避密码验证-内存覆盖"><a href="#逃避密码验证-内存覆盖" class="headerlink" title="逃避密码验证-内存覆盖"></a>逃避密码验证-内存覆盖</h3><p><a target="_blank" rel="noopener" href="https://leeyuxun.github.io/%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E5%AE%9E%E9%AA%8C.html">缓冲区溢出实验 | Leeyuxun の note</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903601316298760">利用缓冲区溢出漏洞破解简易登录程序 - 掘金 (juejin.cn)</a></p>
+<p>利用内存覆盖<br>使用栈存储变量，小字节序，低地址存储低字节，高地址存储高字节<br>进行输入时，将输入的密码存储在栈中，溢出输入覆盖，然后进行比较，如果相等则登录成功，如果不相等则登录失败</p>
+<figure class="highlight plaintext"><input class="btn-copy" type="image" src="/img/icon/copy.svg" alt="复制" /><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">char password[8] = &quot;123&quot;;</span><br><span class="line">char yourpassword[8]= &quot;&quot;;</span><br><span class="line"></span><br><span class="line">while(1)&#123;</span><br><span class="line">printf(&quot;please input your password:\n&quot;);</span><br><span class="line">scanf(&quot;%s&quot;,yourpassword);</span><br><span class="line">if(strcmp(password,yourpassword) == 0)</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;login success!\n&quot;);</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;login failed!\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理：<br>由于程序没有对输入密码的长度进行限制，并且密码存储在固定长度的字符数组中，这会导致存在内存溢出的风险。攻击者可以输入超过 yourpassword 变量长度的字符，导致溢出并改写其他内存区域的数据。</p>
+<p>假设攻击者输入一个超长的字符串，其长度超过了 yourpassword 数组的长度。在这种情况下，输入的字符串会覆盖掉 yourpassword 之后的内存区域，可能包括了 password 数组。</p>
+<p>通过这种内存覆盖，攻击者可以将输入的字符串替换为预设的密码，从而绕过登录验证。即使用户输入的密码与预设的密码不匹配，由于内存被覆盖，strcmp() 函数会判断两个字符串相同，进而触发登录成功的分支。</p>
+<h3 id="游戏外挂解密–植物大战僵尸修改器"><a href="#游戏外挂解密–植物大战僵尸修改器" class="headerlink" title="游戏外挂解密–植物大战僵尸修改器"></a>游戏外挂解密–植物大战僵尸修改器</h3><h3 id="Tor浏览器配置与使用"><a href="#Tor浏览器配置与使用" class="headerlink" title="Tor浏览器配置与使用"></a>Tor浏览器配置与使用</h3><p><a target="_blank" rel="noopener" href="https://zh.safetydetectives.com/blog/%e5%a6%82%e4%bd%95%e5%ae%89%e5%85%a8%e4%bd%bf%e7%94%a8tor%e6%b5%8f%e8%a7%88%e5%99%a8/">如何安全使用tor浏览器</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yasheng396/article/details/86307983">Tor使用手册</a><br><a target="_blank" rel="noopener" href="https://uzzz.org/article/4661/">暗网网址导航大全</a></p>
+<p><img src="/img%5CNetwork-attack%5Ctor%E4%BD%BF%E7%94%A8abc.png" alt="tor使用abc"></p>
+<h3 id="文件检索工具使用"><a href="#文件检索工具使用" class="headerlink" title="文件检索工具使用"></a>文件检索工具使用</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/250657267">超越 Everything 的 4 款神器！ - 知乎 (zhihu.com)</a></p>
+<ul>
+<li>Everything</li>
+<li>DocFetcher</li>
+<li>Listary</li>
+<li>Wox</li>
+<li>BBdoc</li>
+<li>FileLocator Pro</li>
+<li>Anytxt Search</li>
+<li>searchmyfiles</li>
+</ul>
+<h4 id="everything"><a href="#everything" class="headerlink" title="everything"></a>everything</h4><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/zm/art/409783518?source_id=1005#Everything%E6%98%AF%E4%B8%80%E6%AC%BE%E5%9F%BA%E4%BA%8E%E5%90%8D%E7%A7%B0%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7">高效搜索神器Everything最全使用技巧(一篇看全)及详细功能帮助教程(更新第10次) (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/409431144">文件搜索神器 | Everything - 知乎 (zhihu.com)</a></p>
+<p>[windows本地文件搜索神器 Everything 为什么速度这么快？ - zqifa - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zqifa/p/12769116.html#:~:text=windows%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E7%A5%9E%E5%99%A8">https://www.cnblogs.com/zqifa/p/12769116.html#:~:text=windows本地文件搜索神器</a> Everything 为什么速度这么快？ 1 1.Everything只是读取磁盘上的USN日志 Everything并没有全部逐一扫描我们硬盘上的文件，而是通过读取NTFS文件系统中的USN日志来完成的，只能检索文件名。 Everything并不扫描整个磁盘，只是读取磁盘上的USN日志，所以速度飞快 但因此缺点也明显：,3、由于Everything只读取USN日志，所以也无法搜索网络邻居及映射的网络文件夹。 USN日志 … 2 2.HTTP 和 FTP 文件共享功能)</p>
+<p>Everything是一款免费的文件搜索工具，它有着轻量的软件体积，能够快速的定位到你想要的文件，而且它的搜索速度非常的快，几乎是瞬间就能够找到你想要的文件，而且它的搜索范围也非常的广，几乎能够搜索到你电脑中的所有文件，而且它还支持正则表达式搜索，能够帮助你快速的找到你想要的文件，非常的方便。<br><strong>优点</strong>：</p>
+<ul>
+<li>轻量级，体积小（portable版只有1.5M）</li>
+<li>支持中文</li>
+<li>快速启动，占用资源少</li>
+<li>搜索速度快，几乎是瞬间</li>
+<li>支持正则表达式搜索</li>
+<li>自动更新索引，全盘搜索</li>
+<li>免费软件，无广告</li>
+<li>界面简洁</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>仅支持文件名搜索，不支持文件内容搜索（最大的弊病）</li>
+<li>文件预览支持的文件类型有限，图片、文本可预览</li>
+</ul>
+<h5 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h5><p><strong>启动方式</strong><br>启动Everything的方式有三种，软件快捷方式、右键菜单与快捷键。</p>
+<ol>
+<li><p>快捷方式也就是软件的图标了，双击软件图标即可启动Everything。</p>
+</li>
+<li><p>Everything可以集成到资源管理器的右键菜单中：</p>
+<ol>
+<li><p>点击 工具-&gt;选项 打开Everything的设置并转到右键菜单页：</p>
+<p><img src="/img%5CNetwork-attack%5Ceverything-settings.png"></p>
+</li>
+<li><p>勾选上“在资源管理器中显示”选项，然后点击“应用”按钮即可。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>在文件夹背景或文件夹图标上右键启动Everything，<strong>会将搜索范围限定在该文件夹内</strong>。</p>
+<ol start="3">
+<li>Everything默认没有设置启动快捷键，需要我们自己设置。点击 工具-&gt;选项-&gt;快捷键页可以自行设置。<br><strong>搜索功能</strong><br>当你使用Everything搜索到想要的文件后，你可以直接双击用默认关联程序打开该文件，右键点击进行更多操作，或者，将它拖动到其他软件的窗口或快捷方式上打开。</li>
+</ol>
+<p>你也可以在视图菜单中打开Everything的预览窗口，直接在Everything中预览文件。everything视图支持的文件类型有限，如果需要预览其他文件类型，可以使用插件。<br><img src="/img%5CNetwork-attack%5Ceverything-preview.png"></p>
+<p><strong>搜索语法</strong><br>Everything支持使用通配符、布尔运算符、正则表达式等搜索语法，可以帮助你快速的找到你想要的文件。<br>点击 帮助-&gt;搜索语法 可以查看Everything支持的搜索语法。<br><img src="/img%5CNetwork-attack%5Ceverything-grammar.png"></p>
+<h5 id="DocFetcher"><a href="#DocFetcher" class="headerlink" title="DocFetcher"></a>DocFetcher</h5><p><a target="_blank" rel="noopener" href="https://docfetcher.sourceforge.io/zh/index.html">DocFetcher-文件快速搜索 (sourceforge.io)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/563210012">Docfetcher 与 Anytxt searcher 内容搜索比较与补救方法 - 知乎 (zhihu.com)</a></p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>免费开源</li>
+<li>支持中文</li>
+<li>支持文件名和文件内容搜索</li>
+<li>支持正则表达式搜索</li>
+<li>支持多种文件格式，包括PDF、Office、HTML、文本、压缩包等</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>体积较大，安装包有70M</li>
+<li>搜索速度慢，需要先建立索引，建立索引非常耗费电脑资源，而且时间也很长</li>
+<li>有付费版pro，功能更全但收费，目前原版作者已不再更新</li>
+</ul>
+<p><img src="/img%5CNetwork-attack%5CDocFetcher-1.png"><br><img src="/img%5CNetwork-attack%5CDocFetcher-2.png"></p>
+<h3 id="x-windows-linux的图形化界面"><a href="#x-windows-linux的图形化界面" class="headerlink" title="x-windows linux的图形化界面"></a>x-windows linux的图形化界面</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/88617777">Linux安装X Window服务——远程显示GUI - 知乎 (zhihu.com)</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="true"
+        data-ae="false"
+        data-ci="bf8247f1f66a43abd91f"
+        data-cs="8151e71fe008a0f849031b72d321c20af8e897af"
+        data-r="h1s97x.github.io"
+        data-o="h1s97x"
+        data-a="h1s97x"
+        data-d="true"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
+

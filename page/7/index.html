@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/site.css">
+
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Hexo"/>
+    
+    
+    
+    
+    
+    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Hexo"/>
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <!-- 代码块复制 -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.js"></script>
+
+    <!-- 点击效果 -->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/5MayRain/5MayRain.github.io@latest/js/fireworks.js"></script>
+    
+
+    <!-- live2d -->
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="//" title="首页" target="_blank" rel="noopener">首页</a>
+        </li>
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
+        </li>
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="标签" target="_blank" rel="noopener">标签</a>
+        </li>
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
+        </li>
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/about/" title="关于" target="_blank" rel="noopener">关于</a>
+        </li>
+        
+    </ul>
+	<span class="target"></span>
+	<center>
+	<div class="hitokoto">
+		<span class="typed" id="hitokoto" data-st="true"></span>
+	</div>
+	</center>
+	
+	<p class="footerlinks">
+		<a href="#" class="iconfont icon-null"></a>
+		
+            <a href="/" title="facebook" class="iconfont icon-facebook" target="_blank" rel="noopener"> </a>
+        
+            <a href="/" title="twitter" class="iconfont icon-twitter" target="_blank" rel="noopener"> </a>
+        
+            <a href="/" title="github" class="iconfont icon-github" target="_blank" rel="noopener"> </a>
+        
+            <a href="/img/logo.png" title="wechat" class="iconfont icon-wechat" target="_blank" rel="noopener"> </a>
+        
+            <a href="mailto:xxxx@gmail.com" title="email" class="iconfont icon-email" target="_blank" rel="noopener"> </a>
+        
+		<a href="#" class="iconfont icon-null"></a>
+	</p>
+	
+    <p id="copyright">
+        &copy; 2023 John Doe.
+        <span> | </span>Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        <span> | </span>Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a> by Fechin
+		
+		<span> | </span><a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">冀ICP备xxxxxxx号</a>
+		
+    </p>
+</div>
+
+<div id="container">
+    
+<div id="screen">
+    <div id="mark">
+        <div class="layer" data-depth="0.4">
+            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
+        </div>
+    </div>
+    <div id="vibrant">
+        <svg viewbox="0 0 2880 1620" height="100%" preserveaspectratio="xMaxYMax slice">
+            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
+        </svg>
+        <div></div>
+    </div>
+    <div id="header">
+        <div>
+            <a class="image-logo" href="/"></a>
+			
+			<div class="iconfont icon-search switchsearch" href="/search/" title="搜索"></div>
+			
+            <div class="iconfont icon-menu switchmenu"></div>
+        </div>
+    </div>
+    
+    <div id="post0">
+        <p>八月 29, 2023</p>
+        <h2><a href="/2023/08/29/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99/" title="实用工具 网站" class="posttitle">实用工具 网站</a></h2>
+        <p class="summary">代理IP网站免费网络代理连点器文档转换工具本地文件转url——云链图片压缩清华大学开源软件镜像站Web设计——co...</p>
+    </div>
+    
+</div>
+
+    <div id="primary">
+        
+<div class="post">
+    <a href="/2023/08/29/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99/" title="实用工具 网站">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 29, 2023</p>
+        <h3><a href="/2023/08/29/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99/" title="实用工具 网站" class="posttitle">实用工具 网站</a></h3>
+        <p>代理IP网站免费网络代理连点器文档转换工具本地文件转url——云链图片压缩清华大学开源软件镜像站Web设计——codropsTasker-安卓&#x2F;...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/29/web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/" title="web前端开发学习">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 29, 2023</p>
+        <h3><a href="/2023/08/29/web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/" title="web前端开发学习" class="posttitle">web前端开发学习</a></h3>
+        <p>参考学习网站
+工具网站【html】前端页面可视化设计工具总结优秀的可视化开发工具推荐11款程序员必备的HTML5开发工具10款前端开发必备工具推荐！
+
+H...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/28/%E7%A8%9A%E6%99%96%E5%90%9B%E5%BC%80%E6%BA%90%E2%80%94%E2%80%94ElectronBot-Mini-Desktop-Robot/" title="稚晖君开源——ElectronBot:Mini Desktop Robot">
+        <img src="/img/img1.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 28, 2023</p>
+        <h3><a href="/2023/08/28/%E7%A8%9A%E6%99%96%E5%90%9B%E5%BC%80%E6%BA%90%E2%80%94%E2%80%94ElectronBot-Mini-Desktop-Robot/" title="稚晖君开源——ElectronBot:Mini Desktop Robot" class="posttitle">稚晖君开源——ElectronBot:Mini Desktop Robot</a></h3>
+        <p>GitHub 项目详细说明B站 复刻项目教程
+当前情况购买电子元件花了120￥ ：头部主控和传感器版的元件打板一共9块，已经白嫖4块，如果下个月还能免费打...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/28/%E9%BB%91%E6%9A%97%E4%B9%8B%E9%AD%823%E6%94%BB%E7%95%A5/" title="黑暗之魂3攻略">
+        <img src="/img/img1.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 28, 2023</p>
+        <h3><a href="/2023/08/28/%E9%BB%91%E6%9A%97%E4%B9%8B%E9%AD%823%E6%94%BB%E7%95%A5/" title="黑暗之魂3攻略" class="posttitle">黑暗之魂3攻略</a></h3>
+        <p>后续工作：人物画像
+bug操作
+游戏系统说明《黑暗之魂3》游戏介绍_《黑暗之魂3》攻略资料中心 - VG百科 (vgbaike.com)
+黑暗之魂三已汉化...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/28/%E7%A0%B4%E8%A7%A3%E7%9B%B8%E5%85%B3/" title="破解相关">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 28, 2023</p>
+        <h3><a href="/2023/08/28/%E7%A0%B4%E8%A7%A3%E7%9B%B8%E5%85%B3/" title="破解相关" class="posttitle">破解相关</a></h3>
+        <p>破解论坛吾爱破解论坛零基础新手破解学习导航帖破解工具包
+免费用MathType123456789Windows Registry Editor Versi...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/28/%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91-%E6%A2%AF%E5%AD%90/" title="访问外网 梯子">
+        <img src="/img/img1.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 28, 2023</p>
+        <h3><a href="/2023/08/28/%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91-%E6%A2%AF%E5%AD%90/" title="访问外网 梯子" class="posttitle">访问外网 梯子</a></h3>
+        <p>自用梯子：魔戒黑洞——安卓手机，一天免费3小时梯子直接全局代理，配置什么的基本不用自己管，很方便
+如何访问外网
+简介SSTap 全称 SOCKSTap, ...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/28/%E4%B8%80%E4%BA%9B%E5%9B%B0%E9%9A%BE%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="一些困难和解决方案">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 28, 2023</p>
+        <h3><a href="/2023/08/28/%E4%B8%80%E4%BA%9B%E5%9B%B0%E9%9A%BE%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="一些困难和解决方案" class="posttitle">一些困难和解决方案</a></h3>
+        <p>Cannot push on github suddentlyd 提交失败 error1234567891011121314Writing objects...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/28/CDN%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="CDN介绍与使用">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 28, 2023</p>
+        <h3><a href="/2023/08/28/CDN%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="CDN介绍与使用" class="posttitle">CDN介绍与使用</a></h3>
+        <p>在线CDN工具
+CDN介绍More Info：详解
+内容导引某视频APP实现1千万用户同时在线观看。
+如果大家观看的是1080p清晰度的视频（理论上需要4...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/28/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="一些想法和解决方案">
+        <img src="/img/img1.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 28, 2023</p>
+        <h3><a href="/2023/08/28/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="一些想法和解决方案" class="posttitle">一些想法和解决方案</a></h3>
+        <p>Sublime text自动排版https://www.jianshu.com/p/abe4ab1f62ee
+Windows11截屏快捷键：win+shi...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2023/08/28/diary/" title="diary">
+        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 28, 2023</p>
+        <h3><a href="/2023/08/28/diary/" title="diary" class="posttitle">diary</a></h3>
+        <p>2023.08.28今天做了很多工作，一刷3周以来的颓废状态，总算开始一些创作早上写了游戏攻略，本来以为1个小时就差不多，结果一直从八点20到11点多，花...</p>
+    </div>
+</div>
+
+
+    </div>
+    
+    <div id="pager"><a href="/page/8/" class="more">加载更多</a></div>
+    
+</div>
+<div id="preview"></div>
+
+
+
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/codeCopy.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

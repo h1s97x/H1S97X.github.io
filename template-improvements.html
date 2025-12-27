@@ -1,0 +1,170 @@
+<!-- 改进的HTML模板示例 -->
+<!-- 这个文件展示了如何在现有模板中集成改进 -->
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>改进的博客主题</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <!-- 原有样式 -->
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <link rel="stylesheet" href="/css/site.css">
+    
+    <!-- 新增改进样式 -->
+    <link rel="stylesheet" href="/css/theme-improvements.css">
+    
+    <!-- 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 图标字体 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons-sprite.svg">
+</head>
+
+<body>
+    <!-- 改进的导航栏 -->
+    <div class="nav">
+        <div class="menu">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/categories/">分类</a></li>
+                <li><a href="/tags/">标签</a></li>
+                <li><a href="/archives/">归档</a></li>
+                <li><a href="/music/">音乐</a></li>
+                <li><a href="/about/">关于</a></li>
+            </ul>
+        </div>
+        
+        <!-- 改进的一言显示 -->
+        <div class="hitokoto">
+            <span id="hitokoto-text">加载中...</span>
+        </div>
+        
+        <!-- 社交链接 -->
+        <div class="footerlinks">
+            <a href="https://github.com/your-username" target="_blank" title="GitHub">
+                <i class="icon-github"></i>
+            </a>
+            <a href="mailto:your-email@example.com" title="邮箱">
+                <i class="icon-mail"></i>
+            </a>
+            <a href="/atom.xml" title="RSS订阅">
+                <i class="icon-rss"></i>
+            </a>
+        </div>
+        
+        <p>
+            &copy; 2023 <a href="/">Your Blog Name</a><br>
+            Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & 
+            <a href="https://github.com/Fechin/hexo-theme-diaspora" target="_blank">Diaspora</a>
+        </p>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div id="container">
+        <!-- 文章列表示例 -->
+        <article class="post">
+            <a href="/2023/12/24/sample-post/">
+                <img src="/img/sample-cover.jpg" alt="文章封面">
+            </a>
+            <div class="else">
+                <p class="post-meta">
+                    <i class="icon-calendar"></i>2023-12-24
+                    <i class="icon-folder"></i>技术分享
+                </p>
+                <h3><a href="/2023/12/24/sample-post/">示例文章标题</a></h3>
+                <p>这是一篇示例文章的摘要内容，展示了改进后的卡片样式和排版效果...</p>
+                <div class="here">
+                    <span class="icon-tag"></span>
+                    <a href="/tags/hexo/" class="post-tags-list-item">Hexo</a>
+                    <a href="/tags/blog/" class="post-tags-list-item">博客</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- 文章页面评论区域 -->
+    <div id="single" style="display: none;">
+        <article class="post-content">
+            <!-- 文章内容 -->
+            <div class="article-content">
+                <h1>文章标题</h1>
+                <div class="post-meta">
+                    <span><i class="icon-calendar"></i>发布时间：2023-12-24</span>
+                    <span><i class="icon-edit"></i>更新时间：2023-12-25</span>
+                    <span><i class="icon-eye"></i>阅读量：123</span>
+                </div>
+                
+                <!-- 文章正文 -->
+                <div class="post-body">
+                    <p>文章内容...</p>
+                </div>
+                
+                <!-- 标签 -->
+                <div class="post-tags">
+                    <span>标签：</span>
+                    <a href="/tags/hexo/" class="post-tags-list-item">Hexo</a>
+                    <a href="/tags/blog/" class="post-tags-list-item">博客</a>
+                </div>
+            </div>
+            
+            <!-- Giscus评论区域 -->
+            <div class="comments-section">
+                <h3>评论</h3>
+                <div id="giscus-comments"></div>
+            </div>
+        </article>
+    </div>
+
+    <!-- 原有脚本 -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/typed.js"></script>
+    <script src="/js/diaspora.js"></script>
+    <script src="/js/codeCopy.js"></script>
+    
+    <!-- 新增脚本 -->
+    <script src="/js/giscus-comments.js"></script>
+    
+    <!-- 改进的一言API -->
+    <script>
+        // 获取一言
+        fetch('https://v1.hitokoto.cn/?c=i&c=k&c=d')
+            .then(response => response.json())
+            .then(data => {
+                const hitokotoElement = document.getElementById('hitokoto-text');
+                if (hitokotoElement) {
+                    hitokotoElement.textContent = data.hitokoto + ' —— ' + data.from;
+                }
+            })
+            .catch(error => {
+                console.log('一言加载失败:', error);
+                const hitokotoElement = document.getElementById('hitokoto-text');
+                if (hitokotoElement) {
+                    hitokotoElement.textContent = '生活就像海洋，只有意志坚强的人才能到达彼岸。';
+                }
+            });
+    </script>
+    
+    <!-- 页面加载完成后的初始化 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 移除加载状态
+            document.documentElement.classList.remove('loading');
+            document.body.classList.remove('loading');
+            
+            // 初始化评论系统（如果在文章页面）
+            if (document.getElementById('giscus-comments')) {
+                window.reinitGiscusComments();
+            }
+        });
+    </script>
+</body>
+</html>

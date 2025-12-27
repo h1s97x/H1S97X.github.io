@@ -41,7 +41,30 @@ module.exports = [
         afterAll: 'readonly',
         beforeEach: 'readonly',
         afterEach: 'readonly',
-        jest: 'readonly'
+        jest: 'readonly',
+        // Browser globals for test environment
+        window: 'readonly',
+        document: 'readonly',
+        localStorage: 'readonly',
+        CustomEvent: 'readonly'
+      }
+    }
+  },
+  {
+    files: ['source/js/**/*.js'],
+    languageOptions: {
+      sourceType: 'script',
+      globals: {
+        // Browser globals
+        window: 'readonly',
+        document: 'readonly',
+        localStorage: 'readonly',
+        CustomEvent: 'readonly',
+        console: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly'
       }
     }
   },

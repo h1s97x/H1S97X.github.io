@@ -8,7 +8,6 @@ subtitle: ''
 description: ''
 keywords:
 author: John Doe
-language: en
 timezone: ''
 
 # URL
@@ -97,10 +96,16 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: anzhiyu
+theme: stellar
 aplayer:
   meting: true
   asset_inject: false
+
+# 主题切换器
+inject:
+  script:
+    - <script src="/js/theme-switcher.js" defer></script>
+
 search:
   path: search.xml
   field: post
@@ -114,3 +119,8 @@ deploy:
   type: git
   repo: git@github.com:h1s97x/H1S97X.github.io.git
   branch: master
+
+language:
+  - zh-CN
+  - en
+  - zh-TW

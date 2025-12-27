@@ -1,0 +1,150 @@
+群星帷幕事件代码
+
+event utopia.3181 预知接口
+event utopia.3171 灵能护盾
+event utopia.3161 PIS跳跃引擎
+event utopia.3151 直接送高级科技
+持续5年的BUFF
+event utopia.3030 幸福25%
+event utopia.3031 舰船维护-30%
+event utopia.3032 研究速度20%
+event utopia.3033 护盾承受50%
+event utopia.3034 武器伤害20%
+event utopia.3035 武器射速20%
+event utopia.3036 主流思潮吸引20%
+event utopia.3037 帝国影响力 30%
+event utopia.3038 月度凝聚力30%
+event utopia.3039 回避30%
+event utopia.3040 船体回复5%
+event utopia.3041 领导增强寿命
+event utopia.3042 亚光速40%
+event utopia.3043 军队斗志40%
+event utopia.3044 区域传感50%
+event utopia.3021 送一个骷髅小元神
+event utopia.3023 送一个敌对小元神
+event utopia.3026 驱散敌对小元神
+
+event utopia.3303 欲望之器 能源25%矿产25% 20年随机DEBUFF 如主流思潮-100%食物消耗+100%等
+event utopia.3304 虚空低语 研究速度15%影响力15% 国家元首出现负面特性
+event utopia.3305 生命之织 生长速度15%领导寿命20年 基因变异，说不定会变好看，但一般是变个丑头像
+event utopia.3306 世界之煞 射速15%军队斗志30% 吃星球人口，并对星球添加-20%幸福DEBUFF
+event utopia.3308 轮回终末 电矿苹果影响凝聚力产出100% 研究速度100% 海军容量100% 50年后灿烂自爆
+event utopia.3320 唯心主义者的花式自爆
+
+
+
+
+
+传说级和著名级领袖代码整理
+
+
+1.凝望者（传说级，十级指挥官/行政官）
+event paragon.1
+event paragon.31
+该领袖两个代码随便选一个就可以
+2.太空创生家艾莎琳（传说级，七级科学家）
+event paragon.228
+3.斯克兰德·夏普比克（传说级，八级指挥官）
+（两条代码都要输入）
+event paragon.3999
+event paragon.3005
+这领袖死了只需要重新输入event paragon.300
+该领袖的利爪龙号摧毁重建局势代码
+添加修复局势代码：event paragon.3070
+结束代码：event paragon.3071 （需要在局势界面选中局势后使用）
+可以直接输入 event paragon.3073 来直接重建，多次输入有效
+4.凯德斯，瓦格罗之子嗣（传说级，十级领袖，可以自选领袖分类和领袖特质）
+（两条代码都要输入）
+event paragon.3115
+event paragon.3160
+领袖对应遗珍添加代码
+add_relic r_wormhole_key
+5.小灰（传说级，十级行政官）
+event graygoo.401
+6.乍狄伽（传说级，十级指挥官）
+event astral_planes.3100
+7.李萨拓·辛格（著名级，亲外四级指挥官）
+event paragon.40100
+8.诺那（著名级，亲外四级科学家）
+event paragon.40200
+9.夏里多·夏里登男爵（著名级，军国四级指挥官）
+event paragon.40300
+10.基雅·祖蒙（著名级，军国四级指挥官）
+event paragon.40400
+11.工业人舒拉顿（著名级，排外四级行政官）
+event paragon.40500
+12.亚图里昂（著名级，排外四级指挥官）
+event paragon.40600
+13.基恩（著名级，平等四级指挥官）
+event paragon.40700
+14.佐西拉·科顿（著名级，平等四级科学家）
+event paragon.40800
+15.松达尔（著名级，唯物四级指挥官）
+event paragon.40900
+16.博林（著名级，唯物五级科学家）
+event paragon.41000
+17.乌尔德·达格尔大法官（著名级，和平四级指挥官）
+event paragon.41100
+18.万人迷沃斯（著名级，和平四级行政官）
+event paragon.41200
+19.卡伊·沙（著名级，威权四级指挥官）
+event paragon.41300
+20.看守人喀·拉（著名级，威权四级行政官）
+event paragon.41400
+21.尤拉斯塔尔（著名级，唯心四级行政官）
+event paragon.41500
+22.纳苏兹·德墨忒尔（著名级，唯心四级科学家）
+event paragon.41600
+23..瑞斯·昂多（著名级，五级指挥官）
+event distar.214
+24.神谕（著名级，五级行政官）
+event ancrel.4036
+25.S875.1战体（著名级，五级指挥官）
+event distar.156 0
+26.看护者AX7-b（著名级，四级行政官）
+event distar.245 0
+27.橡树茎（著名级，五级指挥官）
+event astral_rift.3031
+
+控制台
+https://qunxing.huijiwiki.com/wiki/%E6%8E%A7%E5%88%B6%E5%8F%B0
+常用：
+瞬间建造	instant_build	开关命令瞬间建造（包括升级太空港、添加太空港插槽模块），且建造费用为0，注意陆军、建造太空港需要第二天完成。
+如果开启瞬间建造之前已经有队列，则需要第二天才能完成。瞬间建造不包括机械人口。警告：这也适用于敌人AI。
+
+瞬间完成当前科技	finish_research	将当前所有科研槽的研发项目与特殊项目(如果存在)的进度更改为100%，于第二天结束研究
+
+伤害	damage <数值>	对选定的舰队造成<数值>点伤害。（需要注意的是，这个伤害的来源将被认为是来自于空玩家）
+
+同意条约	yesmen或debug_yesmen	开关命令AI总是同意玩家提出的条约（包括共同防御、组建联邦、停战协议、交易等）
+
+
+资源：
+时间	resource time	0
+能量币	resource energy	1
+矿物	resource minerals	2
+食物	resource food	3
+物理学研究	resource physics_research	4
+社会学研究	resource society_research	5
+工程学研究	resource engineering_research	6
+影响力	resource influence	7
+凝聚力	resource unity	8
+消费品	resource consumer_goods	9
+合金	resource alloys	10
+易爆微粒	resource volatile_motes	11
+异星天然气	resource exotic_gases	12
+稀有水晶	resource rare_crystals	13
+活体金属	resource sr_living_metal	14
+泽珞	resource sr_zro	15
+暗物质	resource sr_dark_matter	16
+纳米机器人	resource nanites	17
+稀有文物	resource minor_artifacts	18
+威慑力	resource menace	19
+
+遗珍
+添加全部遗珍	add_relic all
+
+debug模式
+debugtooltip
+
+能够查看领袖id

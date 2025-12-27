@@ -4,9 +4,21 @@
   "private": true,
   "scripts": {
     "build": "hexo generate",
+    "build:test": "hexo clean && hexo generate",
+    "build:staging": "hexo clean && hexo generate --config _config.yml,_config.staging.yml",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "server:staging": "hexo server --config _config.yml,_config.staging.yml",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .js,.json --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .js,.json --ignore-path .gitignore --fix",
+    "check-links": "node tools/check-links.js",
+    "validate": "npm run lint && npm run test && npm run check-links",
+    "precommit": "npm run validate",
+    "prepare": "husky install"
   },
   "hexo": {
     "version": "8.1.1"
@@ -33,5 +45,29 @@
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-tag-dplayer": "^0.3.3",
     "hexo-theme-landscape": "^1.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "audit-ci": "^7.1.0",
+    "eslint": "^9.39.2",
+    "gray-matter": "^4.0.3",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.5.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "tools/**/*.js",
+      "!tools/check-links.js"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,json}": [
+      "eslint --fix"
+    ]
   }
 }

@@ -1,0 +1,33 @@
+# Staging Environment Configuration
+# This file extends _config.yml for staging environment
+
+# Site
+title: Hexo (Staging)
+subtitle: 'Development Environment'
+description: 'Staging environment for testing'
+
+# URL
+url: https://h1s97x.github.io/staging
+root: /staging/
+
+# Deployment (staging uses different branch)
+deploy:
+  type: git
+  repo: git@github.com:h1s97x/H1S97X.github.io.git
+  branch: staging
+
+# Enable debug mode for staging
+debug: true
+
+# Additional plugins for development
+plugins:
+  - hexo-browsersync
+
+# BrowserSync configuration for live reload
+browsersync:
+  logLevel: "info"
+  ghostMode:
+    clicks: true
+    scroll: true
+    forms: true
+  instanceName: "hexo-staging"

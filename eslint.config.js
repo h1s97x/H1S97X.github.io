@@ -53,7 +53,12 @@ module.exports = [
       'themes/**',
       'source/_posts/assets/**',
       'setup-giscus.js',
-      'db.json'
+      'db.json',
+      '*.min.js',
+      'assets/**',
+      'js/**',
+      'css/**',
+      'img/**'
     ]
   }
 ];

@@ -1,3 +1,7 @@
+---
+title: GDPR zh
+date: '2025-12-27 23:46:11'
+---
 原文链接：[欧盟首个数据保护条例GDPR明日生效，你可能需要这份中文版的全文 (tisi.org)](https://www.tisi.org/5029)
 
  经过欧盟议会长达四年的讨论，欧盟《一般数据保护条例》（General Data Protection Regulation，简称GDPR）终于将在2018年5月25日生效。

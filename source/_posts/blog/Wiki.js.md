@@ -1,3 +1,7 @@
+---
+title: Wiki.js
+date: '2025-12-27 23:46:11'
+---
 ## 使用 Docker 部署 Wiki.js
 
 > 本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 Markdown 以及 HTML 文档。Docker 容器技术可帮助我们简化部署过程，提高应用程序的可移植性和可扩展性。

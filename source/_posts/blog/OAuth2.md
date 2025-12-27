@@ -1,3 +1,7 @@
+---
+title: OAuth2
+date: '2025-12-27 23:46:11'
+---
 [OAuth2.0 详解 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/89020647)
 
 [理解OAuth 2.0 - 阮一峰的网络日志 (ruanyifeng.com)](https://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)

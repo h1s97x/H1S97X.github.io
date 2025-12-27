@@ -1,3 +1,7 @@
+---
+title: Cpolar
+date: '2025-12-27 23:46:11'
+---
 ### 前言
 
 宝塔面板作为简单好用的[服务器](https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&from=20065)运维管理面板，它支持Linux/Windows系统，我们可用它来一键配置LAMP/LNMP环境、网站、[数据库](https://cloud.tencent.com/solution/database?from_column=20065&from=20065)、FTP等，通过Web端轻松管理服务器。

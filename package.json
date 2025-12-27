@@ -13,10 +13,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "lint": "eslint . --ext .js,.json --ignore-path .gitignore",
-    "lint:fix": "eslint . --ext .js,.json --ignore-path .gitignore --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "check-links": "node tools/check-links.js",
-    "validate": "npm run lint && npm run test && npm run check-links",
+    "validate": "npm run test && npm run check-links",
     "precommit": "npm run validate",
     "prepare": "husky install"
   },

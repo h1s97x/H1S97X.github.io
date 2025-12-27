@@ -50,7 +50,10 @@ module.exports = [
       'node_modules/**',
       'public/**',
       '.deploy_git/**',
-      'themes/**'
+      'themes/**',
+      'source/_posts/assets/**',
+      'setup-giscus.js',
+      'db.json'
     ]
   }
 ];

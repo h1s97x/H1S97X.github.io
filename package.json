@@ -8,6 +8,8 @@
     "build:staging": "hexo clean && hexo generate --config _config.yml,_config.staging.yml",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
+    "deploy:safe": "node tools/safe-deploy.js",
+    "deploy:preview": "node tools/safe-deploy.js --dry-run",
     "server": "hexo server",
     "server:staging": "hexo server --config _config.yml,_config.staging.yml",
     "test": "jest",
@@ -18,7 +20,9 @@
     "check-links": "node tools/check-links.js",
     "validate": "npm run test && npm run check-links",
     "precommit": "npm run validate",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "setup:branches": "node tools/safe-branch-setup.js",
+    "setup:preview": "node tools/safe-branch-setup.js --dry-run"
   },
   "hexo": {
     "version": "8.1.1"

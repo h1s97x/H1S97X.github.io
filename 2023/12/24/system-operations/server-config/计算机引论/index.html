@@ -1,0 +1,1522 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>计算机引论 - Hexo</title>
+
+  
+    <meta name="description" content="[TOC] 参考资料主要参考书   图书名称: 计算机科学引论（2021英文精编版）    封面图片:    出版印刷时间: 2020-09-01   出版社: 机械工业出版社   图书作者: [美] 蒂莫西-J.奥利里 著   ISBN: 9787111663782   友链计算机科学引论笔记 - wxyww - 博客园 (cnblogs.com) 《计算机科学引论》2021 版 复习指北 –">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机引论">
+<meta property="og:url" content="http://example.com/2023/12/24/system-operations/server-config/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BC%95%E8%AE%BA/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC] 参考资料主要参考书   图书名称: 计算机科学引论（2021英文精编版）    封面图片:    出版印刷时间: 2020-09-01   出版社: 机械工业出版社   图书作者: [美] 蒂莫西-J.奥利里 著   ISBN: 9787111663782   友链计算机科学引论笔记 - wxyww - 博客园 (cnblogs.com) 《计算机科学引论》2021 版 复习指北 –">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/4d6b280d8a24f68c6e9698f45c83dd5c_0_1_300_300.jpg">
+<meta property="article:published_time" content="2023-12-24T02:27:38.000Z">
+<meta property="article:modified_time" content="2023-12-24T02:27:38.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Web开发">
+<meta property="article:tag" content="工具软件">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="游戏开发">
+<meta property="article:tag" content="版本控制">
+<meta property="article:tag" content="系统">
+<meta property="article:tag" content="网络安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/4d6b280d8a24f68c6e9698f45c83dd5c_0_1_300_300.jpg">
+  
+  
+  
+  <meta name="keywords" content="Linux,系统,游戏开发,服务器,JavaScript,Web开发,教程,Git,版本控制,工具软件,网络安全">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2023-12-24T10:27:38+08:00","dateModified":"2023-12-24T10:27:38+08:00","datePublished":"2023-12-24T10:27:38+08:00","description":"","headline":"计算机引论","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/12/24/system-operations/server-config/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BC%95%E8%AE%BA/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"http://example.com/2023/12/24/system-operations/server-config/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BC%95%E8%AE%BA/","keywords":"Linux, 系统, 游戏开发, 服务器, JavaScript, Web开发, 教程, Git, 版本控制, 工具软件, 网络安全","image":[]}</script>
+  
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">Hexo</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E5%A4%96%E6%8C%82%E5%BC%80%E5%8F%91/"><span class="title">外挂开发</span></a><a class="item title" href="/2025/12/27/tech-development/development-tools/WizTree/"><span class="title">WizTree</span></a><a class="item title" href="/2023/01/09/tech-development/development-tools/MermaidTutorial/"><span class="title">Markdown 画图：Mermaid 指北</span></a><a class="item title" href="/2025/12/28/system-operations/server-config/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2020/03/25/system-operations/linux-system/HTTrack%E4%BB%8B%E7%BB%8D/"><span class="title">程序员最爱的网站克隆爬取工具- HTTrack</span></a><a class="item title" href="/2025/12/27/system-operations/linux-system/HTTrack%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"><span class="title">HTTrack 简单使用</span></a><a class="item title" href="/2023/06/16/personal-essays/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"><span class="title">我的第一篇文章</span></a><a class="item title" href="/2025/12/27/personal-essays/GDPR_zh/"><span class="title">GDPR zh</span></a><a class="item title" href="/2025/12/28/README/"><span class="title">文章目录结构说明</span></a><a class="item title" href="/2025/12/27/Linux/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F/"><span class="title">被动扫描</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">技术开发</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2023-12-24T02:27:38.000Z">2023-12-24</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2023-12-24T02:27:38.000Z">2023-12-24</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>计算机引论</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>[TOC]</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><h3 id="主要参考书"><a href="#主要参考书" class="headerlink" title="主要参考书"></a>主要参考书</h3><table>
+<thead>
+<tr>
+<th>图书名称:</th>
+<th>计算机科学引论（2021英文精编版）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>封面图片:</td>
+<td><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/4d6b280d8a24f68c6e9698f45c83dd5c_0_1_300_300.jpg" alt="计算机科学引论（2021英文精编版）"></td>
+</tr>
+<tr>
+<td>出版印刷时间:</td>
+<td>2020-09-01</td>
+</tr>
+<tr>
+<td>出版社:</td>
+<td>机械工业出版社</td>
+</tr>
+<tr>
+<td>图书作者:</td>
+<td>[美] 蒂莫西-J.奥利里 著</td>
+</tr>
+<tr>
+<td>ISBN:</td>
+<td>9787111663782</td>
+</tr>
+</tbody></table>
+<h3 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wxyww/p/15740867.html">计算机科学引论笔记 - wxyww - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://icooper.cc/archives/73">《计算机科学引论》2021 版 复习指北 – iCooper</a></p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h2 id="Unit1-information-technology-internet-and-you"><a href="#Unit1-information-technology-internet-and-you" class="headerlink" title="Unit1 information technology,internet,and you"></a>Unit1 information technology,internet,and you</h2><p><strong>个人电脑(personal computer)<strong>是一种</strong>信息系统(information system)</strong>。信息系统包括以下几个部分</p>
+<ul>
+<li><strong>人(people)</strong> 是信息系统中至关重要的一个部分，信息系统的目的是让想你这样的**最终用户(end users)**更高效率</li>
+<li>**程序(procedures)**是使用软件、硬件和数据的时候要遵循的指南。他们通常由计算机专业人员编写。</li>
+<li>**软件(Software or programs)**提供一步一步的指令(instructions)来控制计算机把数据(data)转换成信息(information)</li>
+<li>**硬件(hardware)**由物理设备组成，它由软件控制把数据(data)加工成信息(information)</li>
+<li>**数据(data)**是未加工的信息，包括文本、数字、图片、声音。**信息(information)**是被电脑加工过的数据(data)</li>
+<li>**互联网(internet)**使得计算机可以相互连通并分享信息</li>
+</ul>
+<h3 id="PEOPLE"><a href="#PEOPLE" class="headerlink" title="PEOPLE"></a>PEOPLE</h3><p>人是信息系统里最重要的</p>
+<h3 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h3><p>软件Software包括系统软件和应用软件</p>
+<ul>
+<li><strong>系统软件（System software）<strong>使得应用软件能够与计算机硬件进行交互。包括</strong>操作系统（operating system）<strong>和</strong>实用程序（Utilities）</strong>。操作系统协调资源，提供接口并运行应用程序。包括<strong>嵌入式（embedded）操作系统（RTOS）</strong>，<strong>独立（stand-alone）操作系统</strong>和**网络操作系统（network）**实用程序执行特定的任务来管理电脑资源</li>
+<li><strong>应用软件（Application Software）</strong> 包括<strong>通用应用软件（general-purpose）</strong>，**专用软件（specialized）<strong>和</strong>移动应用软件（mobile application）**通用应用软件被广泛应用于各种职业领域，专业应用软件更多的关注特定学科和职业，移动应用是为移动设备设计的应用</li>
+</ul>
+<h3 id="Hardware"><a href="#Hardware" class="headerlink" title="Hardware"></a>Hardware</h3><ul>
+<li><p>计算机的种类，<strong>超级计算机（supercomputer）</strong>，<strong>大型计算机（mainframe）</strong>，<strong>中档计算机（服务器）（midrange（server））</strong>，和<strong>个人计算机（personal computer）<strong>是四种计算机类型。个人计算机包括</strong>台式机（desktop）</strong>，<strong>笔记本电脑（laptop）</strong>，<strong>平板电脑（ablet）</strong>，<strong>智能手机（smartphone）</strong>，<strong>可穿戴计算机（wearable）</strong></p>
+</li>
+<li><p>个人电脑硬件，电脑硬件有四种。</p>
+<p>（1）<strong>系统单元（system unit）<strong>包含一些微电子电路，包括</strong>微处理器（microprocessors）<strong>和</strong>存储器（memory）</strong>。**随机存取存储器（Random-access memory，RAM）**用来保存正在被处理的程序和数据。</p>
+<p>（2）输入和输出设备</p>
+<p>（3）<strong>辅助存储器（Secondary storage）<strong>用来保存数据和程序，一般包括</strong>硬盘（hard disk）</strong>，<strong>固态存储（solid-state storage）</strong>，和<strong>光盘（optical discs）</strong>（CD，DVD，Blu-ray）</p>
+<p>（4）**通信设备（Communication devices）**使得计算机之间可以相互通信。**调制解调器（Modems）**可以修改音频、视频、和其他类型的数据使得他们可以在互联网上传输。</p>
+</li>
+</ul>
+<h3 id="数据（Data）"><a href="#数据（Data）" class="headerlink" title="数据（Data）"></a>数据（Data）</h3><p>电脑的文件类型包括：</p>
+<p>（1）<strong>文本文件（Document files）</strong></p>
+<p>（2）<strong>工作表文件（worksheet）</strong></p>
+<p>（3）<strong>数据库文件（Database files）</strong></p>
+<p>（4）<strong>演示文件（Presentation files）</strong></p>
+<h3 id="连通性和互联网"><a href="#连通性和互联网" class="headerlink" title="连通性和互联网"></a>连通性和互联网</h3><p>Internet是世界上最大的电脑互联网，web提供了一个访问互联网上可用资源的接口。</p>
+<ul>
+<li><strong>云计算（cloud computing）</strong> 使用互联网和web网页来讲用户电脑上的一些活动转移到网络上的电脑上</li>
+<li>**无限革命（wireless revolution）**改变了我们交流和使用电脑科技的方式，无线设备包括平板设备（tablet），手机和手表</li>
+<li>**物联网（Internet of Things，IoT）**是互联网的进一步发展，它使得嵌入（embedded）了电子设备的日常物品可以在网络上接受和发送数据。</li>
+</ul>
+<h2 id="Unit2-The-Internet，the-Web-and-Electronic-commerce"><a href="#Unit2-The-Internet，the-Web-and-Electronic-commerce" class="headerlink" title="Unit2 The Internet，the Web and Electronic commerce"></a>Unit2 The Internet，the Web and Electronic commerce</h2><h3 id="Internet-and-web"><a href="#Internet-and-web" class="headerlink" title="Internet and web"></a>Internet and web</h3><ul>
+<li><p>因特网（internet）于1969年和**阿帕网（arpanet）**一起推出，互联网由实际的物理网络组成</p>
+</li>
+<li><p><strong>万维网（Web）</strong> 于1991年诞生，**the web（world wide web，WWW）**提供一个网络资源的多媒体接口。一共有四代：<strong>Web1.0</strong>（链接现存信息，搜索引擎），<strong>Web2.0</strong>（包括动态内容和社会信息，社会媒体网站）<strong>Web3.0</strong>（深化数据之间的联系）<strong>Web4.0</strong>（链接数据和物理生活的未来产品）</p>
+</li>
+<li><p>常见用途</p>
+<p>（1）交流—最流行的互联网活动</p>
+<p>（2）购物—增长最快的互联网活动</p>
+<p>（3）搜索—寻找图书馆和本地或者本国或者国际新闻</p>
+<p>（4）教育—**电子学习（e-learning）**和网络课程</p>
+<p>（5）网络娱乐—电影，新闻，音乐和视频游戏（video games）</p>
+</li>
+</ul>
+<h3 id="Internet-Access-网络连接"><a href="#Internet-Access-网络连接" class="headerlink" title="Internet Access 网络连接"></a>Internet Access 网络连接</h3><ul>
+<li><p><strong>供应商（Internet service providers）<strong>提供一个连接互联网的途径。连接技术包括</strong>数字用户电路（DSL）</strong>，<strong>电缆调制解调器（cable modems）</strong>，和<strong>无线调制解调（wireless modems）</strong></p>
+</li>
+<li><p>**浏览器（Browsers）**提供了对web的访问，相关术语：</p>
+<p>（1）<strong>URLs</strong>—网络资源的地址，有**域名(domain name)<strong>和</strong>协议(protocol)**两个部分,**顶级域名(top-level domain name，TLD)<strong>或者</strong>网络后缀（web suffix）**确定了该网页的类型</p>
+<p>（2）HTML—一些展示王爷的命令语言，<strong>超链接（hyperlinks）</strong></p>
+</li>
+</ul>
+<p>提供<strong>交互式（interactive）动画（animated）<strong>网站的技术包括</strong>JavaScript</strong>（在用户的计算机上执行来引发互动功能），<strong>PHP</strong>（在HTML中执行来触发交互功能和在线表格）<strong>CSS</strong>（控制网页的外观）</p>
+<h3 id="Web-Utilities-网页工具包"><a href="#Web-Utilities-网页工具包" class="headerlink" title="Web Utilities 网页工具包"></a>Web Utilities 网页工具包</h3><p>**网页工具包（Web Utilities）**是专门的工具集，使得使用网络和网页更加的便捷和安全。</p>
+<ul>
+<li><p>**过滤器（Filters）**被家长和组织用来屏蔽某些网站，并监控互联网和 网络的使用情况</p>
+</li>
+<li><p>**文件传输工具（File Transfer Utilities）**可以将文件下载或上传到你的计算机上。有三种类型</p>
+<p>（1）**FTP（File Transfer Protocol）<strong>和</strong>SFTP（secure file tranfer protocol）**使你在网络上高效的传输文件</p>
+<p>（2）**比特流（BitTorrent）**在许多不同的电脑之间分发传输任务</p>
+<p>（3）**基于web的文件传输服务（Web-based file transfer services）**利用web浏览器来上传和下载文件</p>
+</li>
+<li><p>**网络安全套件（Internet Security Suite）**是一组实用程序的集合，用来保护隐私和互联网安全。</p>
+</li>
+</ul>
+<h3 id="Communication-社交"><a href="#Communication-社交" class="headerlink" title="Communication 社交"></a>Communication 社交</h3><ul>
+<li><p><strong>社交网络（Social Networking）</strong>。社交网站的功能包括：<strong>配置文件（profiles）</strong>，<strong>页面（pages）</strong>，<strong>群组（groups）</strong>，<strong>好友（friends）</strong>，<strong>新闻（news feeds）</strong>，和<strong>共享设置（share setting）</strong>。两个著名社交网站<strong>领英（linkedin）<strong>和</strong>脸书（facebook）</strong>。</p>
+</li>
+<li><p>博客，微博，播客（Podcasts），和维基</p>
+<p>（1）<strong>博客（blogs）</strong></p>
+<p>（2）**微博（microblogs）**使用短句子，推特每个推文（tweet）允许280个字符，<strong>Ins</strong>主要用于分享图片和视频。</p>
+<p>（3）**播客（Podcasts）**是通过互联网传播的音频节目</p>
+<p>（4）**维基（wiki）**是一个允许访问者使用浏览器添加、编辑或者删除网站内容的网站。**维基百科(wikipedic)**是最受欢迎的维基之一</p>
+</li>
+<li><p><strong>messaging</strong>，除了email外还有两种消息传递系统</p>
+<p>（1）<strong>短信（Text messaging）<strong>也叫做</strong>texting</strong>或者<strong>SMS（short massage service）</strong>。一般不超过160个字符</p>
+<p>（2）<strong>即时消息（Instant messaging，IM）</strong>。支持实时通信</p>
+</li>
+<li><p>E-mail 有两种电子邮件系统</p>
+<p>（1）**基于用户的电子邮件系统（Client-based e-mail system）**使用安装在用户机上的电子邮件客户系统。</p>
+<p>（2）<strong>基于网络的电子邮件系统（Web-base e-mail system）<strong>使用在服务器上的客户端。也被叫做</strong>webmail</strong></p>
+<ul>
+<li>通常的电子邮件有三个基本元素：<strong>头部（header）<strong>包括</strong>地址（address）</strong>，<strong>主题（subject）</strong>，和<strong>附件（attachent）</strong>。<strong>消息内容（message）<strong>和</strong>签名（signature）</strong>。</li>
+<li><strong>垃圾邮件（Spam）</strong>，<strong>垃圾邮件拦截器（Spam bolckers，Spam filters）</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="Search-Tools-搜索工具"><a href="#Search-Tools-搜索工具" class="headerlink" title="Search Tools 搜索工具"></a>Search Tools 搜索工具</h3><ul>
+<li>**搜索服务（search services）**运营网站来帮助你得到你想要的信息。</li>
+<li>**爬虫（spiders）**是一种不断的寻找信息并更新数据库的特殊程序</li>
+<li>**搜索引擎（search engines）**可以帮助你找到特定的信息。使用关键词和短句来搜索</li>
+<li>**专业搜索引擎（search engines）**是一种专注于特定主题网站的搜索引擎</li>
+<li><strong>内容评估（conten evaluation）</strong>，网络信息辨别真伪要注意检查<strong>权威性（authority）</strong>，<strong>准确性（accuracy）</strong>，<strong>客观性（objectivity）<strong>和</strong>时效性（currency）</strong></li>
+</ul>
+<h3 id="Electronic-commerce-电子商务"><a href="#Electronic-commerce-电子商务" class="headerlink" title="Electronic commerce 电子商务"></a>Electronic commerce 电子商务</h3><p>**电子商务（Electronic commerce，E-Commerce）**是指通过互联网进行交易。有三种类型</p>
+<ul>
+<li><p>**企业对消费者（business to consumer,B2C)**是增长最快的电子商务类型。涉及向公众或最终用户销售产品或服务。有三种形式</p>
+<p>（1）网上银行(online banking)</p>
+<p>（2）金融交易(financial trading)</p>
+<p>（3）网络购物(shopping)</p>
+</li>
+<li><p><strong>消费者对消费者(consumer to consumer,C2C)</strong></p>
+<p>是最近的趋势。个人向个人出售。以**网络拍卖（Web auctions）**的形式，与传统拍卖类似，不过买卖双方不会见面。</p>
+</li>
+<li><p><strong>企业对企业（business to business，B2B）</strong></p>
+<p>产品和服务从一个企业销售到另一个起义，主要是制造商(manufacturer)之间的关系</p>
+</li>
+</ul>
+<p>电子商务的<strong>安全性（security）</strong>，两个挑战是</p>
+<ul>
+<li>安全保密。两种交易形式是<strong>信用卡（credit cards）<strong>和</strong>数字现金（digital cash）</strong></li>
+<li>便捷性。提供便捷的方式获取信息</li>
+</ul>
+<h3 id="云计算（cloud-computing）"><a href="#云计算（cloud-computing）" class="headerlink" title="云计算（cloud computing）"></a>云计算（cloud computing）</h3><p>使用互联网和web网页来讲用户电脑上的一些活动转移到网络上的电脑上</p>
+<p>使最终用户无需拥有、维护和存储软件程序和数据。</p>
+<p>**云计算（cloud computing）**有三个基本组成部分：</p>
+<ul>
+<li><strong>客户（clents）</strong></li>
+<li>网络</li>
+<li><strong>服务提供商（service providers）</strong></li>
+</ul>
+<h3 id="物联网（Internet-of-Things，IoT）"><a href="#物联网（Internet-of-Things，IoT）" class="headerlink" title="物联网（Internet of Things，IoT）"></a>物联网（Internet of Things，IoT）</h3><p>物联网是互联网的进一步发展，它使得嵌入的电子设备的物体可以发送和接收数据。如智能手机，可穿戴设备，甚至咖啡壶。使用web3.0程序将设备与应用程序同步</p>
+<h2 id="Unit3-Application-Software"><a href="#Unit3-Application-Software" class="headerlink" title="Unit3 Application Software"></a>Unit3 Application Software</h2><h3 id="applicationg-software"><a href="#applicationg-software" class="headerlink" title="applicationg software"></a>applicationg software</h3><p>应用程序有三种类型<strong>通用应用（general pupose）</strong>，<strong>专业应用（specialized）</strong>，<strong>移动应用（mobile）</strong></p>
+<p><strong>用户页面（user interface）<strong>也叫</strong>图形用户界面（Graphical User Interface，GUI）</strong>，使用户可以与程序交互。</p>
+<p>**图标（icons）**用户可以用鼠标点击图标来完成动作。</p>
+<p>**鼠标箭头（pointer）**在屏幕上显示，通过鼠标来操作</p>
+<p>(1)传统的GUI系统含有三个板块</p>
+<ul>
+<li>**菜单（Menus）<strong>展示显示在屏幕顶部</strong>菜单栏（menus bar）**中的命令</li>
+<li>**工具栏（toolbars）<strong>用来存放一些</strong>按钮(buttons)**用来快捷的完成常用的一些命令。</li>
+<li>**对话框（dialog boxes）**提供附加的信息并且请求用户的输入。</li>
+</ul>
+<p>(2) **功能区GUI（Ribbon GUI）**使用户能够更轻松地查找和使用应用程序的所有功能。它包括</p>
+<ul>
+<li>**功能区（Ribbon）**将一些菜单和工具栏里的命令放到选项卡集合里</li>
+<li>**选项卡（Tabs）<strong>将功能区分成几类，每个选项卡代表</strong>一组（groups）**相关的选项。</li>
+<li>**下拉菜单（Contextual tabs）**只有当该选项被选中时才会展示</li>
+<li>**预览（Galleries）**使用户可以在选择选项之前预览他的效果</li>
+</ul>
+<p>(3) 大多数应用程序提供</p>
+<ul>
+<li>拼写检查（spell check）</li>
+<li>校准（alignment）</li>
+<li>字体和字体大小（font and font size）</li>
+<li>桌面（tables）</li>
+<li>报告（reports）</li>
+</ul>
+<h3 id="通用程序"><a href="#通用程序" class="headerlink" title="通用程序"></a>通用程序</h3><p>通用程序包括<strong>文本处理器（Word processors）</strong>，<strong>表格（Spreadsheets）</strong>，<strong>演示文档（Presentation programs）</strong>，<strong>数据库管理系统（Database management systems）</strong></p>
+<ul>
+<li><strong>文本处理器（Word processors）</strong> 用于创建**文档（documents）**的最灵活和广泛使用的软件工具之一，PC用户最早使用的软件之一，微软word是最常用的文字处理程序。文字处理程序有：Microsoft word，Apple Pages，Google Docs，OpenOffice Writer</li>
+<li><strong>表格（Spreadsheet Programs）</strong>，组织、分析和绘制数值数据。</li>
+<li><strong>演示文档（Presentation programs）</strong>，创建有趣和专业的演示文档</li>
+<li><strong>数据库管理系统（Database management systems）</strong>，<strong>数据库（database）<strong>是一些相关数据的集合。数据库管理程序也叫</strong>Database Manager</strong>是建立数据库的程序。</li>
+</ul>
+<h3 id="专业程序"><a href="#专业程序" class="headerlink" title="专业程序"></a>专业程序</h3><p>专业程序专注于特定的学科和职业计划。包括<strong>图形处理程序（graphics programs）<strong>和</strong>网页制作工具（authoring programs）<strong>和</strong>电视游戏设计软件</strong>。</p>
+<ul>
+<li><p>图形处理程序是用于图形艺术的专用程序。</p>
+<p>（1）<strong>视频处理器（video editors）</strong></p>
+<p>（2）<strong>图片处理器（image editors，photo editors）</strong></p>
+<p>（3）**插画程序（Illustration Programs）**创造和编辑矢量图</p>
+<p>（4）<strong>页面排版程序（Desktop Publishing Programs，Page Layout Programs）</strong>，混合图片和文字制作出版物。</p>
+</li>
+<li><p>网页制作工具</p>
+<p>（1）**博客（blog）**是在线的日记活评论</p>
+<p>（2）网页制作程序创造常见的网站，编辑页面和HTML。具有<strong>所见即所得的特性（WYSIWYG，what you see is what you get）</strong></p>
+</li>
+<li><p>电视游戏设计软件引导用户完成游戏的设计</p>
+</li>
+</ul>
+<h3 id="移动应用（Mobile-APPS）"><a href="#移动应用（Mobile-APPS）" class="headerlink" title="移动应用（Mobile APPS）"></a>移动应用（Mobile APPS）</h3><p>移动应用是一种平板或者手机上附加（Add-on）的应用程序。</p>
+<p><strong>角色扮演类游戏（role playing game，RPG）</strong></p>
+<p>**应用商店（APP stores）**提供移动应用的下载。</p>
+<h3 id="软件套件（Software-Suites）"><a href="#软件套件（Software-Suites）" class="headerlink" title="软件套件（Software Suites）"></a>软件套件（Software Suites）</h3><p>软件套件是一些单个程序的集合，捆绑在一起进行销售有四种。</p>
+<ul>
+<li>**办公套件（Office suites，office software suite ，productivity suites ）**通常被用于工作情境。通常包括文档处理程序，表格处理程序，演示文档。</li>
+<li>**在线套件（Cloud suites ， online office suites）**是一些存放在互联网服务器上的套件，通过互联网进行访问。优点：轻松协作。缺点：依赖于服务器，所以要及时备份。</li>
+<li>**专业套件（Specialized suites ）**专注于专业程序。</li>
+<li>**实用套件（Utility suites）**被设计用来使计算更加方便和安全。</li>
+</ul>
+<h2 id="Unit4-System-Software"><a href="#Unit4-System-Software" class="headerlink" title="Unit4 System Software"></a>Unit4 System Software</h2><p><strong>系统软件（System Software ）</strong> 在电脑硬件与用户应用软件之间工作，来实现技术细节。</p>
+<p>有四种类型<strong>操作系统（Operating systems）</strong>，<strong>实用程序（Utilities）</strong>， <strong>设备驱动程序（Device drivers）</strong>， <strong>编译器（Language translators）</strong></p>
+<p>编译器是把程序员写的高级程序语言转化成电脑可以识别的机器语言。</p>
+<h3 id="操作系统（operating-system）"><a href="#操作系统（operating-system）" class="headerlink" title="操作系统（operating system）"></a>操作系统（operating system）</h3><p>操作系统也叫<strong>软件环境（software environment）<strong>或者</strong>软件平台（software platforms）</strong></p>
+<ul>
+<li><p>作用：</p>
+<p>（1）管理资源</p>
+<p>（2）提供用户界面（graphical user interface，GUI）</p>
+<p>（3）运行应用程序，<strong>多任务处理（Multitasking）</strong>，使得计算机可以在应用程序之间快速切换。当前运行的程序成为<strong>前台程序（foreground）</strong>，其他正在运行的程序成为<strong>后台程序（background）</strong></p>
+</li>
+<li><p>特点：</p>
+<p>（1）与应用程序相同的特点：有图标（icons），鼠标指针（pointer），窗口（window），菜单（menus），标签（tabs），对话框（dialog boxes），帮助（help），手势控制（gesture control）。</p>
+<p>**手势控制（gesture control）**是指通过手指移动来控制操作的能力：即滑动、捏合。</p>
+<p>（2）独特的特点是可以**启动（boot）**计算机。**热启动（warm boot）**是在计算机已经打开的情况下不关闭计算机，重新启动。**冷启动（cold boot）**是在计算机关闭的情况下启动计算机。</p>
+<p>（3）大多数操作系统将数据和程序存储在**系统文件（system file）<strong>和</strong>文件夹（folders）**中。</p>
+</li>
+<li><p>种类：</p>
+<p>（1）<strong>嵌入式操作系统（embedded OS）</strong>，如智能手机，智能手表，视频游戏系统</p>
+<p>（2）<strong>独立操作系统（Stand-alone OS）<strong>也叫</strong>桌面操作系统（desktop OS）</strong>，控制单一的台式机</p>
+<p>（3）<strong>网络操作系统（Network operating systems ，NOS）</strong>，控制协调联网计算机，操作系统储存在**网络服务器（network server）**上</p>
+</li>
+</ul>
+<h3 id="移动操作系统-mobile-operating-system"><a href="#移动操作系统-mobile-operating-system" class="headerlink" title="移动操作系统 mobile operating system"></a>移动操作系统 mobile operating system</h3><p>没有那么复杂，更适合无线技术。常见的移动操作系统是<strong>安卓（Android）</strong>、<strong>苹果（IOS）<strong>和</strong>微软windows（windows Phone）</strong></p>
+<h3 id="桌面操作系统"><a href="#桌面操作系统" class="headerlink" title="桌面操作系统"></a>桌面操作系统</h3><p>一般用于个人电脑</p>
+<ul>
+<li><p>windows 使用最广泛的桌面操作系统，<strong>windows 10</strong>集成了桌面和移动设备，可以在所有的windows设备上运行。</p>
+</li>
+<li><p><strong>macOS</strong>，专为苹果电脑设计，只能在苹果电脑上运行。功能强大，易于使用</p>
+<p><strong>macOS X</strong>是苹果电脑使用最广泛的操作系统</p>
+<p>最新的两款系统是<strong>macOS high sierra</strong>和<strong>macOS mojave</strong></p>
+</li>
+<li><p>UNIX操作系统，最初用于小型计算机，现在用于网络环境。常用于大型计算机（mainframe computers）和网络服务器。有非常多的版本。</p>
+</li>
+<li><p>LINUX是UNIX的一个扩展。代码开源。谷歌的<strong>chrome OS</strong>就基于linux设计。</p>
+</li>
+<li><p>**虚拟化（Virtualization）<strong>通过运行</strong>虚拟化软件（virtualization software）**支持独立运行的多个操作系统。</p>
+<ul>
+<li>每个操作系统称为一个<strong>虚拟机（virtual machine）</strong>。</li>
+<li><strong>主机操作系统（Host operating system）</strong> 是物理机原本的操作系统</li>
+<li><strong>客户机操作系统（Guest operating system）</strong> 是指虚拟机的操作系统</li>
+<li>Parallels就是一个虚拟化软件，可以在macOS X中运行windows</li>
+</ul>
+</li>
+</ul>
+<h3 id="实用程序（Utilities）"><a href="#实用程序（Utilities）" class="headerlink" title="实用程序（Utilities）"></a>实用程序（Utilities）</h3><p>是一种专注于使计算更加便捷的程序。</p>
+<p><strong>操作系统实用程序（Operating System Utilities）</strong></p>
+<ul>
+<li><strong>故障识别程序（Troubleshooting）</strong> 也叫**诊断程序（diagnostic program）**用来识别并纠正问题</li>
+<li>**防病毒程序（Antivirus program）**用来保护计算机免受病毒侵害。</li>
+<li>**备份程序（Backup program）**创造文件的副本，当源文件损坏的使用后来重建文件</li>
+<li>**搜索程序（search program）**提供了一种快捷的方式来搜索或者检查整个计算机系统</li>
+<li>**存储管理程序（Storage management program ）**通过列出可以消除的文件或程序来帮助解决存储空间不足的问题</li>
+<li>**虚拟助手（Virtual Assistants）**通过文本或者语音接受命令，可以直接与平板，电脑，手机交互</li>
+</ul>
+<p>**实用程序套件（Utility Suites）**将多个实用程序组合到一个包里。</p>
+<h2 id="Unit5-System-Unit"><a href="#Unit5-System-Unit" class="headerlink" title="Unit5 System Unit"></a>Unit5 System Unit</h2><h3 id="System-Unit-系统单元"><a href="#System-Unit-系统单元" class="headerlink" title="System Unit 系统单元"></a>System Unit 系统单元</h3><p>**系统单元（System Unit）<strong>也叫</strong>系统机箱（System chassis）<strong>是一个容纳大多数组成电脑系统的</strong>电子元件（electronic components）**的容器。</p>
+<p>常见的**个人计算机（personal computers）**类型：</p>
+<ul>
+<li><p>智能手机（Smartphones）也叫手持计算机系统（hand-held computer systems）整个计算机系统都保存在移动设备内部。</p>
+</li>
+<li><p>平板电脑（Tablet）像是一个大号手机</p>
+</li>
+<li><p>笔记本（laptop）装有电子元件，辅助设备和输入设备。也叫做<strong>notebook computer</strong></p>
+<p>（1）<strong>二合一笔记本电脑（Two-in-one laptops）</strong> 可以用作笔记本或者平板电脑</p>
+<p>（2）游戏本（Gaming）有高端显卡和快速处理器</p>
+<p>（3）<strong>超极本（Ultrabook</strong>）或**超便携式笔记本（Ultraportables）<strong>或者</strong>轻薄本（mini notebook）**是一种便携式笔记本，更轻更薄，有更长的续航。</p>
+</li>
+<li><p>台式机（desktop）装有电子元件和外存。系统单元被放置在**塔式单元（tower unit，tower computer）**里。**一体机（all-in-one)**整合了显示器和系统单元。</p>
+</li>
+<li><p>**可穿戴设备（wearable）**包含嵌入式电脑。</p>
+</li>
+</ul>
+<p>各种智能设备都有类似的组成：<strong>主板（system boards）</strong>，<strong>微处理器（Microprocessors）</strong>，<strong>内存（Memory）</strong></p>
+<h3 id="System-Board-主板"><a href="#System-Board-主板" class="headerlink" title="System Board 主板"></a>System Board 主板</h3><p>**主板（System Board，main board，motherboarrd）**控制整个计算机组件的交流。</p>
+<p>所有的组件都连接到系统主板。</p>
+<p>主板充当数据路径和流量监视器，允许组件之间相互通信。</p>
+<p>系统主板包含许多组件</p>
+<ul>
+<li>**插口（Sockets）**芯片的连接点</li>
+<li>**芯片（chips，silicon chip,semiconductor,integrated circuit）**包含许多电路，这些电路蚀刻在硅和其他材料层的小晶圆上。芯片安装在载体包上（carrier packages）</li>
+<li>**插槽（Slots）**提供特定的元件与电路板的连接点。</li>
+<li>**总线（Bus lines）**连接电路板上的线路来支持通信</li>
+</ul>
+<h3 id="Microprocessor-微处理器"><a href="#Microprocessor-微处理器" class="headerlink" title="Microprocessor 微处理器"></a>Microprocessor 微处理器</h3><p>**中央处理器（Central Processing Unit，CPU）<strong>位于于</strong>微处理器（microprocessors）**芯片上，有两个组件：<strong>控制单元（control unit）<strong>和</strong>算数逻辑单元（the arithmetic-logic unit，ALU）</strong></p>
+<ul>
+<li><strong>控制单元（control unit）</strong>：告诉计算机如何去执行程序指令</li>
+<li><strong>算数逻辑单元（ALU）</strong>：进行算术运算（Arithmetic operation）和逻辑运算（Logical operation）</li>
+</ul>
+<p>微处理器芯片的指标：**位（word）**是指计算机的位数。8位形成一个自己，32位计算机一次可以访问4个字节，64位一次方位8个字节。算力（clock speed）CPU在一秒内可以获取和处理数据和指令的次数。</p>
+<p>**多核处理器（Multicore Processors）**有两个或者更多的独立核心</p>
+<p>**并行处理（Parallel Processing）**计算机将任务分为可在每个内核里分别运行。</p>
+<p><strong>专用处理器（Specialty processors，coprocessors）<strong>用来提高特定的计算操作。如</strong>显卡（Graphics Processing Unit ，GPU）</strong></p>
+<h3 id="Memory-内存"><a href="#Memory-内存" class="headerlink" title="Memory 内存"></a>Memory 内存</h3><p>数据、指令和信息的保持区域，有三种。</p>
+<ul>
+<li><p><strong>随机存储设备（Random-Access memory，RAM）</strong>，用来保存CPU正在处理的程序和数据</p>
+<p>断电之后信息会丢失。</p>
+<p>（1）**高速缓存（Cache memory）**对于经常使用的信息放在特定的高速区域，来提高处理性能</p>
+<p>（2）<strong>双列直插式内存模块（dual in-line memory module，DIMM）</strong>，用来扩展内容</p>
+<p>（3）**虚拟内存（Virtual memory）**把程序划分开，分别放在储存器和内存里，使系统可以运行非常大的的程序。</p>
+</li>
+<li><p><strong>只读存储器（Read only Memory，ROM）</strong>，制造商提前把内容烧录进去，用户无法更改。</p>
+<p>用于特殊指令，例如启动计算机，访问内存和处理键盘输入。</p>
+</li>
+<li><p>**闪存（Flash Memory）**可以及时更新存储的信息，并且断电的时候信息不会丢失。</p>
+</li>
+</ul>
+<h3 id="Expansion-Slots-and-Cards"><a href="#Expansion-Slots-and-Cards" class="headerlink" title="Expansion Slots and Cards"></a>Expansion Slots and Cards</h3><p>**扩展插槽（Expansion slots）**用于插入扩展卡。</p>
+<p>常见的扩展卡：</p>
+<ul>
+<li><strong>显卡（Graphics cards）</strong>，提供高质量的3D图形渲染</li>
+<li><strong>网卡（Network interface cards，NIC）</strong>，使设备可以连接网络。</li>
+<li>**无线网卡（Wireless network cards）**使黑背可以连接无线网</li>
+<li>SD卡（用于移动设备的扩展）</li>
+</ul>
+<h3 id="Bus-Lines-总线"><a href="#Bus-Lines-总线" class="headerlink" title="Bus Lines 总线"></a>Bus Lines 总线</h3><p>**总线（Bus Lines）**连接主板上各种各样的系统单元。</p>
+<p>**总线宽度（Bus width）**表示可以总线可以同时传输的位数。</p>
+<p>总线的架构和设计与计算机的速度和功耗息息相关。</p>
+<p>每台计算机都有两种总线</p>
+<ul>
+<li><p>**系统总线（System bus）**连接CPU和内存</p>
+</li>
+<li><p>**扩展总线（Expansion bus）**连接CPU和其他系统单元以及主板上的扩展插槽。</p>
+<p>（1）**通用串行总线（Universal Serial Bus，USB）**最常用。</p>
+<p>（2）**FireWire总线，**与USB类似，主要用于连接音频和视频设备。</p>
+<p>（3）<strong>PCI Express（PCIe）</strong>，广泛使用于功能强大的计算机。为每个连接的设备提供一条专用路径。（其他的总线为各个设备共享同一条路径）</p>
+</li>
+</ul>
+<h3 id="Ports-端口"><a href="#Ports-端口" class="headerlink" title="Ports 端口"></a>Ports 端口</h3><p>端口是把外界设备连接到系统单元上的插口，用两种类型：标准端口和专用端口</p>
+<ul>
+<li><p>标准插口（Standard Ports）</p>
+<p>（1）USB将多个设备连接到系统单元</p>
+<p>（2）**以太网（Ethernet）**网络标准，，高速网络端口。使用户可以连接网络</p>
+<p>（3）**高清多媒体接口（High Definition Multimedia Interface，HDMI）**提供高清的音视频</p>
+<p>（4）**雷电接口（Thunderbolt）**提供高速连接，一个端口可以连接七个独立的设备。</p>
+</li>
+<li><p><strong>专用接口（Specialized Ports）</strong></p>
+<p>（1）**迷你显示端口（mini displayPort，MiniDp，mDP）**连接大显示器</p>
+<p>（2）<strong>VGA和DVI</strong>，与模拟信号和数字信号显示器的连接</p>
+<p>（3）<strong>FireWire端口</strong>，连接摄录一体机和储存谁被</p>
+</li>
+</ul>
+<p>**电缆（Cables）**用于将设备与端口连接起来</p>
+<h3 id="power-supply-电源"><a href="#power-supply-电源" class="headerlink" title="power supply 电源"></a>power supply 电源</h3><p>电脑需要<strong>直流电（DC）</strong>，</p>
+<p>台式机的系统单元上有一个<strong>电源转换单元（power supply unit）</strong></p>
+<p>笔记本有<strong>交流适配器（AC adapters）</strong></p>
+<p>手机和平板使用内置的交流适配器</p>
+<p>手机还可以使用<strong>无线充电（charging platforms）</strong></p>
+<h3 id="信号转换与编码"><a href="#信号转换与编码" class="headerlink" title="信号转换与编码"></a>信号转换与编码</h3><p>计算机只能识别<strong>数字信号（Digital signals）</strong></p>
+<p>**模拟信号（Analog signals）**是连续的由声音创建的。</p>
+<p>计算机处理之前必须把模拟信号转化为数字信号</p>
+<ul>
+<li><p>数字化表示</p>
+<p>**二进制（binary system）<strong>系统仅由两种数字组成。一个字节有8位</strong>，十六进制系统（Hexadecimal system，hex）**用十六进制数来表示二进制数。</p>
+</li>
+<li><p>字符编码</p>
+<p>为每个字符分配唯一的编码</p>
+<p>（1）<strong>ASCII</strong>，曾经被用于个人电脑</p>
+<p>（2）<strong>EBCDIC</strong>，曾经被用于大型机</p>
+<p>（3）<strong>Unicode</strong>，16位编码，应用最广泛的标准。</p>
+</li>
+</ul>
+<h2 id="Unit-6-Input-and-output"><a href="#Unit-6-Input-and-output" class="headerlink" title="Unit 6 Input and output"></a>Unit 6 Input and output</h2><p>输入设备用于将人们可以理解的信息转化为计算机可以理解的形式。</p>
+<h3 id="Keyboard-键盘"><a href="#Keyboard-键盘" class="headerlink" title="Keyboard 键盘"></a>Keyboard 键盘</h3><ul>
+<li>传统键盘（Traditional keyboard）</li>
+<li>笔记本电脑键盘（laptop keyboard）用于笔记本电脑</li>
+<li>虚拟键盘（virtual keyboard）用于平板电脑和移动设备上的键盘</li>
+</ul>
+<h3 id="Pointing-devices点设备"><a href="#Pointing-devices点设备" class="headerlink" title="Pointing devices点设备"></a>Pointing devices点设备</h3><p>通过手势或者点按将信息转化为机器可读的输入。提供直观的界面</p>
+<ul>
+<li><p><strong>鼠标（Mouse）<strong>控制</strong>鼠标指针（Mouse pointer）</strong>。有**滚轮按钮（wheel button）**来滚动。**光电鼠标（optical Mouse）**使用最广泛。</p>
+<p>（1）**光电鼠标（optical Mouse）**没有移动部件，发出并感应光线来检测鼠标的移动。可以在任何表面上使用。</p>
+<p>（2）**无线鼠标（cordless mouse，wireless mouse）**利用无线电波或者红外光波传输</p>
+<p>（3）**触摸板（touch pads）**通过手指在触摸板上移动或点击来控制指针。</p>
+</li>
+<li><p>**触摸屏（Touch screen）**使用手指或者笔在屏幕上操作。<strong>手写笔（Stylus）<strong>是一种类似笔的设备。在平板电脑上使用。需要使用</strong>手写识别软件识别（handwriting recognition software）</strong>。**多点触控屏（Multi-touch screen）**可以用多个手指触摸。</p>
+</li>
+<li><p><strong>游戏控制器（Gaming Controllers）</strong></p>
+<p>（1）**操纵杆（Joystick）**通过改变压力、速度和方向来控制游戏动作</p>
+<p>（2）<strong>游戏鼠标（Gaming Moouse）</strong> 类似于传统鼠标，具有更高的精度，更快的响应速度，可编程的按钮和更好的人体工程学设计</p>
+<p>（3）**游戏板（Game pads）**可以使用两只手同时握住来操作。</p>
+<p>（4）**运动感应设备（Motion sensing device）**通过用户移动来控制设备。</p>
+</li>
+</ul>
+<h3 id="Scanning-Devices-扫描设备"><a href="#Scanning-Devices-扫描设备" class="headerlink" title="Scanning Devices 扫描设备"></a>Scanning Devices 扫描设备</h3><p>**扫描设备（scanning devices）**将扫描的数据转换成系统单元可以出的的形式。</p>
+<ul>
+<li><p><strong>光学扫描仪（optical）<strong>也叫</strong>scanner</strong></p>
+<p>（1）**平板扫描仪（Flatbed）**像是复印机。</p>
+<p>（2）<strong>文档扫描仪（Document）</strong>，可以快速扫描多页文档</p>
+<p>（3）**便携式扫描仪（Portable）**手持设备，可以在图像上滑动，直接接触。</p>
+<p>（4）3D，使用激光相机或者机械臂来记录物体的三维形状</p>
+</li>
+<li><p><strong>读卡设备（Card Readers）<strong>解释存储在借记卡、信用卡和身份证上的编码信息。最常见的是</strong>磁卡读卡器（Magnetic card reader）</strong>，信息储存在卡背面的薄词条上。**芯片卡（chip card）**再信用卡中嵌入微芯片，包含加密数据。</p>
+</li>
+<li><p><strong>条形码阅读器（Bar code readers，bar code canners）<strong>有</strong>手持型（wand reader)<strong>或者</strong>平台型(platform scanner)</strong>。读取商品上面的条码。产品有<strong>通用产品代码（Universal,UPC）<strong>和用于运输的</strong>Maxicode.</strong></p>
+</li>
+<li><p>**射频识别（radio frequency identification，RFID）**嵌入在大多数任何东西中的微小芯片都包含电子储存的信息。可以使用位于几码外的阅读器读取。可用于追踪宠物，更新和控制库存，阅读护照</p>
+</li>
+<li><p>**字符和标记识别设备（radio frequency identification）**用来识别特殊字符和标记。</p>
+<p>（1）<strong>MICR</strong>，银行用于读取支票和存款单底部的磁性编码字符;数字由阅读器&#x2F;排序器读取</p>
+<p>（2）读取特别预印的字符，读取价格标签</p>
+<p>（3）<strong>OMR</strong>，设备检测标记的存在与否，这在标准化和多项选择题测试评分中很常见。</p>
+</li>
+</ul>
+<h3 id="image-capturing-devices-图像捕获设备"><a href="#image-capturing-devices-图像捕获设备" class="headerlink" title="image capturing devices 图像捕获设备"></a>image capturing devices 图像捕获设备</h3><ul>
+<li>**数码相机（Digital cameras）**类似于传统相机，图像以数字的方式记录在磁盘或者相机的内存里。</li>
+<li>**网络相机（Webcams）**可以捕获图像并且发送到计算机通过网络 广播，内置于智能手机和平板电脑里。</li>
+</ul>
+<h3 id="Audio-Input-Devices音频输入设备"><a href="#Audio-Input-Devices音频输入设备" class="headerlink" title="Audio-Input Devices音频输入设备"></a>Audio-Input Devices音频输入设备</h3><p>麦克风是最常用的音频输入设备。</p>
+<p><strong>语音识别系统（Voice recognition systems）</strong>，即智能语音助手</p>
+<h3 id="Monitors-显示器"><a href="#Monitors-显示器" class="headerlink" title="Monitors 显示器"></a>Monitors 显示器</h3><p><strong>显示器（Monitor）<strong>也叫</strong>display screen</strong></p>
+<ul>
+<li><p>属性</p>
+<p>（1）**清晰度（Clarity）**所显示图像的质量和清晰度</p>
+<p>（2）**分辨率（Resolution）**最重要的功能之一;图像由一系列点或像素（pixels，picture elements）在显示器上形成</p>
+<p>（3）**像素点间距（Dot pitch）**每个像素之间的距离;大多数较新的显示器的点间距为 0.30 毫米（30&#x2F;100 毫米）或更小</p>
+<p>（4）**对比度（Contrast ratios）**显示器显示颜色的能力</p>
+<p>（5）<strong>尺寸（Size）</strong></p>
+<p>（6）<strong>宽高比例（Aspect ratio）</strong></p>
+</li>
+<li><p>**平板显示器（Flat-Panel Monitors）**使用最广泛。运行所需功率少，便携精简。大多数有背光。三种类型：</p>
+<p>（1）**液晶显示器（LCD）**比较老旧</p>
+<p>（2）<strong>发光二极管（LED）</strong>，有更先进的背光</p>
+<p>（3）<strong>有机发光二极管（OLED，产生光的薄层有机化合物）</strong></p>
+</li>
+<li><p><strong>电子阅读器（E-book Readers）</strong></p>
+<p>用来阅读电子书。使用**电子墨水（e-ink）**技术。产生反射光线的图像。如亚马逊的kindle</p>
+</li>
+<li><p>其他显示器</p>
+<p>（1）**数字白板（Digital whiteboards）**可交互的大型触摸屏</p>
+<p>（2）**柔性屏幕（Flexible Screens）**允许设备在弯曲的表面上显示</p>
+<p>（3）<strong>数字投影仪（Digital projector）</strong></p>
+</li>
+</ul>
+<h3 id="Printers-打印机"><a href="#Printers-打印机" class="headerlink" title="Printers 打印机"></a>Printers 打印机</h3><ul>
+<li><p>特点</p>
+<p>（1）<strong>分辨率（Resolution）</strong>，以**每英寸点数（dots-per-inch，dpi）**表示</p>
+<p>（2）<strong>颜色（color）</strong>，彩色打印更贵</p>
+<p>（3）<strong>速度（speed）</strong></p>
+<p>（4）**内存（Memory）**用于储存打印队列</p>
+<p>（5）<strong>双面打印（Duplexprinting）</strong></p>
+</li>
+<li><p>**喷墨打印机（Inkjet printer）**将墨水高速喷洒到纸张表面 可靠、安静、价格低廉。</p>
+</li>
+<li><p>**激光打印机（Laser printer）**使用激光束来生成图像 比喷墨打印机更快、质量更优、更昂贵。</p>
+</li>
+<li><p>3D打印机，创建三维形状，重复添加一层薄薄的材料，直到创建项目。</p>
+</li>
+<li><p>其他打印机</p>
+<p>（1）**云打印机（Cloud）**连接到互联网，并为网络上的其他人提供打印服务。</p>
+<p>（2）**热敏打印机（Thermal printers）**使用热敏元件在热敏纸、ATM 和气泵上生成图像</p>
+<p>（3）**绘图仪（Plotters）**用于地图，图像，建筑和工程图纸等。</p>
+</li>
+</ul>
+<h3 id="Audio-and-Video-Devices音频输出设备"><a href="#Audio-and-Video-Devices音频输出设备" class="headerlink" title="Audio and Video Devices音频输出设备"></a>Audio and Video Devices音频输出设备</h3><p>**扬声器（Sperkers）<strong>和</strong>耳机（headsets）**是使用最广泛的音频输出设备。蓝牙技术（Bluetooth）将扬声器连接到无线声卡。</p>
+<h3 id="Combination-Input-and-Output-Devices输入输出二合一设备"><a href="#Combination-Input-and-Output-Devices输入输出二合一设备" class="headerlink" title="Combination Input and Output Devices输入输出二合一设备"></a><strong>Combination</strong> Input and Output Devices输入输出二合一设备</h3><ul>
+<li>**耳麦（Headsets）**结合麦克风和耳机。</li>
+<li>**多功能设备（Multifunctional devices，MFD）**结合了扫描仪、打印机、传真机和复印机的功能。</li>
+<li><strong>虚拟现实设备（Virtual reality，VR）<strong>由计算机创造的人造或者模拟显示设备。有</strong>头戴式显示器（Virtual head-mounted displays）和控制器（Controllers）</strong></li>
+<li><strong>无人机（Drones）<strong>也叫</strong>非武装飞行器（unarmed aerial vehicles，UAV）</strong>，从控制器获取输入并将视频和声音发回给用户</li>
+<li>**机器人（Robots）**使用摄像头、麦克风和其他传感器作为输入。</li>
+</ul>
+<h3 id="Ergonomics-人体工程学"><a href="#Ergonomics-人体工程学" class="headerlink" title="Ergonomics 人体工程学"></a>Ergonomics 人体工程学</h3><p>使任务更适合用户使用</p>
+<p>可以避免：</p>
+<ul>
+<li><strong>眼睛疲劳（eyestrain）</strong></li>
+<li><strong>背部和颈部疼痛（Back and neck pain）</strong></li>
+<li><strong>重复性劳损（Repetitive strain injury）</strong></li>
+<li>**腕管综合征（Carpal tunnel syndrome）**手部神经和肌肉受损</li>
+</ul>
+<p>**便携式设备（Portable computers）**为针对人体工程学进行设置，所以学习的时候要注意</p>
+<ul>
+<li>笔记本电脑：提高屏幕高度，或者连接外部键盘</li>
+<li>平板：常休息，使用支架，外接键盘</li>
+<li>智能手机：头部向上，肩旁伸直。</li>
+</ul>
+<h2 id="Unit7-Secondary-Storage"><a href="#Unit7-Secondary-Storage" class="headerlink" title="Unit7 Secondary Storage"></a>Unit7 Secondary Storage</h2><h3 id="Storage-储存"><a href="#Storage-储存" class="headerlink" title="Storage 储存"></a>Storage 储存</h3><p>**主存（Primary storage）**是临时的，当计算机断电的时候丢失信息。</p>
+<p>**外存（Secondary storage）**可以永久保存信息。</p>
+<p>外存的特性：</p>
+<ul>
+<li><strong>媒介（Media）</strong>：保存数据和程序的实际物理材料</li>
+<li><strong>容量（Capacity）</strong>：衡量存储介质可以容纳的信息多少</li>
+<li><strong>访问速度（Access speed）</strong>：测量存储设备检索数据和程序所需要的时间</li>
+<li><strong>存储设备（Storage devices）</strong>：从媒介读取和写入到媒介的硬件</li>
+</ul>
+<h3 id="Solid-Stage-Storage-固态存储"><a href="#Solid-Stage-Storage-固态存储" class="headerlink" title="Solid Stage Storage 固态存储"></a>Solid Stage Storage 固态存储</h3><p>**固态存储（Solid Stage Storage）**设备没有移动的部件</p>
+<ul>
+<li>**固态硬盘（Solid state drives）**比普通硬盘更快更耐用，并且需要更少的电量。</li>
+<li>**闪存卡（Flash memory cards）**是一种固态硬盘，被用于数码相机，ipods等设备。闪存比一般的内存慢，但比其他的SSD快。</li>
+<li>USB驱动器也叫**闪存驱动器（Flash drives）**连接USB端口</li>
+</ul>
+<h3 id="Hard-Disks-机械硬盘"><a href="#Hard-Disks-机械硬盘" class="headerlink" title="Hard Disks 机械硬盘"></a>Hard Disks 机械硬盘</h3><p>**硬盘（Hard disks）**通过改变磁盘表面的磁荷来保存文件，以表示 1 和 0。密度（Density）是指这些电荷在磁盘上彼此相邻的包装程度。</p>
+<p>由金属圆盘组成。</p>
+<ul>
+<li>**盘片（Platter）**是一种刚性金属，一个一个的堆叠起来</li>
+<li>**磁道（Track）**是金属盘上一个一个的环</li>
+<li>**扇区（sectors）**从圆心向外呈放射状地产生分割线（扇骨），将每个磁道等分为若干弧段，每个弧段就是一个扇区。每个扇区的大小是固定的，为 512Byte。扇区也是磁盘的最小存储单位。</li>
+<li>**柱面（cylinder）**磁道从外向内由0开始编号，多个盘片编号相同的磁道自上而下形成一个圆柱，称为柱面。</li>
+</ul>
+<p>格式化硬盘的时候，将分配磁道扇区和柱面</p>
+<p>硬盘的类型有：</p>
+<ul>
+<li>**内置硬盘（Internal Hard Disks）**位于系统单元内部，能够快速存储和检索信息。用于储存信息和数据文件</li>
+<li>**外部硬盘（External Hard Disks）**访问速度较慢，通常会连接到系统单元的USB端口或者雷电接口。易于拆卸，有固定的储存量</li>
+<li>**网络驱动器（Network Drives）**当网络中电脑的磁盘作为共享数据区域允许网络用户访问时，该驱动器就变成了网络驱动器了。</li>
+</ul>
+<p>硬盘的性能增强技术</p>
+<ul>
+<li>**磁盘缓存（Disk caching）**使用硬件和软件来预测需求，执行类似于RAM缓存的功能。充当硬盘和CPU之间的高速缓存区</li>
+<li><strong>磁盘阵列（Redundant arrays of inexpensive disks ，RAID）</strong>，把相同的数据储存在多个硬盘的不同地方。提高了存取速度。常用于互联网服务器和大型组织</li>
+<li>**文件压缩和解压（File compressionand decompression）**可以增加储存容量，提高文件传输速度，减少储存所需空间</li>
+</ul>
+<h3 id="Optical-Disks-光盘"><a href="#Optical-Disks-光盘" class="headerlink" title="Optical Disks 光盘"></a>Optical Disks 光盘</h3><p>光盘是紧凑高容量（50G）的永久存储形式。</p>
+<p>光盘由**光驱（optical disc drive）**读取</p>
+<p>激光束通过创建**凹区（pits）<strong>和</strong>平区（lands）**来写入数据。</p>
+<p>激光通过凹坑和平坦区域的反射来读取数据。也是使用磁道和扇区来组织和存储文件，但是只能使用单个磁道。</p>
+<p>光盘格式种类：</p>
+<ul>
+<li>CD—曾经的光盘标准</li>
+<li>DVD—现在的标准</li>
+<li>BD—高清形式，由更大的容量</li>
+<li>支持4K视频</li>
+</ul>
+<p>光盘类别</p>
+<ul>
+<li>**只读光盘（ROM，read-only memory）**只能读不能写</li>
+<li>**一次性写入光盘（Write-once，R，recordable）**只能被写入一次，之后只能读。</li>
+<li>**可重写光盘（Rewritable，RW，RAM，random-access memory discs）**可以重写，可以更改。</li>
+</ul>
+<h3 id="Cloud-Storage云存储"><a href="#Cloud-Storage云存储" class="headerlink" title="Cloud Storage云存储"></a>Cloud Storage云存储</h3><p>将程序放在云服务器上本机服务器只显示结果。类似云计算（cloud computing）</p>
+<ul>
+<li>云服务商提供存储，内存，计算</li>
+<li>优点是占用用户更少的存储，内存和算力</li>
+<li>缺点是运算速度慢，文件安全性受到威胁。</li>
+</ul>
+<h3 id="Mass-Storage-Devices-大容量存储设备"><a href="#Mass-Storage-Devices-大容量存储设备" class="headerlink" title="Mass Storage Devices 大容量存储设备"></a>Mass Storage Devices 大容量存储设备</h3><p>**大容量存储（Mass Storage）**是指大型组织需要的大容量外存。</p>
+<p><strong>企业存储系统（enterprise storage system）</strong>，大多数组织利用此系统来提高效率和数据的安全性。</p>
+<p>支持此系统的设备：</p>
+<ul>
+<li><strong>文件服务器（File Servers）</strong></li>
+<li><strong>网络连接存储（Networked attached storage ，NAS)</strong>，适用于小型企业和家庭，更便宜，易于设置和管理。</li>
+<li><strong>RAID系统</strong>，专用设备的更大版本</li>
+<li><strong>组织云存储（Organizational cloud storage）</strong>，通过高速互联网连接到专用的远程存储设备。</li>
+</ul>
+<p><strong>存储区域网络（Storage area network）</strong>，用户的电脑提供文件系统，SAN提供存储区域。把数据放在远程位置。</p>
+<h2 id="Unit8-Communication-and-Networks"><a href="#Unit8-Communication-and-Networks" class="headerlink" title="Unit8 Communication and Networks"></a>Unit8 Communication and Networks</h2><h3 id="communication-通信"><a href="#communication-通信" class="headerlink" title="communication 通信"></a>communication 通信</h3><p>电脑的交流是数据共享的过程。</p>
+<ul>
+<li><p>**连通（Connectivity）**意味着你可以将电脑与其他的任何一台电脑连接</p>
+</li>
+<li><p><strong>无线革命（The Wireless Revolution）</strong></p>
+</li>
+<li><p>**通信系统（Communication System）**是将数据从一个位置传输到另一个位置的电子系统，他的基本要素包括</p>
+<p>（1）<strong>发送和接收设备（•Sending and receiving devices）</strong></p>
+<p>（2）**连接设备（•Connection devices）**将传出的数据转换成可以跨通信信道传输的数据包</p>
+<p>（3）**数据传输规范（•Data transmission specifications）**协调发送和接受设备的规则</p>
+<p>（4）**沟通渠道（Communication channel）**承载消息，有有线和无线两种</p>
+</li>
+</ul>
+<h3 id="communication-channels-信道"><a href="#communication-channels-信道" class="headerlink" title="communication channels 信道"></a>communication channels 信道</h3><p>**信道承载（Communication channel）**从一个电脑到另一台电脑的数据。</p>
+<p>有两类信道：</p>
+<ul>
+<li><p><strong>无线信道（Wirless Connection）</strong></p>
+<p>（1）**蓝牙技术（Bluetooth）**短距离无线电通信标准</p>
+<p>（2）Wi-Fi，短距离通信。高频电波</p>
+<p>（3）**微波（Microwave）**使用高频电波</p>
+<p>（4）<strong>WiMax</strong>，Wi-Fi技术的扩展，允许更远距离的Wi-Fi通信</p>
+<p>（5）**蜂窝（Cellular）**使用多个天线进行通信。利用基站实现</p>
+<p>（6）**卫星（Satellite）**使用卫星作为中继站进行通信。如GPS系统。**上行链路（Uplink）**向卫星发送数据，**下行链路（Downlink）**从卫星接收数据。</p>
+<p>（7）**红外线（Infared）**短距离的光波。</p>
+</li>
+<li><p><strong>物理信道，有线信道（Physical Connections）</strong></p>
+<p>（1）**双绞线电缆（Twisted pair cable）**将一对铜线绞合在一起。如电话线（telephone）和以太网（Ethernet）都是双绞线。以太网电缆由双绞线电缆组成，传输速度最慢，被更先进的媒介淘汰。</p>
+<p>（2）**同轴电缆（Coaxial cable）**有单根实心铜芯。传输速度是双绞线的80倍。</p>
+<p>（3）**光纤（Fiber optic）**以光脉冲的形式通过微小的玻璃管传输。更安全可靠;在限定的距离内效果最好比同轴电缆更轻、更可靠、更快</p>
+</li>
+</ul>
+<h3 id="Connection-device-连接设备"><a href="#Connection-device-连接设备" class="headerlink" title="Connection device 连接设备"></a>Connection device 连接设备</h3><p>电话使用的是<strong>模拟信号（analog signals）</strong>，是连续的电子波。计算机接受和发送的是**数字信号（digital signals）**是不连续的。</p>
+<p>**转换速率（Transfer Rate）<strong>是指</strong>调制解调器（Modems）**转换数据的速度。</p>
+<ul>
+<li><p><strong>调制解调器（Modems）</strong>，**调制（Modulation）**是把数字信号转化为模拟信号，**解调（Demodulation）<strong>是把模拟信号转化为数字信号。因为传输线路传输的是模拟信号，所以需要先调制成模拟信号，再解调成数字信号。传输速率用</strong>兆比特每秒（Mbps）**作单位。调制解调器的种类有</p>
+<p>（1）**数字用户电路（DSL，digital subcsriber line）**使用标准电话线创建高速连接。</p>
+<p>（2）**电缆（Cable）**使用与电视相同的同轴电缆</p>
+<p>（3）<strong>无线（Wireless）<strong>也叫做WWAN调制解调器或者</strong>无线广域网（wireless wide area network）</strong></p>
+</li>
+<li><p>连接服务</p>
+<p>（1）**蜂窝数据（cellular service）**这些数据经历了4个时代，1G，使用模拟信号提供模拟语音传输业务；2G使用数字无线电信号；3G提供有效连接到互联网的服务，标志手机开始广泛使用；4G使用LTE（long term Evolution）连接，提供更快的互联网接入；5G，正在发展。</p>
+<p>（2）**拨号服务（Dial-up services）**由电话公司·利用现存的电话线提供服务。已经被更告诉的连接服务取代。</p>
+<p>（3）**数字用户电路（Digital subscriber line service，DSL）**使用现有的电话线提供高速连接。**ADSL（asymmetric digital subscriber line）**是使用最广泛的一种DSL。</p>
+<p>（4）<strong>电缆（cable）</strong>，使用现有有线电视的电缆连接</p>
+<p>（5）**光纤服务（Fiber-optic service，FiOS）**一种新技术，没有被广泛使用。</p>
+<p>（6）<strong>卫星连接服务（Satellite connection services）</strong>，使用卫星进行无线连接</p>
+</li>
+</ul>
+<h3 id="Data-Transmission-数据传输"><a href="#Data-Transmission-数据传输" class="headerlink" title="Data Transmission 数据传输"></a>Data Transmission 数据传输</h3><p>一些技术问题会影响数据的传输方式，包括带宽（Bandwidth）和协议（protocols）</p>
+<ul>
+<li><p>**带宽（Banwith）**是指通信信道的宽度或者叫容量。他表示在给定时间内能通过信道的信息量。有以下类型：</p>
+<p>（1）<strong>语音带宽（Voiceband）</strong>，也叫**低带宽（low bandwidth）**通过标准电话线传输，太慢。</p>
+<p>（2）**中频段带宽（Medium band）**具有特殊的租用线路，用于连接小型计算机和大型机，以及长距离传输数据（对于较大的计算机系统）;通常不被个人使用</p>
+<p>（3）**宽带（Broadband）**用于高容量传输（DSL，电缆，卫星连接），可以有效传输高质量视频。通常为1.5Mbps</p>
+<p>（4）**基带（Baseband）**广泛用于连接彼此靠近的单个计算机</p>
+</li>
+<li><p><strong>协议（Protocols）<strong>表示计算机之间交换数据的规则。有</strong>HTTPS（超文本传输安全协议）<strong>和</strong>传输控制协议（tranmission control protocol&#x2F;Internet protocol,TCP&#x2F;IP)</strong>。协议有两个基本特征</p>
+<p>（1）<strong>标识性（Identification）</strong>，互联网上的每台计算机都有唯一的数字地址，称为IP地址，**域名服务器（Domain Name Server，DNS）**可以将域名地址转化为IP地址。</p>
+<p>（2）<strong>分组化（Packetization）<strong>可以将消息分解为</strong>数据包（packets）</strong>，使其更容易通过网络传输，并在目的地重新组合成信息。</p>
+</li>
+</ul>
+<h3 id="Networks-网络"><a href="#Networks-网络" class="headerlink" title="Networks 网络"></a>Networks 网络</h3><p>**计算机网络（computer network）**是连接两台或多台计算机以便它们可以交换信息和共享资源的通信系统。</p>
+<p>在网络中的关键词：</p>
+<ul>
+<li><strong>节点（Nodes）</strong>—连接到网络的设备</li>
+<li><strong>客户端（client）</strong>—从其他节点获取资源的节点</li>
+<li><strong>服务商（server）</strong>—与其他节点分享资源的节点</li>
+<li>**文件服务器（directory server）**管理资源的专用服务器</li>
+<li><strong>主机（Host）</strong>—网络上可以连接到的计算机系统</li>
+<li><strong>路由器（Router）</strong>—在网络间起网关的作用，将一个网络中的数据包传送到另一个网络中的某个节点。</li>
+<li>**交换机（Switch）**协调数据流的中心节点</li>
+<li>**网卡（Network interface cards，NIC）**使一个电脑可以连接到网络的扩展卡</li>
+<li><strong>网络操作系统（Network Operating System，NOS）</strong>，控制网络上所有计算机的活动</li>
+<li>**网络管理员（Network，administrator）**负责网络操作。</li>
+</ul>
+<h3 id="Network-Types-网络类型"><a href="#Network-Types-网络类型" class="headerlink" title="Network Types 网络类型"></a>Network Types 网络类型</h3><p>各种类型网络的适用范围不同。</p>
+<ul>
+<li><p>**局域网（Local area networks，LANs）**再不到一英里的距离内连接的计算机和设备。通过电缆连接，经济灵活，使用网络网关（network gateways）局域网可以连接到其他的局域网或者各种网络。</p>
+<p>（1）<strong>家庭局域网（HomeNetworks）</strong>，在家庭中的使用的局域网</p>
+<p>（2）<strong>无线局域网（Wireless LAN，WLAN）</strong>，通过**无线接入点（wireless access point）<strong>或者</strong>基站（base station）**连接。**热点（hotspot）**是公众可以开启的无线接入点。</p>
+<p>（3）**个人局域网（personal Area networks）**在非常小的区域内工作。</p>
+</li>
+<li><p><strong>城域网（metropolitan area network，MANs）</strong>，跨度最远可达100英里，在城市的地理范围内连接。</p>
+</li>
+<li><p>**广域网（wide area networks）**全国和全球网络。因特网是最大的广域网。</p>
+</li>
+</ul>
+<h3 id="Network-Architecture-网络架构"><a href="#Network-Architecture-网络架构" class="headerlink" title="Network Architecture 网络架构"></a>Network Architecture 网络架构</h3><p>**网络架构（Network Architecture）**描述了网络的排列方式以及资源的协调和共享方式</p>
+<p>**网络的拓扑结构（Network Topology ）**描述了网络的物理安排方式。</p>
+<p>网络的拓扑结构有</p>
+<ul>
+<li>**环形网络（Ring network）**每个设备连接到另外两个设备，形成一个环，传输数据的时候就绕环依次传递</li>
+<li><strong>总线网络（Bus network）<strong>每个设备连接到一个公共电缆上，称为</strong>总线（Bus）</strong></li>
+<li>**星型结构（Star network）**每个设备都直接连到中央网络交换机，每当节点发送消息时，都会将其路由到交换机，然后交换机将消息传递给预期的收件人。星形网络是当今使用最广泛的网络拓扑结构。</li>
+<li><strong>树形结构（Tree Network）<strong>也叫</strong>分层网络（hierarchical network）</strong>，构成一棵树。</li>
+<li>**网状结构（mesh network）**不适用特定的物理布局，但是要求每个节点与其他节点有多个连接，如果两个节点之间路径中断，则还可以使用另外的路径。</li>
+</ul>
+<p>**络策略（network Strategies）**协调信息和资源共享的方式。有两种</p>
+<ul>
+<li>**客户端-服务器网络（Client&#x2F;Server Network）**优点是可以高效处理大型网络，提供功能强大的网络管理软件来监视和控制网络活动。缺点是安装和维护成本高。</li>
+<li><strong>点对点（Peer-to-Peer，P2P）</strong>，所有节点都是等价的。如<strong>比特种子（BitTorrent）</strong>，但是缺乏安全性。</li>
+</ul>
+<h3 id="Organizational-Network-组织网络"><a href="#Organizational-Network-组织网络" class="headerlink" title="Organizational Network 组织网络"></a>Organizational Network 组织网络</h3><p>类似于小型互联网。</p>
+<ul>
+<li><strong>Intranet</strong>，提供组织内部的网络沟通，如校园网</li>
+<li><strong>Extranet</strong>，提供多个组织间的网络沟通</li>
+</ul>
+<h3 id="Network-Security-网络安全"><a href="#Network-Security-网络安全" class="headerlink" title="Network Security 网络安全"></a>Network Security 网络安全</h3><p>有三种常见的技术来保证网络安全</p>
+<ul>
+<li><strong>防火墙（Firewall）</strong>，利用**代理服务器（proxy server）**构建起防火墙，外部世界与组织内部的通信都必须通过代理服务器。</li>
+<li><strong>入侵检测系统（Intrusion detection system ，IDS）</strong>，可以识别网络攻击的迹象，并且再入侵者造成损害之前禁止访问。</li>
+<li><strong>虚拟专用网络（Virtual private network ，VPN）</strong>，再远程用户和内部网络之间创建安全的专用链接，在用户的家庭或者便携式计算机与公司服务器之间创建等效的专用网络。</li>
+</ul>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/12/24/system-operations/server-config/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">文件管理</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/12/24/system-operations/server-config/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a></div></section></div>
+
+<div class="related-wrap" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2023\08\29\system-operations\linux-system\数据库课设——共享单车管理系统\" title="数据库课设——共享单车管理系统"><span class="title">数据库课设——共享单车管理系统</span></a><a class="item" href="\2025\12\27\服务器\cpolar\" title="Cpolar"><span class="title">Cpolar</span></a><a class="item" href="\2025\12\27\system-operations\linux-system\HTTrack 简单使用\" title="HTTrack 简单使用"><span class="title">HTTrack 简单使用</span></a><a class="item" href="\2023\08\28\gaming-world\game-guides\一些困难和解决方案\" title="一些困难和解决方案"><span class="title">一些困难和解决方案</span></a><a class="item" href="\2023\09\27\tech-development\web-development\实习内容\" title="实习内容"><span class="title">实习内容</span></a></div></section></div>
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8F%82%E8%80%83%E4%B9%A6"><span class="toc-text">主要参考书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E9%93%BE"><span class="toc-text">友链</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit1-information-technology-internet-and-you"><span class="toc-text">Unit1 information technology,internet,and you</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PEOPLE"><span class="toc-text">PEOPLE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Software"><span class="toc-text">Software</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hardware"><span class="toc-text">Hardware</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%EF%BC%88Data%EF%BC%89"><span class="toc-text">数据（Data）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E9%80%9A%E6%80%A7%E5%92%8C%E4%BA%92%E8%81%94%E7%BD%91"><span class="toc-text">连通性和互联网</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit2-The-Internet%EF%BC%8Cthe-Web-and-Electronic-commerce"><span class="toc-text">Unit2 The Internet，the Web and Electronic commerce</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Internet-and-web"><span class="toc-text">Internet and web</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Internet-Access-%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5"><span class="toc-text">Internet Access 网络连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-Utilities-%E7%BD%91%E9%A1%B5%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="toc-text">Web Utilities 网页工具包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Communication-%E7%A4%BE%E4%BA%A4"><span class="toc-text">Communication 社交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Search-Tools-%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7"><span class="toc-text">Search Tools 搜索工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Electronic-commerce-%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1"><span class="toc-text">Electronic commerce 电子商务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E8%AE%A1%E7%AE%97%EF%BC%88cloud-computing%EF%BC%89"><span class="toc-text">云计算（cloud computing）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88Internet-of-Things%EF%BC%8CIoT%EF%BC%89"><span class="toc-text">物联网（Internet of Things，IoT）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit3-Application-Software"><span class="toc-text">Unit3 Application Software</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#applicationg-software"><span class="toc-text">applicationg software</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="toc-text">通用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E7%A8%8B%E5%BA%8F"><span class="toc-text">专业程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%EF%BC%88Mobile-APPS%EF%BC%89"><span class="toc-text">移动应用（Mobile APPS）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%A5%97%E4%BB%B6%EF%BC%88Software-Suites%EF%BC%89"><span class="toc-text">软件套件（Software Suites）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit4-System-Software"><span class="toc-text">Unit4 System Software</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88operating-system%EF%BC%89"><span class="toc-text">操作系统（operating system）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-mobile-operating-system"><span class="toc-text">移动操作系统 mobile operating system</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">桌面操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E7%A8%8B%E5%BA%8F%EF%BC%88Utilities%EF%BC%89"><span class="toc-text">实用程序（Utilities）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit5-System-Unit"><span class="toc-text">Unit5 System Unit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#System-Unit-%E7%B3%BB%E7%BB%9F%E5%8D%95%E5%85%83"><span class="toc-text">System Unit 系统单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#System-Board-%E4%B8%BB%E6%9D%BF"><span class="toc-text">System Board 主板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Microprocessor-%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">Microprocessor 微处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-%E5%86%85%E5%AD%98"><span class="toc-text">Memory 内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Expansion-Slots-and-Cards"><span class="toc-text">Expansion Slots and Cards</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bus-Lines-%E6%80%BB%E7%BA%BF"><span class="toc-text">Bus Lines 总线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ports-%E7%AB%AF%E5%8F%A3"><span class="toc-text">Ports 端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#power-supply-%E7%94%B5%E6%BA%90"><span class="toc-text">power supply 电源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E8%BD%AC%E6%8D%A2%E4%B8%8E%E7%BC%96%E7%A0%81"><span class="toc-text">信号转换与编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit-6-Input-and-output"><span class="toc-text">Unit 6 Input and output</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Keyboard-%E9%94%AE%E7%9B%98"><span class="toc-text">Keyboard 键盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pointing-devices%E7%82%B9%E8%AE%BE%E5%A4%87"><span class="toc-text">Pointing devices点设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scanning-Devices-%E6%89%AB%E6%8F%8F%E8%AE%BE%E5%A4%87"><span class="toc-text">Scanning Devices 扫描设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#image-capturing-devices-%E5%9B%BE%E5%83%8F%E6%8D%95%E8%8E%B7%E8%AE%BE%E5%A4%87"><span class="toc-text">image capturing devices 图像捕获设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Audio-Input-Devices%E9%9F%B3%E9%A2%91%E8%BE%93%E5%85%A5%E8%AE%BE%E5%A4%87"><span class="toc-text">Audio-Input Devices音频输入设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Monitors-%E6%98%BE%E7%A4%BA%E5%99%A8"><span class="toc-text">Monitors 显示器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Printers-%E6%89%93%E5%8D%B0%E6%9C%BA"><span class="toc-text">Printers 打印机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Audio-and-Video-Devices%E9%9F%B3%E9%A2%91%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87"><span class="toc-text">Audio and Video Devices音频输出设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Combination-Input-and-Output-Devices%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BA%8C%E5%90%88%E4%B8%80%E8%AE%BE%E5%A4%87"><span class="toc-text">Combination Input and Output Devices输入输出二合一设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ergonomics-%E4%BA%BA%E4%BD%93%E5%B7%A5%E7%A8%8B%E5%AD%A6"><span class="toc-text">Ergonomics 人体工程学</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit7-Secondary-Storage"><span class="toc-text">Unit7 Secondary Storage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Storage-%E5%82%A8%E5%AD%98"><span class="toc-text">Storage 储存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solid-Stage-Storage-%E5%9B%BA%E6%80%81%E5%AD%98%E5%82%A8"><span class="toc-text">Solid Stage Storage 固态存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hard-Disks-%E6%9C%BA%E6%A2%B0%E7%A1%AC%E7%9B%98"><span class="toc-text">Hard Disks 机械硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Optical-Disks-%E5%85%89%E7%9B%98"><span class="toc-text">Optical Disks 光盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cloud-Storage%E4%BA%91%E5%AD%98%E5%82%A8"><span class="toc-text">Cloud Storage云存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mass-Storage-Devices-%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87"><span class="toc-text">Mass Storage Devices 大容量存储设备</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unit8-Communication-and-Networks"><span class="toc-text">Unit8 Communication and Networks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#communication-%E9%80%9A%E4%BF%A1"><span class="toc-text">communication 通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#communication-channels-%E4%BF%A1%E9%81%93"><span class="toc-text">communication channels 信道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Connection-device-%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87"><span class="toc-text">Connection device 连接设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Transmission-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="toc-text">Data Transmission 数据传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Networks-%E7%BD%91%E7%BB%9C"><span class="toc-text">Networks 网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-Types-%E7%BD%91%E7%BB%9C%E7%B1%BB%E5%9E%8B"><span class="toc-text">Network Types 网络类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-Architecture-%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84"><span class="toc-text">Network Architecture 网络架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Organizational-Network-%E7%BB%84%E7%BB%87%E7%BD%91%E7%BB%9C"><span class="toc-text">Organizational Network 组织网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-Security-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-text">Network Security 网络安全</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+<script src="/js/theme-switcher.js" defer></script>
+</div></body></html>

@@ -1,0 +1,972 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>网络病毒测试 - Hexo</title>
+
+  
+    <meta name="description" content="Wannacry介绍什么是 WannaCry 勒索软件攻击？ WannaCry 通过使用名为“EternalBlue”的漏洞利用进行传播。EternalBlue 仅适用于较旧的、未打补丁的 Microsoft Windows 版本，但运行此类版本的机器数量足以让 WannaCry 迅速传播开来。 *勒索软件是一种恶意软件，它通过加密锁住文件和数据，并索取赎金。 WannaCry 包含一个不寻常的函">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络病毒测试">
+<meta property="og:url" content="http://example.com/2023/10/16/system-operations/linux-system/%E7%BD%91%E7%BB%9C%E7%97%85%E6%AF%92%E6%B5%8B%E8%AF%95/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Wannacry介绍什么是 WannaCry 勒索软件攻击？ WannaCry 通过使用名为“EternalBlue”的漏洞利用进行传播。EternalBlue 仅适用于较旧的、未打补丁的 Microsoft Windows 版本，但运行此类版本的机器数量足以让 WannaCry 迅速传播开来。 *勒索软件是一种恶意软件，它通过加密锁住文件和数据，并索取赎金。 WannaCry 包含一个不寻常的函">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/wanncry-analysis-1.png">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/VMtool-download.png">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/VMware-interact-1.png">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/VMware-interact-2.png">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/VMware-interact-3.png">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/VMware-interact-4.png">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/VMware-interact-5.png">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/virus-analysis-4.jpg">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/virus-analysis-2.jpg">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/virus-analysis-3.jpg">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/virus-analysis-1.jpg">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/virus-analysis-5.jpg">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/virus-analysis-6.jpg">
+<meta property="og:image" content="http://example.com/_assets/images/Network-attack/virus-analysis-7.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-ef633e009eae50dc19f8f253273a2af0_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-25696ad49373393f257bc7826b8654e6_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-ac9efbcc9f670fad48976552489fd4a6_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-c4ec5a74af2e25e73956450b6fbe793d_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d5d7f398fcf56e76bfff2fc91588259b_720w.webp">
+<meta property="article:published_time" content="2023-10-16T02:44:53.000Z">
+<meta property="article:modified_time" content="2023-10-16T02:44:53.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="实验报告">
+<meta property="article:tag" content="工具软件">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="系统">
+<meta property="article:tag" content="网络安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/_assets/images/Network-attack/wanncry-analysis-1.png">
+  
+  
+  
+  <meta name="keywords" content="Linux,系统,教程,工具软件,网络安全,实验报告">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2023-10-16T10:44:53+08:00","dateModified":"2023-10-16T10:44:53+08:00","datePublished":"2023-10-16T10:44:53+08:00","description":"","headline":"网络病毒测试","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/10/16/system-operations/linux-system/%E7%BD%91%E7%BB%9C%E7%97%85%E6%AF%92%E6%B5%8B%E8%AF%95/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"http://example.com/2023/10/16/system-operations/linux-system/%E7%BD%91%E7%BB%9C%E7%97%85%E6%AF%92%E6%B5%8B%E8%AF%95/","keywords":"Linux, 系统, 教程, 工具软件, 网络安全, 实验报告","image":[]}</script>
+  
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">Hexo</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E5%A4%96%E6%8C%82%E5%BC%80%E5%8F%91/"><span class="title">外挂开发</span></a><a class="item title" href="/2025/12/27/tech-development/development-tools/WizTree/"><span class="title">WizTree</span></a><a class="item title" href="/2023/01/09/tech-development/development-tools/MermaidTutorial/"><span class="title">Markdown 画图：Mermaid 指北</span></a><a class="item title" href="/2025/12/28/system-operations/server-config/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2020/03/25/system-operations/linux-system/HTTrack%E4%BB%8B%E7%BB%8D/"><span class="title">程序员最爱的网站克隆爬取工具- HTTrack</span></a><a class="item title" href="/2025/12/27/system-operations/linux-system/HTTrack%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"><span class="title">HTTrack 简单使用</span></a><a class="item title" href="/2023/06/16/personal-essays/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"><span class="title">我的第一篇文章</span></a><a class="item title" href="/2025/12/27/personal-essays/GDPR_zh/"><span class="title">GDPR zh</span></a><a class="item title" href="/2025/12/28/README/"><span class="title">文章目录结构说明</span></a><a class="item title" href="/2025/12/27/Linux/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F/"><span class="title">被动扫描</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2023-10-16T02:44:53.000Z">2023-10-16</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2023-10-16T02:44:53.000Z">2023-10-16</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>网络病毒测试</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h2 id="Wannacry"><a href="#Wannacry" class="headerlink" title="Wannacry"></a>Wannacry</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><a target="_blank" rel="noopener" href="https://www.cloudflare-cn.com/learning/security/ransomware/wannacry-ransomware/">什么是 WannaCry 勒索软件攻击？</a></p>
+<p>WannaCry 通过使用名为“EternalBlue”的漏洞利用进行传播。EternalBlue 仅适用于较旧的、未打补丁的 Microsoft Windows 版本，但运行此类版本的机器数量足以让 WannaCry 迅速传播开来。</p>
+<p>*<em>勒索软件是一种恶意软件，它通过<a target="_blank" rel="noopener" href="https://www.cloudflare.com/learning/ssl/what-is-encryption/">加密</a>锁住文件和数据，并索取赎金。</em></p>
+<p>WannaCry 包含一个不寻常的函数：在执行之前，它将查询<a target="_blank" rel="noopener" href="https://www.cloudflare.com/learning/dns/glossary/what-is-a-domain-name/">域</a> iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com。这个网站并不存在。</p>
+<p>在 Hutchins 注册了这个域之后，WannaCry 的副本继续传播，但他们停止了执行。从本质上讲，一旦 WannaCry 开始收到来自 iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com 的响应，它就会自行关闭。<br><img src="/_assets/images/Network-attack/wanncry-analysis-1.png"></p>
+<h4 id="为什么这能阻止攻击？"><a href="#为什么这能阻止攻击？" class="headerlink" title="为什么这能阻止攻击？"></a>为什么这能阻止攻击？</h4><p>虽然不能确定 WannaCry 作者的动机，但据推测，WannaCry 中包含了这种域名查询功能的目的是让赎金软件能够检查它是否在沙盒内。</p>
+<p>沙盒是一种反恶意软件工具。它是一个<a target="_blank" rel="noopener" href="https://www.cloudflare.com/learning/cloud/what-is-a-virtual-machine/">虚拟机</a>，与所有其他系统和网络分开运行。它提供了一个安全的环境来执行不受信任的文件，看看它们是做什么的。</p>
+<p>沙盒实际上没有连接到互联网。但沙盒的目的是尽可能地模仿真实的计算机，因此它们可能会对恶意软件针对特定域的查询产生一个虚假的响应。因此，恶意软件检查其是否在沙盒内的一种方法是向一个假的域名发送查询。如果它得到一个“真实的”响应（由沙盒生成），它可以认为自己是在沙盒中，并关闭自己，这样沙盒就不会检测到它是恶意的。</p>
+<p>然而，如果恶意软件将其测试查询发送到一个硬编码的域名，那么如果有人注册了这个域名，它就会被欺骗，以为自己始终在沙盒中。这可能是 WannaCry 发生的情况：世界各地的 WannaCry 副本被欺骗，认为它们在沙盒内，并关闭自己。（从恶意软件作者的角度来看，一个更好的设计是查询一个每次都不同的随机域名，这样一来，从沙盒外的域名得到回应的几率就接近零了）。</p>
+<h3 id="事情起因"><a href="#事情起因" class="headerlink" title="事情起因"></a>事情起因</h3><p>国庆假期结束后的第一节网络攻防课，老师安排测试wannacry病毒的任务。</p>
+<h3 id="详细过程"><a href="#详细过程" class="headerlink" title="详细过程"></a>详细过程</h3><p>由于病毒具有破坏性，因此在本地直接运行是极其危险的行为，一旦控制不慎，不仅自己电脑的数据要被破坏和丢失，甚至可能导致电脑成为肉鸡，去攻击其他联网设备。<br>为了安全考虑，首先需要准备好病毒运行的环境。</p>
+<ul>
+<li>支持虚拟化技术的电脑</li>
+<li>VMware Workstation Pro 软件</li>
+<li>操作系统安装包</li>
+<li>计算机病毒样本</li>
+</ul>
+<h4 id="虚拟机环境配置"><a href="#虚拟机环境配置" class="headerlink" title="虚拟机环境配置"></a>虚拟机环境配置</h4><p>系统：Windows XP<br>安装教程：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/IronmanJay/article/details/129965817">VMware虚拟机之WindowsXP系统超详细下载安装与使用教程</a><br><a target="_blank" rel="noopener" href="https://next.itellyou.cn/Original/">itellyou官网 - 系统镜像下载</a></p>
+<p>这个教程非常详细，而且每一步都有图片，即使小白也能轻松使用。</p>
+<h4 id="本地文件如何与虚拟机交互"><a href="#本地文件如何与虚拟机交互" class="headerlink" title="本地文件如何与虚拟机交互"></a>本地文件如何与虚拟机交互</h4><h5 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h5><p>因为VMware自带有工具Vmware Tools，能够直接实现主机和虚拟机之间的文件共享，同时支持自由拖拽文件进行上传和下载，因此最简单且好用的办法就是在虚拟机安装Vmware Tools。</p>
+<p>附上官方文档：<a target="_blank" rel="noopener" href="https://docs.vmware.com/cn/VMware-Tools/11.2.5/vmware-tools-user-guide.pdf">VMware Tools 用户指南 - VMware Tools 11.2.5</a></p>
+<blockquote>
+<p>说明：由于上一步安装虚拟机后，我的XP虚拟机自动安装了Vmware Tools（所以显示重新安装vmware tool），因此以下内容并未具体尝试，可能以下安装步骤中会出现一些报错或bug，请酌情查看。</p>
+<p><img src="/_assets/images/Network-attack/VMtool-download.png"></p>
+</blockquote>
+<p>具体步骤如下：</p>
+<p><strong>windows：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://docs.vmware.com/cn/VMware-Tools/12.3.0/com.vmware.vsphere.vmwaretools.doc/GUID-391BE4BF-89A9-4DC3-85E7-3D45F5124BC7.html">在 Windows 上手动安装 VMware Tools</a></p>
+<p>[如何在Windows操作系统安装VMwareTools_VMware服务-阿里云帮助中心 (aliyun.com)](<a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/412878.html#:~:text=%E5%AE%89%E8%A3%85VMware">https://help.aliyun.com/document_detail/412878.html#:~:text=安装VMware</a> Tools（Windows操作系统） 1 Windows操作系统安装完成后，VMware vSphere控制台会提示“该虚拟机上未安装VMware Tools” 2 鼠标右击虚拟机，选择,。 7 选择 安装 ，开始安装。 8 正在安装，如下图所示。 更多项目)</p>
+<p><strong>linux：</strong></p>
+<p>打开linux虚拟机，在VMware菜单栏里点击虚拟机选项，找到安装VMware tools选项。</p>
+<p>对linux系统的tool安装需要控制台执行，下面附上代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 解压下载的安装包</span><br><span class="line">tar -zxvf [文件名]</span><br><span class="line">//进入解压完成的文件夹</span><br><span class="line"><span class="built_in">cd</span> [wen<span class="string">&#x27;jian&#x27;</span>ji]</span><br><span class="line">//查看文件夹下的文件</span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line">//执行文件夹下的可执行文件。</span><br><span class="line"><span class="built_in">sudo</span> ./vmware-install.pl</span><br></pre></td></tr></table></figure>
+
+<p>完成以上步骤后重启系统。</p>
+<h5 id="方法二：（以下内容只是对该博客的简略，并非原创）"><a href="#方法二：（以下内容只是对该博客的简略，并非原创）" class="headerlink" title="方法二：（以下内容只是对该博客的简略，并非原创）"></a>方法二：（以下内容只是对该博客的简略，并非原创）</h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41486333/article/details/115259771?ops_request_misc=%7B%22request_id%22:%22169733009516800222810780%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=169733009516800222810780&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-1-115259771-null-null.142%5Ev96%5Epc_search_result_base1&utm_term=vmware%E6%80%8E%E4%B9%88%E5%B0%86%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%88%B0%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%99%A4%E4%BA%86vmwaretool&spm=1018.2226.3001.4187">将本机文件复制到安装的虚拟机系统中的两种方法_vmware怎么将本地文件下载到虚拟机除了vmwaretool_灼_灼的博客-CSDN博客</a></p>
+<p>进入虚拟机设置，选择硬盘，再点击映射</p>
+<p><img src="/_assets/images/Network-attack/VMware-interact-1.png"></p>
+<p>在打开的映射虚拟磁盘，选择要复制到虚拟机里的哪个盘，记得取消勾选“以只读模式打开文件”，然后点击确定。</p>
+<p><img src="/_assets/images/Network-attack/VMware-interact-2.png"></p>
+<p>点击本地资源管理器，选择已经映射的盘</p>
+<p><img src="/_assets/images/Network-attack/VMware-interact-3.png"></p>
+<p>如果没有出现需要格式化弹窗，就可以直接把文件复制到映射盘中了，然后在虚拟机里，对应的你刚才选中的虚拟机里的磁盘就可以看到复制的文件了。</p>
+<blockquote>
+<p><strong>注意</strong>：要是有提示格式化，然后有文件较为重要，建议不要格式化</p>
+</blockquote>
+<p><img src="/_assets/images/Network-attack/VMware-interact-4.png"></p>
+<p>复制完文件记得断开连接</p>
+<p><img src="/_assets/images/Network-attack/VMware-interact-5.png"></p>
+<h4 id="隔离措施"><a href="#隔离措施" class="headerlink" title="隔离措施"></a>隔离措施</h4><blockquote>
+<p><strong>做好隔离措施。此步骤非常重要！！！</strong></p>
+<p><strong>注意：为了安全起见，强烈建议拔掉插在电脑上的U盘。</strong></p>
+</blockquote>
+<p>打开虚拟机操作系统上的网络与共享中心，单击已经连接因特网的本地连接，在弹出的对话框中单击“禁用“按钮。</p>
+<p><img src="/_assets/images/Network-attack/virus-analysis-4.jpg"></p>
+<p>点击VMware Workstation Pro软件上方的虚拟机菜单，选择设置，单击设置窗口左侧的网络适配器，之后在网络适配器设置的设备状态栏内将两个勾去掉。</p>
+<p><img src="/_assets/images/Network-attack/virus-analysis-2.jpg" alt="如何安全地做电脑病毒实验？"></p>
+<p>单击上方的“选项”选项卡，在左侧列表框内确认共享文件夹已禁用。设置完后单击确定按钮。</p>
+<p><img src="/_assets/images/Network-attack/virus-analysis-3.jpg" alt="如何安全地做电脑病毒实验？"></p>
+<p><strong>拍摄快照</strong>。为了防止病毒发作导致虚拟机系统崩溃后恢复麻烦，建议在运行病毒程序前拍摄快照，如图所示。该步骤需要几分钟时间，注意观察虚拟机软件的左下角。</p>
+<p><img src="/_assets/images/Network-attack/virus-analysis-1.jpg" alt="如何安全地做电脑病毒实验？"></p>
+<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><p>**针对病毒特性，设好模型。**比如：如果要运行勒索病毒，则需在虚拟机桌面上象征新地放置几个文本文件，观察中毒前后文件内容变化。</p>
+<p><img src="/_assets/images/Network-attack/virus-analysis-5.jpg"></p>
+<p><strong>在确认做好隔离措施后（特别是检查是否已经断网），在虚拟机上把病毒样本压缩包解压缩并小心运行病毒程序。</strong></p>
+<p>**观察实验效果。**如：我们刚刚放置的文件已经被加密而乱码；桌面变了；弹出勒索对话框。如图。</p>
+<p><img src="/_assets/images/Network-attack/virus-analysis-6.jpg"></p>
+<p><img src="/_assets/images/Network-attack/virus-analysis-7.jpg"></p>
+<blockquote>
+<p>病毒似乎并不能把已经运行的程序强制关闭，但这些打开的源文件已经不在桌面了，因此可以知道病毒并不直接修改内存。应该只是操作硬盘数据。</p>
+</blockquote>
+<p><em><strong>*解毒具体步骤*</strong></em></p>
+<p>打开wannakey-master，阅读readme.txt，由于wannacry会识别后缀名为txt的文件并标记为重要文件进行加密，因此readme的后缀名有可能被改成了其他形式，此时应该改回txt格式，采用记事本打开。</p>
+<p>根据readme.txt中提供的信息，参照自己的windows版本，在bin中选择合适的exe进行运行：</p>
+<p>运行wannakey.exe程序</p>
+<p>多核系统使用wannakey_omp.exe</p>
+<p>运行后会跳出cmd窗口（窗口可能会一闪而过，注意观察），如果显示秘钥已经成功生成(key has been generated)，那么秘钥已经获取成功，此时前往恶意软件窗口，单击解密(decrypt)按钮，在后续的窗口里选择自己要解密的对象点击start，即可进行解密。</p>
+<p>此时下方的目录表中会显示所有被解密了的文件的路径，可以根据路径进行核实和查看。</p>
+<p>**恢复。**实验完后，恢复中毒前的状态。依次单击VMware Workstation Pro软件上方的虚拟机菜单-快照-恢复到快照，在弹出的对话框中选择”是“，如图所示。大约半分钟后就虚拟机就恢复到了中毒前的状态。</p>
+<h3 id="病毒逆向"><a href="#病毒逆向" class="headerlink" title="病毒逆向"></a>病毒逆向</h3><p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1573058-1-1.html">病毒分析之WannaCry勒索病毒 - 『病毒分析区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn</a></p>
+<p>[<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1910271">系统安全] 三十.WannaCry勒索病毒分析 (4)全网“最”详细的蠕虫传播机制解读-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p>[<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1910268">系统安全] 二十七.WannaCry勒索病毒分析 (3)蠕虫传播机制分析及IDA和OD逆向-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p>WannaCry利用Windows系统的SMB漏洞获取系统的最高权限，该工具通过恶意代码扫描开放445端口的Windows系统。WannaCry利用永恒之蓝漏洞进行网络端口扫描攻击，目标机器被成功攻陷后会从攻击机下载WannaCry蠕虫进行感染，并作为攻击机再次扫描互联网和局域网的其他机器，形成蠕虫感染大范围超快速扩散。</p>
+<p>WannaCry勒索病毒主要行为是传播和勒索。<br>该病毒分为两个部分：</p>
+<p>（1） 蠕虫部分，利用基于445端口的SMB漏洞MS17-010(永恒之蓝)进行病毒传播，并释放出勒索病毒。</p>
+<p>（2） 勒索病毒部分，加密用户文件索要赎金。释放文件，包括加密器、解密器、说明文件、语言文件等；加密文件；设置桌面背景、窗体信息及付款账号等。</p>
+<h4 id="勒索病毒部分详细分析-（待修改）"><a href="#勒索病毒部分详细分析-（待修改）" class="headerlink" title="勒索病毒部分详细分析 （待修改）"></a><strong>勒索病毒部分详细分析</strong> （待修改）</h4><p><strong>CryptGenKey</strong> 函数生成随机加密<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/desktop/SecGloss/s-gly">会话密钥</a>或<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/desktop/SecGloss/p-gly">公钥&#x2F;私钥对</a>。密钥或密钥对的句柄在 <em>phKey</em> 中返回。</p>
+<p>勒索主逻辑执行，先会导入一个存放在镜像中的RSA公钥，之后调用CryptGenKey生成一组RSA算法的Session key。之后将这组Key的公钥通过CryptExportKey导出，再写入到00000000.pky文件中。将Session key中的私钥用刚导入RSA公钥进行加密，存放在00000000.eky如下图所示：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-ef633e009eae50dc19f8f253273a2af0_720w.webp" alt="img"></p>
+<p>如果遍历到的文件扩展名在欲加密的文件扩展名列表中，如下图所示：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-25696ad49373393f257bc7826b8654e6_720w.webp" alt="img"></p>
+<p>则会将当前文件路径加入到文件操作列表中，在遍历文件结束后一并进行文件操作。代码如下图：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-ac9efbcc9f670fad48976552489fd4a6_720w.webp" alt="img"></p>
+<p>对于每个需要加密的文件，都会调用CryptGenRadom随机生成AES密钥，之后使用Session Key中的RSA公钥对AES密钥进行加密，存放在加密后的数据文件头中，之后将原始文件数据用该AES密钥进行加密。如下图所示：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-c4ec5a74af2e25e73956450b6fbe793d_720w.webp" alt="img"></p>
+<p>整体加密流程，如下图所示：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-d5d7f398fcf56e76bfff2fc91588259b_720w.webp" alt="img"></p>
+<p>因为病毒是生成加密过的用户文件后再删除原始文件，所以存在通过文件恢复类工具恢复原始未加密文件的可能。但是因为病毒对文件系统的修改操作过于频繁，导致被删除的原始文件数据块被覆盖，致使实际恢复效果有限。且随着系统持续运行，恢复类工具恢复数据的可能性会显著降低。</p>
+<p><strong>Wannakey的恢复</strong></p>
+<p>因为所有文件都是用随机生成的AES</p>
+<p>WannaCry 在加密文件时会将加密密钥存储在内存中，而没有进行及时的清除。WannaKey 利用了这个漏洞，通过扫描内存中的数据，找到并提取出加密文件的解密密钥。</p>
+<p>因此，WannaKey 能够解密 WannaCry 加密的文件，是因为它能够获取到加密文件的解密密钥。通过使用这个解密密钥，WannaKey 可以还原被 WannaCry 加密的文件，使受害者能够恢复其文件的原始状态。</p>
+<h4 id="病毒样本下载"><a href="#病毒样本下载" class="headerlink" title="病毒样本下载"></a>病毒样本下载</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/so18635793637/article/details/128781620">计算机病毒样本分享_勒索病毒样本下载-CSDN博客</a></p>
+<blockquote>
+<p><strong>注意：为了安全起见，建议直接在虚拟机上上网搜索、下载，*在做好隔离措施前不要解压缩*。</strong></p>
+</blockquote>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p>[如何安全地做电脑病毒实验-百度经验 (baidu.com)](<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/8cdccae9bacc6b705413cdf9.html#:~:text=%E6%81%A2%E5%A4%8D%E3%80%82">https://jingyan.baidu.com/article/8cdccae9bacc6b705413cdf9.html#:~:text=恢复。</a> 实验完后，恢复中毒前的状态。 依次单击VMware,Workstation Pro软件上方的虚拟机菜单-快照-恢复到快照，在弹出的对话框中选择”是“，如图所示。 大约半分钟后就虚拟机就恢复到了中毒前的状态。)</p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#cite_note-zdnet-xpwannakey-79">WannaCry - wiki</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.wired.com/2017/05/wannacry-flaw-help-windows-xp-victims-get-files-back/">Wannakey</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26935965">勒索病毒WannaCry深度技术分析—— 详解传播、感染和危害细节</a></p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/10/17/system-operations/server-config/python%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C/">python密码学实验</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/10/16/gaming-world/game-guides/UML%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80/">UML统一建模语言</a></div></section></div>
+
+<div class="related-wrap" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2023\08\29\system-operations\linux-system\数据库课设——共享单车管理系统\" title="数据库课设——共享单车管理系统"><span class="title">数据库课设——共享单车管理系统</span></a><a class="item" href="\2023\12\24\system-operations\server-config\计算机引论\" title="计算机引论"><span class="title">计算机引论</span></a><a class="item" href="\2025\12\27\服务器\cpolar\" title="Cpolar"><span class="title">Cpolar</span></a><a class="item" href="\2025\12\27\system-operations\linux-system\HTTrack 简单使用\" title="HTTrack 简单使用"><span class="title">HTTrack 简单使用</span></a><a class="item" href="\2025\12\27\游戏攻略\外挂开发\" title="外挂开发"><span class="title">外挂开发</span></a></div></section></div>
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wannacry"><span class="toc-text">Wannacry</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E8%83%BD%E9%98%BB%E6%AD%A2%E6%94%BB%E5%87%BB%EF%BC%9F"><span class="toc-text">为什么这能阻止攻击？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E6%83%85%E8%B5%B7%E5%9B%A0"><span class="toc-text">事情起因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B"><span class="toc-text">详细过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">虚拟机环境配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-text">本地文件如何与虚拟机交互</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%EF%BC%88%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%E5%8F%AA%E6%98%AF%E5%AF%B9%E8%AF%A5%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AE%80%E7%95%A5%EF%BC%8C%E5%B9%B6%E9%9D%9E%E5%8E%9F%E5%88%9B%EF%BC%89"><span class="toc-text">方法二：（以下内容只是对该博客的简略，并非原创）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%94%E7%A6%BB%E6%8E%AA%E6%96%BD"><span class="toc-text">隔离措施</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-text">实战</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%97%85%E6%AF%92%E9%80%86%E5%90%91"><span class="toc-text">病毒逆向</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8B%92%E7%B4%A2%E7%97%85%E6%AF%92%E9%83%A8%E5%88%86%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90-%EF%BC%88%E5%BE%85%E4%BF%AE%E6%94%B9%EF%BC%89"><span class="toc-text">勒索病毒部分详细分析 （待修改）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%97%85%E6%AF%92%E6%A0%B7%E6%9C%AC%E4%B8%8B%E8%BD%BD"><span class="toc-text">病毒样本下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+<script src="/js/theme-switcher.js" defer></script>
+</div></body></html>

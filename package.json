@@ -10,6 +10,8 @@
     "deploy": "node tools/deploy.js",
     "deploy:manual": "hexo deploy",
     "deploy:preview": "node tools/deploy.js --dry-run",
+    "deploy:stellar": "npm run stellar:validate && npm run clean && npm run build && node tools/deploy.js",
+    "deploy:check": "npm run stellar:validate && npm run build:test",
     "prepare-source": "node tools/prepare-source-branch.js",
     "prepare-source:status": "node tools/prepare-source-branch.js --status",
     "themes:add": "node tools/add-remaining-themes.js",

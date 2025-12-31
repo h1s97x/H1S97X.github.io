@@ -41,31 +41,36 @@ logo:
 menubar:
   columns: 4 # 一行多少个
   items: # 可按照自己需求增加，符合以下格式即可
-    # id: 页面中高亮的 menu_id 
-    # theme: 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
-    # icon: 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
-    # title: 标题
-    # url: 点击跳转到哪，支持相对路径和绝对路径
-    # - id: post
-    #   theme: '#1BCDFC'
-    #   icon: solar:documents-bold-duotone
-    #   title: 博客
-    #   url: /
-    # - id: wiki
-    #   theme: '#3DC550'
-    #   icon: solar:notebook-bookmark-bold-duotone
-    #   title: 文档
-    #   url: /wiki/
-    # - id: explore
-    #   theme: '#FA6400'
-    #   icon: solar:planet-bold-duotone
-    #   title: 探索
-    #   url: /explore/
-    # - id: social
-    #   theme: '#F44336'
-    #   icon: solar:chat-square-like-bold-duotone
-    #   title: 社交
-    #   url: /friends/
+    - id: post
+      theme: '#1BCDFC'
+      icon: solar:documents-bold-duotone
+      title: 博客
+      url: /
+    - id: categories
+      theme: '#3DC550'
+      icon: solar:folder-bold-duotone
+      title: 分类
+      url: /categories/
+    - id: tags
+      theme: '#FA6400'
+      icon: solar:tag-bold-duotone
+      title: 标签
+      url: /tags/
+    - id: archives
+      theme: '#9C27B0'
+      icon: solar:calendar-bold-duotone
+      title: 归档
+      url: /archives/
+    - id: about
+      theme: '#F44336'
+      icon: solar:user-bold-duotone
+      title: 关于
+      url: /about/
+    - id: music
+      theme: '#FF9800'
+      icon: solar:music-note-bold-duotone
+      title: 音乐
+      url: /music/
 
 
 ######## Main ########
@@ -75,15 +80,21 @@ site_tree:
   # 主页配置
   home:
     leftbar: welcome, recent
-    rightbar: 
+    rightbar: toc
   # 博客列表页配置
   index_blog:
     base_dir: blog # 只影响自动生成的页面路径
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
     leftbar: welcome, recent # for categories/tags/archives
-    rightbar: 
+    rightbar: toc
     nav_tabs:  # 近期发布 分类 标签 专栏 归档 and ...
-      # '朋友文章': /friends/rss/
+      '最新发布': /
+      '技术开发': /categories/tech-development/
+      '系统运维': /categories/system-operations/
+      '游戏世界': /categories/gaming-world/
+      '学术学习': /categories/academic-learning/
+      '个人随笔': /categories/personal-essays/
+      '软件工具': /categories/software-tools/
   # 博客专栏列表页配置
   index_topic:
     base_dir: topic # 只影响自动生成的页面路径
@@ -100,7 +111,7 @@ site_tree:
   # 博客文章内页配置
   post:
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
-    leftbar: related, recent # for pages using 'layout:post'
+    leftbar: related, recent, timeline # for pages using 'layout:post'
     rightbar: ghrepo, toc
   # 博客专栏文章内页配置
   topic:
@@ -210,6 +221,8 @@ search:
     path: /search.json # 搜索文件存放位置
     content: true # 是否搜索内容
     skip_search:  # 指定 path 中的内容不被搜索。
+      - /music/
+      - /about/
   algolia_search: # Docsearch https://docsearch.algolia.com/apply/ 申请
     appId: 
     apiKey: 
@@ -219,9 +232,9 @@ search:
 
 ######## Comments ########
 comments:
-  service: # beaudar, utterances, giscus, twikoo, waline, artalk
+  service: giscus # beaudar, utterances, giscus, twikoo, waline, artalk
   comment_title: 快来参与讨论吧~
-  lazyload: false # true / false
+  lazyload: true # true / false
   custom_css: # artalk,twikoo,... 可以为没有全局启用的评论加载自定义样式
   # beaudar
   # https://beaudar.lipk.org/
@@ -248,10 +261,10 @@ comments:
   # https://giscus.app/zh-CN
   giscus:
     src: https://giscus.app/client.js
-    data-repo: xxx/xxx # [在此输入仓库]
-    data-repo-id: # [在此输入仓库 ID]
-    data-category: # [在此输入分类名]
-    data-category-id:
+    data-repo: h1s97x/H1S97X.github.io # [在此输入仓库]
+    data-repo-id: # [在此输入仓库 ID] - 需要在giscus.app获取
+    data-category: Announcements # [在此输入分类名]
+    data-category-id: # [在此输入分类 ID] - 需要在giscus.app获取
     data-mapping: pathname
     data-strict: 0
     data-reactions-enabled: 1
@@ -259,7 +272,7 @@ comments:
     data-input-position: top # top, bottom
     data-theme: preferred_color_scheme
     data-lang: zh-CN
-    data-loading: # lazy
+    data-loading: lazy # lazy
     crossorigin: anonymous
 
   # Twikoo
@@ -331,12 +344,12 @@ comments:
 ######## Footer ########
 footer:
   social:
-    # github:
-    #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/>'
-    #   url: /
+    github:
+      icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/>'
+      url: https://github.com/h1s97x
     # music:
     #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3845874.svg"/>'
-    #   url: /
+    #   url: /music/
     # unsplash:
     #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3616429.svg"/>'
     #   url: /
@@ -344,33 +357,36 @@ footer:
     #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/>'
     #   url: /about/#comments
   sitemap:
-    # - title: 博客
-    #   items:
-    #     - '[近期发布](/)'
-    #     - '[分类](/blog/categories/)'
-    #     - '[标签](/blog/tags/)'
-    #     - '[归档](/blog/archives/)'
-    # - title: 项目
-    #   items:
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    # - title: 社交
-    #   items:
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    # - title: 关于
-    #   items:
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
+    - title: 博客
+      items:
+        - '[近期发布](/)'
+        - '[分类](/categories/)'
+        - '[标签](/tags/)'
+        - '[归档](/archives/)'
+    - title: 分类
+      items:
+        - '[技术开发](/categories/tech-development/)'
+        - '[系统运维](/categories/system-operations/)'
+        - '[游戏世界](/categories/gaming-world/)'
+        - '[学术学习](/categories/academic-learning/)'
+    - title: 页面
+      items:
+        - '[关于](/about/)'
+        - '[音乐](/music/)'
+        - '[搜索](/search/)'
+        - '[友链](/friends/)'
+    - title: 其他
+      items:
+        - '[RSS订阅](/atom.xml)'
+        - '[站点地图](/sitemap.xml)'
+        - '[GitHub仓库](https://github.com/h1s97x/H1S97X.github.io)'
+        - '[问题反馈](https://github.com/h1s97x/H1S97X.github.io/issues)'
   content: | # 支持 Markdown 格式
-    本站由 [{author.name}](/) 使用 [{theme.name} {theme.version}]({theme.tree}) 主题创建。
+    本站由 [H1S97X](/) 使用 [Stellar {theme.version}]({theme.tree}) 主题创建。
     本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
+    
+    [![Powered by Hexo](https://img.shields.io/badge/Powered%20by-Hexo-blue?style=flat-square)](https://hexo.io/)
+    [![Theme Stellar](https://img.shields.io/badge/Theme-Stellar-orange?style=flat-square)](https://github.com/xaoxuu/hexo-theme-stellar)
   # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
 
 
@@ -545,7 +561,7 @@ plugins:
     # 可以处理评论区的图片（不支持 iframe 类评论系统）例如：
     # 使用 twikoo 评论可以写: .tk-content img:not([class*="emo"])
     # 使用 waline 评论可以写: #waline_container .vcontent img
-    selector: .timenode p>img # 多个选择器用英文逗号隔开
+    selector: .timenode p>img, .md-text img:not([class]), .md-text .image img # 多个选择器用英文逗号隔开
 
   # swiper
   swiper:
@@ -587,7 +603,7 @@ plugins:
   # https://github.com/KaTeX/KaTeX
   # 使用 hexo-renderer-markdown-it-plus 作为公式渲染器：npm uninstall hexo-renderer-marked --save npm install hexo-renderer-markdown-it-plus --save
   katex:
-    enable: #true # hexo-renderer-markdown-it-plus 默认开启 katex，此选项仅用于引入样式
+    enable: true # hexo-renderer-markdown-it-plus 默认开启 katex，此选项仅用于引入样式
     inject: |
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.23/dist/katex.min.css" integrity="sha384-//SZkxyB7axjCAopkAL1E1rve+ZSPKapD89Lo/lLhcsXR+zOYl5z6zJZEFXil+q0" crossorigin="anonymous">
 
@@ -609,8 +625,8 @@ plugins:
   #   B -->|option 2| C(Section C)
   # ```
   mermaid:
-    enable: # true # 可以在特定文章的 front-matter 中设置 mermaid: true 来开启，也可以在这里设置全局开启
-    style_optimization: false # use custom style in stellar
+    enable: true # 可以在特定文章的 front-matter 中设置 mermaid: true 来开启，也可以在这里设置全局开启
+    style_optimization: true # use custom style in stellar
     # js: https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js
     js: https://gcore.jsdelivr.net/npm/mermaid@v9/dist/mermaid.min.js
     # Available themes: default | dark | forest | neutral
@@ -641,9 +657,9 @@ style:
     code: 85% # 相较于其所在行的文本大小，建议用百分比
     codeblock: 0.8125rem # 13px
   font-family:
-    body: 'system-ui, "Microsoft Yahei", "Segoe UI", Arial, sans-serif'
-    code: 'Menlo, Monaco, Consolas, system-ui, monospace, sans-serif'
-    codeblock: 'Menlo, Monaco, Consolas, system-ui, monospace, sans-serif'
+    body: 'system-ui, "Microsoft Yahei", "PingFang SC", "Hiragino Sans GB", "Segoe UI", Arial, sans-serif'
+    code: 'Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif'
+    codeblock: 'Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif'
   text-align: left
   prefix:
     h2: https://api.iconify.design/ci:heading-h2.svg
@@ -657,9 +673,9 @@ style:
     image-s: 8px # 评论区图片圆角（部分评论支持）
   color:
     # 主题色配置（不会根据明暗动态调整，请设置为通用的颜色）
-    theme: 'hsl(192 98% 55%)' # 主题色
-    accent: 'hsl(14 100% 57%)' # 强调色
-    link: 'hsl(207 90% 54%)' # 超链接颜色
+    theme: 'hsl(192 98% 55%)' # 主题色 - 青蓝色
+    accent: 'hsl(14 100% 57%)' # 强调色 - 橙红色
+    link: 'hsl(207 90% 54%)' # 超链接颜色 - 蓝色
   animated_avatar:
     animate: auto # auto, always
     background: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp

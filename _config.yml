@@ -4,16 +4,16 @@
 
 # Site
 title: H1S97X
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+subtitle: '技术分享与生活记录'
+description: '专注于技术开发、系统运维、游戏世界和学术学习的个人博客'
+keywords: 技术博客,编程,开发,运维,游戏,学习
+author: H1S97X
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://h1s97x.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Stellar
+theme: stellar
 aplayer:
   meting: true
   asset_inject: false

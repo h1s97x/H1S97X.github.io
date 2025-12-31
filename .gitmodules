@@ -1,6 +1,27 @@
+# Hexo主题子模块配置
+# 管理多个热门Hexo主题，支持快速切换和更新
+# 
+# 使用方法:
+# 1. 初始化子模块: git submodule update --init --recursive
+# 2. 更新子模块: git submodule update --remote
+# 3. 切换主题: 修改_config.yml中的theme字段
+#
+# 主题列表:
+# - butterfly: 美观、功能丰富的主题
+# - next: 优雅、简洁的主题  
+# - anzhiyu: 基于Butterfly的定制主题
+# - stellar: 内置文档系统的简约主题
+#
+
 [submodule "themes/butterfly"]
 	path = themes/butterfly
 	url = https://github.com/jerryc127/hexo-theme-butterfly.git
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/next-theme/hexo-theme-next.git
+[submodule "themes/anzhiyu"]
+	path = themes/anzhiyu
+	url = https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git
+[submodule "themes/stellar"]
+	path = themes/stellar
+	url = https://github.com/xaoxuu/hexo-theme-stellar.git

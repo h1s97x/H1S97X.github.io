@@ -6,3 +6,45 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+
+# Hexo generated files
+public/
+db.json
+*.log
+.deploy_git/
+
+# Generated static files
+index.html
+atom.xml
+search.xml
+sitemap.xml
+sitemap.txt
+CNAME
+
+# Year directories (generated)
+2020/
+2023/
+2024/
+2025/
+archives/
+categories/
+tags/
+page/
+search/
+css/
+js/
+img/
+music/
+assets/
+photoswipe/
+
+# Node.js
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp

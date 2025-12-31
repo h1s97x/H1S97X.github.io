@@ -1,0 +1,46 @@
+{
+  "timestamp": "2025-12-31T15:37:56.448Z",
+  "summary": {
+    "total": 24,
+    "passed": 24,
+    "warnings": 0,
+    "errors": 0
+  },
+  "details": {
+    "passed": [
+      "ci.yml: 工作流名称 \"CI/CD Pipeline\"",
+      "ci.yml: 触发条件已配置",
+      "ci.yml: 包含 4 个作业",
+      "ci.yml: 支持Git子模块",
+      "ci.yml: 包含主题初始化",
+      "ci.yml: 包含Stellar配置验证",
+      "ci.yml: GitHub Pages部署配置正确",
+      "ci.yml: 包含GitHub Pages部署",
+      "ci.yml: 包含构建步骤",
+      "deploy.yml: 工作流名称 \"Deploy Stellar Blog to GitHub Pages\"",
+      "deploy.yml: 触发条件已配置",
+      "deploy.yml: 包含 1 个作业",
+      "deploy.yml: 支持Git子模块",
+      "deploy.yml: 包含主题初始化",
+      "deploy.yml: 包含Stellar配置验证",
+      "deploy.yml: GitHub Pages部署配置正确",
+      "deploy.yml: 包含GitHub Pages部署",
+      "deploy.yml: 包含构建步骤",
+      "stellar-ci.yml: 工作流名称 \"Stellar Theme CI/CD\"",
+      "stellar-ci.yml: 触发条件已配置",
+      "stellar-ci.yml: 包含 5 个作业",
+      "stellar-ci.yml: 支持Git子模块",
+      "stellar-ci.yml: 包含主题初始化",
+      "stellar-ci.yml: 包含Stellar配置验证"
+    ],
+    "warnings": [],
+    "errors": []
+  },
+  "recommendations": [
+    "启用Git子模块支持",
+    "添加Stellar配置验证",
+    "使用stellar:test进行测试",
+    "验证构建输出文件",
+    "添加构建统计信息"
+  ]
+}

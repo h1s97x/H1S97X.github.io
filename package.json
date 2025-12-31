@@ -21,6 +21,8 @@
     "themes:init": "git submodule update --init --recursive",
     "stellar:validate": "node tools/validate-stellar-theme.js",
     "stellar:test": "npm run clean && npm run stellar:validate && npm run build:test",
+    "workflows:check": "node tools/check-workflows.js",
+    "workflows:report": "node tools/check-workflows.js --report",
     "server": "hexo server",
     "server:staging": "hexo server --config _config.yml,_config.staging.yml",
     "test": "jest",

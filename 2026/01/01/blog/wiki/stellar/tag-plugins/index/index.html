@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>Stellar：使用标签插件增强阅读体验 - H1S97X</title>
+
+  
+    <meta name="description" content="新版标签插件和 Hexo 官方的标签插件统一使用空格分隔，所以如果参数内容中需要出现的空格被意外分隔开了的时候，请使用 &amp;nbsp; 代替。 参数解析规则 以图片标签为例，使用空格分隔开之后得到一个数组，如果图片描述文字中有空格，多分出来的这些「参数」被合并到最后一个「非键值对参数」中，什么是「非键值对参数」呢？举个例子您就明白了： 1&#123;% image https:&#x2F;&#x2F;cdn.j">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用标签插件增强阅读体验">
+<meta property="og:url" content="https://h1s97x.github.io/2026/01/01/blog/wiki/stellar/tag-plugins/index/">
+<meta property="og:site_name" content="H1S97X">
+<meta property="og:description" content="新版标签插件和 Hexo 官方的标签插件统一使用空格分隔，所以如果参数内容中需要出现的空格被意外分隔开了的时候，请使用 &amp;nbsp; 代替。 参数解析规则 以图片标签为例，使用空格分隔开之后得到一个数组，如果图片描述文字中有空格，多分出来的这些「参数」被合并到最后一个「非键值对参数」中，什么是「非键值对参数」呢？举个例子您就明白了： 1&#123;% image https:&#x2F;&#x2F;cdn.j">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/183e71e0ad995.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/bc7bda18328da.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/mirror/apple/documentation/watchkit/06d45110-1dd7-49a4-a413-9f5159ecdd0e.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/mirror/apple/documentation/watchkit/06d45110-1dd7-49a4-a413-9f5159ecdd0e.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/blog/2020-0627a@2x.jpg">
+<meta property="og:image" content="https://github-readme-stats.vercel.app/api/?username=xaoxuu&&show_owner=true">
+<meta property="og:image" content="https://github-readme-stats.vercel.app/api/pin/?username=xaoxuu&repo=hexo-theme-stellar&theme=dark&show_owner=true">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot11.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot12.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot13.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot01.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot02.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot03.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot04.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot05.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot06.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot07.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot08.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot09.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot10.png">
+<meta property="article:published_time" content="2026-01-01T04:08:15.178Z">
+<meta property="article:modified_time" content="2026-01-01T04:19:43.714Z">
+<meta property="article:author" content="H1S97X">
+<meta property="article:tag" content="技术博客,编程,开发,运维,游戏,学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/183e71e0ad995.jpg">
+  
+  
+  
+  <meta name="keywords" content="技术博客,编程,开发,运维,游戏,学习">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="H1S97X" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"H1S97X","sameAs":[]},"dateCreated":"2026-01-01T12:08:15+08:00","dateModified":"2026-01-01T12:19:43+08:00","datePublished":"2026-01-01T12:08:15+08:00","description":"","headline":"使用标签插件增强阅读体验","mainEntityOfPage":{"@type":"WebPage","@id":"https://h1s97x.github.io/2026/01/01/blog/wiki/stellar/tag-plugins/index/"},"publisher":{"@type":"Organization","name":"H1S97X","sameAs":[]},"url":"https://h1s97x.github.io/2026/01/01/blog/wiki/stellar/tag-plugins/index/","image":[]}</script>
+  
+</head>
+<body>
+
+
+
+<div class="l_body content" id="start" layout="wiki" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">H1S97X</div><div class="sub cap">技术分享与生活记录</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" data-filter="/2026/01/" placeholder="在 /2026/01/ 中搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+
+  <span class="sep"></span>
+  <a class="cap breadcrumb" href="/2026/01/01/blog/wiki/stellar/tag-plugins/index/">使用标签插件增强阅读体验</a>
+  </div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-01-01T04:19:43.714Z">2026-01-01</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>使用标签插件增强阅读体验</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>新版标签插件和 Hexo 官方的标签插件统一使用空格分隔，所以如果参数内容中需要出现的空格被意外分隔开了的时候，请使用 <code>&amp;nbsp;</code> 代替。</p>
+<details class="tag-plugin colorful folding" ><summary><p>参数解析规则</p>
+</summary><div class="body"><p>以图片标签为例，使用空格分隔开之后得到一个数组，如果图片描述文字中有空格，多分出来的这些「参数」被合并到最后一个「非键值对参数」中，什么是「非键值对参数」呢？举个例子您就明白了：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/183e71e0ad995.jpg 来自印度的 Rohit Vohra 使用 iPhone 12 Pro Max 拍摄。 download:https://www.apple.com.cn/newsroom/images/product/iphone/lifestyle/Apple_ShotoniPhone-rohit_vohra_12172020.zip %&#125;</span><br></pre></td></tr></table></figure>  <p>这个例子中，<code>download:https://xxxx</code> 是有冒号分隔开的，<code>download</code> 为键，后面的网址为值，所以叫做「键值对参数」；与此相对的，没有冒号分隔的就叫做「非键值对参数」。键值对参数可以放在任何位置，我可以通过匹配键来解析，而非键值对参数则只能通过顺序解析，所以它们必须和文档中要求的前后顺序一致。</p> <p>一般核心的、重要的参数会设置成非键值对参数，而可选参数设置成键值对参数。</p> </div></details>
+
+<h2 id="复制标签"><a href="#复制标签" class="headerlink" title="复制标签"></a>复制标签</h2><p>对于单行内容，可以使用 copy 标签来实现复制功能：</p>
+<div class="tag-plugin copy"><input class="copy-area" id="copy_17" value="curl -s https://xaoxuu.com/install | sh"><button class="copy-btn" onclick="util.copy(&quot;copy_17&quot;,&quot;复制成功&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>
+
+<p>您可以设置 <code>git:https</code> 或者 <code>git:ssh</code> 或者 <code>git:gh</code> 来快速放置一个 git 仓库链接：</p>
+<div class="tag-plugin copy"><input class="copy-area" id="copy_18" value="https://github.com/xaoxuu.com/hexo-theme-stellar.git"><button class="copy-btn" onclick="util.copy(&quot;copy_18&quot;,&quot;复制成功&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>
+
+
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% copy curl -s https://xaoxuu.com/install | sh %&#125;</span><br><span class="line">&#123;% copy width:max curl -s https://xaoxuu.com/install | sh %&#125;</span><br><span class="line">&#123;% copy git:https xaoxuu.com/hexo-theme-stellar %&#125;</span><br><span class="line">&#123;% copy git:ssh xaoxuu.com/hexo-theme-stellar %&#125;</span><br><span class="line">&#123;% copy git:gh xaoxuu.com/hexo-theme-stellar %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="图片标签"><a href="#图片标签" class="headerlink" title="图片标签"></a>图片标签</h2><p>图片标签是一个精心设计的应对各种尺寸插图的标签，对于大图，可以放置一个「下载」按钮，</p>
+<h3 id="大尺寸图片"><a href="#大尺寸图片" class="headerlink" title="大尺寸图片"></a>大尺寸图片</h3><p>无论在什么宽度的设备上都希望横向铺满的图片，一般不需要额外操作。可以在链接后面写上图片描述，如有必要，可以通过设置 <code>download:true</code> 使其显示一个「下载」按钮链接指向图片地址，如果下载链接与显示的图片地址不同，可以 <code>download:下载链接</code> 来使其能够下载原图。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/183e71e0ad995.jpg" data-src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/183e71e0ad995.jpg" alt="来自印度的 Rohit Vohra 使用 iPhone 12 Pro Max 拍摄。"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div><a class="image-download blur" style="opacity:0" target="_blank" download="来自印度的 Rohit Vohra 使用 iPhone 12 Pro Max 拍摄。" href="https://www.apple.com.cn/newsroom/images/product/iphone/lifestyle/Apple_ShotoniPhone-rohit_vohra_12172020.zip"><svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3734"><path d="M561.00682908 685.55838913a111.03077546 111.03077546 0 0 1-106.8895062 0L256.23182837 487.72885783a55.96309219 55.96309219 0 0 1 79.13181253-79.18777574L450.70357448 523.88101491V181.55477937a55.96309219 55.96309219 0 0 1 111.92618438 0v344.06109173l117.07478902-117.07478901a55.96309219 55.96309219 0 0 1 79.13181252 79.18777574zM282.81429711 797.1487951h447.70473912a55.96309219 55.96309219 0 0 1 0 111.92618438H282.81429711a55.96309219 55.96309219 0 0 1 0-111.92618438z" p-id="3735"></path></svg></a></div><div class="image-meta"><span class="image-caption center">来自印度的 Rohit Vohra 使用 iPhone 12 Pro Max 拍摄。</span></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/bc7bda18328da.jpg" data-src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/bc7bda18328da.jpg" alt="来自澳大利亚的 Pieter de Vries 使用 iPhone 12 Pro Max 拍摄。"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div><a class="image-download blur" style="opacity:0" target="_blank" download="来自澳大利亚的 Pieter de Vries 使用 iPhone 12 Pro Max 拍摄。" href="https://www.apple.com.cn/newsroom/images/product/iphone/lifestyle/Apple_ShotoniPhone_pieter_de_vries_011221.zip"><svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3734"><path d="M561.00682908 685.55838913a111.03077546 111.03077546 0 0 1-106.8895062 0L256.23182837 487.72885783a55.96309219 55.96309219 0 0 1 79.13181253-79.18777574L450.70357448 523.88101491V181.55477937a55.96309219 55.96309219 0 0 1 111.92618438 0v344.06109173l117.07478902-117.07478901a55.96309219 55.96309219 0 0 1 79.13181252 79.18777574zM282.81429711 797.1487951h447.70473912a55.96309219 55.96309219 0 0 1 0 111.92618438H282.81429711a55.96309219 55.96309219 0 0 1 0-111.92618438z" p-id="3735"></path></svg></a></div><div class="image-meta"><span class="image-caption center">来自澳大利亚的 Pieter de Vries 使用 iPhone 12 Pro Max 拍摄。</span></div></div>
+
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/183e71e0ad995.jpg 来自印度的 Rohit Vohra 使用 iPhone 12 Pro Max 拍摄。 download:https://www.apple.com.cn/newsroom/images/product/iphone/lifestyle/Apple<span class="emphasis">_ShotoniPhone-rohit_</span>vohra<span class="emphasis">_12172020.zip %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% image https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/photos/bc7bda18328da.jpg 来自澳大利亚的 Pieter de Vries 使用 iPhone 12 Pro Max 拍摄。 download:https://www.apple.com.cn/newsroom/images/product/iphone/lifestyle/Apple_</span>ShotoniPhone<span class="emphasis">_pieter_</span>de<span class="emphasis">_vries_</span>011221.zip %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="小尺寸图片优化"><a href="#小尺寸图片优化" class="headerlink" title="小尺寸图片优化"></a>小尺寸图片优化</h3><p>宽度较小而高度较大的图片，可以设置宽、高、填充间距、背景色等对其布局进行优化，使得它在不同宽度的屏幕下都能获得不错的视觉体验：</p>
+<div class="tag-plugin image"><div class="image-bg" style="background:white;padding:16px;width:100%;"><img class="lazy" src="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/mirror/apple/documentation/watchkit/06d45110-1dd7-49a4-a413-9f5159ecdd0e.png" data-src="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/mirror/apple/documentation/watchkit/06d45110-1dd7-49a4-a413-9f5159ecdd0e.png" style="width:200px;"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div></div>
+
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/mirror/apple/documentation/watchkit/06d45110-1dd7-49a4-a413-9f5159ecdd0e.png width:200px padding:16px bg:white %&#125;</span><br></pre></td></tr></table></figure>
+
+<details class="tag-plugin colorful folding" ><summary><p>如果不进行约束，在宽屏设备上阅读体验很糟糕（为不影响阅读体验，已为您折叠过长的内容）</p>
+</summary><div class="body"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/mirror/apple/documentation/watchkit/06d45110-1dd7-49a4-a413-9f5159ecdd0e.png" data-src="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/mirror/apple/documentation/watchkit/06d45110-1dd7-49a4-a413-9f5159ecdd0e.png"onerror="this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E&quot;"/><div class="lazy-icon" style="background-image:url(https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd);"></div></div></div></div></details>
+
+
+
+
+<h2 id="备注标签"><a href="#备注标签" class="headerlink" title="备注标签"></a>备注标签</h2><p>备注标签相较于旧版进行了增强，可以实现更多种颜色， note 标签可以用空格隔开标题和内容，支持markdown语法来应对更复杂的场合。</p>
+<div class="tag-plugin colorful note" ><div class="body"><p>直接写备注内容，默认是和代码块一样的样式</p></div></div>
+
+
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note 直接写备注内容，默认是和代码块一样的样式 %&#125;</span><br></pre></td></tr></table></figure>
+
+<details class="tag-plugin colorful folding" ><summary><p>更多颜色</p>
+</summary><div class="body"><div class="tag-plugin colorful note" color="red"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div> <div class="tag-plugin colorful note" color="orange"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div> <div class="tag-plugin colorful note" color="yellow"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div> <div class="tag-plugin colorful note" color="green"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div> <div class="tag-plugin colorful note" color="cyan"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div> <div class="tag-plugin colorful note" color="blue"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div> <div class="tag-plugin colorful note" color="purple"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div> <div class="tag-plugin colorful note" color="white"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div> <div class="tag-plugin colorful note" color="dark"><div class="title">一共支持10种颜色，可以满足几乎所有的需求了。</div><div class="body"><p>color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。</p></div></div>  <figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note color:cyan 一共支持10种颜色，可以满足几乎所有的需求了。 color 可设置 red、orange、yellow、green、cyan、blue、purple、white、dark 9种值。 %&#125;</span><br></pre></td></tr></table></figure> </div></details>
+
+<h3 id="具有标题的备注标签"><a href="#具有标题的备注标签" class="headerlink" title="具有标题的备注标签"></a>具有标题的备注标签</h3><p>在旧版本只能使用复杂语法实现，现在 note 可以用更简单的方式实现了，只需要在标题和内容中间加一个空格。</p>
+<div class="tag-plugin colorful note" ><div class="title">这是标题</div><div class="body"><p>这是正文 哈哈。</p></div></div>
+
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note 这是标题 这是正文 哈哈。 %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="复杂备注标签"><a href="#复杂备注标签" class="headerlink" title="复杂备注标签"></a>复杂备注标签</h3><p>对于包含图片等复杂内容的备注，可以使用 note 标签配合 markdown 语法。</p>
+<div class="tag-plugin colorful note" ><div class="title">图文示例</div><div class="body"><p>对于包含图片等复杂内容的备注，建议使用简单的markdown语法配合note标签。</p></div></div>
+
+<p>下面是一个包含图片的示例：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/blog/2020-0627a@2x.jpg" alt="公司安防软件"></p>
+<p>公司一般都会强制安装安防软件，这些软件要求开机自启动，要求有屏幕录制权限、完全的磁盘访问权限包括相册图库。因此如果使用自己的 MacBook 作为办公设备，必须要把生活区和工作区完全独立开，安装在两个磁盘分区，并且对磁盘分区进行加密。</p>
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note 图文示例 对于包含图片等复杂内容的备注，建议使用简单的markdown语法配合note标签。 %&#125;</span><br><span class="line"></span><br><span class="line">下面是一个包含图片的示例：</span><br><span class="line"></span><br><span class="line">![<span class="string">公司安防软件</span>](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/blog/2020-0627a@2x.jpg</span>)</span><br><span class="line"></span><br><span class="line">公司一般都会强制安装安防软件...</span><br></pre></td></tr></table></figure>
+
+<h2 id="折叠标签"><a href="#折叠标签" class="headerlink" title="折叠标签"></a>折叠标签</h2><p>备注标签相较于旧版进行了增强，可以实现更多种颜色，还可以通过设置 <code>codeblock:true</code> 来实现可折叠的代码块。以下是一个默认打开的代码折叠框：</p>
+<details class="tag-plugin colorful folding"  open><summary><p>codeblock:true 默认打开的代码折叠框</p>
+</summary><div class="body"><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">test</span>() &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></details>
+
+
+<details class="tag-plugin colorful folding" color="yellow"><summary><p>危险，请不要打开这个</p>
+</summary><div class="body"><p>通过设置颜色，以实现更醒目的作用，但不要滥用色彩哦～</p> <details class="tag-plugin colorful folding" color="orange"><summary><p>警告，真的很危险</p> </summary><div class="body"><p>通过设置颜色，以实现更醒目的作用，但不要滥用色彩哦～</p> <details class="tag-plugin colorful folding" color="red"><summary><p>最后一次警告，千万不要打开这个</p> </summary><div class="body"><p>不要说我们没有警告过你，Windows 10 不是為所有人設計，而是為每個人設計。</p> </div></details></div></details></div></details>
+
+<h2 id="单选-复选样式标签"><a href="#单选-复选样式标签" class="headerlink" title="单选&#x2F;复选样式标签"></a>单选&#x2F;复选样式标签</h2><p>单选框是 radio，复选框是 checkbox，它们都支持这些参数：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">checked:</span> <span class="literal">true</span><span class="string">/false</span></span><br><span class="line"><span class="attr">color:</span> <span class="string">red/orange/yellow/green/cyan/blue/purple</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="单选框样式标签"><a href="#单选框样式标签" class="headerlink" title="单选框样式标签"></a>单选框样式标签</h3><div class="tag-plugin colorful checkbox" ><input type="radio"/><span>没有勾选的单选框</span></div>
+<div class="tag-plugin colorful checkbox" ><input type="radio" checked="true"/><span>已勾选的单选框</span></div>
+
+<h3 id="复选框样式标签"><a href="#复选框样式标签" class="headerlink" title="复选框样式标签"></a>复选框样式标签</h3><p>复选框还额外支持三种符号：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbol:</span> <span class="string">plus/minus/times</span></span><br></pre></td></tr></table></figure>
+
+<div class="tag-plugin colorful checkbox" ><input type="checkbox"/><span>普通的没有勾选的复选框</span></div>
+<div class="tag-plugin colorful checkbox" ><input type="checkbox" checked="true"/><span>普通的已勾选的复选框</span></div>
+<div class="tag-plugin colorful checkbox" color="green" symbol="plus"><input type="checkbox" checked="true"/><span>显示为加号的绿色的已勾选的复选框</span></div>
+<div class="tag-plugin colorful checkbox" color="yellow" symbol="minus"><input type="checkbox" checked="true"/><span>显示为减号的黄色的已勾选的复选框</span></div>
+<div class="tag-plugin colorful checkbox" color="red" symbol="times"><input type="checkbox" checked="true"/><span>显示为乘号的红色的已勾选的复选框</span></div>
+
+<div class="tag-plugin colorful note" color="yellow"><div class="body"><p>由于没有提交表单的需要，所以这个标签只是样式标签，不具有真实的单选&#x2F;复选功能。</p></div></div>
+
+<h2 id="时间线标签"><a href="#时间线标签" class="headerlink" title="时间线标签"></a>时间线标签</h2><p>目前的时间线只支持静态的，后续有望通过 API 实现动态时间线插件。</p>
+<div class="tag-plugin timeline"><div class="timenode" index="0"><div class="header"><span>2021 年 2 月 16 日</span></div><div class="body fs14"><p>主要部分功能已经开发的差不多了。</p></div></div><div class="timenode" index="1"><div class="header"><span>2021 年 2 月 11 日</span></div><div class="body fs14"><p>今天除夕，也是生日，一个人在外地过年+过生日，熬夜开发新主题，尽量在假期结束前放出公测版。</p></div></div></div>
+
+
+<h2 id="友链标签"><a href="#友链标签" class="headerlink" title="友链标签"></a>友链标签</h2><p>您可以在任何位置插入友链，支持静态数据和动态数据，静态数据需要写在数据文件中：</p>
+<figure class="highlight yaml"><figcaption><span>blog/source/_data/friends.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">group1:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">海内存知己</span> <span class="string">天涯若比邻</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">感谢人生旅途中的每一份真挚的友谊，按结识先后顺序：</span></span><br><span class="line">  <span class="attr">items:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">title:</span> <span class="string">某某某</span></span><br><span class="line">      <span class="string">...</span></span><br><span class="line"><span class="attr">group2:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">特别感谢的开源大佬</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">感谢开源大佬们的无私奉献，按结识先后顺序：</span></span><br><span class="line">  <span class="attr">items:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">title:</span> <span class="string">某某某</span></span><br><span class="line">      <span class="string">...</span></span><br><span class="line"><span class="attr">group3:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">来自</span> <span class="string">GitHub</span> <span class="string">的朋友</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">&#x27;以下友链通过 [GitHub Issue](https://github.com/xaoxuu/friends/issues/) 提交，按 issue 最后更新时间排序：&#x27;</span></span><br><span class="line">  <span class="attr">api:</span> <span class="string">https://issues-api.vercel.app</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">xaoxuu/friends</span></span><br></pre></td></tr></table></figure>
+
+<p>标题和描述都支持 md 格式，需要写在引号中。如果指定了 <code>api</code> 和 <code>repo</code> 字段，则从 issues 中取第一个 <code>json</code> 代码块数据作为友链。</p>
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% friends %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据按组筛选"><a href="#数据按组筛选" class="headerlink" title="数据按组筛选"></a>数据按组筛选</h3><p>友链支持分组（白名单模式和黑名单模式）显示：</p>
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 显示 group1</span><br><span class="line">&#123;% friends only:group1 %&#125;</span><br><span class="line"></span><br><span class="line">// 显示 group1 和 group2</span><br><span class="line">&#123;% friends only:group1,group2 %&#125;</span><br><span class="line"></span><br><span class="line">// 除了 group2 别的都显示</span><br><span class="line">&#123;% friends not:group2 %&#125;</span><br></pre></td></tr></table></figure>
+
+<details class="tag-plugin colorful folding" ><summary><p>friends only:group2</p>
+</summary><div class="body"><div class="tag-plugin users-wrap"><div class="grid-box"></div></div></div></details>
+
+<h3 id="实现动态友链"><a href="#实现动态友链" class="headerlink" title="实现动态友链"></a>实现动态友链</h3><p>可以加载来自 issues 的友链数据，除了需要在 <code>_data/friends.yml</code> 中指定 <code>api</code> 和 <code>repo</code> 外，还需要做一下几件事：</p>
+<p>从 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/issues-api">xaoxuu&#x2F;issues-api</a> 作为模板克隆或者 fork 仓库，然后提交一个 issue 进行测试，不出意外的话，仓库中已经配置好了 issue 模板，只需要在模板中指定的位置填写信息就可以了。</p>
+<p>提交完 issue 一分钟左右，如果仓库中出现了 <code>output</code> 分支提交，可以点击查看一下文件内容是否已经包含了刚刚提交的 issue 中的数据，如果包含，那么再次回到前端页面刷新就可以看到来自 issue 的友链数据了。</p>
+<div class="tag-plugin colorful note" ><div class="title">关于自建&nbsp;Vercel&nbsp;API</div><div class="body"><p>如果您想使用自己的 api，请把您刚创建的仓库导入到 Vercel 项目，详见 <a target="_blank" rel="noopener" href="https://zfe.space/post/python-issues-api.html">小冰博客</a> 的教程。</p></div></div>
+
+<div class="tag-plugin colorful note" color="green"><div class="title">特别感谢</div><div class="body"><p>特别感谢小冰博客通过 Vercel 进行加速的方案，解决了原本直接请求 GitHub API 速度过慢的问题。</p></div></div>
+
+<h3 id="只显示动态数据"><a href="#只显示动态数据" class="headerlink" title="只显示动态数据"></a>只显示动态数据</h3><p>如果您不想创建 <code>friends.yml</code> 来设置任何静态数据，可以在标签中设置 <code>repo</code> 来只显示动态数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% friends repo:xaoxuu/friends %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然，如果您自己部署了 API 接口，可以指定：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% friends repo:xaoxuu/friends api:https://issues-api.vercel.app %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="网站卡片标签"><a href="#网站卡片标签" class="headerlink" title="网站卡片标签"></a>网站卡片标签</h2><p>网站卡片可以显示网站截图、logo、标题、描述，使用方法和友链标签一模一样，唯一的区别是数据文件名称为 <code>sites.yml</code>，可以和友链数据混用，通过分组过滤实现不一样的效果。</p>
+<figure class="highlight md"><figcaption><span>示例写法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% sites only:mac %&#125;</span><br></pre></td></tr></table></figure>
+
+<details class="tag-plugin colorful folding" ><summary><p>sites only:mac</p>
+</summary><div class="body"><div class="tag-plugin sites-wrap"><div class="grid-box"></div></div></div></details>
+
+<h2 id="GitHub-Card"><a href="#GitHub-Card" class="headerlink" title="GitHub Card"></a>GitHub Card</h2><div class="tag-plugin ghcard"><a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&&show_owner=true"/></a></div>
+
+<div class="tag-plugin ghcard"><a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/xaoxuu/hexo-theme-stellar"><img src="https://github-readme-stats.vercel.app/api/pin/?username=xaoxuu&repo=hexo-theme-stellar&theme=dark&show_owner=true"/></a></div>
+
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% ghcard xaoxuu %&#125;</span><br><span class="line">&#123;% ghcard xaoxuu/hexo-theme-stellar theme:dark %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="tag-plugin link dis-select"><a class="link-card plain" title="GitHub&nbsp;Card&nbsp;API github-readme-stats" href="https://github.com/anuraghazra/github-readme-stats" target="_blank" rel="external nofollow noopener noreferrer" cardlink autofill="icon"><div class="left"><span class="title">GitHub&nbsp;Card&nbsp;API github-readme-stats</span><span class="cap link footnote">https://github.com/anuraghazra/github-readme-stats</span></div><div class="right"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div></div></a></div>
+
+<h2 id="导航栏标签"><a href="#导航栏标签" class="headerlink" title="导航栏标签"></a>导航栏标签</h2><p>文章内也可以插入一个导航栏：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% navbar [<span class="string">文章</span>](<span class="link">/</span>) [<span class="string">项目</span>](<span class="link">/wiki/</span>) [<span class="string">留言</span>](<span class="link">#comments</span>) [<span class="string">GitHub</span>](<span class="link">https://github.com/xaoxuu/</span>) %&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="关于标签"><a href="#关于标签" class="headerlink" title="关于标签"></a>关于标签</h2><p>方便在关于页面显示一段图文信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% about avatar:https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/avatar/rect-256@2x.png height:80px %&#125;</span><br><span class="line"></span><br><span class="line">&lt;img height=&quot;32px&quot; alt=&quot;XAOXUU&quot; src=&quot;https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/logo/180x30@2x.png&quot;&gt;</span><br><span class="line"></span><br><span class="line">**如果宇宙中真有什么终极的逻辑，那就是我们终有一天会在舰桥上重逢，直到生命终结。**</span><br><span class="line"></span><br><span class="line">XAOXUU 目前是一个 iOS 开发者，代表作品有：ProHUD、ValueX 等。在业余时间也开发了 Stellar 博客主题，更多的作品可以去项目主页查看，希望大家喜欢～</span><br><span class="line"></span><br><span class="line">&#123;% navbar [文章](/) [项目](/wiki/) [留言](#comments) [GitHub](https://github.com/xaoxuu/) %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% endabout %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="设备框架标签"><a href="#设备框架标签" class="headerlink" title="设备框架标签"></a>设备框架标签</h2><div class="tag-plugin video-wrap"><div class="frame-wrap" id="iphone11"focus="top"><video poster="https://cdn.jsdelivr.net/gh/cdn-x/wiki/prohud/docs/toast-loading@2x.jpg" playsinline="" muted="" loop="" autoplay="" preload="metadata"><source src="https://cdn.jsdelivr.net/gh/cdn-x/wiki/prohud/docs/toast-loading@2x.mov" type="video/mp4"></video><div class="frame"></div></div></div>
+
+<figure class="highlight md"><figcaption><span>示例写法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% frame iphone11 img:https://cdn.jsdelivr.net/gh/cdn-x/wiki/prohud/docs/toast-loading@2x.jpg video:https://cdn.jsdelivr.net/gh/cdn-x/wiki/prohud/docs/toast-loading@2x.mov focus:top %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>目前仅支持 iphone11 如果您有 iPhone12、iPad、Mac 等设备模型的 svg 图片，可以发给我进行适配。</p>
+<h2 id="分栏标签"><a href="#分栏标签" class="headerlink" title="分栏标签"></a>分栏标签</h2><p>这个标签移植自 <a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/tag-plugins/tabs.html">NexT</a> 主题，但做了以下修改：</p>
+<ul>
+<li>设置默认激活的标签方式为 <code>active:1</code> 而非 <code>, 1</code>（这样符合默认规则）</li>
+<li>支持设置 <code>codeblock:true</code> 进行代码块布局优化（删除多余的间距）</li>
+<li>不支持 <code>@icon</code> 方式设置图标</li>
+</ul>
+<div class="tag-plugin tabs"id="tab_3"><div class="nav-tabs"><div class="tab"><a href="#tab_3-1">Solution 1</a></div><div class="tab active"><a href="#tab_3-2">codeblock:true 代码块测试</a></div><div class="tab"><a href="#tab_3-3">Solution 3</a></div></div><div class="tab-content"><div class="tab-pane" id="tab_3-1"><p>This is Tab 1.</p>
+<!-- endtab --></div><div class="tab-pane active" id="tab_3-2"><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x <span class="operator">=</span> <span class="number">123</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
+<!-- endtab --></div><div class="tab-pane" id="tab_3-3"><p>This is Tab 3.</p>
+<!-- endtab --></div></div></div>
+
+<h2 id="轮播标签"><a href="#轮播标签" class="headerlink" title="轮播标签"></a>轮播标签</h2><p>默认一张图片是 50% 宽度，通过设置 <code>width:min</code> 设置为 25% 宽度，<code>width:max</code> 设置为 100% 宽度。</p>
+<h3 id="最大图片宽度"><a href="#最大图片宽度" class="headerlink" title="最大图片宽度"></a>最大图片宽度</h3><div class="tag-plugin swiper fancybox" id="swiper-api" width="max"><div class="swiper-wrapper"><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot11.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot12.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot13.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div></div><div class="swiper-pagination"></div><div class="swiper-button-prev blur"></div><div class="swiper-button-next blur"></div></div>
+
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% swiper width:max %&#125;</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot11.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot12.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot13.png</span>)</span><br><span class="line">&#123;% endswiper %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="最小图片宽度"><a href="#最小图片宽度" class="headerlink" title="最小图片宽度"></a>最小图片宽度</h3><div class="tag-plugin swiper fancybox" id="swiper-api" width="min"><div class="swiper-wrapper"><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot01.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot02.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot03.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot04.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot05.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot06.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot07.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot08.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot09.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot10.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div></div><div class="swiper-pagination"></div><div class="swiper-button-prev blur"></div><div class="swiper-button-next blur"></div></div>
+
+<figure class="highlight md"><figcaption><span>写法如下</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% swiper width:min %&#125;</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot01.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot02.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot03.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot04.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot05.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot06.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot07.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot08.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot09.png</span>)</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/prohud/screenshot10.png</span>)</span><br><span class="line">&#123;% endswiper %&#125;</span><br></pre></td></tr></table></figure>
+</article>
+<div class="article-footer">
+
+</div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">H1S97X</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E6%A0%87%E7%AD%BE"><span class="toc-text">复制标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%A0%87%E7%AD%BE"><span class="toc-text">图片标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E5%B0%BA%E5%AF%B8%E5%9B%BE%E7%89%87"><span class="toc-text">大尺寸图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E5%B0%BA%E5%AF%B8%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96"><span class="toc-text">小尺寸图片优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E6%B3%A8%E6%A0%87%E7%AD%BE"><span class="toc-text">备注标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E6%9C%89%E6%A0%87%E9%A2%98%E7%9A%84%E5%A4%87%E6%B3%A8%E6%A0%87%E7%AD%BE"><span class="toc-text">具有标题的备注标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%A4%87%E6%B3%A8%E6%A0%87%E7%AD%BE"><span class="toc-text">复杂备注标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%98%E5%8F%A0%E6%A0%87%E7%AD%BE"><span class="toc-text">折叠标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E9%80%89-%E5%A4%8D%E9%80%89%E6%A0%B7%E5%BC%8F%E6%A0%87%E7%AD%BE"><span class="toc-text">单选&#x2F;复选样式标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E9%80%89%E6%A1%86%E6%A0%B7%E5%BC%8F%E6%A0%87%E7%AD%BE"><span class="toc-text">单选框样式标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E9%80%89%E6%A1%86%E6%A0%B7%E5%BC%8F%E6%A0%87%E7%AD%BE"><span class="toc-text">复选框样式标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF%E6%A0%87%E7%AD%BE"><span class="toc-text">时间线标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8B%E9%93%BE%E6%A0%87%E7%AD%BE"><span class="toc-text">友链标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8C%89%E7%BB%84%E7%AD%9B%E9%80%89"><span class="toc-text">数据按组筛选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E5%8F%8B%E9%93%BE"><span class="toc-text">实现动态友链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AA%E6%98%BE%E7%A4%BA%E5%8A%A8%E6%80%81%E6%95%B0%E6%8D%AE"><span class="toc-text">只显示动态数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%8D%A1%E7%89%87%E6%A0%87%E7%AD%BE"><span class="toc-text">网站卡片标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-Card"><span class="toc-text">GitHub Card</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%A0%87%E7%AD%BE"><span class="toc-text">导航栏标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%A0%87%E7%AD%BE"><span class="toc-text">关于标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E6%A1%86%E6%9E%B6%E6%A0%87%E7%AD%BE"><span class="toc-text">设备框架标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%A0%8F%E6%A0%87%E7%AD%BE"><span class="toc-text">分栏标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E6%92%AD%E6%A0%87%E7%AD%BE"><span class="toc-text">轮播标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%9B%BE%E7%89%87%E5%AE%BD%E5%BA%A6"><span class="toc-text">最大图片宽度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%9B%BE%E7%89%87%E5%AE%BD%E5%BA%A6"><span class="toc-text">最小图片宽度</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  window.canonical["param"] = {"permalink":"https://h1s97x.github.io/2026/01/01/blog/wiki/stellar/tag-plugins/index/","checklink":"/js/plugins/video.js"};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        if ($(el).find('.loading-wrap').length == 0){
+          $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+        }
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.chat-file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

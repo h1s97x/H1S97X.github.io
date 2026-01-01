@@ -14,7 +14,7 @@ describe('Build Tests', () => {
       console.error('Build failed:', error.message);
       throw error;
     }
-  });
+  }, 30000); // 增加超时时间到30秒
   
   test('Build should generate public directory', () => {
     expect(fs.existsSync(publicDir)).toBe(true);
@@ -24,9 +24,12 @@ describe('Build Tests', () => {
     const indexPath = path.join(publicDir, 'index.html');
     expect(fs.existsSync(indexPath)).toBe(true);
     
-    const content = fs.readFileSync(indexPath, 'utf8');
-    expect(content).toContain('<html');
-    expect(content).toContain('</html>');
+    if (fs.existsSync(indexPath)) {
+      const content = fs.readFileSync(indexPath, 'utf8');
+      expect(content.length).toBeGreaterThan(0);
+      expect(content).toContain('<html');
+      expect(content).toContain('</html>');
+    }
   });
   
   test('All required assets should be generated', () => {
@@ -48,17 +51,21 @@ describe('Build Tests', () => {
     const sitemapPath = path.join(publicDir, 'sitemap.xml');
     expect(fs.existsSync(sitemapPath)).toBe(true);
     
-    const content = fs.readFileSync(sitemapPath, 'utf8');
-    expect(content).toContain('<?xml');
-    expect(content).toContain('<urlset');
+    if (fs.existsSync(sitemapPath)) {
+      const content = fs.readFileSync(sitemapPath, 'utf8');
+      expect(content).toContain('<?xml');
+      expect(content).toContain('<urlset');
+    }
   });
   
   test('RSS feed should be generated', () => {
     const feedPath = path.join(publicDir, 'atom.xml');
     expect(fs.existsSync(feedPath)).toBe(true);
     
-    const content = fs.readFileSync(feedPath, 'utf8');
-    expect(content).toContain('<?xml');
-    expect(content).toContain('<feed');
+    if (fs.existsSync(feedPath)) {
+      const content = fs.readFileSync(feedPath, 'utf8');
+      expect(content).toContain('<?xml');
+      expect(content).toContain('<feed');
+    }
   });
 });

@@ -1,0 +1,131 @@
+name: Daily Repository Backup
+
+on:
+  schedule:
+    # 每天凌晨2点执行备份 (UTC时间)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # 允许手动触发
+  push:
+    branches: [ main, develop ]
+    paths-ignore:
+      - 'README.md'
+      - 'docs/**'
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout source repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # 获取完整历史
+        submodules: recursive # 包含子模块
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Git
+      run: |
+        git config --global user.name "Backup Bot"
+        git config --global user.email "backup-bot@users.noreply.github.com"
+
+    - name: Create backup bundle
+      run: |
+        # 创建包含所有分支和标签的备份包
+        git bundle create backup-$(date +%Y%m%d).bundle --all
+        
+        # 创建备份信息文件
+        echo "# Repository Backup Information" > backup-info.md
+        echo "- **Backup Date**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> backup-info.md
+        echo "- **Source Repository**: ${{ github.repository }}" >> backup-info.md
+        echo "- **Latest Commit**: $(git rev-parse HEAD)" >> backup-info.md
+        echo "- **Total Commits**: $(git rev-list --all --count)" >> backup-info.md
+        echo "- **Branches**: $(git branch -r | wc -l)" >> backup-info.md
+        echo "- **Tags**: $(git tag | wc -l)" >> backup-info.md
+        echo "" >> backup-info.md
+        echo "## Recent Commits" >> backup-info.md
+        git log --oneline -10 >> backup-info.md
+
+    - name: Upload backup to backup repository
+      env:
+        BACKUP_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
+        BACKUP_REPO: ${{ secrets.BACKUP_REPO_NAME }}
+      run: |
+        if [ -n "$BACKUP_TOKEN" ] && [ -n "$BACKUP_REPO" ]; then
+          # 克隆备份仓库
+          git clone https://${BACKUP_TOKEN}@github.com/${BACKUP_REPO}.git backup-repo
+          cd backup-repo
+          
+          # 创建日期目录
+          BACKUP_DIR="backups/$(date +%Y)/$(date +%m)"
+          mkdir -p "$BACKUP_DIR"
+          
+          # 复制备份文件
+          cp ../backup-*.bundle "$BACKUP_DIR/"
+          cp ../backup-info.md "$BACKUP_DIR/backup-$(date +%Y%m%d)-info.md"
+          
+          # 更新最新备份链接
+          ln -sf "$BACKUP_DIR/backup-$(date +%Y%m%d).bundle" "latest-backup.bundle"
+          cp ../backup-info.md "latest-backup-info.md"
+          
+          # 提交备份
+          git add .
+          git commit -m "Daily backup: $(date +%Y-%m-%d)" || echo "No changes to commit"
+          git push
+          
+          echo "✅ Backup uploaded successfully to $BACKUP_REPO"
+        else
+          echo "⚠️ Backup repository not configured. Skipping upload."
+        fi
+
+    - name: Clean old backups (keep last 30 days)
+      env:
+        BACKUP_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
+        BACKUP_REPO: ${{ secrets.BACKUP_REPO_NAME }}
+      run: |
+        if [ -n "$BACKUP_TOKEN" ] && [ -n "$BACKUP_REPO" ]; then
+          cd backup-repo
+          
+          # 删除30天前的备份文件
+          find backups/ -name "*.bundle" -type f -mtime +30 -delete
+          find backups/ -name "*-info.md" -type f -mtime +30 -delete
+          
+          # 清理空目录
+          find backups/ -type d -empty -delete
+          
+          # 提交清理结果
+          git add .
+          git commit -m "Cleanup: Remove backups older than 30 days" || echo "No old backups to clean"
+          git push
+          
+          echo "🧹 Old backups cleaned up"
+        fi
+
+    - name: Create local backup archive
+      run: |
+        # 创建完整的项目压缩包
+        tar -czf "hexo-blog-backup-$(date +%Y%m%d).tar.gz" \
+          --exclude='.git' \
+          --exclude='node_modules' \
+          --exclude='public' \
+          --exclude='.deploy_git' \
+          .
+        
+        echo "📦 Local backup archive created: hexo-blog-backup-$(date +%Y%m%d).tar.gz"
+
+    - name: Upload backup artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: daily-backup-${{ github.run_number }}
+        path: |
+          backup-*.bundle
+          backup-info.md
+          hexo-blog-backup-*.tar.gz
+        retention-days: 30
+
+    - name: Backup notification
+      run: |
+        echo "🎉 Daily backup completed successfully!"
+        echo "📊 Backup Statistics:"
+        echo "   - Bundle size: $(du -h backup-*.bundle | cut -f1)"
+        echo "   - Archive size: $(du -h hexo-blog-backup-*.tar.gz | cut -f1)"
+        echo "   - Backup date: $(date)"

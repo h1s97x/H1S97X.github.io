@@ -1,0 +1,46 @@
+name: Feed Posts Parser
+
+on:
+  workflow_dispatch: # Allows manual triggering
+  schedule:
+    - cron: '0 21 * * *' # Runs daily at 21:00 UTC
+
+jobs:
+  feed-parser:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run Feed Post Parser
+        uses: xaoxuu/feed-posts-parser@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          data_path: '/v2/data.json'
+          posts_count: 3
+          date_format: 'YYYY-MM-DD HH:mm'
+      # 重新生成一下JSON
+      - name: Generate data.json
+        uses: xaoxuu/issues2json@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          data_version: 'v2'
+          data_path: '/v2/data.json'
+          sort: 'posts-desc' # 'created-desc'/'created-asc'/'updated-desc'/'updated-asc'
+          exclude_issue_with_labels: '审核中, 缺少互动, 缺少文章, 风险网站' # 具有哪些标签的issue不生成到JSON中
+          hide_labels: '白名单' # 这些标签不显示在前端页面
+      - name: Setup Git Config
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Commit and Push to output branch
+        run: |
+          git fetch origin output || true
+          git checkout -B output
+          git add --all
+          git commit -m "Update data from issues" || echo "No changes to commit"
+          git push -f origin output

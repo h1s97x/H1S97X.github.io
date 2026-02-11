@@ -66,7 +66,8 @@
     "hexo-server": "^3.0.0",
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-tag-dplayer": "^0.3.3",
-    "hexo-theme-landscape": "^1.1.0"
+    "hexo-theme-landscape": "^1.1.0",
+    "probe-image-size": "^7.2.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",

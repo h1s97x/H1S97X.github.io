@@ -31,6 +31,21 @@ menubar:
       icon: solar:user-bold-duotone
       title: 关于
       url: /about/
+    - id: categories
+      theme: '#8BC34A'
+      icon: solar:tags-bold-duotone
+      title: 分类
+      url: /categories/
+    - id: tags
+      theme: '#FFB300'
+      icon: solar:hashtag-bold-duotone
+      title: 标签
+      url: /tags/
+    - id: archives
+      theme: '#9C27B0'
+      icon: solar:calendar-bold-duotone
+      title: 归档
+      url: /archives/
 
 
 ######## Main ########

@@ -1,9 +1,9 @@
 welcome:
   layout: markdown
+  title: '欢迎，欢迎！'
   content: |
-    <span class="jinrishici-sentence"></span>
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-
+    欢迎光临小站，这是一个全新的主题，拥有精心设计的样式，保留了 Volantis 的自定义侧边栏，可以写一些公告。
+    
 recent_long:
   layout: recent
   limit: 32

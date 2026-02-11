@@ -1,5 +1,5 @@
 {
-  "name": "h1s97x-site",
+  "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -37,11 +37,7 @@
     "check-links": "node tools/check-links.js",
     "validate": "npm run test && npm run check-links",
     "precommit": "npm run validate",
-    "prepare": "husky install",
-    "backup:setup": "node tools/setup-private-backup.js",
-    "backup:status": "node tools/setup-private-backup.js --status",
-    "backup:test": "npm run backup:status && echo 'Run manual backup test with: git push backup main'",
-    "backup:validate": "node tools/validate-backup-config.js"
+    "prepare": "husky install"
   },
   "hexo": {
     "version": "8.1.1"
@@ -67,8 +63,7 @@
     "hexo-server": "^3.0.0",
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-tag-dplayer": "^0.3.3",
-    "hexo-theme-landscape": "^1.1.0",
-    "probe-image-size": "^7.2.3"
+    "hexo-theme-landscape": "^1.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",

@@ -4,11 +4,15 @@
 
 # Site
 title: H1S97X
-subtitle: '技术分享与生活记录'
+favicon: '/favicon.ico?v=20240507'
+avatar: '/images/calf.png'
+subtitle: '技术分享与生活记录 | 或有月下赏花人 应无所憾''
 description: '专注于技术开发、系统运维、游戏世界和学术学习的个人博客'
 keywords: 技术博客,编程,开发,运维,游戏,学习
 author: H1S97X
-language: zh-CN
+language:
+  - zh-CN
+  - en
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -38,7 +42,7 @@ external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
   exclude: ''
-filename_case: 0 #设置为 1 ，将文件名转换为小写形式； 设置为 2 ，将文件名转换为大写形式。
+filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
@@ -98,64 +102,34 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: stellar
-
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-# npm install hexo-deployer-git --save
-deploy:
-  - type: git
-    repo: https://github.com/h1s97x/H1S97X.github.io.git
-    branch: gh-pages
-    message: "Github CI Auto Builder at {{ now('YYYY-MM-DD HH:mm:ss Z') }}"
-
-inject:
-  head:
-    - <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/favicon/apple-touch-icon.png">
-    - <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/favicon/favicon-32x32.png">
-    - <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/favicon/favicon-16x16.png">
-    - <link rel="manifest" href="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/favicon/site.webmanifest">
-    - <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/favicon/favicon.ico">
-    - <meta name="msapplication-TileColor" content="#2d89ef">
-    - <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/favicon/browserconfig.xml">
-    - <meta name="theme-color" content="#ffffff">
-
-########################### Plugins ###########################
+aplayer:
+  meting: true
+  asset_inject: false
 search:
   path: search.xml
   field: post
   format: html
   limit: 10000
-aplayer:
-  meting: true
-  asset_inject: false
 
-# npm i hexo-generator-feed
+
+# RSS Feed
+## Docs: https://github.com/hexojs/hexo-generator-feed
 feed:
+  enable: true
   type: atom
   path: atom.xml
-  limit: false
+  limit: 20
+  hub:
   content: true
-  icon: https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/avatar/rect-256@2x.png
+  content_limit: 300
+  content_limit_delim: ' '
+  order_by: -date
+  icon: favicon.ico
   autodiscovery: true
 
-# npm i hexo-related-popular-posts
-
-# npm i hexo-neat
-neat_enable: false
-
-# npm i hexo-all-minifier
-all_minifier: true
-
-# npm i hexo-autonofollow
-nofollow:
-  enable: true
-  exclude:
-
-# https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap
-sitemap:
-  path: sitemap.xml
-  tag: false
-  category: false
-  page_priority: 0.4
-  post_priority: 0.6
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repo: git@github.com:h1s97x/H1S97X.github.io.git
+  branch: master

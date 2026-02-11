@@ -1,98 +1,52 @@
 ---
-robots: 'index,nofollow'
-menu_id: more
-seo_title: 关于
-sidebar: [welcome, toc]
-toc_title: 关于我
-comment_title: 来过，就留下您的脚印吧～
-comment_id: '留言板'
-comments: true
-breadcrumb: false
-header: false
+title: 关于
+date: 2024-04-13 17:37:33
+menu_id: about
+comment: true
 ---
 
-{% about avatar:https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/avatar/rect-256@2x.png height:80px %}
+## 关于我
 
-<img height="32px" alt="XAOXUU" src="https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/logo/180x30@2x.png">
+{% quot 或有月下赏花人 应无所憾 icon:hashtag %}
 
-**如果宇宙中真有什么终极的逻辑，那就是我们终有一天会在舰桥上重逢，直到生命终结。**
-
-XAOXUU 目前是一个 iOS 开发者，代表作品有：ProHUD、ValueX 等。在业余时间也开发了 Stellar 博客主题，更多的作品可以去项目主页查看，希望大家喜欢～
-
-{% navbar [文章](/) [项目](/wiki/) [书签](/bookmark/) [友链](/friends/) [留言](#comments) %}
-
-{% endabout %}
-
-## 近期日程
-
-开源项目无任何盈利目的（包含打赏），只在工作闲暇时间进行维护，有相关需求请前往对应项目提 Issue 进行反馈，通过私人邮件询问开源项目问题可能不会回复。
-
-{% timeline %}
-
-<!-- node Volantis 5.0 -->
-
-更新内容及其进度在 [Projects](https://github.com/volantis-x/hexo-theme-volantis/projects/4) 中已经列出。
-
-
-
-<!-- node ProHUD 迭代 -->
-
-- 针对 Swift 5 进行代码优化。
-- 继续发布 cocoapods （已经中断了几个版本）
-
-
-
-<!-- node ValueX 迭代 -->
-
-目前存在冗余操作，需要优化代码以提高运行效率。
-
-
-
-{% endtimeline %}
-
-## 兴趣爱好
-
-{% tabs hobbies active:1 %}
-
-<!-- tab 音乐 -->
-
-非常热爱音乐，喜欢的品类很多，尤其喜爱 [Hans Zimmer](https://music.163.com/#/artist?id=34517) 和 [Two Steps From Hell](https://music.163.com/#/artist?id=102714) 的史诗音乐，夜深人静的时候喜欢听 [Ludovico Einaudi](https://music.163.com/#/artist?id=38127) 的钢琴曲，能量不足的时候会听一些电音或摇滚来充电，心灰意冷的时候会听一些十年前常听的轻音乐怀旧，那时我还特别喜欢 [班得瑞](https://music.163.com/#/artist?id=88149) 的音乐。
-
-<!-- endtab -->
-
-<!-- tab 影视 -->
-
-- 漫威的影视作品、X-Men 系列
-- 科幻类，例如：[Interstellar](https://movie.douban.com/subject/1889243/)、[Star Trek 系列](https://movie.douban.com/subject/2132932/)、[The Expanse](https://movie.douban.com/subject/25926851/)、[Avatar](https://movie.douban.com/subject/1652587/)、[I, Robot](https://movie.douban.com/subject/1308843/)
-- 魔幻类，例如：[Game of Thrones](https://movie.douban.com/subject/3016187/)
-- 诺兰大导演的作品，例如：[Inception](https://movie.douban.com/subject/3541415/)、[Dunkirk](https://movie.douban.com/subject/26607693/)
-
-<!-- endtab -->
-
-<!-- tab 游戏 -->
-
-| 游戏            | 推荐指数 | 游玩时间 |
-| :-------------- | :------- | :------- |
-| Red Alert 2 | ★★★★        | 2005-2012     |
-| World of Warcraft | ★★★★☆        | 2006-2020     |
-| Red Alert 3 | ★★★★☆        | 2013-2021     |
-| Minecraft       | ★★★★        | 2013-2016     |
-| Bad Piggies        | ★★★★★        | 2014-2017     |
-| Terraria        | ★★★★☆        | 2014-2021     |
-| Don‘t Starve    | ★★★★☆        | 2015-2021     |
-| Ori and the Blind Forest | ★★★★★        | 2018-2020     |
-| Human Fall Flat | ★★★★★★       | 2018-2021     |
-
-<!-- endtab -->
-
-<!-- tab 话题 -->
-
-此外，也热衷于欣赏和学习这方面的知识：产品设计、摄影、天文。
-
-<!-- endtab -->
-
-{% endtabs %}
+我是 **H1S97X**，一名技术爱好者。这个博客是我在互联网上的个人空间，用来记录学习笔记、分享技术经验和生活感悟。
 
 ## 关于本站
 
-本站是个人博客，不放置任何推广链接。内容以技术积累为主，也不排除会写一些生活方面或者其它主题的内容。季更博主，精力有限，为了保证文章质量，篇数不会很多，已经发布过的文章也会不定期审查和更新（以免过时的内容误导读者）。
+本站使用 [Hexo](https://hexo.io/) 静态博客框架搭建，主题为 [Stellar](https://github.com/xaoxuu/hexo-theme-stellar)，托管在 [GitHub Pages](https://pages.github.com/) 上。
+
+{% timeline 建站历程 %}
+
+<!-- node 2024 年 -->
+
+博客持续更新中，涵盖技术开发、系统运维、网络安全、学术学习等多个领域。
+
+<!-- node 2023 年 -->
+
+开始搭建个人博客，记录学习和成长的点滴。
+
+{% endtimeline %}
+
+## 内容方向
+
+{% checkbox checked:true 技术开发 %} 编程语言、框架工具、开发实践
+{% checkbox checked:true 系统运维 %} Linux 系统、网络配置、服务部署
+{% checkbox checked:true 网络安全 %} CTF、渗透测试、密码学
+{% checkbox checked:true 学术学习 %} 机器学习、课程笔记、实验报告
+{% checkbox checked:true 个人随笔 %} 生活感悟、工具推荐
+
+## 联系方式
+
+{% note color:cyan 如果你有任何问题、建议或合作意向，欢迎通过以下方式联系我。 %}
+
+- **GitHub**: [h1s97x](https://github.com/h1s97x)
+- **Email**: 请在 GitHub 主页查看
+- 也可以直接在文章下方留言评论
+
+## 版权声明
+
+除特别声明外，本站所有文章均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。转载请注明出处。
+
+---
+
+{% quot 感谢你的访问，希望这里的内容对你有所帮助。 %}

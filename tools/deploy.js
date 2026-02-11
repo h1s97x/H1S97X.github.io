@@ -352,13 +352,14 @@ class BlogDeployer {
         
     try {
       const remoteUrl = this.execCommand('git remote get-url origin', { stdio: 'pipe' });
+      const repoName = remoteUrl.split('/').pop().replace('.git', '');
       const username = remoteUrl.split('/').slice(-2, -1)[0].split(':').pop();
             
       console.log('📋 部署信息:');
       console.log('   主题: Stellar v1.33.1');
-      console.log(`   仓库: ${username}/${username}.github.io/`);
+      console.log(`   仓库: ${username}/${repoName}`);
       console.log('   分支: gh-pages');
-      console.log(`   网址: https://${username}.github.io/`);
+      console.log(`   网址: https://${username}.github.io/${repoName}`);
       console.log();
       console.log('🌟 Stellar主题特性:');
       console.log('   ✅ 本地搜索功能');

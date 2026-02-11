@@ -1,0 +1,26 @@
+{
+  "projectName": "H1S97X.github.io",
+  "projectOwner": "H1S97X",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "imyaung",
+      "name": "imyaung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/260834370?v=4",
+      "profile": "https://github.com/imyaung",
+      "contributions": [
+        "doc",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": true
+}

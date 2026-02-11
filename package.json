@@ -37,7 +37,10 @@
     "check-links": "node tools/check-links.js",
     "validate": "npm run test && npm run check-links",
     "precommit": "npm run validate",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "contributors:check": "all-contributors check"
   },
   "hexo": {
     "version": "8.1.1"
@@ -67,6 +70,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "all-contributors-cli": "^6.26.1",
     "audit-ci": "^7.1.0",
     "eslint": "^9.39.2",
     "gray-matter": "^4.0.3",

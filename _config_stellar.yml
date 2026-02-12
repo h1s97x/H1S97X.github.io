@@ -21,102 +21,109 @@ menubar:
       icon: solar:notebook-bold-duotone
       title: 笔记
       url: /notes/
-    - id: music
-      theme: '#FF9800'
-      icon: solar:music-note-bold-duotone
-      title: 音乐
-      url: /music/
+    - id: coding
+      theme: '#3DC550'
+      icon: solar:sidebar-code-bold-duotone
+      title: Coding
+      url: /coding/
     - id: about
       theme: '#F44336'
       icon: solar:user-bold-duotone
       title: 关于
       url: /about/
-    - id: categories
-      theme: '#8BC34A'
-      icon: solar:tags-bold-duotone
-      title: 分类
-      url: /categories/
-    - id: tags
-      theme: '#FFB300'
-      icon: solar:hashtag-bold-duotone
-      title: 标签
-      url: /tags/
-    - id: archives
-      theme: '#9C27B0'
-      icon: solar:calendar-bold-duotone
-      title: 归档
-      url: /archives/
 
 
 ######## Main ########
+# site_tree:
+#   home:
+#     leftbar: welcome, recent
+#     rightbar: toc
+#   index_blog:
+#     base_dir: blog
+#     menu_id: post
+#     leftbar: welcome, recent
+#     rightbar: toc
+#     nav_tabs:
+#       '最新发布': /
+#   index_topic:
+#     base_dir: topic
+#     menu_id: post
+#   index_wiki:
+#     base_dir: wiki
+#     menu_id: wiki
+#     leftbar: related, recent
+#     rightbar: null
+#     nav_tabs: {}
+#   post:
+#     menu_id: post
+#     leftbar: related, recent, timeline
+#     rightbar: ghrepo, toc
+#   topic:
+#     menu_id: post
+#   wiki:
+#     menu_id: wiki
+#     leftbar: tree, related, recent
+#     rightbar: ghrepo, toc
+#   notebooks:
+#     base_dir: notebooks
+#     menu_id: notebooks
+#     leftbar: recent
+#     rightbar: null
+#   notes:
+#     menu_id: notebooks
+#     leftbar: tagtree, recent
+#     rightbar: null
+#   note:
+#     leftbar: tagtree, recent
+#     rightbar: toc
+#   author: 
+#     base_dir: author
+#     menu_id: post
+#     leftbar: recent, timeline
+#     rightbar: timeline
+#   error_page:
+#     menu_id: post
+#     '404': '/404.html'
+#     leftbar: recent, timeline
+#     rightbar: timeline
+#   page:
+#     leftbar: recent
+#     rightbar: toc
 site_tree:
-  home:
-    leftbar: welcome, recent
-    rightbar: toc
-  index_blog:
-    base_dir: blog
-    menu_id: post
-    leftbar: welcome, recent
-    rightbar: toc
-    nav_tabs:
-      '最新发布': /
-      '技术开发': /categories/tech-development/
-      '系统运维': /categories/system-operations/
-      '游戏世界': /categories/gaming-world/
-      '学术学习': /categories/academic-learning/
-      '个人随笔': /categories/personal-essays/
-      '软件工具': /categories/software-tools/
-  index_topic:
-    base_dir: topic
-    menu_id: post
-  index_wiki:
-    base_dir: wiki
-    menu_id: wiki
-    leftbar: related, recent
-    rightbar: null
-    nav_tabs: {}
   post:
-    menu_id: post
-    leftbar: related, recent, timeline
-    rightbar: ghrepo, toc
-  topic:
-    menu_id: post
+    leftbar: welcome, related, recent
+  index_wiki:
+    leftbar: welcome, related, recent
   wiki:
-    menu_id: wiki
-    leftbar: tree, related, recent
-    rightbar: ghrepo, toc
+    leftbar: welcome, tree, related, recent
   notebooks:
-    base_dir: notebooks
-    menu_id: notebooks
-    leftbar: recent
-    rightbar: null
+    leftbar: welcome, recent
   notes:
-    menu_id: notebooks
-    leftbar: tagtree, recent
-    rightbar: null
+    leftbar: welcome, tagtree, recent_long
   note:
-    leftbar: tagtree, recent
-    rightbar: toc
-  author: 
-    base_dir: author
-    menu_id: post
-    leftbar: recent, timeline
-    rightbar: timeline
+    leftbar: welcome, tagtree, recent_long
   error_page:
-    menu_id: post
-    '404': '/404.html'
-    leftbar: recent, timeline
-    rightbar: timeline
+    leftbar: welcome, recent, timeline
   page:
-    leftbar: recent
-    rightbar: toc
-
+    leftbar: welcome, recent
 
 ######## Notebook ########
 notebook:
   auto_excerpt: 128
   tagcons:
     '': solar:hashtag-square-bold
+    difficult: hugeicons-pro:dead
+    easy: iconoir:one-star
+    font: solar:text-linear
+    game: solar:gamepad-linear
+    git: brand:git
+    hard: iconoir:three-stars
+    it: solar:code-linear
+    mac: brand:apple
+    math: solar:calculator-minimalistic-linear
+    medium: iconoir:two-stars
+    puzzle: hugeicons-pro:puzzle
+    python: brand:python
   per_page: null
   order_by: -updated
   license: false
@@ -162,23 +169,6 @@ comments:
   comment_title: 快来参与讨论吧~
   lazyload: true
   custom_css: ''
-  beaudar:
-    repo: xxx/xxx
-    issue-term: pathname
-    issue-number:
-    theme: preferred-color-scheme
-    label:
-    input-position: top
-    comment-order: desc
-    keep-theme: false
-    loading: false
-    branch: main
-  utterances:
-    repo: xxx/xxx
-    issue-term: pathname
-    issue-number:
-    theme: preferred-color-scheme
-    label:
   giscus:
     src: https://giscus.app/client.js
     data-repo: h1s97x/H1S97X.github.io
@@ -195,31 +185,19 @@ comments:
     data-loading: lazy # lazy
     crossorigin: anonymous
 
-  twikoo:
-    js: https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js
-    envId: https://xxx
-  waline:
-    js: https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline.js
-    css: https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline.css
-    meta_css: https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline-meta.css
-    serverURL: https://waline.vercel.app
-    commentCount: true
-    pageview: false
-  artalk:
-    css: https://unpkg.com/artalk@2.9/dist/artalk.css
-    js: https://unpkg.com/artalk@2.9/dist/artalk.js
-    server: ''
-    site: ''
-    darkMode: auto
-    fancybox: true
-
 
 ######## Footer ########
 footer:
   social:
+    email:
+      icon: brand:gmail
+      url: mailto:yang1297656998@outlook.com
     github:
-      icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/>'
+      icon: brand:github
       url: https://github.com/h1s97x
+    theme:
+      icon: default:theme
+      onclick: 'switchTheme()'
   sitemap:
     - title: 博客
       items:
@@ -229,8 +207,9 @@ footer:
         - '[归档](/archives/)'
     - title: 分类
       items:
-        - '[技术开发](/categories/tech-development/)'
-        - '[系统运维](/categories/system-operations/)'
+        - '[博客<span class="dot"></span>近期发布](/)'
+        - '[技术开发](tech-development/)'
+        - '[博客](/categories/system-operations/)'
         - '[游戏世界](/categories/gaming-world/)'
         - '[学术学习](/categories/academic-learning/)'
     - title: 页面
@@ -326,53 +305,9 @@ dependencies:
 
 # 内置服务
 data_services:
-  mdrender:
-    js: /js/services/mdrender.js
-  siteinfo:
-    js: /js/services/siteinfo.js
-    api: ''
-  ghinfo:
-    js: /js/services/ghinfo.js
-  rating:
-    js: /js/services/rating.js
-    api: https://star-vote.xaox.cc/api/rating
-  vote:
-    js: /js/services/vote.js
-    api: https://star-vote.xaox.cc/api/vote
-  sites:
-    js: /js/services/sites.js
-  friends:
-    js: /js/services/friends.js
-  friends_and_posts:
-    js: /js/services/friends_and_posts.js
-  timeline:
-    js: /js/services/timeline.js
-  fcircle:
-    js: /js/services/fcircle.js
-  weibo:
-    js: /js/services/weibo.js
-  memos:
-    js: /js/services/memos.js
-  voice: 
-    js: /js/plugins/voice.js
-  video: 
-    js: /js/plugins/video.js
-  download-file: 
-    js: /js/plugins/download-file.js
-  twikoo:
-    js: /js/services/twikoo_latest_comment.js
-  waline:
-    js: /js/services/waline_latest_comment.js
-  artalk:
-    js: /js/services/artalk_latest_comment.js
-  giscus:
-    js: /js/services/giscus_latest_comment.js
   contributors:
-    edit_this_page:
-      '_posts/': ''
-      'wiki/stellar/': https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/
-    js: /js/services/contributors.js
-
+    edit_this_page: # 从开头开始匹配替换
+      '':
 
 # 扩展插件
 plugins:
@@ -396,22 +331,6 @@ plugins:
     duration: 1000
     interval: 100
     scale: 1
-  tianli_gpt: 
-    enable: false
-    js: https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js
-    field: post
-    key: 5Q5mpqRK5DkwT1X9Gi5e
-    total_length: 1000
-    typewriter: true
-    summary_directly: true
-    rec_method: all
-    hide_shuttle: true
-    summary_toggle: false
-    interface:
-      name: AI摘要
-      introduce: '我是文章辅助AI: QX-AI，点击下方的按钮，让我生成本文简介、推荐相关文章等。'
-      version: TianliGPT
-      button: ["介绍自己", "推荐文章", "生成摘要", "矩阵穿梭"]
   katex:
     enable: true
     inject: |

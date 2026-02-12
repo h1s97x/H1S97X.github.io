@@ -21,22 +21,6 @@ sitemap.xml
 sitemap.txt
 CNAME
 
-# Year directories (generated)
-2020/
-2023/
-2024/
-2025/
-archives/
-categories/
-tags/
-page/
-search/
-css/
-js/
-img/
-music/
-assets/
-photoswipe/
 
 # Node.js
 node_modules/
@@ -108,4 +92,8 @@ out/
 *.pid
 *.seed
 *.pid.lock
+
+.obsidian/
+.idea/
 /themes
+source/assets/

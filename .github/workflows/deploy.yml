@@ -3,6 +3,8 @@ name: Deploy Stellar Blog to GitHub Pages
 on:
   push:
     branches: [ main, master, develop ]
+    paths-ignore:
+      - 'source/**'  # 忽略 source 目录，由 incremental-deploy 处理
   pull_request:
     branches: [ main, master, develop ]
   # 支持手动触发（在 GitHub 仓库的 Actions 标签页手动运行）

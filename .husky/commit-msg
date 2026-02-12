@@ -2,7 +2,7 @@
 # Format: type(scope): description
 # Example: feat(blog): add new post about CI/CD
 
-commit_regex='^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .{1,50}'
+commit_regex='^(feat|fix|docs|style|refactor|test|chore|ci|perf|build|revert)(\(.+\))?: .{1,50}'
 
 if ! grep -qE "$commit_regex" "$1"; then
     echo "❌ Invalid commit message format!"

@@ -2,7 +2,7 @@ name: Incremental Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [ main, master ]  # 只在主分支触发
     paths:
       - 'source/**'  # 只监听 source 目录下的变化
   workflow_dispatch:

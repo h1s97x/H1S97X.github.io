@@ -1,5 +1,7 @@
 'use strict';
 
+/* global hexo */
+
 /**
  * Hexo Injector: 阅读时间 & 字数统计
  * 通过客户端 JS 注入到文章页面的 #post-meta 区域
@@ -7,7 +9,7 @@
  */
 
 hexo.extend.injector.register('body_end', () => {
-    return `
+  return `
 <script>
 (function() {
   // 只在文章页面执行

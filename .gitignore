@@ -108,3 +108,4 @@ out/
 *.pid
 *.seed
 *.pid.lock
+/themes

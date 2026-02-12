@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, H1S97X</rights>
   <subtitle>技术分享与生活记录 | 或有月下赏花人 应无所憾</subtitle>
   <title>H1S97X</title>
-  <updated>2026-02-12T08:07:34.992Z</updated>
+  <updated>2026-02-12T08:20:46.411Z</updated>
   <entry>
     <author>
       <name>H1S97X</name>
@@ -21,12 +21,12 @@
     </content>
     <id>https://h1s97x.github.io/2026/02/12/hello-world/</id>
     <link href="https://h1s97x.github.io/2026/02/12/hello-world/"/>
-    <published>2026-02-12T08:07:34.992Z</published>
+    <published>2026-02-12T08:20:46.411Z</published>
     <summary>
       <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you]]>
     </summary>
     <title>Hello World</title>
-    <updated>2026-02-12T08:07:34.992Z</updated>
+    <updated>2026-02-12T08:20:46.411Z</updated>
   </entry>
   <entry>
     <author>
@@ -44,7 +44,7 @@
 <li><strong>本文链接：</strong> <a href="https://leeyuxun.github.io/HTTrack%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.html">https://leeyuxun.github.io/HTTrack]]>
     </summary>
     <title>HTTrack 简单使用</title>
-    <updated>2026-02-12T08:07:34.805Z</updated>
+    <updated>2026-02-12T08:20:46.226Z</updated>
   </entry>
   <entry>
     <author>
@@ -62,7 +62,7 @@
 <p>]]>
     </summary>
     <title>GDPR zh</title>
-    <updated>2026-02-12T08:07:34.805Z</updated>
+    <updated>2026-02-12T08:20:46.226Z</updated>
   </entry>
   <entry>
     <author>
@@ -78,7 +78,7 @@
       <![CDATA[<h2 id="快速清理-Windows-大文件，它比「老牌」更好用：WizTree-App-1"><a href="#快速清理-Windows-大文件，它比「老牌」更好用：WizTree-App-1" class="headerlink" title="快速清理 Windows 大文件，它比「老牌」更好用：WizTree | App +1"></a>快速清理 Windows 大文件，它比「老牌」更好用：WizTree | App +1</h2><p>在 Windows 上，<a href="https://sspai.com/post/58167">存储感知</a>]]>
     </summary>
     <title>WizTree</title>
-    <updated>2026-02-12T08:07:34.991Z</updated>
+    <updated>2026-02-12T08:20:46.411Z</updated>
   </entry>
   <entry>
     <author>
@@ -96,7 +96,7 @@
 <p><img]]>
     </summary>
     <title>Kali Linux常用操作</title>
-    <updated>2026-02-12T08:07:34.824Z</updated>
+    <updated>2026-02-12T08:20:46.244Z</updated>
   </entry>
   <entry>
     <author>
@@ -114,23 +114,7 @@
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><h3 id="主要参考书"><a href="#主要参考书"]]>
     </summary>
     <title>Linux</title>
-    <updated>2026-02-12T08:07:34.990Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>H1S97X</name>
-    </author>
-    <content>
-      <![CDATA[<h3 id="linux下普通用户变为root权限的三种方法"><a href="#linux下普通用户变为root权限的三种方法" class="headerlink" title="linux下普通用户变为root权限的三种方法"></a>linux下普通用户变为root权限的三种方法</h3><p><a href="https://blog.csdn.net/weixin_43886632/article/details/108244302">Linux下普通用户变为root权限的三种方法_19.如何从普通用户xiaoming切换到root?-CSDN博客</a></p><p><strong>0x01加普通用户</strong><br>useradd xiaoming 创建用户小明<br>passwd xiaoming 创建小明的密码</p><p><strong>0x02 将xiaoming的权限变为root权限</strong></p><p><strong>方法1</strong></p><p>1、修改 &#x2F;etc&#x2F;sudoers 文件，找到107行，把前面的注释（#）去掉</p><p>2、将xiaoming添加到root组（wheel）<br>命令：<code>usermod -g root xiaoming</code><br>之后xiaoming就能执行root的命令了，但是权限不是root还是xiaoming权限.</p><p><strong>方法2</strong><br>1、修改 &#x2F;etc&#x2F;sudoers 文件，找到下面一行，在root下面添加一行<br>内容：<code>xiaoming All=(All) All</code></p><p>修改完后。登录xiaoming。输入命令 <code>sudo -l</code>，然后输入xiaoming的密码认证后使用sudo执行任意命令即可</p><p><strong>方法3</strong></p><p>修改 &#x2F;etc&#x2F;passwd 文件，找到xiaoming，把用户ID修改为 0 </p>]]>
-    </content>
-    <id>https://h1s97x.github.io/2025/12/27/Linux/%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/</id>
-    <link href="https://h1s97x.github.io/2025/12/27/Linux/%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/"/>
-    <published>2025-12-27T15:46:11.000Z</published>
-    <summary>
-      <![CDATA[<h3 id="linux下普通用户变为root权限的三种方法"><a href="#linux下普通用户变为root权限的三种方法" class="headerlink" title="linux下普通用户变为root权限的三种方法"></a>linux下普通用户变为root权限的三种方法</h3><p><a]]>
-    </summary>
-    <title>用户权限</title>
-    <updated>2026-02-12T08:07:34.990Z</updated>
+    <updated>2026-02-12T08:20:46.409Z</updated>
   </entry>
   <entry>
     <author>
@@ -151,7 +135,39 @@
 <th>Kali Linux: Assuring Security by Penetration]]>
     </summary>
     <title>玩转kali</title>
-    <updated>2026-02-12T08:07:34.990Z</updated>
+    <updated>2026-02-12T08:20:46.410Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>H1S97X</name>
+    </author>
+    <content>
+      <![CDATA[<h3 id="linux下普通用户变为root权限的三种方法"><a href="#linux下普通用户变为root权限的三种方法" class="headerlink" title="linux下普通用户变为root权限的三种方法"></a>linux下普通用户变为root权限的三种方法</h3><p><a href="https://blog.csdn.net/weixin_43886632/article/details/108244302">Linux下普通用户变为root权限的三种方法_19.如何从普通用户xiaoming切换到root?-CSDN博客</a></p><p><strong>0x01加普通用户</strong><br>useradd xiaoming 创建用户小明<br>passwd xiaoming 创建小明的密码</p><p><strong>0x02 将xiaoming的权限变为root权限</strong></p><p><strong>方法1</strong></p><p>1、修改 &#x2F;etc&#x2F;sudoers 文件，找到107行，把前面的注释（#）去掉</p><p>2、将xiaoming添加到root组（wheel）<br>命令：<code>usermod -g root xiaoming</code><br>之后xiaoming就能执行root的命令了，但是权限不是root还是xiaoming权限.</p><p><strong>方法2</strong><br>1、修改 &#x2F;etc&#x2F;sudoers 文件，找到下面一行，在root下面添加一行<br>内容：<code>xiaoming All=(All) All</code></p><p>修改完后。登录xiaoming。输入命令 <code>sudo -l</code>，然后输入xiaoming的密码认证后使用sudo执行任意命令即可</p><p><strong>方法3</strong></p><p>修改 &#x2F;etc&#x2F;passwd 文件，找到xiaoming，把用户ID修改为 0 </p>]]>
+    </content>
+    <id>https://h1s97x.github.io/2025/12/27/Linux/%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/</id>
+    <link href="https://h1s97x.github.io/2025/12/27/Linux/%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/"/>
+    <published>2025-12-27T15:46:11.000Z</published>
+    <summary>
+      <![CDATA[<h3 id="linux下普通用户变为root权限的三种方法"><a href="#linux下普通用户变为root权限的三种方法" class="headerlink" title="linux下普通用户变为root权限的三种方法"></a>linux下普通用户变为root权限的三种方法</h3><p><a]]>
+    </summary>
+    <title>用户权限</title>
+    <updated>2026-02-12T08:20:46.410Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>H1S97X</name>
+    </author>
+    <content>
+      <![CDATA[<h3 id="什么是被动扫描"><a href="#什么是被动扫描" class="headerlink" title="什么是被动扫描?"></a>什么是被动扫描?</h3><p>被动扫描主要指的是在目标无法察觉的情况下进行的信息收集，比如我们如果想了解一个远在天边的人，你会怎么做呢？显然我们可以选择在搜索引擎去搜索这个名字。其实这就是一次对目标的被动扫描。最经典的被动扫描技术其实要数“Google hack”技术，但是这种技术在我们所处的大陆地区暂时无法使用。在这一章中我们来介绍3个极为优秀的信息收集工具：</p><ul><li>Maltego</li><li>sn0int</li><li>ZoomEye</li></ul><h3 id="被动扫描的范围"><a href="#被动扫描的范围" class="headerlink" title="被动扫描的范围"></a>被动扫描的范围</h3><p>那么信息的收集要从哪几方面来下手呢？以目标a.test.com为例，我们就可以想方设法来获取如下的一些信息：</p><p>1）目标网站所有者的信息，例如姓名、地址、电话、电子邮件等。</p><p>2）目标网站相关的电子邮箱。</p><p>3）目标网站用户的社交信息，也就是该网站工作人员的微博、QQ、论坛发帖（这些都是国内渗透测试的标准，国外的话一般是推特、Youtube之类）。</p><p>4）a.test.com指向网站的DNS信息，是否使用了CDN（Content Delivery Network，内容分发网络）、网站应用级入侵防御系统（Web Application Firewall，WAF）等设备。</p><p>5）test.com的子域名信息。</p><h3 id="Maltego"><a href="#Maltego" class="headerlink" title="Maltego"></a>Maltego</h3><p>Maltego是一款十分令人惊喜的信息收集软件。这款工具可以通过域名注册、搜索引擎、社交网络、电子邮件等各种渠道收集目标的信息。</p><p>Kali Linux 2中包含Maltego，但是需要用户自行注册才能使用。</p><h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><blockquote><p>注意：因为Maltego是国外网站，注册信息填写后出现页面404不能直接访问。所以需要在火狐&#x2F;谷歌浏览器上添加redirector插件，创建新的director就行了。</p><p><a href="https://blog.csdn.net/u010784611/article/details/109740060">kali之maltego注册-CSDN博客</a></p><p><a href="https://blog.csdn.net/u010784611/article/details/109732876">注册Maltego显示ReCaptcha is not valid，解决Google验证码服务reCaptcha失效问题_the recaptcha token provided is not valid or has e-CSDN博客</a></p></blockquote><p>犯了个蠢，注册后注意邮箱激活，不然就会出现下图的情况：（警告：你的账户未激活）</p><p><img src="D:/hexo/source/_posts/img/image-20231122164458195.png" alt="image-20231122164458195"></p><p>启动方法：</p><p>启动Maltogo的方法很简单，Kali Linux 2中已经安装了Maltego，只需要Applications&#x2F;01-Information Gathering&#x2F;maltegoce就可以打开这个工具:</p><p><img src="D:/hexo/source/_posts/img/image-20231122163158810.png" alt="image-20231122163158810"></p><p>打开的Maltego工作界面分成3个部分，最上方是菜单栏，这里面包含了所有的功能，左侧Entity Palette包含了所有的对象（例如设备、域名、IP地址等），右侧是收集到的信息，如下图：</p><p><img src="D:/hexo/source/_posts/img/image-20231122164810001.png" alt="image-20231122164810001"></p><p>接下来进入实战：</p><p>先点击左上角工具栏里的New创建一个Graph。</p><p>Maltego的使用是自动化的，你只需要提供要进行调查的内容。例如这里我们要调查的是<a href="http://www.testfire.net这个域名,那么我们就可以在左侧的entity/">www.testfire.net这个域名，那么我们就可以在左侧的Entity</a> Palette列表的Infarastructure分类中选择Domain，并拖动Domain到右侧的空白区中：</p><p><img src="D:/hexo/source/_posts/img/image-20231122165335173.png" alt="image-20231122165335173"></p><p>在空白区将看到一个名为maltego.com的域对象，双击这个对象，就可以修改其内容。</p><p>然后我们可以有多种调查的方式，这里面选择一种最为常用的方式，也就是Maltego提供的自动化信息收集，在选择了空白区的maltego.com之后，然后单击最左侧的Run View按钮，在切换出来的Machines菜单中提供了Maltego提供的几种比较经典的信息收集方式，这里最为常用的是Footprint系列，其中后面的数字越大，调查的深度也就越大，这里我们以其中的Footprint L1为例。</p><p><img src="D:/hexo/source/_posts/img/image-20231122165101545.png" alt="image-20231122165101545"></p><p>选中了Footprint L1之后，单击右侧的run按钮即可，收集到的结果如图（如果使用的是免费版本的话，那么节点数是有限制的）：</p><p><img src="D:/hexo/source/_posts/img/image-20231122165523854.png" alt="image-20231122165523854"></p><p>换个其他的域名试试：</p><p><img src="D:/hexo/source/_posts/img/image-20231122165715200.png" alt="image-20231122165715200"></p><h3 id="sn0int"><a href="#sn0int" class="headerlink" title="sn0int"></a>sn0int</h3><p>安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install debian-keyring</span><br></pre></td></tr></table></figure><h3 id="Shodan和ZoomEye"><a href="#Shodan和ZoomEye" class="headerlink" title="Shodan和ZoomEye"></a>Shodan和ZoomEye</h3><p>我认为最好的工具就是Shodan和ZoomEye，它们都是网络安全人员十分喜爱的搜索引擎。不同于Google的是，诸如Baidu等用于搜索网站页面的引擎，它们的目的是搜索网络上指定类型的设备。</p><p>Shodan和ZoomEye的使用方法都十分简单，它们都提供了图形化的操作界面，不过如果正确地使用这两个工具，我们还必须掌握“关键词”的用法。这个“关键词”的用法其实和Google、Baidu十分相似，只要你能正确地使用这些关键词，就可以快速在网络上找到那些你所需要的设备,比如轻松地找出位于非洲的一些没有设置口令的服务器。</p><p>随着互联网的快速发展，连接到整个网络上的不再只有计算机，各种各样的设备都出现在了这个时代的大舞台上。路由器、交换机、电话系统、网络打印机、工业控制设备、嵌入式系统、安保设备等都可以通过互联网进行访问，一方面为使用者带来了极大的便利，但另一方面，这些设备都暴露在互联网上，也带来了极大的安全隐患。</p><p>除了一些确实需要连入互联网的设备（例如网络摄像头）之外，我们经常会发现很多时候，用户并不是故意将设备连接到互联网上的。一些经验不够丰富的工作人员在对这些设备进行配置的时候，往往是在不经意间完成了到互联网的连接。后果更为严重的是，这些用户经常会使用系统默认的用户名和密码，甚至有些设备的密码为空。这种设备一旦被黑客发现，后果将不堪设想。</p><h4 id="ZoomEye"><a href="#ZoomEye" class="headerlink" title="ZoomEye"></a>ZoomEye</h4><p><a href="https://www.zoomeye.org/">https://www.zoomeye.org/</a></p>]]>
+    </content>
+    <id>https://h1s97x.github.io/2025/12/27/Linux/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F/</id>
+    <link href="https://h1s97x.github.io/2025/12/27/Linux/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F/"/>
+    <published>2025-12-27T15:46:11.000Z</published>
+    <summary>
+      <![CDATA[<h3 id="什么是被动扫描"><a href="#什么是被动扫描" class="headerlink" title="什么是被动扫描?"></a>什么是被动扫描?</h3><p>被动扫描主要指的是在目标无法察觉的情况下进行的信息收集，比如我们如果想了解一个远在天边的人，你会怎么做呢？显然我们可以选择在搜索引擎去搜索这个名字。其实这就是一次对目标的被动扫描。最经典的被动扫描技术其实要数“Google]]>
+    </summary>
+    <title>被动扫描</title>
+    <updated>2026-02-12T08:20:46.410Z</updated>
   </entry>
   <entry>
     <author>
@@ -169,7 +185,7 @@
 <p>忘记了 Ubuntu]]>
     </summary>
     <title>重置密码</title>
-    <updated>2026-02-12T08:07:34.990Z</updated>
+    <updated>2026-02-12T08:20:46.410Z</updated>
   </entry>
   <entry>
     <author>
@@ -186,7 +202,24 @@
 <p>本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 Markdown 以及 HTML 文档。Docker]]>
     </summary>
     <title>Wiki.js</title>
-    <updated>2026-02-12T08:07:34.991Z</updated>
+    <updated>2026-02-12T08:20:46.411Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>H1S97X</name>
+    </author>
+    <content>
+      <![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直对音声这块没什么涉猎，之前虽然有看过一些相关的视频，但是自己没上过手的东西，又怎么能够说知晓了呢。正好，乘闲暇无事，对未知领域进行一番探索。</p><h2 id="VOICEVOX"><a href="#VOICEVOX" class="headerlink" title="VOICEVOX"></a>VOICEVOX</h2><p><strong>VOICEVOX</strong>是由ヒホ（ヒロシバ）基于深度学习技术开发的开源、免费的文字朗读软件。</p><h3 id="软件简述"><a href="#软件简述" class="headerlink" title="软件简述"></a>软件简述</h3><p>VOICEVOX自称“免费使用的中等品质文字朗读软件”（無料で使える中品質なテキスト読み上げソフトウェア），有着以下特点：</p><ol><li>商业或非商业都能免费使用（具体参照各个角色的使用规约）；</li><li>在所有电脑平台都可以使用（Windows、Mac、Linux）；</li><li>可以对语调（intonation）等做详细调整。</li></ol><p>除此之外，软件本体开源（包括编辑器UI、引擎、内核），其他开发者可以按照开源条例使用、开发新的软件或者内嵌至其他软件。</p><p>官方简称为「ボイボ」。</p><p>VoiceVox是voicepeak的姊妹TTS软件，同样可以商用、非商用，但属于免费语音合成软件，目前声库已经增加到10个，对于同人视觉小说游戏开发是一场及时雨。</p><p>虽然修音不如voicepeak，但是就免费开源而言已经很不错了，项目地址在<a href="https://link.zhihu.com/?target=https://github.com/VOICEVOX/voicevox">GitHub - VOICEVOX&#x2F;voicevox: 無料で使える中品質なテキスト読み上げソフトウェア、VOICEVOXのエディター</a> 。大小约1.9GB。</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-f2f845d9993a50f03622c8f3bad37a92_720w.webp" alt="img"></p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://mzh.moegirl.org.cn/VOICEVOX">VOICEVOX - 萌娘百科 万物皆可萌的百科全书 (moegirl.org.cn)</a></p>]]>
+    </content>
+    <id>https://h1s97x.github.io/2025/12/27/%E4%BA%8C%E6%AC%A1%E5%85%83/VoiceVox/</id>
+    <link href="https://h1s97x.github.io/2025/12/27/%E4%BA%8C%E6%AC%A1%E5%85%83/VoiceVox/"/>
+    <published>2025-12-27T15:46:11.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直对音声这块没什么涉猎，之前虽然有看过一些相关的视频，但是自己没上过手的东西，又怎么能够说知晓了呢。正好，乘闲暇无事，对未知领域进行一番探索。</p>
+<h2 id="VOICEVOX"><a href="#VOICEVOX" class="headerlink"]]>
+    </summary>
+    <title>VoiceVox</title>
+    <updated>2026-02-12T08:20:46.412Z</updated>
   </entry>
   <entry>
     <author>
@@ -204,56 +237,7 @@
 <p><a href="https://aaronparecki.com/oauth-2-simplified/#roles">OAuth 2 简化版 • Aaron]]>
     </summary>
     <title>OAuth2</title>
-    <updated>2026-02-12T08:07:34.991Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>H1S97X</name>
-    </author>
-    <content>
-      <![CDATA[<h3 id="什么是被动扫描"><a href="#什么是被动扫描" class="headerlink" title="什么是被动扫描?"></a>什么是被动扫描?</h3><p>被动扫描主要指的是在目标无法察觉的情况下进行的信息收集，比如我们如果想了解一个远在天边的人，你会怎么做呢？显然我们可以选择在搜索引擎去搜索这个名字。其实这就是一次对目标的被动扫描。最经典的被动扫描技术其实要数“Google hack”技术，但是这种技术在我们所处的大陆地区暂时无法使用。在这一章中我们来介绍3个极为优秀的信息收集工具：</p><ul><li>Maltego</li><li>sn0int</li><li>ZoomEye</li></ul><h3 id="被动扫描的范围"><a href="#被动扫描的范围" class="headerlink" title="被动扫描的范围"></a>被动扫描的范围</h3><p>那么信息的收集要从哪几方面来下手呢？以目标a.test.com为例，我们就可以想方设法来获取如下的一些信息：</p><p>1）目标网站所有者的信息，例如姓名、地址、电话、电子邮件等。</p><p>2）目标网站相关的电子邮箱。</p><p>3）目标网站用户的社交信息，也就是该网站工作人员的微博、QQ、论坛发帖（这些都是国内渗透测试的标准，国外的话一般是推特、Youtube之类）。</p><p>4）a.test.com指向网站的DNS信息，是否使用了CDN（Content Delivery Network，内容分发网络）、网站应用级入侵防御系统（Web Application Firewall，WAF）等设备。</p><p>5）test.com的子域名信息。</p><h3 id="Maltego"><a href="#Maltego" class="headerlink" title="Maltego"></a>Maltego</h3><p>Maltego是一款十分令人惊喜的信息收集软件。这款工具可以通过域名注册、搜索引擎、社交网络、电子邮件等各种渠道收集目标的信息。</p><p>Kali Linux 2中包含Maltego，但是需要用户自行注册才能使用。</p><h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><blockquote><p>注意：因为Maltego是国外网站，注册信息填写后出现页面404不能直接访问。所以需要在火狐&#x2F;谷歌浏览器上添加redirector插件，创建新的director就行了。</p><p><a href="https://blog.csdn.net/u010784611/article/details/109740060">kali之maltego注册-CSDN博客</a></p><p><a href="https://blog.csdn.net/u010784611/article/details/109732876">注册Maltego显示ReCaptcha is not valid，解决Google验证码服务reCaptcha失效问题_the recaptcha token provided is not valid or has e-CSDN博客</a></p></blockquote><p>犯了个蠢，注册后注意邮箱激活，不然就会出现下图的情况：（警告：你的账户未激活）</p><p><img src="D:/hexo/source/_posts/img/image-20231122164458195.png" alt="image-20231122164458195"></p><p>启动方法：</p><p>启动Maltogo的方法很简单，Kali Linux 2中已经安装了Maltego，只需要Applications&#x2F;01-Information Gathering&#x2F;maltegoce就可以打开这个工具:</p><p><img src="D:/hexo/source/_posts/img/image-20231122163158810.png" alt="image-20231122163158810"></p><p>打开的Maltego工作界面分成3个部分，最上方是菜单栏，这里面包含了所有的功能，左侧Entity Palette包含了所有的对象（例如设备、域名、IP地址等），右侧是收集到的信息，如下图：</p><p><img src="D:/hexo/source/_posts/img/image-20231122164810001.png" alt="image-20231122164810001"></p><p>接下来进入实战：</p><p>先点击左上角工具栏里的New创建一个Graph。</p><p>Maltego的使用是自动化的，你只需要提供要进行调查的内容。例如这里我们要调查的是<a href="http://www.testfire.net这个域名,那么我们就可以在左侧的entity/">www.testfire.net这个域名，那么我们就可以在左侧的Entity</a> Palette列表的Infarastructure分类中选择Domain，并拖动Domain到右侧的空白区中：</p><p><img src="D:/hexo/source/_posts/img/image-20231122165335173.png" alt="image-20231122165335173"></p><p>在空白区将看到一个名为maltego.com的域对象，双击这个对象，就可以修改其内容。</p><p>然后我们可以有多种调查的方式，这里面选择一种最为常用的方式，也就是Maltego提供的自动化信息收集，在选择了空白区的maltego.com之后，然后单击最左侧的Run View按钮，在切换出来的Machines菜单中提供了Maltego提供的几种比较经典的信息收集方式，这里最为常用的是Footprint系列，其中后面的数字越大，调查的深度也就越大，这里我们以其中的Footprint L1为例。</p><p><img src="D:/hexo/source/_posts/img/image-20231122165101545.png" alt="image-20231122165101545"></p><p>选中了Footprint L1之后，单击右侧的run按钮即可，收集到的结果如图（如果使用的是免费版本的话，那么节点数是有限制的）：</p><p><img src="D:/hexo/source/_posts/img/image-20231122165523854.png" alt="image-20231122165523854"></p><p>换个其他的域名试试：</p><p><img src="D:/hexo/source/_posts/img/image-20231122165715200.png" alt="image-20231122165715200"></p><h3 id="sn0int"><a href="#sn0int" class="headerlink" title="sn0int"></a>sn0int</h3><p>安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install debian-keyring</span><br></pre></td></tr></table></figure><h3 id="Shodan和ZoomEye"><a href="#Shodan和ZoomEye" class="headerlink" title="Shodan和ZoomEye"></a>Shodan和ZoomEye</h3><p>我认为最好的工具就是Shodan和ZoomEye，它们都是网络安全人员十分喜爱的搜索引擎。不同于Google的是，诸如Baidu等用于搜索网站页面的引擎，它们的目的是搜索网络上指定类型的设备。</p><p>Shodan和ZoomEye的使用方法都十分简单，它们都提供了图形化的操作界面，不过如果正确地使用这两个工具，我们还必须掌握“关键词”的用法。这个“关键词”的用法其实和Google、Baidu十分相似，只要你能正确地使用这些关键词，就可以快速在网络上找到那些你所需要的设备,比如轻松地找出位于非洲的一些没有设置口令的服务器。</p><p>随着互联网的快速发展，连接到整个网络上的不再只有计算机，各种各样的设备都出现在了这个时代的大舞台上。路由器、交换机、电话系统、网络打印机、工业控制设备、嵌入式系统、安保设备等都可以通过互联网进行访问，一方面为使用者带来了极大的便利，但另一方面，这些设备都暴露在互联网上，也带来了极大的安全隐患。</p><p>除了一些确实需要连入互联网的设备（例如网络摄像头）之外，我们经常会发现很多时候，用户并不是故意将设备连接到互联网上的。一些经验不够丰富的工作人员在对这些设备进行配置的时候，往往是在不经意间完成了到互联网的连接。后果更为严重的是，这些用户经常会使用系统默认的用户名和密码，甚至有些设备的密码为空。这种设备一旦被黑客发现，后果将不堪设想。</p><h4 id="ZoomEye"><a href="#ZoomEye" class="headerlink" title="ZoomEye"></a>ZoomEye</h4><p><a href="https://www.zoomeye.org/">https://www.zoomeye.org/</a></p>]]>
-    </content>
-    <id>https://h1s97x.github.io/2025/12/27/Linux/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F/</id>
-    <link href="https://h1s97x.github.io/2025/12/27/Linux/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F/"/>
-    <published>2025-12-27T15:46:11.000Z</published>
-    <summary>
-      <![CDATA[<h3 id="什么是被动扫描"><a href="#什么是被动扫描" class="headerlink" title="什么是被动扫描?"></a>什么是被动扫描?</h3><p>被动扫描主要指的是在目标无法察觉的情况下进行的信息收集，比如我们如果想了解一个远在天边的人，你会怎么做呢？显然我们可以选择在搜索引擎去搜索这个名字。其实这就是一次对目标的被动扫描。最经典的被动扫描技术其实要数“Google]]>
-    </summary>
-    <title>被动扫描</title>
-    <updated>2026-02-12T08:07:34.990Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>H1S97X</name>
-    </author>
-    <content>
-      <![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直对音声这块没什么涉猎，之前虽然有看过一些相关的视频，但是自己没上过手的东西，又怎么能够说知晓了呢。正好，乘闲暇无事，对未知领域进行一番探索。</p><h2 id="VOICEVOX"><a href="#VOICEVOX" class="headerlink" title="VOICEVOX"></a>VOICEVOX</h2><p><strong>VOICEVOX</strong>是由ヒホ（ヒロシバ）基于深度学习技术开发的开源、免费的文字朗读软件。</p><h3 id="软件简述"><a href="#软件简述" class="headerlink" title="软件简述"></a>软件简述</h3><p>VOICEVOX自称“免费使用的中等品质文字朗读软件”（無料で使える中品質なテキスト読み上げソフトウェア），有着以下特点：</p><ol><li>商业或非商业都能免费使用（具体参照各个角色的使用规约）；</li><li>在所有电脑平台都可以使用（Windows、Mac、Linux）；</li><li>可以对语调（intonation）等做详细调整。</li></ol><p>除此之外，软件本体开源（包括编辑器UI、引擎、内核），其他开发者可以按照开源条例使用、开发新的软件或者内嵌至其他软件。</p><p>官方简称为「ボイボ」。</p><p>VoiceVox是voicepeak的姊妹TTS软件，同样可以商用、非商用，但属于免费语音合成软件，目前声库已经增加到10个，对于同人视觉小说游戏开发是一场及时雨。</p><p>虽然修音不如voicepeak，但是就免费开源而言已经很不错了，项目地址在<a href="https://link.zhihu.com/?target=https://github.com/VOICEVOX/voicevox">GitHub - VOICEVOX&#x2F;voicevox: 無料で使える中品質なテキスト読み上げソフトウェア、VOICEVOXのエディター</a> 。大小约1.9GB。</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-f2f845d9993a50f03622c8f3bad37a92_720w.webp" alt="img"></p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://mzh.moegirl.org.cn/VOICEVOX">VOICEVOX - 萌娘百科 万物皆可萌的百科全书 (moegirl.org.cn)</a></p>]]>
-    </content>
-    <id>https://h1s97x.github.io/2025/12/27/%E4%BA%8C%E6%AC%A1%E5%85%83/VoiceVox/</id>
-    <link href="https://h1s97x.github.io/2025/12/27/%E4%BA%8C%E6%AC%A1%E5%85%83/VoiceVox/"/>
-    <published>2025-12-27T15:46:11.000Z</published>
-    <summary>
-      <![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直对音声这块没什么涉猎，之前虽然有看过一些相关的视频，但是自己没上过手的东西，又怎么能够说知晓了呢。正好，乘闲暇无事，对未知领域进行一番探索。</p>
-<h2 id="VOICEVOX"><a href="#VOICEVOX" class="headerlink"]]>
-    </summary>
-    <title>VoiceVox</title>
-    <updated>2026-02-12T08:07:34.992Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>H1S97X</name>
-    </author>
-    <content>
-      <![CDATA[<h3 id="基础信息"><a href="#基础信息" class="headerlink" title="基础信息"></a>基础信息</h3><table><thead><tr><th>资源ID</th><th>c4cf1aece35c43b19c396665cbfb0935</th></tr></thead><tbody><tr><td>资源名称</td><td>我的轻量</td></tr><tr><td>资源类型</td><td>轻量应用服务器-实例</td></tr><tr><td>资源组</td><td>-</td></tr><tr><td>地域</td><td>新加坡</td></tr><tr><td>创建时间</td><td>2023年11月3日 15:16:42</td></tr><tr><td>IP地址</td><td>172.17.59.55, 47.236.110.159</td></tr><tr><td>标签</td><td>-</td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table><p>资源配置信息</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Running&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;InstanceId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c4cf1aece35c43b19c396665cbfb0935&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;PlanId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;swas.s2.c2m1s40b30t1.un&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;CreateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-11-03T07:16:42Z&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;DdosStatus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;normal&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;BusinessStatus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Normal&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;InstanceName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;我的轻量&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;PublicIpAddress&quot;</span><span class="punctuation">:</span> <span class="string">&quot;47.236.110.159&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;InnerIpAddress&quot;</span><span class="punctuation">:</span> <span class="string">&quot;172.17.59.55&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;ExpiredTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2024-11-03T16:00:00Z&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;ImageId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;87987f90ac2943c1b23f4c46cc80839c&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;PaymentType&quot;</span><span class="punctuation">:</span> <span class="string">&quot;PrePaid&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;RegionId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ap-southeast-1&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>]]>
-    </content>
-    <id>https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/config/</id>
-    <link href="https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/config/"/>
-    <published>2025-12-27T15:46:11.000Z</published>
-    <summary>
-      <![CDATA[<h3 id="基础信息"><a href="#基础信息" class="headerlink"]]>
-    </summary>
-    <title>Config</title>
-    <updated>2026-02-12T08:07:35.000Z</updated>
+    <updated>2026-02-12T08:20:46.411Z</updated>
   </entry>
   <entry>
     <author>
@@ -269,7 +253,55 @@
       <![CDATA[<h2 id="frp-内网穿透"><a href="#frp-内网穿透" class="headerlink" title="frp 内网穿透"></a>frp 内网穿透</h2><p><a href="https://zhuanlan.zhihu.com/p/682732358">2024最新宝塔服务器做内网穿透教程，亲测可用 - 知乎]]>
     </summary>
     <title>FRP</title>
-    <updated>2026-02-12T08:07:35.000Z</updated>
+    <updated>2026-02-12T08:20:46.419Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>H1S97X</name>
+    </author>
+    <content>
+      <![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>宝塔面板作为简单好用的<a href="https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&from=20065">服务器</a>运维管理面板，它支持Linux&#x2F;Windows系统，我们可用它来一键配置LAMP&#x2F;LNMP环境、网站、<a href="https://cloud.tencent.com/solution/database?from_column=20065&from=20065">数据库</a>、FTP等，通过Web端轻松管理服务器。</p><p>以下教程，我们将演示使用宝塔面板快速简单搭建本地web网站，并做内网穿透，实现不在同个局域网下的用户也可以访问到本地web站点，无需<a href="https://cloud.tencent.com/product/eip?from_column=20065&from=20065">公网IP</a>，也不用设置路由器。</p><h3 id="1-环境安装"><a href="#1-环境安装" class="headerlink" title="1. 环境安装"></a>1. 环境安装</h3><p>安装apache服务器,在宝塔面板中我们点击网站,然后会提示安装apache服务器。</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/bbff18195cb87904aac4bdb2596b7f44.png" alt="image-20230307143843485"></p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/151ebbebdfff4a106a9e8ab15f256273.png" alt="image-20230307155129355"></p><p>然后等待安装完成即可,安装完成在左边消息列表会提示</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/86f327aff984e56f62086d0c2d4f20a4.png" alt="image-20230307155221216"></p><h3 id="2-安装cpolar内网穿透"><a href="#2-安装cpolar内网穿透" class="headerlink" title="2. 安装cpolar内网穿透"></a>2. 安装cpolar内网穿透</h3><blockquote><p> <a href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.cpolar.com/&source=article&objectId=2337730">https://www.cpolar.com/</a> </p></blockquote><ul><li>打开宝塔终端命令窗口,使用cpolar一件安装脚本:</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L <span class="attr">https</span>:<span class="comment">//www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash</span></span><br></pre></td></tr></table></figure><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/242b75d2e65b085619dee64ca57b5007.png" alt="image-20230303183721806"></p><ul><li>token认证</li></ul><p>登录cpolar官网,点击左侧的<code>验证</code>，查看自己的认证token，之后将token贴在命令行里</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/085c96875d0ced7713a5b8f45f57a1cb.png" alt="20230111103532"></p><ul><li>向系统添加服务</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable cpolar</span><br></pre></td></tr></table></figure><ul><li>启动cpolar服务</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cpolar</span><br></pre></td></tr></table></figure><ul><li>开放9200端口</li></ul><p>在宝塔面板中选择安全.然后开放9200端口</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/e3f2d366a85316014dcf8e1ed70e797f.png" alt="image-20230303184430176"></p><ul><li>登录cpolar web UI 管理界面</li></ul><p>然后局域网ip访问9200端口即可出现cpolar管理界面，输入cpolar邮箱账号进行登陆</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/55a1eee790aa10ff25c39207681dafcd.png" alt="image-20230303184618711"></p><h3 id="3-内网穿透"><a href="#3-内网穿透" class="headerlink" title="3. 内网穿透"></a>3. 内网穿透</h3><p>登录cpolar web UI管理界面后，我们创建一个http隧道，指向80端口,因为apache服务默认是80端口</p><ul><li>隧道名称：可自定义，注意不要重复</li><li>协议：http</li><li>本地地址：80</li><li>端口类型：随机域名</li><li>地区：China vip</li></ul><p>点击<code>创建</code></p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/ccfb43d324c0d8199730fd4e3e0d10ed.png" alt="image-20230307161358154"></p><p>创建成功后我们打开在线隧道列表复制创建的公网地址</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/b575b43f6f998041ebeed60bdb34f16b.png" alt="image-20230307161716775"></p><p>然后我们打开宝塔面板,点击网站,选择添加站点,把复制的公网地址粘贴到域名的参数框,然后点击提交</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/6f20811dd43647cad1236d2e8e1e875e.png" alt="image-20230307162110990"></p><p>这个时候我们可以看到站点创建成功</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/6ce1fe268297d5e5101b44d4862cfc9d.png" alt="image-20230307162248903"></p><p>然后我们再使用复制的公网地址,打开浏览器访问,出现欢迎页表示成功</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/7e6eba1092281171140be29389b1eddf.png" alt="image-20230307163357047"></p><h3 id="4-固定http地址"><a href="#4-固定http地址" class="headerlink" title="4. 固定http地址"></a>4. 固定http地址</h3><p>由于刚刚创建隧道使用的是随机临时地址，该地址会在24小时内发生变化，为了长期远程访问，我们接下来将这个公网地址配置为固定的。</p><blockquote><p> 需升级至基础套餐或以上才支持配置二级子域名 </p></blockquote><p>登录cpolar官网后台，点击左侧仪表盘的<code>预留</code>，找到<code>保留二级子域名</code>，为http隧道保留一个二级子域名。</p><ul><li><em>地区：选择服务器地区</em></li><li><em>名称：填写您想要保留的二级子域名（可自定义）</em></li><li><em>描述：即备注，可自定义填写</em></li></ul><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/1ca2488f1909e325f929cc6b80c117a6.png" alt="image-20230307164936590"></p><p>本例保留一个名称为<code>mywebsitegame</code>的二级子域名。子域名保留成功后，我们将子域名复制下来，接下来需要将其配置到隧道中去。</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/e332484341c2eb766c0268e974f61b0d.png" alt="image-20230307165346945"></p><h3 id="5-配置二级子域名"><a href="#5-配置二级子域名" class="headerlink" title="5. 配置二级子域名"></a>5. 配置二级子域名</h3><p>登录cpolar web ui管理界面。点击左侧仪表盘的<code>隧道管理</code>——<code>隧道列表</code>，找到需要配置二级子域名的隧道（本例中为apache website隧道），点击右侧的<code>编辑</code></p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/4b30ec2ade5fc0c448ab927eb6ac5864.png" alt="image-20230307165440111"></p><p>修改隧道信息，将二级子域名配置到隧道中：</p><ul><li><em>域名类型：改为选择<code>二级子域名</code></em></li><li><em>Sub Domain：填写我们刚刚所保留的二级子域名（本例为<code>mywebsitegame</code>）</em></li></ul><p>修改完成后，点击<code>更新</code></p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/140721fc7f7d4e0f7b93014ecbc55679.png" alt="image-20230307165524932"></p><p>隧道更新成功后，点击左侧仪表盘的<code>状态</code>——<code>在线隧道列表</code>，可以看到隧道的公网地址，已经更新为二级子域名了，将公网地址复制下来。</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/a5872f56222ed3609b3a5860b56539ea.png" alt="image-20230307165845253"></p><p>然后我们打开宝塔面板,找到站点,点击设置</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/671aebf527cf7b19c48ef49ca6e75b29.png" alt="image-20230307170712990"></p><p>添加一个我们固定的公网地址域名</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/22de66f7ecc95d48d079694f250b830d.png" alt="image-20230307170900973"></p><p>然后把之前创建的随机地址删除</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/53cf4d8386a128b542e40f0ced879e66.png" alt="image-20230307170948787"></p><p>然后我们打开浏览器,使用固定的公网地址进行访问,以上我们就配置好了站点远程访问</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/9d77064ba2531a51effbf0bef350e8a6.png" alt="image-20230307172031135"></p><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>说说体验：</p><p>首先是这是一个确实可行的方案，之前试过好几个结果都是有问题。</p><p>但是免费只能用随机地址，一天一换还是很讨厌的。</p>]]>
+    </content>
+    <id>https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/cpolar/</id>
+    <link href="https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/cpolar/"/>
+    <published>2025-12-27T15:46:11.000Z</published>
+    <summary>
+      <![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>宝塔面板作为简单好用的<a href="https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&from=20065">服务器</a>运维管理面板，它支持Linux&#x2F;Windows系统，我们可用它来一键配置LAMP&#x2F;LNMP环境、网站、<a]]>
+    </summary>
+    <title>Cpolar</title>
+    <updated>2026-02-12T08:20:46.420Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>H1S97X</name>
+    </author>
+    <content>
+      <![CDATA[<h3 id="基础信息"><a href="#基础信息" class="headerlink" title="基础信息"></a>基础信息</h3><table><thead><tr><th>资源ID</th><th>c4cf1aece35c43b19c396665cbfb0935</th></tr></thead><tbody><tr><td>资源名称</td><td>我的轻量</td></tr><tr><td>资源类型</td><td>轻量应用服务器-实例</td></tr><tr><td>资源组</td><td>-</td></tr><tr><td>地域</td><td>新加坡</td></tr><tr><td>创建时间</td><td>2023年11月3日 15:16:42</td></tr><tr><td>IP地址</td><td>172.17.59.55, 47.236.110.159</td></tr><tr><td>标签</td><td>-</td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table><p>资源配置信息</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Running&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;InstanceId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c4cf1aece35c43b19c396665cbfb0935&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;PlanId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;swas.s2.c2m1s40b30t1.un&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;CreateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-11-03T07:16:42Z&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;DdosStatus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;normal&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;BusinessStatus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Normal&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;InstanceName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;我的轻量&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;PublicIpAddress&quot;</span><span class="punctuation">:</span> <span class="string">&quot;47.236.110.159&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;InnerIpAddress&quot;</span><span class="punctuation">:</span> <span class="string">&quot;172.17.59.55&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;ExpiredTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2024-11-03T16:00:00Z&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;ImageId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;87987f90ac2943c1b23f4c46cc80839c&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;PaymentType&quot;</span><span class="punctuation">:</span> <span class="string">&quot;PrePaid&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;RegionId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ap-southeast-1&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>]]>
+    </content>
+    <id>https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/config/</id>
+    <link href="https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/config/"/>
+    <published>2025-12-27T15:46:11.000Z</published>
+    <summary>
+      <![CDATA[<h3 id="基础信息"><a href="#基础信息" class="headerlink"]]>
+    </summary>
+    <title>Config</title>
+    <updated>2026-02-12T08:20:46.420Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>H1S97X</name>
+    </author>
+    <content>
+      <![CDATA[<p><a href="https://www.cnblogs.com/LMIx/p/10789410.html">windows 10 防火墙设置规则：允许特定ip端口 - _STAyy - 博客园 (cnblogs.com)</a></p><p>尝试失败。</p><p>校园网的ip出入限制很麻烦，去年买主机、十月买服务器的时候都试过在同一局域网下互相连接，结果都失败了。</p><p>今年一月考完试再次试了试，这次插了根网线把两台主机连起来，结果可以互相连通了。之后就没再管。</p><p>4月初，也就是最近又有了需求，再次尝试结果失败了，插了网线又成了。第二天再试又不行了。WTM</p><p>耗时耗力结果却不尽人意。</p><p>权且放弃</p>]]>
+    </content>
+    <id>https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E9%98%B2%E7%81%AB%E5%A2%99/</id>
+    <link href="https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    <published>2025-12-27T15:46:11.000Z</published>
+    <summary>
+      <![CDATA[<p><a href="https://www.cnblogs.com/LMIx/p/10789410.html">windows 10 防火墙设置规则：允许特定ip端口 - _STAyy - 博客园]]>
+    </summary>
+    <title>防火墙</title>
+    <updated>2026-02-12T08:20:46.420Z</updated>
   </entry>
   <entry>
     <author>
@@ -287,23 +319,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span]]>
     </summary>
     <title>宝塔面板</title>
-    <updated>2026-02-12T08:07:35.001Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>H1S97X</name>
-    </author>
-    <content>
-      <![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>宝塔面板作为简单好用的<a href="https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&from=20065">服务器</a>运维管理面板，它支持Linux&#x2F;Windows系统，我们可用它来一键配置LAMP&#x2F;LNMP环境、网站、<a href="https://cloud.tencent.com/solution/database?from_column=20065&from=20065">数据库</a>、FTP等，通过Web端轻松管理服务器。</p><p>以下教程，我们将演示使用宝塔面板快速简单搭建本地web网站，并做内网穿透，实现不在同个局域网下的用户也可以访问到本地web站点，无需<a href="https://cloud.tencent.com/product/eip?from_column=20065&from=20065">公网IP</a>，也不用设置路由器。</p><h3 id="1-环境安装"><a href="#1-环境安装" class="headerlink" title="1. 环境安装"></a>1. 环境安装</h3><p>安装apache服务器,在宝塔面板中我们点击网站,然后会提示安装apache服务器。</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/bbff18195cb87904aac4bdb2596b7f44.png" alt="image-20230307143843485"></p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/151ebbebdfff4a106a9e8ab15f256273.png" alt="image-20230307155129355"></p><p>然后等待安装完成即可,安装完成在左边消息列表会提示</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/86f327aff984e56f62086d0c2d4f20a4.png" alt="image-20230307155221216"></p><h3 id="2-安装cpolar内网穿透"><a href="#2-安装cpolar内网穿透" class="headerlink" title="2. 安装cpolar内网穿透"></a>2. 安装cpolar内网穿透</h3><blockquote><p> <a href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.cpolar.com/&source=article&objectId=2337730">https://www.cpolar.com/</a> </p></blockquote><ul><li>打开宝塔终端命令窗口,使用cpolar一件安装脚本:</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L <span class="attr">https</span>:<span class="comment">//www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash</span></span><br></pre></td></tr></table></figure><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/242b75d2e65b085619dee64ca57b5007.png" alt="image-20230303183721806"></p><ul><li>token认证</li></ul><p>登录cpolar官网,点击左侧的<code>验证</code>，查看自己的认证token，之后将token贴在命令行里</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpolar authtoken xxxxxxx</span><br></pre></td></tr></table></figure><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/085c96875d0ced7713a5b8f45f57a1cb.png" alt="20230111103532"></p><ul><li>向系统添加服务</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable cpolar</span><br></pre></td></tr></table></figure><ul><li>启动cpolar服务</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cpolar</span><br></pre></td></tr></table></figure><ul><li>开放9200端口</li></ul><p>在宝塔面板中选择安全.然后开放9200端口</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/e3f2d366a85316014dcf8e1ed70e797f.png" alt="image-20230303184430176"></p><ul><li>登录cpolar web UI 管理界面</li></ul><p>然后局域网ip访问9200端口即可出现cpolar管理界面，输入cpolar邮箱账号进行登陆</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/55a1eee790aa10ff25c39207681dafcd.png" alt="image-20230303184618711"></p><h3 id="3-内网穿透"><a href="#3-内网穿透" class="headerlink" title="3. 内网穿透"></a>3. 内网穿透</h3><p>登录cpolar web UI管理界面后，我们创建一个http隧道，指向80端口,因为apache服务默认是80端口</p><ul><li>隧道名称：可自定义，注意不要重复</li><li>协议：http</li><li>本地地址：80</li><li>端口类型：随机域名</li><li>地区：China vip</li></ul><p>点击<code>创建</code></p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/ccfb43d324c0d8199730fd4e3e0d10ed.png" alt="image-20230307161358154"></p><p>创建成功后我们打开在线隧道列表复制创建的公网地址</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/b575b43f6f998041ebeed60bdb34f16b.png" alt="image-20230307161716775"></p><p>然后我们打开宝塔面板,点击网站,选择添加站点,把复制的公网地址粘贴到域名的参数框,然后点击提交</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/6f20811dd43647cad1236d2e8e1e875e.png" alt="image-20230307162110990"></p><p>这个时候我们可以看到站点创建成功</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/6ce1fe268297d5e5101b44d4862cfc9d.png" alt="image-20230307162248903"></p><p>然后我们再使用复制的公网地址,打开浏览器访问,出现欢迎页表示成功</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/7e6eba1092281171140be29389b1eddf.png" alt="image-20230307163357047"></p><h3 id="4-固定http地址"><a href="#4-固定http地址" class="headerlink" title="4. 固定http地址"></a>4. 固定http地址</h3><p>由于刚刚创建隧道使用的是随机临时地址，该地址会在24小时内发生变化，为了长期远程访问，我们接下来将这个公网地址配置为固定的。</p><blockquote><p> 需升级至基础套餐或以上才支持配置二级子域名 </p></blockquote><p>登录cpolar官网后台，点击左侧仪表盘的<code>预留</code>，找到<code>保留二级子域名</code>，为http隧道保留一个二级子域名。</p><ul><li><em>地区：选择服务器地区</em></li><li><em>名称：填写您想要保留的二级子域名（可自定义）</em></li><li><em>描述：即备注，可自定义填写</em></li></ul><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/1ca2488f1909e325f929cc6b80c117a6.png" alt="image-20230307164936590"></p><p>本例保留一个名称为<code>mywebsitegame</code>的二级子域名。子域名保留成功后，我们将子域名复制下来，接下来需要将其配置到隧道中去。</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/e332484341c2eb766c0268e974f61b0d.png" alt="image-20230307165346945"></p><h3 id="5-配置二级子域名"><a href="#5-配置二级子域名" class="headerlink" title="5. 配置二级子域名"></a>5. 配置二级子域名</h3><p>登录cpolar web ui管理界面。点击左侧仪表盘的<code>隧道管理</code>——<code>隧道列表</code>，找到需要配置二级子域名的隧道（本例中为apache website隧道），点击右侧的<code>编辑</code></p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/4b30ec2ade5fc0c448ab927eb6ac5864.png" alt="image-20230307165440111"></p><p>修改隧道信息，将二级子域名配置到隧道中：</p><ul><li><em>域名类型：改为选择<code>二级子域名</code></em></li><li><em>Sub Domain：填写我们刚刚所保留的二级子域名（本例为<code>mywebsitegame</code>）</em></li></ul><p>修改完成后，点击<code>更新</code></p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/140721fc7f7d4e0f7b93014ecbc55679.png" alt="image-20230307165524932"></p><p>隧道更新成功后，点击左侧仪表盘的<code>状态</code>——<code>在线隧道列表</code>，可以看到隧道的公网地址，已经更新为二级子域名了，将公网地址复制下来。</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/a5872f56222ed3609b3a5860b56539ea.png" alt="image-20230307165845253"></p><p>然后我们打开宝塔面板,找到站点,点击设置</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/671aebf527cf7b19c48ef49ca6e75b29.png" alt="image-20230307170712990"></p><p>添加一个我们固定的公网地址域名</p><p><img src="https://developer.qcloudimg.com/http-save/yehe-10439143/22de66f7ecc95d48d079694f250b830d.png" alt="image-20230307170900973"></p><p>然后把之前创建的随机地址删除</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/53cf4d8386a128b542e40f0ced879e66.png" alt="image-20230307170948787"></p><p>然后我们打开浏览器,使用固定的公网地址进行访问,以上我们就配置好了站点远程访问</p><p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/9d77064ba2531a51effbf0bef350e8a6.png" alt="image-20230307172031135"></p><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>说说体验：</p><p>首先是这是一个确实可行的方案，之前试过好几个结果都是有问题。</p><p>但是免费只能用随机地址，一天一换还是很讨厌的。</p>]]>
-    </content>
-    <id>https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/cpolar/</id>
-    <link href="https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/cpolar/"/>
-    <published>2025-12-27T15:46:11.000Z</published>
-    <summary>
-      <![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>宝塔面板作为简单好用的<a href="https://cloud.tencent.com/act/pro/promotion-cvm?from_column=20065&from=20065">服务器</a>运维管理面板，它支持Linux&#x2F;Windows系统，我们可用它来一键配置LAMP&#x2F;LNMP环境、网站、<a]]>
-    </summary>
-    <title>Cpolar</title>
-    <updated>2026-02-12T08:07:35.001Z</updated>
+    <updated>2026-02-12T08:20:46.420Z</updated>
   </entry>
   <entry>
     <author>
@@ -322,23 +338,7 @@
 <p><a]]>
     </summary>
     <title>Minecraft</title>
-    <updated>2026-02-12T08:07:35.001Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>H1S97X</name>
-    </author>
-    <content>
-      <![CDATA[<p><a href="https://www.cnblogs.com/LMIx/p/10789410.html">windows 10 防火墙设置规则：允许特定ip端口 - _STAyy - 博客园 (cnblogs.com)</a></p><p>尝试失败。</p><p>校园网的ip出入限制很麻烦，去年买主机、十月买服务器的时候都试过在同一局域网下互相连接，结果都失败了。</p><p>今年一月考完试再次试了试，这次插了根网线把两台主机连起来，结果可以互相连通了。之后就没再管。</p><p>4月初，也就是最近又有了需求，再次尝试结果失败了，插了网线又成了。第二天再试又不行了。WTM</p><p>耗时耗力结果却不尽人意。</p><p>权且放弃</p>]]>
-    </content>
-    <id>https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E9%98%B2%E7%81%AB%E5%A2%99/</id>
-    <link href="https://h1s97x.github.io/2025/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    <published>2025-12-27T15:46:11.000Z</published>
-    <summary>
-      <![CDATA[<p><a href="https://www.cnblogs.com/LMIx/p/10789410.html">windows 10 防火墙设置规则：允许特定ip端口 - _STAyy - 博客园]]>
-    </summary>
-    <title>防火墙</title>
-    <updated>2026-02-12T08:07:35.001Z</updated>
+    <updated>2026-02-12T08:20:46.420Z</updated>
   </entry>
   <entry>
     <author>
@@ -355,6 +355,6 @@
 <h3 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h3><p>Q1:解决战网“正在更新battlenet update]]>
     </summary>
     <title>战网</title>
-    <updated>2026-02-12T08:07:35.432Z</updated>
+    <updated>2026-02-12T08:20:46.853Z</updated>
   </entry>
 </feed>

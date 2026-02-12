@@ -1,0 +1,940 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>Wiki.js - H1S97X</title>
+
+  
+    <meta name="description" content="使用 Docker 部署 Wiki.js 本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 Markdown 以及 HTML 文档。Docker 容器技术可帮助我们简化部署过程，提高应用程序的可移植性和可扩展性。  安装 Docker 端开始部署之前，我们需要确保已经安装了 Docker。Doc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wiki.js">
+<meta property="og:url" content="https://h1s97x.github.io/2025/12/27/blog/Wiki.js/">
+<meta property="og:site_name" content="H1S97X">
+<meta property="og:description" content="使用 Docker 部署 Wiki.js 本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 Markdown 以及 HTML 文档。Docker 容器技术可帮助我们简化部署过程，提高应用程序的可移植性和可扩展性。  安装 Docker 端开始部署之前，我们需要确保已经安装了 Docker。Doc">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://h1s97x.github.io/images/calf.png">
+<meta property="article:published_time" content="2025-12-27T15:46:11.000Z">
+<meta property="article:modified_time" content="2026-02-12T07:50:56.934Z">
+<meta property="article:author" content="H1S97X">
+<meta property="article:tag" content="技术博客,编程,开发,运维,游戏,学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://h1s97x.github.io/images/calf.png">
+  
+  
+  
+  <meta name="keywords" content="技术博客,编程,开发,运维,游戏,学习">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="H1S97X" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="/favicon.ico?v=20240507">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"H1S97X","sameAs":[],"image":"https://h1s97x.github.io/images/calf.png"},"dateCreated":"2025-12-27T23:46:11+08:00","dateModified":"2026-02-12T15:50:56+08:00","datePublished":"2025-12-27T23:46:11+08:00","description":"","headline":"Wiki.js","mainEntityOfPage":{"@type":"WebPage","@id":"https://h1s97x.github.io/2025/12/27/blog/Wiki.js/"},"publisher":{"@type":"Organization","name":"H1S97X","sameAs":[],"image":"https://h1s97x.github.io/images/calf.png","logo":{"@type":"ImageObject","url":"https://h1s97x.github.io/images/calf.png"}},"url":"https://h1s97x.github.io/2025/12/27/blog/Wiki.js/","image":[]}</script>
+  
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/calf.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">H1S97X</div><div class="sub normal cap">技术分享与生活记录</div><div class="sub hover cap" style="opacity:0"> 或有月下赏花人 应无所憾</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E9%AD%823%E8%B4%B4%E5%90%A7/"><span class="title">魂3贴吧</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E9%AD%82%E5%AD%A6/"><span class="title">魂学</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E5%86%92%E9%99%A9-%E7%8B%97%E5%A4%B4%E4%BA%BA%E4%B8%8E%E5%9C%B0%E4%B8%8B%E4%B8%96%E7%95%8C-%E4%B9%9D%E8%81%8C%E4%B8%9A/"><span class="title">冒险 狗头人与地下世界 九职业</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E5%86%92%E9%99%A9%E6%A8%A1%E5%BC%8F%E4%BB%8B%E7%BB%8D/"><span class="title">冒险模式介绍</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E5%8D%A1%E8%83%8C/"><span class="title">卡背</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E6%8F%92%E4%BB%B6/"><span class="title">插件</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/"><span class="title">新手入门</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E8%A7%A3%E8%B0%9C/"><span class="title">解谜</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%94%BB%E7%95%A5-%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94/"><span class="title">攻略 杀戮尖塔</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%88%98%E7%BD%91/"><span class="title">战网</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-12-27T15:46:11.000Z">2025-12-27</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-02-12T07:50:56.934Z">2026-02-12</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>Wiki.js</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h2 id="使用-Docker-部署-Wiki-js"><a href="#使用-Docker-部署-Wiki-js" class="headerlink" title="使用 Docker 部署 Wiki.js"></a>使用 Docker 部署 Wiki.js</h2><blockquote>
+<p>本文将介绍如何用 Docker 容器技术部署 Wiki.js 应用程序。Wiki.js 是一个高度可定制 Wiki 平台，用 Node.js 编写，支持 Markdown 以及 HTML 文档。Docker 容器技术可帮助我们简化部署过程，提高应用程序的可移植性和可扩展性。</p>
+</blockquote>
+<h3 id="安装-Docker-端"><a href="#安装-Docker-端" class="headerlink" title="安装 Docker 端"></a>安装 Docker 端</h3><p>开始部署之前，我们需要确保已经安装了 Docker。Docker 是一个开源应用容器引擎，可以轻松地为任何应用程序创建一个轻量级的、可移植的、自给自足容器。要安装 Docker，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker</span><br></pre></td></tr></table></figure>
+
+<p>其他安装方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 设置Docker的镜像仓库</span><br><span class="line">yum install -y yum-utils</span><br><span class="line"></span><br><span class="line">yum-config-manager \</span><br><span class="line">    --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line"></span><br><span class="line"># 安装Docker</span><br><span class="line">yum install docker-ce docker-ce-cli containerd.io -y</span><br><span class="line"></span><br><span class="line"># 启动Docker</span><br><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line"># 设为开机自启</span><br><span class="line">systemctl enalbe docker</span><br></pre></td></tr></table></figure>
+
+<p>可以运行一个hello-world镜像来验证Docker是否正确安装，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<p>这个命令会下载一个测试镜像并运行，在命令行里输出hello world信息后自动退出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 安装Docker Compose</span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"># 添加权限</span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"># 查看docker compose版本，测试安装是否成功</span><br><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><p>在 Docker 中镜像是一个只读模板，可创建 Docker 容器。Wiki.js 官方提供了预构建 Docker 镜像，我们可直接从 Docker Hub 中拉取。</p>
+<p>为了简化部署过程，我们先创建 <code>docker-compose.yml</code> 文件，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<p>复制以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line"></span><br><span class="line">  db:</span><br><span class="line">    image: postgres:15-alpine</span><br><span class="line">    environment:</span><br><span class="line">      POSTGRES_DB: wiki</span><br><span class="line">      POSTGRES_PASSWORD: wikijsrocks</span><br><span class="line">      POSTGRES_USER: wikijs</span><br><span class="line">    logging:</span><br><span class="line">      driver: &quot;none&quot;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    volumes:</span><br><span class="line">      - db-data:/var/lib/postgresql/data</span><br><span class="line"></span><br><span class="line">  wiki:</span><br><span class="line">    image: linuxserver/wikijs</span><br><span class="line">    depends_on:</span><br><span class="line">      - db</span><br><span class="line">    environment:</span><br><span class="line">      DB_TYPE: postgres</span><br><span class="line">      DB_HOST: db</span><br><span class="line">      DB_PORT: 5432</span><br><span class="line">      DB_USER: wikijs</span><br><span class="line">      DB_PASS: wikijsrocks</span><br><span class="line">      DB_NAME: wiki</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;80:3000&quot;</span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line">  db-data:</span><br></pre></td></tr></table></figure>
+
+<p>编辑好上面内容后，执行下面的命令即可部署 Wiki.js：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<h3 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h3><p>通过浏览器打开 Wiki.js 所在的服务器，进行初始配置。需要依次输入管理员的邮箱、密码，访问地址，设置是否匿名反馈使用情况：<br><img src="https://cdn.dusays.com/2023/12/656-1.jpg" alt="img"></p>
+<p>管理员用户创建完成后，会自动跳转到登录页面，输入刚刚创建好的管理员账号后，可以看到如下页面，这时我们先点击 ADMINISTRATION 进入后台：</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.dusays.com/2023/12/656-2.jpg"><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/656-2.jpg" alt="img"></a></p>
+<p>在后台面板中，我们首先汉化一下全站界面。点击左侧的 Locale，进入语言包设置页：</p>
+<p><img src="https://cdn.dusays.com/2023/12/656-3.jpg" alt="img"></p>
+<p>在右侧下载语言包，这里我们以 Chinese Simplified 为例，下载后在中间的 Site Localo 处选择 Chinese Simplified，最后点击右上角 APPLY 即可：</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/656-4.jpg" alt="img"></p>
+<p>切换至首页后，即可创建主页内容。这里可以选择使用何种编辑器来创建，这里我们以 Markdown 为例：</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/656-5.jpg" alt="img"></p>
+<p>写在最后</p>
+<p>通过 <code>docker-compose.yml</code> 可以看出来，服务已经做了 <code>80</code> 端口的映射，如果服务器中有其它的网站环境，建议修改 <code>docker-compose.yml</code> 中种 <code>80</code> 为其它端口。</p>
+<p>另外如无 Nginx 等引擎，但需要 SSL 加密访问，推荐安装 Nginx Proxy Manager 来进行加密反代。</p>
+<p>强烈建议先配置好访问环境「即配置好 Nginx Proxy Manager 后」再做 Wiki.js 初始化操作。</p>
+<p><a target="_blank" rel="noopener" href="https://dusays.com/656/">https://dusays.com/656/</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085158792-661022329.png" alt="img"></p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085226468-943909471.png" alt="img"></p>
+<h3 id="1-效果展示"><a href="#1-效果展示" class="headerlink" title="1 效果展示"></a><strong>1 效果展示</strong></h3><p>　　Wiki.js 默认的前台页面布局和功能如下图所示，用户可根据自己需要来调整、启用或关闭。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085250986-296282782.png" alt="img"></p>
+<p>　　后台管理页面功能如下图所示。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085330649-370392906.png" alt="img"></p>
+<h3 id="2-版本比对"><a href="#2-版本比对" class="headerlink" title="2 版本比对"></a><strong>2 版本比对</strong></h3><p>　　Wiki.js 支持一个简单的版本比对工具。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085313066-1529105748.png" alt="img"></p>
+<h3 id="3-修改语言"><a href="#3-修改语言" class="headerlink" title="3 修改语言"></a><strong>3 修改语言</strong></h3><p>　　Wiki.js 默认为英文，可下载对应语言包，切换语言设置。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085353539-1674712978.png" alt="img"></p>
+<h3 id="4-全文检索"><a href="#4-全文检索" class="headerlink" title="4 全文检索"></a><strong>4 全文检索</strong></h3><p>　　本例我使用的是 PostgreSql 的搜索引擎，因为搭建起来比较方便。</p>
+<p>　　在搜索引擎菜单中，选中“Database-PostgreSQL”，并在引擎配置中，选择我们在数据库中的配置名称。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085434425-269210813.png" alt="img"></p>
+<p>　　配置好后，我们就可以验证中文搜索了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906090717031-1656380835.png" alt="img"></p>
+<h3 id="5-修饰站点"><a href="#5-修饰站点" class="headerlink" title="**5 修饰站点 **"></a>**5 修饰站点 **</h3><p>　　在“常规”菜单中，我们可以配置 Wiki 的基本信息，比如公司名称、Logo 等。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085535398-926066763.png" alt="img"></p>
+<h3 id="6-权限控制"><a href="#6-权限控制" class="headerlink" title="6 权限控制"></a><strong>6 权限控制</strong></h3><p>　　Wiki.js 支持多种身份验证方式，可以按需要选择。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085558313-698544516.png" alt="img"></p>
+<p>　　可以通过建立组来统一管理用户。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085615709-201045966.png" alt="img"></p>
+<p>　　 基于 Permissions 和 Page Rules 灵活定义组权限。</p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085631811-1180650891.png" alt="img"></p>
+<p><img src="https://img2023.cnblogs.com/blog/270073/202309/270073-20230906085639109-704909312.png" alt="img"></p>
+<h2 id="定制和扩展"><a href="#定制和扩展" class="headerlink" title="定制和扩展"></a>定制和扩展</h2><p>　　在创建页面时，可以通过编写脚本和样式来定制和扩展页面功能。</p>
+<p>　　Wiki.js 附带了一个默认主题，它支持明暗模式，对大多数用户来说应该足够了，用户也可以自行定制主题。</p>
+<p>　　Wiki.js 是完全模块化的，所有模块都位于 server&#x2F;modules 下，允许任何开发人员编写自己的模块。</p>
+<p>　　Wiki.js 公开了一个 GraphQL API，您可以从中访问和修改 Wiki 的所有资源。</p>
+<h3 id="主題"><a href="#主題" class="headerlink" title="主題"></a>主題</h3><h2 id="Wiki-js-通过-Generic-OAuth2-进行身份验证"><a href="#Wiki-js-通过-Generic-OAuth2-进行身份验证" class="headerlink" title="Wiki.js 通过 Generic OAuth2 进行身份验证"></a>Wiki.js 通过 Generic OAuth2 进行身份验证</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JiuLing-zhang/p/16899492.html">少走点弯路：Wiki.js 通过 Generic OAuth2 进行身份验证</a></p>
+<p>基本的配置包含2个部分，分别是<strong>授权配置</strong>、<strong>注册配置</strong>。</p>
+<h2 id="1-授权配置"><a href="#1-授权配置" class="headerlink" title="1. 授权配置"></a>1. 授权配置</h2><h3 id="1-1-Client-ID"><a href="#1-1-Client-ID" class="headerlink" title="1.1 Client ID"></a>1.1 Client ID</h3><p>获取 <code>Token</code> 时会作为参数传递给接口。</p>
+<h3 id="1-2-Client-Secret"><a href="#1-2-Client-Secret" class="headerlink" title="1.2 Client Secret"></a>1.2 Client Secret</h3><p>获取 <code>Token</code> 时会作为参数传递给接口。</p>
+<h3 id="1-3-Authorization-Endpoint-URL"><a href="#1-3-Authorization-Endpoint-URL" class="headerlink" title="1.3 Authorization Endpoint URL"></a>1.3 Authorization Endpoint URL</h3><p>授权页面的地址。<br>当进入 <code>Wiki</code> 的登录页后，选择 <code>Generic OAuth2</code> 授权登录时跳转的地址。<br>如果同意授权，则需要跳转到 <code>Wiki</code> 指定的回调页面（跳转时可以加入自定义参数）。<br>每个项目的回调地址都不相同，最简单的办法就是在页面的最下面找到配置参考。<br><code>http://xxx:3000/login/bf4439-a770-fedee4be57df/callback?MyValue=test</code><br>如果回调地址配置的不对，可能会出现<code>Invalid authentication provider.</code>错误页。</p>
+<h3 id="1-4-Token-Endpoint-URL"><a href="#1-4-Token-Endpoint-URL" class="headerlink" title="1.4 Token Endpoint URL"></a>1.4 Token Endpoint URL</h3><p>获取<code>Token</code>的接口地址。</p>
+<p>在调用该地址时，<code>Wiki</code>会自动附带下面这些参数：</p>
+<ol>
+<li><code>grant_type=authorization_code</code></li>
+<li><code>client_id=1.1中配置的值</code></li>
+<li><code>client_secret=1.2中配置的值</code></li>
+<li><code>自定义参数（1.3中配置的值）</code></li>
+</ol>
+<p>服务端验证逻辑完成后，接口必须返回包含以下字段的返回值（<strong>注意区分大小写</strong>）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;access_token&quot;</span><span class="punctuation">:</span><span class="string">&quot;xxx&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果返回值不合法，会出现错误页<code>Failed to obtain access token</code>。</p>
+<h3 id="1-5-User-Info-Endpoint-URL"><a href="#1-5-User-Info-Endpoint-URL" class="headerlink" title="1.5 User Info Endpoint URL"></a>1.5 User Info Endpoint URL</h3><p>成功拿到<code>Token</code>后，获取用户信息的接口地址。</p>
+<blockquote>
+<p>可以设置 <code>Wiki</code> 获取用户信息时 <code>Token</code> 的传递方式：<code>Query string</code> 或 <code>Authorization header</code><br><img src="https://s2.loli.net/2022/11/17/qRtYNFA4ODhfeLU.png" alt="SetToken.png"></p>
+</blockquote>
+<p>服务器根据 <code>Token</code> 获取用户信息，最终返回包含以下字段的返回值（<strong>注意区分大小写</strong>）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;UserId&quot;</span><span class="punctuation">:</span><span class="number">10086</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Name&quot;</span><span class="punctuation">:</span><span class="string">&quot;张三&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Email&quot;</span><span class="punctuation">:</span><span class="string">&quot;zs@test.com&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果返回值不合法，会出现错误页<code>Missing or invalid email address from profile.</code></p>
+<blockquote>
+<p><strong><code>Wiki</code> 系统中是通过 <code>Email</code> 来标识唯一用户，因此不同用户的 <code>Email</code> 不能重复。</strong></p>
+</blockquote>
+<h3 id="1-6-ID-Claim"><a href="#1-6-ID-Claim" class="headerlink" title="1.6 ID Claim"></a>1.6 ID Claim</h3><p>用户信息接口中返回的<code>用户 ID</code> 字段名。</p>
+<h3 id="1-7-Display-Name-Claim"><a href="#1-7-Display-Name-Claim" class="headerlink" title="1.7 Display Name Claim"></a>1.7 Display Name Claim</h3><p>用户信息接口中返回的<code>用户名称</code>字段名。</p>
+<h3 id="1-8-Email-Claim"><a href="#1-8-Email-Claim" class="headerlink" title="1.8 Email Claim"></a>1.8 Email Claim</h3><p>用户信息接口中返回的<code>邮箱</code>字段名，该字段值必须保证唯一。</p>
+<h2 id="2-注册配置"><a href="#2-注册配置" class="headerlink" title="2. 注册配置"></a>2. 注册配置</h2><h3 id="2-1-启用开放注册"><a href="#2-1-启用开放注册" class="headerlink" title="2.1 启用开放注册"></a>2.1 启用开放注册</h3><p>授权登录完成后，当用户信息在 <code>Wiki</code> 中不存在时，则会新建用户信息并完成登录。</p>
+<h3 id="2-1-禁用开放注册"><a href="#2-1-禁用开放注册" class="headerlink" title="2.1 禁用开放注册"></a>2.1 禁用开放注册</h3><p>授权用户的 <code>Email</code> 必须已经在 <code>Wiki</code> 中注册，否则无法登录，出现错误页<code>You are not authorized to login.</code></p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/12/27/blog/OAuth2/">OAuth2</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/12/27/%E4%BA%8C%E6%AC%A1%E5%85%83/VoiceVox/">VoiceVox</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">H1S97X</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Docker-%E9%83%A8%E7%BD%B2-Wiki-js"><span class="toc-text">使用 Docker 部署 Wiki.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Docker-%E7%AB%AF"><span class="toc-text">安装 Docker 端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E9%95%9C%E5%83%8F"><span class="toc-text">获取镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE"><span class="toc-text">初始配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="toc-text">开始使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-text">1 效果展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%89%88%E6%9C%AC%E6%AF%94%E5%AF%B9"><span class="toc-text">2 版本比对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E8%AF%AD%E8%A8%80"><span class="toc-text">3 修改语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2"><span class="toc-text">4 全文检索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%BF%AE%E9%A5%B0%E7%AB%99%E7%82%B9"><span class="toc-text">**5 修饰站点 **</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"><span class="toc-text">6 权限控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E5%88%B6%E5%92%8C%E6%89%A9%E5%B1%95"><span class="toc-text">定制和扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A1%8C"><span class="toc-text">主題</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wiki-js-%E9%80%9A%E8%BF%87-Generic-OAuth2-%E8%BF%9B%E8%A1%8C%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81"><span class="toc-text">Wiki.js 通过 Generic OAuth2 进行身份验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8E%88%E6%9D%83%E9%85%8D%E7%BD%AE"><span class="toc-text">1. 授权配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Client-ID"><span class="toc-text">1.1 Client ID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Client-Secret"><span class="toc-text">1.2 Client Secret</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Authorization-Endpoint-URL"><span class="toc-text">1.3 Authorization Endpoint URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Token-Endpoint-URL"><span class="toc-text">1.4 Token Endpoint URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-User-Info-Endpoint-URL"><span class="toc-text">1.5 User Info Endpoint URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-ID-Claim"><span class="toc-text">1.6 ID Claim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-Display-Name-Claim"><span class="toc-text">1.7 Display Name Claim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-Email-Claim"><span class="toc-text">1.8 Email Claim</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B3%A8%E5%86%8C%E9%85%8D%E7%BD%AE"><span class="toc-text">2. 注册配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%90%AF%E7%94%A8%E5%BC%80%E6%94%BE%E6%B3%A8%E5%86%8C"><span class="toc-text">2.1 启用开放注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%A6%81%E7%94%A8%E5%BC%80%E6%94%BE%E6%B3%A8%E5%86%8C"><span class="toc-text">2.1 禁用开放注册</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  window.canonical["param"] = {"permalink":"https://h1s97x.github.io/2025/12/27/blog/Wiki.js/","checklink":"/js/plugins/video.js"};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        if ($(el).find('.loading-wrap').length == 0){
+          $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+        }
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.chat-file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

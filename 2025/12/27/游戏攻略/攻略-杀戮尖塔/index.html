@@ -1,0 +1,901 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>攻略 杀戮尖塔 - H1S97X</title>
+
+  
+    <meta name="description" content="杀戮尖塔&#x2F;SLAY THE SPIRE游戏特色 动态构建的牌组：谨慎选择你的卡牌！在攀爬高塔的途中邂逅百余张不同的卡牌，选择是否将它们加入你的牌组，通过组合和搭配来让牌组发挥力量，打败敌人、挑战登顶。 不断变化的高塔：每次开始爬塔的旅程时，高塔的构造都会发生变化。是选择高风险高回报，还是谨慎前行？面对不同的敌人、选择不同的卡牌、发现不同的遗物、甚至挑战不同的Boss！ 威力强大的遗物：在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="攻略 杀戮尖塔">
+<meta property="og:url" content="https://h1s97x.github.io/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%94%BB%E7%95%A5-%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94/">
+<meta property="og:site_name" content="H1S97X">
+<meta property="og:description" content="杀戮尖塔&#x2F;SLAY THE SPIRE游戏特色 动态构建的牌组：谨慎选择你的卡牌！在攀爬高塔的途中邂逅百余张不同的卡牌，选择是否将它们加入你的牌组，通过组合和搭配来让牌组发挥力量，打败敌人、挑战登顶。 不断变化的高塔：每次开始爬塔的旅程时，高塔的构造都会发生变化。是选择高风险高回报，还是谨慎前行？面对不同的敌人、选择不同的卡牌、发现不同的遗物、甚至挑战不同的Boss！ 威力强大的遗物：在">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://h1s97x.github.io/images/calf.png">
+<meta property="article:published_time" content="2025-12-27T15:46:11.000Z">
+<meta property="article:modified_time" content="2026-02-12T07:50:57.376Z">
+<meta property="article:author" content="H1S97X">
+<meta property="article:tag" content="技术博客,编程,开发,运维,游戏,学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://h1s97x.github.io/images/calf.png">
+  
+  
+  
+  <meta name="keywords" content="技术博客,编程,开发,运维,游戏,学习">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="H1S97X" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="/favicon.ico?v=20240507">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"H1S97X","sameAs":[],"image":"https://h1s97x.github.io/images/calf.png"},"dateCreated":"2025-12-27T23:46:11+08:00","dateModified":"2026-02-12T15:50:57+08:00","datePublished":"2025-12-27T23:46:11+08:00","description":"","headline":"攻略 杀戮尖塔","mainEntityOfPage":{"@type":"WebPage","@id":"https://h1s97x.github.io/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%94%BB%E7%95%A5-%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94/"},"publisher":{"@type":"Organization","name":"H1S97X","sameAs":[],"image":"https://h1s97x.github.io/images/calf.png","logo":{"@type":"ImageObject","url":"https://h1s97x.github.io/images/calf.png"}},"url":"https://h1s97x.github.io/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%94%BB%E7%95%A5-%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94/","image":[]}</script>
+  
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/calf.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">H1S97X</div><div class="sub normal cap">技术分享与生活记录</div><div class="sub hover cap" style="opacity:0"> 或有月下赏花人 应无所憾</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E9%AD%823%E8%B4%B4%E5%90%A7/"><span class="title">魂3贴吧</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E9%AD%82%E5%AD%A6/"><span class="title">魂学</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E5%86%92%E9%99%A9-%E7%8B%97%E5%A4%B4%E4%BA%BA%E4%B8%8E%E5%9C%B0%E4%B8%8B%E4%B8%96%E7%95%8C-%E4%B9%9D%E8%81%8C%E4%B8%9A/"><span class="title">冒险 狗头人与地下世界 九职业</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E5%86%92%E9%99%A9%E6%A8%A1%E5%BC%8F%E4%BB%8B%E7%BB%8D/"><span class="title">冒险模式介绍</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E5%8D%A1%E8%83%8C/"><span class="title">卡背</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E6%8F%92%E4%BB%B6/"><span class="title">插件</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/"><span class="title">新手入门</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4/%E8%A7%A3%E8%B0%9C/"><span class="title">解谜</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%94%BB%E7%95%A5-%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94/"><span class="title">攻略 杀戮尖塔</span></a><a class="item title" href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%88%98%E7%BD%91/"><span class="title">战网</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-12-27T15:46:11.000Z">2025-12-27</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-02-12T07:50:57.376Z">2026-02-12</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>攻略 杀戮尖塔</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h2 id="杀戮尖塔-SLAY-THE-SPIRE"><a href="#杀戮尖塔-SLAY-THE-SPIRE" class="headerlink" title="杀戮尖塔&#x2F;SLAY THE SPIRE"></a>杀戮尖塔&#x2F;SLAY THE SPIRE</h2><h3 id="游戏特色"><a href="#游戏特色" class="headerlink" title="游戏特色"></a>游戏特色</h3><ul>
+<li><em>动态构建的牌组</em>：谨慎选择你的卡牌！在攀爬高塔的途中邂逅百余张不同的卡牌，选择是否将它们加入你的牌组，通过组合和搭配来让牌组发挥力量，打败敌人、挑战登顶。</li>
+<li><em>不断变化的高塔</em>：每次开始爬塔的旅程时，高塔的构造都会发生变化。是选择高风险高回报，还是谨慎前行？面对不同的敌人、选择不同的卡牌、发现不同的遗物、甚至挑战不同的Boss！</li>
+<li><em>威力强大的遗物</em>：在塔中你将发现名为遗物的各种强大物品，这些遗物可能会与你的牌组产生强大的化学反应，让你的战力得到飞跃。但也不要过于大意，为了获得遗物，有时你所付出的代价，可会超过区区金钱……</li>
+</ul>
+<h3 id="游戏介绍"><a href="#游戏介绍" class="headerlink" title="游戏介绍"></a>游戏介绍</h3><ul>
+<li>四名角色，各自拥有独特的牌组。</li>
+<li>350多张可用的卡牌。</li>
+<li>200多种可被找到的物品与道具。</li>
+<li>50多场完全不同的战斗。</li>
+<li>50多件神秘的事件，可能给你带来帮助，也可能将你害得很惨。</li>
+<li>每日挑战模式，让你可以在进行独特游戏的同时，与世界各地的玩家们比较你的表现。</li>
+<li>自定模式，让你可以自由混合各种疯狂的特殊效果。</li>
+</ul>
+<h2 id="游戏攻略"><a href="#游戏攻略" class="headerlink" title="游戏攻略"></a>游戏攻略</h2><h3 id="战士篇"><a href="#战士篇" class="headerlink" title="战士篇"></a>战士篇</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/601780314">《杀戮尖塔》攻略(二)战士篇 - 知乎 (zhihu.com)</a></p>
+<p>牌组很简单，14张牌，核心牌“壁垒+”“巩固+”“全身撞击+”，三张牌足以胡牌。这局不仅解锁了碎心成就，同时还解锁了单杀“倏忽魔”(第三层999血怪物)、“铜墙铁壁”(拥有999防御)等等几个稀有成就。最重要的是，这局游戏让我体验到了战士的强大， 战士的安全感，以及当你有用999防御时的君临天下的感觉。</p>
+<blockquote>
+<p>天下无敌之最强防御流</p>
+</blockquote>
+<p>坐拥三大角色中最强的防御体系牌组，不玩防御你确定吗？<strong>乌龟流</strong>，我愿称之为战士最强大的牌组流派，别说进阶20了，你就是进阶200我照样秒你。输出与防御一体，这就是乌龟流卡组；还是仰仗这张传说中的“肚皮”。</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-c5ca5431187c26d6e12f0a79c40488bf_720w.webp" alt="img"></p>
+<p>神之白卡，肚皮+</p>
+<p>格挡值转换为伤害，这波属于是将乌龟变玄武了。再加上强化后的零费用优化，绝对是神之白卡之一。好了，我只是感慨下这张卡的强大，接下来正式介绍乌龟流战士牌组的构成：</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-8b80c31645c3182e4453dfbae3ed97aa_720w.webp" alt="img"></p>
+<p>按重要性由左到右依次排开，第一行重要性大于第二行；核心牌只有前三张</p>
+<p>关于乌龟流的牌组，我这里列举了14张牌；核心牌只有前三张。可能有朋友会问为什么吹上天的肚皮居然只排在第三位？那是因为乌龟流你既然已经拥有999防御了，那怎么玩都随你的便了，肚皮的输出你也不再需要，肚皮只是提供了秒杀级别的DPS而已，你用打击一回合打6点伤害也一样可以获胜。</p>
+<p>首先最重要的，<strong>巩固+</strong>。几乎没有巩固就没有乌龟流；翻倍在一个数值游戏里真的太过于变态了，指数级生长的格挡让任何攻击都显得如此苍白无力。第二张也非常核心，但不是必备，那就是<strong>壁垒+</strong>。壁垒这张牌看似是乌龟流的核心，没有保留的格挡，翻倍再多又有何用？但是别忘了，还有外卡钳这玩意儿的存在，对于指数生长的格挡来说，一回合损失15点约等于没有，因此外卡钳是可以替代壁垒的一张牌。肚皮我们上面已经讲过了。</p>
+<p>下面就是一些锦上添花或者过渡的牌。<strong>武装</strong>可以帮助度过前期，但后期基本没用；<strong>耸肩</strong>是可以多拿的一张牌，好用程度推荐亲身体会，绝不只比防御多3点；<strong>重振</strong>配合<strong>硬撑</strong>可以在没有巩固的情况下快速堆叠格挡值，即便是没有硬撑，重振也可以独当一面，快速缩减牌组规模，让核心牌的抽牌率大大增加。<strong>岿然不动</strong>就不用说了，40点格挡胜过一切言语；<strong>金属化</strong>属于费用多了没处花，可以用一用；<strong>狂暴</strong>是加费牌，百搭；<strong>燔祭</strong>和<strong>残杀</strong>则是渡过前期最好的输出牌，因为乌龟流在成型前是很脆弱的；后面的两张是万金油百搭牌，任何牌组均非常适用的<strong>战斗专注</strong>和<strong>祭品</strong>，两张非常好用的<strong>启动牌</strong>。</p>
+<p>接下来介绍适合乌龟流的遗物，首先是<strong>非BOSS遗物</strong>：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-260195f101af9a7ba087425f71d29cf0_720w.webp" alt="img"></p>
+<p>非BOSS遗物推荐</p>
+<p>首先是<strong>意外光滑的石头</strong>，无需多言，一点敏捷，每次格挡都会+1；<strong>铜制鳞片</strong>，反伤3点，对于乌龟流来说，一边龟一边可以打输出，乌龟流的最强白色遗物；<strong>瓶装旋风与闪电</strong>，拿到时分别可以装<strong>壁垒</strong>和<strong>祭品</strong>，对于牌组稳定性来说提升巨大；<strong>外卡钳</strong>，上面我有提到，有了外卡钳，妈妈再也不担心我找不到壁垒了；<strong>针线</strong>对于乌龟流是锦上添花；<strong>多利之镜</strong>拿到时可以选择复制巩固，让数值翻得更快一点~</p>
+<p>接下来是<strong>BOSS遗物</strong>：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-22c2e6c2d44296c4901ae96f33f4e018_720w.webp" alt="img"></p>
+<p>BOSS遗物推荐</p>
+<p>由于壁垒这样的高费牌的存在，其实乌龟流还是比较缺费用的，因此BOSS遗物中除“<strong>潘多拉的魔盒</strong>”这样的神之遗物外，更多的推荐一些加费的遗物；当然，基本所有加费的遗物都是存在负面效果的，因此在拿这些遗物的时候，要考虑清楚取舍。比如牌组大致成型了，再去选<strong>破碎金冠</strong>；拿到<strong>诅咒钥匙</strong>后，就放弃一些宝箱中的遗物；反而<strong>咖啡滤杯</strong>是我比较喜欢的，因为我很少在休息处休息，基本都用来锻造——但在高进阶下，这样做容易暴毙；<strong>痛楚印记</strong>则明显是为战士量身定做的遗物。</p>
+<p>最后是<strong>玩法</strong>：</p>
+<p>这里我就不配图了，在第一回合争取拿到更多的牌，获取更多的费用——推荐<strong>祭品+<strong>这张牌，能够让乌龟流成型的更快；第一回合打出</strong>壁垒+</strong>，使用<strong>耸肩无视+、岿然不动</strong>等卡牌来堆叠基础的格挡值，然后在收尾时使用<strong>巩固+<strong>来最大化初始格挡，后续就非常简单了，每回合继续堆叠防御，收尾使用巩固翻倍，直到999。期间如果摸到了</strong>全身撞击+</strong>，就用来输出一下。</p>
+<p>以上就是铁甲战士最简单无脑、最强大的牌组了，不需要什么高级的计算，无脑堆格挡，就可以轻松碾压高塔。心脏在乌龟流面前也显得如此不堪一击，学会的玩家赶快试一试吧~</p>
+<blockquote>
+<p>单杀一切的灼热攻击</p>
+</blockquote>
+<p>灼热攻击，独立于一切的一张牌。无限锻造，战士独有。自然也就形成了独特的流派。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-e331fac0962803e5677b5085c9d9aaf9_720w.webp" alt="img"></p>
+<p>低调的蓝卡，+12灼热攻击，单体伤害126点</p>
+<p>至于<strong>灼热攻击的牌组</strong>，我也就不一一列举了，就拿两把我通关的局来说吧：</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-5e17e033700abdcc59c113623354b662_720w.webp" alt="img"></p>
+<p>进阶18灼热攻击，武装，战斗专注，重振精神是核心牌</p>
+<p>这一局是通关进阶18的一局，核心牌：<strong>灼热攻击+12</strong>，<strong>战斗专注+</strong>，<strong>武装</strong>，<strong>重振精神</strong>。重振精神用来快速消耗无用手牌，使牌组只剩下战斗专注+、灼热攻击+12、武装三张牌，战斗专注+配合武装、灼热攻击+12来达到每回合多次强化并输出灼热攻击的效果。</p>
+<p>这一套牌组讲究的就是一个爆炸，无需启动，裸伤126，越战越勇。三层怪也抗不过两个回合；当然牌组中若有<strong>死灵之书</strong>存在，则是无敌，可惜摸不得。</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-f4bb1021e85ddc52f9985fac134cf369_720w.webp" alt="img"></p>
+<p>单遗物通关挑战</p>
+<p>另一局则是追求单遗物通关成就的一局游戏；这局游戏也足以见得灼热攻击这张牌的强大，能够以单张牌匹敌其他的牌组战力，可谓非常之强大。朴实无华，不需要任何其余的牌，就可以打出巨额伤害。</p>
+<p>接下来是<strong>遗物推荐</strong>：</p>
+<p><img src="https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-625a8a75b052f6622d0733f9ec09eec5_720w.webp" alt="img"></p>
+<p>死灵之书：TOP1</p>
+<p>最搭配灼热攻击流派的，自然是<strong>死灵之书</strong>；拿到死灵之书，直接天胡，神挡杀神，佛挡杀佛；其余则是一些可以加费的BOSS遗物，灼热攻击作为一张2费用牌，费用还是至关重要的。</p>
+<p>最后是<strong>玩法</strong>：</p>
+<p>其实上面已经有所介绍，这副牌组的玩法非常简单，直接<strong>灼热攻击砸脸输出</strong>即可；有机会的情况下可以多使用<strong>武装来强化灼热攻击</strong>，来造成更高的伤害；但是牌组有个缺点，就是<strong>灼热攻击这张牌的获取时机要求较高</strong>，必须是在游戏的开始阶段，这样才能更多的锻造，同时路线要尽可能选择<strong>篝火较多</strong>的路线，来最大化灼热攻击的输出；最后是<strong>拿到死灵之书的天胡局</strong>，即使是心脏，在强大的攻击力面前也不够看。</p>
+<h4 id="力量流"><a href="#力量流" class="headerlink" title="力量流"></a>力量流</h4><p>这是我常玩的流派，因为直观而且简单，但是需要的胡牌多，</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a target="_blank" rel="noopener" href="https://www.zzzzz688.com/1961.html">杀戮尖塔&#x2F;Slay the Spire V2.3.4最新中文学习版 解压即撸 - 游戏天堂 (zzzzz688.com)</a></p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E5%A4%96%E6%8C%82%E5%BC%80%E5%8F%91/">外挂开发</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%88%98%E7%BD%91/">战网</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">H1S97X</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94-SLAY-THE-SPIRE"><span class="toc-text">杀戮尖塔&#x2F;SLAY THE SPIRE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E7%89%B9%E8%89%B2"><span class="toc-text">游戏特色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D"><span class="toc-text">游戏介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5"><span class="toc-text">游戏攻略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%98%E5%A3%AB%E7%AF%87"><span class="toc-text">战士篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9B%E9%87%8F%E6%B5%81"><span class="toc-text">力量流</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-text">下载</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  window.canonical["param"] = {"permalink":"https://h1s97x.github.io/2025/12/27/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E6%94%BB%E7%95%A5-%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94/","checklink":"/js/plugins/video.js"};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        if ($(el).find('.loading-wrap').length == 0){
+          $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+        }
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.chat-file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

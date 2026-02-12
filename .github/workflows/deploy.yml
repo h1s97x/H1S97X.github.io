@@ -7,6 +7,11 @@ on:
     branches: [ main, master, develop ]
   # 支持手动触发（在 GitHub 仓库的 Actions 标签页手动运行）
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -61,7 +66,7 @@ jobs:
         
     - name: Deploy to GitHub Pages
       if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public

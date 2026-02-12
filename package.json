@@ -96,5 +96,8 @@
     "*.{js,json}": [
       "eslint --fix"
     ]
+  },
+  "resolutions": {
+    "strip-ansi": "6.0.1"
   }
 }

@@ -154,10 +154,12 @@ flowchart LR
     id1{{This is the text in the box}}
 ```
 
+{% raw %}
 ```mermaid
 flowchart LR
     id1{{This is the text in the box}}
 ```
+{% endraw %}
 
 ##### Special characters
 

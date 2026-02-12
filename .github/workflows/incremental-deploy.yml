@@ -1,0 +1,109 @@
+name: Incremental Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master, develop ]
+    paths:
+      - 'source/**'  # 只监听 source 目录下的变化
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  incremental-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+        fetch-depth: 0  # 获取完整历史
+        
+    - name: Checkout gh-pages branch
+      run: |
+        git fetch origin gh-pages:gh-pages || echo "gh-pages branch not found, will create new one"
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Initialize theme submodules
+      run: |
+        git submodule update --init --recursive
+        npm run themes:status
+        
+    - name: Detect changed files in source directory
+      id: changes
+      run: |
+        echo "Detecting changes in source directory..."
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          echo "Manual trigger - will do full build"
+          echo "changed_files=all" >> $GITHUB_OUTPUT
+        else
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^source/' || echo "")
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No changes in source directory"
+            echo "changed_files=none" >> $GITHUB_OUTPUT
+          else
+            echo "Changed files:"
+            echo "$CHANGED_FILES"
+            echo "changed_files=some" >> $GITHUB_OUTPUT
+          fi
+        fi
+        
+    - name: Build static files (incremental)
+      if: steps.changes.outputs.changed_files != 'none'
+      run: |
+        echo "🏗️ Building with Stellar theme (incremental mode)..."
+        npm run build
+        echo "📊 Build statistics:"
+        find public -name "*.html" | wc -l | xargs echo "Generated HTML files:"
+        du -sh public | cut -f1 | xargs echo "Total size:"
+        
+    - name: Verify build output
+      if: steps.changes.outputs.changed_files != 'none'
+      run: |
+        if [ ! -f "public/index.html" ]; then
+          echo "❌ Build failed: index.html not found"
+          exit 1
+        fi
+        echo "✅ Build verification passed"
+        
+    - name: Deploy to GitHub Pages (incremental)
+      if: steps.changes.outputs.changed_files != 'none' && github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        publish_branch: gh-pages
+        force_orphan: false  # 保留提交历史，增量更新
+        keep_files: false  # 不保留旧文件，但保留 git 历史
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        commit_message: |
+          deploy: incremental update from ${{ github.sha }}
+          
+          Source changes:
+          ${{ github.event.head_commit.message }}
+          
+    - name: Notify deployment status
+      if: always()
+      run: |
+        if [ "${{ steps.changes.outputs.changed_files }}" == "none" ]; then
+          echo "ℹ️ No changes in source directory, skipping deployment"
+        elif [ "${{ job.status }}" == "success" ]; then
+          echo "🎉 增量部署成功！"
+          echo "🌟 网站已更新到 GitHub Pages"
+          echo "🔗 访问地址: https://${{ github.repository_owner }}.github.io"
+          echo "📝 保留了完整的提交历史"
+        else
+          echo "❌ 部署失败，请检查构建日志"
+        fi

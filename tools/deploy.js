@@ -219,16 +219,16 @@ class BlogDeployer {
   }
 
   /**
-     * 部署到gh-pages分支
+     * 部署到gh-pages分支（增量更新，保留历史）
      */
   deployToGhPages() {
-    console.log('🚀 部署到 gh-pages 分支...\n');
+    console.log('🚀 部署到 gh-pages 分支（增量更新模式）...\n');
 
     if (this.isDryRun) {
       console.log('🔍 [预览模式] 跳过实际部署');
       console.log('将要执行的操作:');
       console.log('  1. 切换到 gh-pages 分支');
-      console.log('  2. 清空分支内容');
+      console.log('  2. 增量更新文件（保留 git 历史）');
       console.log('  3. 复制 public/ 目录内容');
       console.log('  4. 提交并推送更改');
       console.log('  5. 切回原分支');
@@ -240,9 +240,19 @@ class BlogDeployer {
       console.log('📍 切换到 gh-pages 分支...');
       this.execCommand('git checkout gh-pages');
 
-      // 清空分支内容（保留.git目录）
-      console.log('🧹 清空分支内容...');
-      const files = fs.readdirSync(this.rootDir).filter(file => file !== '.git');
+      // 拉取最新更改
+      console.log('🔄 拉取最新更改...');
+      try {
+        this.execCommand('git pull origin gh-pages');
+      } catch {
+        console.log('⚠️  拉取失败，可能是首次部署');
+      }
+
+      // 清空分支内容（保留.git目录和.gitignore）
+      console.log('🧹 清理旧文件...');
+      const files = fs.readdirSync(this.rootDir).filter(file => 
+        file !== '.git' && file !== '.gitignore'
+      );
       for (const file of files) {
         const filePath = path.join(this.rootDir, file);
         if (fs.statSync(filePath).isDirectory()) {
@@ -268,26 +278,28 @@ class BlogDeployer {
 
       // 添加所有文件到Git
       console.log('📝 提交更改...');
-      this.execCommand('git add .');
+      this.execCommand('git add -A');
 
       // 检查是否有更改
       const status = this.execCommand('git status --porcelain', { stdio: 'pipe' });
       if (status) {
-        // 创建提交信息
-        const commitMessage = `deploy: ${new Date().toISOString().split('T')[0]}`;
+        // 创建详细的提交信息
+        const date = new Date().toISOString().split('T')[0];
+        const time = new Date().toLocaleTimeString('zh-CN');
+        const commitMessage = `deploy: incremental update ${date} ${time}\n\n保留完整提交历史的增量更新`;
         this.execCommand(`git commit -m "${commitMessage}"`);
 
-        // 推送到远程
-        console.log('🚀 推送到远程仓库...');
+        // 推送到远程（不使用 --force）
+        console.log('🚀 推送到远程仓库（保留历史）...');
         this.execCommand('git push origin gh-pages');
 
-        console.log('✅ 部署成功！');
+        console.log('✅ 增量部署成功！提交历史已保留');
       } else {
         console.log('ℹ️  没有更改需要部署');
       }
 
-    } catch {
-      console.error('❌ 部署失败');
+    } catch (error) {
+      console.error('❌ 部署失败:', error.message);
       throw new Error('部署失败');
     } finally {
       // 切回原分支

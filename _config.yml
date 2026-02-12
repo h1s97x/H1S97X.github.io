@@ -132,4 +132,4 @@ feed:
 deploy:
   type: git
   repo: git@github.com:h1s97x/H1S97X.github.io.git
-  branch: master
+  branch: gh-pages

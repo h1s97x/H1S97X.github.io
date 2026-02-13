@@ -2,6 +2,10 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20.19.0",
+    "pnpm": "^10.0"
+  },
   "scripts": {
     "build": "hexo generate",
     "build:test": "hexo clean && hexo generate",
@@ -33,6 +37,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "eslint .",
+    "lint-staged": "lint-staged",
     "lint:fix": "eslint . --fix",
     "check-links": "node tools/check-links.js",
     "validate": "npm run test && npm run check-links",
@@ -46,11 +51,20 @@
     "version": "8.1.1"
   },
   "dependencies": {
-    "dplayer": "^1.27.1",
+    "@mdit/plugin-alert": "0.7.6",
+    "@mdit/plugin-figure": "0.7.6",
+    "@mdit/plugin-img-size": "0.7.6",
+    "@traptitech/markdown-it-katex": "^3.6.0",
+    "@uiolee/hexo-htmlnano": "^1.0.1",
+    "cssnano": "^7.1.2",
     "hexo": "^8.1.1",
+    "hexo-asset": "^1.0.0",
+    "hexo-asset-img": "^1.2.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-cli": "^4.3.2",
     "hexo-deployer-git": "^4.0.0",
+    "hexo-diagrams-net": "^2025.6.1",
+    "hexo-esbuild": "^2.0.0",
     "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -62,14 +76,17 @@
     "hexo-hide-posts": "^0.4.3",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-jade": "^0.4.1",
+    "hexo-renderer-markdown-it": "^7.1.1",
     "hexo-renderer-marked": "^7.0.1",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-tag-aplayer": "^3.0.4",
-    "hexo-tag-dplayer": "^0.3.3",
-    "hexo-theme-landscape": "^1.1.0",
-    "probe-image-size": "^7.2.3"
+    "hexo-theme-stellar": "1.33.1",
+    "postcss": "^8.5.6",
+    "probe-image-size": "^7.2.3",
+    "svgo": "^3.3.2",
+    "terser": "^5.44.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -93,9 +110,27 @@
     ]
   },
   "lint-staged": {
-    "*.{js,json}": [
+    "source/_posts/**/*.md": "hexo-update-time",
+    "source/coding/**/*.md": "hexo-update-time",
+    "source/notes/**/*.md": "hexo-update-time",
+    "*.{js,jsx}": [
       "eslint --fix"
+    ],
+    "*.{js,jsx,ts,tsx,css,scss,md,json}": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "textlint"
     ]
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "commonjs": true
+    },
+    "globals": {
+      "hexo": "readonly"
+    }
   },
   "overrides": {
     "strip-ansi": "6.0.1",

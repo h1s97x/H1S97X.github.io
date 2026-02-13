@@ -19,16 +19,16 @@ module.exports = [
         setTimeout: 'readonly',
         clearTimeout: 'readonly',
         setInterval: 'readonly',
-        clearInterval: 'readonly'
-      }
+        clearInterval: 'readonly',
+      },
     },
     rules: {
       'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       'no-console': 'off',
-      'indent': ['error', 2],
-      'quotes': ['error', 'single'],
-      'semi': ['error', 'always']
-    }
+      indent: ['error', 2],
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
+    },
   },
   {
     files: ['test/**/*.js'],
@@ -41,9 +41,22 @@ module.exports = [
         afterAll: 'readonly',
         beforeEach: 'readonly',
         afterEach: 'readonly',
-        jest: 'readonly'
-      }
-    }
+        jest: 'readonly',
+      },
+    },
+  },
+  {
+    files: ['scripts/**/*.js'],
+    languageOptions: {
+      globals: {
+        hexo: 'readonly',
+        locals: 'readonly',
+        URL: 'readonly',
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_|^locals' }],
+    },
   },
   {
     ignores: [
@@ -52,13 +65,14 @@ module.exports = [
       '.deploy_git/**',
       'themes/**',
       'source/_posts/assets/**',
+      'source/assets/**', // 排除 source/assets 下的所有文件
       'setup-giscus.js',
       'db.json',
       '*.min.js',
       'assets/**',
       'js/**',
       'css/**',
-      'img/**'
-    ]
-  }
+      'img/**',
+    ],
+  },
 ];

@@ -952,7 +952,7 @@
   }
 }
 pre {
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   font-size: 0.8125rem;
   tab-size: 4;
   -moz-tab-size: 4;
@@ -1511,7 +1511,7 @@ a.button.start.gradient {
 code {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
 }
 p>code:not([class]),
 li>code:not([class]) {
@@ -1528,7 +1528,7 @@ pre:not([class]):has(>code) {
   border-radius: 16px;
   overflow: hidden;
   background: var(--block);
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   box-sizing: border-box;
 }
 @media screen and (min-width: 500px) {
@@ -1640,7 +1640,7 @@ pre:not([class]):has(>code) {
 }
 .md-text .gist .blob-code-inner {
   color: var(--text-p1);
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
 }
 .md-text .gist .gist-meta {
   background: var(--block);
@@ -1899,7 +1899,7 @@ html {
   height: 100%;
   width: 100%;
   overflow-y: scroll;
-  font-family: system-ui, "Microsoft Yahei", "Segoe UI", Arial, sans-serif;
+  font-family: system-ui, "Microsoft Yahei", "PingFang SC", "Hiragino Sans GB", "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1941,7 +1941,7 @@ input {
 }
 input.copy-area {
   display: block;
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
   color: var(--text-p3);
@@ -2918,7 +2918,7 @@ div.toast.show {
   background-image: url("https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/arrow/f049bbd4e88ec.svg");
 }
 .paginator-wrap .current {
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   background: var(--block);
 }
 .paginator-wrap .extend {
@@ -4420,7 +4420,7 @@ a.tag-plugin.button:hover {
   border-radius: 4px;
   background: hsla(var(--hue) var(--sat) var(--light) / 0.2);
   color: var(--theme);
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
   flex-shrink: 0;
@@ -5534,7 +5534,7 @@ p>strong>span.tag-plugin.icon {
   border-bottom-width: 2px;
   background: var(--card);
   padding: 2px 4px 1px 4px;
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   font-weight: 700;
 }
 .md-text psw {
@@ -5566,7 +5566,7 @@ p>strong>span.tag-plugin.icon {
   color: var(--theme);
   line-height: 1;
   font-weight: 700;
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
 }
 .md-text h1 sup,
 .md-text h2 sup,
@@ -7141,7 +7141,7 @@ details.toc[open] >div.body section .header+.doc_tree {
 .search-wrapper .search-input {
   width: 100%;
   box-sizing: border-box;
-  font-family: system-ui, "Microsoft Yahei", "Segoe UI", Arial, sans-serif;
+  font-family: system-ui, "Microsoft Yahei", "PingFang SC", "Hiragino Sans GB", "Segoe UI", Arial, sans-serif;
   font-size: 0.875rem;
   padding: 12px 0;
   color: var(--text);
@@ -8160,7 +8160,7 @@ details.toc[open] >div.body section .header+.doc_tree {
 }
 .post-list #archive .archive-header {
   display: inline-block;
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 0.5em;
@@ -8191,7 +8191,7 @@ details.toc[open] >div.body section .header+.doc_tree {
   border-bottom: 1px dashed var(--text-meta);
 }
 .post-list #archive a.post time {
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   margin-right: 1em;
   font-weight: 700;
   flex-shrink: 0;
@@ -8232,7 +8232,7 @@ details.toc[open] >div.body section .header+.doc_tree {
 }
 .post-list #cats a.cat .badge {
   font-weight: 700;
-  font-family: Menlo, Monaco, Consolas, system-ui, monospace, sans-serif;
+  font-family: Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif;
   opacity: 0.5;
   font-size: 0.75rem;
 }
@@ -9477,6 +9477,170 @@ img[data-fancybox],
 a[data-fancybox] {
   cursor: zoom-in;
 }
+pre.mermaid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, "Microsoft Yahei", "PingFang SC", "Hiragino Sans GB", "Segoe UI", Arial, sans-serif;
+}
+.mermaid span,
+text {
+  font-family: system-ui, "Microsoft Yahei", "PingFang SC", "Hiragino Sans GB", "Segoe UI", Arial, sans-serif;
+}
+.mermaid .edgeLabel {
+  padding: 4px;
+  background-color: var(--background) !important;
+}
+.mermaid rect.basic.label-container {
+  stroke: var(--block-border) !important;
+  fill: var(--block) !important;
+}
+:root[data-theme="dark"] .mermaid {
+  fill: #ccc !important;
+}
+:root[data-theme="dark"] .mermaid .error-icon {
+  fill: #a44141 !important;
+}
+:root[data-theme="dark"] .mermaid .error-text {
+  fill: #ddd !important;
+  stroke: #ddd !important;
+}
+:root[data-theme="dark"] .mermaid .marker {
+  fill: #d3d3d3 !important;
+  stroke: #d3d3d3 !important;
+}
+:root[data-theme="dark"] .mermaid .marker.cross {
+  stroke: #d3d3d3 !important;
+}
+:root[data-theme="dark"] .mermaid .label {
+  color: #ccc !important;
+}
+:root[data-theme="dark"] .mermaid .cluster-label text {
+  fill: #f9fffe !important;
+}
+:root[data-theme="dark"] .mermaid .cluster-label span {
+  color: #f9fffe !important;
+}
+:root[data-theme="dark"] .mermaid .label text,
+:root[data-theme="dark"] .mermaid span {
+  fill: #ccc !important;
+  color: #ccc !important;
+}
+:root[data-theme="dark"] .mermaid .node rect,
+:root[data-theme="dark"] .mermaid .node circle,
+:root[data-theme="dark"] .mermaid .node ellipse,
+:root[data-theme="dark"] .mermaid .node polygon,
+:root[data-theme="dark"] .mermaid .node path {
+  fill: #1f2020 !important;
+  stroke: #81b1db !important;
+}
+:root[data-theme="dark"] .mermaid .arrowheadPath {
+  fill: #d3d3d3 !important;
+}
+:root[data-theme="dark"] .mermaid .edgePath .path {
+  stroke: #d3d3d3 !important;
+}
+:root[data-theme="dark"] .mermaid .flowchart-link {
+  stroke: #d3d3d3 !important;
+}
+:root[data-theme="dark"] .mermaid .edgeLabel {
+  background-color: #585858 !important;
+}
+:root[data-theme="dark"] .mermaid .edgeLabel rect {
+  background-color: #585858 !important;
+  fill: #585858 !important;
+}
+:root[data-theme="dark"] .mermaid .cluster rect {
+  fill: #474949 !important;
+  stroke: rgba(255,255,255,0.25) !important;
+}
+:root[data-theme="dark"] .mermaid .cluster text {
+  fill: #f9fffe !important;
+}
+:root[data-theme="dark"] .mermaid .cluster span {
+  color: #f9fffe !important;
+}
+:root[data-theme="dark"] .mermaid div.mermaidTooltip {
+  background: #201f1f !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+}
+:root[data-theme="dark"] .mermaid .flowchartTitleText {
+  fill: #ccc;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .mermaid {
+    fill: #ccc !important;
+  }
+  :root:not([data-theme]) .mermaid .error-icon {
+    fill: #a44141 !important;
+  }
+  :root:not([data-theme]) .mermaid .error-text {
+    fill: #ddd !important;
+    stroke: #ddd !important;
+  }
+  :root:not([data-theme]) .mermaid .marker {
+    fill: #d3d3d3 !important;
+    stroke: #d3d3d3 !important;
+  }
+  :root:not([data-theme]) .mermaid .marker.cross {
+    stroke: #d3d3d3 !important;
+  }
+  :root:not([data-theme]) .mermaid .label {
+    color: #ccc !important;
+  }
+  :root:not([data-theme]) .mermaid .cluster-label text {
+    fill: #f9fffe !important;
+  }
+  :root:not([data-theme]) .mermaid .cluster-label span {
+    color: #f9fffe !important;
+  }
+  :root:not([data-theme]) .mermaid .label text,
+  :root:not([data-theme]) .mermaid span {
+    fill: #ccc !important;
+    color: #ccc !important;
+  }
+  :root:not([data-theme]) .mermaid .node rect,
+  :root:not([data-theme]) .mermaid .node circle,
+  :root:not([data-theme]) .mermaid .node ellipse,
+  :root:not([data-theme]) .mermaid .node polygon,
+  :root:not([data-theme]) .mermaid .node path {
+    fill: #1f2020 !important;
+    stroke: #81b1db !important;
+  }
+  :root:not([data-theme]) .mermaid .arrowheadPath {
+    fill: #d3d3d3 !important;
+  }
+  :root:not([data-theme]) .mermaid .edgePath .path {
+    stroke: #d3d3d3 !important;
+  }
+  :root:not([data-theme]) .mermaid .flowchart-link {
+    stroke: #d3d3d3 !important;
+  }
+  :root:not([data-theme]) .mermaid .edgeLabel {
+    background-color: #585858 !important;
+  }
+  :root:not([data-theme]) .mermaid .edgeLabel rect {
+    background-color: #585858 !important;
+    fill: #585858 !important;
+  }
+  :root:not([data-theme]) .mermaid .cluster rect {
+    fill: #474949 !important;
+    stroke: rgba(255,255,255,0.25) !important;
+  }
+  :root:not([data-theme]) .mermaid .cluster text {
+    fill: #f9fffe !important;
+  }
+  :root:not([data-theme]) .mermaid .cluster span {
+    color: #f9fffe !important;
+  }
+  :root:not([data-theme]) .mermaid div.mermaidTooltip {
+    background: #201f1f !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+  }
+  :root:not([data-theme]) .mermaid .flowchartTitleText {
+    fill: #ccc;
+  }
+}
 .highlight {
   position: relative;
 }
@@ -9516,6 +9680,24 @@ a[data-fancybox] {
   z-index: 1;
   margin-right: 1rem;
   border-radius: 8px;
+}
+.md-text p.katex-block {
+  overflow: scroll;
+}
+.md-text p.katex-block::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+.md-text p.katex-block::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+.md-text p.katex-block::-webkit-scrollbar-thumb {
+  background: var(--text-meta);
+  cursor: pointer;
+  border-radius: 0;
+}
+.md-text p.katex-block::-webkit-scrollbar-thumb:hover {
+  background: var(--text-p3);
 }
 .cmt-body.beaudar {
   margin: 0 -4px;

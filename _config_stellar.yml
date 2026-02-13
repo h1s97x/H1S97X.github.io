@@ -1,5 +1,8 @@
+# Stellar 主题配置文件
+# 详细配置说明请查看 Wiki 文档：.qoder/repowiki/zh/content/主题定制/Stellar配置指南.md
+# 在线文档：https://xaoxuu.com/wiki/stellar/
+
 ######## Sidebar ########
-# 左上角显示的 logo 区域，包含图标、大标题、副标题
 logo:
   avatar: '[{config.avatar}](/about/)'
   title: '[{config.title}](/)' 
@@ -30,43 +33,68 @@ menubar:
       url: /about/
 
 
-inject:
-  head:
-    - <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=20240514">
-    - <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=20240507">
-    - <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=20240507">
-    - <link rel="manifest" href="/favicon/site.webmanifest?v=20240507">
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@1.511.0/style.css">
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/source-code-pro@2.38.0/source-code-pro.min.css">
-    # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism.min.css">
-    - <link rel="stylesheet" href="/css/gocalf.css?v=20251229">
-    - <link rel="stylesheet" href="/css/alert.css?v=20251225">
-  # script:
-  #   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
-
 ######## Main ########
 site_tree:
-  post:
-    leftbar: welcome, related, recent
+  home:
+    leftbar: welcome, recent
+    rightbar: toc
+  index_blog:
+    base_dir: blog
+    menu_id: post
+    leftbar: welcome, recent
+    rightbar: toc
+    nav_tabs:
+      '最新发布': /
+  index_topic:
+    base_dir: topic
+    menu_id: post
   index_wiki:
-    leftbar: welcome, related, recent
+    base_dir: wiki
+    menu_id: wiki
+    leftbar: related, recent
+    rightbar: null
+    nav_tabs: {}
+  post:
+    menu_id: post
+    leftbar: related, recent, timeline
+    rightbar: ghrepo, toc
+  topic:
+    menu_id: post
   wiki:
-    leftbar: welcome, tree, related, recent
+    menu_id: wiki
+    leftbar: tree, related, recent
+    rightbar: ghrepo, toc
   notebooks:
-    leftbar: welcome, recent
+    base_dir: notebooks
+    menu_id: notebooks
+    leftbar: recent
+    rightbar: null
   notes:
-    leftbar: welcome, tagtree, recent_long
+    menu_id: notebooks
+    leftbar: tagtree, recent
+    rightbar: null
   note:
-    leftbar: welcome, tagtree, recent_long
+    leftbar: tagtree, recent
+    rightbar: toc
+  author: 
+    base_dir: author
+    menu_id: post
+    leftbar: recent, timeline
+    rightbar: timeline
   error_page:
-    leftbar: welcome, recent, timeline
+    menu_id: post
+    '404': '/404.html'
+    leftbar: recent, timeline
+    rightbar: timeline
   page:
-    leftbar: welcome, recent
+    leftbar: recent
+    rightbar: toc
 
 ######## Notebook ########
 notebook:
+  auto_excerpt: 128
   tagcons:
-    calf: calf:gocalf
+    '': solar:hashtag-square-bold
     difficult: hugeicons-pro:dead
     easy: iconoir:one-star
     font: solar:text-linear
@@ -79,124 +107,315 @@ notebook:
     medium: iconoir:two-stars
     puzzle: hugeicons-pro:puzzle
     python: brand:python
+  per_page: null
+  order_by: -updated
+  license: false
+  share: false
+
 
 ######## Article ########
 article:
-  license: '本文由 [Calf](/) 原创，采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
-  share: [link, wechat, email]
+  type: tech
+  indent: false
+  cover_ratio: 2
+  banner_ratio: 2.5
+  auto_banner: false
+  auto_excerpt: 128
+  category_color:
+    '探索号': '#f44336'
+  license: '本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
+  share: [wechat, weibo, email, link]
+  related_posts:
+    enable: false
+    max_count: 5
+
+######## Search ########
+search:
+  service: local_search
+  local_search:
+    field: all
+    path: /search.json
+    content: true
+    skip_search:
+      - /music/
+      - /about/
+  algolia_search:
+    appId: 
+    apiKey: 
+    indexName: 
+    js: https://gcore.jsdelivr.net/algoliasearch/3/algoliasearch.min.js
+
 
 ######## Comments ########
 comments:
   service: giscus
+  comment_title: 快来参与讨论吧~
+  lazyload: true
+  custom_css: ''
   giscus:
-    data-repo: calfzhou/gocalf.com
+    src: https://giscus.app/client.js
+    data-repo: h1s97x/H1S97X.github.io
+    data-repo-id: R_kgDOJq3IOw
+    data-category: Announcements
+    data-category-id: DIC_kwDOJq3IO84C0cUU
+    data-mapping: pathname
+    data-strict: 0
+    data-reactions-enabled: 1
+    data-emit-metadata: 0
+    data-input-position: top # top, bottom
+    data-theme: preferred_color_scheme
+    data-lang: zh-CN
+    data-loading: lazy # lazy
+    crossorigin: anonymous
+
 
 ######## Footer ########
 footer:
   social:
     email:
       icon: brand:gmail
-      url: mailto:calf.zhou@gmail.com
+      url: mailto:yang1297656998@outlook.com
     github:
       icon: brand:github
-      url: https://github.com/calfzhou
-    facebook:
-      icon: brand:facebook
-      url: https://www.facebook.com/calfzhou
-    telegram:
-      icon: brand:telegram
-      url: https://t.me/calfzhou
-    pgp:
-      icon: other:fingerprint-duotone
-      url: /pgp/
+      url: https://github.com/h1s97x
     theme:
       icon: default:theme
       onclick: 'switchTheme()'
   sitemap:
-    - title: GoCalf
+    - title: 博客
       items:
-        - '[主页](/)'
-        - '[关于](/about/)'
-        - '[PGP 信息](/pgp/)'
-        - '[旧站](https://blog.gocalf.com/)'
-    - title: 内容
+        - '[近期发布](/)'
+        - '[分类](/categories/)'
+        - '[标签](/tags/)'
+        - '[归档](/archives/)'
+    - title: 分类
       items:
-        - '[笔记<span class="dot"></span>杂七杂八](/notes/)'
-        - '[笔记<span class="dot"></span>Coding](/coding/)'
         - '[博客<span class="dot"></span>近期发布](/)'
-        - '[博客<span class="dot"></span>归档](/blog/archives/)'
-        - '[所有 Wiki 项目](/wiki/)'
-        - '[所有笔记本](/notebooks/)'
-    - title: 联系我
+        - '[技术开发](tech-development/)'
+        - '[博客](/categories/system-operations/)'
+        - '[游戏世界](/categories/gaming-world/)'
+        - '[学术学习](/categories/academic-learning/)'
+    - title: 页面
       items:
-        - '[给我发邮件](mailto:calf.zhou@gmail.com)'
-        - '[GitHub](https://github.com/calfzhou)'
-        - '[Facebook](https://www.facebook.com/calfzhou)'
-        - '[Telegram](https://t.me/calfzhou)'
-    - title: 特别感谢
+        - '[关于](/about/)'
+        - '[联系](/contact/)'
+        - '[音乐](/music/)'
+        - '[搜索](/search/)'
+    - title: 其他
       items:
-        - '[Hexo](https://hexo.io/)'
-        - '[Hexo Stellar](https://xaoxuu.com/wiki/stellar/)'
-        - '[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)'
-        - '[今日诗词](https://www.jinrishici.com/)'
+        - '[RSS订阅](/atom.xml)'
+        - '[站点地图](/sitemap.xml)'
+        - '[GitHub仓库](https://github.com/h1s97x/H1S97X.github.io)'
+        - '[问题反馈](https://github.com/h1s97x/H1S97X.github.io/issues)'
   content: |
-    本站所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
-    本站由 [Hexo](https://hexo.io/)、[{theme.name} {theme.version}]({theme.tree}) 和 [GitHub Pages](https://pages.github.com/) 强力驱动。
-    Copyright © 2011-2024 [gocalf.com](/) 保留所有权利。
+    本站由 [H1S97X](/) 使用 [Stellar {theme.version}]({theme.tree}) 主题创建。
+    本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
+    
+    [![Powered by Hexo](https://img.shields.io/badge/Powered%20by-Hexo-blue?style=flat-square)](https://hexo.io/)
+    [![Theme Stellar](https://img.shields.io/badge/Theme-Stellar-orange?style=flat-square)](https://github.com/xaoxuu/hexo-theme-stellar)
 
+
+######## Tag Plugins ########
+tag_plugins:
+  note:
+    default_color: ''
+    border: true
+  checkbox:
+    interactive: false
+  quot:
+    default:
+      prefix: bxs:quote-left
+      suffix: bxs:quote-right
+    hashtag:
+      prefix: solar:hashtag-square-bold
+    question:
+      prefix: ph:seal-question-fill
+  emoji:
+    default: https://gcore.jsdelivr.net/gh/cdn-x/emoticons@3.1/qq/{name}.gif
+    twemoji: https://gcore.jsdelivr.net/gh/twitter/twemoji/assets/svg/{name}.svg
+    qq: https://gcore.jsdelivr.net/gh/cdn-x/emoticons@3.1/qq/{name}.gif
+    aru: https://gcore.jsdelivr.net/gh/cdn-x/emoticons@3.1/aru/{name}.gif
+    tieba: https://gcore.jsdelivr.net/gh/cdn-x/emoticons@3.1/tieba/{name}.png
+    blobcat: https://gcore.jsdelivr.net/gh/cdn-x/emoticons@3.1/blobcat/{name}.gif
+  icon:
+    default_color: accent
+  button:
+    default_color: theme
+  image:
+    fancybox: false
+  copy:
+    toast: 复制成功
+  timeline:
+    max-height: 80vh
+  mark:
+    default_color: yellow
+  hashtag:
+    default_color: ''
+  okr:
+    border: true
+    status:
+      in_track:
+        color: blue
+        label: 正常
+      at_risk: 
+        color: yellow
+        label: 风险
+      off_track:
+        color: orange
+        label: 延期
+      finished:
+        color: green
+        label: 已完成
+      unfinished:
+        color: red
+        label: 未完成
+  gallery:
+    layout: grid
+    size: mix
+    ratio: square
+  chat:
+    api: https://siteinfo.listentothewind.cn/api/v1
+
+
+# 基础依赖
+dependencies:
+  jquery: https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js
+  marked: https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js
+  lazyload:
+    js: https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js
+    transition: fade
+    fix_ratio: true
+
+# 内置服务
 data_services:
   contributors:
     edit_this_page: # 从开头开始匹配替换
-      '': https://github.com/calfzhou/gocalf.com/blob/main/source/
+      '':
 
+# 扩展插件
 plugins:
+  preload:
+    enable: true
+    service: flying_pages
+    flying_pages: https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js
+  fancybox:
+    enable: true
+    js: https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js
+    css: https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css
+    selector: .timenode p>img, .md-text img:not([class]), .md-text .image img
+  swiper:
+    enable: true
+    css: https://unpkg.com/swiper@10.3/swiper-bundle.min.css
+    js: https://unpkg.com/swiper@10.3/swiper-bundle.min.js
+  scrollreveal:
+    enable: false
+    js: https://gcore.jsdelivr.net/npm/scrollreveal@4.0/dist/scrollreveal.min.js
+    distance: 8px
+    duration: 1000
+    interval: 100
+    scale: 1
   katex:
-    # markdown-it-katex 会完成 Katex 渲染，但需要通过 `enable: true` 来注入 Katex CSS
-    enable: false # 仅在需要的页面内通过 front-matter 启用
-    # Stellar 1.33.1 默认的 Katex 配置，会在正常的公式下边多显示一样格式错误的公式，故改为如下配置
-    # See: https://github.com/xaoxuu/hexo-theme-stellar/issues/621#issuecomment-3390421599
+    enable: true
     inject: |
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.23/dist/katex.min.css" integrity="sha384-//SZkxyB7axjCAopkAL1E1rve+ZSPKapD89Lo/lLhcsXR+zOYl5z6zJZEFXil+q0" crossorigin="anonymous">
+  mathjax:
+    v3: false
+    enable: false
+    js: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML
   mermaid:
-    enable: false # 仅在需要的页面内通过 front-matter 启用
-    js: https://cdn.jsdelivr.net/npm/mermaid@11.8.1/dist/mermaid.min.js
-  animcube2:
+    enable: true
+    style_optimization: true
+    js: https://gcore.jsdelivr.net/npm/mermaid@v9/dist/mermaid.min.js
+    theme: neutral
+  copycode:
+    enable: true
+    default_text: 'Copy'
+    success_text: 'Copied'
+    toast: 复制成功
+  heti:
     enable: false
-    inject: |
-      <script src="/js/plugins/AnimCube2.min.js?v=20251227"></script>
-  animcube3:
-    enable: false
-    inject: |
-      <script src="/js/plugins/AnimCube3.min.js?v=20251227"></script>
-  animcube4:
-    enable: false
-    inject: |
-      <script src="/js/plugins/AnimCube4.min.js?v=20251227"></script>
-  animcube5:
-    enable: false
-    inject: |
-      <script src="/js/plugins/AnimCube5.min.js?v=20251227"></script>
-  animcube6:
-    enable: false
-    inject: |
-      <script src="/js/plugins/AnimCube6.min.js?v=20251227"></script>
-  animcube7:
-    enable: false
-    inject: |
-      <script src="/js/plugins/AnimCube7.min.js?v=20251227"></script>
+    css: https://unpkg.com/heti@0.9/umd/heti.min.css
+    js: https://unpkg.com/heti@0.9/umd/heti-addon.min.js
 
+# 样式配置
 style:
-  prefers_theme: dark # auto / light / dark
+  prefers_theme: auto
+  smooth_scroll: true
   font-size:
-    root: 18px
+    root: 16px
+    body: 17px
+    code: 85%
+    codeblock: 0.8125rem
   font-family:
-    logo: '"LXGW WenKai", "Helvetica Neue", Helvetica, "Lucida Grande", Lucida, Tahoma, Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", STXiHei, SimHei, sans-serif'
-    body: '"LXGW WenKai", "Helvetica Neue", Helvetica, "Lucida Grande", Lucida, Tahoma, Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", STXiHei, SimHei, sans-serif'
-    code: '"LXGW WenKai", "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace'
-    codeblock: '"Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace, "LXGW WenKai Mono"'
+    body: 'system-ui, "Microsoft Yahei", "PingFang SC", "Hiragino Sans GB", "Segoe UI", Arial, sans-serif'
+    code: 'Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif'
+    codeblock: 'Menlo, Monaco, "Cascadia Code", "Fira Code", Consolas, system-ui, monospace, sans-serif'
+  text-align: left
+  prefix:
+    h2: https://api.iconify.design/ci:heading-h2.svg
   border-radius:
-    card-l: 16px # 侧边栏、文章横幅位置的圆角
-    card: 12px # 文章内大部分卡片的圆角
-    image: revert # 技术类文章插图圆角
+    card-l: 24px
+    card: 16px
+    card-s: 12px
+    bar: 8px
+    image-l: 24px
+    image: 16px
+    image-s: 8px
+  color:
+    theme: 'hsl(192 98% 55%)'
+    accent: 'hsl(14 100% 57%)'
+    link: 'hsl(207 90% 54%)'
+  animated_avatar:
+    animate: auto
+    background: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp
+  codeblock:
+    scrollbar: 4px
+    highlightjs_theme: https://gcore.jsdelivr.net/gh/highlightjs/cdn-release@11.9/build/styles/atom-one-dark.min.css
+  loading:
+    loading: 正在加载
+    error: 加载失败，请稍后重试。
+  gradient:
+    start: 'linear-gradient(to right, hsl(215, 95%, 64%), hsl(195, 95%, 60%), hsl(165, 95%, 56%), hsl(165, 95%, 56%), hsl(195 95% 60%), hsl(215, 95%, 64%))'
   leftbar:
-    background-opacity: 0.3
+    background-color-light: var(--card)
+    background-color-dark: var(--card)
+    background-image: url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.13/image/sidebar-bg1@small.jpg)
+    blur-px: 100px
+    blur-bg: var(--bg-a60)
+    background-opacity: 0.8
+  paginator:
+    prev: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/arrow/f049bbd4e88ec.svg
+    next: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/arrow/064b95430caf4.svg
+  error_page: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/404/1c830bfcd517d.svg
+  site:
+    blur-px: 100px
+    blur-bg: var(--bg-a75)
+    blur-sat: 300%
+  header_prefix:
+    h2: '#'
+    h3: '='
+    h4: '|'
+    h5: ':'
+
+# 默认资源
+default:
+  avatar: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg
+  link: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg
+  cover: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg
+  image: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg
+  project: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png
+  banner: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/banner/books.jpg
+  topic: https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/10433048.png
+  loading: https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd
+  image_onerror: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2rem' height='2rem' viewBox='0 0 24 24'%3E%3C!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --%3E%3Cpath fill='%23F44336' d='M22 12.698c-.002 1.47-.013 2.718-.096 3.743c-.097 1.19-.296 2.184-.74 3.009a4.2 4.2 0 0 1-.73.983c-.833.833-1.893 1.21-3.237 1.39C15.884 22 14.2 22 12.053 22h-.106c-2.148 0-3.83 0-5.144-.177c-1.343-.18-2.404-.557-3.236-1.39c-.738-.738-1.12-1.656-1.322-2.795c-.2-1.12-.236-2.512-.243-4.241Q1.999 12.737 2 12v-.054c0-2.148 0-3.83.177-5.144c.18-1.343.557-2.404 1.39-3.236s1.893-1.21 3.236-1.39c1.168-.157 2.67-.175 4.499-.177a.697.697 0 1 1 0 1.396c-1.855.002-3.234.018-4.313.163c-1.189.16-1.906.464-2.436.994S3.72 5.8 3.56 6.99C3.397 8.2 3.395 9.788 3.395 12v.784l.932-.814a2.14 2.14 0 0 1 2.922.097l3.99 3.99a1.86 1.86 0 0 0 2.385.207l.278-.195a2.79 2.79 0 0 1 3.471.209l2.633 2.37c.265-.557.423-1.288.507-2.32c.079-.972.09-2.152.091-3.63a.698.698 0 0 1 1.396 0' opacity='.5'/%3E%3Cpath fill='%23F44336' fill-rule='evenodd' d='M17.5 11c-2.121 0-3.182 0-3.841-.659S13 8.621 13 6.5s0-3.182.659-3.841S15.379 2 17.5 2s3.182 0 3.841.659S22 4.379 22 6.5s0 3.182-.659 3.841S19.621 11 17.5 11m-1.47-7.03a.75.75 0 1 0-1.06 1.06l1.47 1.47l-1.47 1.47a.75.75 0 0 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L18.56 6.5l1.47-1.47a.75.75 0 0 0-1.06-1.06L17.5 5.44z' clip-rule='evenodd'/%3E%3C/svg%3E"
+
+# API 配置
+api_host:
+  ghapi: api.github.com
+  ghraw: raw.githubusercontent.com
+  gist: gist.github.com
+  ghcard: github-readme-stats.vercel.app
+
+# 系统配置
+system:
+  override_pretty_urls: true

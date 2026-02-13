@@ -1,12 +1,1 @@
-utils.jq(() => {
-  const els = document.getElementsByClassName('ds-mdrender');
-  for (var i = 0; i < els.length; i++) {
-    const el = els[i];
-    const src = `${el.getAttribute('src')}?t=${new Date().getTime()}`;
-    
-    utils.request(el, src, async resp => {
-      const data = await resp.text();
-      el.innerHTML = marked.parse(data);
-    });
-  }
-});
+utils.jq(()=>{const s=document.getElementsByClassName("ds-mdrender");for(var e=0;e<s.length;e++){const t=s[e],n=`${t.getAttribute("src")}?t=${new Date().getTime()}`;utils.request(t,n,async a=>{const r=await a.text();t.innerHTML=marked.parse(r)})}});

@@ -34,78 +34,61 @@ menubar:
 
 
 ######## Main ########
-# site_tree:
-#   home:
-#     leftbar: welcome, recent
-#     rightbar: toc
-#   index_blog:
-#     base_dir: blog
-#     menu_id: post
-#     leftbar: welcome, recent
-#     rightbar: toc
-#     nav_tabs:
-#       '最新发布': /
-#   index_topic:
-#     base_dir: topic
-#     menu_id: post
-#   index_wiki:
-#     base_dir: wiki
-#     menu_id: wiki
-#     leftbar: related, recent
-#     rightbar: null
-#     nav_tabs: {}
-#   post:
-#     menu_id: post
-#     leftbar: related, recent, timeline
-#     rightbar: ghrepo, toc
-#   topic:
-#     menu_id: post
-#   wiki:
-#     menu_id: wiki
-#     leftbar: tree, related, recent
-#     rightbar: ghrepo, toc
-#   notebooks:
-#     base_dir: notebooks
-#     menu_id: notebooks
-#     leftbar: recent
-#     rightbar: null
-#   notes:
-#     menu_id: notebooks
-#     leftbar: tagtree, recent
-#     rightbar: null
-#   note:
-#     leftbar: tagtree, recent
-#     rightbar: toc
-#   author: 
-#     base_dir: author
-#     menu_id: post
-#     leftbar: recent, timeline
-#     rightbar: timeline
-#   error_page:
-#     menu_id: post
-#     '404': '/404.html'
-#     leftbar: recent, timeline
-#     rightbar: timeline
-#   page:
-#     leftbar: recent
-#     rightbar: toc
 site_tree:
-  post:
-    leftbar: welcome, related, recent
+  home:
+    leftbar: welcome, recent
+    rightbar: toc
+  index_blog:
+    base_dir: blog
+    menu_id: post
+    leftbar: welcome, recent
+    rightbar: toc
+    nav_tabs:
+      '最新发布': /
+  index_topic:
+    base_dir: topic
+    menu_id: post
   index_wiki:
-    leftbar: welcome, related, recent
+    base_dir: wiki
+    menu_id: wiki
+    leftbar: related, recent
+    rightbar: null
+    nav_tabs: {}
+  post:
+    menu_id: post
+    leftbar: related, recent, timeline
+    rightbar: ghrepo, toc
+  topic:
+    menu_id: post
   wiki:
-    leftbar: welcome, tree, related, recent
+    menu_id: wiki
+    leftbar: tree, related, recent
+    rightbar: ghrepo, toc
   notebooks:
-    leftbar: welcome, recent
+    base_dir: notebooks
+    menu_id: notebooks
+    leftbar: recent
+    rightbar: null
   notes:
-    leftbar: welcome, tagtree, recent_long
+    menu_id: notebooks
+    leftbar: tagtree, recent
+    rightbar: null
   note:
-    leftbar: welcome, tagtree, recent_long
+    leftbar: tagtree, recent
+    rightbar: toc
+  author: 
+    base_dir: author
+    menu_id: post
+    leftbar: recent, timeline
+    rightbar: timeline
   error_page:
-    leftbar: welcome, recent, timeline
+    menu_id: post
+    '404': '/404.html'
+    leftbar: recent, timeline
+    rightbar: timeline
   page:
-    leftbar: welcome, recent
+    leftbar: recent
+    rightbar: toc
 
 ######## Notebook ########
 notebook:

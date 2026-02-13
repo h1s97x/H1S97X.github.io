@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
 // Reference:
 // https://github.com/tcatche/hexo-filter-link-post
 
-const lib_path = require("path");
-const { relative_url } = require("hexo-util");
+const lib_path = require('path');
+const { relative_url } = require('hexo-util');
 
 const permalinks = new Map(); // post source -> post permalink
 
@@ -23,7 +23,7 @@ module.exports.convertLinks = function (data) {
 
     // Check if the link ends with '.md' or contains '.md#', and does not contains '://'.
     if (/\.md(#|$)/.test(link) && !/:\//.test(link)) {
-      const [relativePath, anchor = ""] = link.split("#");
+      const [relativePath, anchor = ''] = link.split('#');
 
       const currDir = lib_path.dirname(data.source);
       const targetPath = lib_path.normalize(
@@ -39,7 +39,7 @@ module.exports.convertLinks = function (data) {
       }
 
       const newLink = `${relative_url(data.permalink, targetPermalink)}${
-        anchor ? `#${anchor}` : ""
+        anchor ? `#${anchor}` : ''
       }`;
       const replacement = `[${name}](${newLink})`;
       replacements.push({

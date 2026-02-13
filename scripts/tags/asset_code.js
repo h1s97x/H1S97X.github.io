@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Asset code tag.
@@ -8,14 +8,14 @@
  * Note: the `path/to/file` is relative to the `source` directory.
  */
 
-const lib_path = require("path");
-const hexo_util = require("hexo-util");
-const fs = require("fs");
+const lib_path = require('path');
+const hexo_util = require('hexo-util');
+const fs = require('fs');
 
 module.exports = (ctx) =>
   function (args) {
-    args = ctx.args.map(args, ["lang", "from", "to"], ["path", "title"]);
-    let { lang = "", from = 0, to = -1, path, title = "" } = args;
+    args = ctx.args.map(args, ['lang', 'from', 'to'], ['path', 'title']);
+    let { lang = '', from = 0, to = -1, path, title = '' } = args;
     from = from > 0 ? from - 1 : 0;
 
     // Exit if path is not defined.
@@ -32,7 +32,7 @@ module.exports = (ctx) =>
     // Get the path of the source Markdown file relative to the Hexo source/ directory.
     const { source } = this;
 
-    const Asset = ctx.model("Asset");
+    const Asset = ctx.model('Asset');
     let doc = Asset.findOne({
       path: lib_path.join(lib_path.dirname(source), path),
     });
@@ -48,8 +48,8 @@ module.exports = (ctx) =>
 
     const buffer = fs.readFileSync(doc.source);
     let code = buffer.toString();
-    const lines = code.split("\n");
-    code = lines.slice(from, to).join("\n").trim();
+    const lines = code.split('\n');
+    code = lines.slice(from, to).join('\n').trim();
 
     const caption = `<span><a href="${hexo_util.url_for.call(
       ctx,

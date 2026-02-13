@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-const { alert } = require("@mdit/plugin-alert");
-const { figure } = require("@mdit/plugin-figure");
-const { obsidianImageSize } = require("@mdit/plugin-img-size");
+const { alert } = require('@mdit/plugin-alert');
+const { figure } = require('@mdit/plugin-figure');
+const { obsidianImageSize } = require('@mdit/plugin-img-size');
 // const { snippet } = require('@mdit/plugin-snippet');
 
 module.exports.customize = (parser) => {

@@ -53,7 +53,7 @@
   "dependencies": {
     "@mdit/plugin-alert": "0.23.0",
     "@mdit/plugin-figure": "0.23.0",
-    "@mdit/plugin-img-size": "0.23.0",
+    "@mdit/plugin-img-size": "0.23.1",
     "@traptitech/markdown-it-katex": "^3.6.0",
     "@uiolee/hexo-htmlnano": "^1.0.1",
     "cssnano": "^7.1.2",

@@ -55,7 +55,7 @@
     "@mdit/plugin-figure": "0.23.0",
     "@mdit/plugin-img-size": "0.23.0",
     "@traptitech/markdown-it-katex": "^3.6.0",
-    "@uiolee/hexo-htmlnano": "^1.0.1",
+    "@uiolee/hexo-htmlnano": "^2.0.0",
     "cssnano": "^7.1.2",
     "hexo": "^8.1.1",
     "hexo-asset": "^1.0.0",

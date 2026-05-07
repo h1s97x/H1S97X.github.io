@@ -57,7 +57,7 @@
     "@traptitech/markdown-it-katex": "^3.6.0",
     "@uiolee/hexo-htmlnano": "^1.0.1",
     "cssnano": "^7.1.2",
-    "hexo": "^8.1.1",
+    "hexo": "^8.1.2",
     "hexo-asset": "^1.0.0",
     "hexo-asset-img": "^1.2.0",
     "hexo-browsersync": "^0.3.0",

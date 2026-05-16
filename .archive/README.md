@@ -20,10 +20,13 @@ This directory contains archived documents from previous project iterations.
 │   ├── STELLAR_*.md         # Stellar theme docs
 │   ├── WORKFLOW_*.md        # Workflow docs
 │   └── *_SUMMARY.md         # Summary documents
-└── .github/ISSUE_TEMPLATE/    # Archived issue templates
-    └── scripts/                # Archived scripts
-        ├── badge_github.js    # GitHub badge tag (not used)
-        └── animate_cube.js    # Rubik's cube animation (not used)
+├── .github/ISSUE_TEMPLATE/  # Archived issue templates
+├── scripts/                 # Archived scripts
+│   ├── badge_github.js      # GitHub badge tag (not used)
+│   └── animate_cube.js      # Rubik's cube animation (not used)
+└── source/                  # Archived source configs
+    ├── .gitignore           # Obsidian configuration
+    └── _templates/          # Obsidian templates
 ```
 
 ## Why Archived?
@@ -32,12 +35,3 @@ These documents were removed from the active project because:
 - They are no longer relevant to the current project structure
 - They document historical decisions that have been superseded
 - They refer to themes/approaches that are no longer used
-
-The archive is kept for:
-- Historical reference
-- Understanding past decisions
-- Potential future revival of ideas
-
-## Access
-
-These files are kept in the repository but excluded from active development.

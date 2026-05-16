@@ -43,12 +43,13 @@
     "validate": "npm run test && npm run check-links",
     "precommit": "npm run validate",
     "prepare": "husky install",
+    "postinstall": "git submodule update --init --recursive themes/stellar",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "contributors:check": "all-contributors check"
   },
   "hexo": {
-    "version": "8.1.1"
+    "version": "8.1.2"
   },
   "dependencies": {
     "@mdit/plugin-alert": "0.23.0",

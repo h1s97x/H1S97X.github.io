@@ -162,6 +162,12 @@ feed:
   icon: favicon.ico
   autodiscovery: true
 
+# BrowserSync configuration for live reload
+browsersync:
+  port: 5000
+  ui:
+    port: 5001
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

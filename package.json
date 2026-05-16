@@ -83,7 +83,7 @@
     "hexo-server": "^3.0.0",
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-theme-stellar": "1.33.1",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.14",
     "probe-image-size": "^7.2.3",
     "svgo": "^4.0.0",
     "terser": "^5.47.1"

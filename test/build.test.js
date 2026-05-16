@@ -34,11 +34,14 @@ describe('Build Tests', () => {
   
   test('All required assets should be generated', () => {
     const requiredAssets = [
-      'css',
-      'js',
-      'archives',
-      'categories',
-      'tags'
+      'css/main.css',
+      'js/main.js',
+      'blog/archives',
+      'blog/categories',
+      'blog/tags',
+      'search.json',
+      'sitemap.xml',
+      'atom.xml'
     ];
     
     requiredAssets.forEach(asset => {

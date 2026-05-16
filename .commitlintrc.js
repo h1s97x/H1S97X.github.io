@@ -26,4 +26,4 @@ module.exports = {
     'body-leading-blank': [2, 'always'],
     'footer-leading-blank': [1, 'always'],
   },
-}
+};

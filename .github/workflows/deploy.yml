@@ -25,10 +25,15 @@ jobs:
         submodules: true
         fetch-depth: 0  # 获取完整历史，支持子模块
         
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
+        
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '22'
+        node-version: '20.x'
         cache: 'pnpm'
         
     - name: Install dependencies

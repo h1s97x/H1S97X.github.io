@@ -12,7 +12,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [20.x]
     
     steps:
     - name: Checkout code
@@ -21,6 +21,11 @@ jobs:
         submodules: true
         fetch-depth: 0
     
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
+
     - name: Setup Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
@@ -62,6 +67,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
+    
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
@@ -88,6 +98,11 @@ jobs:
       with:
         submodules: true
         fetch-depth: 0
+    
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
     
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -142,6 +157,11 @@ jobs:
       with:
         submodules: true
         fetch-depth: 0
+    
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
     
     - name: Setup Node.js
       uses: actions/setup-node@v4

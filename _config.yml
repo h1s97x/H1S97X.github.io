@@ -134,6 +134,16 @@ exclude:
   - consistency-report.md
 ignore: []
 
+# Hide Posts
+# hexo-hide-posts configuration
+hide_posts:
+  enable: true
+  filter: hidden
+  noindex: true
+  # 允许所有 generator 访问 posts
+  allowlist_generators: ['*']
+  blocklist_generators: []
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/

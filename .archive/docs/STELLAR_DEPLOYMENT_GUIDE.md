@@ -1,0 +1,256 @@
+# Stellar主题部署指南
+
+## 🚀 部署方式
+
+### 1. GitHub Actions 自动部署（推荐）
+
+#### 工作流文件
+- **deploy.yml**: 主要部署工作流，用于生产环境部署
+- **stellar-ci.yml**: 完整的CI/CD流程，包含验证、测试、性能检查
+- **ci.yml**: 基础CI/CD管道，支持多环境部署
+
+#### 触发条件
+```yaml
+# 主要部署 (deploy.yml)
+on:
+  push:
+    branches: [ main, master, develop ]
+
+# 完整CI/CD (stellar-ci.yml)  
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+# 基础CI/CD (ci.yml)
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+```
+
+#### 部署流程
+1. **代码检出**: 包含子模块初始化 (`submodules: true`)
+2. **环境设置**: Node.js 18/20 + npm缓存
+3. **依赖安装**: `npm ci`
+4. **子模块初始化**: 确保Stellar主题文件可用
+5. **配置验证**: 运行 `npm run stellar:validate`
+6. **测试执行**: 运行单元测试（允许失败）
+7. **静态构建**: 使用Stellar主题生成网站
+8. **构建验证**: 检查关键文件是否生成
+9. **部署发布**: 推送到gh-pages分支
+
+#### 多环境支持
+- **开发环境** (develop分支): 自动部署到staging环境
+- **生产环境** (master分支): 自动部署到GitHub Pages
+- **拉取请求**: 运行完整测试和验证流程
+
+### 2. 本地手动部署
+
+#### 使用部署脚本
+```bash
+# 预览部署过程
+npm run deploy:preview
+
+# 执行实际部署
+npm run deploy
+
+# 或直接运行脚本
+node tools/deploy.js
+```
+
+#### 部署脚本特性
+- ✅ Stellar主题配置验证
+- ✅ 主题子模块自动初始化
+- ✅ 构建过程详细日志
+- ✅ 关键文件完整性检查
+- ✅ 自动分支管理
+- ✅ 错误恢复机制
+
+## 🔧 配置要求
+
+### 必需配置
+1. **主题设置**: `_config.yml` 中 `theme: stellar`
+2. **子模块**: 确保Stellar主题子模块已添加
+3. **依赖包**: 安装所有必需的npm包
+4. **GitHub Pages**: 启用仓库的Pages功能
+
+### 工作流配置检查
+```bash
+# 检查所有工作流配置
+npm run workflows:check
+
+# 生成详细报告
+npm run workflows:report
+```
+
+### 推荐配置
+```yaml
+# _config.yml
+theme: stellar
+url: https://username.github.io
+language: zh-CN
+
+# _config_stellar.yml  
+search:
+  service: local_search
+comments:
+  service: giscus
+plugins:
+  fancybox:
+    enable: true
+  katex:
+    enable: true
+  mermaid:
+    enable: true
+```
+
+## 📊 构建验证
+
+### 自动验证项目
+- [x] 主题配置文件存在性
+- [x] 必要菜单项配置
+- [x] 搜索功能配置
+- [x] 主题文件完整性
+- [x] 依赖包版本检查
+
+### 构建输出检查
+- [x] `index.html` 首页文件
+- [x] `css/main.css` 样式文件
+- [x] `js/main.js` 脚本文件
+- [x] `search.json` 搜索索引
+- [x] `sitemap.xml` 站点地图
+- [x] `atom.xml` RSS订阅
+
+## 🛠️ 故障排除
+
+### 常见问题
+
+#### 1. 主题文件缺失
+```bash
+# 解决方案
+git submodule update --init --recursive
+npm run themes:status
+```
+
+#### 2. 构建失败
+```bash
+# 检查配置
+npm run stellar:validate
+
+# 清理重建
+npm run clean
+npm run build
+```
+
+#### 3. 部署权限问题
+```bash
+# 检查GitHub token权限
+# 确保仓库Settings > Actions > General中启用了写权限
+```
+
+#### 4. 页面显示异常
+- 检查 `_config.yml` 中的 `url` 配置
+- 验证 `_config_stellar.yml` 中的路径设置
+- 确认所有资源文件正确生成
+
+### 调试命令
+```bash
+# 验证配置
+npm run stellar:validate
+
+# 测试构建 (json_ld错误是已知的，不影响功能)
+npm run stellar:test
+
+# 检查主题状态
+npm run themes:status
+
+# 检查工作流配置
+npm run workflows:check
+
+# 预览部署
+npm run deploy:preview
+
+# 本地服务器
+npm run server
+```
+
+### 已知问题和解决方案
+
+#### Stellar主题json_ld helper错误
+**现象**: 构建过程中出现 `Cannot read properties of null (reading 'startsWith')` 错误
+**影响**: 不影响最终网站生成，所有功能正常
+**解决**: 这是Stellar主题的已知问题，可以忽略，网站会正常生成
+
+#### 工作流状态检查
+```bash
+# 检查所有工作流是否正确配置
+npm run workflows:check
+
+# 生成详细的工作流报告
+npm run workflows:report
+
+# 查看工作流报告
+cat workflow-check-report.json
+```
+
+## 📈 性能优化
+
+### 构建优化
+- 启用npm缓存加速依赖安装
+- 使用增量构建减少构建时间
+- 并行执行验证和测试任务
+
+### 部署优化
+- 使用force_orphan清理历史
+- 压缩静态资源
+- 启用CDN加速
+
+### 监控指标
+- 构建时间: < 5分钟
+- 生成文件数: ~200+ HTML文件
+- 部署大小: < 50MB
+- 页面加载: < 3秒
+
+## 🔐 安全配置
+
+### GitHub Actions安全
+- 使用官方Actions版本
+- 限制token权限范围
+- 启用依赖安全扫描
+- 定期更新依赖包
+
+### 内容安全
+- 过滤敏感文件
+- 验证外部链接
+- 检查XSS风险
+- 启用HTTPS
+
+## 📚 相关文档
+
+- [Stellar主题官方文档](https://xaoxuu.com/wiki/stellar/)
+- [GitHub Pages文档](https://docs.github.com/pages)
+- [GitHub Actions文档](https://docs.github.com/actions)
+- [Hexo官方文档](https://hexo.io/docs/)
+
+## 🆘 获取帮助
+
+### 问题报告
+1. 检查构建日志
+2. 运行诊断命令
+3. 提供错误信息
+4. 描述复现步骤
+
+### 支持渠道
+- GitHub Issues
+- Stellar主题社区
+- Hexo官方论坛
+- 技术文档Wiki
+
+---
+
+**最后更新**: 2025年12月31日  
+**适用版本**: Stellar v1.33.1, Hexo v8.1.1  
+**维护状态**: ✅ 活跃维护

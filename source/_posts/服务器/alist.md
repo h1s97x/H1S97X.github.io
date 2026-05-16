@@ -1,9 +1,13 @@
 ---
 title: Alist 安装配置指南
 date: 2023-01-01 00:00:00
-tags: [服务器, Alist, 文件管理]
-categories: 服务器
+updated: 2023-01-01 00:00:00
+categories:
+  - 服务器
+tags:
+  - [服务器, Alist, 文件管理]
 ---
+
 
 ## Alist 安装成功！
 

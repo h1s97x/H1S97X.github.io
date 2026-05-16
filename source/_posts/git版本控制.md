@@ -1,11 +1,9 @@
 ---
 title: git版本控制
-categories:
-  - null
 date: 2023-09-18 07:40:40
 updated: 2023-09-18 07:40:40
-tags:
 ---
+
 ## 版本控制系统VCS (Version Control System)
 
 一个可以管理和追踪软件代码或其他类似内容的不同版本的工具。

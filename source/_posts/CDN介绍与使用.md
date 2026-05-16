@@ -1,11 +1,9 @@
 ---
 title: CDN介绍与使用
-categories:
-  - null
 date: 2023-08-28 15:50:42
 updated: 2023-08-28 15:50:42
-tags:
 ---
+
 [在线CDN工具](https://www.jsdelivr.com/)
 
 ## CDN介绍

@@ -1,11 +1,9 @@
 ---
 title: CTF - 网络安全夺旗赛
-categories:
-  - null
 date: 2023-10-18 00:11:10
 updated: 2023-10-18 00:11:10
-tags:
 ---
+
 
 ## CTF
 

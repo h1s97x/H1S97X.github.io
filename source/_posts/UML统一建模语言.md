@@ -1,11 +1,9 @@
 ---
 title: UML统一建模语言
-categories:
-  - null
 date: 2023-10-16 10:44:42
 updated: 2023-10-16 10:44:42
-tags:
 ---
+
 
 ## UML词汇表和术语
 

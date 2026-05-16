@@ -1,11 +1,9 @@
 ---
 title: Linux基础
-categories:
-  - null
 date: 2023-12-24 10:27:16
 updated: 2023-12-24 10:27:16
-tags:
 ---
+
 
 [VIM 快速入门之常用命令解析1,VIM复制，粘贴，剪切，替换，查找_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1YY4y1n75r/?vd_source=206a091077ff783d662b49e64cc9589d)
 

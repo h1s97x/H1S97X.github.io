@@ -1,11 +1,9 @@
 ---
 title: 稚晖君开源——ElectronBot:Mini Desktop Robot
-categories:
-  - null
 date: 2023-08-28 19:51:10
 updated: 2023-08-28 19:51:10
-tags:
 ---
+
 
 [GitHub 项目详细说明](https://github.com/peng-zhihui/ElectronBot)
 [B站 复刻项目教程](https://www.bilibili.com/video/BV1CM411K7bL/?spm_id_from=333.880.my_history.page.click&vd_source=206a091077ff783d662b49e64cc9589d)

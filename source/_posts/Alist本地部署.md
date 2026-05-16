@@ -1,11 +1,9 @@
 ---
 title: Alist本地部署
-categories:
-  - null
 date: 2023-09-12 21:38:55
 updated: 2023-09-12 21:38:55
-tags:
 ---
+
 ### 目录
 1.<a href="#Alist手动下载">Alist下载</a>
 2.<a href="#添加存储"></a>添加存储

@@ -1,9 +1,13 @@
 ---
 title: 程序员最爱的网站克隆爬取工具- HTTrack
 date: 2020-03-25 13:29:38
-tags: [工具, 爬虫, HTTrack]
-categories: 工具
+updated: 2020-03-25 13:29:38
+categories:
+  - 工具
+tags:
+  - [工具, 爬虫, HTTrack]
 ---
+
 
 有一些专门针对网站克隆爬取的软件，如 WebZip、awwwb.com 等等，据说挺好用的。这里我给大家介绍一款程序员最爱的网站克隆爬取工具 - HTTrack，而且是开源的。
 

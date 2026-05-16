@@ -103,37 +103,37 @@ function parseYamlLines(lines) {
       
       // 处理不同的键
       switch (key) {
-        case 'title':
-          result.title = value;
-          break;
-        case 'date':
-        case 'updated':
-          result[key] = value;
-          break;
-        case 'categories':
-        case 'tags':
-          if (value && value !== 'null') {
-            result[key].push(value);
-          }
-          currentKey = key;
-          break;
-        case 'comments':
-        case 'mathjax':
-        case 'mermaid':
-        case 'hidden':
-        case 'aside':
-        case 'toc':
-        case 'top':
-        case 'sticky':
-          result[key] = value === 'true' ? true : value === 'false' ? false : value;
-          break;
-        case 'keywords':
-        case 'description':
-        case 'icons':
-          result[key] = value;
-          break;
-        default:
-          result.other[key] = value;
+      case 'title':
+        result.title = value;
+        break;
+      case 'date':
+      case 'updated':
+        result[key] = value;
+        break;
+      case 'categories':
+      case 'tags':
+        if (value && value !== 'null') {
+          result[key].push(value);
+        }
+        currentKey = key;
+        break;
+      case 'comments':
+      case 'mathjax':
+      case 'mermaid':
+      case 'hidden':
+      case 'aside':
+      case 'toc':
+      case 'top':
+      case 'sticky':
+        result[key] = value === 'true' ? true : value === 'false' ? false : value;
+        break;
+      case 'keywords':
+      case 'description':
+      case 'icons':
+        result[key] = value;
+        break;
+      default:
+        result.other[key] = value;
       }
     }
     
@@ -193,7 +193,7 @@ function serializeYaml(data) {
 function fixFile(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
-    const { frontmatter, body, raw } = parseFrontmatter(content);
+    const { frontmatter, body } = parseFrontmatter(content);
     
     if (!frontmatter) {
       console.log(`⚠️  跳过 (无 YAML 头): ${filePath}`);

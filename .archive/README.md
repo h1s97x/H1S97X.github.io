@@ -21,6 +21,9 @@ This directory contains archived documents from previous project iterations.
 │   ├── WORKFLOW_*.md        # Workflow docs
 │   └── *_SUMMARY.md         # Summary documents
 └── .github/ISSUE_TEMPLATE/    # Archived issue templates
+    └── scripts/                # Archived scripts
+        ├── badge_github.js    # GitHub badge tag (not used)
+        └── animate_cube.js    # Rubik's cube animation (not used)
 ```
 
 ## Why Archived?

@@ -2,11 +2,11 @@ name: Deploy Stellar Blog to GitHub Pages
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [ main, develop ]
     paths-ignore:
       - 'source/**'  # 忽略 source 目录，由 incremental-deploy 处理
   pull_request:
-    branches: [ main, master, develop ]
+    branches: [ main, develop ]
   # 支持手动触发（在 GitHub 仓库的 Actions 标签页手动运行）
   workflow_dispatch:
 
@@ -67,7 +67,7 @@ jobs:
         ls -la public/ | head -20
         
     - name: Deploy to GitHub Pages
-      if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+      if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -8,8 +8,8 @@ describe('Build Tests', () => {
   beforeAll(() => {
     // 清理并重新构建
     try {
-      execSync('npx hexo clean', { stdio: 'inherit' });
-      execSync('npx hexo generate', { stdio: 'inherit' });
+      execSync('pnpm exec hexo clean', { stdio: 'inherit' });
+      execSync('pnpm exec hexo generate', { stdio: 'inherit' });
     } catch (error) {
       console.error('Build failed:', error.message);
       throw error;

@@ -27,6 +27,16 @@ This directory contains archived documents from previous project iterations.
 └── source/                  # Archived source configs
     ├── .gitignore           # Obsidian configuration
     └── _templates/          # Obsidian templates
+
+# Binary Files
+
+Binary files (docx, pdf, ppt, zip, xlsx, etc.) are not suitable for
+blog posts. They are archived here instead of being committed to the repo.
+
+| Directory | Content | Reason |
+|-----------|----------|--------|
+| .archive/Linux/ | 实验文档、课件、PPT | 作业/课件文件 |
+| .archive/Game/ | 游戏资料表、工具压缩包 | 二进制文件不适合博客 |
 ```
 
 ## Why Archived?

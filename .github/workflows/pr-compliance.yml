@@ -30,7 +30,7 @@ jobs:
 
       - name: Check PR description
         run: |
-          BODY="${{ github.event.pull_request.body }}"
+          BODY='${{ github.event.pull_request.body }}'
           
           if [ -z "$BODY" ] || [ ${#BODY} -lt 20 ]; then
             echo "❌ PR 描述为空或过短"

@@ -8,8 +8,8 @@ describe('Build Tests', () => {
   beforeAll(() => {
     // 清理并重新构建
     try {
-      execSync('npx hexo clean', { stdio: 'inherit' });
-      execSync('npx hexo generate', { stdio: 'inherit' });
+      execSync('pnpm exec hexo clean', { stdio: 'inherit' });
+      execSync('pnpm exec hexo generate', { stdio: 'inherit' });
     } catch (error) {
       console.error('Build failed:', error.message);
       throw error;
@@ -34,11 +34,14 @@ describe('Build Tests', () => {
   
   test('All required assets should be generated', () => {
     const requiredAssets = [
-      'css',
-      'js',
-      'archives',
-      'categories',
-      'tags'
+      'css/main.css',
+      'js/main.js',
+      'blog/archives',
+      'blog/categories',
+      'blog/tags',
+      'search.json',
+      'sitemap.xml',
+      'atom.xml'
     ];
     
     requiredAssets.forEach(asset => {

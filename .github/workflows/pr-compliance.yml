@@ -1,0 +1,49 @@
+name: PR Compliance
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+    branches: [main, develop]
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title format
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          
+          # 检查格式: type(scope): subject
+          if ! echo "$PR_TITLE" | grep -qE '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9-]+\))?: .+'; then
+            echo "❌ PR 标题格式不正确"
+            echo ""
+            echo "正确格式: type(scope): subject"
+            echo "例如: feat(auth): 添加登录功能"
+            echo "      fix(contact): 修复渲染错误"
+            echo ""
+            echo "允许的 type:"
+            echo "  feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+            exit 1
+          fi
+          
+          echo "✅ PR 标题格式正确"
+
+      - name: Check PR description
+        run: |
+          BODY='${{ github.event.pull_request.body }}'
+          
+          if [ -z "$BODY" ] || [ ${#BODY} -lt 20 ]; then
+            echo "❌ PR 描述为空或过短"
+            echo "请填写 PR 描述模板"
+            exit 1
+          fi
+          
+          echo "✅ PR 描述已填写"
+
+      - name: PR Info
+        run: |
+          echo "📋 PR 信息:"
+          echo "   编号: #${{ github.event.pull_request.number }}"
+          echo "   标题: ${{ github.event.pull_request.title }}"
+          echo "   作者: ${{ github.event.pull_request.user.login }}"
+          echo "   分支: ${{ github.event.pull_request.head.ref }} → ${{ github.event.pull_request.base.ref }}"

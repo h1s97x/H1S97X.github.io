@@ -18,15 +18,15 @@ class BlogDeployer {
   }
 
   /**
-     * 执行命令并返回结果
-     */
+   * 执行命令并返回结果
+   */
   execCommand(command, options = {}) {
     try {
       const result = execSync(command, {
         cwd: this.rootDir,
         encoding: 'utf8',
         stdio: this.isDryRun ? 'pipe' : 'inherit',
-        ...options
+        ...options,
       });
       return result.toString().trim();
     } catch (error) {
@@ -37,8 +37,8 @@ class BlogDeployer {
   }
 
   /**
-     * 检查Git仓库状态
-     */
+   * 检查Git仓库状态
+   */
   checkGitStatus() {
     console.log('🔍 检查Git仓库状态...\n');
 
@@ -50,20 +50,24 @@ class BlogDeployer {
     }
 
     // 获取当前分支
-    this.currentBranch = this.execCommand('git branch --show-current', { stdio: 'pipe' });
+    this.currentBranch = this.execCommand('git branch --show-current', {
+      stdio: 'pipe',
+    });
     console.log(`📍 当前分支: ${this.currentBranch}`);
 
     // 检查是否有未提交的更改
-    const status = this.execCommand('git status --porcelain', { stdio: 'pipe' });
+    const status = this.execCommand('git status --porcelain', {
+      stdio: 'pipe',
+    });
     if (status) {
       console.log('⚠️  检测到未提交的更改:');
       console.log(status);
-            
+
       if (!this.isDryRun) {
         const readline = require('readline');
         const rl = readline.createInterface({
           input: process.stdin,
-          output: process.stdout
+          output: process.stdout,
         });
 
         return new Promise((resolve) => {
@@ -83,7 +87,9 @@ class BlogDeployer {
 
     // 检查远程仓库
     try {
-      const remoteUrl = this.execCommand('git remote get-url origin', { stdio: 'pipe' });
+      const remoteUrl = this.execCommand('git remote get-url origin', {
+        stdio: 'pipe',
+      });
       console.log(`🔗 远程仓库: ${remoteUrl}`);
     } catch {
       console.log('⚠️  未配置远程仓库');
@@ -93,8 +99,8 @@ class BlogDeployer {
   }
 
   /**
-     * 构建静态文件
-     */
+   * 构建静态文件
+   */
   buildSite() {
     console.log('🔨 构建Stellar主题静态网站...\n');
 
@@ -143,7 +149,7 @@ class BlogDeployer {
       'css/main.css',
       'js/main.js',
       'search.json',
-      'sitemap.xml'
+      'sitemap.xml',
     ];
 
     console.log('🔍 验证关键文件:');
@@ -164,11 +170,13 @@ class BlogDeployer {
   }
 
   /**
-     * 检查gh-pages分支是否存在
-     */
+   * 检查gh-pages分支是否存在
+   */
   checkGhPagesBranch() {
     try {
-      this.execCommand('git show-ref --verify --quiet refs/heads/gh-pages', { stdio: 'pipe' });
+      this.execCommand('git show-ref --verify --quiet refs/heads/gh-pages', {
+        stdio: 'pipe',
+      });
       return true;
     } catch {
       return false;
@@ -176,8 +184,8 @@ class BlogDeployer {
   }
 
   /**
-     * 创建gh-pages分支
-     */
+   * 创建gh-pages分支
+   */
   createGhPagesBranch() {
     console.log('🌿 创建 gh-pages 分支...\n');
 
@@ -189,21 +197,24 @@ class BlogDeployer {
     try {
       // 创建孤立分支
       this.execCommand('git checkout --orphan gh-pages');
-            
+
       // 清空所有文件
       this.execCommand('git rm -rf .');
-            
+
       // 创建初始提交
-      fs.writeFileSync('README.md', '# GitHub Pages\n\n这是自动生成的部署分支。\n');
+      fs.writeFileSync(
+        'README.md',
+        '# GitHub Pages\n\n这是自动生成的部署分支。\n'
+      );
       this.execCommand('git add README.md');
       this.execCommand('git commit -m "Initial commit for gh-pages"');
-            
+
       // 推送到远程
       this.execCommand('git push origin gh-pages');
-            
+
       // 切回原分支
       this.execCommand(`git checkout ${this.currentBranch}`);
-            
+
       console.log('✅ gh-pages 分支创建成功');
     } catch {
       console.error('❌ 创建 gh-pages 分支失败');
@@ -219,8 +230,8 @@ class BlogDeployer {
   }
 
   /**
-     * 部署到gh-pages分支（增量更新，保留历史）
-     */
+   * 部署到gh-pages分支（增量更新，保留历史）
+   */
   deployToGhPages() {
     console.log('🚀 部署到 gh-pages 分支（增量更新模式）...\n');
 
@@ -250,9 +261,9 @@ class BlogDeployer {
 
       // 清空分支内容（保留.git目录和.gitignore）
       console.log('🧹 清理旧文件...');
-      const files = fs.readdirSync(this.rootDir).filter(file => 
-        file !== '.git' && file !== '.gitignore'
-      );
+      const files = fs
+        .readdirSync(this.rootDir)
+        .filter((file) => file !== '.git' && file !== '.gitignore');
       for (const file of files) {
         const filePath = path.join(this.rootDir, file);
         if (fs.statSync(filePath).isDirectory()) {
@@ -268,7 +279,7 @@ class BlogDeployer {
       for (const file of publicFiles) {
         const srcPath = path.join(this.publicDir, file);
         const destPath = path.join(this.rootDir, file);
-                
+
         if (fs.statSync(srcPath).isDirectory()) {
           this.copyDirectory(srcPath, destPath);
         } else {
@@ -281,7 +292,9 @@ class BlogDeployer {
       this.execCommand('git add -A');
 
       // 检查是否有更改
-      const status = this.execCommand('git status --porcelain', { stdio: 'pipe' });
+      const status = this.execCommand('git status --porcelain', {
+        stdio: 'pipe',
+      });
       if (status) {
         // 创建详细的提交信息
         const date = new Date().toISOString().split('T')[0];
@@ -297,10 +310,9 @@ class BlogDeployer {
       } else {
         console.log('ℹ️  没有更改需要部署');
       }
-
     } catch (error) {
       console.error('❌ 部署失败:', error.message);
-      throw new Error('部署失败');
+      throw new Error('部署失败', { cause: error });
     } finally {
       // 切回原分支
       try {
@@ -315,8 +327,8 @@ class BlogDeployer {
   }
 
   /**
-     * 递归复制目录
-     */
+   * 递归复制目录
+   */
   copyDirectory(src, dest) {
     if (!fs.existsSync(dest)) {
       fs.mkdirSync(dest, { recursive: true });
@@ -336,37 +348,39 @@ class BlogDeployer {
   }
 
   /**
-     * 递归查找指定扩展名的文件
-     */
+   * 递归查找指定扩展名的文件
+   */
   findFiles(dir, extension) {
     let files = [];
     const items = fs.readdirSync(dir);
-        
+
     for (const item of items) {
       const fullPath = path.join(dir, item);
       const stat = fs.statSync(fullPath);
-            
+
       if (stat.isDirectory()) {
         files = files.concat(this.findFiles(fullPath, extension));
       } else if (item.endsWith(extension)) {
         files.push(fullPath);
       }
     }
-        
+
     return files;
   }
 
   /**
-     * 显示部署结果
-     */
+   * 显示部署结果
+   */
   showResult() {
     console.log('🎉 Stellar主题部署完成！\n');
-        
+
     try {
-      const remoteUrl = this.execCommand('git remote get-url origin', { stdio: 'pipe' });
+      const remoteUrl = this.execCommand('git remote get-url origin', {
+        stdio: 'pipe',
+      });
       const repoName = remoteUrl.split('/').pop().replace('.git', '');
       const username = remoteUrl.split('/').slice(-2, -1)[0].split(':').pop();
-            
+
       console.log('📋 部署信息:');
       console.log('   主题: Stellar v1.33.1');
       console.log(`   仓库: ${username}/${repoName}`);
@@ -390,8 +404,8 @@ class BlogDeployer {
   }
 
   /**
-     * 执行完整部署流程
-     */
+   * 执行完整部署流程
+   */
   async deploy() {
     console.log('🚀 开始自动部署流程\n');
     console.log('='.repeat(50));
@@ -421,7 +435,6 @@ class BlogDeployer {
       // 5. 显示结果
       console.log('='.repeat(50));
       this.showResult();
-
     } catch (error) {
       console.error('\n❌ 部署失败:');
       console.error(error.message);
@@ -430,8 +443,8 @@ class BlogDeployer {
   }
 
   /**
-     * 显示帮助信息
-     */
+   * 显示帮助信息
+   */
   showHelp() {
     console.log('📖 Stellar主题自动部署工具使用说明\n');
     console.log('用法:');
@@ -475,7 +488,7 @@ async function main() {
 
 // 如果直接运行此脚本
 if (require.main === module) {
-  main().catch(err => {
+  main().catch((err) => {
     console.error('❌ 程序异常退出:', err.message);
     process.exit(1);
   });

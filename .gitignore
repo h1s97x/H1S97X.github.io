@@ -46,6 +46,10 @@ ehthumbs.db
 Thumbs.db
 Desktop.ini
 
+# Coze platform
+.coze
+coze-scripts/
+
 # Editor backup files
 *~
 *.bak
@@ -96,4 +100,3 @@ out/
 .obsidian/
 .idea/
 themes/
-source/assets/

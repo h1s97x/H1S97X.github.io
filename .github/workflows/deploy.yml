@@ -2,11 +2,11 @@ name: Deploy Stellar Blog to GitHub Pages
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [ main, develop ]
     paths-ignore:
       - 'source/**'  # 忽略 source 目录，由 incremental-deploy 处理
   pull_request:
-    branches: [ main, master, develop ]
+    branches: [ main, develop ]
   # 支持手动触发（在 GitHub 仓库的 Actions 标签页手动运行）
   workflow_dispatch:
 
@@ -25,33 +25,38 @@ jobs:
         submodules: true
         fetch-depth: 0  # 获取完整历史，支持子模块
         
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
+        
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '22'
-        cache: 'npm'
+        node-version: '20.x'
+        cache: 'pnpm'
         
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install
       
     - name: Initialize theme submodules
       run: |
         git submodule update --init --recursive
-        npm run themes:status
+        pnpm run themes:status
         
     - name: Validate Stellar theme configuration
-      run: npm run stellar:validate
+      run: pnpm run stellar:validate
       
     - name: Run tests (allow failures for now)
-      run: npm test || echo "⚠️ Tests failed but continuing with deployment"
+      run: pnpm test || echo "⚠️ Tests failed but continuing with deployment"
       
     - name: Build static files with Stellar theme
       run: |
-        npm run clean
+        pnpm run clean
         echo "🔍 Validating configuration before build..."
-        npm run stellar:validate
+        pnpm run stellar:validate
         echo "🏗️ Building with Stellar theme..."
-        npm run build
+        pnpm run build
         echo "📊 Build statistics:"
         find public -name "*.html" | wc -l | xargs echo "Generated HTML files:"
         du -sh public | cut -f1 | xargs echo "Total size:"
@@ -67,7 +72,7 @@ jobs:
         ls -la public/ | head -20
         
     - name: Deploy to GitHub Pages
-      if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+      if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

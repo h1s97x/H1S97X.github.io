@@ -30,15 +30,15 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '22'
-        cache: 'npm'
+        cache: 'pnpm'
         
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install
       
     - name: Initialize theme submodules
       run: |
         git submodule update --init --recursive
-        npm run themes:status
+        pnpm run themes:status
         
     - name: Detect changed files in source directory
       id: changes
@@ -63,7 +63,7 @@ jobs:
       if: steps.changes.outputs.changed_files != 'none'
       run: |
         echo "🏗️ Building with Stellar theme (incremental mode)..."
-        npm run build
+        pnpm run build
         echo "📊 Build statistics:"
         find public -name "*.html" | wc -l | xargs echo "Generated HTML files:"
         du -sh public | cut -f1 | xargs echo "Total size:"

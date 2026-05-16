@@ -1,0 +1,8 @@
+# 插件配置示例
+# 复制到 configs/plugins/ 目录使用
+
+# 示例: plugin-math.yml
+enabled: true
+priority: 10
+options:
+  delimiter: $$

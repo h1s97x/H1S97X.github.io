@@ -279,18 +279,18 @@ module.exports = function(ctx) {
 
 ## 七、实施计划
 
-### Phase 1: 基础设施 (TBD)
-- [ ] 统一包管理器 (pnpm)
-- [ ] 完善 Git Hooks
-- [ ] 优化 CI/CD Pipeline
-- [ ] 建立 commit message 规范
+### Phase 1: 基础设施 ✅
+- [x] 统一包管理器 (pnpm)
+- [x] 完善 Git Hooks
+- [x] 优化 CI/CD Pipeline
+- [x] 建立 commit message 规范
 
-### Phase 2: 架构重构 (TBD)
-- [ ] 目录结构重组
-- [ ] 配置解耦
-- [ ] 插件化拆分
+### Phase 2: 架构重构 (进行中)
+- [x] 目录结构重组 (core/plugins/content/configs)
+- [ ] 配置解耦 (待确认方案)
+- [ ] 插件化拆分 (待确认粒度)
 
-### Phase 3: 质量提升 (TBD)
+### Phase 3: 质量提升 (待开始)
 - [ ] 测试覆盖率提升
 - [ ] 文档完善
 - [ ] 自动化工具增强

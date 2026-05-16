@@ -15,24 +15,13 @@ Hexo 静态博客项目，使用 Stellar 主题。主要功能是技术分享与
 
 ## 核心设计原则
 
-### 高解耦架构
+### 简洁务实
 
-项目采用 **主应用 + 插件** 的架构设计，类似 VSCode 扩展机制：
-
-```
-core/           → 核心层 (Hexo 基础 + 主题核心)
-plugins/        → 插件层 (可插拔功能模块)
-content/        → 内容层 (博客、笔记、题解)
-configs/        → 配置层 (解耦的配置文件)
-```
-
-### 插件化原则
-
-每个插件应具备：
-- 独立目录结构
-- 独立配置文件
-- 独立测试
-- 可独立启用/禁用
+对于博客项目，保持简单：
+- 使用 Hexo 原生插件系统
+- 自定义脚本放在 `scripts/` 目录
+- 工具脚本放在 `tools/` 目录
+- 配置文件使用 `_config.*.yml`
 
 ## Git 工作流
 
@@ -71,11 +60,17 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 
 ## 当前状态
 
-### 已规划未实施
+### 已完成 ✅
 
-- 目录结构重构 (迁移到 core/plugins/content)
-- 插件化拆分
-- 配置解耦
+- 依赖清理 (移除未使用的 hexo-tag-aplayer, hexo-filter-mermaid-diagrams)
+- 工具脚本清理 (移除 5 个重复/无用脚本)
+- Workflows 简化 (保留 ci.yml, deploy.yml, pr-compliance.yml)
+- 流程规范化 (commitlint, PR 模板, 分支保护)
+
+### 待处理
+
+- 主题配置优化
+- 文档完善
 - 测试覆盖率提升
 
 详见: `docs/REFACTOR_GUIDE.md`
@@ -84,16 +79,15 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 
 ```
 /workspace/projects/
-├── source/                   # 内容 (待迁移)
-├── themes/stellar/           # 主题 (submodule)
-├── scripts/                  # Hexo 脚本
-├── tools/                    # 工具脚本
-├── configs/                  # 配置文件 (待创建)
-├── plugins/                  # 插件目录 (待创建)
-├── _config.yml              # Hexo 主配置
-├── _config.stellar.yml      # 主题配置
+├── .github/workflows/        # CI/CD 配置
+├── source/                  # 博客内容
+├── themes/stellar/          # 主题 (submodule)
+├── scripts/                 # Hexo 脚本 (filters/tags/generators)
+├── tools/                   # 工具脚本
+├── _config.yml             # Hexo 主配置
+├── _config.stellar.yml     # 主题配置
 ├── package.json
-└── coze-scripts/            # Coze 平台脚本
+└── coze-scripts/           # Coze 平台脚本
 ```
 
 ## 运行命令
@@ -104,12 +98,13 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 | `pnpm run server` | 启动本地预览 |
 | `pnpm run lint` | ESLint 检查 |
 | `pnpm run test` | 运行单元测试 |
+| `pnpm run deploy` | 部署到 GitHub Pages |
+| `pnpm run stellar:validate` | 验证 Stellar 主题配置 |
 
 ## 常见问题
 
-1. **Nunjucks 渲染错误**: contact/index.md 中的 `{% quot %}` 标签需修复
-2. **多渲染器**: 需清理 hexo-renderer-jade/marked
-3. **未使用的主题**: butterfly/next/anzhiyu 需移除
+1. **主题 submodule**: 使用 `pnpm run themes:init` 初始化
+2. **构建失败**: 先运行 `pnpm run stellar:validate` 检查配置
 
 ## Coze 平台配置
 

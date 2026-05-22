@@ -69,7 +69,7 @@
     "postcss": "^8.5.14",
     "probe-image-size": "^7.3.0",
     "svgo": "^4.0.0",
-    "terser": "^5.47.1"
+    "terser": "^5.48.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -75,7 +75,7 @@
     "@eslint/js": "^10.0.1",
     "all-contributors-cli": "^6.26.1",
     "audit-ci": "^7.1.0",
-    "eslint": "^10.4.0",
+    "eslint": "^10.5.0",
     "gray-matter": "^4.0.3",
     "hexo-update-time": "^1.1.2",
     "husky": "^9.1.7",

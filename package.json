@@ -68,7 +68,7 @@
     "hexo-theme-stellar": "1.33.1",
     "postcss": "^8.5.14",
     "probe-image-size": "^7.3.0",
-    "svgo": "^4.0.0",
+    "svgo": "^4.0.2",
     "terser": "^5.47.1"
   },
   "devDependencies": {

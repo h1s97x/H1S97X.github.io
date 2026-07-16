@@ -45,6 +45,16 @@ site_tree:
     rightbar: toc
     nav_tabs:
       '最新发布': /
+  index_notes:
+    base_dir: notes
+    menu_id: notes
+    leftbar: welcome, recent
+    rightbar: toc
+  index_coding:
+    base_dir: coding
+    menu_id: coding
+    leftbar: welcome, recent
+    rightbar: toc
   index_topic:
     base_dir: topic
     menu_id: post
@@ -70,12 +80,16 @@ site_tree:
     leftbar: recent
     rightbar: null
   notes:
-    menu_id: notebooks
+    menu_id: notes
     leftbar: tagtree, recent
     rightbar: null
   note:
     leftbar: tagtree, recent
     rightbar: toc
+  coding:
+    menu_id: coding
+    leftbar: tagtree, recent
+    rightbar: null
   author: 
     base_dir: author
     menu_id: post

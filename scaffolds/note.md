@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
-type: story
+notebook: notes
+tags: []
 date: {{ date }}
 updated: {{ date }}
 ---

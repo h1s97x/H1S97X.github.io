@@ -1,10 +1,11 @@
 ---
 title: 一些困难和解决方案
-date: 2023-08-28 17:11:50
-updated: 2026-07-17 00:08:29
+date: 2026-07-17 00:12:52
+updated: 2026-07-17 00:12:52
 categories:
   - 生活
 ---
+
 
 ### Cannot push on GitHub suddently
 

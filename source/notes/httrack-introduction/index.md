@@ -1,11 +1,10 @@
 ---
 title: HTTrack 简单使用
-date: '2025-12-27 23:46:11'
-updated: '2025-12-27 23:46:11'
+date: 2026-07-17 00:12:52
+updated: 2026-07-17 00:12:52
 categories:
   - 生活
 ---
-
 
 # HTTrack 简单使用
 
@@ -74,7 +73,7 @@ root@kali:~# apt-get install httrack
            4	Mirror ALL links in URLs (Multiple Mirror)//镜像在这个url下所有的链接
            5	Test Links In URLs (Bookmark Test)	//测试在这个url下的链接
            0	Quit	//退出
-   : 
+   :
    ```
 
    [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200731.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200731.png)
@@ -124,7 +123,7 @@ root@kali:~# apt-get install httrack
 httrack <URLs> [-option] [+<URL_FILTER>] [-<URL_FILTER>] [+<mime:MIME_FILTER>] [-<mime:MIME_FILTER>]
 ```
 
-选项如下：（* 为默认值）
+选项如下：（\* 为默认值）
 
 ## 一般选项
 

@@ -1,19 +1,17 @@
 ---
 title: 程序员最爱的网站克隆爬取工具- HTTrack
 date: 2020-03-25 13:29:38
-updated: 2020-03-25 13:29:38
+updated: 2026-07-17 00:08:29
 categories:
   - 生活
-tags: 
+tags:
 ---
-
-
 
 有一些专门针对网站克隆爬取的软件，如 WebZip、awwwb.com 等等，据说挺好用的。这里我给大家介绍一款程序员最爱的网站克隆爬取工具 - HTTrack，而且是开源的。
 
 # 什么是 HTTrack？
 
-HTTrack 是一个免费并易于使用的线下浏览器工具，全称是 HTTrack Website Copier for Windows，它能够让你从互联网上下载指定的网站进行线下浏览 (离线浏览)，也可以用来收集信息 (甚至有网站使用隐藏的密码文件)，一些仿真度极高的伪网站（为了骗取用户密码），也是使用类似工具做的。浏览线下站点和线上并没有什么不同。
+HTTrack 是一个免费并易于使用的线下浏览器工具，全称是 HTTrack site Copier for Windows，它能够让你从互联网上下载指定的网站进行线下浏览 (离线浏览)，也可以用来收集信息 (甚至有网站使用隐藏的密码文件)，一些仿真度极高的伪网站（为了骗取用户密码），也是使用类似工具做的。浏览线下站点和线上并没有什么不同。
 
 HTTrack 同样可以进行线下线上站点同步，支持断点续传。HTTrack 是一个可全面配置并包括全面的帮助系统的工具。对于传统的像存在 Robots.txt 的网站，如果程序运行的时候不做限制，在默认的环境下程序不会把网站镜像，简单来说 HTTPrack 跟随基本的 JavaScript 或者 APPLet、flash 中的链接，对于复杂的链接（使用函数和表达式创建的链接）或者服务器端的 ImageMap 则不能镜像。一般不用挖的太深就能获取目标信息比如网站的物理地址，电话号码，电子邮箱地址，运营时间，商业关系，员工的姓名，与社会关系，以及公开的一些花絮。做渗透测试时新闻其实也很重要，公司时常会公开一些自己感到骄傲的事情，这些报到中可能会泄露有用的信息，企业兼并服务器运转的情况等等。
 
@@ -33,7 +31,7 @@ HTTrack 已经被预安装在以下 Linux 系统中：
 
 ### HTTrack 的安装和使用
 
-HTTrack 支持 Windows、Linux 和 MacOS 等主流的操作系统，且针对 Windows 而言，HTTrack 有可视化界面的支持，效果如下：
+HTTrack 支持 Windows、Linux 和 macOS 等主流的操作系统，且针对 Windows 而言，HTTrack 有可视化界面的支持，效果如下：
 
 ![程序员最爱的网站克隆爬取工具- HTTrack](https://cdn.learnku.com/uploads/images/202003/25/46135/ZAiXId8zaR.png!large)
 
@@ -74,12 +72,12 @@ cd httrack
 
 # 爬取一个网站
 
-测试站地址： https://****.com
+测试站地址： https://\*\*\*\*.com
 
 ```
 xdl@xdl-virtual-machine:~/Downloads$ htt
-httrack    httxt2dbm  
-xdl@xdl-virtual-machine:~/Downloads$ httrack 
+httrack    httxt2dbm
+xdl@xdl-virtual-machine:~/Downloads$ httrack
 
 Welcome to HTTrack Website Copier (Offline Browser) 3.49-2
 Copyright (C) 1998-2017 Xavier Roche and other contributors
@@ -98,7 +96,7 @@ Action:
     4    Mirror ALL links in URLs (Multiple Mirror)
     5    Test Links In URLs (Bookmark Test)
     0    Quit
-: 
+:
 
 Proxy (return=none) :
 
@@ -109,7 +107,7 @@ You can define additional options, such as recurse level (-r<number>), separated
 To see the option list, type help
 Additional options (return=none) :
 
----> Wizard command line: httrack https://localhost.com  -O "/home/xdl/websites/jiayu"  -%v  
+---> Wizard command line: httrack https://localhost.com  -O "/home/xdl/websites/jiayu"  -%v
 
 Ready to launch the mirror? (Y/n) :y
 
@@ -117,7 +115,7 @@ Mirror launched on Wed, 25 Mar 2020 13:29:38 by HTTrack Website Copier/3.49-2 [X
 mirroring https://localhost.com with the wizard help..
 Done.
 Thanks for using HTTrack!
-* 
+*
 ```
 
 ## 参数解析

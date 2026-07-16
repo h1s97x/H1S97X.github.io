@@ -1,45 +1,43 @@
 ---
 title: python密码学实验
 date: 2023-10-17 10:17:02
-updated: 2023-10-17 10:17:02
+updated: 2026-07-17 00:08:29
 categories:
   - 生活
 ---
 
-
-
-## 实验一：熟悉Python开发环境，凯撒密码与仿射密码
+## 实验一：熟悉 Python 开发环境，凯撒密码与仿射密码
 
 ### 实验目的
 
-- 熟悉Pycharm/ Python Idle开发
+- 熟悉 Pycharm/ Python Idle 开发
 
-- 完成Casear密码的编程。
+- 完成 Casear 密码的编程。
 
 ### 实验内容
 
-1、安装Python、Pycharm；了解Idle的应用；学会pip安装命令，将Cryptography gmpy2库安装到python中。
+1、安装 Python、Pycharm；了解 Idle 的应用；学会 pip 安装命令，将 Cryptography gmpy2 库安装到 python 中。
 
-2、编写Casear密码程序，扩展到仿射密码、以及Casear密码的破译程序。
+2、编写 Casear 密码程序，扩展到仿射密码、以及 Casear 密码的破译程序。
 
-#### caesar密码python实现
+#### caesar 密码 python 实现
 
 [Python 密码学教程 - w3schools](https://www.w3schools.cn/cryptography_with_python/cryptography_with_python_affine_cipher.html)
 
 第一版代码：
 
-两个函数分别实现对Caesar密码的加密和解密，关键的操作公式是相同的，只是对密钥进行加减操作。
+两个函数分别实现对 Caesar 密码的加密和解密，关键的操作公式是相同的，只是对密钥进行加减操作。
 
-``` 第一版
+```第一版
 for i in message:
 	ciphertext += (chr(ord(i) + k)) # 将明文汉字转换为对应ASCLL数值或Unicode数值（ord函数），然后在此数值上+3，再将该值返回汉字（chr函数）
 ```
 
 第二版代码：
 
-同样是两个函数分别实现对Caesar密码的加密和解密，将公式进行修改，第一版并不能把密码限制在26个字母。
+同样是两个函数分别实现对 Caesar 密码的加密和解密，将公式进行修改，第一版并不能把密码限制在 26 个字母。
 
-``` 第二版
+```第二版
 for i in range(len(text)):
     char = text[i]
     if (char.isupper()):
@@ -52,7 +50,7 @@ for i in range(len(text)):
 
 能够自定义
 
-``` 第三版
+```第三版
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
 def caesar_encrypt(mode, message, key):
     if mode[0] == 'd':
@@ -106,16 +104,16 @@ def caesar_decrypt(message):
 
 #### 仿射密码
 
-[仿射密码Python实现](https://www.cnblogs.com/clwsec/p/10198428.html)
+[仿射密码 Python 实现](https://www.cnblogs.com/clwsec/p/10198428.html)
 仿射密码是一种替换密码。它是利用加密函数一个字母对一个字母的加密。
 
-加密函数是E(x)= (ax + b) (mod m)，其中，a和m互质，m是字符集的大小。
-（例如，26即是以26个字母作为编码，当m是26时，a必须是1，3，5，7，9，11，15，17，19，21，23，25其中之一）
+加密函数是 E(x)= (ax + b) (mod m)，其中，a 和 m 互质，m 是字符集的大小。
+（例如，26 即是以 26 个字母作为编码，当 m 是 26 时，a 必须是 1，3，5，7，9，11，15，17，19，21，23，25 其中之一）
 
-解密函数为D(x) = a<sup>-1</sup>(x - b) (mod m)，其中a<sup>-1</sup>是a在Zm群的乘法逆元。
+解密函数为 D(x) = a<sup>-1</sup>(x - b) (mod m)，其中 a<sup>-1</sup>是 a 在 Zm 群的乘法逆元。
 
 > **乘法逆元**
-> 群G中任意一个元素a，都在G中有唯一的逆元a'，具有性质aa' = a'a = e，其中e为群的单位元。
+> 群 G 中任意一个元素 a，都在 G 中有唯一的逆元 a'，具有性质 aa' = a'a = e，其中 e 为群的单位元。
 
 ```
 '''
@@ -203,7 +201,6 @@ b = 29 # key的范围0~51之间
 decrypt(a,b,message)
 ```
 
-
 ```
 class Affine(object):
     DIE = 128
@@ -234,7 +231,7 @@ print(affine.decrypt('*18?FMT'))
 
 ### 实验二：哈希函数
 
-1、	编程实现生成空字符串、‘Alice’、‘Bob’的md5、sha256的哈希值；
+1、 编程实现生成空字符串、‘Alice’、‘Bob’的 md5、sha256 的哈希值；
 
 ```
 import hashlib
@@ -251,7 +248,7 @@ def hash_sha256():
     print('"Bob" sha256:' + bob.hexdigest())
 ```
 
-2、	编程实现生成自己名字的哈希值，注意编码的转换；
+2、 编程实现生成自己名字的哈希值，注意编码的转换；
 
 ```
 def myhash(str = "Yangjiaqing"):
@@ -259,7 +256,7 @@ def myhash(str = "Yangjiaqing"):
     print(str + " md5: " + res.hexdigest())
 ```
 
-3、	编写体现哈希雪崩的代码，哈希值用二进制表示； 参考Listing2-5 代码；
+3、 编写体现哈希雪崩的代码，哈希值用二进制表示； 参考 Listing2-5 代码；
 [Python 哈希函数与消息认证实验](https://huaweicloud.csdn.net/63807e39dacf622b8df88c1c.html#:~:text=%23%20%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%E7%9A%84%E9%9B%AA%E5%B4%A9%E6%95%88%E5%BA%94%20%23%20author%3Amarxycj%20%23%20date%3A2021-10-29%20from%20hashlib,%27__main__%27%20%3A%20md5_value%20%3D%20input%20%28%29%20brute_md5%20%28md5_value%29)
 [展示散列函数的雪崩效应](https://www.wolfram.com/language/12/cryptography/demonstrate-the-avalanche-effect-of-a-hash-function.html.zh)
 
@@ -287,9 +284,9 @@ def avalanche(str1 = 'bob', str2 = 'aob'):
     print("两个哈希值不同的位数：" + str(cmpcount(binstring1, binstring2)))
 ```
 
-4、	利用scrypt密钥派生函数，实现口令加盐，生成更加安全的密钥（口令）；
+4、 利用 scrypt 密钥派生函数，实现口令加盐，生成更加安全的密钥（口令）；
 [创建一个 Python 盐](https://deepinout.com/python/python-qa/169_python_creating_a_salt_in_python.html#:~:text=Python%203.6%2B%20%E7%9A%84%20secrets%20%E6%A8%A1%E5%9D%97%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E7%A7%8D%E6%9B%B4%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E3%80%82%20%E4%B8%8B%E9%9D%A2%E6%98%AF%E4%BD%BF%E7%94%A8%20secrets%20%E6%A8%A1%E5%9D%97%E7%94%9F%E6%88%90%E7%9B%90%E7%9A%84%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81%EF%BC%9A,16%20salt%20%3D%20secrets.token_hex%28salt_length%29%20print%28salt%29%20%E4%B8%8A%E8%BF%B0%E4%BB%A3%E7%A0%81%E5%B0%86%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E9%95%BF%E5%BA%A6%E4%B8%BA%2016%20%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BD%9C%E4%B8%BA%E7%9B%90%E3%80%82)
-Scrypt介绍
+Scrypt 介绍
 Scrypt 是一个强大的密钥派生函数，其通过内存密集的计算方式来抵抗 GPU、ASIC、FPGA 这类密码破解硬件的攻击。
 
 Scrypt 接收多个输入参数，进行计算后输出密钥：
@@ -305,7 +302,7 @@ key = Scrypt(password, salt, N, r, p, derived-key-len)
 > derived-key-len - 输出的密钥要有多少字节长，例如 32 （256 位）
 > Scrypt 的输出密钥长度可以是 128 位到 512 位，但是通常为 256 位。
 
-Salt 用使用 secrets 模块生成，也可以用os.urandom()随机生成
+Salt 用使用 secrets 模块生成，也可以用 os.urandom()随机生成
 
 ```
 def hash_password(password = b'p@$Sw0rD~7'):
@@ -317,8 +314,8 @@ def hash_password(password = b'p@$Sw0rD~7'):
 
 5、实现区块链中的工作量证明编程，通过设置不同的难度，体会生成符合要求哈希值需要时间长短的不同；
 [从零开始构建一个区块链（二）： 工作量证明](https://zhuanlan.zhihu.com/p/29903461)
-[使用python实现简版区块链-工作量证明](https://blog.csdn.net/xiaobing1994/article/details/87967693)
-[区块链的简单实现 - github](https://github.com/xiaobing94/pysimpleblockchain/tree/part2)
+[使用 python 实现简版区块链-工作量证明](https://blog.csdn.net/xiaobing1994/article/details/87967693)
+[区块链的简单实现 - GitHub](https://github.com/xiaobing94/pysimpleblockchain/tree/part2)
 
 ```
 import sys
@@ -375,7 +372,7 @@ class ProofOfWork(object):
                 break
 
             nonce += 1
-        if found: 
+        if found:
             print('Found nonce == %d' % nonce)
         else:
             print('Not Found nonce')
@@ -390,13 +387,13 @@ if __name__ == "__main__":
 
 [分组密码的五大工作模式](https://zhuanlan.zhihu.com/p/364772865)
 
-[使用cryptography进行AES的cbc模式加密 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/23276413)
+[使用 cryptography 进行 AES 的 cbc 模式加密 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/23276413)
 
 [istommao/cryptokit: cryptokit is a cryptography kit (github.com)](https://github.com/istommao/cryptokit/tree/main)
 
-4、练习3-12 手工CBC:编程应用AES的ECB模式实现CBC模式
+4、练习 3-12 手工 CBC:编程应用 AES 的 ECB 模式实现 CBC 模式
 
-``` 失败作
+```失败作
 def ecbTocbc(self, data):
     if not isinstance(data, bytes):
         data = data.encode()
@@ -427,9 +424,9 @@ def ecbTocbc(self, data):
     return m
 ```
 
-5、练习3-13 简单CTR模式：编程应用AES的ECB模式实现CTR模式
+5、练习 3-13 简单 CTR 模式：编程应用 AES 的 ECB 模式实现 CTR 模式
 
-``` 失败作
+```失败作
 def ecbToctr(self, data):
     if not isinstance(data, bytes):
         data = data.encode()
@@ -464,4 +461,4 @@ def ecbToctr(self, data):
 
 ### 实验四：实现非对称加密编程
 
-[非对称密钥沉思系列（1）：RSA专题之PKCSv1.5填充模式下的选择性密文攻击概述-腾讯云开发者社区-腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/2186122)
+[非对称密钥沉思系列（1）：RSA 专题之 PKCSv1.5 填充模式下的选择性密文攻击概述-腾讯云开发者社区-腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/2186122)

@@ -1,43 +1,40 @@
 ---
 title: git版本控制
 date: 2023-09-18 07:40:40
-updated: 2023-09-18 07:40:40
+updated: 2026-07-17 00:08:29
 categories:
   - 技术
 ---
 
-
-## 版本控制系统VCS (Version Control System)
+## 版本控制系统 VCS (Version Control System)
 
 一个可以管理和追踪软件代码或其他类似内容的不同版本的工具。
 出于相同的目的：开发以及维护开发出来的代码、方便读取代码的历史版本、记录所有的修改、方便团队协作开发。
 
 ## Git
 
-[Git简介 - 廖雪峰的官方网站 (liaoxuefeng.com)](https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000)
+[Git 简介 - 廖雪峰的官方网站 (liaoxuefeng.com)](https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000)
 
-### Git安装
+### Git 安装
 
 官方下载地址：
 
 [Git - 安装 Git (git-scm.com)](https://git-scm.com/book/zh/v2/起步-安装-Git)
 
-因为Git有很多新的配置项，而且之前也不懂，没有概念，之后可以考虑把这一块补充上，下面是一些参考链接，翻译可以用有道截图翻译（非常推荐）。
+因为 Git 有很多新的配置项，而且之前也不懂，没有概念，之后可以考虑把这一块补充上，下面是一些参考链接，翻译可以用有道截图翻译（非常推荐）。
 
-[2022新版Git教程 从入门到实战（一）安装Git（一）-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1060387)
-
-
+[2022 新版 Git 教程 从入门到实战（一）安装 Git（一）-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1060387)
 
 配置项：
 
-[Git安装教程_git默认编辑器选什么好-CSDN博客](https://blog.csdn.net/boyi6573/article/details/126897945)
+[Git 安装教程\_git 默认编辑器选什么好-CSDN 博客](https://blog.csdn.net/boyi6573/article/details/126897945)
 
-[在git上和github上修改默认分支 - 掘金 (juejin.cn)](https://juejin.cn/post/7200627917307428923)
+[在 git 上和 github 上修改默认分支 - 掘金 (juejin.cn)](https://juejin.cn/post/7200627917307428923)
 
-### 常用Git命令
+### 常用 Git 命令
 
 [Git 常用基本命令使用详细大全](https://blog.csdn.net/qtiao/article/details/97783243?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8%3D)
-[Git教程 - 廖雪峰](https://www.liaoxuefeng.com/wiki/896043488029600)
+[Git 教程 - 廖雪峰](https://www.liaoxuefeng.com/wiki/896043488029600)
 
 ```
 git remote prune origin      删除本地有但在远程库已经不存在的分支 <br>
@@ -61,6 +58,7 @@ git push origin --delete dev20181018    删除远程分支<br>
 git branch -d dev20181018   删除本地分支<br>
 git cherry-pick 285c9477a759abdee94099e25e75e39e8c77d46b 合并指定版本
 ```
+
 ```
 git init
 初始化一个git仓库
@@ -129,62 +127,60 @@ git stash list
 查看暂存区
 ```
 
-
-
 ##### 命令流程图
 
 ![](img/git/命令流程图.png)
 
 ### Bug&Solution
 
-####ssh -T git@github.com
+####SSH -T git@github.com
 
 [测试 SSH 连接](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
-[git push origin master报错的解决方法 & 常见git命令（待更新）](https://blog.csdn.net/qq_33934427/article/details/109004052)
-[git 提交出现 Updates were rejected 解决方案](https://www.cnblogs.com/liliuyu/articles/14015522.html)
+[Git push origin master 报错的解决方法 & 常见 git 命令（待更新）](https://blog.csdn.net/qq_33934427/article/details/109004052)
+[Git 提交出现 Updates were rejected 解决方案](https://www.cnblogs.com/liliuyu/articles/14015522.html)
 [Remote "origin" does not support the LFS locking API](https://github.com/git-lfs/git-lfs/issues/3400)
 
-#### git项目push错分支的解决方法
+#### git 项目 push 错分支的解决方法
 
 好的解决方案：
-[main与master分支合并](https://blog.csdn.net/gongdamrgao/article/details/115032436)
+[main 与 master 分支合并](https://blog.csdn.net/gongdamrgao/article/details/115032436)
 未成功的方案：
-[GIT提交错分支，push错分支怎么办](https://blog.csdn.net/weixin_41529708/article/details/106691359?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106691359-blog-109001509.235%5Ev38%5Epc_relevant_sort_base2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106691359-blog-109001509.235%5Ev38%5Epc_relevant_sort_base2&utm_relevant_index=1)
+[GIT 提交错分支，push 错分支怎么办](https://blog.csdn.net/weixin_41529708/article/details/106691359?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106691359-blog-109001509.235%5Ev38%5Epc_relevant_sort_base2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106691359-blog-109001509.235%5Ev38%5Epc_relevant_sort_base2&utm_relevant_index=1)
 
-#### 解决git reset --soft HEAD^撤销commit时报错
+#### 解决 Git reset --soft HEAD^撤销 commit 时报错
 
 [fatal: ambiguous argument 'HEAD^': unknown revision or path not in the working tree.](https://blog.csdn.net/weixin_51063895/article/details/129646819?ydreferer=aHR0cHM6Ly9jbi5iaW5nLmNvbS8%3D)
 
-#### git push报错
+#### Git push 报错
 
 Updates were rejected because the tip of your current branch is behind (更新被拒绝，因为当前分支的落后与远程分支)
 ![git-push失败](img/git/git-push失败.png)
 
 ```
-git push -u origin main -f 
+git push -u origin main -f
 强制提交
 ```
 
-[git push报错:Updates were rejected](https://zhuanlan.zhihu.com/p/422024766)
+[Git push 报错:Updates were rejected](https://zhuanlan.zhihu.com/p/422024766)
 
-进行git push操作时报错：fatal: The current branch master has no upstream branch.
+进行 Git push 操作时报错：fatal: The current branch master has no upstream branch.
 原因：没有将本地的分支与远程仓库的分支进行关联
 
 ```
 git push -u origin main
 ```
 
-[git push报错:The current branch master has no upstream branch](https://developer.aliyun.com/article/764975)
+[Git push 报错:The current branch master has no upstream branch](https://developer.aliyun.com/article/764975)
 
 #### 项目分支提交错误
 
-已经push如何取消：
-git reset --hard HEAD^
-git push origin HEAD --force
+已经 push 如何取消：
+Git reset --hard HEAD^
+Git push origin HEAD --force
 
 [](https://blog.csdn.net/gongdamrgao/article/details/115032436)
 
-#### 文件超100M无法上传
+#### 文件超 100M 无法上传
 
 ![文件超100M无法上传](img/git/文件超100M上传失败.png)
 
@@ -208,7 +204,7 @@ git push origin main
 [error: GH001: Large files detected](https://blog.csdn.net/qq_39564555/article/details/100051051)
 [Remote "origin" does not support the LFS locking API](https://github.com/git-lfs/git-lfs/issues/3400)
 
-#### git提交或克隆报错fatal: unable to access git仓库: Failed to connec
+#### git 提交或克隆报错 fatal: unable to access git 仓库: Failed to connec
 
 ```bash
 git config --global --unset http.proxy
@@ -220,9 +216,9 @@ git config --global --unset http.proxy
 
 #### “warning: LF will be replaced by CRLF”警告
 
-[关于git提示“warning: LF will be replaced by CRLF”终极解答](https://blog.csdn.net/lgq2016/article/details/104745963)
+[关于 git 提示“warning: LF will be replaced by CRLF”终极解答](https://blog.csdn.net/lgq2016/article/details/104745963)
 
-#### 删除本地git仓库
+#### 删除本地 git 仓库
 
 ```
 rm -fr .git
@@ -237,19 +233,19 @@ rm -fr .git
 git remote remove origin
 ```
 
-#### git add . 无响应
+#### Git add . 无响应
 
-昨天登录平台把项目的vue文件下载下来后，放到当前的teach文件夹里，结果之后发现之前提交成功后的github仓库居然是空的，因此重新提交，但在git add的时候却出现无响应问题，最后发现原因可能是有两个example文件夹，里面有很多文件，导致git add . 无响应，将这两个文件夹删除后，重新提交就成功了。
+昨天登录平台把项目的 vue 文件下载下来后，放到当前的 teach 文件夹里，结果之后发现之前提交成功后的 github 仓库居然是空的，因此重新提交，但在 Git add 的时候却出现无响应问题，最后发现原因可能是有两个 example 文件夹，里面有很多文件，导致 Git add . 无响应，将这两个文件夹删除后，重新提交就成功了。
 
-还有就是文件太多导致锁住，删除.lock文件即可
+还有就是文件太多导致锁住，删除.lock 文件即可
 
 ```
 rm -f ./.git/index.lock
 ```
 
-[git add . 无响应](https://blog.csdn.net/zhang_pengfei/article/details/50460261?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-50460261-blog-128531463.235%5Ev38%5Epc_relevant_sort_base2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-50460261-blog-128531463.235%5Ev38%5Epc_relevant_sort_base2&utm_relevant_index=2)
+[Git add . 无响应](https://blog.csdn.net/zhang_pengfei/article/details/50460261?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-50460261-blog-128531463.235%5Ev38%5Epc_relevant_sort_base2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-50460261-blog-128531463.235%5Ev38%5Epc_relevant_sort_base2&utm_relevant_index=2)
 
-#### git push 无响应
+#### Git push 无响应
 
 [Connection closed by remote host](https://blog.csdn.net/qq_43431735/article/details/106031021)
 

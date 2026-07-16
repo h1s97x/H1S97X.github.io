@@ -1,17 +1,16 @@
 ---
 title: 重置密码
-date: '2025-12-27 23:46:11'
-updated: '2025-12-27 23:46:11'
+date: "2025-12-27 23:46:11"
+updated: 2026-07-17 00:08:29
 categories:
   - 生活
 ---
 
-
 # 如何在 2 分钟内重置忘记的 Ubuntu 密码
 
-------
+---
 
-**如果您忘记了 Ubuntu 上的用户密码，请不要担心。您可以非常轻松地重置 Ubuntu 密码。本指南介绍了在 Ubuntu 上更改 root 密码的简单方法。该方法应该也适用于其他Linux发行版。**
+**如果您忘记了 Ubuntu 上的用户密码，请不要担心。您可以非常轻松地重置 Ubuntu 密码。本指南介绍了在 Ubuntu 上更改 root 密码的简单方法。该方法应该也适用于其他 Linux 发行版。**
 
 忘记了 Ubuntu 登录密码？它发生了。
 
@@ -43,7 +42,7 @@ categories:
 
 ### 第 2 步：转到 root shell 提示符
 
-现在您将看到不同的恢复模式选项。这里您需要选择“**Root – Drop to root shell提示**”。只需按 Enter 键即可选择此选项。就像下图这样：
+现在您将看到不同的恢复模式选项。这里您需要选择“**Root – Drop to root shell 提示**”。只需按 Enter 键即可选择此选项。就像下图这样：
 
 ![img](https://cn.linux-console.net/common-images/how-to-hack-ubuntu-password/drop-to-root-prompt-1.png)
 
@@ -75,7 +74,7 @@ passwd username
 
 它提示输入新密码。输入新密码两次。
 
-> ***请注意，当您开始输入密码时，屏幕上不会显示任何内容。这是完全正常的\***，实际上是 Linux 系统中的一个安全功能。只需盲目输入密码并按 Enter 键即可。
+> **\*请注意，当您开始输入密码时，屏幕上不会显示任何内容。这是完全正常的\***，实际上是 Linux 系统中的一个安全功能。只需盲目输入密码并按 Enter 键即可。
 
 ```sql
 Enter new UNIX password:
@@ -100,7 +99,7 @@ exit
 
 输入新密码时，系统可能会提示您**身份验证令牌操作错误**，如下所示：
 
-passwd 用户名 输入新的 UNIX 密码： 重新输入新的 UNIX 密码： passwd：身份验证令牌操作错误 passwd：密码未更改
+passwd 用户名 输入新的 Unix 密码： 重新输入新的 Unix 密码： passwd：身份验证令牌操作错误 passwd：密码未更改
 
 出现此错误的原因是文件系统仅以读访问权限挂载。按以下方式更改访问权限并重新挂载文件系统：
 
@@ -116,27 +115,27 @@ mount -rw -o remount /
 
 如果由于某种原因您难以进入 root shell 并更改密码，您可以尝试这些步骤。
 
-### 步骤1
+### 步骤 1
 
 重新启动计算机。按住 Shift 键调出 grub 屏幕（如果它没有自动出现）。在 grub 提示符处**按 E** 编辑 grub 屏幕。
 
-### 第2步
+### 第 2 步
 
-找到以 linux 开头的行，将 ro 更改为 rw 并在该行末尾附加 init=/bin/bash 。
+找到以 Linux 开头的行，将 ro 更改为 rw 并在该行末尾附加 init=/bin/Bash 。
 
 ![img](https://cn.linux-console.net/common-images/how-to-hack-ubuntu-password/editing-grub-to-fix-nvidia-issue.jpg)
 
-### 步骤3
+### 步骤 3
 
 按 ctrl-x 保存更改并启动。
 
-现在，您将使用读写权限启动 Linux 内核，并且不再进入图形用户界面，而是使用 bash shell。
+现在，您将使用读写权限启动 Linux 内核，并且不再进入图形用户界面，而是使用 Bash shell。
 
 换句话说，您的系统将启动到无密码 root shell。
 
-### 步骤4
+### 步骤 4
 
-使用您的用户名输入 passwd 命令。如果您不知道用户名，请使用 *ls /home* 命令进行检查（如方法 1 中所述）。
+使用您的用户名输入 passwd 命令。如果您不知道用户名，请使用 _ls /home_ 命令进行检查（如方法 1 中所述）。
 
 设置您的新密码。
 
@@ -156,9 +155,9 @@ shutdown -r now
 
 如果任何人能够物理访问您的计算机，那么您计算机中的数据就已经面临风险。除非整个磁盘都经过加密，否则任何人都可以使用实时 USB“窃取”您的数据，甚至无需进入您安装的操作系统。
 
-默认情况下，Ubuntu 没有 root 密码，并且 root 帐户被锁定。您在安装 Ubuntu 时设置的用户帐户包含为具有 sudo 权限的管理员。但这并不意味着你就是root。
+默认情况下，Ubuntu 没有 root 密码，并且 root 帐户被锁定。您在安装 Ubuntu 时设置的用户帐户包含为具有 sudo 权限的管理员。但这并不意味着你就是 root。
 
-缺少root密码是一个故意的功能启动菜单中的“Ubuntu高级选项”允许您从“root shell提示符”执行一些特定的与root相关的任务。这就是为什么您可以通过此方法重置 Ubuntu 密码。
+缺少 root 密码是一个故意的功能启动菜单中的“Ubuntu 高级选项”允许您从“root shell 提示符”执行一些特定的与 root 相关的任务。这就是为什么您可以通过此方法重置 Ubuntu 密码。
 
 如果你想让你的系统更安全，你可以加密磁盘（以保存你的数据）或在 Ubuntu 中为 root 用户设置密码。
 
@@ -177,7 +176,5 @@ Ubuntu 中有一个密钥环功能，用于保持密码锁定和安全。
 当您尝试在 Ubuntu 中再次使用 Google Chrome 时，它会要求您创建一个新的密钥环。使用新的登录密码作为密钥环密码。
 
 我希望我已经清楚地说明了如何在 Ubuntu 中重置忘记的密码。
-
-
 
 [如何在 2 分钟内重置忘记的 Ubuntu 密码 (linux-console.net)](https://cn.linux-console.net/?p=19579)

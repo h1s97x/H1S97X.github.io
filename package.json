@@ -80,7 +80,7 @@
     "hexo-update-time": "^1.1.2",
     "husky": "^9.1.7",
     "jest": "^30.4.2",
-    "js-yaml": "^4.1.1",
+    "js-yaml": "^5.2.1",
     "lint-staged": "^17.0.8",
     "textlint": "^15.7.1",
     "textlint-rule-common-misspellings": "^1.0.1",

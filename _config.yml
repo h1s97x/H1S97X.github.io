@@ -99,7 +99,7 @@ markdown: # https://github.com/hexojs/hexo-renderer-markdown-it
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: blog
   per_page: 8
   order_by: -date
 

@@ -77,7 +77,19 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Run security audit (fail on high/critical)
+    # Security gate: fail on high/critical. The 6 allowlisted advisories below are
+    # build-time / dev-only transitive deps of a static blog — nothing in
+    # node_modules ships to the browser, so there is no runtime attack surface and
+    # they are not exploitable here. Each is documented so the gate still turns
+    # red on any *new* genuinely dangerous high.
+    #   GHSA-ph9p-34f9-6g65  tmp         all-contributors-cli>inquirer>external-editor   only triggers when YOU run all-contributors manually
+    #   GHSA-88fw-hqm2-52qc  hono        textlint>@modelcontextprotocol/sdk              CORS bug needs MCP server exposed to untrusted web origins
+    #   GHSA-hm92-r4w5-c3mj  undici      hexo-theme-stellar>cheerio                     needs SOCKS5 multi-origin proxy (not used in static build)
+    #   GHSA-vmh5-mc38-953g  undici      hexo-theme-stellar>cheerio                     needs SOCKS5 + custom CA pinning (not used)
+    #   GHSA-vxpw-j846-p89q  undici      hexo-theme-stellar>cheerio                     needs undici WebSocket client to attacker endpoint (not used)
+    #   GHSA-22p9-wv53-3rq4  linkify-it  hexo-renderer-markdown-it>markdown-it          ReDoS needs untrusted markdown (we only render our own posts)
+    - name: Run security audit (fail on high/critical, allowlist dev-only advisories)
       run: |
         pnpm config set registry https://registry.npmjs.org
-        pnpm exec audit-ci --high
+        pnpm exec audit-ci --high \
+          --allowlist "advisories:GHSA-ph9p-34f9-6g65,GHSA-88fw-hqm2-52qc,GHSA-hm92-r4w5-c3mj,GHSA-vmh5-mc38-953g,GHSA-vxpw-j846-p89q,GHSA-22p9-wv53-3rq4"

@@ -48,7 +48,7 @@
   "dependencies": {
     "@traptitech/markdown-it-katex": "^3.6.0",
     "@uiolee/hexo-htmlnano": "^3.0.0",
-    "cssnano": "^8.0.1",
+    "cssnano": "^8.0.2",
     "hexo": "^8.1.2",
     "hexo-asset": "^1.0.0",
     "hexo-cli": "^4.3.2",

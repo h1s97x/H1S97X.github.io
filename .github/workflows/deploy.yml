@@ -56,8 +56,8 @@ jobs:
 
       - name: Verify build output
         run: |
-          if [ ! -f "public/index.html" ]; then
-            echo "::error::Build failed: public/index.html not found"
+          if [ ! -f "public/blog/index.html" ]; then
+            echo "::error::Build failed: public/blog/index.html not found"
             exit 1
           fi
           echo "Build verification passed"

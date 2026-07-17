@@ -38,6 +38,7 @@ category_dir: blog/categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - 'index.html'
 
 # TODO
 # 如果要把 posts 目录调整成 `slug/index.md` 形式，要修改：

@@ -1,99 +1,89 @@
-name: Deploy Stellar Blog to GitHub Pages
+name: Deploy
 
 on:
   push:
     branches: [ main, develop ]
-    paths-ignore:
-      - 'source/**'  # 忽略 source 目录，由 incremental-deploy 处理
-  pull_request:
-    branches: [ main, develop ]
-  # 支持手动触发（在 GitHub 仓库的 Actions 标签页手动运行）
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     steps:
-    - name: Checkout source code
-      uses: actions/checkout@v4
-      with:
-        submodules: true
-        fetch-depth: 0  # 获取完整历史，支持子模块
-        
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        version: 10
-        
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-        cache: 'pnpm'
-        
-    - name: Install dependencies
-      run: pnpm install
-      
-    - name: Initialize theme submodules
-      run: |
-        git submodule update --init --recursive
-        pnpm run themes:status
-        
-    - name: Validate Stellar theme configuration
-      run: pnpm run stellar:validate
-      
-    - name: Run tests (allow failures for now)
-      run: pnpm test || echo "⚠️ Tests failed but continuing with deployment"
-      
-    - name: Build static files with Stellar theme
-      run: |
-        pnpm run clean
-        echo "🔍 Validating configuration before build..."
-        pnpm run stellar:validate
-        echo "🏗️ Building with Stellar theme..."
-        pnpm run build
-        echo "📊 Build statistics:"
-        find public -name "*.html" | wc -l | xargs echo "Generated HTML files:"
-        du -sh public | cut -f1 | xargs echo "Total size:"
-        
-    - name: Verify build output
-      run: |
-        if [ ! -f "public/index.html" ]; then
-          echo "❌ Build failed: index.html not found"
-          exit 1
-        fi
-        echo "✅ Build verification passed"
-        echo "📄 Generated files:"
-        ls -la public/ | head -20
-        
-    - name: Deploy to GitHub Pages
-      if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        publish_branch: gh-pages
-        force_orphan: false
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        commit_message: 'deploy: Stellar theme - ${{ github.event.head_commit.message }}'
-        
-    - name: Notify deployment status
-      if: always()
-      run: |
-        if [ "${{ job.status }}" == "success" ]; then
-          echo "🎉 Stellar主题部署成功！"
-          echo "🌟 网站已更新到 GitHub Pages"
-          echo "🔗 访问地址: https://${{ github.repository_owner }}.github.io"
-        else
-          echo "❌ 部署失败，请检查构建日志"
-          echo "💡 常见问题："
-          echo "   - 检查Stellar主题配置"
-          echo "   - 验证子模块是否正确初始化"
-          echo "   - 确认所有依赖已安装"
-        fi
+      - name: Checkout source code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Initialize theme submodules
+        run: |
+          git submodule update --init --recursive
+          pnpm run themes:status
+
+      - name: Validate Stellar theme configuration
+        run: pnpm run stellar:validate
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Build static files with Stellar theme
+        run: |
+          pnpm run clean
+          pnpm run stellar:validate
+          pnpm run build
+
+      - name: Verify build output
+        run: |
+          if [ ! -f "public/index.html" ]; then
+            echo "::error::Build failed: public/index.html not found"
+            exit 1
+          fi
+          echo "Build verification passed"
+          echo "Generated HTML files: $(find public -name '*.html' | wc -l)"
+          echo "Total size: $(du -sh public | cut -f1)"
+
+      - name: Deploy to GitHub Pages (staging)
+        if: github.ref == 'refs/heads/develop'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages-staging
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy: staging - ${{ github.event.head_commit.message }}'
+
+      - name: Deploy to GitHub Pages (production)
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy: production - ${{ github.event.head_commit.message }}'

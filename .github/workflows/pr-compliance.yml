@@ -5,45 +5,47 @@ on:
     types: [opened, synchronize, edited]
     branches: [main, develop]
 
+permissions:
+  pull-requests: read
+
 jobs:
   pr-check:
     runs-on: ubuntu-latest
     steps:
       - name: Check PR title format
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          PR_TITLE="${{ github.event.pull_request.title }}"
-          
-          # 检查格式: type(scope): subject
           if ! echo "$PR_TITLE" | grep -qE '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9-]+\))?: .+'; then
-            echo "❌ PR 标题格式不正确"
-            echo ""
-            echo "正确格式: type(scope): subject"
-            echo "例如: feat(auth): 添加登录功能"
-            echo "      fix(contact): 修复渲染错误"
-            echo ""
-            echo "允许的 type:"
-            echo "  feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+            echo "::error::PR title format invalid"
+            echo "Correct format: type(scope): subject"
+            echo "Example: feat(auth): add login"
+            echo "Allowed types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
             exit 1
           fi
-          
-          echo "✅ PR 标题格式正确"
+          echo "PR title format OK"
 
       - name: Check PR description
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          BODY='${{ github.event.pull_request.body }}'
-          
-          if [ -z "$BODY" ] || [ ${#BODY} -lt 20 ]; then
-            echo "❌ PR 描述为空或过短"
-            echo "请填写 PR 描述模板"
+          if [ -z "$PR_BODY" ] || [ ${#PR_BODY} -lt 20 ]; then
+            echo "::error::PR description is empty or too short (min 20 chars)"
+            echo "Please fill in the PR description template"
             exit 1
           fi
-          
-          echo "✅ PR 描述已填写"
+          echo "PR description OK"
 
       - name: PR Info
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
+          PR_BASE: ${{ github.event.pull_request.base.ref }}
         run: |
-          echo "📋 PR 信息:"
-          echo "   编号: #${{ github.event.pull_request.number }}"
-          echo "   标题: ${{ github.event.pull_request.title }}"
-          echo "   作者: ${{ github.event.pull_request.user.login }}"
-          echo "   分支: ${{ github.event.pull_request.head.ref }} → ${{ github.event.pull_request.base.ref }}"
+          echo "PR Info:"
+          echo "  Number: #$PR_NUMBER"
+          echo "  Title: $PR_TITLE"
+          echo "  Author: $PR_AUTHOR"
+          echo "  Branch: $PR_HEAD -> $PR_BASE"

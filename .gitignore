@@ -100,3 +100,6 @@ out/
 .obsidian/
 .idea/
 themes/
+
+# Qoder AI agent cache
+.qoder/

@@ -1,12 +1,14 @@
 ---
 title: Git Help
 notebook: notes
-tags:
-  - it/git
+tags: 
 mermaid: true
 date: 2025-12-28 15:21:24
 updated: 2025-12-28 15:59:47
+categories:
+  - 技术
 ---
+
 我来为您整理一份全面的 Git 指令集，涵盖从基础到高级的各种操作场景。
 
 ---

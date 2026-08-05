@@ -103,3 +103,4 @@ themes/
 
 # Qoder AI agent cache
 .qoder/
+.codegraph/

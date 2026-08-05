@@ -4,6 +4,8 @@ date: "2025-12-27 23:46:11"
 updated: 2026-07-17 00:08:29
 categories:
   - 生活
+description: "VIM 快速入门之常用命令解析 1,VIM 复制，粘贴，剪切，替换，查找\\哔哩哔哩\\bilibili 符号：『』❑ ➢ 图书名称: Ubuntu Linux 应"
+tags: [Linux]
 ---
 
 [VIM 快速入门之常用命令解析 1,VIM 复制，粘贴，剪切，替换，查找\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1YY4y1n75r/?vd_source=206a091077ff783d662b49e64cc9589d)

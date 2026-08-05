@@ -4,6 +4,8 @@ date: 2023-09-13 14:09:10
 updated: 2023-09-13 14:09:10
 categories:
   - 技术
+description: "联邦机器学习(Federated machine learning/Federated Learning)，又名联邦学习，联合学习，联盟学习。联邦机器学习是一个"
+tags: [经验]
 ---
 
 

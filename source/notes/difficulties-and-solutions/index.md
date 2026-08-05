@@ -4,6 +4,8 @@ date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:
   - 生活
+description: "hexo d 提交失败 error Writing objects: 100% (178/178), 3.08 MiB 576.00 KiB/s, done. "
+tags: [经验]
 ---
 
 

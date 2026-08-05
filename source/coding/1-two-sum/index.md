@@ -1,10 +1,11 @@
 ---
 title: 1. Two Sum
 notebook: coding
-tags:
+tags: [算法]
 - easy
 date: 2024-11-09 20:49:16
 updated: 2024-11-09 20:49:16
+description: "Given an array of integers nums and an integer target, return indices of the two"
 ---
 ## Problem
 

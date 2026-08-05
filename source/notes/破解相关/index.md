@@ -4,6 +4,8 @@ date: 2023-08-28 18:57:54
 updated: 2023-08-28 18:57:54
 categories:
   - 游戏
+description: "吾爱破解论坛 零基础新手破解学习导航帖 破解工具包 新建文本文件(.txt),修改文件后缀为（.reg）,运行即可 Windows Registry Edito"
+tags: [安全]
 ---
 
 

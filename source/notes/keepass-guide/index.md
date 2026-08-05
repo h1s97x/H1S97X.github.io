@@ -4,6 +4,8 @@ date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:
   - 生活
+description: "[TOC] KeePass 密码保险箱 优秀的密码管理器 keepass - 少数派 (sspai.com) 一劳永逸：KeePass 全网最详使用指南 - 知"
+tags: [工具]
 ---
 
 [TOC]

@@ -4,6 +4,8 @@ date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:
   - 生活
+description: "通过系统界面可以看到一个“file system”，这个就是文件系统，双击点开，会看到如下界面： 右侧就是该文件下的文件系统目录 !img 重点文件的说明，从上"
+tags: [Linux]
 ---
 
 ### 1、Kali Linux 中的文件系统

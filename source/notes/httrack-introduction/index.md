@@ -4,6 +4,8 @@ date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:
   - 生活
+description: "HTTrack 是一个免费的（GPL，自由软件）和易于使用的离线浏览器工具。它可以爬取整站的网页，用于离线浏览，减少与目标系统交互。它可从 Internet 上"
+tags: [工具]
 ---
 
 # HTTrack 简单使用

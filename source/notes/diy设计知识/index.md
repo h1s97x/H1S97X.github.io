@@ -4,6 +4,8 @@ date: 2023-09-15 07:37:00
 updated: 2023-09-15 07:37:00
 categories:
   - 技术
+description: "所谓smt钢网：钢网（stencils），也就是SMT模板（SMT Stencil），是一种SMT专用模具。就是SMT贴片焊接前，给PCB印刷锡膏或者红胶的治具"
+tags: [工具]
 ---
 
 

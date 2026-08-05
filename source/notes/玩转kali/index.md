@@ -4,6 +4,8 @@ date: "2025-12-27 23:46:11"
 updated: 2026-07-17 00:08:29
 categories:
   - 生活
+description: "[TOC] 图书名称: Kali Linux: Assuring Security by Penetration Testing ------------- -"
+tags: [Linux]
 ---
 
 [TOC]

@@ -4,6 +4,8 @@ date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:
   - 生活
+description: "SuperCopy 超级复制 - Microsoft Edge Addons SuperCopy超级复制 唯一官方扩展 主要功能：解除禁止复制；解除禁止右键；解"
+tags: [工具]
 ---
 
 

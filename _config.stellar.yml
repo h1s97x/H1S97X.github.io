@@ -196,31 +196,26 @@ footer:
       icon: default:theme
       onclick: 'switchTheme()'
   sitemap:
-    - title: 博客
+    - title: 导航
       items:
-        - '[近期发布](/)'
-        - '[分类](/categories/)'
-        - '[标签](/tags/)'
-        - '[归档](/archives/)'
-    - title: 分类
-      items:
-        - '[博客<span class="dot"></span>近期发布](/)'
-        - '[技术开发](tech-development/)'
-        - '[博客](/categories/system-operations/)'
-        - '[游戏世界](/categories/gaming-world/)'
-        - '[学术学习](/categories/academic-learning/)'
-    - title: 页面
-      items:
+        - '[博客](/blog/)'
+        - '[笔记](/notes/)'
         - '[关于](/about/)'
         - '[联系](/contact/)'
-        - '[音乐](/music/)'
+    - title: 内容
+      items:
+        - '[标签](/blog/tags/)'
+        - '[分类](/blog/categories/)'
+        - '[归档](/blog/archives/)'
         - '[搜索](/search/)'
+    - title: 订阅
+      items:
+        - '[RSS](/atom.xml)'
+        - '[Sitemap](/sitemap.xml)'
     - title: 其他
       items:
-        - '[RSS订阅](/atom.xml)'
-        - '[站点地图](/sitemap.xml)'
-        - '[GitHub仓库](https://github.com/h1s97x/H1S97X.github.io)'
-        - '[问题反馈](https://github.com/h1s97x/H1S97X.github.io/issues)'
+        - '[GitHub](https://github.com/h1s97x/H1S97X.github.io)'
+        - '[反馈](https://github.com/h1s97x/H1S97X.github.io/issues)'
   content: |
     本站由 [H1S97X](/) 使用 [Stellar {theme.version}]({theme.tree}) 主题创建。
     本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。

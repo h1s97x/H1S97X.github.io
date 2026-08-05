@@ -4,6 +4,8 @@ date: "2025-12-27 23:46:11"
 updated: 2026-07-17 00:08:29
 categories:
   - 生活
+description: "--- 如果您忘记了 Ubuntu 上的用户密码，请不要担心。您可以非常轻松地重置 Ubuntu 密码。本指南介绍了在 Ubuntu 上更改 root 密码的简"
+tags: [Linux]
 ---
 
 # 如何在 2 分钟内重置忘记的 Ubuntu 密码

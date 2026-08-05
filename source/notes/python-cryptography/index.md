@@ -4,6 +4,8 @@ date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:
   - 生活
+description: "1、安装 Python、Pycharm；了解 Idle 的应用；学会 pip 安装命令，将 Cryptography gmpy2 库安装到 python 中。 "
+tags: [安全]
 ---
 
 ## 实验一：熟悉 Python 开发环境，凯撒密码与仿射密码

@@ -4,7 +4,8 @@ date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:
   - 生活
-tags:
+tags: [工具]
+description: "有一些专门针对网站克隆爬取的软件，如 WebZip、awwwb.com 等等，据说挺好用的。这里我给大家介绍一款程序员最爱的网站克隆爬取工具 - HTTrack"
 ---
 
 有一些专门针对网站克隆爬取的软件，如 WebZip、awwwb.com 等等，据说挺好用的。这里我给大家介绍一款程序员最爱的网站克隆爬取工具 - HTTrack，而且是开源的。

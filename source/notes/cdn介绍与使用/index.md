@@ -4,6 +4,8 @@ date: 2023-08-28 15:50:42
 updated: 2023-08-28 15:50:42
 categories:
   - 技术
+description: "在线CDN工具 More Info：详解 某视频APP实现1千万用户同时在线观看。 如果大家观看的是1080p清晰度的视频（理论上需要4Mbps带宽），那么，累"
+tags: [服务器]
 ---
 
 

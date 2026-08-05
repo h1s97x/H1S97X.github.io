@@ -4,6 +4,8 @@ date: 2023-09-12 21:38:55
 updated: 2026-07-17 00:08:29
 categories:
   - 技术
+description: "1.<a href=\"#Alist手动下载\">Alist 下载</a> 2.<a href=\"#添加存储\"></a>添加存储 【Alist】Alist V3 \""
+tags: [服务器]
 ---
 
 ### 目录

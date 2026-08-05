@@ -4,6 +4,8 @@ date: 2023-08-29 15:26:53
 updated: 2023-08-29 15:26:53
 categories:
   - 技术
+description: "使用RSS订阅B站UP主的方法"
+tags: [工具]
 ---
 
 

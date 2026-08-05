@@ -4,6 +4,8 @@ date: '2025-12-27 23:46:11'
 updated: '2025-12-27 23:46:11'
 categories:
   - 生活
+description: "Linux下普通用户变为root权限的三种方法19.如何从普通用户xiaoming切换到root?-CSDN博客 0x01加普通用户 useradd xiaom"
+tags: [Linux]
 ---
 
 

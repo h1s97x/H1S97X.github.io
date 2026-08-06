@@ -18,7 +18,7 @@ tags: [Linux]
 
 | 图书名称:     | Ubuntu Linux 应用技术教程                                      |     |
 | ------------- | -------------------------------------------------------------- | --- |
-| 封面图片:     | ![img](https://www.tup.com.cn/upload/bigbookimg/031209-02.jpg) |     |
+| 封面图片:     | ![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/e2861a22b500.jpg) |     |
 | 出版印刷时间: | 2009-4                                                         |     |
 | 出版社:       | 清华大学出版社                                                 |     |
 | 图书作者:     | 陈明 编著                                                      |     |
@@ -26,7 +26,7 @@ tags: [Linux]
 
 | 图书名称:     | Linux 就该这么学（第 2 版）                                                                |     |
 | ------------- | ------------------------------------------------------------------------------------------ | --- |
-| 封面图片:     | ![Linux就该这么学（第2版）](https://img1.doubanio.com/view/subject/s/public/s34016388.jpg) |     |
+| 封面图片:     | ![Linux就该这么学（第2版）](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/be29e41edc6e.jpg) |     |
 | 出版印刷时间: | 2021-9                                                                                     |     |
 | 出版社:       | 人民邮电出版社                                                                             |     |
 | 图书作者:     | 刘遄 编著                                                                                  |     |
@@ -757,7 +757,7 @@ Linux 将分属不同分区的、单独的文件系统整理形成一个系统�
 
 硬链接是多个目录项中的「索引节点」指向一个文件，也就是指向同一个 inode，但是 inode 是不可能跨越文件系统的，每个文件系统都有各自的 inode 数据结构和列表，所以硬链接是不可用于跨文件系统的。由于多个目录项都是指向一个 inode，那么只有删除文件的所有硬链接以及源文件时，系统才会彻底删除该文件。
 
-![img](https://pic2.zhimg.com/80/v2-b2866c48f36144950a2cc40a7b457c0d_720w.webp)
+![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/115cc2f60242.webp)
 
 #### 软链接
 
@@ -775,7 +775,7 @@ Linux 将分属不同分区的、单独的文件系统整理形成一个系统�
 
 软链接相当于重新创建一个文件，这个文件有独立的 inode，但是这个文件的内容是另外一个文件的路径，所以访问软链接的时候，实际上相当于访问到了另外一个文件，所以软链接是可以跨文件系统的，甚至目标文件被删除了，链接文件还是在的，只不过指向的文件找不到了而已。
 
-![img](https://pic1.zhimg.com/80/v2-6a18f8aabfdd0e31f3c53f355483cee0_720w.webp)
+![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/be285978ccc7.webp)
 
 ![](D:/hexo/source/_posts/img/linux/文件系统-1.png)
 

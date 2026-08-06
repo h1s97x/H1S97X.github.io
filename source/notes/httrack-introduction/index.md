@@ -31,7 +31,7 @@ root@kali:~# apt-get install httrack
    root@kali:~# mkdir mywebsite
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117195447.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117195447.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/48437dd067c2.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/48437dd067c2.png)
 
 2. 启动 `HTTrack`
 
@@ -39,7 +39,7 @@ root@kali:~# apt-get install httrack
    root@kali:~# httrack
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117172009.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117172009.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/1fe6eb94c99c.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/1fe6eb94c99c.png)
 
 3. 输入项目名称
 
@@ -47,7 +47,7 @@ root@kali:~# apt-get install httrack
    Enter project name : blog	//blog为项目名称
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117171943.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117171943.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/7434c60d4e5b.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/7434c60d4e5b.png)
 
 4. 选择存储网站目录
 
@@ -55,7 +55,7 @@ root@kali:~# apt-get install httrack
    Base path (return=/root/websites/) :/root/mywebsite
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117171926.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117171926.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/c559c805167a.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/c559c805167a.png)
 
 5. 输入网站的 URL
 
@@ -63,7 +63,7 @@ root@kali:~# apt-get install httrack
    Enter URLs (separated by commas or blank spaces) :www.baidu.com
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200710.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200710.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/7e4e4b843c0b.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/7e4e4b843c0b.png)
 
 6. 选择操作 (此处选择 2)
 
@@ -78,7 +78,7 @@ root@kali:~# apt-get install httrack
    :
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200731.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200731.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/bb0a95eb0a87.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/bb0a95eb0a87.png)
 
 7. 指定是否在实施攻击时使用代理 (此处默认输入 none，不使用代理)
 
@@ -86,7 +86,7 @@ root@kali:~# apt-get install httrack
    Proxy (return=none) :
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200756.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200756.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/b78b0936f6e4.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/b78b0936f6e4.png)
 
 8. 定义字符，爬取特定类型的数据 (此处输入 `*` 表示爬取全部类型数据)
 
@@ -95,7 +95,7 @@ root@kali:~# apt-get install httrack
    Wildcards (return=none) :*
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200814.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200814.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/4a4261801570.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/4a4261801570.png)
 
 9. 设置更多选项，可以使用 `help` 查看 (此处选择默认)
 
@@ -105,15 +105,15 @@ root@kali:~# apt-get install httrack
    Additional options (return=none) :
    ```
 
-   [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200836.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200836.png)
+   [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/5bbd7eb8e4dd.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/5bbd7eb8e4dd.png)
 
 10. 开始克隆网站
 
-    [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200903.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117200903.png)
+    [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/ca665202af80.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/ca665202af80.png)
 
 11. 查看克隆的文件
 
-    [![img](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117201137.png)](https://raw.githubusercontent.com/Leeyuxun/pic-storage/main/img/20200117201137.png)
+    [![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/937b3b7812ae.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/937b3b7812ae.png)
 
 备注：`httrack` 只能用于克隆静态内容，并且无法完全复制网站上的动态内容、中间部分 (数据库) 等内容。
 

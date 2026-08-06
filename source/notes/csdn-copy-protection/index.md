@@ -45,7 +45,7 @@ $("#content_views").unbind("copy").bind("copy", function(e) {
 })
 </code></pre>
 
-<p>执行copy事件时会触发登录框.png ↓↓↓<img data-original="https://img.alicdn.com/imgextra/i4/759415648/O1CN01JhttG11rappRGkEBf_!!759415648.png" data-src="/img/2023-06-13/执行copy事件时会触发登录框.png" class="img-bg lazy" alt="执行copy事件时会触发登录框" title="执行copy事件时会触发登录框" /></p>
+<p>执行copy事件时会触发登录框.png ↓↓↓<img data-original="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/315b6d9b476f.png" data-src="/img/2023-06-13/执行copy事件时会触发登录框.png" class="img-bg lazy" alt="执行copy事件时会触发登录框" title="执行copy事件时会触发登录框" /></p>
     <p>注意这里有一个<code>copy</code>复制事件。他先用<code>unbind</code>来解绑<code>copy</code>复制事件，紧接着又重新绑定了<code>copy</code>复制事件。重点是下面的一行代码。</p>
     <pre class="line-numbers code-pre" data-title="关键函数n↓↓↓" lang="zh-Hans-CN" data-prismjs-copy="复制文本" data-prismjs-copy-error="按Ctrl+C复制" data-prismjs-copy-success="文本已复制！"><code class="language-js">return n(),
 !1
@@ -70,8 +70,8 @@ $("#content_views").unbind("copy").bind("copy", function(e) {
 # 代码块复制
 ## 一、分析“登录后复制”按钮是如何工作的
  <h2 class="article-title">一、分析“登录后复制”按钮是如何工作的</h2>
-    <p>先上一张图，我们在未登录时，鼠标移入代码块时，在右上角会显示一个“登录后复制”的按钮。点击按钮，就会弹出登录框。配图：弹出登录框.png↓↓↓ <img data-original="https://img.alicdn.com/imgextra/i3/759415648/O1CN01Vj2hcL1rappUOtaFe_!!759415648.png" data-src="/img/2023-06-24/弹出登录框.png" class="img-bg lazy" alt="弹出登录框" title="弹出登录框" /></p>
-    <p>细心的看官会发现“登录后复制”对应的是一个类名为<code>.hljs-button</code>的<code>div</code>，而这个<code>dom</code>元素上并未绑定点击事件。配图：登录后复制按钮上未绑定事件.png↓↓↓ <img data-original="https://img.alicdn.com/imgextra/i2/759415648/O1CN01m0IYTg1rapphuavqt_!!759415648.png" data-src="/img/2023-06-24/登录后复制按钮上未绑定事件.png" class="img-bg lazy" alt="登录后复制按钮上未绑定事件" title="登录后复制按钮上未绑定事件" /></p>
+    <p>先上一张图，我们在未登录时，鼠标移入代码块时，在右上角会显示一个“登录后复制”的按钮。点击按钮，就会弹出登录框。配图：弹出登录框.png↓↓↓ <img data-original="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/7524e0e49d29.png" data-src="/img/2023-06-24/弹出登录框.png" class="img-bg lazy" alt="弹出登录框" title="弹出登录框" /></p>
+    <p>细心的看官会发现“登录后复制”对应的是一个类名为<code>.hljs-button</code>的<code>div</code>，而这个<code>dom</code>元素上并未绑定点击事件。配图：登录后复制按钮上未绑定事件.png↓↓↓ <img data-original="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/3f34681a0d53.png" data-src="/img/2023-06-24/登录后复制按钮上未绑定事件.png" class="img-bg lazy" alt="登录后复制按钮上未绑定事件" title="登录后复制按钮上未绑定事件" /></p>
     <p>这里补充一句，当我在测试此插件的时候，发现有的文章里面的代码块会跟本案例有些出入。但看官不用担心，因为逻辑是相通的，稍做修改即可破解复制权限的。如果实在搞不定，可以使用文末的插件哈。</p>
     <p>那他是怎么实现一点击就出现登录框的呢？</p>
     <h3 class="article-title article-title__sub">1.1、事件委托</h3>

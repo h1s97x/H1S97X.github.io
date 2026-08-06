@@ -77,7 +77,7 @@ bug操作
 
 **角色的基本属性和能力**
 
-[![游民星空](http://img1.gamersky.com/image2016/04/20160413_xdj_187_2/image013_S.jpg)](http://www.gamersky.com/showimage/id_gamersky.shtml?http://img1.gamersky.com/image2016/04/20160413_xdj_187_2/image013.jpg)
+[![游民星空](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/6d59ee8bb4cb.jpg)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/f8ca1a591abe.jpg)
 
 **1：生命力（Vigor）**
 
@@ -117,7 +117,7 @@ bug操作
 
 **基本能力**
 
-[![游民星空](http://img1.gamersky.com/image2016/04/20160413_xdj_187_2/image014_S.jpg)](http://www.gamersky.com/showimage/id_gamersky.shtml?http://img1.gamersky.com/image2016/04/20160413_xdj_187_2/image014.jpg)
+[![游民星空](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/4fb674af805d.jpg)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/ecfcd0140463.jpg)
 
 **1：血量**
 
@@ -242,7 +242,7 @@ bug操作
 
 教宗右眼，可带，跟老狼曲剑效果差不多，这两个具体加多少攻击力忘了好像是分三层，攻击次数越多加的越多。但是毕竟占了一个戒指位，我的话更喜欢带减伤戒指
 
-<div id="post_content_139956522595" class="d_post_content j_d_post_content " style="display:;">                    奇迹的选择<img class="BDE_Smiley" pic_type="1" width="30" height="30" src="https://tb2.bdstatic.com/tb/editor/images/face/i_f24.png?t=20140803"><br><img class="BDE_Image" pic_type="0" width="65" height="70" src="http://tiebapic.baidu.com/forum/w%3D580/sign=d3362a4f1d46f21fc9345e5bc6256b31/477a8a1b9d16fdfaabada25aa38f8c5496ee7bd2.jpg?tbpicau=2023-08-30-05_809e420038b21e1dac43f9343489fe92" size="2653"><br>惜别，受到致命伤害会保留1生命值，苟命神器<br><img class="BDE_Image" pic_type="0" width="64" height="66" src="http://tiebapic.baidu.com/forum/w%3D580/sign=97f8e609890735fa91f04eb1ae500f9f/6a86272762d0f703ad6fd1ce55fa513d2797c55d.jpg?tbpicau=2023-08-30-05_b01755710d1d88c12a6f9f7bcb21068a" size="2426"><br><img class="BDE_Image" pic_type="0" width="66" height="72" src="http://tiebapic.baidu.com/forum/w%3D580/sign=44d3568c3f381f309e198da199004c67/b3d6bff2b21193136a829b0472380cd793238dd3.jpg?tbpicau=2023-08-30-05_839828b260a4f197906ee4192a472b05" size="2393"><br><img class="BDE_Image" pic_type="0" width="61" height="61" src="http://tiebapic.baidu.com/forum/w%3D580/sign=5cf2c239ed51f819f1250342eab54a76/c8a1709b033b5bb5ac0a64ec6bd3d539b700bc5d.jpg?tbpicau=2023-08-30-05_0b922830cf46d612798f1b3054132292" size="2253"><br>属性附魔，大幅度提升输出，持续时间60s。因为附魔的存在，不推荐去给武器属性质变，信仰不低于40的话，武器属性质变的伤害比附魔差很多<br><img class="BDE_Image" pic_type="0" width="68" height="71" src="http://tiebapic.baidu.com/forum/w%3D580/sign=19e9f3fdee18972ba33a00c2d6cf7b9d/f14aedec8a136327ab2f0ddad48fa0ec0afac7b4.jpg?tbpicau=2023-08-30-05_96ec3ab95e6b0abc0be4a3ad814189ab" size="2399"><br>阳光疗愈，恢复量受圣铃的法术威力加成影响，60信仰龙铃能从1滴血直接奶满<br><img class="BDE_Image" pic_type="0" width="62" height="62" src="http://tiebapic.baidu.com/forum/w%3D580/sign=dd2dac9b5634970a47731027a5cbd1c0/57d007a98226cffc6be9db06ae014a90f403eadd.jpg?tbpicau=2023-08-30-05_ef83a1e90e9e85596185c4083f2e5346" size="2150"><br>金石之誓，可以考虑带，增加攻击力和减伤率，攻击力加10%，减伤不穿衣服加10%，可以加给队友，但是占了两个格子<br>如果不打灵车，带4瓶蓝应该就够用了，灵车建议带8瓶，另外尽量不要被打破惜别，惜别耗蓝100，而阳光疗愈耗蓝80</div>
+<div id="post_content_139956522595" class="d_post_content j_d_post_content " style="display:;">                    奇迹的选择<img class="BDE_Smiley" pic_type="1" width="30" height="30" src="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/a9b1cb27cd75.png"><br><img class="BDE_Image" pic_type="0" width="65" height="70" src="http://tiebapic.baidu.com/forum/w%3D580/sign=d3362a4f1d46f21fc9345e5bc6256b31/477a8a1b9d16fdfaabada25aa38f8c5496ee7bd2.jpg?tbpicau=2023-08-30-05_809e420038b21e1dac43f9343489fe92" size="2653"><br>惜别，受到致命伤害会保留1生命值，苟命神器<br><img class="BDE_Image" pic_type="0" width="64" height="66" src="http://tiebapic.baidu.com/forum/w%3D580/sign=97f8e609890735fa91f04eb1ae500f9f/6a86272762d0f703ad6fd1ce55fa513d2797c55d.jpg?tbpicau=2023-08-30-05_b01755710d1d88c12a6f9f7bcb21068a" size="2426"><br><img class="BDE_Image" pic_type="0" width="66" height="72" src="http://tiebapic.baidu.com/forum/w%3D580/sign=44d3568c3f381f309e198da199004c67/b3d6bff2b21193136a829b0472380cd793238dd3.jpg?tbpicau=2023-08-30-05_839828b260a4f197906ee4192a472b05" size="2393"><br><img class="BDE_Image" pic_type="0" width="61" height="61" src="http://tiebapic.baidu.com/forum/w%3D580/sign=5cf2c239ed51f819f1250342eab54a76/c8a1709b033b5bb5ac0a64ec6bd3d539b700bc5d.jpg?tbpicau=2023-08-30-05_0b922830cf46d612798f1b3054132292" size="2253"><br>属性附魔，大幅度提升输出，持续时间60s。因为附魔的存在，不推荐去给武器属性质变，信仰不低于40的话，武器属性质变的伤害比附魔差很多<br><img class="BDE_Image" pic_type="0" width="68" height="71" src="http://tiebapic.baidu.com/forum/w%3D580/sign=19e9f3fdee18972ba33a00c2d6cf7b9d/f14aedec8a136327ab2f0ddad48fa0ec0afac7b4.jpg?tbpicau=2023-08-30-05_96ec3ab95e6b0abc0be4a3ad814189ab" size="2399"><br>阳光疗愈，恢复量受圣铃的法术威力加成影响，60信仰龙铃能从1滴血直接奶满<br><img class="BDE_Image" pic_type="0" width="62" height="62" src="http://tiebapic.baidu.com/forum/w%3D580/sign=dd2dac9b5634970a47731027a5cbd1c0/57d007a98226cffc6be9db06ae014a90f403eadd.jpg?tbpicau=2023-08-30-05_ef83a1e90e9e85596185c4083f2e5346" size="2150"><br>金石之誓，可以考虑带，增加攻击力和减伤率，攻击力加10%，减伤不穿衣服加10%，可以加给队友，但是占了两个格子<br>如果不打灵车，带4瓶蓝应该就够用了，灵车建议带8瓶，另外尽量不要被打破惜别，惜别耗蓝100，而阳光疗愈耗蓝80</div>
 
 ## 参考攻略
 

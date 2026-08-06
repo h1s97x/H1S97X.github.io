@@ -34,7 +34,7 @@ HTTrack 已经被预安装在以下 Linux 系统中：
 
 HTTrack 支持 Windows、Linux 和 macOS 等主流的操作系统，且针对 Windows 而言，HTTrack 有可视化界面的支持，效果如下：
 
-![程序员最爱的网站克隆爬取工具- HTTrack](https://cdn.learnku.com/uploads/images/202003/25/46135/ZAiXId8zaR.png!large)
+![程序员最爱的网站克隆爬取工具- HTTrack](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/4dd8a5fb82e4.png)
 
 #### Windows 下安装:
 

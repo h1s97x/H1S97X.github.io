@@ -59,7 +59,7 @@ tags: [游戏]
 
 接下来介绍适合乌龟流的遗物，首先是**非BOSS遗物**：
 
-![img](https://pic1.zhimg.com/80/v2-260195f101af9a7ba087425f71d29cf0_720w.webp)
+![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/394f5606fb09.webp)
 
 非BOSS遗物推荐
 
@@ -67,7 +67,7 @@ tags: [游戏]
 
 接下来是**BOSS遗物**：
 
-![img](https://pic1.zhimg.com/80/v2-22c2e6c2d44296c4901ae96f33f4e018_720w.webp)
+![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/9525146cdb9f.webp)
 
 BOSS遗物推荐
 
@@ -83,7 +83,7 @@ BOSS遗物推荐
 
 灼热攻击，独立于一切的一张牌。无限锻造，战士独有。自然也就形成了独特的流派。
 
-![img](https://pic2.zhimg.com/80/v2-e331fac0962803e5677b5085c9d9aaf9_720w.webp)
+![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/9d00a66472bb.webp)
 
 低调的蓝卡，+12灼热攻击，单体伤害126点
 

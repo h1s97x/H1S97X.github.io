@@ -123,7 +123,7 @@ $ \tilde{x} $
 
 ## 运算符
 
-![](https://pic1.zhimg.com/80/v2-da3e717cf670582fbfbdddee33073524_720w.webp "希腊字母")
+![](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/b944e8c56181.webp "希腊字母")
 
 ### 在Markdown里插入希腊字母
 

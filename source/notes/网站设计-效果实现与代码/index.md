@@ -18,7 +18,7 @@ tags: [经验]
         }
 </style>
 <div class="shell">
-        <video loop autoplay src="https://i0.hdslb.com/bfs/archive/34319439f88f5c0794ee6985cd535fcb40ed28e0.png@3840w_360h_1c_90q.webp" style="height:100%;transform:translate(36px,-8px);"></video>
+        <video loop autoplay src="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/d79171498a9d.webp" style="height:100%;transform:translate(36px,-8px);"></video>
     </div>
     <script>
         const shell = document.querySelect(".shell")
@@ -364,7 +364,7 @@ a {
     display: inline-flex;
     height: 10px;
     margin-left: 4px;
-    mask-image: url("https://developer.mozilla.org/static/media/external.ad7e40a95bc765963433.svg");
+    mask-image: url("https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/883c31f10a97.svg");
     mask-size: cover;
     width: 10px;
   }

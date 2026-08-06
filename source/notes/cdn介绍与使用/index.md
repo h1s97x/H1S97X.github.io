@@ -39,11 +39,11 @@ More Info：[详解](https://zhuanlan.zhihu.com/p/28940451)
 CDN这个技术其实说起来并不复杂，最初的核心理念，就是将内容缓存在终端用户附近。
 内容源不是远么？那么，我们就在靠近用户的地方，建一个缓存服务器，把远端的内容，复制一份，放在这里，不就OK了？
 
-<img class="ztext-gif" width="640" role="presentation" src="https://pic1.zhimg.com/v2-aa9f483b52208241bcbbe6ce95028344_b.webp" data-thumbnail="https://pic1.zhimg.com/v2-aa9f483b52208241bcbbe6ce95028344_b.jpg" data-size="normal" alt="动图" style="display: block;">
+<img class="ztext-gif" width="640" role="presentation" src="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/beed62e5e5f1.webp" data-thumbnail="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/097a333c7548.jpg" data-size="normal" alt="动图" style="display: block;">
 
 
 
-<img src="https://pic4.zhimg.com/80/v2-5793aec83fc645e002a1cd70ab7209a3_720w.webp" data-rawwidth="600" data-rawheight="344" width="600" data-original="https://pic4.zhimg.com/v2-5793aec83fc645e002a1cd70ab7209a3_r.jpg" data-actualsrc="https://pic4.zhimg.com/v2-5793aec83fc645e002a1cd70ab7209a3_b.jpg" data-original-token="v2-5793aec83fc645e002a1cd70ab7209a3" height="344" data-lazy-status="ok">
+<img src="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/d0f113c6ad31.webp" data-rawwidth="600" data-rawheight="344" width="600" data-original="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/ef44d2307089.jpg" data-actualsrc="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/ef44d2307089.jpg" data-original-token="v2-5793aec83fc645e002a1cd70ab7209a3" height="344" data-lazy-status="ok">
 
 > 基础架构：最简单的CDN网络由一个DNS服务器和几台缓存服务器组成：
 > <ol>

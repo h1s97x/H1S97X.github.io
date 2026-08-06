@@ -104,3 +104,6 @@ themes/
 # Qoder AI agent cache
 .qoder/
 .codegraph/
+
+# pnpm store
+.pnpm-store/

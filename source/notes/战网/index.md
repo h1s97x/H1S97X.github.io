@@ -21,23 +21,23 @@ A1:
 
 1、首先关掉安装程序，打开任务管理器关掉与“Battle”有关的2个（图中只显示了一个但是如果安装卡在45%是有两个的）进程。
 
-![read-normal-img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/0d7958e70162aec72c17f6efc380537d423760033.png%40progressive.webp)
+![read-normal-img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/0d7958e70162aec72c17f6efc380537d423760033.png%40progressive.webp)
 
 2、在电脑键盘上按下win+r键，输入regedit，打开注册表。
 
-![read-normal-img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/356d3435fa76d892437a3ab778f5d822423760033.png%40progressive.webp)
+![read-normal-img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/356d3435fa76d892437a3ab778f5d822423760033.png%40progressive.webp)
 
 找到HKEY_CURRENT_USER\Software\Blizzard Entertainment这个注册表文件夹**删除掉图中红框框起来的文件夹**如下图所示：
 
-![read-normal-img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/7d94cc0c3140044128672cdfc9f06412423760033.png%40progressive.webp)
+![read-normal-img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/7d94cc0c3140044128672cdfc9f06412423760033.png%40progressive.webp)
 
 3、进入C盘在查看中勾选隐藏的项目，找到ProgramData这个文件夹。
 
-![read-normal-img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/29599b997f61cc33790e7cdcbe889210423760033.png%40progressive.webp)
+![read-normal-img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/29599b997f61cc33790e7cdcbe889210423760033.png%40progressive.webp)
 
 打开ProgramData文件夹后找到Battle.net文件夹并删除文件夹如图所示：
 
-![read-normal-img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/6d1f921c47e43de190eabb92bda482aa423760033.png%40progressive.webp)
+![read-normal-img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/6d1f921c47e43de190eabb92bda482aa423760033.png%40progressive.webp)
 
 做完上述步骤之后就可以重新打开安装程序了~
 

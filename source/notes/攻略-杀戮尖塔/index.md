@@ -41,13 +41,13 @@ tags: [游戏]
 
 坐拥三大角色中最强的防御体系牌组，不玩防御你确定吗？**乌龟流**，我愿称之为战士最强大的牌组流派，别说进阶20了，你就是进阶200我照样秒你。输出与防御一体，这就是乌龟流卡组；还是仰仗这张传说中的“肚皮”。
 
-![img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-c5ca5431187c26d6e12f0a79c40488bf_720w.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/v2-c5ca5431187c26d6e12f0a79c40488bf_720w.webp)
 
 神之白卡，肚皮+
 
 格挡值转换为伤害，这波属于是将乌龟变玄武了。再加上强化后的零费用优化，绝对是神之白卡之一。好了，我只是感慨下这张卡的强大，接下来正式介绍乌龟流战士牌组的构成：
 
-![img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-8b80c31645c3182e4453dfbae3ed97aa_720w.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/v2-8b80c31645c3182e4453dfbae3ed97aa_720w.webp)
 
 按重要性由左到右依次排开，第一行重要性大于第二行；核心牌只有前三张
 
@@ -89,7 +89,7 @@ BOSS遗物推荐
 
 至于**灼热攻击的牌组**，我也就不一一列举了，就拿两把我通关的局来说吧：
 
-![img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-5e17e033700abdcc59c113623354b662_720w.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/v2-5e17e033700abdcc59c113623354b662_720w.webp)
 
 进阶18灼热攻击，武装，战斗专注，重振精神是核心牌
 
@@ -97,7 +97,7 @@ BOSS遗物推荐
 
 这一套牌组讲究的就是一个爆炸，无需启动，裸伤126，越战越勇。三层怪也抗不过两个回合；当然牌组中若有**死灵之书**存在，则是无敌，可惜摸不得。
 
-![img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-f4bb1021e85ddc52f9985fac134cf369_720w.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/v2-f4bb1021e85ddc52f9985fac134cf369_720w.webp)
 
 单遗物通关挑战
 
@@ -105,7 +105,7 @@ BOSS遗物推荐
 
 接下来是**遗物推荐**：
 
-![img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/v2-625a8a75b052f6622d0733f9ec09eec5_720w.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/v2-625a8a75b052f6622d0733f9ec09eec5_720w.webp)
 
 死灵之书：TOP1
 

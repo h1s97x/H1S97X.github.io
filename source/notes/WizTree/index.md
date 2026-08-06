@@ -21,7 +21,7 @@ tags: [工具]
 
 例如，在 Windows 10 支持网盘的「[按需同步](https://sspai.com/post/58566)」功能后，OneDrive 的文件夹采用了 [特殊 NTFS 挂载点](https://sspai.com/link?target=https%3A%2F%2Funix.stackexchange.com%2Fquestions%2F404159%2Faccessing-onedrive-folder-on-windows-partition) 的方法挂载在硬盘上，这就使得 SpaceSniffer 无法扫描到；除此之外，SpaceSniffer 的基本扫描原理其实就是在硬盘内实实在在地检索文件大小，在固态硬盘上的扫描速度尚且可以接受，但如果在有很多小文件的机械硬盘上，搜索速度就肉眼可见地慢了下来。
 
-![img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/6f93e853d433fc5fe630b4ae270735bf)
+![img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/6f93e853d433fc5fe630b4ae270735bf)
 
 相比之下，今天要介绍的 WizTree 则在速度和新特性兼容上好了不少。
 
@@ -29,7 +29,7 @@ WizTree 在自家官网上号称最快的磁盘空间分析工具（The FASTEST 
 
 具体的速度我录制了一个 GIF 来展示，注意 GIF 停止录制时右边的 SpaceSniffer 并未完成扫描：
 
-![img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/aa09508bb17a1563ef30ed0ca39144a1.gif)
+![img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/aa09508bb17a1563ef30ed0ca39144a1.gif)
 
 对于使用 NTFS 新特性的文件夹，WizTree 可以通过「大小」「分配」两个不同的属性来分辨文件是否已经被「释放空间」。这两个概念你可以这样理解：
 
@@ -51,7 +51,7 @@ WizTree 在自家官网上号称最快的磁盘空间分析工具（The FASTEST 
 
 除了传统的树形大小比较、自动绘制的文件夹大小图之外，WizTree 还提供了分扩展名占用的空间统计，方便你搞懂这个盘究竟装了些什么，或是找出「影音收藏」在哪个硬盘。
 
-![img](https://raw.githubusercontent.com/h1s97x/picture/main/Doc/2d4d97716086944550afac9a794c8949)
+![img](https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/_legacy/2d4d97716086944550afac9a794c8949)
 
 最后还是在这里提醒大家：此类扫描软件可以让你清晰、直观地看到硬盘内的空间占用，但在执行删除操作前，**请确保你知道自己在删除的文件确实没有作用，否则可能会导致系统的崩溃**。
 

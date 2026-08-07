@@ -69,8 +69,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       hexo-util:
-        specifier: ^3.3.0
-        version: 3.3.0
+        specifier: ^4.0.0
+        version: 4.0.0
       moment:
         specifier: ^2.29.4
         version: 2.30.1

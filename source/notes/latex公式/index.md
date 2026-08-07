@@ -1,5 +1,6 @@
 ---
 title: latex公式
+notebook: notes
 date: 2023-08-21 17:33:39
 updated: 2023-08-21 17:33:39
 categories:

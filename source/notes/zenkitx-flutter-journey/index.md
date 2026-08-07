@@ -1,5 +1,6 @@
 ---
 title: ZenKitX 系列：一个 Flutter 开发者的禅意探索之路
+notebook: notes
 date: 2026-03-22
 updated: 2026-07-17 00:08:29
 categories:

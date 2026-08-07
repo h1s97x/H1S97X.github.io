@@ -1,5 +1,6 @@
 ---
 title: CDN介绍与使用
+notebook: notes
 date: 2023-08-28 15:50:42
 updated: 2023-08-28 15:50:42
 categories:

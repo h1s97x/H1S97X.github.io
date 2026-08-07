@@ -77,8 +77,8 @@ class ScaffoldManager {
       // 检查front-matter
       this.checkFrontMatter(scaffold, content);
       
-      // 检查Stellar主题特性
-      this.checkStellarFeatures(scaffold, content);
+      // 检查主题特性字段
+      this.checkThemeFeatures(scaffold, content);
       
       // 检查内容指导
       this.checkContentGuidance(scaffold, content);
@@ -131,16 +131,16 @@ class ScaffoldManager {
       }
     }
 
-    // 检查Stellar特有字段
-    const stellarFields = ['layout', 'menu_id', 'leftbar', 'rightbar'];
-    const stellarFieldCount = stellarFields.filter(field => 
+    // 检查常用主题配置字段
+    const themeFields = ['layout', 'description', 'tags', 'categories'];
+    const themeFieldCount = themeFields.filter(field => 
       frontMatterText.includes(`${field}:`)
     ).length;
     
-    if (stellarFieldCount > 0) {
-      this.passed.push(`${scaffold.file}: 包含 ${stellarFieldCount} 个Stellar主题配置字段`);
+    if (themeFieldCount > 0) {
+      this.passed.push(`${scaffold.file}: 包含 ${themeFieldCount} 个主题配置字段`);
     } else {
-      this.warnings.push(`${scaffold.file}: 缺少Stellar主题配置字段`);
+      this.warnings.push(`${scaffold.file}: 缺少主题配置字段`);
     }
 
     this.passed.push(`${scaffold.file}: front-matter格式正确`);
@@ -162,31 +162,29 @@ class ScaffoldManager {
   }
 
   /**
-   * 检查Stellar主题特性
+   * 检查主题特性字段
    */
-  checkStellarFeatures(scaffold, content) {
-    const stellarFeatures = [
+  checkThemeFeatures(scaffold, content) {
+    const themeFeatures = [
       'layout',
-      'menu_id', 
-      'leftbar',
-      'rightbar',
-      'mathjax',
-      'mermaid',
+      'description',
+      'excerpt',
       'cover',
-      'banner'
+      'tags',
+      'categories'
     ];
 
     let featureCount = 0;
-    for (const feature of stellarFeatures) {
+    for (const feature of themeFeatures) {
       if (content.includes(feature)) {
         featureCount++;
       }
     }
 
     if (featureCount >= 3) {
-      this.passed.push(`${scaffold.file}: 包含 ${featureCount} 个Stellar特性`);
+      this.passed.push(`${scaffold.file}: 包含 ${featureCount} 个主题特性字段`);
     } else {
-      this.warnings.push(`${scaffold.file}: 仅包含 ${featureCount} 个Stellar特性，建议增加更多`);
+      this.warnings.push(`${scaffold.file}: 仅包含 ${featureCount} 个主题特性字段，建议增加更多`);
     }
   }
 
@@ -220,7 +218,7 @@ class ScaffoldManager {
       total: 0,
       byLayout: {},
       byCategory: {},
-      withStellarFeatures: 0
+      withThemeFeatures: 0
     };
 
     const files = this.getAllMarkdownFiles(postsDir);
@@ -251,14 +249,14 @@ class ScaffoldManager {
             }
           }
           
-          // 统计Stellar特性使用
-          const stellarFeatures = ['menu_id', 'leftbar', 'rightbar', 'mathjax', 'mermaid'];
-          const hasStellarFeatures = stellarFeatures.some(feature => 
+          // 统计主题特性使用
+          const themeFeatures = ['layout', 'description', 'excerpt', 'cover'];
+          const hasThemeFeatures = themeFeatures.some(feature => 
             Object.prototype.hasOwnProperty.call(frontMatter, feature)
           );
           
-          if (hasStellarFeatures) {
-            stats.withStellarFeatures++;
+          if (hasThemeFeatures) {
+            stats.withThemeFeatures++;
           }
         }
       } catch {
@@ -301,7 +299,7 @@ class ScaffoldManager {
   displayStats(stats) {
     console.log('📈 内容统计信息:');
     console.log(`   总文章数: ${stats.total}`);
-    console.log(`   使用Stellar特性: ${stats.withStellarFeatures} (${(stats.withStellarFeatures/stats.total*100).toFixed(1)}%)`);
+    console.log(`   使用主题特性: ${stats.withThemeFeatures} (${(stats.withThemeFeatures/stats.total*100).toFixed(1)}%)`);
     
     console.log('\n📋 布局类型分布:');
     Object.entries(stats.byLayout)
@@ -368,13 +366,13 @@ class ScaffoldManager {
   provideSuggestions() {
     console.log('\n💡 Scaffold优化建议:');
     console.log('   1. 确保所有模板包含必要的front-matter字段');
-    console.log('   2. 添加Stellar主题特有配置选项');
+    console.log('   2. 添加主题特有配置选项');
     console.log('   3. 提供清晰的内容编写指导');
     console.log('   4. 使用合理的默认值和示例');
     console.log('   5. 保持模板的一致性和可维护性');
     
     console.log('\n📚 相关文档:');
-    console.log('   - Stellar主题文档: https://xaoxuu.com/wiki/stellar/');
+    console.log('   - Almagest主题文档: https://cnb.cool/h1s97x/hexo-theme-almagest');
     console.log('   - Hexo Scaffolds: https://hexo.io/docs/writing#Scaffolds');
     console.log('   - Front-matter: https://hexo.io/docs/front-matter');
   }
@@ -420,7 +418,7 @@ class ScaffoldManager {
    */
   getScaffoldDescription(name) {
     const descriptions = {
-      'post': '博客文章，支持完整的Stellar主题特性',
+      'post': '博客文章，支持完整的主题特性',
       'page': '静态页面，如关于页面、友链页面等',
       'draft': '草稿文章，用于内容创作和修改',
       'wiki': 'Wiki文档，用于结构化的技术文档',
@@ -487,7 +485,7 @@ class ScaffoldManager {
     console.log('  help      显示此帮助信息\n');
     console.log('功能:');
     console.log('  • 验证scaffold模板格式');
-    console.log('  • 检查Stellar主题特性支持');
+    console.log('  • 检查主题特性支持');
     console.log('  • 生成内容使用统计');
     console.log('  • 提供优化建议');
     console.log('\n示例:');

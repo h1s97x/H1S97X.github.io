@@ -2,14 +2,14 @@
 
 ## 项目概述
 
-Hexo 静态博客项目，使用 Stellar 主题。主要功能是技术分享与生活记录。
+Hexo 静态博客项目，使用 Almagest 主题。主要功能是技术分享与生活记录。
 
 **项目愿景**: 将此项目打造成 Hexo 生态的标杆博客，具备流程规范、代码高质量、高可维护性和高解耦架构。
 
 ## 技术栈
 
 - **框架**: Hexo 8.1.x
-- **主题**: hexo-theme-stellar 1.33.x
+- **主题**: hexo-theme-almagest
 - **语言**: Node.js >= 20.19.0
 - **包管理器**: pnpm (强制使用，禁止 npm/Yarn)
 
@@ -96,12 +96,12 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 │   │   └── ...
 │   ├── coding/              # 编程题解
 │   └── about/               # 关于页面
-├── themes/stellar/          # 主题 (submodule)
+├── themes/almagest/         # 主题 (submodule)
 ├── scripts/                 # Hexo 脚本 (filters/tags/generators)
 ├── scaffolds/               # 内容模板
 ├── tools/                   # 工具脚本
 ├── _config.yml             # Hexo 主配置
-├── _config.stellar.yml     # 主题配置
+├── theme_config (in _config.yml) # 主题配置
 ├── Makefile                # 快捷命令
 └── package.json
 ```
@@ -132,12 +132,12 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 | `pnpm run lint`             | ESLint 检查           |
 | `pnpm run test`             | 运行单元测试          |
 | `pnpm run deploy`           | 部署到 GitHub Pages   |
-| `pnpm run stellar:validate` | 验证 Stellar 主题配置 |
+| `pnpm run almagest:validate` | 验证 Almagest 主题配置 |
 
 ## 常见问题
 
 1. **主题 submodule**: 使用 `pnpm run themes:init` 初始化
-2. **构建失败**: 先运行 `pnpm run stellar:validate` 检查配置
+2. **构建失败**: 先运行 `pnpm run almagest:validate` 检查配置
 
 ## Coze 平台配置
 

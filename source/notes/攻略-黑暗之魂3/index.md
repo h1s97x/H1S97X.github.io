@@ -1,5 +1,6 @@
 ---
 title: 黑暗之魂3攻略
+notebook: notes
 date: 2023-08-28 19:32:39
 updated: 2023-08-28 19:32:39
 categories:

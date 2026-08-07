@@ -144,10 +144,96 @@ hide_posts:
   allowlist_generators: ['*']
   blocklist_generators: []
 
+# ============================================================
+# Almagest 主题配置（覆盖主题默认配置，与主题 _config.yml 深度合并）
+# 参考: https://cnb.cool/h1s97x/hexo-theme-almagest
+# ============================================================
+theme_config:
+  title: 'H1S97X'
+  subtitle: '技术分享与生活记录 | 或有月下赏花人 应无所憾'
+  description: '专注于技术开发、系统运维、游戏世界和学术学习的个人博客'
+  author: 'H1S97X'
+  language: zh-CN
+  date_format: 'YYYY-MM-DD'
+
+  style:
+    primary_color: '#1BCDFC'
+    prefers_theme: 'auto'
+    smooth_transition: true
+    code_theme: 'atom-one-light'
+
+  code_highlight:
+    enable: true
+    cdn: 'https://cdn.jsdelivr.net/npm/highlight.js@11.8.0'
+    theme: 'atom-one-light'
+
+  fonts:
+    # 国内网络访问 Google Fonts 不稳定，关闭以提升加载速度
+    google_fonts: false
+
+  menu:
+    博客: /blog/
+    笔记: /notes/
+    Coding: /coding/
+    关于: /about/
+
+  sidebar:
+    enable: false
+
+  features:
+    search: true
+    comments: true
+    toc: true
+    code_copy: true
+    back_to_top: true
+    reading_time: true
+    show_excerpt: true
+
+  social:
+    github: 'https://github.com/h1s97x'
+    email: 'yang1297656998@outlook.com'
+
+  services:
+    giscus:
+      enable: true
+      repo: 'h1s97x/H1S97X.github.io'
+      repo_id: 'R_kgDOJq3IOw'
+      category: 'Announcements'
+      category_id: 'DIC_kwDOJq3IO84C0cUU'
+      mapping: 'pathname'
+      reactions_enabled: true
+      emit_metadata: false
+      input_position: 'bottom'
+      theme: 'preferred_color_scheme'
+      lang: 'zh-CN'
+      loading: 'lazy'
+
+  pagination:
+    per_page: 10
+    type: 'pagination'
+
+  article:
+    excerpt_length: 200
+    show_updated: true
+    show_reading_time: true
+
+  page:
+    show_updated: true
+
+  image:
+    lazy_load: true
+    placeholder_color: '#f0f0f0'
+
+  inject:
+    head: ''
+    body_end: ''
+
+  debug: false
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: stellar
+theme: almagest
 aplayer:
   meting: true
   asset_inject: false

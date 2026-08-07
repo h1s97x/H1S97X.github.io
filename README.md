@@ -1,9 +1,9 @@
 # H1S97X's Blog
 
-个人技术博客，使用 Hexo + Stellar 主题构建，托管于 GitHub Pages。
+个人技术博客，使用 Hexo + Almagest 主题构建，托管于 GitHub Pages。
 
 [![Powered by Hexo](https://img.shields.io/badge/Powered%20by-Hexo-blue?style=flat-square)](https://hexo.io/)
-[![Theme Stellar](https://img.shields.io/badge/Theme-Stellar-orange?style=flat-square)](https://github.com/xaoxuu/hexo-theme-stellar)
+[![Theme Almagest](https://img.shields.io/badge/Theme-Almagest-purple?style=flat-square)](https://cnb.cool/h1s97x/hexo-theme-almagest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20.19.0-green?style=flat-square)](https://nodejs.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/h1s97x/H1S97X.github.io/pulls)
@@ -11,7 +11,7 @@
 ## 技术栈
 
 - **框架**: Hexo 8.x
-- **主题**: Stellar 1.33.x
+- **主题**: Almagest (hexo-theme-almagest)
 - **包管理器**: pnpm (禁止 npm/Yarn)
 
 ## 快速开始
@@ -45,7 +45,7 @@ pnpm run deploy
 
 ```
 source/          # 博客内容 (文章、笔记、题解)
-themes/stellar/  # 主题 (submodule)
+themes/almagest/  # 主题 (submodule)
 scripts/         # 自定义脚本 (filters, tags, generators)
 tools/           # 工具脚本
 docs/            # 开发文档

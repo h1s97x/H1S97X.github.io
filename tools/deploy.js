@@ -102,20 +102,20 @@ class BlogDeployer {
    * 构建静态文件
    */
   buildSite() {
-    console.log('🔨 构建Stellar主题静态网站...\n');
+    console.log('🔨 构建Almagest主题静态网站...\n');
 
     if (this.isDryRun) {
       console.log('🔍 [预览模式] 跳过实际构建');
       return;
     }
 
-    // 验证Stellar主题配置
-    console.log('🔍 验证Stellar主题配置...');
+    // 验证Almagest主题配置
+    console.log('🔍 验证Almagest主题配置...');
     try {
-      this.execCommand('npm run stellar:validate');
-      console.log('✅ Stellar主题配置验证通过');
+      this.execCommand('npm run almagest:validate');
+      console.log('✅ Almagest主题配置验证通过');
     } catch {
-      console.log('⚠️  Stellar主题配置验证失败，但继续构建');
+      console.log('⚠️  Almagest主题配置验证失败，但继续构建');
     }
 
     // 初始化主题子模块
@@ -132,7 +132,7 @@ class BlogDeployer {
     this.execCommand('npm run clean');
 
     // 生成静态文件
-    console.log('📦 使用Stellar主题生成静态文件...');
+    console.log('📦 使用Almagest主题生成静态文件...');
     this.execCommand('npm run build');
 
     // 检查生成结果
@@ -141,7 +141,7 @@ class BlogDeployer {
     }
 
     const files = fs.readdirSync(this.publicDir);
-    console.log(`✅ Stellar主题构建完成，共 ${files.length} 个文件/目录`);
+    console.log(`✅ Almagest主题构建完成，共 ${files.length} 个文件/目录`);
 
     // 验证关键文件
     const keyFiles = [
@@ -372,7 +372,7 @@ class BlogDeployer {
    * 显示部署结果
    */
   showResult() {
-    console.log('🎉 Stellar主题部署完成！\n');
+    console.log('🎉 Almagest主题部署完成！\n');
 
     try {
       const remoteUrl = this.execCommand('git remote get-url origin', {
@@ -382,12 +382,12 @@ class BlogDeployer {
       const username = remoteUrl.split('/').slice(-2, -1)[0].split(':').pop();
 
       console.log('📋 部署信息:');
-      console.log('   主题: Stellar v1.33.1');
+      console.log('   主题: Almagest');
       console.log(`   仓库: ${username}/${repoName}`);
       console.log('   分支: gh-pages');
       console.log(`   网址: https://${username}.github.io/${repoName}`);
       console.log();
-      console.log('🌟 Stellar主题特性:');
+      console.log('🌟 Almagest主题特性:');
       console.log('   ✅ 本地搜索功能');
       console.log('   ✅ Giscus评论系统');
       console.log('   ✅ KaTeX数学公式');
@@ -397,9 +397,9 @@ class BlogDeployer {
       console.log();
       console.log('⏰ 注意: GitHub Pages 可能需要几分钟时间更新');
       console.log('🔗 可以在仓库的 Settings > Pages 中查看部署状态');
-      console.log('📖 主题文档: https://xaoxuu.com/wiki/stellar/');
+      console.log('📖 主题文档: https://cnb.cool/h1s97x/hexo-theme-almagest');
     } catch {
-      console.log('✅ Stellar主题部署已完成，请在 GitHub 仓库中查看');
+      console.log('✅ Almagest主题部署已完成，请在 GitHub 仓库中查看');
     }
   }
 
@@ -446,20 +446,20 @@ class BlogDeployer {
    * 显示帮助信息
    */
   showHelp() {
-    console.log('📖 Stellar主题自动部署工具使用说明\n');
+    console.log('📖 Almagest主题自动部署工具使用说明\n');
     console.log('用法:');
     console.log('  node tools/deploy.js [选项]\n');
     console.log('选项:');
     console.log('  --dry-run   预览模式，不执行实际操作');
     console.log('  --help      显示此帮助信息\n');
     console.log('功能:');
-    console.log('  • 验证 Stellar 主题配置');
+    console.log('  • 验证 Almagest 主题配置');
     console.log('  • 初始化主题子模块');
-    console.log('  • 自动构建 Hexo + Stellar 静态网站');
+    console.log('  • 自动构建 Hexo + Almagest 静态网站');
     console.log('  • 创建或更新 gh-pages 分支');
     console.log('  • 部署到 GitHub Pages');
     console.log('  • 自动切换分支和清理文件\n');
-    console.log('Stellar主题特性:');
+    console.log('Almagest主题特性:');
     console.log('  🔍 本地搜索功能');
     console.log('  💬 Giscus评论系统');
     console.log('  📐 KaTeX数学公式');
@@ -470,7 +470,7 @@ class BlogDeployer {
     console.log('  node tools/deploy.js --dry-run  # 预览部署过程');
     console.log('  node tools/deploy.js            # 执行实际部署');
     console.log('  npm run deploy                  # 使用npm脚本');
-    console.log('  npm run stellar:test            # 测试Stellar配置');
+    console.log('  npm run almagest:test           # 测试Almagest配置');
   }
 }
 

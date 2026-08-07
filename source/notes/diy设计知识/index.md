@@ -1,5 +1,6 @@
 ---
 title: DIY设计知识
+notebook: notes
 date: 2023-09-15 07:37:00
 updated: 2023-09-15 07:37:00
 categories:

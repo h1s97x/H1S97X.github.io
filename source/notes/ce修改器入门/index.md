@@ -1,5 +1,6 @@
 ---
 title: CE修改器入门
+notebook: notes
 date: 2023-10-19 08:53:08
 updated: 2023-10-19 08:53:08
 categories:

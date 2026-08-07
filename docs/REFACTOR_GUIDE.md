@@ -9,11 +9,11 @@
 ```
 /workspace/projects/
 ├── source/                   # 博客内容
-├── themes/stellar/           # 主题 (submodule)
+├── themes/almagest/          # 主题 (submodule)
 ├── scripts/                  # Hexo 脚本
 ├── tools/                    # 工具脚本
 ├── _config.yml              # Hexo 主配置
-├── _config.stellar.yml      # 主题配置
+├── theme_config (in _config.yml) # 主题配置
 ├── package.json
 └── .github/workflows/       # CI/CD
 ```

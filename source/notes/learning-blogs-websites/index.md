@@ -1,5 +1,6 @@
 ---
 title: 一些可供学习的个人博客或网站
+notebook: notes
 date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:

@@ -7,11 +7,6 @@ description: # Wiki文档描述
 # Wiki配置
 wiki: # Wiki项目名称 (必填)
 layout: wiki
-menu_id: wiki
-
-# Stellar主题配置
-leftbar: tree, related, recent # Wiki专用左侧栏
-rightbar: ghrepo, toc # Wiki专用右侧栏
 
 # 文档属性
 # order: 1 # 文档排序权重

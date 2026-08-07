@@ -1,5 +1,6 @@
 ---
 title: 访问外网 梯子
+notebook: notes
 date: 2023-08-28 18:38:50
 updated: 2023-08-28 18:38:50
 categories:

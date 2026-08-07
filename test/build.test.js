@@ -35,9 +35,9 @@ describe('Build Tests', () => {
   test('All required assets should be generated', () => {
     const requiredAssets = [
       'css/main.css',
-      'js/main.js',
-      'blog/archives',
-      'blog/categories',
+      'js/theme.js',
+      'archives',
+      'categories',
       'search.json',
       'sitemap.xml',
       'atom.xml',

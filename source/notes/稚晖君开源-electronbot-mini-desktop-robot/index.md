@@ -1,5 +1,6 @@
 ---
 title: 稚晖君开源——ElectronBot:Mini Desktop Robot
+notebook: notes
 date: 2023-08-28 19:51:10
 updated: 2023-08-28 19:51:10
 categories:

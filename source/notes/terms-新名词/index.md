@@ -1,5 +1,6 @@
 ---
 title: terms-新名词
+notebook: notes
 date: 2023-09-13 14:09:10
 updated: 2023-09-13 14:09:10
 categories:

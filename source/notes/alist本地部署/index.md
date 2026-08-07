@@ -1,5 +1,6 @@
 ---
 title: Alist本地部署
+notebook: notes
 date: 2023-09-12 21:38:55
 updated: 2026-07-17 00:08:29
 categories:

@@ -1,5 +1,6 @@
 ---
 title: 从0开始学习制作mod
+notebook: notes
 categories:
   - 生活
 date: 2026-07-17 00:12:52

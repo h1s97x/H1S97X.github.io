@@ -1,5 +1,6 @@
 ---
 title: HTTrack 简单使用
+notebook: notes
 date: 2026-07-17 00:12:52
 updated: 2026-07-17 00:12:52
 categories:

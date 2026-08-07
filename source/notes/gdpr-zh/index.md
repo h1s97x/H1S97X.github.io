@@ -1,5 +1,6 @@
 ---
 title: GDPR zh
+notebook: notes
 date: '2025-12-27 23:46:11'
 updated: '2025-12-27 23:46:11'
 categories:

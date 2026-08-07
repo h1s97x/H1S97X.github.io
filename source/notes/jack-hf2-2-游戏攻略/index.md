@@ -1,5 +1,6 @@
 ---
 title: jack-hf2.2 游戏攻略
+notebook: notes
 date: 2023-08-28 08:26:21
 updated: 2023-08-28 08:26:21
 categories:

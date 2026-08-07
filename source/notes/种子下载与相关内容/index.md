@@ -1,5 +1,6 @@
 ---
 title: ‘种子’下载与相关内容
+notebook: notes
 date: 2023-08-29 14:51:07
 updated: 2023-08-29 14:51:07
 categories:

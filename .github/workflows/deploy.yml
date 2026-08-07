@@ -42,16 +42,16 @@ jobs:
           git submodule update --init --recursive
           pnpm run themes:status
 
-      - name: Validate Stellar theme configuration
-        run: pnpm run stellar:validate
+      - name: Validate Almagest theme configuration
+        run: pnpm run almagest:validate
 
       - name: Run tests
         run: pnpm test
 
-      - name: Build static files with Stellar theme
+      - name: Build static files with Almagest theme
         run: |
           pnpm run clean
-          pnpm run stellar:validate
+          pnpm run almagest:validate
           pnpm run build
 
       - name: Verify build output

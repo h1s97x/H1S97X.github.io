@@ -1,9 +1,9 @@
 # Hexo主题子模块配置
 # 
 # 主题列表:
-# - stellar: 内置文档系统的简约主题
+# - almagest: 简洁而强大的 Hexo 主题（天文主题，参考 Stellar 设计）
 #
 
-[submodule "themes/stellar"]
-	path = themes/stellar
-	url = https://github.com/xaoxuu/hexo-theme-stellar.git
+[submodule "themes/almagest"]
+	path = themes/almagest
+	url = https://cnb.cool/h1s97x/hexo-theme-almagest.git

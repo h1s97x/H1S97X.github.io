@@ -1,5 +1,6 @@
 ---
 title: 从0开始写插件-油猴
+notebook: notes
 categories:
   - 技术
 date: 2023-12-26 10:29:15

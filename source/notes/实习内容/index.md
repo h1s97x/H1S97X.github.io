@@ -1,5 +1,6 @@
 ---
 title: 实习内容
+notebook: notes
 date: 2023-09-27 14:11:53
 updated: 2023-09-27 14:11:53
 categories:

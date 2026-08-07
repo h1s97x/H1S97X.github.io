@@ -10,7 +10,6 @@ banner: # 横幅图片URL
 # 专栏配置
 topic: # 专栏名称 (必填)
 layout: topic
-menu_id: post
 
 # 文章属性
 # order: 1 # 在专栏中的排序
@@ -19,10 +18,6 @@ categories:
   - # 主分类
 tags:
   - # 标签
-
-# Stellar主题配置
-leftbar: related, recent, timeline # 专栏专用左侧栏
-rightbar: ghrepo, toc # 专栏专用右侧栏
 
 # 内容设置
 # mathjax: false # 是否启用数学公式

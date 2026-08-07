@@ -14,13 +14,13 @@
     "deploy": "node tools/deploy.js",
     "deploy:manual": "hexo deploy",
     "deploy:preview": "node tools/deploy.js --dry-run",
-    "deploy:stellar": "pnpm run stellar:validate && pnpm run clean && pnpm run build && node tools/deploy.js",
-    "deploy:check": "pnpm run stellar:validate && pnpm run build:test",
+    "deploy:almagest": "pnpm run almagest:validate && pnpm run clean && pnpm run build && node tools/deploy.js",
+    "deploy:check": "pnpm run almagest:validate && pnpm run build:test",
     "themes:status": "git submodule status",
     "themes:update": "git submodule update --remote",
     "themes:init": "git submodule update --init --recursive",
-    "stellar:validate": "node tools/validate-stellar-theme.js",
-    "stellar:test": "pnpm run clean && pnpm run stellar:validate && pnpm run build:test",
+    "almagest:validate": "node tools/validate-almagest-theme.js",
+    "almagest:test": "pnpm run clean && pnpm run almagest:validate && pnpm run build:test",
     "scaffolds:validate": "node tools/manage-scaffolds.js validate",
     "scaffolds:list": "node tools/manage-scaffolds.js list",
     "scaffolds:stats": "node tools/manage-scaffolds.js stats",
@@ -37,7 +37,7 @@
     "validate": "pnpm run test && pnpm run check-links",
     "precommit": "pnpm run validate",
     "prepare": "husky install",
-    "postinstall": "git submodule update --init --recursive themes/stellar",
+    "postinstall": "git submodule update --init --recursive themes/almagest",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "contributors:check": "all-contributors check"
@@ -62,10 +62,12 @@
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-hide-posts": "^0.4.3",
+    "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^7.1.1",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
-    "hexo-theme-stellar": "1.33.1",
+    "hexo-util": "^3.3.0",
+    "moment": "^2.29.4",
     "postcss": "^8.5.25",
     "probe-image-size": "^7.3.0",
     "svgo": "^4.0.2",
@@ -91,7 +93,7 @@
   "jest": {
     "testEnvironment": "node",
     "testMatch": [
-      "**/test/**/*.test.js"
+      "<rootDir>/test/**/*.test.js"
     ],
     "collectCoverageFrom": [
       "tools/**/*.js",

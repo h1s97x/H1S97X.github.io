@@ -1,5 +1,6 @@
 ---
 title: RSS订阅
+notebook: notes
 date: 2023-08-29 15:26:53
 updated: 2023-08-29 15:26:53
 categories:

@@ -33,13 +33,13 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Initialize Stellar theme submodules
+    - name: Initialize Almagest theme submodules
       run: |
         git submodule update --init --recursive
         pnpm run themes:status
 
-    - name: Validate Stellar theme configuration
-      run: pnpm run stellar:validate
+    - name: Validate Almagest theme configuration
+      run: pnpm run almagest:validate
 
     - name: Run tests
       run: pnpm test
@@ -47,10 +47,10 @@ jobs:
     - name: Lint check
       run: pnpm run lint
 
-    - name: Build test with Stellar theme
+    - name: Build test with Almagest theme
       run: |
         pnpm run clean
-        pnpm run stellar:validate
+        pnpm run almagest:validate
         pnpm run build
 
     - name: Check for broken links

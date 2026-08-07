@@ -17,9 +17,74 @@ main:
             branch: main
             force: true
 
-# Issue 自动分配处理人：Issue 创建后自动将处理人设置为仓库维护者
-# issue.* 事件需挂靠在 $ 兜底分支下，使用默认分支的配置执行
+# 手动从 GitHub 拉取最新提交：由 .cnb/web_trigger.yml 中的自定义按钮触发
+# web_trigger 事件建议挂靠在 $ 兜底分支下（默认分支 main 执行）
+# 合并模式同步，不会强制覆盖本地提交；本地有分叉时按所选策略处理
 $:
+  web_trigger_sync_github:
+    - name: sync-from-github
+      # 敏感信息（GITHUB_USERNAME / GITHUB_TOKEN）复用同一密钥仓库
+      imports:
+        - https://cnb.cool/h1s97x/secret-env/-/blob/main/env.yml
+      docker:
+        image: node:20
+      lock:
+        key: sync-github-main
+        wait: true
+        cancel-in-progress: true
+      stages:
+        - name: fetch & merge github main
+          script: |
+            set -euo pipefail
+
+            # 配置 git 身份（merge/rebase 需要 author 信息）
+            git config user.name "CNB Sync Bot"
+            git config user.email "cnb-sync@users.noreply.cnb.cool"
+
+            # 配置凭据：GitHub 用 GITHUB_TOKEN，CNB 用 CNB_TOKEN
+            # 凭据写入 credential helper，URL 中不携带 token，避免泄露到日志
+            git config --global credential.helper store
+            umask 077
+            cat > ~/.git-credentials <<EOF
+            https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com
+            https://cnb:${CNB_TOKEN}@cnb.cool
+            EOF
+
+            # 添加 GitHub remote 并拉取最新提交（不覆盖本地工作区）
+            git remote remove github 2>/dev/null || true
+            git remote add github https://github.com/h1s97x/H1S97X.github.io.git
+            git fetch github main
+
+            echo "当前分支: $(git branch --show-current)"
+            echo "本地 HEAD : $(git rev-parse --short HEAD)"
+            echo "GitHub main: $(git rev-parse --short github/main)"
+
+            SYNC_MODE="${SYNC_MODE:-merge}"
+            case "${SYNC_MODE}" in
+              merge)
+                echo ">>> 合并模式：保留两边提交历史"
+                git merge --no-edit github/main
+                ;;
+              ff-only)
+                echo ">>> 快进模式：本地有分叉时直接失败，不会强制覆盖"
+                git merge --ff-only github/main
+                ;;
+              rebase)
+                echo ">>> 变基模式：本地提交重放到 GitHub 最新之上"
+                git pull --rebase github main
+                ;;
+              *)
+                echo "未知同步方式: ${SYNC_MODE}" >&2
+                exit 1
+                ;;
+            esac
+
+            # 推送到 CNB，使两边提交保持一致
+            git push origin HEAD:main
+            echo ">>> 同步完成，CNB 与 GitHub main 已保持一致 ✅"
+
+  # Issue 自动分配处理人：Issue 创建后自动将处理人设置为仓库维护者
+  # issue.* 事件需挂靠在 $ 兜底分支下，使用默认分支的配置执行
   issue.open:
     - name: auto-assign-issue-owner
       docker:

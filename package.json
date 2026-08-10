@@ -68,7 +68,7 @@
     "hexo-server": "^3.0.0",
     "hexo-util": "^4.0.0",
     "moment": "^2.29.4",
-    "postcss": "^8.5.25",
+    "postcss": "^8.5.26",
     "probe-image-size": "^7.3.0",
     "svgo": "^4.0.2",
     "terser": "^5.49.1"

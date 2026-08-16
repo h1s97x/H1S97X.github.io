@@ -2,9 +2,11 @@
 title: 2. 两数相加
 notebook: coding
 tags: [算法]
+description: "给你两个非空链表表示两个非负整数，每位数字逆序存储，将两数相加并以相同形式返回"
+leetcode: 2
+studyplan: 编程入门
 date: 2024-11-09 20:49:16
 updated: 2024-11-09 20:49:16
-description: "给你两个非空链表表示两个非负整数，每位数字逆序存储，将两数相加并以相同形式返回"
 ---
 
 ## Problem

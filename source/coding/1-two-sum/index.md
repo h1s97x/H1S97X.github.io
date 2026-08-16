@@ -2,9 +2,11 @@
 title: 1. 两数之和
 notebook: coding
 tags: [算法]
+description: "给定整数数组 nums 和目标值 target，找出和为目标值的两个整数的下标"
+leetcode: 1
+studyplan: 编程入门
 date: 2024-11-09 20:49:16
 updated: 2024-11-09 20:49:16
-description: "给定整数数组 nums 和目标值 target，找出和为目标值的两个整数的下标"
 ---
 
 ## Problem

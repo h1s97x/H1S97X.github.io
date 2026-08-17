@@ -15,6 +15,9 @@ name: Sync to CNB
 # 注意：本仓库主分支在 CNB，正常情况下 .cnb.yml 已自动把 CNB 提交推回 GitHub，
 #       本 workflow 主要覆盖「直接改 GitHub 再回灌 CNB」的场景，为兜底方向。
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [main]

@@ -1,9 +1,16 @@
-# Git Sync 流水线：每次 push 到 main 分支后，自动将代码同步到 GitHub
-# 使用 tencentcom/git-sync 官方插件，HTTPS + Access Token 认证
+# CNB 流水线配置
+# 1. Git Sync：每次 push 到 main 后，自动将代码同步到 GitHub（h1s97x/H1S97X.github.io）
+#    使用官方 tencentcom/git-sync 插件 + sync_mode: rebase（Rebase 模式），
+#    HTTPS + Access Token 认证。参考 https://cnb.cool/cnb/plugins/tencentcom/git-sync
+#    敏感信息（GITHUB_USERNAME / GITHUB_TOKEN）存放在密钥仓库 secret-env，通过 imports 引用。
+# 2. 手动触发（Web Trigger）：从 GitHub 拉取最新提交到 CNB（GitHub → CNB）
+#    使用官方插件 sync_mode: pull，按钮见 .cnb/web_trigger.yml，事件挂靠在 $ 兜底分支下。
+# 3. Issue 自动分配处理人：创建后自动将处理人设置为仓库维护者。
+# 维护者统一内联，换维护者时改下方 ISSUE_ASSIGNEE 一处。
+
 main:
   push:
     - name: sync-to-github
-      # 敏感信息（GITHUB_USERNAME / GITHUB_TOKEN）存放在密钥仓库 secret-env，通过 imports 引用
       imports:
         - https://cnb.cool/h1s97x/secret-env/-/blob/main/env.yml
       stages:
@@ -15,125 +22,55 @@ main:
             username: ${GITHUB_USERNAME}
             password: ${GITHUB_TOKEN}
             branch: main
-            force: true
+            push_tags: true
+            # Rebase 模式：保留 GitHub 仓库特有的平台文件（如 .github/workflows/*.yml），
+            # 同时避免无条件 force 覆盖 GitHub 远端的新提交。
+            sync_mode: rebase
 
-# 手动从 GitHub 拉取最新提交：由 .cnb/web_trigger.yml 中的自定义按钮触发
-# web_trigger 事件建议挂靠在 $ 兜底分支下（默认分支 main 执行）
-# 合并模式同步，不会强制覆盖本地提交；本地有分叉时按所选策略处理
+  # PR 创建后自动分配处理人（可选）
+  # 使用 git:reviewer 内置任务（无需脚本、自动注入鉴权）。
+  pull_request:
+    - name: auto-assign-pr-owner
+      env:
+        PR_ASSIGNEE: h1s97x
+      stages:
+        - name: assign pr to owner
+          type: git:reviewer
+          options:
+            type: add-assignee
+            reviewers: ${PR_ASSIGNEE}
+
+# 兜底分支：web_trigger / issue.* 等事件
 $:
-  web_trigger_sync_github:
-    - name: sync-from-github
-      # 敏感信息（GITHUB_USERNAME / GITHUB_TOKEN）复用同一密钥仓库
+  # 手动触发：从 GitHub 拉取（GitHub → CNB）
+  # 使用官方 tencentcom/git-sync 插件 + sync_mode: pull（Pull 模式），
+  # 参考 https://cnb.cool/cnb/plugins/tencentcom/git-sync
+  web_trigger_pull_from_github:
+    - name: web-trigger-pull-from-github
       imports:
         - https://cnb.cool/h1s97x/secret-env/-/blob/main/env.yml
-      docker:
-        image: node:20
-      lock:
-        key: sync-github-main
-        wait: true
-        cancel-in-progress: true
       stages:
-        - name: fetch & merge github main
-          script: |
-            set -euo pipefail
+        - name: pull from github
+          image: tencentcom/git-sync
+          settings:
+            target_url: https://github.com/h1s97x/H1S97X.github.io.git
+            auth_type: https
+            username: ${GITHUB_USERNAME}
+            password: ${GITHUB_TOKEN}
+            sync_mode: pull
 
-            # 配置 git 身份（merge/rebase 需要 author 信息）
-            git config user.name "CNB Sync Bot"
-            git config user.email "cnb-sync@users.noreply.cnb.cool"
-
-            # 配置凭据：GitHub 用 GITHUB_TOKEN，CNB 用 CNB_TOKEN
-            # 凭据写入 credential helper，URL 中不携带 token，避免泄露到日志
-            git config --global credential.helper store
-            umask 077
-            cat > ~/.git-credentials <<EOF
-            https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com
-            https://cnb:${CNB_TOKEN}@cnb.cool
-            EOF
-
-            # 添加 GitHub remote 并拉取最新提交（不覆盖本地工作区）
-            git remote remove github 2>/dev/null || true
-            git remote add github https://github.com/h1s97x/H1S97X.github.io.git
-            git fetch github main
-
-            echo "当前分支: $(git branch --show-current)"
-            echo "本地 HEAD : $(git rev-parse --short HEAD)"
-            echo "GitHub main: $(git rev-parse --short github/main)"
-
-            SYNC_MODE="${SYNC_MODE:-merge}"
-            case "${SYNC_MODE}" in
-              merge)
-                echo ">>> 合并模式：保留两边提交历史"
-                git merge --no-edit github/main
-                ;;
-              ff-only)
-                echo ">>> 快进模式：本地有分叉时直接失败，不会强制覆盖"
-                git merge --ff-only github/main
-                ;;
-              rebase)
-                echo ">>> 变基模式：本地提交重放到 GitHub 最新之上"
-                git pull --rebase github main
-                ;;
-              *)
-                echo "未知同步方式: ${SYNC_MODE}" >&2
-                exit 1
-                ;;
-            esac
-
-            # 推送到 CNB，使两边提交保持一致
-            git push origin HEAD:main
-            echo ">>> 同步完成，CNB 与 GitHub main 已保持一致 ✅"
-
-  # Issue 自动分配处理人：Issue 创建后自动将处理人设置为仓库维护者
-  # issue.* 事件需挂靠在 $ 兜底分支下，使用默认分支的配置执行
+  # Issue 创建后自动分配处理人
+  # 使用官方 cnbcool/cnb-cli 插件（CNB OpenAPI 命令行工具），一行命令完成分配：
+  #   - 流水线自动注入 CNB_TOKEN，无需手写鉴权
+  #   - issue.open 事件自动注入 CNB_REPO_SLUG / CNB_ISSUE_IID，cnb 会识别快捷上下文
+  #   参考 https://cnb.cool/cnb/plugins/cnbcool/cnb-cli
   issue.open:
     - name: auto-assign-issue-owner
-      docker:
-        image: python:3.12-slim
       env:
         ISSUE_ASSIGNEE: h1s97x
       stages:
         - name: assign issue to owner
+          image: cnbcool/cnb-cli
           script: |
             set -e
-            python3 - <<'PYEOF'
-            import json
-            import os
-            import urllib.request
-
-            repo = os.environ["CNB_REPO_SLUG"]
-            number = os.environ["CNB_ISSUE_IID"]
-            owner = os.environ["ISSUE_ASSIGNEE"]
-            token = os.environ["CNB_TOKEN"]
-            api = os.environ.get("CNB_API_ENDPOINT", "https://api.cnb.cool").rstrip("/")
-            base = f"{api}/{repo}/-/issues/{number}/assignees"
-
-            def request(path, method="GET", data=None):
-                headers = {
-                    "Authorization": f"Bearer {token}",
-                    "Accept": "application/json",
-                }
-                body = None
-                if data is not None:
-                    body = json.dumps(data).encode()
-                    headers["Content-Type"] = "application/json"
-                req = urllib.request.Request(path, data=body, method=method, headers=headers)
-                with urllib.request.urlopen(req) as resp:
-                    return resp.status, resp.read().decode()
-
-            # 1. 查询当前处理人，已分配则跳过
-            try:
-                _, raw = request(base)
-                assignees = json.loads(raw) if raw else []
-                names = [a.get("username") for a in assignees] if isinstance(assignees, list) else []
-                if owner in names:
-                    print(f"[skip] issue already assigned to {owner}")
-                    raise SystemExit(0)
-            except SystemExit:
-                raise
-            except Exception as e:
-                print(f"[warn] query assignees failed: {e}")
-
-            # 2. 添加处理人
-            status, _ = request(base, method="POST", data={"assignees": [owner]})
-            print(f"[ok] assigned {owner} to issue #{number}, status={status}")
-            PYEOF
+            cnb issues add-assignees --assignees $ISSUE_ASSIGNEE

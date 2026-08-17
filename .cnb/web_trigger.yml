@@ -1,21 +1,12 @@
-# 手动触发按钮配置：在「代码-分支详情页」点击按钮，手动拉取 GitHub 最新提交
-# 按钮事件 web_trigger_sync_github 需在 .cnb.yml 中对应配置，否则无法触发
+# 手动触发的 Web Trigger 按钮配置
+# 从 GitHub 拉取：将 GitHub 远端最新提交拉取到 CNB 仓库（GitHub → CNB）
+# 使用官方 tencentcom/git-sync 插件 + sync_mode: pull（Pull 模式），见 .cnb.yml。
+# 按钮在仓库任意分支均可触发，事件名与 .cnb.yml 中 $ 兜底分支下的 web_trigger 流水线对应。
 branch:
-  - reg: ^main
+  - reg: .*
     buttons:
-      - name: 🔄 从 GitHub 拉取最新提交
-        description: 手动将 GitHub main 分支的最新提交同步到 CNB（合并模式，不覆盖本地提交）
-        event: web_trigger_sync_github
-        groupName: 代码同步
-        inputs:
-          sync_mode:
-            name: 同步方式
-            type: select
-            default: merge
-            options:
-              - name: 合并（保留两边提交历史，推荐）
-                value: merge
-              - name: 快进（仅当本地无分叉时可用）
-                value: ff-only
-              - name: 变基（以 GitHub 为主线重放本地提交）
-                value: rebase
+      - name: 从 GitHub 拉取
+        description: 从 GitHub 远端拉取最新提交到当前分支（GitHub → CNB）
+        event: web_trigger_pull_from_github
+        permissions:
+          roles: [owner, master, developer]

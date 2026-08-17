@@ -6,6 +6,7 @@
 # 2. 手动触发（Web Trigger）：从 GitHub 拉取最新提交到 CNB（GitHub → CNB）
 #    使用官方插件 sync_mode: pull，按钮见 .cnb/web_trigger.yml，事件挂靠在 $ 兜底分支下。
 # 3. Issue 自动分配处理人：创建后自动将处理人设置为仓库维护者。
+# 4. PR 自动分配处理人/审查人：使用 git:reviewer 内置任务，无需手写脚本。
 # 维护者统一内联，换维护者时改下方 ISSUE_ASSIGNEE 一处。
 
 main:
@@ -27,8 +28,10 @@ main:
             # 同时避免无条件 force 覆盖 GitHub 远端的新提交。
             sync_mode: rebase
 
-  # PR 创建后自动分配处理人（可选）
+  # PR 创建后自动分配处理人和审查人
   # 使用 git:reviewer 内置任务（无需脚本、自动注入鉴权）。
+  #   处理人：type: add-assignee
+  #   审查人：type: add-reviewer-from-repo-members（从仓库成员中随机选一名评审人）
   pull_request:
     - name: auto-assign-pr-owner
       env:
@@ -39,6 +42,10 @@ main:
           options:
             type: add-assignee
             reviewers: ${PR_ASSIGNEE}
+        - name: add pr reviewer
+          type: git:reviewer
+          options:
+            type: add-reviewer-from-repo-members
 
 # 兜底分支：web_trigger / issue.* 等事件
 $:

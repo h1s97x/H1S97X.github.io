@@ -3,14 +3,30 @@ name: Deploy
 on:
   push:
     branches: [ main, develop ]
+    # ⚠️ 本文件 paths 与 ci.yml 各自维护（GitHub Actions 不支持跨文件复用路径清单）。
+    # 仅代码/内容/配置相关改动触发部署；纯文档改动不触发，节省 Pages 构建。
+    # 改 paths 时请同步核对 ci.yml。
+    paths:
+      - 'source/**'
+      - 'scripts/**'
+      - 'tools/**'
+      - 'scaffolds/**'
+      - 'themes/**'
+      - '_config*.yml'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'CNAME'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 permissions:
   contents: write
 
+# 同一分支的连续部署取消旧运行，避免排队；部署不可中断，故 cancel 保留最近一次
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -35,7 +51,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Initialize theme submodules
         run: |

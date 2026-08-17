@@ -3,11 +3,42 @@ name: CI
 on:
   push:
     branches: [ main, develop ]
+    # ⚠️ 本文件 paths 与 deploy.yml 各自维护（GitHub Actions 不支持跨文件复用路径清单）。
+    # 仅代码/内容/配置相关改动触发；纯文档/说明改动不跑 CI。
+    # 改 paths 时请同步核对 deploy.yml。
+    paths:
+      - 'source/**'
+      - 'scripts/**'
+      - 'tools/**'
+      - 'scaffolds/**'
+      - 'themes/**'
+      - '_config*.yml'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - '.github/workflows/ci.yml'
   pull_request:
     branches: [ main, develop ]
+    # 与 push 相同的路径过滤，减少 PR 噪音
+    paths:
+      - 'source/**'
+      - 'scripts/**'
+      - 'tools/**'
+      - 'scaffolds/**'
+      - 'themes/**'
+      - '_config*.yml'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - '.github/workflows/ci.yml'
 
 permissions:
   contents: read
+
+# 并发控制：同一 ref 的连续 push 自动取消旧运行，不排队，节省资源
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -31,7 +62,7 @@ jobs:
         cache: 'pnpm'
 
     - name: Install dependencies
-      run: pnpm install
+      run: pnpm install --frozen-lockfile
 
     - name: Initialize Almagest theme submodules
       run: |
@@ -56,9 +87,11 @@ jobs:
     - name: Check for broken links
       run: pnpm run check-links || echo "::warning::Link check reported issues (non-blocking)"
 
+  # 安全审计：仅 main 分支执行（低频、成本可控），避免每个 PR 重复跑
   security-scan:
     runs-on: ubuntu-latest
     needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -75,7 +108,7 @@ jobs:
         cache: 'pnpm'
 
     - name: Install dependencies
-      run: pnpm install
+      run: pnpm install --frozen-lockfile
 
     - name: Run security audit (fail on high/critical)
       run: |

@@ -107,3 +107,8 @@ themes/
 
 # pnpm store
 .pnpm-store/
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/

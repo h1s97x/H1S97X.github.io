@@ -13,48 +13,65 @@ studyplan: 滑动窗口与双指针
 
 ## 题目描述
 
-书店老板有一家店，他知道每分钟进店的顾客数 `customers[i]`，以及每分钟他是否生气 `grumpy[i]`（1 生气，0 不生气）。
+书店老板的店开了 `n` 分钟。`customers[i]` 是第 `i` 分钟进店的顾客数，`grumpy[i]` 表示第 `i` 分钟老板是否生气（`1` 生气、`0` 不生气）。老板生气时那一分钟的顾客会不满意，否则满意。
 
-老板有一项秘密技巧，能让自己连续 `minutes` 分钟保持不生气，但只能使用一次。
-
-求一天中最多有多少顾客能感到满意。
+老板知道一个秘密技巧，能让自己连续 `minutes` 分钟不生气，但只能使用一次。求一天中最多能有多少顾客满意。
 
 **示例 1：**
 
 ```
 输入：customers = [1,0,1,2,1,1,7,5], grumpy = [0,1,0,1,0,1,0,1], minutes = 3
 输出：16
+解释：老板在最后 3 分钟保持冷静。满意顾客数 = 1 + 1 + 1 + 1 + 7 + 5 = 16。
 ```
+
+**提示：**
+
+- `n == customers.length == grumpy.length`
+- `1 <= minutes <= n <= 2*10^4`
+- `0 <= customers[i] <= 1000`
+- `grumpy[i]` 为 0 或 1
 
 ## 解法思路
 
-拆成两部分：
+**核心拆解**：满意顾客由两部分组成，互不影响，最终答案 = **本来满意的人数 + 用技巧额外挽回的人数**。
 
-1. **基础满意数**：老板本就不生气时的顾客，固定不变
-2. **额外收益**：在长度为 `minutes` 的窗口内，老板原本生气时流失的顾客，通过技巧挽留
+1. **本来满意**：老板本就不生气的分钟（`grumpy[i] == 0`），这部分的顾客无论如何都满意，是固定的**基础值** `base`。
+2. **额外挽回**：技巧覆盖的连续 `minutes` 分钟里，那些原本老板生气（`grumpy[i] == 1`）而流失的顾客，会被全部挽回。
 
-用定长滑窗扫描 `minutes` 窗口，求窗口内 `grumpy[i]==1` 的 `customers[i]` 之和的最大值。
+因此问题转化为：**选哪一段长度为 `minutes` 的窗口，能让窗口内 `grumpy[i]==1` 的 `customers[i]` 之和最大**。这正是定长滑动窗口。
 
-## 题解
+沿用定长滑窗 **入-更新-出** 三步，用 `cur` 维护窗口内「本会流失的顾客数」：
 
-```python
-class Solution:
-    def maxSatisfied(self, customers: list[int], grumpy: list[int], minutes: int) -> int:
-        base = sum(c for c, g in zip(customers, grumpy) if g == 0)
+1. **入**：右端点 `i` 进窗口，若 `grumpy[i]==1` 则 `cur += customers[i]`；窗口不足 `minutes` 时继续。
+2. **更新**：窗口满 `minutes` 时，用 `cur` 更新最大挽回值 `extra`。
+3. **出**：左端点 `i-minutes` 出窗口，若 `grumpy[i-minutes]==1` 则从 `cur` 中扣除。
 
-        extra = 0
-        cur = 0
-        for i, (c, g) in enumerate(zip(customers, grumpy)):
-            cur += c if g == 1 else 0
-            if i >= minutes:
-                cur -= customers[i - minutes] if grumpy[i - minutes] == 1 else 0
-            if i >= minutes - 1:
-                extra = max(extra, cur)
+最终答案 `base + extra`。
 
-        return base + extra
-```
+**逐步举例**（`customers=[1,0,1,2,1,1,7,5]`, `grumpy=[0,1,0,1,0,1,0,1]`, `minutes=3`）：
+
+- **基础值**：所有 `grumpy==0` 的分钟顾客数之和 = `customers[0]+[2]+[4]+[6] = 1+1+1+7 = 10`。
+- **滑窗扫描 extra**（`cur` 只累计窗口内 `grumpy==1` 的顾客）：
+
+| 窗口 [l..r] | 窗口内 grumpy==1 的顾客 | cur |
+|---|---|---|
+| [0..2] | c[1]=0 | 0 |
+| [1..3] | c[1]+c[3]=0+2 | 2 |
+| [2..4] | c[3]=2 | 2 |
+| [3..5] | c[3]+c[5]=2+1 | 3 |
+| [4..6] | c[5]=1 | 1 |
+| [5..7] | c[5]+c[7]=1+5 | 6 |
+
+最大 `extra = 6`（选最后 [5..7] 三分钟保持冷静），`ans = base + extra = 10 + 6 = 16`，与预期一致。
 
 ## 复杂度分析
 
-- 时间复杂度：O(n)，一次遍历
-- 空间复杂度：O(1)
+- 时间复杂度：O(n)，一次遍历，每步 O(1)。
+- 空间复杂度：O(1)，仅使用常数额外空间。
+
+## 代码实现
+
+{% asset_code solution.py %}
+
+{% asset_code solution_test.py %}

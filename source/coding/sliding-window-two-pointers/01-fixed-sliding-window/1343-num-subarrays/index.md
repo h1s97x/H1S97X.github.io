@@ -38,19 +38,25 @@ studyplan: 滑动窗口与双指针
 
 ## 解法思路
 
-定长滑动窗口。平均值 >= threshold 等价于和 >= k * threshold。
+**定长滑动窗口**。
 
-## 题解
+**关键技巧**：条件「平均值 ≥ threshold」如果直接比较会涉及大量除法。由于窗口长度固定为 k，可以把它**等价变形为「窗口和 ≥ k × threshold」**，从而全部只用整数加法/比较，`k * threshold` 只需算一次。这样既避免了除法精度与性能开销，也不影响判断正确性。
 
-```python
-class Solution:
-    def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:
-        target = k * threshold
-        cur = sum(arr[:k])
-        ans = 1 if cur >= target else 0
-        for i in range(k, len(arr)):
-            cur += arr[i] - arr[i - k]
-            if cur >= target:
-                ans += 1
-        return ans
-```
+沿用定长滑窗的 **入-更新-出** 三步：
+
+1. **入**：右端点 `arr[i]` 进入窗口，窗口和 `win += arr[i]`；若 `i < k-1` 窗口长度不足 k，继续循环。
+2. **更新**：窗口长度为 k，判断 `win >= k * threshold`，成立则 `ans += 1`。
+3. **出**：左端点 `arr[i-k+1]` 离开窗口，`win -= arr[i-k+1]`。
+
+> 思路与写法参考灵茶山艾府《【模板】定长滑动窗口》（入-更新-出套路）及对应题解。
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，其中 n 是 `arr` 长度，每步 O(1)。
+- 空间复杂度：O(1)。
+
+## 代码实现
+
+{% asset_code solution.py %}
+
+{% asset_code solution_test.py %}

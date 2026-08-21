@@ -40,23 +40,32 @@ studyplan: 滑动窗口与双指针
 
 ## 解法思路
 
-从两端取 k 张 = 从中间留 n-k 张。用定长滑动窗口找长度为 n-k 的最小和子数组，总点数减去它即为答案。
+**核心转化**：直接从两端取 k 张牌不好维护；换个角度，**从两端取走 k 张，剩下的 n - k 张必然是数组中间一段连续的子数组**。
 
-## 题解
+要拿到的点数最大，等价于：让**留在中间那 n - k 张牌的点数总和最小**。于是问题变成「找到长度为 n - k 的连续子数组中，和最小的那个」。
 
-```python
-class Solution:
-    def maxScore(self, cardPoints: List[int], k: int) -> int:
-        n = len(cardPoints)
-        total = sum(cardPoints)
-        if k == n:
-            return total
-        m = n - k
-        cur = sum(cardPoints[:m])
-        min_sum = cur
-        for i in range(m, n):
-            cur += cardPoints[i] - cardPoints[i - m]
-            if cur < min_sum:
-                min_sum = cur
-        return total - min_sum
-```
+设 `total = sum(cardPoints)`，只需求出最小窗口和 `min_sum`：
+$$
+\text{ans} = total - \min\_{\text{window}}(n-k \text{ 长度子数组和})
+$$
+
+用**定长滑动窗口**求长度 `m = n - k` 的子数组最小和：
+
+1. 先求前 m 个元素的和作为窗口初值；
+2. 向右滑动，每步 `cur += cardPoints[i] - cardPoints[i - m]`，即加入右端点、移除左端点；
+3. 用 `cur` 更新 `min_sum`。
+
+**边界**：当 `k == n` 时 `m == 0`，直接返回 `total`。
+
+> 这套「正难则反」的转化是灵茶山艾府 1423 题解的核心思路：取两端 ⟺ 留中间。
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，一次遍历。
+- 空间复杂度：O(1)。
+
+## 代码实现
+
+{% asset_code solution.py %}
+
+{% asset_code solution_test.py %}

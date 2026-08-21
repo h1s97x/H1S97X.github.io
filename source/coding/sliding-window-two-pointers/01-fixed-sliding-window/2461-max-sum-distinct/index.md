@@ -35,25 +35,27 @@ studyplan: 滑动窗口与双指针
 
 ## 解法思路
 
-定长滑动窗口 + 哈希表。窗口内元素全不同时更新答案。
+**定长滑动窗口 + 哈希表**，要求窗口内元素**互不相同**。
 
-## 题解
+**如何 O(1) 判断「窗口内无重复元素」**：用 `Counter` 记录窗口内每个元素的频次，那么 `len(window)` 就是窗口内**互不相同**的元素个数。由于窗口大小固定为 k，**`len(window) == k` 当且仅当窗口内没有重复元素**（k 个位置全是不同元素）。
 
-```python
-class Solution:
-    def maximumSubarraySum(self, nums: List[int], k: int) -> int:
-        from collections import Counter
-        window = Counter(nums[:k])
-        cur = sum(nums[:k])
-        ans = cur if len(window) == k else 0
-        for i in range(k, len(nums)):
-            out = nums[i - k]
-            window[out] -= 1
-            if window[out] == 0:
-                del window[out]
-            window[nums[i]] += 1
-            cur += nums[i] - out
-            if len(window) == k and cur > ans:
-                ans = cur
-        return ans
-```
+先用前 k 个元素初始化窗口，再用 **入-更新-出** 三步滑动：
+
+1. **入**：右端点 `nums[i]` 进窗口，更新频次与窗口和 `cur`；
+2. **更新**：窗口满 k 时，若 `len(window) == k`（所有元素互不相同），用 `cur` 更新最大和 `ans`；
+3. **出**：左端点 `nums[i-k+1]` 出窗口，频次减一（减到 0 则删除键），并从 `cur` 中扣除。
+
+**初值**：第一个窗口若含重复元素，则 `ans` 保持 0（说明至少可以返回 0）。
+
+> 与 2841 是同一套路：2841 要求「至少 m 个不同元素」（`len(window) >= m`），本题是它的特例，要求「全部不同」（`len(window) == k`）。
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，每个元素进出窗口各一次。
+- 空间复杂度：O(k)，哈希表大小不超过窗口长度。
+
+## 代码实现
+
+{% asset_code solution.py %}
+
+{% asset_code solution_test.py %}

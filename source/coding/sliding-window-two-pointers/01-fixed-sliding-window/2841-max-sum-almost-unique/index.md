@@ -38,25 +38,30 @@ studyplan: 滑动窗口与双指针
 
 ## 解法思路
 
-定长滑动窗口 + 哈希表统计窗口内元素频率，判断不同元素个数是否 >= m。
+**定长滑动窗口 + 哈希表**维护窗口内元素的频次（本题难点在于要在 O(1) 内知道窗口里有多少个**互不相同**的元素）。
 
-## 题解
+**如何 O(1) 维护「不同元素个数」**：用一个 `Counter`（频次哈希表）记录窗口内每个元素的出现次数。那么 **`len(window)` 就是窗口内互不相同元素的个数**。窗口滑动时：
 
-```python
-class Solution:
-    def maxSum(self, nums: List[int], m: int, k: int) -> int:
-        from collections import Counter
-        window = Counter(nums[:k])
-        cur = sum(nums[:k])
-        ans = cur if len(window) >= m else 0
-        for i in range(k, len(nums)):
-            out = nums[i - k]
-            window[out] -= 1
-            if window[out] == 0:
-                del window[out]
-            window[nums[i]] += 1
-            cur += nums[i] - out
-            if len(window) >= m and cur > ans:
-                ans = cur
-        return ans
-```
+- 右端点进窗口：`window[nums[i]] += 1`；
+- 左端点出窗口：对应的频次减一；**一旦频次减到 0 就 `del window[out]`**，这样哈希表的键数（即不同元素个数）始终准确。
+
+沿用 **入-更新-出** 三步，窗口和为 `cur`：
+
+1. **入**：右端点 `nums[i]` 进窗口并更新频次与 `cur`；窗口不足 k 时继续。
+2. **更新**：窗口长度为 k 时，若 `len(window) >= m`（是「几乎唯一」子数组），用 `cur` 更新最大和 `ans`。
+3. **出**：左端点 `nums[i-k+1]` 出窗口，频次减一（减到 0 则删除键），并从 `cur` 中扣除。
+
+**初值**：第一个窗口若无 m 个不同元素，`ans` 保持 0（没有满足条件的子数组返回 0）。
+
+> 思路与写法参考灵茶山艾府 2841、2461 对应题解（2461 是在本题基础上的特例：把 `>= m` 换成 `== k`）。
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，每个元素进出窗口各一次。
+- 空间复杂度：O(k)，哈希表大小不超过窗口长度。
+
+## 代码实现
+
+{% asset_code solution.py %}
+
+{% asset_code solution_test.py %}

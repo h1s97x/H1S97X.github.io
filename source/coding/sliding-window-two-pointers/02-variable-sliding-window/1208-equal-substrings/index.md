@@ -16,27 +16,70 @@ studyplan: 滑动窗口与双指针
 
 给你两个长度相同的字符串 `s` 和 `t`。将 `s` 中的第 `i` 个字符变到 `t` 中的第 `i` 个字符需要 `|s[i] - t[i]|` 的开销。总开销应当小于等于 `maxCost`。求可以转化的最大子串长度。
 
+**示例 1：**
+
+```
+输入：s = "abcd", t = "bcdf", maxCost = 3
+输出：3
+```
+
+**示例 2：**
+
+```
+输入：s = "abcd", t = "cdef", maxCost = 3
+输出：1
+```
+
+**示例 3：**
+
+```
+输入：s = "abcd", t = "acde", maxCost = 0
+输出：1
+```
+
 ## 解法思路
 
-先计算每个位置的开销数组 `costs[i] = |ord(s[i]) - ord(t[i])|`，问题转化为求最长的子数组使得子数组和 ≤ maxCost。不定长滑动窗口，维护窗口内开销和，超预算时收缩左边界。
+### 核心思想
+
+逐个位置计算把 `s[i]` 变成 `t[i]` 的开销 `cost[i] = |ord(s[i]) - ord(t[i])|`。于是问题转化为：**找一个最长的连续下标段，使其开销和 ≤ maxCost** —— 这是典型的不定长滑动窗口"求最长"问题（窗口越短越合法，越长越可能超预算）。
+
+左指针固定时，窗口越长，累计开销越大，终会超过 `maxCost`，因此"越短越合法"，适合右指针推进后不断收缩左指针来维持合法。
+
+### 算法步骤
+
+1. `ans = left = cost = 0`。
+2. 枚举 `right`：`cost += |ord(s[right]) - ord(t[right])|`。
+3. `while cost > maxCost`：`cost -= |ord(s[left]) - ord(t[left])|`，`left += 1`，收缩左边界直至合法。
+4. `ans = max(ans, right - left + 1)`。
+5. 返回 `ans`。
+
+### 逐步举例
+
+以 `s = "abcd", t = "bcdf", maxCost = 3` 为例（期望答案 3）：
+
+| i | s[i]→t[i] | cost[i] | 窗口 | 窗口开销 | 是否合法 | ans |
+|---|----------|---------|------|---------|---------|-----|
+| 0 | 'a'→'b' | 1 | [0,0] | 1 | ✅ | 1 |
+| 1 | 'b'→'c' | 1 | [0,1] | 2 | ✅ | 2 |
+| 2 | 'c'→'d' | 1 | [0,2] | 3 | ✅ | 3 |
+| 3 | 'd'→'f' | 2 | [0,3] | 5 | ❌→收缩 | — |
+
+第 3 步窗口 [0,3] 开销 1+1+1+2 = 5 > 3，需右移 left 收缩：
+
+| 收缩 | 剔除 | 累计开销 | 状态 |
+|------|------|---------|------|
+| left=0→1 | cost[0]=1 | 5-1=4 | 仍 >3 |
+| left=1→2 | cost[1]=1 | 4-1=3 | ✅ 停下 |
+
+最终窗口 [2,3] 长度 2 < 之前记录的 3，故 `ans` 保持 3。✅
 
 ## 题解
 
-```python
-class Solution:
-    def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
-        n = len(s)
-        ans = left = cost = 0
-        for right in range(n):
-            cost += abs(ord(s[right]) - ord(t[right]))
-            while cost > maxCost:
-                cost -= abs(ord(s[left]) - ord(t[left]))
-                left += 1
-            ans = max(ans, right - left + 1)
-        return ans
-```
+{% asset_code solution.py %}
+
+{% asset_code solution_test.py %}
 
 ## 复杂度分析
 
-- 时间复杂度：O(n)
+- 时间复杂度：O(n)，左右指针各遍历一次
 - 空间复杂度：O(1)

@@ -3,7 +3,6 @@ title: 2953. 统计完全子字符串
 notebook: coding
 tags:
   - 滑动窗口
-  - 定长
   - 哈希表
   - 计数
 description: "统计完全子字符串个数：每个字符恰好出现 k 次，且相邻字符字母序相差 ≤ 2"
@@ -15,85 +14,46 @@ studyplan: 滑动窗口与双指针
 
 ## 题目描述
 
-如果 `word` 的一个子字符串 `s` 满足：
-1. `s` 中每个字符恰好出现 `k` 次
-2. `s` 中相邻字符在字母表中的位置相差至多为 2
+`word` 的一个子字符串 `s` 若同时满足：
+1. `s` 中**每个字符恰好出现** `k` 次；
+2. `s` 中**相邻字符**在字母表中位置相差**至多** `2`（如 `a` 与 `c` 差 2 允许，`a` 与 `d` 差 3 不允许）；
 
 则称 `s` 为**完全字符串**。返回 `word` 中完全子字符串的数目。
 
-**示例 1：**
+**示例 ：**
 
 ```
-输入：word = "igigee", k = 2
-输出：3
-```
-
-**示例 2：**
-
-```
-输入：word = "aaabbbccc", k = 3
-输出：6
+输入：word="igigee", k=2  → 输出：3
+输入：word="aaabbbccc", k=3 → 输出：6
 ```
 
 ## 解法思路
 
-1. 按相邻字符差 ≤ 2 将字符串分割成若干段（完全子字符串不能跨段）
-2. 每段内枚举可能的字符种类数 `m`（1 到 26），窗口大小 = `m * k`
-3. 定长滑窗维护字符计数，用 `distinct` 和 `valid` 两个变量 O(1) 判断窗口是否满足条件
+**第一步：按相邻差切段。** 完全子串中任意相邻两字符的字母序差必须 ≤2，因此一个完全子串绝不会跨过"相邻差 >2"的边界。按差 >2 的位置把 `word` 切成若干段，在每个段内独立统计并累加即可。
 
-## 题解
+**第二步：枚举可能的窗口大小。** 若完全子串含 `m` 种不同字符、每种出现 `k` 次，则其长度为 `m·k`。`m ∈ [1, 26]`，且 `m·k ≤ 段长`。对每个候选 `m`，做一次定长滑窗。
 
-```python
-class Solution:
-    def countCompleteSubstrings(self, word: str, k: int) -> int:
-        n = len(word)
-        if n < k:
-            return 0
+**第三步：O(1) 维护窗口是否"恰好"。** 窗口长度固定为 `target = m·k`。用计数数组 `cnt`，并维护两个量：
+- `distinct`：出现过的字符种类数（`cnt[c] > 0` 的个数）；
+- `valid`：**恰出现 `k` 次**的字符个数。
 
-        segments = []
-        start = 0
-        for i in range(1, n):
-            if abs(ord(word[i]) - ord(word[i - 1])) > 2:
-                segments.append(word[start:i])
-                start = i
-        segments.append(word[start:])
+当 `valid == distinct` 时，说明窗口内所有出现过的字符都恰好各出现 `k` 次（即没有出现不足 `k` 次的字符），满足条件，答案 +1。入窗/出窗时只在计数跨过 `0/1`、`k/k+1`、`k-1/k` 这些临界点更新 `distinct` 与 `valid`，从而 O(1) 完成。
 
-        ans = 0
-        for seg in segments:
-            m = len(seg)
-            max_j = min(26, m // k)
-            for j in range(1, max_j + 1):
-                target = j * k
-                cnt = [0] * 26
-                valid = 0
-                distinct = 0
+**逐步举例**（`word="aaabbbccc", k=3`）：
 
-                for i, ch in enumerate(seg):
-                    idx = ord(ch) - 97
-                    cnt[idx] += 1
-                    if cnt[idx] == 1:
-                        distinct += 1
-                    if cnt[idx] == k:
-                        valid += 1
-                    elif cnt[idx] == k + 1:
-                        valid -= 1
-
-                    if i >= target:
-                        idx2 = ord(seg[i - target]) - 97
-                        cnt[idx2] -= 1
-                        if cnt[idx2] == 0:
-                            distinct -= 1
-                        if cnt[idx2] == k:
-                            valid += 1
-                        elif cnt[idx2] == k - 1:
-                            valid -= 1
-
-                    if i >= target - 1 and valid == distinct:
-                        ans += 1
-        return ans
-```
+- 相邻差都 ≤2，整串为一段。
+- `m=3`：`target=9`，唯一窗口 `[0,9)`，`cnt[a]=cnt[b]=cnt[c]=3`，`distinct=3, valid=3`，`valid==distinct` → 答案 1。
+- `m=1`：`target=3`，连续三字符窗口如 `[0,3]="aaa"` → `distinct=1, valid=1`，+1；`[3,6]="bbb"`、`[6,9]="ccc"` 同理 → 再加 2。
+- `m=2`：`target=6`，窗口如 `[0,6]="aaabbb"` → `distinct=2` 但 `valid=0`（无字符恰出现 3 次的，分别是 a 出现 3? 实际 a 出现 3、b 出现 3，则 valid=2）→ `valid==distinct`，+1；`[3,9]="bbbccc"` 同理 +1。
+- 总计 `1+3+2 = 6` ✓。
 
 ## 复杂度分析
 
-- 时间复杂度：O(26 * n)，每个段最多枚举 26 种窗口大小
-- 空间复杂度：O(1)
+- 时间复杂度：O(26·n)，每段最多枚举 26 种窗口大小，各滑动一次。
+- 空间复杂度：O(1)，定长 26 的计数数组。
+
+## 代码实现
+
+{% asset_code solution.py %}
+
+{% asset_code solution_test.py %}

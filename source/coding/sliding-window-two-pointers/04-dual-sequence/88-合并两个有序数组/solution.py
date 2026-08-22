@@ -2,6 +2,14 @@ from typing import List
 
 
 class Solution:
-    def 合并两个有序数组(self, nums1: List[int], m: int, nums2: List[int], n: int) -> int:
-        # TODO: implement
-        pass
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        p1, p2 = m - 1, n - 1
+        tail = m + n - 1
+        while p2 >= 0:
+            if p1 >= 0 and nums1[p1] > nums2[p2]:
+                nums1[tail] = nums1[p1]
+                p1 -= 1
+            else:
+                nums1[tail] = nums2[p2]
+                p2 -= 1
+            tail -= 1

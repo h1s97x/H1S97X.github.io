@@ -2,6 +2,9 @@ from typing import List
 
 
 class Solution:
-    def 移动零(self, nums: List[int]) -> int:
-        # TODO: implement
-        pass
+    def moveZeroes(self, nums: List[int]) -> None:
+        left = 0
+        for right in range(len(nums)):
+            if nums[right] != 0:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1

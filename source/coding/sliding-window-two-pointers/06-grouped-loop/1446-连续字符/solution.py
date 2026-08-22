@@ -1,7 +1,12 @@
-from typing import List
-
-
 class Solution:
-    def 连续字符(self, s: str) -> int:
-        # TODO: implement
-        pass
+    def maxPower(self, s: str) -> int:
+        n = len(s)
+        ans = 1
+        i = 0
+        while i < n:
+            j = i
+            while j + 1 < n and s[j + 1] == s[i]:
+                j += 1
+            ans = max(ans, j - i + 1)
+            i = j + 1
+        return ans

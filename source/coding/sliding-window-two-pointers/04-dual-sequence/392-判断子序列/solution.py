@@ -1,7 +1,8 @@
-from typing import List
-
-
 class Solution:
-    def 判断子序列(self, s: str, t: str) -> int:
-        # TODO: implement
-        pass
+    def isSubsequence(self, s: str, t: str) -> bool:
+        i = j = 0
+        while i < len(s) and j < len(t):
+            if s[i] == t[j]:
+                i += 1
+            j += 1
+        return i == len(s)

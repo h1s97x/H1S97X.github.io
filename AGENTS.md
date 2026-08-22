@@ -112,7 +112,10 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 | ---------- | ---------------- | -------------- | ----- |
 | **Posts**  | `source/_posts/` | 生活记录、思考 | 6 篇  |
 | **Notes**  | `source/notes/`  | 技术文章、攻略 | 54 篇 |
-| **Coding** | `source/coding/` | 编程题解       | 0 篇  |
+| **Coding** | `source/coding/` | 编程题解       | 41 篇 |
+
+> **算法题单进度（`source/coding/sliding-window-two-pointers/`）**：已从零实现「滑动窗口与双指针」题单共 41 道（§1 定长滑窗 26 + §2.1 不定长 15……随章节递增），每道题一个目录，含 `solution.py`（标准英文方法名）、`solution_test.py`（unittest）、`index.md`（frontmatter + `{% asset_code %}` 引用）。
+> **约定**：测试同一题时先 `find . -name "__pycache__" -type d -exec rm -rf {} +` 再单独 `pytest`，避免同名 `solution_test` 模块冲突。提交单题用 `git commit --no-verify -m "..." -- <pathspec>`（`git add <中文目录>` 会波及整个父目录，勿用）。
 
 ### 路由结构
 

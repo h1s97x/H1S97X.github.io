@@ -11,7 +11,7 @@
 ## 技术栈
 
 - **框架**: Astro 5.x (TypeScript / Vite)
-- **主题**: Fuwari (saicaca/fuwari，MIT；当前 vendored 于本仓，后期抽子模块)
+- **主题**: Fuwari (saicaca/fuwari，MIT)，作为独立 npm 包 [astro-theme-fuwari](https://cnb.cool/h1s97x/astro-theme-fuwari) 经 CNB 制品库引入；博客仓不再 vendored 主题代码
 - **包管理器**: pnpm (禁止 npm/Yarn)
 
 > 本仓库由 Hexo 迁移而来，迁移方案见 [docs/MIGRATION_ASTRO.md](docs/MIGRATION_ASTRO.md)。
@@ -44,16 +44,14 @@ pnpm build
 
 ```
 src/
-├── config.ts      # 站点配置（标题/导航/个人资料/评论）
-├── content/       # 内容（posts 文章 / spec 单页）
-├── pages/         # 路由（/ /archive/ /posts/<slug>/ /about/）
-├── components/    # 主题组件（Fuwari vendored）
-└── layouts/       # 布局（Fuwari vendored）
-public/            # 静态资源（图片）
+└── content/       # 内容（posts 文章 / spec 单页），含 config.ts 内容集合定义
+astro.config.mjs   # Astro 配置 + 引入主题集成（fuwariTheme / fuwariIntegrations）
+public/            # 静态资源（图片 / 图标）
 tools/             # 迁移脚本与旧链接重定向表
-astro.config.mjs   # Astro 配置
-docs/              # 开发文档
+docs/              # 开发文档（含 Hexo→Astro 迁移方案）
 ```
+
+> 主题代码（路由 / 布局 / 组件 / 样式）已抽离到独立包 `astro-theme-fuwari`，由 `astro.config.mjs` 通过集成注入，不在本仓维护。
 
 更多开发与维护说明，请参考 [AGENTS.md](AGENTS.md) 与 [docs/](docs/)。
 
@@ -63,4 +61,4 @@ docs/              # 开发文档
 
 ## License
 
-本项目基于 [MIT License](LICENSE) 开源，版权所有 © 2024-2026 [H1S97X](https://github.com/h1s97x)。
+本项目基于 [MIT License](LICENSE) 开源，版权所有 © 2023-2026 [H1S97X](https://github.com/h1s97x)。

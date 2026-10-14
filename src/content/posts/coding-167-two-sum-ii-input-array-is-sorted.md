@@ -1,0 +1,101 @@
+---
+title: 167. 两数之和II-输入有序数组
+tags: [双指针]
+leetcode: 167
+studyplan: 滑动窗口与双指针
+published: 2026-08-23T12:12:27+08:00
+updated: 2026-08-23T12:12:27+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 167. 两数之和II-输入有序数组
+
+## 题目描述
+
+> 题目链接: [LeetCode 167](https://leetcode.cn/problems/两数之和ii-输入有序数组/)
+
+给你一个下标从 **1** 开始的整数数组 `numbers`，该数组已按 **非递减顺序排列**，请你从中找出满足相加之和等于目标数 `target` 的两个数。返回这两个数的下标（从 1 开始）。
+
+**示例：**
+```
+输入：numbers = [2,7,11,15], target = 9
+输出：[1,2]
+解释：2 与 7 之和等于目标数 9，下标从 1 开始对应 [1,2]。
+```
+
+## 解题思路
+
+### 核心思想
+利用数组**有序**这一条件，采用**相向双指针**。两个指针所指元素的和为 `s`，通过与 `target` 比较来决定指针移动方向：
+- `s < target`：和偏小，需要更大的数 → 左指针右移；
+- `s > target`：和偏大，需要更小的数 → 右指针左移。
+
+每轮必然向目标收敛，因此可以在 O(n) 内找到答案，无需哈希表（题目的进阶要求 O(1) 空间恰好可由双指针达成）。
+
+### 算法步骤
+1. `left = 0, right = n - 1`
+2. 当 `left < right` 时循环：
+   - 记 `s = numbers[left] + numbers[right]`
+   - `s == target`：返回 `[left + 1, right + 1]`
+   - `s < target`：`left += 1`
+   - `s > target`：`right -= 1`
+
+### 逐步举例
+`numbers = [2,7,11,15], target = 9`
+| left | right | 和 s | 操作 |
+|------|-------|------|------|
+| 0 | 3 | 17 | `>9` → `right=2` |
+| 0 | 2 | 13 | `>9` → `right=1` |
+| 0 | 1 | 9 | `==9` → 返回 `[1,2]` |
+
+### 复杂度分析
+- 时间复杂度：O(n)，每个元素只被访问一次
+- 空间复杂度：O(1)，只用了两个指针
+
+## 代码实现
+
+```python
+from typing import List
+
+
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        left, right = 0, len(numbers) - 1
+        while left < right:
+            s = numbers[left] + numbers[right]
+            if s == target:
+                return [left + 1, right + 1]
+            if s < target:
+                left += 1
+            else:
+                right -= 1
+        return []
+```
+
+```python
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+import unittest
+
+from solution import Solution
+
+
+class Test167(unittest.TestCase):
+    def test_example1(self):
+        self.assertEqual(Solution().twoSum([2, 7, 11, 15], 9), [1, 2])
+
+    def test_example2(self):
+        self.assertEqual(Solution().twoSum([2, 3, 4], 6), [1, 3])
+
+    def test_example3(self):
+        self.assertEqual(Solution().twoSum([-1, 0], -1), [1, 2])
+
+
+if __name__ == '__main__':
+    unittest.main()
+```

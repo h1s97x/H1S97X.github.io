@@ -1,9 +1,0 @@
-# Hexo主题子模块配置
-# 
-# 主题列表:
-# - almagest: 简洁而强大的 Hexo 主题（天文主题，参考 Stellar 设计）
-#
-
-[submodule "themes/almagest"]
-	path = themes/almagest
-	url = https://cnb.cool/h1s97x/hexo-theme-almagest.git

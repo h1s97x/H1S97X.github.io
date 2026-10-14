@@ -47,6 +47,16 @@ main:
           options:
             type: add-reviewer-from-repo-members
 
+    # PR 创建后触发安全审计 NPC 评审（@npc/code-security）
+    - name: security-review
+      git:
+        enable: false
+      stages:
+        - name: 安全审计
+          image: cnbcool/cnb-cli:latest
+          script:
+            cnb pulls comment --body "@npc/code-security(安全审计员) 安全审计"
+
 # 兜底分支：web_trigger / issue.* 等事件
 $:
   # 手动触发：从 GitHub 拉取（GitHub → CNB）

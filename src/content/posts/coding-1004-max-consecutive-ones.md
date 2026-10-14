@@ -1,0 +1,103 @@
+---
+title: 1004. 最大连续 1 的个数 III
+tags:
+  - 滑动窗口
+  - 不定长
+  - 数组
+description: "最多翻转 k 个 0，求最长连续 1 的子数组长度"
+leetcode: 1004
+studyplan: 滑动窗口与双指针
+published: 2026-08-18T13:40:50+08:00
+updated: 2026-08-18T13:40:50+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 1004. 最大连续 1 的个数 III
+
+## 题目描述
+
+给定一个二进制数组 nums 和一个整数 k，如果可以翻转最多 k 个 0，请返回数组中连续 1 的最大个数。
+
+## 解法思路
+
+### 核心思想
+
+把 0 翻成 1，本质是对窗口内那不满足条件的 0 付费。若窗口内有 `cnt0` 个 0，把它们全部翻成 1 后窗口就全是 1，代价是 `cnt0` 次。因此问题等价于：
+
+> 求一个最长子数组，使得其中 **0 的个数 ≤ k**。
+
+窗口长度越长，0 的个数越可能超标，属于**越短越合法**型不定长滑窗。
+
+### 算法步骤
+
+1. 维护 `cnt0`：窗口内 0 的个数。
+2. 枚举右端点，碰到 0 则 `cnt0 += 1`。
+3. `while cnt0 > k`：此时 0 太多，必须收缩左边界，左字符离开窗口，若是 0 则 `cnt0 -= 1`，`left += 1`。
+4. `ans = max(ans, right - left + 1)`。
+
+### 逐步举例
+
+以 `nums = [1, 0, 1, 0, 1]`、`k = 1` 为例（最优：`[1,0,1]` 或 `[1,0,1]→3`，把中间任一 0 翻成 1 长度可达 3）：
+
+| right | x | cnt0 | `cnt0>1`? | 收缩动作 | ans |
+|-------|---|------|----------|----------|-----|
+| 0 | 1 | 0 | 否 | - | 1 |
+| 1 | 0 | 1 | 否 | - | 2 |
+| 2 | 1 | 1 | 否 | - | 3 |
+| 3 | 0 | 2 | 是 | 左出 `nums[0]=1`→cnt0=2、`nums[1]=0`→cnt0=1（left=2） | 3 |
+| 4 | 1 | 1 | 否 | - | 3 |
+
+第 right=3 步：`cnt0=2>1`，左字符 `nums[0]=1` 离开 cnt0 不变，继续左移遇到 `nums[1]=0` 离开 cnt0 降到 1，窗口恢复合法。最终窗口为 `[2,4]=[1,0,1]`，合法且长度 3。✅
+
+## 题解
+
+```python
+class Solution:
+    def longestOnes(self, nums: list[int], k: int) -> int:
+        ans = left = cnt0 = 0
+        for right, x in enumerate(nums):
+            if x == 0:
+                cnt0 += 1
+            while cnt0 > k:
+                if nums[left] == 0:
+                    cnt0 -= 1
+                left += 1
+            ans = max(ans, right - left + 1)
+        return ans
+```
+
+```python
+import sys
+sys.path.insert(0, "/workspace/projects/source/coding/sliding-window-two-pointers/02-variable-sliding-window/1004-max-consecutive-ones")
+from solution import Solution
+import unittest
+
+class TestLongestOnes(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertEqual(self.solution.longestOnes([1,1,1,0,0,0,1,1,1,1,0], 2), 6)
+
+    def test_example2(self):
+        self.assertEqual(self.solution.longestOnes([0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], 3), 10)
+
+    def test_all_ones(self):
+        self.assertEqual(self.solution.longestOnes([1,1,1,1], 2), 4)
+
+    def test_all_zeros(self):
+        self.assertEqual(self.solution.longestOnes([0,0,0], 2), 2)
+
+    def test_k_zero(self):
+        self.assertEqual(self.solution.longestOnes([0,1,0,1,0], 0), 1)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，双指针各遍历一次
+- 空间复杂度：O(1)

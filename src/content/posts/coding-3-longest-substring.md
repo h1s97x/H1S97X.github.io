@@ -1,0 +1,129 @@
+---
+title: 3. 无重复字符的最长子串
+tags:
+  - 滑动窗口
+  - 不定长
+  - 哈希表
+description: "找到不含重复字符的最长子串长度"
+leetcode: 3
+studyplan: 滑动窗口与双指针
+published: 2026-08-18T13:36:53+08:00
+updated: 2026-08-18T13:36:53+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 3. 无重复字符的最长子串
+
+## 题目描述
+
+给定一个字符串 `s`，请你找出其中不含有重复字符的**最长子串**的长度。
+
+**示例 1：**
+
+```
+输入：s = "abcabcbb"
+输出：3
+解释：最长无重复子串是 "abc"，长度为 3。
+```
+
+**示例 2：**
+
+```
+输入：s = "bbbbb"
+输出：1
+```
+
+**示例 3：**
+
+```
+输入：s = "pwwkew"
+输出：3
+```
+
+## 解法思路
+
+### 核心思想
+
+用两个指针 `left`、`right` 圈出一个窗口 `[left, right]`，保证窗口内**没有重复字符**。右指针不断向右扩展，把新字符纳入窗口；一旦产生重复，就把左指针向右收缩，直到窗口重新合法。整个过程中窗口大小、即 `right - left + 1`，取最大值就是答案。
+
+为了让"左指针收缩到哪"能 O(1) 判断，用一个哈希表 `last` 记录**每个字符最近一次出现的位置**。当某个字符已经在窗口内再次出现（`last[s[right]] >= left`）时，说明存在重复，直接把 `left` 跳到该字符上次位置的下一个字符，一步到位：`left = last[s[right]] + 1`。这样左指针不会一次只缩一格，而是直接跳跃到合法位置，效率更高。
+
+### 算法步骤（右指针为主循环变量）
+
+1. 初始化 `ans = 0, left = 0`，`last` 为空字典。
+2. 枚举 `right` 从 `0` 到 `n-1`，当前字符为 `s[right]`：
+   - 若 `s[right]` 在 `last` 中且其上次位置 `>= left`，说明窗口内已存在该字符 → 令 `left = last[s[right]] + 1`，丢弃窗口左端重复段。
+   - 更新 `last[s[right]] = right`（记录最近位置）。
+   - 用窗口当前长度 `right - left + 1` 更新 `ans`。
+3. 返回 `ans`。
+
+### 逐步举例
+
+以 `s = "abcabcbb"` 为例：
+
+| right | 字符 | 操作 | 窗口 | 长度 | ans |
+|------|------|------|------|------|-----|
+| 0 | a | 无重复，记录 last['a']=0 | [0,0]="a" | 1 | 1 |
+| 1 | b | 无重复 | [0,1]="ab" | 2 | 2 |
+| 2 | c | 无重复 | [0,2]="abc" | 3 | 3 |
+| 3 | a | last['a']=0 ≥ left=0 → left=1 | [1,3]="bca" | 3 | 3 |
+| 4 | b | last['b']=1 ≥ left=1 → left=2 | [2,4]="cab" | 3 | 3 |
+| 5 | c | last['c']=2 ≥ left=2 → left=3 | [3,5]="abc" | 3 | 3 |
+| 6 | b | last['b']=4 ≥ left=3 → left=5 | [5,6]="cb" | 2 | 3 |
+| 7 | b | last['b']=6 ≥ left=5 → left=7 | [7,7]="b" | 1 | 3 |
+
+遍历结束，最长无重复子串长度为 3。
+
+## 题解
+
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        ans = left = 0
+        idx = {}
+        for right, ch in enumerate(s):
+            if ch in idx and idx[ch] >= left:
+                left = idx[ch] + 1
+            idx[ch] = right
+            ans = max(ans, right - left + 1)
+        return ans
+```
+
+```python
+import sys
+sys.path.insert(0, "/workspace/projects/source/coding/sliding-window-two-pointers/02-variable-sliding-window/3-longest-substring")
+from solution import Solution
+import unittest
+
+class TestLengthOfLongestSubstring(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertEqual(self.solution.lengthOfLongestSubstring("abcabcbb"), 3)
+
+    def test_example2(self):
+        self.assertEqual(self.solution.lengthOfLongestSubstring("bbbbb"), 1)
+
+    def test_example3(self):
+        self.assertEqual(self.solution.lengthOfLongestSubstring("pwwkew"), 3)
+
+    def test_empty(self):
+        self.assertEqual(self.solution.lengthOfLongestSubstring(""), 0)
+
+    def test_single(self):
+        self.assertEqual(self.solution.lengthOfLongestSubstring("a"), 1)
+
+    def test_all_unique(self):
+        self.assertEqual(self.solution.lengthOfLongestSubstring("abcdef"), 6)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，`right` 遍历一次数组、`left` 最多也移动 n 次，整体线性
+- 空间复杂度：O(|Σ|)，`Σ` 为字符集大小，`last` 最多存 |Σ| 个键值对

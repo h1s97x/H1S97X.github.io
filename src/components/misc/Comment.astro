@@ -1,0 +1,58 @@
+---
+import { commentConfig } from "src/config";
+const g = commentConfig?.provider === "giscus" ? commentConfig.giscus : undefined;
+---
+
+{g && (
+	<div class="card-base rounded-2xl p-6 mt-6 mb-4 onload-animation">
+		<section id="giscus-comments"></section>
+		<script is:inline define:vars={{ giscus: g }}>
+			(function () {
+				const cfg = giscus;
+				function currentTheme() {
+					return document.documentElement.classList.contains("dark")
+						? "https://giscus.app/themes/dark.css"
+						: "https://giscus.app/themes/light.css";
+				}
+				function loadGiscus() {
+					const s = document.createElement("script");
+					s.src = "https://giscus.app/client.js";
+					s.async = true;
+					s.crossOrigin = "anonymous";
+					s.setAttribute("data-repo", cfg.repo);
+					s.setAttribute("data-repo-id", cfg.repoId);
+					s.setAttribute("data-category", cfg.category);
+					s.setAttribute("data-category-id", cfg.categoryId);
+					s.setAttribute("data-mapping", "pathname");
+					s.setAttribute("data-strict", "0");
+					s.setAttribute("data-reactions-enabled", "1");
+					s.setAttribute("data-emit-metadata", "1");
+					s.setAttribute("data-input-position", "top");
+					s.setAttribute("data-theme", currentTheme());
+					s.setAttribute("data-lang", "zh-CN");
+					s.setAttribute("data-loading", "lazy");
+					document.body.appendChild(s);
+				}
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", loadGiscus);
+				} else {
+					loadGiscus();
+				}
+				// 跟随 Fuwari 明暗主题切换
+				const observer = new MutationObserver(() => {
+					const frame = document.querySelector("iframe.giscus-frame");
+					if (frame) {
+						frame.contentWindow.postMessage(
+							{ giscus: { setConfig: { theme: currentTheme() } } },
+							"https://giscus.app",
+						);
+					}
+				});
+				observer.observe(document.documentElement, {
+					attributes: true,
+					attributeFilter: ["class"],
+				});
+			})();
+		</script>
+	</div>
+)}

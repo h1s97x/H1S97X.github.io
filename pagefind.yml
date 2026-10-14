@@ -1,0 +1,9 @@
+# Pagefind 配置
+# 索引范围由 data-pagefind-body 决定：只有文章正文与 /about/ 带该属性，
+# 旧链接 301 跳转页不含该属性，天然不会被索引。
+exclude_selectors:
+  - "span.katex"
+  - "span.katex-display"
+  - "[data-pagefind-ignore]"
+  - ".search-panel"
+  - "#search-panel"

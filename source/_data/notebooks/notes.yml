@@ -1,8 +1,0 @@
-name: 笔记
-title: 杂七杂八的笔记
-description: 尽量留下点儿什么
-base_dir: /notes/
-per_page: 32
-
-license: true
-share: true

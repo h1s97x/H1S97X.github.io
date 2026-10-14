@@ -1,105 +1,56 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main, develop ]
-    # ⚠️ 本文件 paths 与 ci.yml 各自维护（GitHub Actions 不支持跨文件复用路径清单）。
-    # 仅代码/内容/配置相关改动触发部署；纯文档改动不触发，节省 Pages 构建。
-    # 改 paths 时请同步核对 ci.yml。
-    paths:
-      - 'source/**'
-      - 'scripts/**'
-      - 'tools/**'
-      - 'scaffolds/**'
-      - 'themes/**'
-      - '_config*.yml'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'pnpm-workspace.yaml'
-      - 'CNAME'
-      - '.github/workflows/deploy.yml'
-  workflow_dispatch:
+    branches: [main] # 合并 feature/astro-migration → main 后自动部署
+  workflow_dispatch: # 也可在 Actions 页面手动触发（会部署当前分支）
 
-permissions:
-  contents: write
-
-# 同一分支的连续部署取消旧运行，避免排队；部署不可中断，故 cancel 保留最近一次
+# 允许一个并发部署，取消进行中的旧部署
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
         with:
-          version: 10
+          run_install: false # 版本取自 package.json 的 packageManager 字段 (pnpm@9.14.4)
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
         with:
-          node-version: '20.x'
-          cache: 'pnpm'
+          node-version: 22
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Initialize theme submodules
-        run: |
-          git submodule update --init --recursive
-          pnpm run themes:status
+      - name: Build (含 Pagefind 搜索索引)
+        run: pnpm build
 
-      - name: Validate Almagest theme configuration
-        run: pnpm run almagest:validate
-
-      - name: Run tests
-        run: pnpm test
-
-      - name: Build static files with Almagest theme
-        run: |
-          pnpm run clean
-          pnpm run almagest:validate
-          pnpm run build
-
-      - name: Verify build output
-        run: |
-          if [ ! -f "public/index.html" ]; then
-            echo "::error::Build failed: public/index.html not found"
-            exit 1
-          fi
-          echo "Build verification passed"
-          echo "Generated HTML files: $(find public -name '*.html' | wc -l)"
-          echo "Total size: $(du -sh public | cut -f1)"
-
-      - name: Deploy to GitHub Pages (staging)
-        if: github.ref == 'refs/heads/develop'
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages-staging
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'deploy: staging - ${{ github.event.head_commit.message }}'
+          path: dist
 
-      - name: Deploy to GitHub Pages (production)
-        if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'deploy: production - ${{ github.event.head_commit.message }}'
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

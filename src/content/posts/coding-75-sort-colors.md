@@ -1,0 +1,141 @@
+---
+title: 75. 颜色分类
+tags: [双指针, 原地修改]
+published: 2025-05-20T00:00:00+08:00
+updated: 2025-05-20T00:00:00+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 75. 颜色分类
+
+## 题目描述
+
+给定一个包含红色、白色和蓝色、共 `n` 个元素的数组 `nums`，**原地**对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
+
+我们使用整数 `0`、`1` 和 `2` 分别表示红色、白色和蓝色。
+
+必须在不使用库内置的 `sort` 函数的情况下解决这个问题。
+
+**示例 1：**
+```
+输入：nums = [2,0,2,1,1,0]
+输出：[0,0,1,1,2,2]
+```
+
+**示例 2：**
+```
+输入：nums = [2,0,1]
+输出：[0,1,2]
+```
+
+**提示：**
+- `n == nums.length`
+- `1 <= n <= 300`
+- `nums[i]` 为 `0`、`1` 或 `2`
+
+---
+
+## 解题思路
+
+### 核心思想
+
+数组只含 `0/1/2` 三种值。我们希望从左到右形成三段：`[0 段][1 段][2 段]`。用三个指针维护分界：
+
+- `low`：指向下一个 `0` 该放的位置（`0` 段的右边界后一位）。
+- `high`：指向下一个 `2` 该放的位置（`2` 段的左边界前一位）。
+- `mid`：当前扫描位置。
+
+`0` 段在 `[0, low)`，`1` 段在 `[low, mid)`（其实 mid 到 high 之间是未扫描区），`2` 段在 `(high, n-1]`。当 `mid` 扫过 `high` 时结束。
+
+这是一个经典的 **「荷兰国旗问题」**，本质是带两个交换锚点的单遍扫描，时间 O(n)、空间 O(1)。
+
+### 算法步骤
+
+1. 初始化 `low = 0`、`mid = 0`、`high = n - 1`。
+2. 循环直到 `mid > high`：
+   - 若 `nums[mid] == 0`：把它和 `nums[low]` 交换，然后 `low += 1`、`mid += 1`（左边稳定的 0 段扩大）。
+   - 若 `nums[mid] == 2`：把它和 `nums[high]` 交换，然后 `high -= 1`（右边稳定的 2 段扩大）；**不移动 `mid`**，因为换回来的值还没处理。
+   - 否则（`== 1`）：`mid += 1` 直接跳过。
+
+### 逐步举例
+
+以 `nums = [2, 0, 2, 1, 1, 0]`（n=6）为例：
+
+| 轮次 | low | mid | high | 数组 | 动作 |
+|------|-----|-----|------|------|------|
+| 初始 | 0 | 0 | 5 | [2,0,2,1,1,0] | - |
+| 1 | 0 | 0 | **4** | [**0**,0,2,1,1,**2**] | nums[0]=2 ↔ nums[5]，high→4 |
+| 2 | **1** | **1** | 4 | [0,0,2,1,1,2] | nums[0]=0 ↔ nums[0]，low→1, mid→1 |
+| 3 | **2** | **2** | 4 | [0,0,2,1,1,2] | nums[1]=0 ↔ nums[1]，low→2, mid→2 |
+| 4 | 2 | 2 | **3** | [0,0,**1**,1,**2**,2] | nums[2]=2 ↔ nums[4]，high→3 |
+| 5 | 2 | **3** | 3 | [0,0,1,1,2,2] | nums[2]=1，mid→3 |
+| 6 | 2 | **4** | 3 | [0,0,1,1,2,2] | nums[3]=1，mid→4，结束 |
+
+最终 `[0,0,1,1,2,2]` ✓
+
+### 复杂度分析
+
+- 时间复杂度：O(n)，`mid` 每轮至少前进一步。
+- 空间复杂度：O(1)，只用了常数额外空间，原地交换。
+
+---
+
+## 代码实现
+
+```python
+from typing import List
+
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """Do not return anything, modify nums in-place instead."""
+        n = len(nums)
+        low, mid, high = 0, 0, n - 1
+        while mid <= high:
+            if nums[mid] == 0:
+                nums[low], nums[mid] = nums[mid], nums[low]
+                low += 1
+                mid += 1
+            elif nums[mid] == 2:
+                nums[mid], nums[high] = nums[high], nums[mid]
+                high -= 1
+            else:
+                mid += 1
+```
+
+```python
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+
+import unittest
+from solution import Solution
+
+
+class TestSolution(unittest.TestCase):
+
+    def test_basic(self):
+        nums = [2, 0, 2, 1, 1, 0]
+        Solution().sortColors(nums)
+        self.assertEqual(nums, [0, 0, 1, 1, 2, 2])
+
+    def test_three(self):
+        nums = [2, 0, 1]
+        Solution().sortColors(nums)
+        self.assertEqual(nums, [0, 1, 2])
+
+    def test_already_sorted(self):
+        nums = [0, 1, 2]
+        Solution().sortColors(nums)
+        self.assertEqual(nums, [0, 1, 2])
+
+    def test_single(self):
+        nums = [0]
+        Solution().sortColors(nums)
+        self.assertEqual(nums, [0])
+
+
+if __name__ == "__main__":
+    unittest.main()
+```

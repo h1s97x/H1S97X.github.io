@@ -1,0 +1,120 @@
+---
+title: 240. 搜索二维矩阵 II
+tags: [双指针, 矩阵]
+leetcode: 240
+studyplan: 滑动窗口与双指针
+published: 2026-08-23T12:12:27+08:00
+updated: 2026-08-23T12:12:27+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 240. 搜索二维矩阵 II
+
+> 题目链接: [LeetCode 240](https://leetcode.cn/problems/search-a-2d-matrix-ii/)
+
+## 题目描述
+
+编写一个高效的算法来搜索 `m x n` 矩阵 `matrix` 中的一个目标值 `target`。该矩阵具有以下特性：
+
+- 每行的元素从左到右升序排列。
+- 每列的元素从上到下升序排列。
+
+**示例 1：**
+```
+输入：matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
+输出：true
+```
+**示例 2：**
+```
+输入：matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20
+输出：false
+```
+
+## 解题思路
+
+### 核心思想
+
+从矩阵的**右上角**出发（或左下角）。右上角的元素 `matrix[row][col]` 具有"向左变小、向下变大"的单调性质：
+- 若 `target` 更大，则只能向下走（`row += 1`）；
+- 若 `target` 更小，则只能向左走（`col -= 1`）；
+- 相等则找到。
+
+每次比较都排除一整行或一整列，效率高。
+
+### 算法步骤
+
+1. `row=0, col=len(matrix[0])-1`（右上角）。
+2. 循环直到越界：
+   - `val = matrix[row][col]`。
+   - `val == target`：返回 `True`。
+   - `val > target`：`col -= 1`（向左排除一列）。
+   - `val < target`：`row += 1`（向下排除一行）。
+3. 越界仍没找到，返回 `False`。
+
+### 逐步举例
+
+`target=5`，右上角为 `15`：
+- `15 > 5` → 左移，`col=3`，值为 `11`。
+- `11 > 5` → 左移，`col=2`，值为 `7`。
+- `7 > 5` → 左移，`col=1`，值为 `4`。
+- `4 < 5` → 下移，`row=1`，值为 `5` → 找到 ✅。
+
+共比较 5 次即命中。
+
+### 复杂度分析
+
+- **时间复杂度**：O(m + n)，最多移动 m 行 + n 列。
+- **空间复杂度**：O(1)。
+
+## 代码实现
+
+```python
+from typing import List
+
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        if not matrix or not matrix[0]:
+            return False
+        row, col = 0, len(matrix[0]) - 1
+        while row < len(matrix) and col >= 0:
+            val = matrix[row][col]
+            if val == target:
+                return True
+            if val > target:
+                col -= 1
+            else:
+                row += 1
+        return False
+```
+
+```python
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import unittest
+
+from solution import Solution
+
+
+class TestSolution(unittest.TestCase):
+    def setUp(self):
+        self.m = [[1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22],
+                  [10, 13, 14, 17, 24], [18, 21, 23, 26, 30]]
+
+    def test_found(self):
+        self.assertTrue(Solution().searchMatrix(self.m, 5))
+
+    def test_not_found(self):
+        self.assertFalse(Solution().searchMatrix(self.m, 20))
+
+    def test_single(self):
+        self.assertTrue(Solution().searchMatrix([[1]], 1))
+
+
+if __name__ == '__main__':
+    unittest.main()
+```

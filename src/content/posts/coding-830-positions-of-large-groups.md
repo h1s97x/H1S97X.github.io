@@ -1,0 +1,140 @@
+---
+title: 830. 较大分组的位置
+tags: [双指针, 字符串]
+leetcode: 830
+studyplan: 滑动窗口与双指针
+published: 2026-08-23T12:12:27+08:00
+updated: 2026-08-23T12:12:27+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 830. 较大分组的位置
+
+## 题目描述
+
+在一个由小写字母构成的字符串 `s` 中，包含由一些连续的相同字符所构成的分组。
+
+例如，在字符串 `s = "abbxxxxzyy"` 中，就含有 `"a"`、`"bb"`、`"xxxx"`、`"z"` 和 `"yy"` 这样的一些分组。
+
+分组可以用区间 `[start, end]` 表示，其中 `start` 和 `end` 分别表示该分组的起始和终止位置的下标。上例中的 `"xxxx"` 分组用区间表示为 `[3, 6]`。
+
+我们称所有包含**大于或等于三个**连续字符的分组为**较大分组**。
+
+找到每一个**较大分组**的区间，**按起始位置下标递增顺序**排序后，返回结果。
+
+**示例 1：**
+```
+输入：s = "abbxxxxzzy"
+输出：[[3,6]]
+解释："xxxx" 是一个起始于 3 且终止于 6 的较大分组。
+```
+
+**示例 2：**
+```
+输入：s = "abc"
+输出：[]
+解释："a"、"b" 和 "c" 均不是符合要求的较大分组。
+```
+
+**示例 3：**
+```
+输入：s = "abcdddeeeeaabbbcd"
+输出：[[3,5],[6,9],[12,14]]
+```
+
+**提示：**
+- `1 <= s.length <= 1000`
+- `s` 仅含小写英文字母
+
+## 解题思路
+
+### 核心思想
+
+用**分组循环**把字符串按连续相同字符分成段，段长 `>= 3` 的即为较大分组，把 `[i, j]` 加入结果。由于各段天然按下标递增排列，结果无需额外排序。
+
+**分组示意（s = "abcdddeeeeaabbbcd"）：**
+
+```
+a | b | c | ddd | eeee | aa | bbb | c | d
+              [3,5]  [6,9]      [12,14]
+```
+
+### 算法步骤
+
+1. 令 `i = 0`，初始化结果列表 `res`。
+2. 当 `i < n` 时：
+   - `j = i`，扩展 `while j+1 < n and s[j+1] == s[i]`；
+   - 若 `j - i + 1 >= 3`，把 `[i, j]` 加入 `res`；
+   - `i = j + 1`。
+3. 返回 `res`。
+
+### 逐步举例
+
+以 `s = "abcdddeeeeaabbbcd"` 为例：
+
+| 段 | 区间 | 长度 | 是否 ≥3 |
+| -- | ---- | ---- | ------- |
+| a | [0,0] | 1 | 否 |
+| b | [1,1] | 1 | 否 |
+| c | [2,2] | 1 | 否 |
+| ddd | [3,5] | 3 | ✅ |
+| eeee | [6,9] | 4 | ✅ |
+| aa | [10,11] | 2 | 否 |
+| bbb | [12,14] | 3 | ✅ |
+
+结果为 `[[3,5],[6,9],[12,14]]`。
+
+### 复杂度分析
+
+- **时间复杂度**：O(N)，单次线性扫描。
+- **空间复杂度**：O(1)（不计输出结果空间）。
+
+## 代码实现
+
+{{% highlight python %}}
+```python
+from typing import List
+
+
+class Solution:
+    def largeGroupPositions(self, s: str) -> List[List[int]]:
+        res = []
+        n = len(s)
+        i = 0
+        while i < n:
+            j = i
+            while j + 1 < n and s[j + 1] == s[i]:
+                j += 1
+            if j - i + 1 >= 3:
+                res.append([i, j])
+            i = j + 1
+        return res
+```
+```python
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import unittest
+
+from solution import Solution
+
+
+class TestSolution(unittest.TestCase):
+    def test_example1(self):
+        self.assertEqual(Solution().largeGroupPositions("abbxxxxzzy"), [[3, 6]])
+
+    def test_example2(self):
+        self.assertEqual(Solution().largeGroupPositions("abc"), [])
+
+    def test_example3(self):
+        self.assertEqual(Solution().largeGroupPositions("abcdddeeeeaabbbcd"),
+                         [[3, 5], [6, 9], [12, 14]])
+
+
+if __name__ == '__main__':
+    unittest.main()
+```
+{{% /highlight %}}

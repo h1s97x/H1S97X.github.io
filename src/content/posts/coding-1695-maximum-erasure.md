@@ -1,0 +1,108 @@
+---
+title: 1695. 删除子数组的最大得分
+tags:
+  - 滑动窗口
+  - 不定长
+  - 数组
+  - 哈希表
+description: "求元素互不相同的子数组的最大和"
+leetcode: 1695
+studyplan: 滑动窗口与双指针
+published: 2026-08-18T13:39:14+08:00
+updated: 2026-08-18T13:39:14+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 1695. 删除子数组的最大得分
+
+## 题目描述
+
+给你一个正整数数组 nums，请你从中删除一个含有若干不同元素（即元素互不相同）的子数组。删除子数组的得分就是子数组各元素之和。返回只删除一个子数组可获得的最大得分。
+
+## 解法思路
+
+### 核心思想
+
+题目要求删除一个**元素互不相同**（无重复）的子数组，得分是它的元素和，求最大得分。等价于：**找一个元素互不相同的连续子数组，使它的和最大**。
+
+"元素互不相同"是窗口的合法性约束——越短越合法、越长越容易撞车。这类"求最大窗口 + 越短越合法"问题用**不定长滑动窗口**：右指针不断加入元素，若新元素与窗口内已有元素重复，就右移左指针、把重复元素踢出窗口，直到窗口再次互不相同。
+
+维护两个量：
+- `seen` 集合：窗口内的元素（用于 O(1) 判重）
+- `cur`：窗口内元素之和（用于快速更新答案）
+
+### 算法步骤
+
+1. `ans = left = cur = 0`，`seen` 空集合。
+2. 枚举右端点 `right`：`x = nums[right]`。
+3. `while x in seen`：说明 x 与窗口内某元素重复，先把它踢出去——`seen.remove(nums[left])`、`cur -= nums[left]`、`left += 1`，重复直到 x 不再重复。
+4. `seen.add(x)`、`cur += x`，`ans = max(ans, cur)`。
+5. 返回 `ans`。
+
+### 逐步举例
+
+以 `nums = [4, 2, 4, 5, 6]` 为例（最优解：子数组 `[2,4,5,6]`，和为 17）：
+
+| right | x | 是否收缩 | 收缩过程 | seen | cur | ans |
+|-------|---|---------|---------|------|-----|-----|
+| 0 | 4 | 否 | — | {4} | 4 | 4 |
+| 1 | 2 | 否 | — | {4,2} | 6 | 6 |
+| 2 | 4 | **是** | 4∈seen → 删下标0的4(cur=2,left=1)，4∉seen 退出 | {2,4} | 6 | 6 |
+| 3 | 5 | 否 | — | {2,4,5} | 11 | 11 |
+| 4 | 6 | 否 | — | {2,4,5,6} | 17 | **17** |
+
+第 2 步 `x=4` 与下标 0 的 4 重复，收缩左边界删掉它后，窗口变为 `[2,4]`（下标 1~2），仍合法。之后连续加入 5、6，窗口 `[1,4]=[2,4,5,6]` 互不相同且和最大 17。✅
+
+## 题解
+
+```python
+class Solution:
+    def maximumUniqueSubarray(self, nums: list[int]) -> int:
+        ans = left = cur = 0
+        seen = set()
+        for right, x in enumerate(nums):
+            while x in seen:
+                seen.remove(nums[left])
+                cur -= nums[left]
+                left += 1
+            seen.add(x)
+            cur += x
+            ans = max(ans, cur)
+        return ans
+```
+
+```python
+import sys
+sys.path.insert(0, "/workspace/projects/source/coding/sliding-window-two-pointers/02-variable-sliding-window/1695-maximum-erasure")
+from solution import Solution
+import unittest
+
+class TestMaximumUniqueSubarray(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertEqual(self.solution.maximumUniqueSubarray([4,2,4,5,6]), 17)
+
+    def test_example2(self):
+        self.assertEqual(self.solution.maximumUniqueSubarray([5,2,1,2,5,2,1,2,5]), 8)
+
+    def test_single_element(self):
+        self.assertEqual(self.solution.maximumUniqueSubarray([1]), 1)
+
+    def test_all_unique(self):
+        self.assertEqual(self.solution.maximumUniqueSubarray([1,2,3,4]), 10)
+
+    def test_all_same(self):
+        self.assertEqual(self.solution.maximumUniqueSubarray([5,5,5,5]), 5)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，左右指针各移动一次
+- 空间复杂度：O(n)，seen 集合存储窗口内元素

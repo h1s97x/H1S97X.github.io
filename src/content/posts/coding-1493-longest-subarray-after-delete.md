@@ -1,0 +1,127 @@
+---
+title: 1493. 删掉一个元素以后全为 1 的最长子数组
+tags:
+  - 滑动窗口
+  - 不定长
+  - 数组
+description: "删除一个元素后，求最长全 1 子数组的长度"
+leetcode: 1493
+studyplan: 滑动窗口与双指针
+published: 2026-08-18T13:37:56+08:00
+updated: 2026-08-18T13:37:56+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 1493. 删掉一个元素以后全为 1 的最长子数组
+
+## 题目描述
+
+给你一个二进制数组 `nums`，你需要从中删掉一个元素。请在删掉元素的结果数组中，返回最长的且只包含 1 的非空子数组的长度。如果不存在这样的子数组，请返回 0。
+
+**示例 1：**
+
+```
+输入：nums = [1,1,0,1]
+输出：3
+```
+
+**示例 2：**
+
+```
+输入：nums = [0,1,1,1,0,1,1,0,1]
+输出：5
+```
+
+**示例 3：**
+
+```
+输入：nums = [1,1,1]
+输出：2
+```
+
+## 解法思路
+
+### 核心思想
+
+删除一个元素后剩下的全 1 子数组，等价于：**原数组里某个连续子数组去掉恰好一个元素后全为 1**。这样的子数组内部至多含一个 0。
+
+所以问题转化为不定长滑动窗口：求**窗口内 0 的个数 $\le 1$** 的最大窗口，答案取窗口长度减一（因为其中一个元素要被删除）。
+
+当窗口内出现两个 0 时，右移左指针收缩，直到窗口内只剩一个 0。因为滑动窗口"越长越不合法"，这正是求最大的场景。
+
+### 算法步骤
+
+1. 初始化 `ans = left = cnt0 = 0`。
+2. 枚举 `right`：若 `nums[right] == 0`，`cnt0 += 1`。
+3. `while cnt0 > 1`：若 `nums[left] == 0` 则 `cnt0 -= 1`，`left += 1`。
+4. 更新 `ans = max(ans, right - left)`（窗口长 `right-left+1` 再减掉要删的 1 个元素）。
+5. 返回 `ans`。
+
+### 逐步举例
+
+以 `nums = [1,1,0,1]` 为例（期望答案 3）：
+
+| right | 元素 | 入窗后 cnt0 | 收缩 | 窗口 | 长度(减1) | ans |
+|------|------|------------|-----|------|----------|-----|
+| 0 | 1 | 0 | — | [0,0] | 0 | 0 |
+| 1 | 1 | 0 | — | [0,1] | 1 | 1 |
+| 2 | 0 | 1 | — | [0,2] | 2 | 2 |
+| 3 | 1 | 1 | — | [0,3]="101" | 3 | **3** |
+
+窗口 [0,3]="101" 去掉中间的 0 得 "11"，长度为 2 的两侧？实际窗口 [0,3] 长度 4-1=3，对应原串把中间 0 删掉，得 "111" 长度为 3。✅
+
+## 题解
+
+```python
+class Solution:
+    def longestSubarray(self, nums: list[int]) -> int:
+        ans = left = cnt0 = 0
+        for right, x in enumerate(nums):
+            if x == 0:
+                cnt0 += 1
+            while cnt0 > 1:
+                if nums[left] == 0:
+                    cnt0 -= 1
+                left += 1
+            ans = max(ans, right - left)
+        return ans
+```
+
+```python
+import sys
+sys.path.insert(0, "/workspace/projects/source/coding/sliding-window-two-pointers/02-variable-sliding-window/1493-longest-subarray-after-delete")
+from solution import Solution
+import unittest
+
+class TestLongestSubarray(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertEqual(self.solution.longestSubarray([1,1,0,1]), 3)
+
+    def test_example2(self):
+        self.assertEqual(self.solution.longestSubarray([0,1,1,1,0,1,1,0,1]), 5)
+
+    def test_example3(self):
+        self.assertEqual(self.solution.longestSubarray([1,1,1]), 2)
+
+    def test_all_zeros(self):
+        self.assertEqual(self.solution.longestSubarray([0,0,0]), 0)
+
+    def test_single_one(self):
+        self.assertEqual(self.solution.longestSubarray([1]), 0)
+
+    def test_single_zero(self):
+        self.assertEqual(self.solution.longestSubarray([0]), 0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，左右指针各遍历一次
+- 空间复杂度：O(1)

@@ -2,15 +2,15 @@
 
 ## 项目概述
 
-Hexo 静态博客项目，使用 Almagest 主题。主要功能是技术分享与生活记录。
+Astro 静态博客项目，使用 Fuwari 主题（vendored 副本，后期抽成 h1s97x/fuwari-theme 子模块）。由 Hexo 迁移而来，详见 docs/MIGRATION_ASTRO.md。主要功能是技术分享与生活记录。
 
-**项目愿景**: 将此项目打造成 Hexo 生态的标杆博客，具备流程规范、代码高质量、高可维护性和高解耦架构。
+**项目愿景**: 将此项目打造成 Astro 生态的标杆博客，具备流程规范、代码高质量、高可维护性和高解耦架构。
 
 ## 技术栈
 
-- **框架**: Hexo 8.1.x
-- **主题**: hexo-theme-almagest
-- **语言**: Node.js >= 20.19.0
+- **框架**: Astro 5.x（TypeScript，构建基于 Vite）
+- **主题**: Fuwari（saicaca/fuwari，MIT，当前 vendored 于本仓，后期抽子模块）
+- **语言**: Node.js >= 20.19.0；内容用 Markdown/MDX
 - **包管理器**: pnpm (强制使用，禁止 npm/Yarn)
 
 ## 核心设计原则
@@ -19,10 +19,10 @@ Hexo 静态博客项目，使用 Almagest 主题。主要功能是技术分享�
 
 对于博客项目，保持简单：
 
-- 使用 Hexo 原生插件系统
-- 自定义脚本放在 `scripts/` 目录
-- 工具脚本放在 `tools/` 目录
-- 配置文件使用 `_config.*.yml`
+- 内容用 Markdown 写在 `src/content/posts/`，单页写在 `src/content/spec/`
+- 主题/组件在 `src/`（Fuwari vendored），定制优先改 `src/components`、`astro.config.mjs`
+- 迁移/工具脚本放在 `tools/` 目录
+- 配置集中在 `src/config.ts`（站点/导航/个人资料/评论）与 `astro.config.mjs`（集成/重定向）
 
 ## Git 工作流
 
@@ -45,102 +45,95 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 
 ### PR 流程
 
-1. 从 develop 创建功能分支
-2. 开发 + 测试
-3. 提交 PR 到 develop
+1. 从 `main` 创建功能分支（如 `feature/astro-migration`）
+2. 开发 + 本地 `pnpm build` 验证
+3. 提交 PR 到 `main`
 4. Code Review
 5. Squash and merge
-6. 自动部署 staging
-7. 手动合并 main 发布
+6. 合并后由 `.cnb.yml` rebase 同步到 GitHub，触发 GitHub Actions 部署到 Pages
 
 ## CI/CD 要求
 
 - 所有 CI 必须使用 pnpm
-- 必须包含: Lint → Test → Build → Security Scan
-- 分支命名与 commit message 校验
+- GitHub Actions（`.github/workflows/`）：
+  - `build.yml` — `astro check` + `astro build`（Node 22/23 矩阵）
+  - `biome.yml` — Biome 代码检查（Lint）
+  - `codeql.yml` — CodeQL 安全扫描
+  - `deploy.yml` — `main` 推送后构建并部署 GitHub Pages
+- 分支命名与 commit message 规范见上
 
 ## 当前状态
 
 ### 已完成 ✅
 
-- 依赖清理 (移除未使用的 hexo-tag-aplayer, hexo-filter-mermaid-diagrams)
-- 工具脚本清理 (移除 5 个重复/无用脚本)
-- Workflows 简化 (保留 ci.yml, deploy.yml, pr-compliance.yml)
-- 流程规范化 (commitlint, PR 模板, 分支保护)
-- **内容分离** (技术文章迁移到 notes/, \_posts/ 只保留生活记录)
-- **目录重构** (文章按年份组织, 添加 scaffolds 模板)
-- **路由优化** (使用 index_generator 生成博客首页)
+- **框架迁移**：Hexo + Almagest → Astro 5 + Fuwari（vendored 于 `src/`）
+- **内容迁移**：158 篇内容迁入 `src/content/posts/`（含图片资源），frontmatter 标准化
+- **路由统一**：单流 `/posts/<slug>/`，旧 `/blog/年/月/日/`、`/notes/`、`/coding/` 由 `tools/redirects.json` 301 重定向
+- **功能补齐**：giscus 评论、Pagefind 搜索、sitemap、RSS、明暗主题切换
+- **部署链路**：`.cnb.yml` rebase 同步到 GitHub → GitHub Actions 部署 Pages
 
 ### 待处理
 
-- 主题配置优化
-- 文档完善
-- 测试覆盖率提升
-- 清理备份目录 `.archive/posts-backup-*`
+- 主题定制（视觉/配色）
+- 主题抽成 `h1s97x/fuwari-theme` 子模块（P5，暂缓）
 
-详见: `docs/REFACTOR_GUIDE.md`
+详见: `docs/MIGRATION_ASTRO.md`
 
 ## 目录结构 (当前)
 
 ```
-/workspace/projects/
-├── .github/workflows/        # CI/CD 配置
-├── source/
-│   ├── _posts/              # 博客文章（生活记录，按年份）
-│   │   ├── 2023/
-│   │   ├── 2024/
-│   │   └── 2025/
-│   ├── notes/               # 技术笔记（按主题）
-│   │   ├── git-help/
-│   │   ├── linux/
-│   │   └── ...
-│   ├── coding/              # 编程题解
-│   └── about/               # 关于页面
-├── themes/almagest/         # 主题 (submodule)
-├── scripts/                 # Hexo 脚本 (filters/tags/generators)
-├── scaffolds/               # 内容模板
-├── tools/                   # 工具脚本
-├── _config.yml             # Hexo 主配置
-├── theme_config (in _config.yml) # 主题配置
-├── Makefile                # 快捷命令
+.
+├── .cnb.yml                 # CNB 流水线（同步到 GitHub / PR 处理人）
+├── .github/workflows/       # GitHub Actions（build / biome / codeql / deploy）
+├── src/
+│   ├── config.ts            # 站点配置（标题/导航/个人资料/评论）
+│   ├── content/
+│   │   ├── posts/           # 文章（Content Collections）
+│   │   └── spec/            # 关于页等单页
+│   ├── pages/               # 路由（/、/archive/、/posts/<slug>/、/about/）
+│   ├── components/          # 主题组件（Fuwari vendored）
+│   └── layouts/             # 布局（Fuwari vendored）
+├── public/                  # 静态资源（图片）
+├── tools/
+│   ├── migrate-fuwari.mjs   # Hexo → Astro 迁移脚本
+│   └── redirects.json       # 旧链接 301 映射
+├── astro.config.mjs         # Astro 配置（集成 / 重定向）
+├── pagefind.yml             # Pagefind 搜索索引配置
 └── package.json
 ```
 
 ### 内容分离策略
 
-| 类型       | 目录             | 用途           | 数量  |
-| ---------- | ---------------- | -------------- | ----- |
-| **Posts**  | `source/_posts/` | 生活记录、思考 | 6 篇  |
-| **Notes**  | `source/notes/`  | 技术文章、攻略 | 54 篇 |
-| **Coding** | `source/coding/` | 编程题解       | 41 篇 |
+| 类型      | 目录                 | 用途                     |
+| --------- | -------------------- | ------------------------ |
+| **Posts** | `src/content/posts/` | 全部文章（生活/技术/题解） |
+| **Spec**  | `src/content/spec/`  | 关于页等单页             |
 
-> **算法题单进度（`source/coding/sliding-window-two-pointers/`）**：已从零实现「滑动窗口与双指针」题单共 41 道（§1 定长滑窗 26 + §2.1 不定长 15……随章节递增），每道题一个目录，含 `solution.py`（标准英文方法名）、`solution_test.py`（unittest）、`index.md`（frontmatter + `{% asset_code %}` 引用）。
-> **约定**：测试同一题时先 `find . -name "__pycache__" -type d -exec rm -rf {} +` 再单独 `pytest`，避免同名 `solution_test` 模块冲突。提交单题用 `git commit --no-verify -m "..." -- <pathspec>`（`git add <中文目录>` 会波及整个父目录，勿用）。
+> 内容由迁移脚本 `tools/migrate-fuwari.mjs` 从 Hexo 迁移而来；脚本会清空并重建 `src/content/posts/`，因此**手写新文章要放在该目录之外的备份，或改脚本行为后再增删**。
 
 ### 路由结构
 
 ```
-/blog/   - 博客首页（生活记录）
-/notes/  - 笔记首页（技术文章）
-/coding/ - 编程题解首页
-/about/  - 关于页面
+/              - 首页（文章分页流）
+/archive/      - 归档（按年份 + 标签/分类筛选）
+/posts/<slug>/ - 文章详情
+/about/        - 关于页面
 ```
 
 ## 运行命令
 
-| 命令                        | 说明                  |
-| --------------------------- | --------------------- |
-| `pnpm run build`            | 生成静态网站          |
-| `pnpm run server`           | 启动本地预览          |
-| `pnpm run lint`             | ESLint 检查           |
-| `pnpm run test`             | 运行单元测试          |
-| `pnpm run deploy`           | 部署到 GitHub Pages   |
-| `pnpm run almagest:validate` | 验证 Almagest 主题配置 |
+| 命令             | 说明                                  |
+| ---------------- | ------------------------------------- |
+| `pnpm dev`       | 启动本地预览（默认 4321）             |
+| `pnpm build`     | 构建（`dist/`）并生成 Pagefind 搜索索引 |
+| `pnpm check`     | `astro check` 类型与内容检查          |
+| `pnpm lint`      | Biome 检查                            |
+| `pnpm type-check`| `tsc --noEmit` 类型检查               |
 
 ## 常见问题
 
-1. **主题 submodule**: 使用 `pnpm run themes:init` 初始化
-2. **构建失败**: 先运行 `pnpm run almagest:validate` 检查配置
+1. **主题（Fuwari）**: 当前 vendored 于本仓 `src/`，后期抽成 `h1s97x/fuwari-theme` 子模块（见 docs/MIGRATION_ASTRO.md）
+2. **构建失败**: 先 `pnpm install` 再 `pnpm build`；Content Collections 的 frontmatter 校验失败会直接报错
 
 ## Coze 平台配置
 

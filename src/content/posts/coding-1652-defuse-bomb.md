@@ -1,0 +1,125 @@
+---
+title: 1652. 拆炸弹
+tags:
+  - 滑动窗口
+  - 定长
+  - 环形数组
+description: "环形数组中，每个元素替换为后/前 k 个元素之和（O(n) 定长滑窗）"
+leetcode: 1652
+studyplan: 滑动窗口与双指针
+published: 2026-08-16T23:32:15+08:00
+updated: 2026-08-16T23:32:15+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 1652. 拆炸弹
+
+## 题目描述
+
+给你一个下标从 0 开始的整数数组 `code` 和一个密钥 `k`。
+
+解密规则：
+- 如果 `k > 0`，将第 `i` 个数字替换为它**后面** `k` 个数字之和
+- 如果 `k < 0`，将第 `i` 个数字替换为它**前面** `k` 个数字之和
+- 如果 `k == 0`，将第 `i` 个数字替换为 0
+
+数组视为**环形**（首尾相接）。
+
+**示例 1：**
+
+```
+输入：code = [5,7,1,4], k = 3
+输出：[12,10,16,13]
+```
+
+**示例 2：**
+
+```
+输入：code = [1,2,3,4], k = 0
+输出：[0,0,0,0]
+```
+
+## 解法思路
+
+题目要求每个位置都取「后/前 `k` 个元素」的和，本质是一个**窗长固定为 `|k|`** 的滑窗，沿环形数组滑动时窗口内容平移一位、只变首尾两端元素，因此可 O(1) 从上一个窗口推出下一个窗口。
+
+**关键：确定首窗口起点。**约定以 `i = 0` 位置的答案作为首窗口：
+- `k > 0`：取 `code[1..k]`（即 `0` 后面 k 个），起点 `start = 1`。
+- `k < 0`：取前 k 个，即 `code[n-|k|..n-1]`，起点 `start = n - |k|`。
+
+初始累加首窗口得 `ans[0]`。随后 `i = 1..n-1` 依次滑动：窗口整体右移一位，**减去离开窗口的首个元素** `code[(start+i-1) % n]`，**加上新进入的元素** `code[(start+i+|k|-1) % n]`，即得 `ans[i]`。取模实现环形。
+
+**逐步举例**（`code=[5,7,1,4], k=3`）：
+
+- `k>0`，`m=3`，起点 `start=1`。首窗口 = `code[1..3] = [7,1,4]`，和 = 12 → `ans[0]=12`。
+- 窗口右移：
+  - 出 `code[1]=7`、进 `code[0]=5`，`12-7+5=10` → `ans[1]=10`（即下标 1 后面 3 个 `[1,4,5]` 之和）。
+  - 出 `code[2]=1`、进 `code[1]=7`，`10-1+7=16` → `ans[2]=16`（`[4,5,7]`）。
+  - 出 `code[3]=4`、进 `code[2]=1`，`16-4+1=13` → `ans[3]=13`（`[5,7,1]`）。
+- 结果 `[12,10,16,13]` ✓
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，一次滑动。
+- 空间复杂度：O(n)，结果数组（不计算则是 O(1)）。
+
+## 代码实现
+
+```python
+class Solution:
+    def decrypt(self, code: list[int], k: int) -> list[int]:
+        n = len(code)
+        if k == 0:
+            return [0] * n
+
+        m = abs(k)
+        start = 1 if k > 0 else n - m
+        cur = sum(code[start:start + m])
+        ans = [0] * n
+        ans[0] = cur
+
+        for i in range(1, n):
+            cur -= code[(start + i - 1) % n]
+            cur += code[(start + i + m - 1) % n]
+            ans[i] = cur
+
+        return ans
+```
+
+```python
+import sys
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from solution import Solution
+
+
+class TestDecrypt(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertEqual(self.solution.decrypt([5, 7, 1, 4], 3), [12, 10, 16, 13])
+
+    def test_example2(self):
+        self.assertEqual(self.solution.decrypt([1, 2, 3, 4], 0), [0, 0, 0, 0])
+
+    def test_example3(self):
+        self.assertEqual(self.solution.decrypt([2, 4, 9, 3], -2), [12, 5, 6, 13])
+
+    def test_k_positive_one(self):
+        self.assertEqual(self.solution.decrypt([1, 2, 3, 4], 1), [2, 3, 4, 1])
+
+    def test_k_negative_one(self):
+        self.assertEqual(self.solution.decrypt([1, 2, 3, 4], -1), [4, 1, 2, 3])
+
+    def test_all_same(self):
+        self.assertEqual(self.solution.decrypt([10, 10, 10], 2), [20, 20, 20])
+
+
+if __name__ == "__main__":
+    unittest.main()
+```

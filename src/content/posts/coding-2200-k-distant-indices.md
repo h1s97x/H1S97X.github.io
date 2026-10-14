@@ -1,0 +1,126 @@
+---
+title: 2200. 找出数组中的所有 K 近邻下标
+tags:
+  - 滑动窗口
+  - 双指针
+description: "找到所有满足存在 j 使得 |i-j| ≤ k 且 nums[j] == key 的下标"
+leetcode: 2200
+studyplan: 滑动窗口与双指针
+published: 2026-08-18T13:30:49+08:00
+updated: 2026-08-18T13:30:49+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 2200. 找出数组中的所有 K 近邻下标
+
+## 题目描述
+
+给你一个下标从 0 开始的整数数组 `nums` 和两个整数 `key` 和 `k`。K 近邻下标是 `nums` 中的一个下标 `i`，满足至少存在一个下标 `j` 使得 `|i - j| <= k` 且 `nums[j] == key`。以递增顺序返回所有 K 近邻下标。
+
+**示例 1：**
+
+```
+输入：nums = [3,4,9,1,3,9,5], key = 9, k = 1
+输出：[1,2,3,4,5,6]
+```
+
+**示例 2：**
+
+```
+输入：nums = [2,2,2,2,2], key = 2, k = 2
+输出：[0,1,2,3,4]
+```
+
+## 核心思想
+
+暴力做法是枚举每个下标 `i`，再扫描所有 `nums[j] == key` 的位置判断 `|i-j| <= k`，时间复杂度 O(n²)。
+
+能不能只扫一遍就 O(n) 完成？关键是注意到：**每个等于 key 的下标 `j`，它覆盖的区间是 `[j-k, j+k]`**。多个这样的区间拼起来，就是所有 K 近邻下标。
+
+因此我们可以从左到右扫描，每当遇到一个 `nums[j] == key`，就把它覆盖的区间 `[j-k, j+k]` 整段加入答案。
+
+但这样会有问题：如果两个 `j` 的覆盖区间有重叠，就会重复加入下标。比如 `j1` 覆盖 `[2, 4]`，`j2` 覆盖 `[3, 5]`，重叠部分是 `[3, 4]`，会重复。
+
+**去重技巧**：用变量 `r` 记录"尚未被覆盖的最小下标"。既然 `[0, r-1]` 都已经被前面的覆盖区间填过了，那么当前区间就不需要从 `j-k` 开始了，直接从 `max(r, j-k)` 开始即可。这样每个下标最多被加入一次，天然去重，也保证了递增顺序。
+
+## 算法步骤
+
+1. 初始化 `ans = []`，`r = 0`（`r` 表示可添加区间的起点下界，同时 `[0, r-1]` 已被覆盖）。
+2. 从左到右遍历 `nums`：
+   - 若 `nums[j] == key`：
+     - 左边界 `l = max(r, j - k)`（不能在已覆盖区域内重复加）。
+     - 右边界 `r = min(n-1, j+k) + 1`（闭区间 `[l, r]`，所以右端点取 `min(n-1, j+k)`，`r` 记录为下一个待处理下标即 `+1`）。
+     - 把 `[l, r)` 内的所有下标依次加入 `ans`。
+3. 返回 `ans`。
+
+为什么左边界取 `max(r, j-k)`？
+- 因为 `[0, r-1]` 已经被前面的 key 区间完整覆盖，这些下标不该重复添加。
+- 从 `r` 和 `j-k` 的较大者开始，正好避开了已覆盖部分。
+
+## 逐步举例
+
+以示例 1 为例：`nums = [3,4,9,1,3,9,5], key = 9, k = 1, n = 7`。
+
+| 步骤 | j | nums[j] | 计算 l/r | 添加的下标 | r 更新为 |
+| ---- | - | ------- | -------- | ---------- | -------- |
+| 1 | 2 | 9 | l=max(0,1)=1, r=min(6,3)+1=4 | [1,4) → 1,2,3 | 4 |
+| 2 | 5 | 9 | l=max(4,4)=4, r=min(6,6)+1=7 | [4,7) → 4,5,6 | 7 |
+
+第一轮：`nums[2]=9`，覆盖 `[2-1, 2+1]=[1,3]`。取 `l = max(0, 1) = 1`，`r = min(6, 3)+1 = 4`，把 `1,2,3` 加入。
+
+第二轮：`nums[5]=9`，覆盖 `[5-1, 5+1]=[4,6]`。取 `l = max(4, 4) = 4`（注意此时 r=4，说明 0~3 已填，直接从 4 开始），`r = min(6,6)+1 = 7`，把 `4,5,6` 加入。
+
+答案 `[1,2,3,4,5,6]`。下标 0 没被任何区间覆盖（`|0-2|=2 > 1` 且 `|0-5|=5 > 1`），所以不加入。✅
+
+## 代码实现
+
+```python
+class Solution:
+    def findKDistantIndices(self, nums: list[int], key: int, k: int) -> list[int]:
+        n = len(nums)
+        ans = []
+        r = 0
+        for j, x in enumerate(nums):
+            if x == key:
+                l = max(r, j - k)
+                r = min(n - 1, j + k) + 1
+                for i in range(l, r):
+                    ans.append(i)
+        return ans
+```
+
+```python
+import sys
+sys.path.insert(0, "/workspace/projects/source/coding/sliding-window-two-pointers/01-fixed-sliding-window/2200-k-distant-indices")
+from solution import Solution
+import unittest
+
+class TestFindKDistantIndices(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertEqual(self.solution.findKDistantIndices([3,4,9,1,3,9,5], 9, 1), [1,2,3,4,5,6])
+
+    def test_example2(self):
+        self.assertEqual(self.solution.findKDistantIndices([2,2,2,2,2], 2, 2), [0,1,2,3,4])
+
+    def test_single_key(self):
+        self.assertEqual(self.solution.findKDistantIndices([1,2,3,4,5], 3, 1), [1,2,3])
+
+    def test_no_key(self):
+        self.assertEqual(self.solution.findKDistantIndices([1,2,3], 4, 1), [])
+
+    def test_k_large(self):
+        self.assertEqual(self.solution.findKDistantIndices([1,2,1,2,1], 1, 10), [0,1,2,3,4])
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，每个下标只会被加入一次，整体线性扫描。
+- 空间复杂度：O(n)（答案数组占用的空间，不考虑则 O(1)）。

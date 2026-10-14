@@ -1,18 +1,20 @@
 # H1S97X's Blog
 
-个人技术博客，使用 Hexo + Almagest 主题构建，托管于 GitHub Pages。
+个人技术博客，使用 Astro + Fuwari 主题构建，托管于 GitHub Pages。
 
-[![Powered by Hexo](https://img.shields.io/badge/Powered%20by-Hexo-blue?style=flat-square)](https://hexo.io/)
-[![Theme Almagest](https://img.shields.io/badge/Theme-Almagest-purple?style=flat-square)](https://cnb.cool/h1s97x/hexo-theme-almagest)
+[![Powered by Astro](https://img.shields.io/badge/Powered%20by-Astro-1b1b1b?style=flat-square)](https://astro.build/)
+[![Theme Fuwari](https://img.shields.io/badge/Theme-Fuwari-8b5cf6?style=flat-square)](https://github.com/saicaca/fuwari)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20.19.0-green?style=flat-square)](https://nodejs.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/h1s97x/H1S97X.github.io/pulls)
 
 ## 技术栈
 
-- **框架**: Hexo 8.x
-- **主题**: Almagest (hexo-theme-almagest)
+- **框架**: Astro 5.x (TypeScript / Vite)
+- **主题**: Fuwari (saicaca/fuwari，MIT；当前 vendored 于本仓，后期抽子模块)
 - **包管理器**: pnpm (禁止 npm/Yarn)
+
+> 本仓库由 Hexo 迁移而来，迁移方案见 [docs/MIGRATION_ASTRO.md](docs/MIGRATION_ASTRO.md)。
 
 ## 快速开始
 
@@ -21,34 +23,36 @@
 pnpm install
 
 # 本地预览
-pnpm run server
+pnpm dev
 
-# 构建
-pnpm run build
-
-# 部署
-pnpm run deploy
+# 构建（产物在 dist/，并自动生成 Pagefind 搜索索引）
+pnpm build
 ```
 
 ## 开发命令
 
 | 命令 | 说明 |
 |------|------|
-| `pnpm run server` | 启动本地预览 |
-| `pnpm run build` | 生成静态文件 |
-| `pnpm run deploy` | 部署到 GitHub Pages |
-| `pnpm run lint` | ESLint 检查 |
-| `pnpm run test` | 运行测试 |
-| `pnpm run validate` | 运行所有验证 |
+| `pnpm dev` | 启动本地预览（默认 4321） |
+| `pnpm build` | 构建到 `dist/` 并生成 Pagefind 搜索索引 |
+| `pnpm check` | `astro check` 类型与内容检查 |
+| `pnpm lint` | Biome 检查 |
+
+> 部署由 CI 完成：合并到 `main` 后 `.cnb.yml` 同步到 GitHub，触发 `.github/workflows/deploy.yml` 发布到 GitHub Pages。
 
 ## 项目结构
 
 ```
-source/          # 博客内容 (文章、笔记、题解)
-themes/almagest/  # 主题 (submodule)
-scripts/         # 自定义脚本 (filters, tags, generators)
-tools/           # 工具脚本
-docs/            # 开发文档
+src/
+├── config.ts      # 站点配置（标题/导航/个人资料/评论）
+├── content/       # 内容（posts 文章 / spec 单页）
+├── pages/         # 路由（/ /archive/ /posts/<slug>/ /about/）
+├── components/    # 主题组件（Fuwari vendored）
+└── layouts/       # 布局（Fuwari vendored）
+public/            # 静态资源（图片）
+tools/             # 迁移脚本与旧链接重定向表
+astro.config.mjs   # Astro 配置
+docs/              # 开发文档
 ```
 
 更多开发与维护说明，请参考 [AGENTS.md](AGENTS.md) 与 [docs/](docs/)。

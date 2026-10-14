@@ -1,0 +1,138 @@
+---
+title: 1461. 检查一个字符串是否包含所有长度为 K 的二进制子串
+tags:
+  - 滑动窗口
+  - 位运算
+  - 哈希表
+description: "检查二进制串 s 是否包含所有长度为 k 的二进制子串"
+leetcode: 1461
+studyplan: 滑动窗口与双指针
+published: 2026-08-18T13:31:19+08:00
+updated: 2026-08-18T13:31:19+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 1461. 检查一个字符串是否包含所有长度为 K 的二进制子串
+
+## 题目描述
+
+给你一个二进制字符串 `s` 和一个整数 `k`。如果所有长度为 `k` 的二进制字符串都是 `s` 的子串，请返回 `true`，否则返回 `false`。
+
+**示例 1：**
+
+```
+输入：s = "00110110", k = 2
+输出：true
+```
+
+**示例 2：**
+
+```
+输入：s = "0110", k = 1
+输出：true
+```
+
+**示例 3：**
+
+```
+输入：s = "0110", k = 2
+输出：false
+```
+
+## 核心思想
+
+一个长度为 `k` 的二进制子串，本质上就是一个 `k` 位的二进制数，其取值范围是 `0` 到 `2^k - 1`，一共 `2^k` 种可能。
+
+所以题目等价于：**s 中所有长度为 k 的子串组成的整数集合，是否恰好覆盖了 `[0, 2^k)` 的全部 `2^k` 个值**。
+
+基于这个思路，我们只需用定长滑动窗口扫一遍 `s`，把每个长度为 k 的窗口对应的整数记录下来，最后看是不是 `2^k` 个都出现了。由于 `k ≤ 20`，`2^k` 最多约 10^6，用一个布尔数组即可。
+
+## 位运算滚动窗口：O(1) 维护窗口整数
+
+暴力把每个窗口切片再转 int 是 O(k) 的。我们可以用**滚动窗口 + 位运算**把它优化成 O(1)：
+
+维护一个整数 `val`，表示当前窗口内 k 位二进制串对应的数值。窗口每向右移动一位：
+
+- **入**：`val = (val << 1) | bit`，即把旧窗口值左移一位，空出的最低位填充新字符 `bit`。
+- **截断**：`val = val & mask`，其中 `mask = 2^k - 1`，只保留低 k 位（k 个 1），把多余的进位清掉，等价于"左端点离开窗口"。
+
+这两个操作合在一起正好是 `val = ((val << 1) | bit) & mask`，一步完成"入"和"出"。
+
+当索引 `i >= k - 1` 时，说明窗口已经形成（长度恰好为 k），此时把 `val` 标记为已出现。
+
+## 算法步骤
+
+1. 令 `need = 2^k`，`mask = need - 1`，初始化 `seen = [False] * need`，`val = 0`。
+2. 从左到右遍历 `s`：
+   - 更新 `val = ((val << 1) | (ord(ch) - ord('0'))) & mask`。
+   - 若 `i >= k-1`（窗口长度已凑够 k），将 `seen[val] = True`。
+3. 返回 `all(seen)`，即所有 `2^k` 种取值是否都出现过。
+
+## 逐步举例
+
+以 `s = "0110", k = 2` 为例：`need = 4, mask = 3`。
+
+| i | ch | val = ((val<<1)\|bit) & mask | i>=1 ? | seen 标记 |
+| - | -- | --------------------------- | ------ | --------- |
+| 0 | '0' | ((0<<1)\|0)=0 & 3 = 0 | 否跳过 | — |
+| 1 | '1' | ((0<<1)\|1)=1 & 3 = 1 | 是 | seen[1]=1 |
+| 2 | '1' | ((1<<1)\|1)=3 & 3 = 3 | 是 | seen[3]=1 |
+| 3 | '0' | ((3<<1)\|0)=6 & 3 = 2 | 是 | seen[2]=1 |
+
+最终 `seen[0..3] = [F,T,T,T]`，`seen[0]=False`，即长度为 2 的二进制串 `"00"` 没有出现。返回 `false`。✅
+
+## 代码实现
+
+```python
+class Solution:
+    def hasAllCodes(self, s: str, k: int) -> bool:
+        need = 1 << k
+        seen = [False] * need
+        mask = need - 1
+        val = 0
+        for i, ch in enumerate(s):
+            val = ((val << 1) | (ord(ch) - 48)) & mask
+            if i >= k - 1:
+                seen[val] = True
+        return all(seen)
+```
+
+```python
+import sys
+sys.path.insert(0, "/workspace/projects/source/coding/sliding-window-two-pointers/01-fixed-sliding-window/1461-all-binary-codes")
+from solution import Solution
+import unittest
+
+class TestHasAllCodes(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertTrue(self.solution.hasAllCodes("00110110", 2))
+
+    def test_example2(self):
+        self.assertTrue(self.solution.hasAllCodes("0110", 1))
+
+    def test_example3(self):
+        self.assertFalse(self.solution.hasAllCodes("0110", 2))
+
+    def test_long_string(self):
+        s = "0" * 10000 + "1" * 10000
+        self.assertFalse(self.solution.hasAllCodes(s, 10))
+
+    def test_small_k(self):
+        self.assertTrue(self.solution.hasAllCodes("01", 1))
+
+    def test_not_enough(self):
+        self.assertFalse(self.solution.hasAllCodes("000", 2))
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，其中 n 是 s 的长度，每次更新窗口都是 O(1)。
+- 空间复杂度：O(2^k)，布尔数组 `seen` 的大小，k ≤ 20 时最多约 10^6。

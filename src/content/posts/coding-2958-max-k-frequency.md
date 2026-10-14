@@ -1,0 +1,104 @@
+---
+title: 2958. 最多 K 个重复元素的最长子数组
+tags:
+  - 滑动窗口
+  - 不定长
+  - 数组
+  - 哈希表
+description: "求最长子数组，其中每个元素的出现次数不超过 k"
+leetcode: 2958
+studyplan: 滑动窗口与双指针
+published: 2026-08-18T13:40:03+08:00
+updated: 2026-08-18T13:40:03+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 2958. 最多 K 个重复元素的最长子数组
+
+## 题目描述
+
+给你一个整数数组 nums 和一个整数 k。如果一个数组中所有元素的频率都小于等于 k，则称这个数组是"好"数组。返回 nums 中最长好子数组的长度。
+
+## 解法思路
+
+### 核心思想
+
+"好"数组要求**每个元素的出现次数都不超过 k**。求最长的好子数组。约束是"某元素频率 ≤ k"——子数组越长越容易超 k，属于**越短越合法**型不定长滑窗。
+
+维护一个计数器 `cnt` 记录窗口内各元素频率。当新加入的 `x` 使 `cnt[x] > k` 时，说明窗口不再合法，右移左指针、逐个移除左端元素，直到 `cnt[x] ≤ k`。
+
+### 算法步骤
+
+1. `ans = left = 0`，`cnt` 空哈希表。
+2. 枚举右端点：`x = nums[right]`，`cnt[x] += 1`。
+3. `while cnt[x] > k`：`cnt[nums[left]] -= 1; left += 1`，把左端元素踢出窗口。
+4. `ans = max(ans, right - left + 1)`。
+
+### 逐步举例
+
+以 `nums = [1,2,3,1,2,3,1,2]`、`k = 2` 为例（最优：`[1,2,3,1,2,3]`，长度 6）：
+
+| right | x | cnt[x] | 是否收缩 | ans |
+|-------|---|--------|---------|-----|
+| 0 | 1 | 1 | 否 | 1 |
+| 1 | 2 | 1 | 否 | 2 |
+| 2 | 3 | 1 | 否 | 3 |
+| 3 | 1 | 2 | 否 | 4 |
+| 4 | 2 | 2 | 否 | 5 |
+| 5 | 3 | 2 | 否 | 6 |
+| 6 | 1 | 3 | **cnt[1]=3>2** → 移除 nums[0]=1(cnt[1]=2,left=1) | 6 |
+| 7 | 2 | 3 | **cnt[2]=3>2** → 移除 nums[1]=2(cnt[2]=2,left=2) | 6 |
+
+第 6 步加入 1 使 `cnt[1]=3` 超限，左移踢掉下标 0 的 1 后窗口 `[1,6]` 合法；第 7 步同理。右侧可形成的合法窗口最长始终为 6。✅
+
+## 题解
+
+```python
+class Solution:
+    def maxSubarrayLength(self, nums: list[int], k: int) -> int:
+        ans = left = 0
+        cnt = {}
+        for right, x in enumerate(nums):
+            cnt[x] = cnt.get(x, 0) + 1
+            while cnt[x] > k:
+                cnt[nums[left]] -= 1
+                left += 1
+            ans = max(ans, right - left + 1)
+        return ans
+```
+
+```python
+import sys
+sys.path.insert(0, "/workspace/projects/source/coding/sliding-window-two-pointers/02-variable-sliding-window/2958-max-k-frequency")
+from solution import Solution
+import unittest
+
+class TestMaxSubarrayLength(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertEqual(self.solution.maxSubarrayLength([1,2,3,1,2,3,1,2], 2), 6)
+
+    def test_example2(self):
+        self.assertEqual(self.solution.maxSubarrayLength([1,2,1,2,1,2,1,2], 1), 2)
+
+    def test_example3(self):
+        self.assertEqual(self.solution.maxSubarrayLength([5,5,5,5,5,5,5], 4), 4)
+
+    def test_all_unique(self):
+        self.assertEqual(self.solution.maxSubarrayLength([1,2,3,4,5], 1), 5)
+
+    def test_k_large(self):
+        self.assertEqual(self.solution.maxSubarrayLength([1,1,1,1], 10), 4)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，左右指针各移动一次
+- 空间复杂度：O(n)，计数器存储窗口内各元素频率

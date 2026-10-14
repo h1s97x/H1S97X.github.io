@@ -1,0 +1,109 @@
+---
+title: 643. 子数组最大平均数 I
+tags: [滑动窗口, 定长]
+description: "给定 n 个整数数组，找出长度为 k 的连续子数组的最大平均数"
+leetcode: 643
+studyplan: 滑动窗口与双指针
+published: 2026-08-16T22:48:06+08:00
+updated: 2026-08-16T22:48:06+08:00
+category: 题解
+notebook: coding
+---
+
+
+# 643. 子数组最大平均数 I
+
+## 题目描述
+
+给你一个由 `n` 个整数组成的数组 `nums` 和一个整数 `k`。
+
+请你找出长度为 `k` 的连续子数组的最大平均数，并返回该最大值。
+
+**示例 1：**
+
+```
+输入：nums = [1,12,-5,-6,50,3], k = 4
+输出：12.75
+解释：最大平均数 (12-5-6+50)/4 = 51/4 = 12.75
+```
+
+**示例 2：**
+
+```
+输入：nums = [5], k = 1
+输出：5.0
+```
+
+**提示：**
+
+- `n == nums.length`
+- `1 <= k <= n <= 10^5`
+- `-10^4 <= nums[i] <= 10^4`
+
+## 解法思路
+
+**定长滑动窗口**。长度为 k 的子数组数量是 O(n) 个，但直接枚举每个子数组再求和需要 O(n·k)。由于窗口向右滑动时，**离开**窗口的只有最左一个元素、**进入**窗口的只有最右一个元素，中间 k-2 个元素不变，所以可以 O(1) 更新窗口和。
+
+沿用定长滑窗的 **入-更新-出** 三步套路：
+
+1. **入**：右端点 `i` 进入窗口，窗口和 `cur += nums[i]`；若 `i < k-1` 窗口长度不足 k，继续循环。
+2. **更新**：此时窗口长度为 k，用当前窗口和更新最大和 `ans`。
+3. **出**：左端点 `i-k+1` 离开窗口，`cur -= nums[i-k+1]`，为下一轮做准备。
+
+最后用最大和除以 k 得到最大平均数。
+
+**逐步举例**（`nums = [1,12,-5,-6,50,3]`, `k = 4`）：
+
+- 先统计前 `k-1=3` 个元素和：`1+12-5 = 8`。
+- `i=3`，`-6` 入窗 → 窗口 `[1,12,-5,-6]`，和 `= 2`，更新 `ans = 2`；出 `nums[0]=1` → 窗口和 `= 1`。
+- `i=4`，`50` 入窗 → 窗口 `[12,-5,-6,50]`，和 `= 51`，更新 `ans = 51`；出 `nums[1]=12` → 窗口和 `= 39`。
+- `i=5`，`3` 入窗 → 窗口 `[-5,-6,50,3]`，和 `= 42`，`ans` 仍为 51；出 `nums[2]=-5` → 窗口和 `= 47`。
+
+最大和为 51，最大平均数 `= 51/4 = 12.75`，与预期一致。可见每步只需加一个新元素、减一个旧元素，中间元素不重复求和。
+
+**注意**：本题 `nums` 中含负数，所以 `ans` 不能初始化为 0，而应初始化为 `-inf`（或直接初始化为第一个窗口的和），否则当所有 L 都小于 0 时会得到错误结果。
+
+> 详细讲解见灵茶山艾府的《【模板】定长滑动窗口》与该定长滑窗套路题解。
+
+## 复杂度分析
+
+- 时间复杂度：O(n)，其中 n 是数组长度。
+- 空间复杂度：O(1)。
+
+## 代码实现
+
+```python
+class Solution:
+    def findMaxAverage(self, nums: list[int], k: int) -> float:
+        cur = sum(nums[:k])
+        ans = cur
+        for i in range(k, len(nums)):
+            cur += nums[i] - nums[i - k]
+            if cur > ans:
+                ans = cur
+        return ans / k
+```
+
+```python
+import unittest
+
+
+class TestFindMaxAverage(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertAlmostEqual(
+            self.solution.findMaxAverage([1, 12, -5, -6, 50, 3], 4), 12.75
+        )
+
+    def test_example2(self):
+        self.assertAlmostEqual(self.solution.findMaxAverage([5], 1), 5.0)
+
+    def test_negative(self):
+        self.assertAlmostEqual(self.solution.findMaxAverage([-1, -2, -3], 2), -1.5)
+
+
+if __name__ == "__main__":
+    unittest.main()
+```

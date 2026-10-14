@@ -1,19 +1,23 @@
 name: Deploy to GitHub Pages
 
+# 站点实际由 Pages 的「GitHub Actions」源（github-pages 环境）提供，
+# 故使用 actions/deploy-pages（而非推 gh-pages 分支，分支内容不会被采用）。
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
 
-permissions:
-  contents: write # 推送到 gh-pages 分支需要写权限
-
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     env:
       CNB_TOKEN: ${{ secrets.CNB_TOKEN }}
@@ -35,9 +39,18 @@ jobs:
       - name: Build (含 Pagefind 搜索索引)
         run: pnpm build
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

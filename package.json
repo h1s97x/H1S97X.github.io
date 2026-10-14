@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "astro": "5.13.10",
-    "astro-theme-fuwari": "git+https://cnb.cool/h1s97x/astro-theme-fuwari.git#main",
+    "astro-theme-fuwari": "^0.1.0",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-regular": "^1.2.4",
     "@iconify-json/fa6-solid": "^1.2.4",

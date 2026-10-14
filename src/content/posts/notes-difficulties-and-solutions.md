@@ -78,7 +78,7 @@ pause
 `%20` 与 `&nbsp;`
 `%20` : URI 编码
 `&nbsp;` `&#160;` : HTML 编码 标准 ISO 字符集 非间断空格（non-breaking space）
-![空格字符](/images/space.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/space.png，待你提供后重新引用 -->
 [JavaScript：HTML 中各种空格代码的区别](https://blog.csdn.net/sageyin/article/details/116003284)
 [网址 URL 中特殊字符转义编码](https://zhuanlan.zhihu.com/p/137481275)
 
@@ -97,7 +97,7 @@ pause
 [打字时有时出现类似于自动回车的问题](https://answers.microsoft.com/zh-hans/windows/forum/all/%E6%89%93%E5%AD%97%E6%97%B6%E6%9C%89%E6%97%B6/c26741da-7b36-4960-869e-b0d799493510)
 [电脑打字自动回车怎么解决？](https://www.zhihu.com/question/491610548)
 solution: 关闭兼容性后目前没有出现这个问题，使用一段时间后再更新进展。
-![输入法](/images/输入法.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/输入法.png，待你提供后重新引用 -->
 系统设置 -> 时间和语言 -> 语言和区域 -> 微软拼音输入法 -> 常规 -> 兼容性 -> 关闭兼容性
 
 ### 启动项目时报错端口被占用

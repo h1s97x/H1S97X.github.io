@@ -132,7 +132,7 @@ git stash list
 
 ##### 命令流程图
 
-![](/images/git/命令流程图.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/git/命令流程图.png，待你提供后重新引用 -->
 
 ### Bug&Solution
 
@@ -157,7 +157,7 @@ git stash list
 #### Git push 报错
 
 Updates were rejected because the tip of your current branch is behind (更新被拒绝，因为当前分支的落后与远程分支)
-![git-push失败](/images/git/git-push失败.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/git/git-push失败.png，待你提供后重新引用 -->
 
 ```
 git push -u origin main -f
@@ -185,7 +185,7 @@ Git push origin HEAD --force
 
 #### 文件超 100M 无法上传
 
-![文件超100M无法上传](/images/git/文件超100M上传失败.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/git/文件超100M上传失败.png，待你提供后重新引用 -->
 
 ```
 git lfs install

@@ -17,7 +17,7 @@ notebook: notes
 
 | 图书名称:     | Kali Linux: Assuring Security by Penetration Testing                             |     |
 | ------------- | -------------------------------------------------------------------------------- | --- |
-| 封面图片:     | ![封面](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/4ea54b5618d4.jpg) |     |
+| 封面图片:     | ![封面](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/kali-guide-02-20261014.jpg) |     |
 | 出版印刷时间: | 2015-2                                                                           |     |
 | 出版社:       | 人民邮电出版社                                                                   |     |
 | 图书作者:     | Lee Allen / Tedi Heriyanto / Shakeel Ali 著                                      |     |
@@ -26,7 +26,7 @@ notebook: notes
 
 | 图书名称:     | Kali Linux2 网络渗透测试实践指南 第 2 版                                                                 |     |
 | ------------- | -------------------------------------------------------------------------------------------------------- | --- |
-| 封面图片:     | ![Kali Linux2 网络渗透测试实践指南 第2版](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/e10b5692b50f.jpg) |     |
+| 封面图片:     | ![Kali Linux2 网络渗透测试实践指南 第2版](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/kali-guide-04-20261014.jpg) |     |
 | 出版印刷时间: | 2021-3                                                                                                   |     |
 | 出版社:       | 人民邮电出版社                                                                                           |     |
 | 图书作者:     | 李华峰 著                                                                                                |     |
@@ -198,11 +198,11 @@ sudo dpkg-reconfigure locales
 
 选择语言，使用空格键选中。选择 en_US.UTF-8、zh_CN.GBK、zh_CN.UTF-8
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/bc7c2c13d424.png)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/kali-guide-03-20261014.png)
 
 选中 zh_CN.UTF-8 为默认语言。
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/251a6bbb02c9.png)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/kali-guide-01-20261014.png)
 
 ```
 sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy

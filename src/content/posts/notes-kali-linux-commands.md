@@ -15,7 +15,7 @@ notebook: notes
 
 右侧就是该文件下的文件系统目录
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/12e85dd6b85b.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/kali-commands-01-20261014.webp)
 
 重点文件的说明，从上到下，从左到右：
 

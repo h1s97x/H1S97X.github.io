@@ -27,19 +27,19 @@ http://192.168.10.6/
 
 ### 通用前台顶部
 
-![image-20230928152239553](/images/Internship\gen-top.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Internship\gen-top.png，待你提供后重新引用 -->
 
 #### 顶部左右两侧：
 
-![image-20230928152425051](/images/Internship\gen-top-side.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Internship\gen-top-side.png，待你提供后重新引用 -->
 
 #### 菜单按钮
 
-![image-20230928152736267](/images/Internship\gen-top-button.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Internship\gen-top-button.png，待你提供后重新引用 -->
 
 ![image-20230928152926282](D:\hexo\source\_posts\img\Internship\gen-top-button1.png)
 
-![image-20230928153016324](/images/Internship\gen-top-button2.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Internship\gen-top-button2.png，待你提供后重新引用 -->
 
 ### 时间显示
 字体设置：
@@ -50,7 +50,7 @@ http://192.168.10.6/
 右外边距：（选择前台时间参数）时间==true?"136px":""
 事件：创建触发器
 
-![image-20230928151628052](/images/Internship\time.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Internship\time.png，待你提供后重新引用 -->
 
 ### mqtt
 **重点参考**
@@ -71,11 +71,11 @@ Echats官网：
 
 进入官网后，选择需要的图表示例
 
-![](/images/Internship\自定义图表教程-1.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Internship\自定义图表教程-1.png，待你提供后重新引用 -->
 
 
 
-![](/images/Internship\自定义图表教程-2.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Internship\自定义图表教程-2.png，待你提供后重新引用 -->
 
 在IVX中选择通用变量将json串导入进去，然后让自定义图表的数据选择到刚才设置的变量对象。
 

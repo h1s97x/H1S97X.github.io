@@ -48,14 +48,14 @@ notebook: notes
 
 ## 属性篇
 ### 男主属性
-![男主属性](/images/jack-hf/男主属性.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/男主属性.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/wfgxho" title="男主属性"> -->
 
 ### 精灵<span title="你知道的太多了" class="heimu">slave</span>属性
 
-![精灵属性1](/images/jack-hf/精灵属性1.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/精灵属性1.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/hhfcm" title="精灵属性1"> -->
-![精灵属性2](/images/jack-hf/精灵属性2.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/精灵属性2.jpg，待你提供后重新引用 -->
 
 <!-- <img src="https://easylink.cc/x6wkut" title="精灵属性2"> -->
 
@@ -91,9 +91,9 @@ More info: [详细攻略](https://www.andlaou.com/archives/152525)
 
 效果：佩戴后无需释放占卜术就能看到奴隶的服从恐惧等情报，并可以了解更具体的数值（i）【调试信息】，并强化光环。（四个神器任务中最简单的一个，属于奴隶主必备装备之一，就问你要不要把。）
 ```
-![调试信息](/images/jack-hf/调试信息.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/调试信息.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/9p6wnq" title="调试信息"> -->
-![调试面板](/images/jack-hf/调试面板.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/调试面板.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/iyx4we" title="调试面板"> -->
 
 ```
@@ -193,9 +193,9 @@ xing训练：皮革胸衣 +4，长筒皮靴 +2，乳链 +1
 
 时装影响魅力：一般穿异国服装就能到蓝
 ## 法术篇
-![法术](/images/jack-hf/法术.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/法术.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/ewyktk" title="法术"> -->
-![法术-其他汉化](/images/jack-hf/法术-不同汉化.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/法术-不同汉化.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/2sgb44" title="法术-其他汉化"> -->
 第一项法术书：就是解释各个魔法作用的，无视。
 
@@ -217,7 +217,7 @@ xing训练：皮革胸衣 +4，长筒皮靴 +2，乳链 +1
 
 ## 任务篇
 ### 墓地:【（身体改良、性虐道具、宠物道具）】
-![墓地](/images/jack-hf/墓地.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/墓地.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/p8zj09" title="墓地"> -->
 
 ```
@@ -250,7 +250,7 @@ xing训练：皮革胸衣 +4，长筒皮靴 +2，乳链 +1
 ```
 
 ### 遗忘废墟：【（纹身、化妆、药品）】
-![遗忘废墟](/images/jack-hf/遗忘废墟.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/遗忘废墟.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/d758rp" title="遗忘废墟"> -->
 
 ```
@@ -274,7 +274,7 @@ xing训练：皮革胸衣 +4，长筒皮靴 +2，乳链 +1
 姓技能：异种A
 ```
 ### 蛇纹城：【科技区（整容、治疗、冷冻）】
-![蛇纹城](/images/jack-hf/蛇纹城.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/蛇纹城.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/l6dhxq" title="蛇纹城"> -->
 
 ```
@@ -306,7 +306,7 @@ xing训练：皮革胸衣 +4，长筒皮靴 +2，乳链 +1
 ```
 
 ### 金牛城：【slave俱乐部】
-![金牛城](/images/jack-hf/金牛城.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/金牛城.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/zgq0zi" title="金牛城"> -->
 
 ```
@@ -341,8 +341,8 @@ xing训练：皮革胸衣 +4，长筒皮靴 +2，乳链 +1
 ```
 
 ### 白金城：【竞技场、贸易广场、slave公会、地产】
-![白金城1](/images/jack-hf/白金城1.jpg)
-![白金城2](/images/jack-hf/白金城2.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/白金城1.jpg，待你提供后重新引用 -->
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/白金城2.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/m56dgx" title="白金城1"> -->
 <!-- <img src="https://easylink.cc/6djltf" title="白金城2"> -->
 
@@ -360,7 +360,7 @@ xing训练：皮革胸衣 +4，长筒皮靴 +2，乳链 +1
 特殊要求：处女
 ```
 ### 迷雾边境
-![迷雾边境](/images/jack-hf/迷雾.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/迷雾.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/i3yb5e" title="迷雾边境"> -->
 
 PS：迷雾边境无法巡视<span title="你知道的太多了" class="heimu">需要消耗3格精力</span>
@@ -408,7 +408,7 @@ X技能：基本一次升一级，没升级是服从不够产生抵抗。
 	性虐：自虐—受虐，答辩——喝尿
 
 ## 等级篇
-![等级判定](/images/jack-hf/等级判定.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/等级判定.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/x8jh37" title="等级判定"> -->
 
 等级要求：（可能与评级排名有关）
@@ -438,7 +438,7 @@ B- 要求：常用技能两个S+ 性技能一个S+ 一个C+ 一个D+
 B+ 要求：性技能一个S+ 两个C+ 一个D-
 
 ## 训练篇
-![规则作用](/images/jack-hf/rule.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/rule.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/v6x3xd" title="规则作用"> -->
 
 
@@ -456,7 +456,7 @@ B+ 要求：性技能一个S+ 两个C+ 一个D-
 一次秘书课+2点
 
 ## 预兆篇
-![预兆面板](/images/jack-hf/预兆面板.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/预兆面板.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/ckjl0d" title="预兆面板"> -->
 介绍【之后补充】
 
@@ -471,7 +471,7 @@ B+ 要求：性技能一个S+ 两个C+ 一个D-
 火焰剑buff：绿色增益是愤怒，减益是震惊；红色普攻增益是加速，减益是不稳定。
 
 ## 新手攻略
-![新手攻略](/images/jack-hf/开局攻略.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/jack-hf/开局攻略.jpg，待你提供后重新引用 -->
 <!-- <img src="https://easylink.cc/ml87yl" title="开局攻略"> -->
 
 > 一种思路

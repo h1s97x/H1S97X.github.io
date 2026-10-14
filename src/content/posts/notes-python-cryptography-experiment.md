@@ -15,7 +15,7 @@ notebook: notes
 
 | 图书名称:     | Python 密码学编程                                                                                         |     |
 | ------------- | --------------------------------------------------------------------------------------------------------- | --- |
-| 封面图片:     | ![Python密码学编程](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/0fb3a7bb0b28.jpg) |     |
+| 封面图片:     | ![Python密码学编程](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/python-crypto-03-20261014.jpg) |     |
 | 出版印刷时间: | 2021-6                                                                                                    |     |
 | 出版社:       | 清华大学出版社                                                                                            |     |
 | 图书作者:     | [美] 塞思·詹姆斯·尼尔森(Seth James Nielson) / 克里斯托弗·K.蒙森(Christopher K. Monson) 著                 |     |
@@ -43,7 +43,7 @@ notebook: notes
 
 密码学与数学关系密切。数论中许多基本内容，如同余理论、中国剩余定理（CRT ）、高次剩余理论等，在新型密码体制、密钥分配与管理、数字签名、身份认证等方面有直接的应用。近代数学在现代密码研究中的应用包括群论，有限域上椭圆曲线理论，多项式理论与迹函数理论陷门单向函数等。
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/86fb7cd8a4c7.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/python-crypto-05-20261014.webp)
 
 术语：
 
@@ -65,7 +65,7 @@ notebook: notes
 
 9）密码系统 （Cryptosystem ）：一个密码体制或密码系统是指由明文空间、密文空间、密钥空间、加密算法以及解密算法 组成的一个多元素集合体。
 
-![密码体制](/images/cryptography/密码体制.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/密码体制.png，待你提供后重新引用 -->
 
 ### 密码的分类
 
@@ -133,21 +133,21 @@ notebook: notes
 
 ➢ 凯撒密码
 
-![凯撒密码](/images/cryptography/Caesar-crypto.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/Caesar-crypto.png，待你提供后重新引用 -->
 
 ➢ 仿射密码
 
-![仿射密码](/images/cryptography/仿射密码.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/仿射密码.png，待你提供后重新引用 -->
 
 ➢ 单表代换
 
-![单表代换](/images/cryptography/单表代换.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/单表代换.png，待你提供后重新引用 -->
 
-![](/images/cryptography/单表代换密码-example.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/单表代换密码-example.png，待你提供后重新引用 -->
 
 ➢ 多表代换
 
-![多表代换](/images/cryptography/多表代换.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/多表代换.png，待你提供后重新引用 -->
 
 #### 置换密码（又称为换位密码）
 
@@ -158,9 +158,9 @@ notebook: notes
 解密的时候会用到逆置换 σ’,
 即任意 x’∈X,存在唯一的 x∈X，使得 σ’(x’)=x 且·满足 σσ’=I
 
-![置换密码](/images/cryptography/置换密码.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/置换密码.png，待你提供后重新引用 -->
 
-![](/images/cryptography/置换密码-example.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/置换密码-example.png，待你提供后重新引用 -->
 
 ### 古典密码的唯密文攻击（Ciphtext Only Attack，COA）
 
@@ -175,7 +175,7 @@ notebook: notes
 
 这难不倒解密者，以英文字母为例，为了确定每个英文字母的出现频率，分析一篇或者数篇普通的英文文章，英文字母出现频率最高的是 e，接下来是 t，然后是 a……，然后检查要破解的密文，也将每个字母出现的频率整理出来，假设密文中出现频率最高的字母是 j，那么就可能是 e 的替身，如果密码文中出现频率次高的但是 P，那么可能是 t 的替身，以此类推便就能解开加密信息的内容。这就是频率分析法。
 
-![](/images/cryptography/COA-频率分析.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/COA-频率分析.png，待你提供后重新引用 -->
 
 - 将明文字母的出现频率与密文字母的频率相比较的过程
 - 通过分析每个符号出现的频率而轻易地破译代换式密码
@@ -247,17 +247,17 @@ A2:压缩函数将一个较长的，固定长度的输入处理后，返回一�
 
 [生日悖论与哈希函数\_密码学中的生日悖论-CSDN 博客](https://blog.csdn.net/sinat_31854967/article/details/102947156)
 
-![](/images/cryptography/生日攻击.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/生日攻击.png，待你提供后重新引用 -->
 
 ##### 哈希算法族
 
 MD 家族
 
-![](/images/cryptography/hash-md族.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/hash-md族.png，待你提供后重新引用 -->
 
 SHA 系列
 
-![](/images/cryptography/hash-SHA系列.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/hash-SHA系列.png，待你提供后重新引用 -->
 
 ### 使用 hashlib 自由哈希
 
@@ -345,17 +345,17 @@ cob: 386685f06beecb9f35db2e22da429ec9
 
 l 哈希函数的构造原理：消息填充机制、压缩函数
 
-![](/images/cryptography/hash函数构造.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/hash函数构造.png，待你提供后重新引用 -->
 
 ##### 压缩函数
 
-![](/images/cryptography/hash函数构造-压缩函数.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/hash函数构造-压缩函数.png，待你提供后重新引用 -->
 
 ##### SHA- -256 消息填充
 
 首先将比特“1”添加到消息的末尾，再添加 k 个零，这里 k 是方程`l+1+k=448 mod 512`的最小的非负解。然后再添加一个 64 比特长的块，其值等于消息 M 的长度/的二进制表示。使得填充后的消息的长度为 512 比特的倍数。
 
-![](/images/cryptography/hash函数构造-消息填充.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/hash函数构造-消息填充.png，待你提供后重新引用 -->
 
 ### 密钥派生
 
@@ -420,7 +420,7 @@ used for deriving a cryptographic key from a password.
 
 ### 保密通信模型
 
-![](/images/cryptography/Shannon-通信模型.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/Shannon-通信模型.png，待你提供后重新引用 -->
 
 ### 对称加密算法
 
@@ -438,7 +438,7 @@ used for deriving a cryptographic key from a password.
 
 ### 分组密码
 
-![](/images/cryptography/分组密码.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/分组密码.png，待你提供后重新引用 -->
 
 将明文消息编码表示后的二进制序列，划分成固定大小的块，每块分别在密钥的控制下变换成等长的二进制序列。
 
@@ -500,7 +500,7 @@ P2: 00000001 c2: 11101011 2.混乱: 在加密变换过程中明文、密钥以�
 联邦学习定义了机器学习框架，在此框架下通过设计虚拟模型解决不同数据拥有方在不交换数据的情况下进行协作的问题。虚拟模型是各方将数据聚合在一起的最优模型，各自区域依据模型为本地目标服务。联邦学习要求此建模结果应当无限接近传统模式，即将多个数据拥有方的数据汇聚到一处进行建模的结果。在联邦机制下，各参与者的身份和地位相同，可建立共享数据策略。由于数据不发生转移，因此不会泄露用户隐私或影响数据规范。为了保护数据隐私、满足合法合规的要求。
 
 联邦学习有三大构成要素：数据源、联邦学习系统、用户。三者间关系如图所示，在联邦学习系统下，各个数据源方进行数据预处理，共同建立及其学习模型，并将输出结果反馈给用户。
-<img src="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/0249492cffa6.webp" style="">
+<img src="https://cnb.cool/h1s97x/Pixy/-/raw/main/images/python-crypto-01-20261014.webp" style="">
 
 > 我的想法
 > 每个设备作为一个终端，每个终端都有自己的数据，这些数据都是不同的，但是都有一个共同的目标，就是训练一个模型，这个模型可以用来预测，可以用来分类，可以用来识别等等。但是这些数据都是不同的，所以不能直接合并，但是可以通过联邦学习的方式，将这些数据进行训练，最后得到一个模型，这个模型可以用来预测，可以用来分类，可以用来识别等等。
@@ -516,11 +516,11 @@ P2: 00000001 c2: 11101011 2.混乱: 在加密变换过程中明文、密钥以�
 
 安全多方计算可抽象概括为数学模型，其公式如下：
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/5ca035b0fb46.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/python-crypto-04-20261014.webp)
 
 安全多方计算于 1986 年由姚期智院士通过姚氏百万富翁问题提出：两个百万富翁街头邂逅，他们都想炫一下富，比一比谁更有钱，但是出于隐私，都不想让对方知道自己到底拥有多少财富，如何在不借助第三方的情况下，让他们知道谁更有钱。姚氏“百万富翁问题”后经发展，成为现代密码学中非常活跃的研究领域，即安全多方计算。
 
-![](/images/cryptography/MPC-姚期智.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/MPC-姚期智.png，待你提供后重新引用 -->
 
 [安全多方计算之百万富翁问题-CSDN 博客](https://blog.csdn.net/qq_43751200/article/details/126293436#:~:text=百万富翁问题是姚期智先生在1982年提出的第一个安全双方计算问题,问题可以描述为 ：两个百万富翁街头邂逅，他们都想炫一下富，比比谁更有钱，但是出于隐私，都不想让对方知道自己到底拥有多少财富，如何在不借助第三方的情况下，让他们知道他们之间谁更有钱。)
 
@@ -528,9 +528,9 @@ P2: 00000001 c2: 11101011 2.混乱: 在加密变换过程中明文、密钥以�
 
 **问题可以描述为**：两个百万富翁街头邂逅，他们都想炫一下富，比比谁更有钱，但是出于隐私，都不想让对方知道自己到底拥有多少财富，如何在不借助第三方的情况下，让他们知道他们之间谁更有钱。
 
-![](/images/cryptography/隐私计算-MPC.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/隐私计算-MPC.png，待你提供后重新引用 -->
 
-![](/images/cryptography/同态加密和秘密分享.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/cryptography/同态加密和秘密分享.png，待你提供后重新引用 -->
 
 ### 同态加密
 
@@ -546,7 +546,7 @@ P2: 00000001 c2: 11101011 2.混乱: 在加密变换过程中明文、密钥以�
 
 秘密分享的一种经典方案，1979 年 Shamir 提出了阈值秘密分享方案，该方案支持 n 个参与方中的任意 t 个可以联合解开秘密数据，具体方案如下：
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/db365071f1bc.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/python-crypto-07-20261014.webp)
 
 假如你和你的朋友们正在一起面临某种生存困境，比如在野外迷路了，或是被困在沙漠中，或是核冬天，或是丧尸来袭，你们难以获取食物，只好将剩下的食物的收集到一起放进保险箱。但是有个问题——你们并不相信其他人，其他人很可能趁大家不注意将食物偷走。这时候，保险箱的钥匙应该怎么保管？
 
@@ -554,7 +554,7 @@ P2: 00000001 c2: 11101011 2.混乱: 在加密变换过程中明文、密钥以�
 
 原来住你隔壁的老王接下这个任务。他看起来似乎值得信任。
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/9c8d592d0172.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/python-crypto-06-20261014.webp)
 
 **第二天新闻头条：**已确认某探险队成员全部遇难！原因据查是保管食物的队员老王扔下大家不管，带着所有食物跑路了！
 
@@ -562,7 +562,7 @@ P2: 00000001 c2: 11101011 2.混乱: 在加密变换过程中明文、密钥以�
 
 只交给一个人保管钥匙非常不安全。不如交给一些人不同的钥匙，必须要所有的人到齐才能打开。于是你把钥匙分成三份，隔壁老王，对面楼小南和你分别拿到了一份钥匙。这下，隔壁老王不能再自己一个人打开保险箱了。你感到很满意。
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/06f7f9262e1e.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/python-crypto-02-20261014.webp)
 
 **第二天新闻头条：**已确认某探险队成员全部遇难！现场遇难的探险队员全围着一个锁上的食物箱子，原因据查是保管钥匙的队员之一隔壁老王误将钥匙扔掉，致使全体队员无法打开食物保险箱！
 

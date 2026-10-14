@@ -19,7 +19,7 @@ notebook: notes
 
 | 图书名称:     | Ubuntu Linux 应用技术教程                                      |     |
 | ------------- | -------------------------------------------------------------- | --- |
-| 封面图片:     | ![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/e2861a22b500.jpg) |     |
+| 封面图片:     | ![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/linux-04-20261014.jpg) |     |
 | 出版印刷时间: | 2009-4                                                         |     |
 | 出版社:       | 清华大学出版社                                                 |     |
 | 图书作者:     | 陈明 编著                                                      |     |
@@ -27,7 +27,7 @@ notebook: notes
 
 | 图书名称:     | Linux 就该这么学（第 2 版）                                                                |     |
 | ------------- | ------------------------------------------------------------------------------------------ | --- |
-| 封面图片:     | ![Linux就该这么学（第2版）](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/be29e41edc6e.jpg) |     |
+| 封面图片:     | ![Linux就该这么学（第2版）](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/linux-03-20261014.jpg) |     |
 | 出版印刷时间: | 2021-9                                                                                     |     |
 | 出版社:       | 人民邮电出版社                                                                             |     |
 | 图书作者:     | 刘遄 编著                                                                                  |     |
@@ -756,7 +756,7 @@ Linux 将分属不同分区的、单独的文件系统整理形成一个系统�
 
 硬链接是多个目录项中的「索引节点」指向一个文件，也就是指向同一个 inode，但是 inode 是不可能跨越文件系统的，每个文件系统都有各自的 inode 数据结构和列表，所以硬链接是不可用于跨文件系统的。由于多个目录项都是指向一个 inode，那么只有删除文件的所有硬链接以及源文件时，系统才会彻底删除该文件。
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/115cc2f60242.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/linux-01-20261014.webp)
 
 #### 软链接
 
@@ -774,11 +774,11 @@ Linux 将分属不同分区的、单独的文件系统整理形成一个系统�
 
 软链接相当于重新创建一个文件，这个文件有独立的 inode，但是这个文件的内容是另外一个文件的路径，所以访问软链接的时候，实际上相当于访问到了另外一个文件，所以软链接是可以跨文件系统的，甚至目标文件被删除了，链接文件还是在的，只不过指向的文件找不到了而已。
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/be285978ccc7.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/linux-02-20261014.webp)
 
-![](/images/文件系统-1.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/文件系统-1.png，待你提供后重新引用 -->
 
-![](/images/文件系统-2.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/文件系统-2.png，待你提供后重新引用 -->
 
 ## Chapter 4 Linux 权限管理
 
@@ -845,11 +845,11 @@ a all=ugo,即所有用户
 •文件权限值为该类型用户对文件的读、写、执行权限值的累加：
 读(r)：4 写(w)：2 执行(x)：1 禁止(-)：0
 
-![](/images/权限管理-1.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/权限管理-1.png，待你提供后重新引用 -->
 
-![](/images/权限管理-2.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/权限管理-2.png，待你提供后重新引用 -->
 
-![](/images/权限管理-3.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/权限管理-3.png，待你提供后重新引用 -->
 
 **重要**：
 
@@ -865,7 +865,7 @@ a all=ugo,即所有用户
 
 一个目录同时具有读权限和执行权限才可以打开并查看内部文件，而一个目录要有写权限才允许在其中创建其它文件，这是因为目录文件实际保存着该目录里面的文件的列表等信息
 
-![](/images/权限管理-4.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/权限管理-4.png，待你提供后重新引用 -->
 
 ## Chapter 5 Linux 常用工具
 
@@ -1045,7 +1045,7 @@ vi [-options] [+n] [file]
 >:1,$s/str1/str2/g
 > 用字符串 str2 替换正文中所有出现的字符串 str1
 
-![img](/images/vim-vi-workmodel.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/vim-vi-workmodel.png，待你提供后重新引用 -->
 
 ##### 命令模式和输入模式切换
 
@@ -1065,7 +1065,7 @@ vi [-options] [+n] [file]
 | :--: | :----------------------------------------: |
 |  :   | 切换到底线命令模式，以在最底一行输入命令。 |
 
-![](/images/Vim-introduction.jpg)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Vim-introduction.jpg，待你提供后重新引用 -->
 
 | vim 环境的变更 |                                                    |
 | :------------- | -------------------------------------------------- |

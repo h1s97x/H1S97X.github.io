@@ -60,7 +60,7 @@ notebook: notes
 
 接下来介绍适合乌龟流的遗物，首先是**非BOSS遗物**：
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/394f5606fb09.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/slay-the-spire-01-20261014.webp)
 
 非BOSS遗物推荐
 
@@ -68,7 +68,7 @@ notebook: notes
 
 接下来是**BOSS遗物**：
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/9525146cdb9f.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/slay-the-spire-02-20261014.webp)
 
 BOSS遗物推荐
 
@@ -84,7 +84,7 @@ BOSS遗物推荐
 
 灼热攻击，独立于一切的一张牌。无限锻造，战士独有。自然也就形成了独特的流派。
 
-![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/9d00a66472bb.webp)
+![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/slay-the-spire-03-20261014.webp)
 
 低调的蓝卡，+12灼热攻击，单体伤害126点
 

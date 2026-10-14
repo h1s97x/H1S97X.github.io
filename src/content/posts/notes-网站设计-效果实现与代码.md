@@ -19,7 +19,7 @@ notebook: notes
         }
 </style>
 <div class="shell">
-        <video loop autoplay src="https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/d79171498a9d.webp" style="height:100%;transform:translate(36px,-8px);"></video>
+        <video loop autoplay src="https://cnb.cool/h1s97x/Pixy/-/raw/main/images/web-design-02-20261014.webp" style="height:100%;transform:translate(36px,-8px);"></video>
     </div>
     <script>
         const shell = document.querySelect(".shell")
@@ -365,7 +365,7 @@ a {
     display: inline-flex;
     height: 10px;
     margin-left: 4px;
-    mask-image: url("https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/883c31f10a97.svg");
+    mask-image: url("https://cnb.cool/h1s97x/Pixy/-/raw/main/images/web-design-01-20261014.svg");
     mask-size: cover;
     width: 10px;
   }

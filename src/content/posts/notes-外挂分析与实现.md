@@ -29,7 +29,7 @@ notebook: notes
 [OllyDBG完美教程(超强入门级) - xueyoo - 博客园 (cnblogs.com)](https://www.cnblogs.com/xueyoo/articles/4938538.html)
 
 **OllyDBG界面认识**
-![](/images/Network-attack/OB-desktop.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Network-attack/OB-desktop.png，待你提供后重新引用 -->
 
 - 反汇编窗口：显示被调试程序的反汇编代码。用鼠标左键点击注释标签可以切换注释显示的方式。如果需要修改代码，直接在这里在修改，比如“使用NOP填充”。
 
@@ -47,7 +47,7 @@ notebook: notes
 
 **调试方法**
 
-![](/images/Network-attack/debug-shortcut-key.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Network-attack/debug-shortcut-key.png，待你提供后重新引用 -->
 
 F2：设置断点。只要在光标定位的位置（上图中灰色条）按F2键即可，再按一次F2键则会删除断点。（相当于 SoftICE 中的 F9）
 F8：单步跳过。每按一次这个键执行一条反汇编窗口中的一条指令，遇到 CALL 等子程序不进入其代码。（相当于 SoftICE 中的 F10）
@@ -127,7 +127,7 @@ ESP 定律法是脱壳的利器，是应用频率最高的脱壳方法之一。E
 
 具体操作步骤：pushad开头，F8一次以后，8个寄存器只有ESP是红色时候，就可以使用该定律。
 右键ESP 选择数据窗口跟随，数据窗口下硬件访问断点，F9运行，此时已经接近OEP。
-![](/images/Network-attack/pvz-shell.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Network-attack/pvz-shell.png，待你提供后重新引用 -->
 
 ### 逆向分析
 
@@ -135,33 +135,33 @@ ESP 定律法是脱壳的利器，是应用频率最高的脱壳方法之一。E
 
 > 之前分析的时候一直没开游戏只对辅助od，结果破壳破了好久也没成功，但就算破壳也无法直接获取到源码，只能看汇编，破解还是要在游戏中去进行，辅助修改游戏的内存，只要对写内存操作打断点就可以观察具体的修改。踩了这样一个坑，希望引以为戒。
 
-![](/images/Network-attack/PVZ-analysis-1.png)
+<!-- TODO(IMG): 缺失原图，原路径 /images/Network-attack/PVZ-analysis-1.png，待你提供后重新引用 -->
 
 #### 阳光修改
 
 1.首先我们找出阳光的动态地址，找到之后我们双击这个地址，将其加入到地址列表中，阳光的查找技巧相信你已经能够掌握了，这里就不再罗嗦了。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/f1bac92e407f.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/f1bac92e407f.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-10-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-10-20261014.png)
 
 2.接着我们选择最下方的地址列表，然后按下`F6键`，也就是下一个硬件写入断点，然后回到游戏等待阳光出现并点击阳光，此时CE会出现以下代码，我们只需要记下`00430A11`这个内存地址，然后直接关闭CE吧，短期内用不到了。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/b2bfb37b3ada.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/b2bfb37b3ada.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-08-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-08-20261014.png)
 
 3.打开OD，然后我们直接附加植物大战僵尸的游戏进程，点击`文件`然后点击`附加`选择植物大战僵尸进程就好。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/798675bc9878.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/798675bc9878.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-06-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-06-20261014.png)
 
 4.附加完成后，我们的游戏会被OD暂停运行，此时我们直接按下`F12`让游戏正常的运行，默认情况下会停在系统领空，我们直接按下`Ctrl + G`输入`00401000`来到程序领空。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/7dcf5d126ee8.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/7dcf5d126ee8.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-07-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-07-20261014.png)
 
 5.接着我们按下`Ctrl + G`输入`00430A11`跳转到刚才找到的代码位置，过去以后直接`F2`下一个断点
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/f6fbc7bdfea6.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/f6fbc7bdfea6.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-11-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-11-20261014.png)
 
 6.紧接着我们回到游戏，然后等待阳光的出现，当阳光出现后我们点击阳光，OD会自动断在00430A11的位置，其中ecx就是要增加的阳光数。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/073d7e874ee7.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/073d7e874ee7.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-03-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-03-20261014.png)
 
 上图并没有CALL调用，应该是在外部，我们直接回朔到上一层`Ctrl+F9`执行到返回，`F8`直接出CALL.
 
@@ -169,21 +169,21 @@ ESP 定律法是脱壳的利器，是应用频率最高的脱壳方法之一。E
 
 也就是说，JNZ如果成立的话则会有回收阳光的动画，当不成立的时候则会执行`call 004309d0`显然这就是回收阳光的关键CALL，但我们可猜测，再回收阳光的时候一定会判断是否回收，所以回收的判断应该在上一层。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/07218ba614b3.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/07218ba614b3.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-02-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-02-20261014.png)
 
 8.首先我们回到游戏，等待出现阳光然后点击阳光，OD会断下，断下后我们取消这两处的断点，然后跟着OD单步`F8`向下走，直接出这个CALL，出CALL后会看到如下代码，我们直接下三个断点。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/cda033f80219.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/cda033f80219.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-09-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-09-20261014.png)
 
 9.下好断点，回到游戏等待阳光下落我们回收，此时OD会断下，我们运行OD发现会一直被断在`0043158F`只要阳光没有收回就会一直断下，此处的跳转并没有实现，因为我们没有去点击阳光，这里可以得出如果点击了阳光JNZ则会跳转成立，否则不成立等待用户点击回收阳光。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/77fd7ae4c881.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/77fd7ae4c881.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-05-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-05-20261014.png)
 
 10.我们取消所有的断点，然后尝试把JNZ跳转改成JMP无条件跳转，让其只要一出现阳光就自动的触发回收的CALL试试。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/049bac691729.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/049bac691729.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-01-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-01-20261014.png)
 
 改完以后我们回到游戏，会发现只要阳光出现了会被立即回收。
 
-[![img](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/470daaab2cf9.png)](https://cnb.cool/h1s97x/H1S97X.github.io/-/git/raw/main/images/blog/470daaab2cf9.png)
+[![img](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-04-20261014.png)](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/game-hack-analysis-04-20261014.png)
 

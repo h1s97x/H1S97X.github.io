@@ -15,12 +15,12 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "astro": "5.13.10",
-    "astro-theme-fuwari": "^0.1.0",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-regular": "^1.2.4",
     "@iconify-json/fa6-solid": "^1.2.4",
     "@iconify-json/material-symbols": "^1.2.50",
+    "astro": "5.13.10",
+    "astro-theme-fuwari": "^0.1.1",
     "pagefind": "^1.4.0",
     "sharp": "^0.34.5"
   },

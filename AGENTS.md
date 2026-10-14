@@ -2,27 +2,25 @@
 
 ## 项目概述
 
-Astro 静态博客项目，使用 Fuwari 主题（vendored 副本，后期抽成 h1s97x/fuwari-theme 子模块）。由 Hexo 迁移而来，详见 docs/MIGRATION_ASTRO.md。主要功能是技术分享与生活记录。
+Astro 静态博客，使用 Fuwari 主题。主题已抽离为独立 npm 包 `astro-theme-fuwari`（CNB 制品库发布，MIT；原作者 saicaca/fuwari），博客仓仅保留内容与最少配置。由 Hexo 迁移而来，详见 docs/MIGRATION_ASTRO.md。
 
 **项目愿景**: 将此项目打造成 Astro 生态的标杆博客，具备流程规范、代码高质量、高可维护性和高解耦架构。
 
 ## 技术栈
 
 - **框架**: Astro 5.x（TypeScript，构建基于 Vite）
-- **主题**: Fuwari（saicaca/fuwari，MIT，当前 vendored 于本仓，后期抽子模块）
+- **主题**: Fuwari（saicaca/fuwari，MIT），以独立包 `astro-theme-fuwari` 经 CNB 制品库引入，博客仓不持有主题代码
 - **语言**: Node.js >= 20.19.0；内容用 Markdown/MDX
-- **包管理器**: pnpm (强制使用，禁止 npm/Yarn)
+- **包管理器**: pnpm（强制使用，禁止 npm/Yarn；preinstall 有 only-allow 校验）
 
 ## 核心设计原则
 
 ### 简洁务实
 
-对于博客项目，保持简单：
-
 - 内容用 Markdown 写在 `src/content/posts/`，单页写在 `src/content/spec/`
-- 主题/组件在 `src/`（Fuwari vendored），定制优先改 `src/components`、`astro.config.mjs`
+- 主题代码（路由/布局/组件/样式）在 `astro-theme-fuwari` 包内，由 `astro.config.mjs` 通过集成注入；定制主题在主题仓库进行
 - 迁移/工具脚本放在 `tools/` 目录
-- 配置集中在 `src/config.ts`（站点/导航/个人资料/评论）与 `astro.config.mjs`（集成/重定向）
+- 站点配置集中在 `astro.config.mjs`（集成/重定向/评论）；内容集合 schema 见 `src/content/config.ts`
 
 ## Git 工作流
 
@@ -56,26 +54,27 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 
 - 所有 CI 必须使用 pnpm
 - GitHub Actions（`.github/workflows/`）：
-  - `build.yml` — `astro check` + `astro build`（Node 22/23 矩阵）
-  - `biome.yml` — Biome 代码检查（Lint）
-  - `codeql.yml` — CodeQL 安全扫描
-  - `deploy.yml` — `main` 推送后构建并部署 GitHub Pages
+  - `ci.yml` — PR 触发，单 Node 22，`pnpm install --frozen-lockfile` + `astro check` + `astro build`
+  - `deploy.yml` — `main` 推送后 `actions/deploy-pages` 部署到 `github-pages` 环境（Pages 源 = GitHub Actions）
+- `ci.yml` / `deploy.yml` 均注入 `CNB_TOKEN`（Secrets），用于从 CNB 制品库安装私有主题包
 - 分支命名与 commit message 规范见上
 
 ## 当前状态
 
 ### 已完成 ✅
 
-- **框架迁移**：Hexo + Almagest → Astro 5 + Fuwari（vendored 于 `src/`）
-- **内容迁移**：158 篇内容迁入 `src/content/posts/`（含图片资源），frontmatter 标准化
-- **路由统一**：单流 `/posts/<slug>/`，旧 `/blog/年/月/日/`、`/notes/`、`/coding/` 由 `tools/redirects.json` 301 重定向
-- **功能补齐**：giscus 评论、Pagefind 搜索、sitemap、RSS、明暗主题切换
-- **部署链路**：`.cnb.yml` rebase 同步到 GitHub → GitHub Actions 部署 Pages
+- **框架迁移**: Hexo + Almagest → Astro 5 + Fuwari
+- **内容迁移**: 158 篇内容迁入 `src/content/posts/`（含图片资源），frontmatter 标准化
+- **主题抽离**: Fuwari 抽成独立包 `astro-theme-fuwari`（CNB npm 制品库），博客仅依赖 `^0.1.1`
+- **路由统一**: 单流 `/posts/<slug>/`，旧 `/blog/`、`/notes/`、`/coding/` 由 `tools/redirects.json` 301 重定向（约 160 条）
+- **功能补齐**: giscus 评论、Pagefind 搜索、sitemap、RSS、明暗主题切换
+- **部署链路**: `.cnb.yml` rebase 同步到 GitHub → GitHub Actions 部署 Pages（Actions 模式）
 
-### 待处理
+### 待处理 / Roadmap
 
-- 主题定制（视觉/配色）
-- 主题抽成 `h1s97x/fuwari-theme` 子模块（P5，暂缓）
+- 评论系统增强：评估 Giscus/Utterances 配置与样式细化（当前已有 giscus 集成）
+- 多语言（i18n）：现仅 zh-cn，后续按需引入
+- 主题视觉/配色定制（在 `astro-theme-fuwari` 仓库进行）
 
 详见: `docs/MIGRATION_ASTRO.md`
 
@@ -84,20 +83,18 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 ```
 .
 ├── .cnb.yml                 # CNB 流水线（同步到 GitHub / PR 处理人）
-├── .github/workflows/       # GitHub Actions（build / biome / codeql / deploy）
+├── .github/workflows/       # GitHub Actions（ci.yml / deploy.yml）
 ├── src/
-│   ├── config.ts            # 站点配置（标题/导航/个人资料/评论）
 │   ├── content/
 │   │   ├── posts/           # 文章（Content Collections）
-│   │   └── spec/            # 关于页等单页
-│   ├── pages/               # 路由（/、/archive/、/posts/<slug>/、/about/）
-│   ├── components/          # 主题组件（Fuwari vendored）
-│   └── layouts/             # 布局（Fuwari vendored）
-├── public/                  # 静态资源（图片）
+│   │   ├── spec/            # 关于页等单页
+│   │   └── config.ts        # 内容集合 schema 定义（re-export 主题 collections）
+│   └── （无 pages/components/layouts —— 主题代码在 astro-theme-fuwari 包内）
+├── public/                  # 静态资源（图片 / 图标）
 ├── tools/
 │   ├── migrate-fuwari.mjs   # Hexo → Astro 迁移脚本
 │   └── redirects.json       # 旧链接 301 映射
-├── astro.config.mjs         # Astro 配置（集成 / 重定向）
+├── astro.config.mjs         # Astro 配置（主题集成注入 / 重定向 / 评论）
 ├── pagefind.yml             # Pagefind 搜索索引配置
 └── package.json
 ```
@@ -122,18 +119,18 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 
 ## 运行命令
 
-| 命令             | 说明                                  |
-| ---------------- | ------------------------------------- |
-| `pnpm dev`       | 启动本地预览（默认 4321）             |
-| `pnpm build`     | 构建（`dist/`）并生成 Pagefind 搜索索引 |
-| `pnpm check`     | `astro check` 类型与内容检查          |
-| `pnpm lint`      | Biome 检查                            |
-| `pnpm type-check`| `tsc --noEmit` 类型检查               |
+| 命令                | 说明                                       |
+| ------------------- | ------------------------------------------ |
+| `pnpm dev`          | 启动本地预览（默认 4321）                  |
+| `pnpm build`        | 构建（`dist/`）并生成 Pagefind 搜索索引    |
+| `pnpm check`        | `astro check` 类型与内容检查               |
+| `pnpm lint`         | Biome 检查                                 |
+| `pnpm type-check`   | `tsc --noEmit` 类型检查                    |
 
 ## 常见问题
 
-1. **主题（Fuwari）**: 当前 vendored 于本仓 `src/`，后期抽成 `h1s97x/fuwari-theme` 子模块（见 docs/MIGRATION_ASTRO.md）
-2. **构建失败**: 先 `pnpm install` 再 `pnpm build`；Content Collections 的 frontmatter 校验失败会直接报错
+1. **主题（Fuwari）**: 独立包 `astro-theme-fuwari`（CNB 制品库）。改主题 → 主题仓升版 `npm publish` → 博客 `pnpm update astro-theme-fuwari` 并提交 lockfile。
+2. **构建失败**: 先 `pnpm install` 再 `pnpm build`；Content Collections 的 frontmatter 校验失败会直接报错。CI 装包需 `CNB_TOKEN`，本地 shell 也需该环境变量。
 
 ## Coze 平台配置
 

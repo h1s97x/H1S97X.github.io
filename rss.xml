@@ -2038,6 +2038,149 @@ class TestSolution(unittest.TestCase):
 if __name__ == &quot;__main__&quot;:
     unittest.main()
 &lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>42. 接雨水</title><link>https://h1s97x.github.io/posts/coding-42-trapping-rain-water/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/coding-42-trapping-rain-water/</guid><pubDate>Sun, 23 Aug 2026 04:12:27 GMT</pubDate><content:encoded>&lt;h1&gt;42. 接雨水&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目链接: &lt;a href=&quot;https://leetcode.cn/problems/trapping-rain-water/&quot;&gt;LeetCode 42&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;题目描述&lt;/h2&gt;
+&lt;p&gt;给定 &lt;code&gt;n&lt;/code&gt; 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
+输出：6
+解释：上面是由数组表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分）。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;输入：height = [4,2,0,3,2,5]
+输出：9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;解题思路&lt;/h2&gt;
+&lt;h3&gt;核心思想&lt;/h3&gt;
+&lt;p&gt;每个位置能接的水量 = &lt;code&gt;min(左侧最高柱, 右侧最高柱) - height[i]&lt;/code&gt;（若为正才接水）。用&lt;strong&gt;双指针&lt;/strong&gt;：&lt;code&gt;left&lt;/code&gt;、&lt;code&gt;right&lt;/code&gt; 从两端向中间靠拢。关键在于：当 &lt;code&gt;height[left] &amp;lt; height[right]&lt;/code&gt; 时，位置 &lt;code&gt;left&lt;/code&gt; 的水量由&lt;strong&gt;左侧最高&lt;/strong&gt;决定（此时右边界已经足够高），因此我们可以放心处理左指针。&lt;/p&gt;
+&lt;h3&gt;算法步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;left=0, right=n-1, left_max=right_max=0, ans=0&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;更新 &lt;code&gt;left_max = max(left_max, height[left])&lt;/code&gt;、&lt;code&gt;right_max = max(right_max, height[right])&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;若 &lt;code&gt;height[left] &amp;lt; height[right]&lt;/code&gt;：说明 &lt;code&gt;left&lt;/code&gt; 处左边界是短板，&lt;code&gt;ans += left_max - height[left]&lt;/code&gt;，&lt;code&gt;left += 1&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;否则：处理右侧，&lt;code&gt;ans += right_max - height[right]&lt;/code&gt;，&lt;code&gt;right -= 1&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;重复直到 &lt;code&gt;left &amp;gt;= right&lt;/code&gt;，返回 &lt;code&gt;ans&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;逐步举例&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;height = [0,1,0,2,1,0,1,3,2,1,2,1]&lt;/code&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;步骤&lt;/th&gt;
+&lt;th&gt;left&lt;/th&gt;
+&lt;th&gt;right&lt;/th&gt;
+&lt;th&gt;处理边&lt;/th&gt;
+&lt;th&gt;left_max&lt;/th&gt;
+&lt;th&gt;right_max&lt;/th&gt;
+&lt;th&gt;增量&lt;/th&gt;
+&lt;th&gt;ans&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;左(0&amp;lt;1)&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;左(1&amp;lt;1)→右&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;左(1&amp;lt;2)&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1-1=0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;左(0&amp;lt;2)&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1-0=1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;最终 &lt;code&gt;ans = 6&lt;/code&gt;。&lt;/p&gt;
+&lt;h3&gt;复杂度分析&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;时间复杂度&lt;/strong&gt;：O(n)，双指针各扫描一次。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;空间复杂度&lt;/strong&gt;：O(1)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;代码实现&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;from typing import List
+
+
+class Solution:
+    def trap(self, height: List[int]) -&amp;gt; int:
+        left, right = 0, len(height) - 1
+        left_max = right_max = 0
+        ans = 0
+        while left &amp;lt; right:
+            left_max = max(left_max, height[left])
+            right_max = max(right_max, height[right])
+            if height[left] &amp;lt; height[right]:
+                ans += left_max - height[left]
+                left += 1
+            else:
+                ans += right_max - height[right]
+                right -= 1
+        return ans
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import unittest
+
+from solution import Solution
+
+
+class TestSolution(unittest.TestCase):
+    def test_basic(self):
+        self.assertEqual(Solution().trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]), 6)
+
+    def test_flat(self):
+        self.assertEqual(Solution().trap([0, 0, 0, 0]), 0)
+
+    def test_high_middle(self):
+        self.assertEqual(Solution().trap([4, 2, 0, 3, 2, 5]), 9)
+
+
+if __name__ == &apos;__main__&apos;:
+    unittest.main()
+&lt;/code&gt;&lt;/pre&gt;
 </content:encoded></item><item><title>392. 判断子序列</title><link>https://h1s97x.github.io/posts/coding-392-is-subsequence/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/coding-392-is-subsequence/</guid><pubDate>Sun, 23 Aug 2026 04:12:27 GMT</pubDate><content:encoded>&lt;h1&gt;392. 判断子序列&lt;/h1&gt;
 &lt;h2&gt;题目描述&lt;/h2&gt;
 &lt;p&gt;给定字符串 &lt;strong&gt;s&lt;/strong&gt; 和 &lt;strong&gt;t&lt;/strong&gt;，判断 &lt;strong&gt;s&lt;/strong&gt; 是否为 &lt;strong&gt;t&lt;/strong&gt; 的子序列。&lt;/p&gt;
@@ -2196,149 +2339,6 @@ if __name__ == &apos;__main__&apos;:
     unittest.main()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;{{% /highlight %}}&lt;/p&gt;
-</content:encoded></item><item><title>42. 接雨水</title><link>https://h1s97x.github.io/posts/coding-42-trapping-rain-water/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/coding-42-trapping-rain-water/</guid><pubDate>Sun, 23 Aug 2026 04:12:27 GMT</pubDate><content:encoded>&lt;h1&gt;42. 接雨水&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;题目链接: &lt;a href=&quot;https://leetcode.cn/problems/trapping-rain-water/&quot;&gt;LeetCode 42&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;题目描述&lt;/h2&gt;
-&lt;p&gt;给定 &lt;code&gt;n&lt;/code&gt; 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
-输出：6
-解释：上面是由数组表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分）。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;输入：height = [4,2,0,3,2,5]
-输出：9
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;解题思路&lt;/h2&gt;
-&lt;h3&gt;核心思想&lt;/h3&gt;
-&lt;p&gt;每个位置能接的水量 = &lt;code&gt;min(左侧最高柱, 右侧最高柱) - height[i]&lt;/code&gt;（若为正才接水）。用&lt;strong&gt;双指针&lt;/strong&gt;：&lt;code&gt;left&lt;/code&gt;、&lt;code&gt;right&lt;/code&gt; 从两端向中间靠拢。关键在于：当 &lt;code&gt;height[left] &amp;lt; height[right]&lt;/code&gt; 时，位置 &lt;code&gt;left&lt;/code&gt; 的水量由&lt;strong&gt;左侧最高&lt;/strong&gt;决定（此时右边界已经足够高），因此我们可以放心处理左指针。&lt;/p&gt;
-&lt;h3&gt;算法步骤&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;left=0, right=n-1, left_max=right_max=0, ans=0&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;更新 &lt;code&gt;left_max = max(left_max, height[left])&lt;/code&gt;、&lt;code&gt;right_max = max(right_max, height[right])&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;若 &lt;code&gt;height[left] &amp;lt; height[right]&lt;/code&gt;：说明 &lt;code&gt;left&lt;/code&gt; 处左边界是短板，&lt;code&gt;ans += left_max - height[left]&lt;/code&gt;，&lt;code&gt;left += 1&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;否则：处理右侧，&lt;code&gt;ans += right_max - height[right]&lt;/code&gt;，&lt;code&gt;right -= 1&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;重复直到 &lt;code&gt;left &amp;gt;= right&lt;/code&gt;，返回 &lt;code&gt;ans&lt;/code&gt;。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;逐步举例&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;height = [0,1,0,2,1,0,1,3,2,1,2,1]&lt;/code&gt;：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;步骤&lt;/th&gt;
-&lt;th&gt;left&lt;/th&gt;
-&lt;th&gt;right&lt;/th&gt;
-&lt;th&gt;处理边&lt;/th&gt;
-&lt;th&gt;left_max&lt;/th&gt;
-&lt;th&gt;right_max&lt;/th&gt;
-&lt;th&gt;增量&lt;/th&gt;
-&lt;th&gt;ans&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;11&lt;/td&gt;
-&lt;td&gt;左(0&amp;lt;1)&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;11&lt;/td&gt;
-&lt;td&gt;左(1&amp;lt;1)→右&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;左(1&amp;lt;2)&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;1-1=0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;左(0&amp;lt;2)&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;1-0=1&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;...&lt;/td&gt;
-&lt;td&gt;...&lt;/td&gt;
-&lt;td&gt;...&lt;/td&gt;
-&lt;td&gt;...&lt;/td&gt;
-&lt;td&gt;...&lt;/td&gt;
-&lt;td&gt;...&lt;/td&gt;
-&lt;td&gt;...&lt;/td&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;最终 &lt;code&gt;ans = 6&lt;/code&gt;。&lt;/p&gt;
-&lt;h3&gt;复杂度分析&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;时间复杂度&lt;/strong&gt;：O(n)，双指针各扫描一次。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;空间复杂度&lt;/strong&gt;：O(1)。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;代码实现&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;from typing import List
-
-
-class Solution:
-    def trap(self, height: List[int]) -&amp;gt; int:
-        left, right = 0, len(height) - 1
-        left_max = right_max = 0
-        ans = 0
-        while left &amp;lt; right:
-            left_max = max(left_max, height[left])
-            right_max = max(right_max, height[right])
-            if height[left] &amp;lt; height[right]:
-                ans += left_max - height[left]
-                left += 1
-            else:
-                ans += right_max - height[right]
-                right -= 1
-        return ans
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).parent))
-import unittest
-
-from solution import Solution
-
-
-class TestSolution(unittest.TestCase):
-    def test_basic(self):
-        self.assertEqual(Solution().trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]), 6)
-
-    def test_flat(self):
-        self.assertEqual(Solution().trap([0, 0, 0, 0]), 0)
-
-    def test_high_middle(self):
-        self.assertEqual(Solution().trap([4, 2, 0, 3, 2, 5]), 9)
-
-
-if __name__ == &apos;__main__&apos;:
-    unittest.main()
-&lt;/code&gt;&lt;/pre&gt;
 </content:encoded></item><item><title>485. 最大连续 1 的个数</title><link>https://h1s97x.github.io/posts/coding-485-max-consecutive-ones/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/coding-485-max-consecutive-ones/</guid><pubDate>Sun, 23 Aug 2026 04:12:27 GMT</pubDate><content:encoded>&lt;h1&gt;485. 最大连续 1 的个数&lt;/h1&gt;
 &lt;h2&gt;题目描述&lt;/h2&gt;
 &lt;p&gt;给定一个二进制数组 &lt;code&gt;nums&lt;/code&gt;，计算其中最大连续 &lt;code&gt;1&lt;/code&gt; 的个数。&lt;/p&gt;
@@ -9706,66 +9706,6 @@ Done.
 Thanks for using HTTrack!
 *
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>KeePass 使用指南</title><link>https://h1s97x.github.io/posts/notes-keepass-guide/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/notes-keepass-guide/</guid><description>[TOC] KeePass 密码保险箱 优秀的密码管理器 keepass - 少数派 (sspai.com) 一劳永逸：KeePass 全网最详使用指南 - 知</description><pubDate>Thu, 16 Jul 2026 16:12:52 GMT</pubDate><content:encoded>&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2&gt;参考资料&lt;/h2&gt;
-&lt;h3&gt;友链&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://keepass.info/index.html&quot;&gt;KeePass 密码保险箱&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://sspai.com/post/44126#!&quot;&gt;优秀的密码管理器 keepass - 少数派 (sspai.com)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/39645975&quot;&gt;一劳永逸：KeePass 全网最详使用指南 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;前言&lt;/h2&gt;
-&lt;p&gt;为什么用这个软件？标准答案当然是有业务需求，随着使用电脑的时间越来越长，各种需求也就不断出现，软件的兼容性、系统的兼容性、多设备之间的交互、文件共享都是急需解决的问题。&lt;/p&gt;
-&lt;p&gt;需求：&lt;/p&gt;
-&lt;p&gt;1.录入网站域名以及注册的账户、密码等，下次登录时能够自动填充。（Edge 自带的 Microsoft 密码管理器也能解决）&lt;/p&gt;
-&lt;p&gt;2.一些软件能否自动填充？&lt;/p&gt;
-&lt;p&gt;3.用户控制，查看保存的数据只需要用户口令。&lt;/p&gt;
-&lt;p&gt;……&lt;/p&gt;
-&lt;p&gt;回到本篇的问题上，为什么用这个软件？原因有三：&lt;/p&gt;
-&lt;p&gt;其一，想想过去存储密码的方式：记事本文件，实在不是什么好的方案，只能用之一时，这种方案缺乏安全性，一旦泄露可就是灾难性的，明文泄露意味着什么，换句话说，底裤都被人家看穿了。还有版本控制的问题，一旦不小心文件崩溃或者删掉了重要的内容，就没法恢复，还有就是便利性，实在谈不上有多方便，就是查表嘛，每次还要自己记得去写，忘了写入之后都没地方查去。&lt;/p&gt;
-&lt;p&gt;其二，正因为存储到文本文件的方案的种种问题，需要寻求一种新的解决方案，我之前也想过用数据库呗，但转念一想与第一种方案的差别不是很大，首先数据库还是存储在本地，免不了泄露的风险，便利性有所提升，但也不多，不能摆脱查表。那么有没有成熟的方案能够解决我的需求呢？&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;keepass 虽然功能强大但使用相对复杂，而且官方帮助文档是全英文，对普通用户不友好；&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;KeePass&lt;/h2&gt;
-&lt;h3&gt;介绍&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;为什么选择 KeePass？&lt;/strong&gt;
-今天，您必须记住许多密码。您需要密码才能获得很多 网站、您的电子邮件帐户、您的网络服务器、网络登录等。 清单是无穷无尽的。 此外，您应该为每个帐户使用不同的密码，因为 如果您在任何地方只使用一个密码，并且有人获得了此密码， 你会遇到一个问题：小偷可以访问你的所有帐户。&lt;/p&gt;
-&lt;p&gt;KeePass 是一个免费的开源密码管理器，它可以帮助您管理以安全的方式输入您的密码。您可以将所有密码存储在一个密码数据库，该数据库使用主密钥锁定。所以你只需要记住一个单个主密钥可解锁整个数据库。数据库文件已加密使用目前已知的最佳和最安全的加密算法 （AES-256、ChaCha20 和 Twofish）。 有关详细信息，请参阅&lt;a href=&quot;https://keepass.info/features.html&quot;&gt;功能&lt;/a&gt;页面。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;它真的免费吗？&lt;/strong&gt;
-是的，KeePass 是真正免费的，不仅如此：它是开源的（OSI 认证）。 您可以查看其完整的源代码并检查安全性 功能已正确实现。&lt;/p&gt;
-&lt;h4&gt;KeePass 特点&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;最直观的优势当然是&lt;strong&gt;完全免费&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;最实际的优势：今后基本可以告别手动输入账户密码。&lt;strong&gt;（在此建议将所有密码更换为 16 位随机强密码）&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;最强大的优势：这是一个开源软件，拥有众多优秀的第三方开源插件支持。即使将来有一天开发者不更新了也会有其他开发者接手。&lt;/li&gt;
-&lt;li&gt;最重要也是最容易被忽略的优势：keepass 的加密方式和加密算法均处于同类软件的领先水平(至今未暴露出任何安全隐患) ，&lt;strong&gt;你的数据完全掌握在自己手中&lt;/strong&gt;，无需将任何敏感信息托付给第三方服务商。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;KeePass（Windows）篇&lt;/h3&gt;
-&lt;h4&gt;中文语言包安装&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;安装并运行 keepass（安装时默认英文，无中文可选）；&lt;/li&gt;
-&lt;li&gt;点击主界面中的【View】→【Change Language】；&lt;/li&gt;
-&lt;li&gt;点击【Open Folder】打开 keepass 的语言安装文件夹；&lt;/li&gt;
-&lt;li&gt;解压下载的中文语言 zip 包，将解压后的文件复制并粘贴到步骤 3 打开的文件夹中；&lt;/li&gt;
-&lt;li&gt;重复步骤 2，选择【Chinese_Simplified】，点击弹出框中的【是】重启 keepass。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;插件安装&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;在 keepaass 主界面中点击【工具】→【插件管理器】→【打开文件夹】；&lt;/li&gt;
-&lt;li&gt;将下载的后缀为.plgx 的文件复制并粘贴到步骤 1 打开的的文件夹中（zip 包请先解压）；&lt;/li&gt;
-&lt;li&gt;关闭然后重新打开 keepass。&lt;/li&gt;
-&lt;li&gt;（度盘下载的 chromeIPass 插件安装方法：点击 chrome 浏览器右上角的三个点 →【更多工具】→【扩展程序】，在打开标签页的右上角启用开发者模式 → 将下载的 crx 文件拖动到此标签页）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;数据库同步和加密方式&lt;/h4&gt;
-&lt;p&gt;如果你在使用 Windows10，建议将 keepass 数据库直接存储在 OneDrive 文件夹中。因为 OneDrive 已经集成到了 Windows 文件资源管理器中，而且 OneDrive 网页版可查看&lt;strong&gt;文件版本历史记录&lt;/strong&gt;和回收站，即使操作失误或误删文件也有补救的余地。&lt;/p&gt;
-&lt;p&gt;在创建数据库时 keepass 提供了 3 种可任意组合的加密方式：【管理密码】【密钥文件/提供器】和【Windows 用户账户】，也就是说一共可以组合出 8 种不同的加密方式。追求更高安全性可以了解一下&lt;a href=&quot;https://link.zhihu.com/?target=https%3A//keepass.info/plugins.html%23otpkeyprov&quot;&gt;OtpKeyProv&lt;/a&gt;：每次打开数据库需要输入至少 3 个一次性的 6 位数安全码，但是必须要有一个 YubiKey 硬件或一台装有 Google 身份验证器的备用手机，而且这种加密方式的容错率和安全性有所冲突，本文篇幅所限不再赘述。所以综合安全性，易用性，跨平台等多方面因素，建议使用【管理密码】+【密钥文件/提供器】的加密方式。其中【密钥文件/提供器】可使用任意类型文件（图片，文档，音频，视频等），它的工作原理是使用 SHA-256 对密钥文件进行哈希处理并将生成的 32 个字节用作密钥，因此&lt;strong&gt;请妥善保存密钥文件，不要随意修改&lt;/strong&gt;（重命名无影响）。你可以使用一张家人的照片，一首喜欢的歌或一段不可描述的视频作为密钥文件，谁又能猜得到呢？（使用 100mb 以上的文件作为密钥文件会明显影响解锁速度）&lt;/p&gt;
-&lt;p&gt;为使你的主密码更安全，请在 keepass 的**【选项】→【安全】中勾选【在安全桌面输入管理密码】**，因为几乎没有键盘记录软件能在安全桌面工作。&lt;/p&gt;
-&lt;h4&gt;自动输入和双通道自动输入混淆&lt;/h4&gt;
-&lt;p&gt;自动输入顾名思义就是用软件模拟按键以代替手动输入，需要注意的是如果目标应用程序使用管理员权限运行，那么 keepass 也必须使用管理员权限运行才能在此应用程序中使用自动输入。通俗点讲，当你打开一个程序弹出了【用户账户控制】警告（UAC），那么要在这个程序中使用自动输入必须右键点击桌面上的 keepass 图标，选择【以管理员身份运行】。&lt;strong&gt;自动输入全局热键默认为【Ctrl + Shift + A】&lt;/strong&gt;。使用方法非常简单：&lt;strong&gt;点击输入框 → 按下自动输入全局热键；或点击输入框 → 切换到 keepass 主界面 → 右键单击记录 →【执行自动输入】&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;双通道自动输入混淆不仅逼格高（具体效果如上面动图所示），而且非常强大。它的工作原理简洁明了：将要输入的字符随机分为两部分，然后使用模拟按键和复制粘贴两种方式混合输入，输入完成后再还原输入前的剪切板内容。这样一来，&lt;strong&gt;单一的键盘记录软件或剪切板监听软件都无法窃取到输入的完整字段&lt;/strong&gt;。由于某些软件的输入框没有移动光标或不支持粘贴操作，因此这个功能&lt;strong&gt;默认不启用&lt;/strong&gt;。必须在添加或编辑记录时点击【自动输入】，勾选【双通道自动输入混淆】。这无疑增加了普通用户的使用成本：为一条记录启用双通道自动输入混淆需要额外点击 3 次，对于有上百条密码的用户来说绝对是一场灾难。下文将给出&lt;strong&gt;一劳永逸&lt;/strong&gt;的解决方案。&lt;/p&gt;
-&lt;p&gt;自动输入匹配规则：当按下自动输入全局热键时，keepass 会根据当前活动窗口的标题在数据库中搜索相匹配的记录；如果一条记录的标题或网址包含在活动窗口标题内那么这条记录将被匹配。举个例子：在 chrome 浏览器中打开淘宝网，当前活动窗口的标题就是“淘宝网 - 淘！我喜欢 - Google Chrome”。那么问题来了：标题为“Google”的记录也会被匹配到，而且在 chrome 中打开的任何标签页的标题都会包含“Google Chrome”字段。&lt;strong&gt;因此为防止误输密码，请务必在 keepass 的【工具】→【选项】→【高级】中勾选【总是显示全局自动输入记录选取对话框】&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;最后一点是自动输入的键入规则，默认规则为{USERNAME}{TAB}{PASSWORD}{ENTER}。解释：输入用户名，Tab 键（换行），输入密码，回车键。但这套规则明显不适合中文用户，因为&lt;strong&gt;使用自动输入时输入法必须是英文&lt;/strong&gt;，否则会出现很尴尬的场面。&lt;strong&gt;本文推荐使用以下规则&lt;/strong&gt;：+{DELAY 100}{CLEARFIELD}{USERNAME}{TAB}{PASSWORD}{ENTER}。解释：Shift 键（Windows10 输入法切换），等待 100 毫秒，清空输入框，输入用户名，Tab 键（换行），输入密码，回车键。由于新建记录默认从群组继承输入规则，所以只需修改一次即可，&lt;strong&gt;一劳永逸&lt;/strong&gt;，具体操作见下图。&lt;strong&gt;注：使用此规则自动输入时请确保输入法为中文&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;后续使用继续更新。&lt;/p&gt;
-&lt;p&gt;目前没有太多时间。&lt;/p&gt;
 </content:encoded></item><item><title>Kali Linux常用操作</title><link>https://h1s97x.github.io/posts/notes-kali-linux-commands/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/notes-kali-linux-commands/</guid><description>通过系统界面可以看到一个“file system”，这个就是文件系统，双击点开，会看到如下界面： 右侧就是该文件下的文件系统目录 !img 重点文件的说明，从上</description><pubDate>Thu, 16 Jul 2026 16:12:52 GMT</pubDate><content:encoded>&lt;h3&gt;1、Kali Linux 中的文件系统&lt;/h3&gt;
 &lt;p&gt;通过系统界面可以看到一个“file system”，这个就是文件系统，双击点开，会看到如下界面：&lt;/p&gt;
 &lt;p&gt;右侧就是该文件下的文件系统目录&lt;/p&gt;
@@ -9872,6 +9812,66 @@ ip a | more
 &lt;pre&gt;&lt;code&gt;# 显示网络管理器中所有网络设备的信息，包括IP地址、子网掩码和网关等
 nmcli device show
 &lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>KeePass 使用指南</title><link>https://h1s97x.github.io/posts/notes-keepass-guide/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/notes-keepass-guide/</guid><description>[TOC] KeePass 密码保险箱 优秀的密码管理器 keepass - 少数派 (sspai.com) 一劳永逸：KeePass 全网最详使用指南 - 知</description><pubDate>Thu, 16 Jul 2026 16:12:52 GMT</pubDate><content:encoded>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;h3&gt;友链&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://keepass.info/index.html&quot;&gt;KeePass 密码保险箱&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://sspai.com/post/44126#!&quot;&gt;优秀的密码管理器 keepass - 少数派 (sspai.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/39645975&quot;&gt;一劳永逸：KeePass 全网最详使用指南 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;为什么用这个软件？标准答案当然是有业务需求，随着使用电脑的时间越来越长，各种需求也就不断出现，软件的兼容性、系统的兼容性、多设备之间的交互、文件共享都是急需解决的问题。&lt;/p&gt;
+&lt;p&gt;需求：&lt;/p&gt;
+&lt;p&gt;1.录入网站域名以及注册的账户、密码等，下次登录时能够自动填充。（Edge 自带的 Microsoft 密码管理器也能解决）&lt;/p&gt;
+&lt;p&gt;2.一些软件能否自动填充？&lt;/p&gt;
+&lt;p&gt;3.用户控制，查看保存的数据只需要用户口令。&lt;/p&gt;
+&lt;p&gt;……&lt;/p&gt;
+&lt;p&gt;回到本篇的问题上，为什么用这个软件？原因有三：&lt;/p&gt;
+&lt;p&gt;其一，想想过去存储密码的方式：记事本文件，实在不是什么好的方案，只能用之一时，这种方案缺乏安全性，一旦泄露可就是灾难性的，明文泄露意味着什么，换句话说，底裤都被人家看穿了。还有版本控制的问题，一旦不小心文件崩溃或者删掉了重要的内容，就没法恢复，还有就是便利性，实在谈不上有多方便，就是查表嘛，每次还要自己记得去写，忘了写入之后都没地方查去。&lt;/p&gt;
+&lt;p&gt;其二，正因为存储到文本文件的方案的种种问题，需要寻求一种新的解决方案，我之前也想过用数据库呗，但转念一想与第一种方案的差别不是很大，首先数据库还是存储在本地，免不了泄露的风险，便利性有所提升，但也不多，不能摆脱查表。那么有没有成熟的方案能够解决我的需求呢？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;keepass 虽然功能强大但使用相对复杂，而且官方帮助文档是全英文，对普通用户不友好；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;KeePass&lt;/h2&gt;
+&lt;h3&gt;介绍&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;为什么选择 KeePass？&lt;/strong&gt;
+今天，您必须记住许多密码。您需要密码才能获得很多 网站、您的电子邮件帐户、您的网络服务器、网络登录等。 清单是无穷无尽的。 此外，您应该为每个帐户使用不同的密码，因为 如果您在任何地方只使用一个密码，并且有人获得了此密码， 你会遇到一个问题：小偷可以访问你的所有帐户。&lt;/p&gt;
+&lt;p&gt;KeePass 是一个免费的开源密码管理器，它可以帮助您管理以安全的方式输入您的密码。您可以将所有密码存储在一个密码数据库，该数据库使用主密钥锁定。所以你只需要记住一个单个主密钥可解锁整个数据库。数据库文件已加密使用目前已知的最佳和最安全的加密算法 （AES-256、ChaCha20 和 Twofish）。 有关详细信息，请参阅&lt;a href=&quot;https://keepass.info/features.html&quot;&gt;功能&lt;/a&gt;页面。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;它真的免费吗？&lt;/strong&gt;
+是的，KeePass 是真正免费的，不仅如此：它是开源的（OSI 认证）。 您可以查看其完整的源代码并检查安全性 功能已正确实现。&lt;/p&gt;
+&lt;h4&gt;KeePass 特点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;最直观的优势当然是&lt;strong&gt;完全免费&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;最实际的优势：今后基本可以告别手动输入账户密码。&lt;strong&gt;（在此建议将所有密码更换为 16 位随机强密码）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;最强大的优势：这是一个开源软件，拥有众多优秀的第三方开源插件支持。即使将来有一天开发者不更新了也会有其他开发者接手。&lt;/li&gt;
+&lt;li&gt;最重要也是最容易被忽略的优势：keepass 的加密方式和加密算法均处于同类软件的领先水平(至今未暴露出任何安全隐患) ，&lt;strong&gt;你的数据完全掌握在自己手中&lt;/strong&gt;，无需将任何敏感信息托付给第三方服务商。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;KeePass（Windows）篇&lt;/h3&gt;
+&lt;h4&gt;中文语言包安装&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;安装并运行 keepass（安装时默认英文，无中文可选）；&lt;/li&gt;
+&lt;li&gt;点击主界面中的【View】→【Change Language】；&lt;/li&gt;
+&lt;li&gt;点击【Open Folder】打开 keepass 的语言安装文件夹；&lt;/li&gt;
+&lt;li&gt;解压下载的中文语言 zip 包，将解压后的文件复制并粘贴到步骤 3 打开的文件夹中；&lt;/li&gt;
+&lt;li&gt;重复步骤 2，选择【Chinese_Simplified】，点击弹出框中的【是】重启 keepass。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;插件安装&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;在 keepaass 主界面中点击【工具】→【插件管理器】→【打开文件夹】；&lt;/li&gt;
+&lt;li&gt;将下载的后缀为.plgx 的文件复制并粘贴到步骤 1 打开的的文件夹中（zip 包请先解压）；&lt;/li&gt;
+&lt;li&gt;关闭然后重新打开 keepass。&lt;/li&gt;
+&lt;li&gt;（度盘下载的 chromeIPass 插件安装方法：点击 chrome 浏览器右上角的三个点 →【更多工具】→【扩展程序】，在打开标签页的右上角启用开发者模式 → 将下载的 crx 文件拖动到此标签页）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;数据库同步和加密方式&lt;/h4&gt;
+&lt;p&gt;如果你在使用 Windows10，建议将 keepass 数据库直接存储在 OneDrive 文件夹中。因为 OneDrive 已经集成到了 Windows 文件资源管理器中，而且 OneDrive 网页版可查看&lt;strong&gt;文件版本历史记录&lt;/strong&gt;和回收站，即使操作失误或误删文件也有补救的余地。&lt;/p&gt;
+&lt;p&gt;在创建数据库时 keepass 提供了 3 种可任意组合的加密方式：【管理密码】【密钥文件/提供器】和【Windows 用户账户】，也就是说一共可以组合出 8 种不同的加密方式。追求更高安全性可以了解一下&lt;a href=&quot;https://link.zhihu.com/?target=https%3A//keepass.info/plugins.html%23otpkeyprov&quot;&gt;OtpKeyProv&lt;/a&gt;：每次打开数据库需要输入至少 3 个一次性的 6 位数安全码，但是必须要有一个 YubiKey 硬件或一台装有 Google 身份验证器的备用手机，而且这种加密方式的容错率和安全性有所冲突，本文篇幅所限不再赘述。所以综合安全性，易用性，跨平台等多方面因素，建议使用【管理密码】+【密钥文件/提供器】的加密方式。其中【密钥文件/提供器】可使用任意类型文件（图片，文档，音频，视频等），它的工作原理是使用 SHA-256 对密钥文件进行哈希处理并将生成的 32 个字节用作密钥，因此&lt;strong&gt;请妥善保存密钥文件，不要随意修改&lt;/strong&gt;（重命名无影响）。你可以使用一张家人的照片，一首喜欢的歌或一段不可描述的视频作为密钥文件，谁又能猜得到呢？（使用 100mb 以上的文件作为密钥文件会明显影响解锁速度）&lt;/p&gt;
+&lt;p&gt;为使你的主密码更安全，请在 keepass 的**【选项】→【安全】中勾选【在安全桌面输入管理密码】**，因为几乎没有键盘记录软件能在安全桌面工作。&lt;/p&gt;
+&lt;h4&gt;自动输入和双通道自动输入混淆&lt;/h4&gt;
+&lt;p&gt;自动输入顾名思义就是用软件模拟按键以代替手动输入，需要注意的是如果目标应用程序使用管理员权限运行，那么 keepass 也必须使用管理员权限运行才能在此应用程序中使用自动输入。通俗点讲，当你打开一个程序弹出了【用户账户控制】警告（UAC），那么要在这个程序中使用自动输入必须右键点击桌面上的 keepass 图标，选择【以管理员身份运行】。&lt;strong&gt;自动输入全局热键默认为【Ctrl + Shift + A】&lt;/strong&gt;。使用方法非常简单：&lt;strong&gt;点击输入框 → 按下自动输入全局热键；或点击输入框 → 切换到 keepass 主界面 → 右键单击记录 →【执行自动输入】&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;双通道自动输入混淆不仅逼格高（具体效果如上面动图所示），而且非常强大。它的工作原理简洁明了：将要输入的字符随机分为两部分，然后使用模拟按键和复制粘贴两种方式混合输入，输入完成后再还原输入前的剪切板内容。这样一来，&lt;strong&gt;单一的键盘记录软件或剪切板监听软件都无法窃取到输入的完整字段&lt;/strong&gt;。由于某些软件的输入框没有移动光标或不支持粘贴操作，因此这个功能&lt;strong&gt;默认不启用&lt;/strong&gt;。必须在添加或编辑记录时点击【自动输入】，勾选【双通道自动输入混淆】。这无疑增加了普通用户的使用成本：为一条记录启用双通道自动输入混淆需要额外点击 3 次，对于有上百条密码的用户来说绝对是一场灾难。下文将给出&lt;strong&gt;一劳永逸&lt;/strong&gt;的解决方案。&lt;/p&gt;
+&lt;p&gt;自动输入匹配规则：当按下自动输入全局热键时，keepass 会根据当前活动窗口的标题在数据库中搜索相匹配的记录；如果一条记录的标题或网址包含在活动窗口标题内那么这条记录将被匹配。举个例子：在 chrome 浏览器中打开淘宝网，当前活动窗口的标题就是“淘宝网 - 淘！我喜欢 - Google Chrome”。那么问题来了：标题为“Google”的记录也会被匹配到，而且在 chrome 中打开的任何标签页的标题都会包含“Google Chrome”字段。&lt;strong&gt;因此为防止误输密码，请务必在 keepass 的【工具】→【选项】→【高级】中勾选【总是显示全局自动输入记录选取对话框】&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;最后一点是自动输入的键入规则，默认规则为{USERNAME}{TAB}{PASSWORD}{ENTER}。解释：输入用户名，Tab 键（换行），输入密码，回车键。但这套规则明显不适合中文用户，因为&lt;strong&gt;使用自动输入时输入法必须是英文&lt;/strong&gt;，否则会出现很尴尬的场面。&lt;strong&gt;本文推荐使用以下规则&lt;/strong&gt;：+{DELAY 100}{CLEARFIELD}{USERNAME}{TAB}{PASSWORD}{ENTER}。解释：Shift 键（Windows10 输入法切换），等待 100 毫秒，清空输入框，输入用户名，Tab 键（换行），输入密码，回车键。由于新建记录默认从群组继承输入规则，所以只需修改一次即可，&lt;strong&gt;一劳永逸&lt;/strong&gt;，具体操作见下图。&lt;strong&gt;注：使用此规则自动输入时请确保输入法为中文&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;后续使用继续更新。&lt;/p&gt;
+&lt;p&gt;目前没有太多时间。&lt;/p&gt;
 </content:encoded></item><item><title>一些可供学习的个人博客或网站</title><link>https://h1s97x.github.io/posts/notes-learning-blogs-websites/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/notes-learning-blogs-websites/</guid><description>三叔的博客 居士亭 廖雪峰 咸鱼 IC 方知有 郁明敏 小林 coding (xiaolincoding.com) GeekLogic - 极客逻辑 (geek</description><pubDate>Thu, 16 Jul 2026 16:12:52 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://tuncle.blog/&quot;&gt;三叔的博客&lt;/a&gt;
 &lt;a href=&quot;http://justin955.top/&quot;&gt;居士亭&lt;/a&gt;
 &lt;a href=&quot;https://www.liaoxuefeng.com/&quot;&gt;廖雪峰&lt;/a&gt;
@@ -13901,23 +13901,6 @@ win32process.GetWindowThreadProcessId(window_handle)
 &lt;p&gt;故事的结尾虚空纳鲁终于被净化，回归成纯粹圣光，用最后一丝圣光的力量复活了泽瑞拉的女儿露妮，十位佣兵的故事终于落下帷幕，大家回到了家乡成为了英雄，晨拥也回到了银月城，赢回了大家的信任，并且获得魔导师的称号。不过晨拥说“我们的书已尽尾声，但另一本书，才刚刚开启。”这难道是说未来还会有类似新的单人&lt;a href=&quot;https://www.jiaochengzhijia.com/special/maoxyoux.html&quot;&gt;冒险&lt;/a&gt;模式吗&lt;/p&gt;
 &lt;h2&gt;参考链接&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.jiaochengzhijia.com/game/pcgame/141130.html&quot;&gt;炉石传说佣兵之书晨拥篇全关卡打法攻略 - 单机游戏 - 教程之家 (jiaochengzhijia.com)&lt;/a&gt;&lt;/p&gt;
-</content:encoded></item><item><title>用户权限</title><link>https://h1s97x.github.io/posts/notes-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/notes-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/</guid><description>Linux下普通用户变为root权限的三种方法19.如何从普通用户xiaoming切换到root?-CSDN博客 0x01加普通用户 useradd xiaom</description><pubDate>Sat, 27 Dec 2025 15:46:11 GMT</pubDate><content:encoded>&lt;h3&gt;linux下普通用户变为root权限的三种方法&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_43886632/article/details/108244302&quot;&gt;Linux下普通用户变为root权限的三种方法_19.如何从普通用户xiaoming切换到root?-CSDN博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;0x01加普通用户&lt;/strong&gt;
-useradd xiaoming 创建用户小明
-passwd xiaoming 创建小明的密码&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;0x02 将xiaoming的权限变为root权限&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法1&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1、修改 /etc/sudoers 文件，找到107行，把前面的注释（#）去掉&lt;/p&gt;
-&lt;p&gt;2、将xiaoming添加到root组（wheel）
-命令：&lt;code&gt;usermod -g root xiaoming&lt;/code&gt;
-之后xiaoming就能执行root的命令了，但是权限不是root还是xiaoming权限.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法2&lt;/strong&gt;
-1、修改 /etc/sudoers 文件，找到下面一行，在root下面添加一行
-内容：&lt;code&gt;xiaoming All=(All) All&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;修改完后。登录xiaoming。输入命令 &lt;code&gt;sudo -l&lt;/code&gt;，然后输入xiaoming的密码认证后使用sudo执行任意命令即可&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法3&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;修改 /etc/passwd 文件，找到xiaoming，把用户ID修改为 0&lt;/p&gt;
 </content:encoded></item><item><title>玩转kali</title><link>https://h1s97x.github.io/posts/notes-%E7%8E%A9%E8%BD%ACkali/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/notes-%E7%8E%A9%E8%BD%ACkali/</guid><description>[TOC] 图书名称: Kali Linux: Assuring Security by Penetration Testing ------------- -</description><pubDate>Sat, 27 Dec 2025 15:46:11 GMT</pubDate><content:encoded>&lt;p&gt;[TOC]&lt;/p&gt;
 &lt;h2&gt;参考资料&lt;/h2&gt;
 &lt;h3&gt;参考书&lt;/h3&gt;
@@ -14204,6 +14187,23 @@ apt-get autoclean 删除未安装的deb包
 &lt;p&gt;error:&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;目前网络配置有问题，解决后再写 xia&apos;wen&lt;/p&gt;
+</content:encoded></item><item><title>用户权限</title><link>https://h1s97x.github.io/posts/notes-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/notes-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/</guid><description>Linux下普通用户变为root权限的三种方法19.如何从普通用户xiaoming切换到root?-CSDN博客 0x01加普通用户 useradd xiaom</description><pubDate>Sat, 27 Dec 2025 15:46:11 GMT</pubDate><content:encoded>&lt;h3&gt;linux下普通用户变为root权限的三种方法&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_43886632/article/details/108244302&quot;&gt;Linux下普通用户变为root权限的三种方法_19.如何从普通用户xiaoming切换到root?-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x01加普通用户&lt;/strong&gt;
+useradd xiaoming 创建用户小明
+passwd xiaoming 创建小明的密码&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x02 将xiaoming的权限变为root权限&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、修改 /etc/sudoers 文件，找到107行，把前面的注释（#）去掉&lt;/p&gt;
+&lt;p&gt;2、将xiaoming添加到root组（wheel）
+命令：&lt;code&gt;usermod -g root xiaoming&lt;/code&gt;
+之后xiaoming就能执行root的命令了，但是权限不是root还是xiaoming权限.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法2&lt;/strong&gt;
+1、修改 /etc/sudoers 文件，找到下面一行，在root下面添加一行
+内容：&lt;code&gt;xiaoming All=(All) All&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;修改完后。登录xiaoming。输入命令 &lt;code&gt;sudo -l&lt;/code&gt;，然后输入xiaoming的密码认证后使用sudo执行任意命令即可&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;修改 /etc/passwd 文件，找到xiaoming，把用户ID修改为 0&lt;/p&gt;
 </content:encoded></item><item><title>重置密码</title><link>https://h1s97x.github.io/posts/notes-%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/notes-%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/</guid><description>--- 如果您忘记了 Ubuntu 上的用户密码，请不要担心。您可以非常轻松地重置 Ubuntu 密码。本指南介绍了在 Ubuntu 上更改 root 密码的简</description><pubDate>Sat, 27 Dec 2025 15:46:11 GMT</pubDate><content:encoded>&lt;h1&gt;如何在 2 分钟内重置忘记的 Ubuntu 密码&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;如果您忘记了 Ubuntu 上的用户密码，请不要担心。您可以非常轻松地重置 Ubuntu 密码。本指南介绍了在 Ubuntu 上更改 root 密码的简单方法。该方法应该也适用于其他 Linux 发行版。&lt;/strong&gt;&lt;/p&gt;
@@ -14926,6 +14926,61 @@ class TestXorOperation(unittest.TestCase):
 if __name__ == &apos;__main__&apos;:
     unittest.main()
 &lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>1512. 好数对的数目</title><link>https://h1s97x.github.io/posts/coding-1512-number-of-good-pairs/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/coding-1512-number-of-good-pairs/</guid><description>统计数组中满足 i &lt; j 且 nums[i] == nums[j] 的数对数目</description><pubDate>Sat, 09 Nov 2024 12:49:16 GMT</pubDate><content:encoded>&lt;h2&gt;Problem&lt;/h2&gt;
+&lt;p&gt;给你一个整数数组 &lt;code&gt;nums&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果一组数字 &lt;code&gt;(i, j)&lt;/code&gt; 满足 &lt;code&gt;nums[i] == nums[j]&lt;/code&gt; 且 &lt;code&gt;i &amp;lt; j&lt;/code&gt;，就认为这是一组 &lt;strong&gt;好数对&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;返回好数对的数目。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.cn/problems/number-of-good-pairs/description/&quot;&gt;https://leetcode.cn/problems/number-of-good-pairs/description/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入：nums = [1,2,3,1,1,3]
+输出：4
+解释：有 4 组好数对：(0,3), (0,4), (3,4), (2,5)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输入：nums = [1,1,1,1]
+输出：6
+解释：数组中的每组数字都是好数对&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;约束：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums[i] &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;思路&lt;/h2&gt;
+&lt;p&gt;双重循环统计即可。也可以先用哈希表统计每个数字出现次数，每个数字贡献 &lt;code&gt;c * (c-1) / 2&lt;/code&gt; 对。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from collections import Counter
+
+
+class Solution:
+    def numIdenticalPairs(self, nums: list[int]) -&amp;gt; int:
+        count = Counter(nums)
+        return sum(c * (c - 1) // 2 for c in count.values())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;import unittest
+
+
+class TestNumIdenticalPairs(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
+    def test_example1(self):
+        self.assertEqual(self.solution.numIdenticalPairs([1, 2, 3, 1, 1, 3]), 4)
+
+    def test_example2(self):
+        self.assertEqual(self.solution.numIdenticalPairs([1, 1, 1, 1]), 6)
+
+    def test_no_pairs(self):
+        self.assertEqual(self.solution.numIdenticalPairs([1, 2, 3]), 0)
+
+    def test_single(self):
+        self.assertEqual(self.solution.numIdenticalPairs([1]), 0)
+
+
+if __name__ == &apos;__main__&apos;:
+    unittest.main()
+&lt;/code&gt;&lt;/pre&gt;
 </content:encoded></item><item><title>1534. 统计好三元组</title><link>https://h1s97x.github.io/posts/coding-1534-count-good-triplets/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/coding-1534-count-good-triplets/</guid><description>统计满足 |a-b| &lt;= a, |b-c| &lt;= b, |a-c| &lt;= c 的三元组数目</description><pubDate>Sat, 09 Nov 2024 12:49:16 GMT</pubDate><content:encoded>&lt;h2&gt;Problem&lt;/h2&gt;
 &lt;p&gt;给你一个整数数组 &lt;code&gt;arr&lt;/code&gt;，以及三个整数 &lt;code&gt;a&lt;/code&gt;、&lt;code&gt;b&lt;/code&gt;、&lt;code&gt;c&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;请统计其中好三元组的数量。&lt;/p&gt;
@@ -14984,61 +15039,6 @@ class TestCountGoodTriplets(unittest.TestCase):
 
     def test_all_valid(self):
         self.assertEqual(self.solution.countGoodTriplets([1, 1, 1], 0, 0, 0), 1)
-
-
-if __name__ == &apos;__main__&apos;:
-    unittest.main()
-&lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>1512. 好数对的数目</title><link>https://h1s97x.github.io/posts/coding-1512-number-of-good-pairs/</link><guid isPermaLink="true">https://h1s97x.github.io/posts/coding-1512-number-of-good-pairs/</guid><description>统计数组中满足 i &lt; j 且 nums[i] == nums[j] 的数对数目</description><pubDate>Sat, 09 Nov 2024 12:49:16 GMT</pubDate><content:encoded>&lt;h2&gt;Problem&lt;/h2&gt;
-&lt;p&gt;给你一个整数数组 &lt;code&gt;nums&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;如果一组数字 &lt;code&gt;(i, j)&lt;/code&gt; 满足 &lt;code&gt;nums[i] == nums[j]&lt;/code&gt; 且 &lt;code&gt;i &amp;lt; j&lt;/code&gt;，就认为这是一组 &lt;strong&gt;好数对&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;返回好数对的数目。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.cn/problems/number-of-good-pairs/description/&quot;&gt;https://leetcode.cn/problems/number-of-good-pairs/description/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入：nums = [1,2,3,1,1,3]
-输出：4
-解释：有 4 组好数对：(0,3), (0,4), (3,4), (2,5)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入：nums = [1,1,1,1]
-输出：6
-解释：数组中的每组数字都是好数对&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;约束：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums[i] &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;思路&lt;/h2&gt;
-&lt;p&gt;双重循环统计即可。也可以先用哈希表统计每个数字出现次数，每个数字贡献 &lt;code&gt;c * (c-1) / 2&lt;/code&gt; 对。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;from collections import Counter
-
-
-class Solution:
-    def numIdenticalPairs(self, nums: list[int]) -&amp;gt; int:
-        count = Counter(nums)
-        return sum(c * (c - 1) // 2 for c in count.values())
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;import unittest
-
-
-class TestNumIdenticalPairs(unittest.TestCase):
-    def setUp(self):
-        self.solution = Solution()
-
-    def test_example1(self):
-        self.assertEqual(self.solution.numIdenticalPairs([1, 2, 3, 1, 1, 3]), 4)
-
-    def test_example2(self):
-        self.assertEqual(self.solution.numIdenticalPairs([1, 1, 1, 1]), 6)
-
-    def test_no_pairs(self):
-        self.assertEqual(self.solution.numIdenticalPairs([1, 2, 3]), 0)
-
-    def test_single(self):
-        self.assertEqual(self.solution.numIdenticalPairs([1]), 0)
 
 
 if __name__ == &apos;__main__&apos;:

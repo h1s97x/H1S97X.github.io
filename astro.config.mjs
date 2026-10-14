@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import fuwariTheme, { fuwariIntegrations } from "astro-theme-fuwari";
-import genRedirects from "./tools/redirects.json" with { type: "json" };
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +22,4 @@ export default defineConfig({
 		// 主题自带依赖的 Astro 集成（verbose 配置封装在主题包内）
 		...fuwariIntegrations(),
 	],
-	// 旧链接 301 重定向（博客特有，随内容迁移保留）
-	redirects: genRedirects,
 });

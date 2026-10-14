@@ -66,7 +66,7 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 - **框架迁移**: Hexo + Almagest → Astro 5 + Fuwari
 - **内容迁移**: 158 篇内容迁入 `src/content/posts/`（含图片资源），frontmatter 标准化
 - **主题抽离**: Fuwari 抽成独立包 `astro-theme-fuwari`（CNB npm 制品库），博客依赖当前 `0.1.4`
-- **路由统一**: 单流 `/posts/<slug>/`，旧 `/blog/`、`/notes/`、`/coding/` 由 `tools/redirects.json` 301 重定向（约 160 条）
+- **路由统一**: 单流 `/posts/<slug>/`；旧 `/blog/`、`/notes/`、`/coding/` 路由已不再维护（迁移完成，旧链未保留 301，直接 404）
 - **功能补齐**: Giscus 评论（已显式写入 `astro.config.mjs`）、Pagefind 搜索、sitemap、RSS、明暗主题切换
 - **站点增强**: 全站 footer 的 Not-by-AI 徽章（`0.1.3`）、右下角「随机文章」浮动按钮（`0.1.4`）
 - **部署链路**: `.cnb.yml` rebase 同步到 GitHub → GitHub Actions 部署 Pages（Actions 模式）
@@ -134,9 +134,8 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 │   └── （无 pages/components/layouts —— 主题代码在 astro-theme-fuwari 包内）
 ├── public/                  # 静态资源（图片 / 图标）
 ├── tools/
-│   ├── migrate-fuwari.mjs   # Hexo → Astro 迁移脚本
-│   └── redirects.json       # 旧链接 301 映射
-├── astro.config.mjs         # Astro 配置（主题集成注入 / 重定向 / 评论）
+│   └── migrate-fuwari.mjs   # Hexo → Astro 迁移脚本
+├── astro.config.mjs         # Astro 配置（主题集成注入 / 评论）
 ├── pagefind.yml             # Pagefind 搜索索引配置
 └── package.json
 ```

@@ -14,6 +14,8 @@ permissions:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    env:
+      CNB_TOKEN: ${{ secrets.CNB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 

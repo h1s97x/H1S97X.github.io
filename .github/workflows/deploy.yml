@@ -15,6 +15,8 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    env:
+      CNB_TOKEN: ${{ secrets.CNB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 

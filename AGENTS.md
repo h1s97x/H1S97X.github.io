@@ -128,7 +128,7 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 ├── .github/workflows/       # GitHub Actions（ci.yml / deploy.yml）
 ├── src/
 │   ├── content/
-│   │   ├── posts/           # 文章（Content Collections）
+│   │   ├── posts/           # 文章（Content Collections）：按 notebook 分 coding/ notes/ blog/ 三目录
 │   │   ├── spec/            # 关于页等单页
 │   │   └── config.ts        # 内容集合 schema 定义（re-export 主题 collections）
 │   └── （无 pages/components/layouts —— 主题代码在 astro-theme-fuwari 包内）

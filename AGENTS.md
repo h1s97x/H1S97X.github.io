@@ -172,6 +172,7 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 
 1. **主题（Fuwari）**: 独立包 `astro-theme-fuwari`（CNB 制品库）。改主题 → 主题仓升版 `npm publish` → 博客 `pnpm update astro-theme-fuwari` 并提交 lockfile。
 2. **构建失败**: 先 `pnpm install` 再 `pnpm build`；Content Collections 的 frontmatter 校验失败会直接报错。CI 装包需 `CNB_TOKEN`，本地 shell 也需该环境变量。
+3. **样式偶发报错 `The \`link\` class does not exist`**: 主题包 `astro-theme-fuwari` ≤ 0.1.5 的主题 CSS 只被 `ImageWrapper.astro` 里过宽的 `import.meta.glob("../../**")` 顺带加载，顺序取决于文件系统枚举，`markdown.css` 的 `@apply link` 依赖 `main.css` 先加载，故构建**顺序相关地偶发失败**（本地过、CI 挂）。临时用 `patches/astro-theme-fuwari.patch`（显式加载 CSS + 收窄 glob）兜底；主题仓已提根因修复，待发布新版本后 `pnpm update astro-theme-fuwari` 并移除 patch。
 
 ## Coze 平台配置
 

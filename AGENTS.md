@@ -131,11 +131,9 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 │   │   ├── posts/           # 文章（Content Collections）：按 notebook 分 coding/ notes/ blog/ 三目录
 │   │   ├── spec/            # 关于页等单页
 │   │   └── config.ts        # 内容集合 schema 定义（re-export 主题 collections）
+│   ├── styles/              # 站点自有样式（转载声明卡等，经 astro.config.mjs 注入）
 │   └── （无 pages/components/layouts —— 主题代码在 astro-theme-fuwari 包内）
-├── public/                  # 静态资源（图片 / 图标）
-├── tools/
-│   └── migrate-fuwari.mjs   # Hexo → Astro 迁移脚本
-├── astro.config.mjs         # Astro 配置（主题集成注入 / 评论）
+├── astro.config.mjs         # Astro 配置（主题集成注入 / 评论 / 站点样式）
 ├── pagefind.yml             # Pagefind 搜索索引配置
 └── package.json
 ```
@@ -167,6 +165,37 @@ type: feat | fix | docs | style | refactor | perf | test | chore
 | `pnpm check`        | `astro check` 类型与内容检查               |
 | `pnpm lint`         | Biome 检查                                 |
 | `pnpm type-check`   | `tsc --noEmit` 类型检查                    |
+
+## 图片与图床（重要）
+
+**所有文章配图走图床仓库 [h1s97x/Pixy](https://github.com/h1s97x/Pixy)，博客仓不再存放图片**（`public/` 已清空）。转载文章的图同样进图床，但用 `reprint-` 前缀与自有图区分。
+
+引用一律用 GitHub raw 域名，**不要用 `cnb.cool`**：
+
+```text
+✅ https://raw.githubusercontent.com/h1s97x/Pixy/main/images/<文件名>
+❌ https://cnb.cool/h1s97x/Pixy/-/git/raw/main/images/<文件名>
+   —— 响应带 Cross-Origin-Resource-Policy: same-origin，浏览器直接拦截，图片全是空图
+❌ https://cnb.cool/h1s97x/Pixy/-/raw/main/images/<文件名>
+   —— 返回 text/html（登录页），同样出不来图
+```
+
+> `/-/git/raw/` 在 `curl` 下返回 200，很容易误判「链接是好的」；只有浏览器里才会暴露。
+> 校验图片链接时务必用浏览器（或检查 `Cross-Origin-Resource-Policy` / `Content-Type`），别只看状态码。
+
+### 转载文章
+
+转载文章的**徽章用 shields.io 静态徽章**（`img.shields.io`，与 README 同一套），不自己画 PNG：
+
+```markdown
+[![转载](https://img.shields.io/badge/%E6%9C%AC%E6%96%87%E4%B8%BA%E8%BD%AC%E8%BD%BD-%E9%9D%9E%E5%8E%9F%E5%88%9B-orange?style=flat-square)](<原文链接>)
+```
+
+声明卡（原文链接 / 协议 / 转载说明）用 `<div class="reprint-note">` 包住，样式在 `src/styles/reprint-css.ts`，由 `astro.config.mjs` 注入（`head-inline` 注入的是 `<script>`，CSS 必须自己建 `<style>` 元素，否则样式不生效）。
+
+### 图床命名
+
+命名遵循图床仓的 [NORMALIZING.md](https://github.com/h1s97x/Pixy/blob/main/NORMALIZING.md)：`<语义名>-<YYYYMMDD>.<ext>`，全小写、`-` 分隔；转载图以 `reprint-` 开头。上传前跑图床仓的 `scripts/validate-images.sh`。
 
 ## 常见问题
 

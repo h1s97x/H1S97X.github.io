@@ -99,9 +99,9 @@ Wscript.quitx
 <!-- 侧边选单改透明后(不分亮色或暗色背景) -->
 .hope-c-PJLV-ijgzmFG-css{background-color: rgba(255, 255, 255, 0.5)!important;}
 <!-- 使用背景图(亮色背景) -->
-.hope-ui-light{background-image: url("https://cnb.cool/h1s97x/Pixy/-/raw/main/images/alist-deploy-01-20261014.jpg")!important;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position-x:center;}
+.hope-ui-light{background-image: url("https://raw.githubusercontent.com/h1s97x/Pixy/main/images/alist-deploy-01-20261014.jpg")!important;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position-x:center;}
 <!-- 使用背景图(暗色背景) -->
-.hope-ui-dark {background-image: url("https://cnb.cool/h1s97x/Pixy/-/raw/main/images/alist-deploy-01-20261014.jpg") !important;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position-x:center;}
+.hope-ui-dark {background-image: url("https://raw.githubusercontent.com/h1s97x/Pixy/main/images/alist-deploy-01-20261014.jpg") !important;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position-x:center;}
 <!-- 透明(非毛玻璃)(亮色背景) -->
 .hope-ui-light .hope-c-PJLV-ikEIIxw-css{background:rgba(255,255,255,0.2)!important;backdrop-filter:blur(10px)!important;}
 .obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-igScBhH-css{background-color: rgba(255, 255, 255, 0.5) !important;}

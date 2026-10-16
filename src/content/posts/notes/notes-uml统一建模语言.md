@@ -95,7 +95,7 @@ notebook: notes
 
 以下简要地介绍了这 13 个 UML 图表。UML 图表可大致分为结构性图表和行为性图表两种。
 
-![](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/uml-01-20261014.png)
+![](https://raw.githubusercontent.com/h1s97x/Pixy/main/images/uml-01-20261014.png)
 
 结构性图表显示了系统在不同抽象层次和实现层次上的静态结构以及它们之间的相互关系。结构性图表中的元素表示系统中具意义的概念，可能包括抽象的、现实的和實作的概念。结构性图表有七种类型：
 

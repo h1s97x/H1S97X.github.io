@@ -1,6 +1,11 @@
 import { defineConfig } from "astro/config";
 import fuwariTheme, { fuwariIntegrations } from "astro-theme-fuwari";
 
+// 转载声明卡的样式：主题包只管通用排版，这类「本站内容约定」留在博客仓，
+// 因此以独立 CSS 字符串注入，避免为了一个 class 去 fork 主题组件。
+import { reprintCss } from "./src/styles/reprint-css.ts";
+import { siteStyles } from "./src/styles/site-styles-integration.ts";
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://h1s97x.github.io/",
@@ -21,5 +26,13 @@ export default defineConfig({
 		}),
 		// 主题自带依赖的 Astro 集成（verbose 配置封装在主题包内）
 		...fuwariIntegrations(),
+		// 站点自有排版（转载声明卡等），不随主题升级被覆盖。
+		// 走 Vite 真实管道产出 CSS 资源，Astro 会自动 <link> 到每个页面，
+		// 不在 JS 里手工拼 <style>。
+		siteStyles({
+			name: "site-styles",
+			code: reprintCss,
+			moduleId: "virtual:site-styles.css",
+		}),
 	],
 });

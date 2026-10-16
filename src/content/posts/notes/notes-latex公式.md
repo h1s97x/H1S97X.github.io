@@ -124,7 +124,7 @@ $ \tilde{x} $
 
 ## 运算符
 
-![](https://cnb.cool/h1s97x/Pixy/-/raw/main/images/latex-formula-01-20261014.webp "希腊字母")
+![](https://raw.githubusercontent.com/h1s97x/Pixy/main/images/latex-formula-01-20261014.webp "希腊字母")
 
 ### 在Markdown里插入希腊字母
 

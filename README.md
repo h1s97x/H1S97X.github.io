@@ -44,10 +44,9 @@ pnpm build
 
 ```
 src/
-└── content/       # 内容（posts 文章 / spec 单页），含 config.ts 内容集合定义
+├── content/       # 内容（posts 文章 / spec 单页），含 config.ts 内容集合定义
+└── styles/        # 站点自有样式（转载声明卡等）
 astro.config.mjs   # Astro 配置 + 引入主题集成（fuwariTheme / fuwariIntegrations）
-public/            # 静态资源（图片 / 图标）
-tools/             # 迁移脚本与旧链接重定向表
 docs/              # 开发文档（含 Hexo→Astro 迁移方案）
 ```
 
